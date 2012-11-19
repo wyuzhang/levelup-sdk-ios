@@ -9,7 +9,7 @@
 + (LUAPIRequest *)getUserMerchantsForPage:(NSUInteger)page {
   NSString *path = [NSString stringWithFormat:@"users/%@/merchants", [LUAPIClient sharedClient].currentUserId];
 
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"GET" path:path parameters:@{@"page" : @(page)}];
+  return [LUAPIRequest apiRequestWithMethod:@"GET" path:path parameters:@{@"page" : @(page)}];
 }
 
 + (LUAPIRequest *)getMerchantsNearLocation:(CLLocation *)location page:(NSUInteger)page {
@@ -32,7 +32,7 @@
 + (LUAPIRequest *)getMerchantWithId:(NSNumber *)merchantId {
   NSString *path = [NSString stringWithFormat:@"merchants/%@", merchantId];
 
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"GET" path:path parameters:nil];
+  return [LUAPIRequest apiRequestWithMethod:@"GET" path:path parameters:nil];
 }
 
 @end

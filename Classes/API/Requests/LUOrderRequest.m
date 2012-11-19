@@ -7,13 +7,13 @@
 + (LUAPIRequest *)getOrdersForPage:(NSUInteger)page {
   NSString *path = [NSString stringWithFormat:@"users/%@/orders", [LUAPIClient sharedClient].currentUserId];
 
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"GET" path:path parameters:@{@"page" : @(page)}];
+  return [LUAPIRequest apiRequestWithMethod:@"GET" path:path parameters:@{@"page" : @(page)}];
 }
 
 + (LUAPIRequest *)getOrderWithId:(NSNumber *)orderId {
   NSString *path = [NSString stringWithFormat:@"orders/%@", orderId];
 
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"GET" path:path parameters:nil];
+  return [LUAPIRequest apiRequestWithMethod:@"GET" path:path parameters:nil];
 }
 
 @end

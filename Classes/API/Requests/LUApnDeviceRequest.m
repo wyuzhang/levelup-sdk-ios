@@ -6,7 +6,7 @@
 @implementation LUApnDeviceRequest
 
 + (LUAPIRequest *)createApnDevice:(LUApnDevice *)apnDevice {
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"POST" path:@"apn_devices" parameters:@{@"apn_device" : apnDevice.parameters}];
+  return [LUAPIRequest apiRequestWithMethod:@"POST" path:@"apn_devices" parameters:@{@"apn_device" : apnDevice.parameters}];
 }
 
 @end

@@ -8,7 +8,7 @@
 + (LUAPIRequest *)createMerchandiseOrder:(LUMerchandiseOrder *)merchandiseOrder {
   NSString *path = [NSString stringWithFormat:@"users/%@/merchandise_orders", [LUAPIClient sharedClient].currentUserId];
 
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"POST" path:path parameters:@{@"merchandise_order" : merchandiseOrder.parameters}];
+  return [LUAPIRequest apiRequestWithMethod:@"POST" path:path parameters:@{@"merchandise_order" : merchandiseOrder.parameters}];
 }
 
 @end

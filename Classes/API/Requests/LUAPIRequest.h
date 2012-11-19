@@ -8,8 +8,4 @@
                                   path:(NSString *)path
                             parameters:(NSDictionary *)parameters;
 
-+ (LUAPIRequest *)authenticatedApiRequestWithMethod:(NSString *)method
-                                               path:(NSString *)path
-                                         parameters:(NSDictionary *)parameters;
-
 @end

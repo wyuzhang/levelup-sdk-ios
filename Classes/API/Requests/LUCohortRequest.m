@@ -7,7 +7,7 @@
 + (LUAPIRequest *)getCohortWithCode:(NSString *)code {
   NSString *path = [NSString stringWithFormat:@"cohorts/%@", code];
 
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"GET" path:path parameters:nil];
+  return [LUAPIRequest apiRequestWithMethod:@"GET" path:path parameters:nil];
 
 }
 

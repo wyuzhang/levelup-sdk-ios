@@ -11,29 +11,29 @@
 + (LUAPIRequest *)connectToFacebookWithAccessToken:(NSString *)facebookAccessToken {
   NSString *path = [NSString stringWithFormat:@"users/%@/facebook_connections", [LUAPIClient sharedClient].currentUserId];
 
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"POST" path:path parameters:@{@"facebook_access_token" : facebookAccessToken}];
+  return [LUAPIRequest apiRequestWithMethod:@"POST" path:path parameters:@{@"facebook_access_token" : facebookAccessToken}];
 }
 
 + (LUAPIRequest *)createUser:(LUUser *)user {
   NSDictionary *params = @{@"client_id" : [LUAPIClient sharedClient].levelUpClientId, @"user" : user.parameters};
 
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"POST" path:@"users" parameters:params];
+  return [LUAPIRequest apiRequestWithMethod:@"POST" path:@"users" parameters:params];
 }
 
 + (LUAPIRequest *)disconnectFromFacebook {
   NSString *path = [NSString stringWithFormat:@"users/%@/facebook_connections", [LUAPIClient sharedClient].currentUserId];
 
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"DELETE" path:path parameters:nil];
+  return [LUAPIRequest apiRequestWithMethod:@"DELETE" path:path parameters:nil];
 }
 
 + (LUAPIRequest *)getCurrentUser {
   NSString *path = [NSString stringWithFormat:@"users/%@", [LUAPIClient sharedClient].currentUserId];
 
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"GET" path:path parameters:nil];
+  return [LUAPIRequest apiRequestWithMethod:@"GET" path:path parameters:nil];
 }
 
 + (LUAPIRequest *)removeCauseAffiliation {
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"DELETE" path:@"cause_affiliation" parameters:nil];
+  return [LUAPIRequest apiRequestWithMethod:@"DELETE" path:@"cause_affiliation" parameters:nil];
 }
 
 + (LUAPIRequest *)resetPasswordWithEmail:(NSString *)email {
@@ -41,13 +41,13 @@
 }
 
 + (LUAPIRequest *)setCauseId:(NSNumber *)causeId {
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"POST" path:@"cause_affiliation" parameters:@{@"cause_id" : causeId}];
+  return [LUAPIRequest apiRequestWithMethod:@"POST" path:@"cause_affiliation" parameters:@{@"cause_id" : causeId}];
 }
 
 + (LUAPIRequest *)updateUser:(LUUser *)user {
   NSString *path = [NSString stringWithFormat:@"users/%@", [LUAPIClient sharedClient].currentUserId];
 
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"PUT" path:path parameters:@{@"user" : user.parameters}];
+  return [LUAPIRequest apiRequestWithMethod:@"PUT" path:path parameters:@{@"user" : user.parameters}];
 }
 
 @end

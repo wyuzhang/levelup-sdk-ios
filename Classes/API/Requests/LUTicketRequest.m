@@ -11,7 +11,7 @@
 + (LUAPIRequest *)createTicket:(LUTicket *)ticket {
   NSString *path = [NSString stringWithFormat:@"users/%@/tickets", [LUAPIClient sharedClient].currentUserId];
 
-  return [LUAPIRequest authenticatedApiRequestWithMethod:@"POST" path:path parameters:@{@"ticket" : ticket.parameters}];
+  return [LUAPIRequest apiRequestWithMethod:@"POST" path:path parameters:@{@"ticket" : ticket.parameters}];
 }
 
 @end

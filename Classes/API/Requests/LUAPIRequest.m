@@ -27,14 +27,6 @@
 + (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
                                   path:(NSString *)path
                             parameters:(NSDictionary *)parameters {
-  NSURLRequest *urlRequest = [[LUAPIClient sharedClient] requestWithMethod:method path:path parameters:parameters];
-
-  return [[self alloc] initWithURLRequest:urlRequest];
-}
-
-+ (LUAPIRequest *)authenticatedApiRequestWithMethod:(NSString *)method
-                                               path:(NSString *)path
-                                         parameters:(NSDictionary *)parameters {
   NSMutableDictionary *parametersWithAccessToken = [NSMutableDictionary dictionary];
 
   if ([LUAPIClient sharedClient].accessToken) {
