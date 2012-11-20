@@ -2269,6 +2269,7 @@
 				DSTROOT = /tmp/LevelUp_SDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/LevelUpSDK_Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = LevelUpSDK;
 				SKIP_INSTALL = YES;
@@ -2281,6 +2282,7 @@
 				DSTROOT = /tmp/LevelUp_SDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/LevelUpSDK_Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = LevelUpSDK;
 				SKIP_INSTALL = YES;
