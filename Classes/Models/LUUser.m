@@ -92,7 +92,7 @@
 }
 
 - (NSString *)referralUrl {
-  return [NSString stringWithFormat:@"https://www.thelevelup.com/join/%@", self.referralCode];
+  return [NSString stringWithFormat:@"https://www.thelevelup.com/c/%@", self.referralCode];
 }
 
 - (void)setDivision:(LUDivision *)aDivision {
