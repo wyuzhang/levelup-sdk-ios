@@ -32,11 +32,7 @@ static NSMutableDictionary *registeredModels;
             propertyValueForModel = [self deserializeJSON:propertyValue];
           }
 
-          @try {
-            [model setValue:propertyValueForModel forKey:propertyNameForModel];
-          } @catch (NSException *exception) {
-            continue;
-          }
+          [model setValue:propertyValueForModel forKey:propertyNameForModel];
         }
       }
 

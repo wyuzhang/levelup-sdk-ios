@@ -3,6 +3,7 @@
 @interface LUCreditCard : NSObject
 
 @property (nonatomic, copy) NSString *cvv;
+@property (nonatomic, copy) NSString *description;
 @property (nonatomic, weak, readonly) NSString *displayNumber;
 @property (nonatomic, copy) NSNumber *expirationMonth;
 @property (nonatomic, copy) NSNumber *expirationYear;
