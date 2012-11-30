@@ -27,6 +27,7 @@ NSString * const DefaultLevelUpApiURL = @"https://api.thelevelup.com/v13";
   self = [super initWithBaseURL:url];
 
   if (self) {
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self setDefaultHeader:@"Accept" value:@"application/json"];
   }
