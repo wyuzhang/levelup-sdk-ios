@@ -1,7 +1,6 @@
+#import <ZXingObjC/ZXingObjC.h>
 #import "LUQRCodeGenerator.h"
 #import "NSNumber+Base36.h"
-#import "ZXImage.h"
-#import "ZXQRCodeWriter.h"
 
 static NSString * const kTipTypePercent = @"0";
 static NSString * const kCurrentQRCodeVersion = @"01";

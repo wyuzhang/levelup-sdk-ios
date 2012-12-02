@@ -1,9 +1,5 @@
+#import <ZXingObjC/ZXingObjC.h>
 #import "LUQRCodeDecoder.h"
-#import "ZXBinaryBitmap.h"
-#import "ZXCGImageLuminanceSource.h"
-#import "ZXHybridBinarizer.h"
-#import "ZXQRCodeReader.h"
-#import "ZXResult.h"
 
 static NSInteger const kMaxConcurrentCaptureOperations = 2;
 

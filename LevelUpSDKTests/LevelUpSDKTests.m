@@ -1,14 +1,14 @@
 //
-//  LevelUp_SDKTests.m
-//  LevelUp SDKTests
+//  LevelUpSDKTests.m
+//  LevelUpSDKTests
 //
-//  Created by Costa Walcott on 11/12/12.
+//  Created by Costa Walcott on 11/29/12.
 //  Copyright (c) 2012 SCVNGR. All rights reserved.
 //
 
-#import "LevelUp_SDKTests.h"
+#import "LevelUpSDKTests.h"
 
-@implementation LevelUp_SDKTests
+@implementation LevelUpSDKTests
 
 - (void)setUp
 {
@@ -26,7 +26,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in LevelUp SDKTests");
+    STFail(@"Unit tests are not implemented yet in LevelUpSDKTests");
 }
 
 @end
