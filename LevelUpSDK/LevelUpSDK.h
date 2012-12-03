@@ -16,8 +16,6 @@
 #import <LevelUpSDK/LUTicketRequest.h>
 #import <LevelUpSDK/LUUserRequest.h>
 
-#import <LevelUpSDK/NSDate+StringFormats.h>
-
 #import <LevelUpSDK/LUApnDevice.h>
 #import <LevelUpSDK/LUCampaign.h>
 #import <LevelUpSDK/LUCategory.h>

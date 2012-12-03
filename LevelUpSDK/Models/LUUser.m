@@ -7,12 +7,20 @@
 #import "LUUserAddress.h"
 #import "NSDate+StringFormats.h"
 
-#define kSecondsInAYear (365.25 * 24 * 60 * 60)
+NSString * const GenderMale = @"male";
+NSString * const GenderFemale = @"female";
+float const SecondsInAYear = 365.25 * 24 * 60 * 60;
+
+@interface LUUser ()
+
+@property (nonatomic, copy) NSString *bornAt;
+@property (nonatomic, copy) NSString *gender;
+
+@end
 
 @implementation LUUser
 
-#pragma mark -
-#pragma mark Serialization
+#pragma mark - Serialization
 
 + (void)load {
   @autoreleasepool {
@@ -20,19 +28,60 @@
   }
 }
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Property Getters
+
+- (NSDate *)birthday {
+  return [NSDate dateFromIso8601DateTimeString:self.bornAt];
+}
+
+- (NSString *)deviceIdentifier {
+  return [LUDeviceIdentifier deviceIdentifier];
+}
+
+- (BOOL)isMale {
+  return [self.gender isEqualToString:GenderMale];
+}
+
+- (BOOL)isFemale {
+  return [self.gender isEqualToString:GenderFemale];
+}
+
+#pragma mark - Property Setters
+
+- (void)setBirthday:(NSDate *)birthday {
+  self.bornAt = [birthday iso8601DateTimeString];
+}
+
+- (void)setDivision:(LUDivision *)aDivision {
+  if (_division == aDivision) {
+    return;
+  }
+
+  _division = aDivision;
+
+  if (_division) {
+    self.divisionId = _division.modelId;
+  } else {
+    self.divisionId = nil;
+  }
+}
+
+- (void)setIsFemale:(BOOL)isFemale {
+  self.gender = GenderFemale;
+}
+
+- (void)setIsMale:(BOOL)isMale {
+  self.gender = GenderMale;
+}
+
+#pragma mark - Public Methods
 
 - (NSInteger)ageInYears {
   if (nil == self.bornAt) {
     return 0;
   } else {
-    return (NSInteger)([[NSDate date] timeIntervalSinceDate:[NSDate dateFromIso8601DateTimeString:self.bornAt]] / kSecondsInAYear);
+    return (NSInteger)([[NSDate date] timeIntervalSinceDate:self.birthday] / SecondsInAYear);
   }
-}
-
-- (NSString *)deviceIdentifier {
-  return [LUDeviceIdentifier deviceIdentifier];
 }
 
 - (BOOL)isAbleToRefer {
@@ -93,20 +142,6 @@
 
 - (NSString *)referralUrl {
   return [NSString stringWithFormat:@"https://www.thelevelup.com/c/%@", self.referralCode];
-}
-
-- (void)setDivision:(LUDivision *)aDivision {
-  if (_division == aDivision) {
-    return;
-  }
-
-  _division = aDivision;
-
-  if (_division) {
-    self.divisionId = _division.modelId;
-  } else {
-    self.divisionId = nil;
-  }
 }
 
 @end

@@ -132,7 +132,7 @@
 		257B01BF16684CC9006ACA24 /* LUDictionarySerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B019D16684CC9006ACA24 /* LUDictionarySerializer.m */; };
 		257B01C016684CC9006ACA24 /* LUJSONDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B019E16684CC9006ACA24 /* LUJSONDeserializer.h */; };
 		257B01C116684CC9006ACA24 /* LUJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B019F16684CC9006ACA24 /* LUJSONDeserializer.m */; };
-		257B01C916684D69006ACA24 /* NSDate+StringFormats.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B01C316684D69006ACA24 /* NSDate+StringFormats.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		257B01C916684D69006ACA24 /* NSDate+StringFormats.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B01C316684D69006ACA24 /* NSDate+StringFormats.h */; settings = {ATTRIBUTES = (); }; };
 		257B01CA16684D69006ACA24 /* NSDate+StringFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B01C416684D69006ACA24 /* NSDate+StringFormats.m */; };
 		257B01CB16684D69006ACA24 /* NSNumber+Base36.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B01C516684D69006ACA24 /* NSNumber+Base36.h */; };
 		257B01CC16684D69006ACA24 /* NSNumber+Base36.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B01C616684D69006ACA24 /* NSNumber+Base36.m */; };

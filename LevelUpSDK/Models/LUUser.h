@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
-@class LUDivision;
 @class LUCause;
+@class LUDivision;
 @class LUMonetaryValue;
 @class LUQRCode;
 @class LUUserAddress;
@@ -9,7 +9,7 @@
 @interface LUUser : NSObject
 
 @property (nonatomic, copy) NSNumber *ableToRefer;
-@property (nonatomic, copy) NSString *bornAt;
+@property (nonatomic, copy) NSDate *birthday;
 @property (nonatomic, strong) LUCause *cause;
 @property (nonatomic, copy) NSNumber *causeId;
 @property (nonatomic, strong) LUMonetaryValue *credit;
@@ -20,7 +20,8 @@
 @property (nonatomic, copy) NSString *employer;
 @property (nonatomic, copy) NSString *facebookUserId;
 @property (nonatomic, copy) NSString *firstName;
-@property (nonatomic, copy) NSString *gender;
+@property (nonatomic, assign) BOOL isFemale;
+@property (nonatomic, assign) BOOL isMale;
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, copy) NSNumber *lat;
 @property (nonatomic, copy) NSNumber *lng;
