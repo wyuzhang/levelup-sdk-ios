@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 
+@class LUBundle;
 @class LUDonation;
 @class LUInterstitialAction;
 @class LULocation;
@@ -10,6 +11,7 @@
 @interface LUOrder : NSObject
 
 @property (nonatomic, strong) LUMonetaryValue *balance;
+@property (nonatomic, strong) LUBundle *bundle;
 @property (nonatomic, copy) NSString *code;
 @property (nonatomic, copy) NSString *createdAt;
 @property (nonatomic, strong) LUMonetaryValue *credit;

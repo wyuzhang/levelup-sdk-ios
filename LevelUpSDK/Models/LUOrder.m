@@ -1,3 +1,4 @@
+#import "LUBundle.h"
 #import "LUDonation.h"
 #import "LUJSONDeserializer.h"
 #import "LUMonetaryValue.h"

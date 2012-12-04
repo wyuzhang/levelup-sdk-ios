@@ -3,6 +3,7 @@
 #import <LevelUpSDK/LUAPIClient.h>
 #import <LevelUpSDK/LUAPIRequest.h>
 #import <LevelUpSDK/LUApnDeviceRequest.h>
+#import <LevelUpSDK/LUBundleRequest.h>
 #import <LevelUpSDK/LUCategoryRequest.h>
 #import <LevelUpSDK/LUCauseRequest.h>
 #import <LevelUpSDK/LUClaimRequest.h>
@@ -17,6 +18,7 @@
 #import <LevelUpSDK/LUUserRequest.h>
 
 #import <LevelUpSDK/LUApnDevice.h>
+#import <LevelUpSDK/LUBundle.h>
 #import <LevelUpSDK/LUCampaign.h>
 #import <LevelUpSDK/LUCategory.h>
 #import <LevelUpSDK/LUCause.h>

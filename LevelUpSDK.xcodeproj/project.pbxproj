@@ -184,6 +184,10 @@
 		25F643BA166832D600A05C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A7166832D600A05C0E /* Foundation.framework */; };
 		25F643BD166832D600A05C0E /* libLevelUpSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A4166832D600A05C0E /* libLevelUpSDK.a */; };
 		25F643C3166832D600A05C0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25F643C1166832D600A05C0E /* InfoPlist.strings */; };
+		F8A4F35B166F99B6004B696B /* LUBundleRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F8A4F359166F99B6004B696B /* LUBundleRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8A4F35C166F99B6004B696B /* LUBundleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A4F35A166F99B6004B696B /* LUBundleRequest.m */; };
+		F8A4F35F166F99D1004B696B /* LUBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = F8A4F35D166F99D1004B696B /* LUBundle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8A4F360166F99D1004B696B /* LUBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A4F35E166F99D1004B696B /* LUBundle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -434,6 +438,10 @@
 		25F643B6166832D600A05C0E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		25F643C0166832D600A05C0E /* LevelUpSDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LevelUpSDKTests-Info.plist"; sourceTree = "<group>"; };
 		25F643C2166832D600A05C0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F8A4F359166F99B6004B696B /* LUBundleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBundleRequest.h; sourceTree = "<group>"; };
+		F8A4F35A166F99B6004B696B /* LUBundleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBundleRequest.m; sourceTree = "<group>"; };
+		F8A4F35D166F99D1004B696B /* LUBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUBundle.h; path = Models/LUBundle.h; sourceTree = "<group>"; };
+		F8A4F35E166F99D1004B696B /* LUBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUBundle.m; path = Models/LUBundle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -545,6 +553,8 @@
 			children = (
 				257B012216684C5E006ACA24 /* LUApnDevice.h */,
 				257B012316684C5E006ACA24 /* LUApnDevice.m */,
+				F8A4F35D166F99D1004B696B /* LUBundle.h */,
+				F8A4F35E166F99D1004B696B /* LUBundle.m */,
 				257B012416684C5E006ACA24 /* LUCampaign.h */,
 				257B012516684C5E006ACA24 /* LUCampaign.m */,
 				257B012616684C5E006ACA24 /* LUCategory.h */,
@@ -637,6 +647,8 @@
 				257B018016684CC9006ACA24 /* LUAPIRequest.m */,
 				257B018116684CC9006ACA24 /* LUApnDeviceRequest.h */,
 				257B018216684CC9006ACA24 /* LUApnDeviceRequest.m */,
+				F8A4F359166F99B6004B696B /* LUBundleRequest.h */,
+				F8A4F35A166F99B6004B696B /* LUBundleRequest.m */,
 				257B018316684CC9006ACA24 /* LUCategoryRequest.h */,
 				257B018416684CC9006ACA24 /* LUCategoryRequest.m */,
 				257B018516684CC9006ACA24 /* LUCauseRequest.h */,
@@ -893,6 +905,8 @@
 				250637AA166B0DFD008CCE9B /* AFURLConnectionOperation.h in Headers */,
 				250637AC166B0DFD008CCE9B /* AFXMLRequestOperation.h in Headers */,
 				250637AE166B0DFD008CCE9B /* UIImageView+AFNetworking.h in Headers */,
+				F8A4F35B166F99B6004B696B /* LUBundleRequest.h in Headers */,
+				F8A4F35F166F99D1004B696B /* LUBundle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1166,6 +1180,8 @@
 				250637AB166B0DFD008CCE9B /* AFURLConnectionOperation.m in Sources */,
 				250637AD166B0DFD008CCE9B /* AFXMLRequestOperation.m in Sources */,
 				250637AF166B0DFD008CCE9B /* UIImageView+AFNetworking.m in Sources */,
+				F8A4F35C166F99B6004B696B /* LUBundleRequest.m in Sources */,
+				F8A4F360166F99D1004B696B /* LUBundle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
