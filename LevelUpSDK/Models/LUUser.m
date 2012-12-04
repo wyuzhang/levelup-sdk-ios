@@ -15,6 +15,7 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
 
 @property (nonatomic, copy) NSString *bornAt;
 @property (nonatomic, copy) NSString *gender;
+@property (nonatomic, copy) NSString *termsAcceptedAt;
 
 @end
 
@@ -46,6 +47,10 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
   return [self.gender isEqualToString:GenderFemale];
 }
 
+- (NSDate *)termsAcceptedTime {
+  return [NSDate dateFromIso8601DateTimeString:self.termsAcceptedAt];
+}
+
 #pragma mark - Property Setters
 
 - (void)setBirthday:(NSDate *)birthday {
@@ -72,6 +77,10 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
 
 - (void)setIsMale:(BOOL)isMale {
   self.gender = GenderMale;
+}
+
+- (void)setTermsAcceptedTime:(NSDate *)termsAcceptedTime {
+  self.termsAcceptedAt = [termsAcceptedTime iso8601DateTimeString];
 }
 
 #pragma mark - Public Methods
@@ -114,7 +123,7 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
   [params addEntriesFromDictionary:
    [LUDictionarySerializer parametersForModel:self withNonBlankAttributesNamed:@[@"bornAt", @"deviceIdentifier",
     @"divisionId", @"email", @"employer", @"firstName", @"gender", @"lastName", @"lat", @"lng", @"percentDonation",
-    @"promotionCode", @"subscribed"]]];
+    @"promotionCode", @"subscribed", @"termsAcceptedAt"]]];
 
   if (self.newPassword.length > 0) {
     params[@"new_password"] = self.newPassword;

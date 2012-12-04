@@ -37,6 +37,7 @@
 @property (nonatomic, strong) LUQRCode *qrCode;
 @property (nonatomic, copy) NSString *referralCode;
 @property (nonatomic, copy) NSNumber *subscribed;
+@property (nonatomic, copy) NSDate *termsAcceptedTime;
 @property (nonatomic, copy) NSNumber *twitterAuthenticated;
 @property (nonatomic, copy) NSArray *userAddresses;
 @property (nonatomic, copy) NSNumber *xUserId;
