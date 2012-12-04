@@ -3,24 +3,47 @@
 #import "NSNumber+Base36.h"
 
 static NSString * const kTipTypePercent = @"0";
-static NSString * const kCurrentQRCodeVersion = @"01";
+static NSString * const kCurrentQRCodeVersion = @"02";
+static NSString * const kQRCodeSentinel = @"LU";
 
 @implementation LUQRCodeGenerator
 
 #pragma mark - Public Methods
 
 + (UIImage *)QRCodeFromString:(NSString *)QRString {
-  return [self QRCodeFromString:QRString withTipPercentage:0 glowColorID:0];
+  LUQRCodeGenerator *generator = [[self alloc] initWithBaseString:QRString tipPercentage:0 glowColorID:0];
+
+  return [generator image];
 }
 
 + (UIImage *)QRCodeFromString:(NSString *)QRString withTipPercentage:(NSInteger)tipPercentage {
-  return [self QRCodeFromString:QRString withTipPercentage:tipPercentage glowColorID:0];
+  LUQRCodeGenerator *generator = [[self alloc] initWithBaseString:QRString tipPercentage:tipPercentage glowColorID:0];
+
+  return [generator image];
 }
 
 + (UIImage *)QRCodeFromString:(NSString *)QRString withTipPercentage:(NSInteger)tipPercentage glowColorID:(NSInteger)glowColorID {
+  LUQRCodeGenerator *generator = [[self alloc] initWithBaseString:QRString tipPercentage:tipPercentage glowColorID:glowColorID];
+
+  return [generator image];
+}
+
+- (id)initWithBaseString:(NSString *)baseString tipPercentage:(NSInteger)tipPercentage glowColorID:(NSInteger)glowColorID {
+  self = [super init];
+  if (self) {
+    _baseString = baseString;
+    _glowColorID = glowColorID;
+    _tipPercentage = tipPercentage;
+  }
+  return self;
+}
+
+#pragma mark - Public Methods
+
+- (UIImage *)image {
   NSError *error = nil;
   ZXQRCodeWriter *writer = [[ZXQRCodeWriter alloc] init];
-  ZXBitMatrix *result = [writer encode:[self formattedQRCodeStringWithBaseString:QRString tipPercentage:tipPercentage glowColorID:glowColorID]
+  ZXBitMatrix *result = [writer encode:[self formattedQRCodeString]
                                 format:kBarcodeFormatQRCode
                                  width:500
                                 height:500
@@ -29,41 +52,50 @@ static NSString * const kCurrentQRCodeVersion = @"01";
   return [UIImage imageWithCGImage:[[ZXImage imageWithMatrix:result] cgimage]];
 }
 
-#pragma mark - Private Methods
+#pragma mark - Private
 
-+ (NSString *)formattedQRCodeStringWithBaseString:(NSString *)baseString tipPercentage:(NSInteger)tipPercentage glowColorID:(NSInteger)glowColorID {
-  NSMutableString *QRCodeString = [baseString mutableCopy];
-
-  if ([baseString rangeOfString:@"-"].location == NSNotFound) {
-    [QRCodeString appendString:kCurrentQRCodeVersion];
-    [QRCodeString appendString:kTipTypePercent];
-
-    NSString *tipPercentBase36 = [[NSNumber numberWithInteger:tipPercentage] base36Value];
-    if (tipPercentBase36.length < 2) {
-      [QRCodeString appendFormat:@"0%@", tipPercentBase36];
-    } else if (tipPercentBase36.length > 2) {
-      [QRCodeString appendString:[tipPercentBase36 substringToIndex:2]];
-    } else {
-      [QRCodeString appendString:tipPercentBase36];
-    }
-
-    [QRCodeString appendString:[[[NSNumber numberWithInt:glowColorID] base36Value] substringToIndex:1]];
+- (NSString *)formattedQRCodeString {
+  if ([self isVersion0Code]) {
+    return [self version0Representation];
   } else {
-    NSMutableString *queryString = [NSMutableString string];
-    if (tipPercentage > 0) {
-      [queryString appendFormat:@"-t=%d", tipPercentage];
-    }
-
-    if ([queryString length] > 0) {
-      [queryString appendFormat:@"%%26"];
-    } else {
-      [queryString appendFormat:@"-"];
-    }
-    [queryString appendFormat:@"c=%i", glowColorID];
-
-    [QRCodeString appendString:queryString];
+    return [self version2Representation];
   }
-  return QRCodeString;
+}
+
+- (BOOL)isVersion0Code {
+  return [self.baseString rangeOfString:@"-"].location != NSNotFound;
+}
+
+- (NSString *)glowColorIDBase36 {
+  return [[[NSNumber numberWithInt:self.glowColorID] base36Value] substringToIndex:1];
+}
+
+- (NSString *)tipPercentBase36 {
+  NSString *tipPercentBase36 = [[NSNumber numberWithInteger:self.tipPercentage] base36Value];
+
+  if (tipPercentBase36.length < 2) {
+    return [NSString stringWithFormat:@"0%@", tipPercentBase36];
+  } else if (tipPercentBase36.length > 2) {
+    return [tipPercentBase36 substringToIndex:2];
+  } else {
+    return tipPercentBase36;
+  }
+}
+
+- (NSString *)version0Representation {
+  return [NSString stringWithFormat:@"%@-t=%d%%26c=%i", self.baseString, self.tipPercentage, self.glowColorID];
+}
+
+- (NSString *)version2Representation {
+  NSArray *components = @[
+    self.baseString,
+    kCurrentQRCodeVersion,
+    kTipTypePercent,
+    [self tipPercentBase36],
+    [self glowColorIDBase36],
+    kQRCodeSentinel];
+
+  return [components componentsJoinedByString:@""];
 }
 
 @end
