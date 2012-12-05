@@ -15,6 +15,8 @@
 @property (nonatomic, copy) NSString *type;
 
 + (LUCreditCard *)promotedCardFromCards:(NSArray *)cards;
+- (NSUInteger)hash;
+- (BOOL)isEqual:(id)otherObject;
 - (BOOL)isPromoted;
 - (NSDictionary *)parameters;
 
