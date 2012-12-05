@@ -754,7 +754,10 @@
 				25F643A6166832D600A05C0E /* Frameworks */,
 				25F643A5166832D600A05C0E /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
 		};
 		25F643A5166832D600A05C0E /* Products */ = {
 			isa = PBXGroup;

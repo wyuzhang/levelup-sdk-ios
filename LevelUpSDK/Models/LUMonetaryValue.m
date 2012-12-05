@@ -9,9 +9,9 @@
 + (void)load {
   @autoreleasepool {
     [LUJSONDeserializer registerModel:[self class]
-                    withIdentifiers:@[@"balance", @"credit", @"earn", @"onboarding", @"loyalties_savings",
+                    withIdentifiers:@[@"amount", @"balance", @"credit", @"earn", @"onboarding", @"loyalties_savings",
                                       @"potential_credit", @"savings", @"spend", @"spend_remaining",
-                                      @"tip", @"total", @"value"]];
+                                      @"tip", @"total", @"total_credit_used", @"value"]];
   }
 }
 

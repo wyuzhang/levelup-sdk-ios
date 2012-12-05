@@ -3,13 +3,15 @@
 @interface LUBundle : NSObject
 
 @property (nonatomic, strong) LUMonetaryValue *amount;
-@property (nonatomic, copy) NSString *chargedAt;
-@property (nonatomic, copy) NSString *createdAt;
 @property (nonatomic, copy) NSString *last_4;
 @property (nonatomic, copy) NSString *modelId;
 @property (nonatomic, strong) NSArray *orders;
 @property (nonatomic, strong) NSArray *refunds;
-@property (nonatomic, copy) NSString *state;
-@property (nonatomic, strong) LUMonetaryValue *totalCreditEarned;
+@property (nonatomic, strong) LUMonetaryValue *totalCreditUsed;
+
+- (NSDate *)chargeDate;
+- (NSDate *)creationDate;
+- (BOOL)hasChargeData;
+- (BOOL)isClosed;
 
 @end
