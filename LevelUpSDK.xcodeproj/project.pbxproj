@@ -188,6 +188,8 @@
 		F8A4F35C166F99B6004B696B /* LUBundleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A4F35A166F99B6004B696B /* LUBundleRequest.m */; };
 		F8A4F35F166F99D1004B696B /* LUBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = F8A4F35D166F99D1004B696B /* LUBundle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8A4F360166F99D1004B696B /* LUBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A4F35E166F99D1004B696B /* LUBundle.m */; };
+		F8E319781677908C00D75887 /* LURefund.h in Headers */ = {isa = PBXBuildFile; fileRef = F8E319761677908C00D75887 /* LURefund.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8E319791677908C00D75887 /* LURefund.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E319771677908C00D75887 /* LURefund.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -442,6 +444,8 @@
 		F8A4F35A166F99B6004B696B /* LUBundleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBundleRequest.m; sourceTree = "<group>"; };
 		F8A4F35D166F99D1004B696B /* LUBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUBundle.h; path = Models/LUBundle.h; sourceTree = "<group>"; };
 		F8A4F35E166F99D1004B696B /* LUBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUBundle.m; path = Models/LUBundle.m; sourceTree = "<group>"; };
+		F8E319761677908C00D75887 /* LURefund.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LURefund.h; path = Models/LURefund.h; sourceTree = "<group>"; };
+		F8E319771677908C00D75887 /* LURefund.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LURefund.m; path = Models/LURefund.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -591,6 +595,8 @@
 				257B014516684C5E006ACA24 /* LUOrder.m */,
 				257B014616684C5E006ACA24 /* LUQRCode.h */,
 				257B014716684C5E006ACA24 /* LUQRCode.m */,
+				F8E319761677908C00D75887 /* LURefund.h */,
+				F8E319771677908C00D75887 /* LURefund.m */,
 				257B014816684C5E006ACA24 /* LUTicket.h */,
 				257B014916684C5E006ACA24 /* LUTicket.m */,
 				257B014A16684C5E006ACA24 /* LUUser.h */,
@@ -910,6 +916,7 @@
 				250637AE166B0DFD008CCE9B /* UIImageView+AFNetworking.h in Headers */,
 				F8A4F35B166F99B6004B696B /* LUBundleRequest.h in Headers */,
 				F8A4F35F166F99D1004B696B /* LUBundle.h in Headers */,
+				F8E319781677908C00D75887 /* LURefund.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1185,6 +1192,7 @@
 				250637AF166B0DFD008CCE9B /* UIImageView+AFNetworking.m in Sources */,
 				F8A4F35C166F99B6004B696B /* LUBundleRequest.m in Sources */,
 				F8A4F360166F99D1004B696B /* LUBundle.m in Sources */,
+				F8E319791677908C00D75887 /* LURefund.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

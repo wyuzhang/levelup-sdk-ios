@@ -12,6 +12,9 @@
 - (NSDate *)chargeDate;
 - (NSDate *)creationDate;
 - (BOOL)hasChargeData;
+- (BOOL)hasNonZeroBalance;
+- (BOOL)hasSavings;
 - (BOOL)isClosed;
+- (NSArray *)ordersAndRefunds;
 
 @end

@@ -5,10 +5,16 @@
 #import "LUOrder.h"
 #import "NSDate+StringFormats.h"
 
+@interface LUOrder ()
+
+@property (nonatomic, copy) NSString *createdAt;
+@property (nonatomic, copy) NSString *refundedAt;
+
+@end
+
 @implementation LUOrder
 
-#pragma mark -
-#pragma mark Serialization
+#pragma mark - Serialization
 
 + (void)load {
   @autoreleasepool {
@@ -16,22 +22,28 @@
   }
 }
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 - (NSDate *)creationDate {
   return [NSDate dateFromIso8601DateTimeString:self.createdAt];
 }
 
-#pragma mark -
-#pragma mark Public Methods
-
-- (BOOL)hasDonation {
-  return nil != self.donation && nil != self.donation.value && [self.donation.value.amount floatValue] > 0;
+- (NSDate *)refundDate {
+  return [NSDate dateFromIso8601DateTimeString:self.refundedAt];
 }
 
-- (BOOL)hasEarnCredit {
-  return nil != self.earn && [self.earn.amount floatValue] > 0;
+#pragma mark - Public Methods
+
+- (BOOL)hasDonation {
+  return (self.donation && self.donation.value && [self.donation.value.amount floatValue] > 0);
+}
+
+- (BOOL)hasEarnedCredit {
+  return (self.earn && [self.earn.amount floatValue] > 0);
+}
+
+- (BOOL)wasRefunded {
+  return (self.refundedAt != nil);
 }
 
 @end

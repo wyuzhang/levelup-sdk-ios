@@ -36,8 +36,26 @@
   return (self.chargedAt != nil);
 }
 
+- (BOOL)hasNonZeroBalance {
+  return ([self.amount.amount floatValue] != 0.0f);
+}
+
+- (BOOL)hasSavings {
+  return ([self.totalCreditUsed.amount floatValue] > 0.0f);
+}
+
 - (BOOL)isClosed {
   return [self.state isEqualToString:@"closed"];
+}
+
+- (NSArray *)ordersAndRefunds {
+  NSArray *mergedOrders = [self.orders arrayByAddingObjectsFromArray:self.refunds];
+  return [mergedOrders sortedArrayUsingComparator:^(id a, id b) {
+    NSString *objectACreationDate = [a valueForKey:@"createdAt"];
+    NSString *objectBCreationDate = [b valueForKey:@"createdAt"];
+
+    return [objectBCreationDate compare:objectACreationDate];
+  }];
 }
 
 @end

@@ -13,7 +13,6 @@
 @property (nonatomic, strong) LUMonetaryValue *balance;
 @property (nonatomic, strong) LUBundle *bundle;
 @property (nonatomic, copy) NSString *code;
-@property (nonatomic, copy) NSString *createdAt;
 @property (nonatomic, strong) LUMonetaryValue *credit;
 @property (nonatomic, weak, readonly) NSDate *creationDate;
 @property (nonatomic, strong) LUDonation *donation;
@@ -29,6 +28,7 @@
 @property (nonatomic, strong) LUMonetaryValue *total;
 
 - (BOOL)hasDonation;
-- (BOOL)hasEarnCredit;
+- (BOOL)hasEarnedCredit;
+- (BOOL)wasRefunded;
 
 @end
