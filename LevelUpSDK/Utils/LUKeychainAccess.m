@@ -79,11 +79,7 @@
   query[(__bridge id)kSecClass] = (__bridge id)kSecClassGenericPassword;
 
   NSData *encodedIdentifier = [key dataUsingEncoding:NSUTF8StringEncoding];
-  query[(__bridge id)kSecAttrGeneric] = encodedIdentifier;
   query[(__bridge id)kSecAttrAccount] = encodedIdentifier;
-
-  NSString *serviceName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
-  query[(__bridge id)kSecAttrService] = serviceName;
 
   return query;
 }
