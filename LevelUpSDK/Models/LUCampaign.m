@@ -6,8 +6,7 @@
 
 @implementation LUCampaign
 
-#pragma mark -
-#pragma mark Serialization
+#pragma mark - Serialization
 
 + (void)load {
   @autoreleasepool {
@@ -19,8 +18,7 @@
 #define kCohortTypeDefaultFacebook @"default_facebook"
 #define kCohortTypeDefaultTwitter @"default_twitter"
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (NSString *)creditInformation {
   return [NSString stringWithFormat:@"You've got %@ to spend at %@! That's in addition to any credit you might've already had.",
@@ -95,8 +93,112 @@
   }
 }
 
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - NSObject Methods
+
+- (NSUInteger)hash {
+  NSUInteger total = 0;
+
+  if (self.claimed) {
+    total += [self.claimed intValue] * 11;
+  }
+  if (self.cohorts) {
+    total += [self.cohorts hash] * 13;
+  }
+  if (self.global) {
+    total += [self.global intValue] * 17;
+  }
+  if (self.merchants) {
+    total += [self.merchants hash] * 19;
+  }
+  if (self.mobileImageUrl_320x212_1x) {
+    total += [self.mobileImageUrl_320x212_1x hash] * 21;
+  }
+  if (self.mobileImageUrl_320x212_2x) {
+    total += [self.mobileImageUrl_320x212_2x intValue] * 23;
+  }
+  if (self.modelId) {
+    total += [self.modelId intValue] * 29;
+  }
+  if (self.name) {
+    total += [self.name hash] * 31;
+  }
+  if (self.offerHtml) {
+    total += [self.offerHtml hash] * 37;
+  }
+  if (self.sponsor) {
+    total += [self.sponsor hash] * 41;
+  }
+  if (self.supportEmail) {
+    total += [self.supportEmail hash] * 43;
+  }
+  if (self.value) {
+    total += [self.value hash] * 47;
+  }
+
+  return total;
+}
+
+- (BOOL)isEqual:(id)otherObject {
+  if(otherObject && [otherObject isKindOfClass:[LUCampaign class]]) {
+    LUCampaign *otherCampaign = (LUCampaign *)otherObject;
+
+    BOOL claimedEqual = ((!otherCampaign.claimed && !self.claimed) ||
+        (otherCampaign.claimed && self.claimed &&
+        [otherCampaign.claimed intValue] == [self.claimed intValue]));
+
+    BOOL cohortsEqual = ((!otherCampaign.cohorts && !self.cohorts) ||
+        (otherCampaign.cohorts && self.cohorts &&
+        [otherCampaign.cohorts isEqualToArray:self.cohorts]));
+
+    BOOL globalEqual = ((!otherCampaign.global && !self.global) ||
+        (otherCampaign.global && self.global &&
+        [otherCampaign.global intValue] == [self.global intValue]));
+
+    BOOL merchantsEqual = ((!otherCampaign.merchants && !self.merchants) ||
+        (otherCampaign.merchants && self.merchants &&
+        [otherCampaign.merchants isEqualToArray:self.merchants]));
+
+    BOOL mobileImageUrl_1Equal = ((!otherCampaign.mobileImageUrl_320x212_1x && !self.mobileImageUrl_320x212_1x) ||
+        (otherCampaign.mobileImageUrl_320x212_1x && self.mobileImageUrl_320x212_1x &&
+        [otherCampaign.mobileImageUrl_320x212_1x isEqualToString:self.mobileImageUrl_320x212_1x]));
+
+    BOOL mobileImageUrl_2Equal = ((!otherCampaign.mobileImageUrl_320x212_2x && !self.mobileImageUrl_320x212_2x) ||
+        (otherCampaign.mobileImageUrl_320x212_2x && self.mobileImageUrl_320x212_2x &&
+        [otherCampaign.mobileImageUrl_320x212_2x isEqualToString:self.mobileImageUrl_320x212_2x]));
+
+    BOOL modelIdEqual = ((!otherCampaign.modelId && !self.modelId) ||
+        (otherCampaign.modelId && self.modelId &&
+        [otherCampaign.modelId intValue] == [self.modelId intValue]));
+
+    BOOL nameEqual = ((!otherCampaign.name && !self.name) ||
+        (otherCampaign.name && self.name &&
+        [otherCampaign.name isEqualToString:self.name]));
+
+    BOOL offerHtmlEqual = ((!otherCampaign.offerHtml && !self.offerHtml) ||
+        (otherCampaign.offerHtml && self.offerHtml &&
+        [otherCampaign.offerHtml isEqualToString:self.offerHtml]));
+
+    BOOL sponsorEqual = ((!otherCampaign.sponsor && !self.sponsor) ||
+        (otherCampaign.sponsor && self.sponsor &&
+        [otherCampaign.sponsor isEqualToString:self.sponsor]));
+
+    BOOL supportEmailEqual = ((!otherCampaign.supportEmail && !self.supportEmail) ||
+        (otherCampaign.supportEmail && self.supportEmail &&
+        [otherCampaign.supportEmail isEqualToString:self.supportEmail]));
+
+    BOOL valueEqual = ((!otherCampaign.value && !self.value) ||
+        (otherCampaign.value && self.value &&
+        [otherCampaign.value isEqual:self.value]));
+
+    return claimedEqual && cohortsEqual && globalEqual && merchantsEqual &&
+        mobileImageUrl_1Equal && mobileImageUrl_2Equal && modelIdEqual && nameEqual &&
+        offerHtmlEqual && sponsorEqual && supportEmailEqual && valueEqual;
+  }
+
+  return NO;
+}
+
+#pragma mark - Private Methods
 
 - (LUCohort *)firstCohortOfType:(NSString *)type {
   for (LUCohort *cohort in self.cohorts) {

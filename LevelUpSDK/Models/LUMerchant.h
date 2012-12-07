@@ -8,14 +8,14 @@
 
 @interface LUMerchant : NSObject
 
+@property (nonatomic, copy) NSString *categoryImageUrl_32x32_1x;
+@property (nonatomic, copy) NSString *categoryImageUrl_32x32_2x;
 @property (nonatomic, copy) NSString *description;
 @property (nonatomic, copy) NSString *descriptionHtml;
 @property (nonatomic, strong) LUMonetaryValue *earn;
+@property (nonatomic, strong) LUCohort *emailCaptureCohort;
 @property (nonatomic, copy) NSString *facebookUrl;
 @property (nonatomic, copy) NSNumber *featured;
-@property (nonatomic, copy) NSString *categoryImageUrl_32x32_1x;
-@property (nonatomic, copy) NSString *categoryImageUrl_32x32_2x;
-@property (nonatomic, strong) LUCohort *emailCaptureCohort;
 @property (nonatomic, copy) NSString *imageUrl_280x128_1x;
 @property (nonatomic, copy) NSString *imageUrl_280x128_2x;
 @property (nonatomic, copy) NSArray *locations;

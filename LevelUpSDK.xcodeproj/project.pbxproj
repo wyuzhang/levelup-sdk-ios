@@ -179,6 +179,29 @@
 		257B023016684FE1006ACA24 /* LUQROverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B022816684FE1006ACA24 /* LUQROverlayView.m */; };
 		257B023216685090006ACA24 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B02311668508F006ACA24 /* AVFoundation.framework */; };
 		257B026C166853EA006ACA24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B026B166853EA006ACA24 /* UIKit.framework */; };
+		25AD5E45167E672A00E43701 /* LUApnDeviceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E2E167E672A00E43701 /* LUApnDeviceSpec.m */; };
+		25AD5E46167E672A00E43701 /* LUBundleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E2F167E672A00E43701 /* LUBundleSpec.m */; };
+		25AD5E47167E672A00E43701 /* LUCampaignSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E30167E672A00E43701 /* LUCampaignSpec.m */; };
+		25AD5E48167E672A00E43701 /* LUCategorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E31167E672A00E43701 /* LUCategorySpec.m */; };
+		25AD5E49167E672A00E43701 /* LUCauseCategorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E32167E672A00E43701 /* LUCauseCategorySpec.m */; };
+		25AD5E4A167E672A00E43701 /* LUCauseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E33167E672A00E43701 /* LUCauseSpec.m */; };
+		25AD5E4B167E672A00E43701 /* LUClaimSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E34167E672A00E43701 /* LUClaimSpec.m */; };
+		25AD5E4C167E672A00E43701 /* LUCohortSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E35167E672A00E43701 /* LUCohortSpec.m */; };
+		25AD5E4D167E672A00E43701 /* LUCreditCardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E36167E672A00E43701 /* LUCreditCardSpec.m */; };
+		25AD5E4E167E672A00E43701 /* LUDivisionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E37167E672A00E43701 /* LUDivisionSpec.m */; };
+		25AD5E4F167E672A00E43701 /* LUDonationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E38167E672A00E43701 /* LUDonationSpec.m */; };
+		25AD5E50167E672A00E43701 /* LUInterstitialActionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E39167E672A00E43701 /* LUInterstitialActionSpec.m */; };
+		25AD5E51167E672A00E43701 /* LULocationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E3A167E672A00E43701 /* LULocationSpec.m */; };
+		25AD5E52167E672A00E43701 /* LULoyaltySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E3B167E672A00E43701 /* LULoyaltySpec.m */; };
+		25AD5E53167E672A00E43701 /* LUMerchandiseOrderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E3C167E672A00E43701 /* LUMerchandiseOrderSpec.m */; };
+		25AD5E54167E672A00E43701 /* LUMerchantSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E3D167E672A00E43701 /* LUMerchantSpec.m */; };
+		25AD5E55167E672A00E43701 /* LUMonetaryValueSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E3E167E672A00E43701 /* LUMonetaryValueSpec.m */; };
+		25AD5E56167E672A00E43701 /* LUOAuthTokenSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E3F167E672A00E43701 /* LUOAuthTokenSpec.m */; };
+		25AD5E57167E672A00E43701 /* LUOrderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E40167E672A00E43701 /* LUOrderSpec.m */; };
+		25AD5E58167E672A00E43701 /* LUQRCodeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E41167E672A00E43701 /* LUQRCodeSpec.m */; };
+		25AD5E59167E672A00E43701 /* LUTicketSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E42167E672A00E43701 /* LUTicketSpec.m */; };
+		25AD5E5A167E672A00E43701 /* LUUserAddressSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E43167E672A00E43701 /* LUUserAddressSpec.m */; };
+		25AD5E5B167E672A00E43701 /* LUUserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E44167E672A00E43701 /* LUUserSpec.m */; };
 		25F643A8166832D600A05C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A7166832D600A05C0E /* Foundation.framework */; };
 		25F643B7166832D600A05C0E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643B6166832D600A05C0E /* SenTestingKit.framework */; };
 		25F643BA166832D600A05C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A7166832D600A05C0E /* Foundation.framework */; };
@@ -432,6 +455,30 @@
 		257B022816684FE1006ACA24 /* LUQROverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUQROverlayView.m; sourceTree = "<group>"; };
 		257B02311668508F006ACA24 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		257B026B166853EA006ACA24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		25AD5E2C167E655400E43701 /* LevelUpSDKTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LevelUpSDKTests-Prefix.pch"; sourceTree = "<group>"; };
+		25AD5E2E167E672A00E43701 /* LUApnDeviceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUApnDeviceSpec.m; sourceTree = "<group>"; };
+		25AD5E2F167E672A00E43701 /* LUBundleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBundleSpec.m; sourceTree = "<group>"; };
+		25AD5E30167E672A00E43701 /* LUCampaignSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCampaignSpec.m; sourceTree = "<group>"; };
+		25AD5E31167E672A00E43701 /* LUCategorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCategorySpec.m; sourceTree = "<group>"; };
+		25AD5E32167E672A00E43701 /* LUCauseCategorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCauseCategorySpec.m; sourceTree = "<group>"; };
+		25AD5E33167E672A00E43701 /* LUCauseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCauseSpec.m; sourceTree = "<group>"; };
+		25AD5E34167E672A00E43701 /* LUClaimSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUClaimSpec.m; sourceTree = "<group>"; };
+		25AD5E35167E672A00E43701 /* LUCohortSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCohortSpec.m; sourceTree = "<group>"; };
+		25AD5E36167E672A00E43701 /* LUCreditCardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCreditCardSpec.m; sourceTree = "<group>"; };
+		25AD5E37167E672A00E43701 /* LUDivisionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDivisionSpec.m; sourceTree = "<group>"; };
+		25AD5E38167E672A00E43701 /* LUDonationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDonationSpec.m; sourceTree = "<group>"; };
+		25AD5E39167E672A00E43701 /* LUInterstitialActionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialActionSpec.m; sourceTree = "<group>"; };
+		25AD5E3A167E672A00E43701 /* LULocationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationSpec.m; sourceTree = "<group>"; };
+		25AD5E3B167E672A00E43701 /* LULoyaltySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULoyaltySpec.m; sourceTree = "<group>"; };
+		25AD5E3C167E672A00E43701 /* LUMerchandiseOrderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUMerchandiseOrderSpec.m; sourceTree = "<group>"; };
+		25AD5E3D167E672A00E43701 /* LUMerchantSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUMerchantSpec.m; sourceTree = "<group>"; };
+		25AD5E3E167E672A00E43701 /* LUMonetaryValueSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUMonetaryValueSpec.m; sourceTree = "<group>"; };
+		25AD5E3F167E672A00E43701 /* LUOAuthTokenSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOAuthTokenSpec.m; sourceTree = "<group>"; };
+		25AD5E40167E672A00E43701 /* LUOrderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderSpec.m; sourceTree = "<group>"; };
+		25AD5E41167E672A00E43701 /* LUQRCodeSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUQRCodeSpec.m; sourceTree = "<group>"; };
+		25AD5E42167E672A00E43701 /* LUTicketSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUTicketSpec.m; sourceTree = "<group>"; };
+		25AD5E43167E672A00E43701 /* LUUserAddressSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserAddressSpec.m; sourceTree = "<group>"; };
+		25AD5E44167E672A00E43701 /* LUUserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserSpec.m; sourceTree = "<group>"; };
 		25F643A4166832D600A05C0E /* libLevelUpSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLevelUpSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F643A7166832D600A05C0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		25F643AB166832D600A05C0E /* LevelUpSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LevelUpSDK-Prefix.pch"; sourceTree = "<group>"; };
@@ -752,6 +799,36 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		25AD5E2D167E672A00E43701 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				25AD5E2E167E672A00E43701 /* LUApnDeviceSpec.m */,
+				25AD5E2F167E672A00E43701 /* LUBundleSpec.m */,
+				25AD5E30167E672A00E43701 /* LUCampaignSpec.m */,
+				25AD5E31167E672A00E43701 /* LUCategorySpec.m */,
+				25AD5E32167E672A00E43701 /* LUCauseCategorySpec.m */,
+				25AD5E33167E672A00E43701 /* LUCauseSpec.m */,
+				25AD5E34167E672A00E43701 /* LUClaimSpec.m */,
+				25AD5E35167E672A00E43701 /* LUCohortSpec.m */,
+				25AD5E36167E672A00E43701 /* LUCreditCardSpec.m */,
+				25AD5E37167E672A00E43701 /* LUDivisionSpec.m */,
+				25AD5E38167E672A00E43701 /* LUDonationSpec.m */,
+				25AD5E39167E672A00E43701 /* LUInterstitialActionSpec.m */,
+				25AD5E3A167E672A00E43701 /* LULocationSpec.m */,
+				25AD5E3B167E672A00E43701 /* LULoyaltySpec.m */,
+				25AD5E3C167E672A00E43701 /* LUMerchandiseOrderSpec.m */,
+				25AD5E3D167E672A00E43701 /* LUMerchantSpec.m */,
+				25AD5E3E167E672A00E43701 /* LUMonetaryValueSpec.m */,
+				25AD5E3F167E672A00E43701 /* LUOAuthTokenSpec.m */,
+				25AD5E40167E672A00E43701 /* LUOrderSpec.m */,
+				25AD5E41167E672A00E43701 /* LUQRCodeSpec.m */,
+				25AD5E42167E672A00E43701 /* LUTicketSpec.m */,
+				25AD5E43167E672A00E43701 /* LUUserAddressSpec.m */,
+				25AD5E44167E672A00E43701 /* LUUserSpec.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		25F64399166832D600A05C0E = {
 			isa = PBXGroup;
 			children = (
@@ -824,6 +901,7 @@
 		25F643BE166832D600A05C0E /* LevelUpSDKTests */ = {
 			isa = PBXGroup;
 			children = (
+				25AD5E2D167E672A00E43701 /* Models */,
 				022B2854166E518100679E06 /* QRCode Management */,
 				25F643BF166832D600A05C0E /* Supporting Files */,
 			);
@@ -834,6 +912,7 @@
 			isa = PBXGroup;
 			children = (
 				25F643C0166832D600A05C0E /* LevelUpSDKTests-Info.plist */,
+				25AD5E2C167E655400E43701 /* LevelUpSDKTests-Prefix.pch */,
 				25F643C1166832D600A05C0E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -1201,6 +1280,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				022B2856166E519800679E06 /* LUQRCodeGeneratorSpec.m in Sources */,
+				25AD5E45167E672A00E43701 /* LUApnDeviceSpec.m in Sources */,
+				25AD5E46167E672A00E43701 /* LUBundleSpec.m in Sources */,
+				25AD5E47167E672A00E43701 /* LUCampaignSpec.m in Sources */,
+				25AD5E48167E672A00E43701 /* LUCategorySpec.m in Sources */,
+				25AD5E49167E672A00E43701 /* LUCauseCategorySpec.m in Sources */,
+				25AD5E4A167E672A00E43701 /* LUCauseSpec.m in Sources */,
+				25AD5E4B167E672A00E43701 /* LUClaimSpec.m in Sources */,
+				25AD5E4C167E672A00E43701 /* LUCohortSpec.m in Sources */,
+				25AD5E4D167E672A00E43701 /* LUCreditCardSpec.m in Sources */,
+				25AD5E4E167E672A00E43701 /* LUDivisionSpec.m in Sources */,
+				25AD5E4F167E672A00E43701 /* LUDonationSpec.m in Sources */,
+				25AD5E50167E672A00E43701 /* LUInterstitialActionSpec.m in Sources */,
+				25AD5E51167E672A00E43701 /* LULocationSpec.m in Sources */,
+				25AD5E52167E672A00E43701 /* LULoyaltySpec.m in Sources */,
+				25AD5E53167E672A00E43701 /* LUMerchandiseOrderSpec.m in Sources */,
+				25AD5E54167E672A00E43701 /* LUMerchantSpec.m in Sources */,
+				25AD5E55167E672A00E43701 /* LUMonetaryValueSpec.m in Sources */,
+				25AD5E56167E672A00E43701 /* LUOAuthTokenSpec.m in Sources */,
+				25AD5E57167E672A00E43701 /* LUOrderSpec.m in Sources */,
+				25AD5E58167E672A00E43701 /* LUQRCodeSpec.m in Sources */,
+				25AD5E59167E672A00E43701 /* LUTicketSpec.m in Sources */,
+				25AD5E5A167E672A00E43701 /* LUUserAddressSpec.m in Sources */,
+				25AD5E5B167E672A00E43701 /* LUUserSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1419,7 +1521,7 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LevelUpSDK/LevelUpSDK-Prefix.pch";
+				GCC_PREFIX_HEADER = "LevelUpSDKTests/LevelUpSDKTests-Prefix.pch";
 				INFOPLIST_FILE = "LevelUpSDKTests/LevelUpSDKTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1440,7 +1542,7 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LevelUpSDK/LevelUpSDK-Prefix.pch";
+				GCC_PREFIX_HEADER = "LevelUpSDKTests/LevelUpSDKTests-Prefix.pch";
 				INFOPLIST_FILE = "LevelUpSDKTests/LevelUpSDKTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
