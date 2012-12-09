@@ -42,4 +42,13 @@
   return [[self alloc] initWithURLRequest:urlRequest];
 }
 
+- (NSUInteger)hash {
+  return self.urlRequest.hash;
+}
+
+- (BOOL)isEqual:(id)object {
+  return [object isKindOfClass:[self class]] &&
+    [[(LUAPIRequest *)object urlRequest] isEqual:self.urlRequest];
+}
+
 @end
