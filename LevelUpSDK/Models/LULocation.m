@@ -30,7 +30,7 @@
 }
 
 - (NSString *)fullStreetAddress {
-  if (nil != self.extendedAddress) {
+  if (self.extendedAddress.length > 0) {
     return [NSString stringWithFormat:@"%@, %@", self.streetAddress, self.extendedAddress];
   }
 
