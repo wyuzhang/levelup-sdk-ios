@@ -49,7 +49,9 @@ static NSString * const kQRCodeSentinel = @"LU";
                                 height:500
                                  error:&error];
 
-  return [UIImage imageWithCGImage:[[ZXImage imageWithMatrix:result] cgimage]];
+  return [[UIImage alloc] initWithCGImage:[[ZXImage imageWithMatrix:result] cgimage]
+                                    scale:1.0
+                              orientation:UIImageOrientationDown];
 }
 
 #pragma mark - Private
