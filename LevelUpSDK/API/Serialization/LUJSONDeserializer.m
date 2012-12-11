@@ -14,7 +14,11 @@ static NSMutableDictionary *registeredModels;
 
     return parsed;
   } else if ([JSON isKindOfClass:[NSDictionary class]]) {
-    if ([JSON count] == 1 && registeredModels[[JSON allKeys][0]]) {
+    if ([JSON count] == 1) {
+      if (!registeredModels[[JSON allKeys][0]]) {
+        return [JSON allValues][0];
+      }
+
       Class modelClass = NSClassFromString(registeredModels[[JSON allKeys][0]]);
       id model = [[modelClass alloc] init];
 

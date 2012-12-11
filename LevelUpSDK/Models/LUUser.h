@@ -13,6 +13,7 @@
 @property (nonatomic, strong) LUCause *cause;
 @property (nonatomic, copy) NSNumber *causeId;
 @property (nonatomic, strong) LUMonetaryValue *credit;
+@property (nonatomic, copy) NSDictionary *customAttributes;
 @property (nonatomic, copy, readonly) NSString *deviceIdentifier;
 @property (nonatomic, strong) LUDivision *division;
 @property (nonatomic, copy) NSNumber *divisionId;

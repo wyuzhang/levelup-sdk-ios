@@ -121,9 +121,9 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
   NSMutableDictionary *params = [NSMutableDictionary dictionary];
 
   [params addEntriesFromDictionary:
-   [LUDictionarySerializer parametersForModel:self withNonBlankAttributesNamed:@[@"bornAt", @"deviceIdentifier",
-    @"divisionId", @"email", @"employer", @"firstName", @"gender", @"lastName", @"lat", @"lng", @"percentDonation",
-    @"promotionCode", @"subscribed", @"termsAcceptedAt"]]];
+   [LUDictionarySerializer parametersForModel:self withNonBlankAttributesNamed:@[@"bornAt", @"customAttributes",
+    @"deviceIdentifier", @"divisionId", @"email", @"employer", @"firstName", @"gender", @"lastName", @"lat", @"lng",
+    @"percentDonation", @"promotionCode", @"subscribed", @"termsAcceptedAt"]]];
 
   if (self.newPassword.length > 0) {
     params[@"new_password"] = self.newPassword;
