@@ -44,6 +44,7 @@
 @property (nonatomic, copy) NSNumber *xUserId;
 
 - (NSInteger)ageInYears;
+- (BOOL)hasValidQRCode;
 - (LUUserAddress *)homeAddress;
 - (BOOL)isAbleToRefer;
 - (BOOL)isPaymentEligible;

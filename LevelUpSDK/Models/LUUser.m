@@ -95,16 +95,8 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
   }
 }
 
-- (BOOL)isAbleToRefer {
-  return ((nil != self.ableToRefer && [self.ableToRefer boolValue]) || nil == self.ableToRefer);
-}
-
-- (BOOL)isPaymentEligible {
-  return [self.paymentEligible boolValue];
-}
-
-- (BOOL)isSubscribed {
-  return [self.subscribed boolValue];
+- (BOOL)hasValidQRCode {
+  return [self isPaymentEligible] && self.qrCode.data.length > 0;
 }
 
 - (LUUserAddress *)homeAddress {
@@ -117,6 +109,18 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
   }
 
   return nil;
+}
+
+- (BOOL)isAbleToRefer {
+  return ((nil != self.ableToRefer && [self.ableToRefer boolValue]) || nil == self.ableToRefer);
+}
+
+- (BOOL)isPaymentEligible {
+  return [self.paymentEligible boolValue];
+}
+
+- (BOOL)isSubscribed {
+  return [self.subscribed boolValue];
 }
 
 - (NSDictionary *)parameters {
