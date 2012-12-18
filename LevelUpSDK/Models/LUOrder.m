@@ -39,11 +39,27 @@
 #pragma mark - Public Methods
 
 - (BOOL)hasDonation {
-  return (self.donation && self.donation.value && [self.donation.value.amount floatValue] > 0);
+  return (self.donation && self.donation.value && [self.donation.value.amount floatValue] > 0.0f);
 }
 
 - (BOOL)hasEarnedCredit {
-  return (self.earn && [self.earn.amount floatValue] > 0);
+  return (self.earn && [self.earn.amount floatValue] > 0.0f);
+}
+
+- (BOOL)hasNonZeroBalance {
+  return ([self.balance.amount floatValue] != 0.0f);
+}
+
+- (BOOL)hasTipApplied {
+  return ([self.tip.amount floatValue] > 0.0f);
+}
+
+- (BOOL)hasUsedCredit {
+  return ([self.credit.amount floatValue] > 0.0f);
+}
+
+- (BOOL)isClosed {
+  return ![self.state isEqualToString:@"pending"];
 }
 
 - (BOOL)wasRefunded {

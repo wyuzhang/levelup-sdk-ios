@@ -12,7 +12,9 @@
 @property (nonatomic, readonly) float progress;
 @property (nonatomic, copy) NSNumber *progressPercent;
 @property (nonatomic, strong) LUMonetaryValue *savings;
+@property (nonatomic, strong) LUMonetaryValue *shouldSpend;
 @property (nonatomic, strong) LUMonetaryValue *spendRemaining;
+@property (nonatomic, strong) LUMonetaryValue *willEarn;
 
 - (BOOL)isOnboardingEligible;
 

@@ -47,7 +47,7 @@
 }
 
 - (BOOL)isLoyaltyEnabled {
-  return [self.loyaltyEnabled boolValue] && (nil != self.loyalty);
+  return [self.loyaltyEnabled boolValue];
 }
 
 - (LULocation *)locationNearestTo:(CLLocation *)location {

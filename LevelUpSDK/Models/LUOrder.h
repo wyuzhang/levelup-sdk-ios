@@ -29,6 +29,10 @@
 
 - (BOOL)hasDonation;
 - (BOOL)hasEarnedCredit;
+- (BOOL)hasNonZeroBalance;
+- (BOOL)hasTipApplied;
+- (BOOL)hasUsedCredit;
+- (BOOL)isClosed;
 - (BOOL)wasRefunded;
 
 @end
