@@ -39,6 +39,8 @@
 		022B2898166E59DA00679E06 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B2893166E575400679E06 /* CoreMedia.framework */; };
 		022B2899166E59DF00679E06 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B2891166E574B00679E06 /* QuartzCore.framework */; };
 		022B289A166E59E300679E06 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B288F166E573D00679E06 /* CoreLocation.framework */; };
+		02ED9BEA1688DA5600DFC994 /* NSString+HTMLStripping.h in Headers */ = {isa = PBXBuildFile; fileRef = 02ED9BE81688DA5600DFC994 /* NSString+HTMLStripping.h */; };
+		02ED9BEB1688DA5600DFC994 /* NSString+HTMLStripping.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED9BE91688DA5600DFC994 /* NSString+HTMLStripping.m */; };
 		2506379D166B0DFD008CCE9B /* AFHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 25063757166B0DFD008CCE9B /* AFHTTPClient.h */; };
 		2506379E166B0DFD008CCE9B /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 25063758166B0DFD008CCE9B /* AFHTTPClient.m */; };
 		2506379F166B0DFD008CCE9B /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 25063759166B0DFD008CCE9B /* AFHTTPRequestOperation.h */; };
@@ -315,6 +317,8 @@
 		022B2891166E574B00679E06 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		022B2893166E575400679E06 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		022B2895166E575700679E06 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		02ED9BE81688DA5600DFC994 /* NSString+HTMLStripping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTMLStripping.h"; sourceTree = "<group>"; };
+		02ED9BE91688DA5600DFC994 /* NSString+HTMLStripping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTMLStripping.m"; sourceTree = "<group>"; };
 		25063757166B0DFD008CCE9B /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		25063758166B0DFD008CCE9B /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		25063759166B0DFD008CCE9B /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -750,6 +754,8 @@
 				257B01C616684D69006ACA24 /* NSNumber+Base36.m */,
 				257B01C716684D69006ACA24 /* NSString+Escaping.h */,
 				257B01C816684D69006ACA24 /* NSString+Escaping.m */,
+				02ED9BE81688DA5600DFC994 /* NSString+HTMLStripping.h */,
+				02ED9BE91688DA5600DFC994 /* NSString+HTMLStripping.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -996,6 +1002,7 @@
 				F8A4F35B166F99B6004B696B /* LUBundleRequest.h in Headers */,
 				F8A4F35F166F99D1004B696B /* LUBundle.h in Headers */,
 				F8E319781677908C00D75887 /* LURefund.h in Headers */,
+				02ED9BEA1688DA5600DFC994 /* NSString+HTMLStripping.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1272,6 +1279,7 @@
 				F8A4F35C166F99B6004B696B /* LUBundleRequest.m in Sources */,
 				F8A4F360166F99D1004B696B /* LUBundle.m in Sources */,
 				F8E319791677908C00D75887 /* LURefund.m in Sources */,
+				02ED9BEB1688DA5600DFC994 /* NSString+HTMLStripping.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

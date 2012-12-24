@@ -7,6 +7,7 @@
 
 @property (nonatomic, copy) NSNumber *claimed;
 @property (nonatomic, copy) NSArray *cohorts;
+@property (nonatomic, copy) NSString *confirmationHtml;
 @property (nonatomic, copy) NSNumber *global;
 @property (nonatomic, copy) NSArray *merchants;
 @property (nonatomic, copy) NSString *mobileImageUrl_320x212_1x;
@@ -18,6 +19,7 @@
 @property (nonatomic, copy) NSString *supportEmail;
 @property (nonatomic, strong) LUMonetaryValue *value;
 
+- (NSString *)confirmationText;
 - (NSString *)creditInformation;
 - (LUCohort *)emailCohort;
 - (LUCohort *)facebookCohort;
@@ -25,6 +27,9 @@
 - (BOOL)isClaimed;
 - (BOOL)isGlobal;
 - (NSString *)mobileImageUrl;
+- (NSString *)offerText;
+- (NSString *)successfulClaimMessageHtml;
+- (NSString *)successfulClaimMessageText;
 - (LUCohort *)twitterCohort;
 - (NSString *)unlockedString;
 

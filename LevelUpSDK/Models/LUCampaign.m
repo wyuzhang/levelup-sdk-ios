@@ -2,6 +2,7 @@
 #import "LUCohort.h"
 #import "LUJSONDeserializer.h"
 #import "LUMonetaryValue.h"
+#import "NSString+HTMLStripping.h"
 #import <UIKit/UIKit.h>
 
 @implementation LUCampaign
@@ -19,6 +20,10 @@
 #define kCohortTypeDefaultTwitter @"default_twitter"
 
 #pragma mark - Public Methods
+
+- (NSString *)confirmationText {
+  return [self.confirmationHtml stringByStrippingHTML];
+}
 
 - (NSString *)creditInformation {
   return [NSString stringWithFormat:@"You've got %@ to spend at %@! That's in addition to any credit you might've already had.",
@@ -79,6 +84,22 @@
   return [self valueForKey:[NSString stringWithFormat:@"mobileImageUrl_320x212_%dx", (int)[UIScreen mainScreen].scale]];
 }
 
+- (NSString *)offerText {
+  return [self.offerHtml stringByStrippingHTML];
+}
+
+- (NSString *)successfulClaimMessageHtml {
+  if (self.confirmationHtml.length > 0) {
+    return self.confirmationHtml;
+  } else {
+    return self.offerHtml;
+  }
+}
+
+- (NSString *)successfulClaimMessageText {
+  return [[self successfulClaimMessageHtml] stringByStrippingHTML];
+}
+
 - (LUCohort *)twitterCohort {
   return [self firstCohortOfType:kCohortTypeDefaultTwitter];
 }
@@ -104,35 +125,38 @@
   if (self.cohorts) {
     total += [self.cohorts hash] * 13;
   }
+  if (self.confirmationHtml) {
+    total += [self.confirmationHtml hash] * 17;
+  }
   if (self.global) {
-    total += [self.global intValue] * 17;
+    total += [self.global intValue] * 19;
   }
   if (self.merchants) {
-    total += [self.merchants hash] * 19;
+    total += [self.merchants hash] * 21;
   }
   if (self.mobileImageUrl_320x212_1x) {
-    total += [self.mobileImageUrl_320x212_1x hash] * 21;
+    total += [self.mobileImageUrl_320x212_1x hash] * 23;
   }
   if (self.mobileImageUrl_320x212_2x) {
-    total += [self.mobileImageUrl_320x212_2x intValue] * 23;
+    total += [self.mobileImageUrl_320x212_2x intValue] * 29;
   }
   if (self.modelId) {
-    total += [self.modelId intValue] * 29;
+    total += [self.modelId intValue] * 31;
   }
   if (self.name) {
-    total += [self.name hash] * 31;
+    total += [self.name hash] * 37;
   }
   if (self.offerHtml) {
-    total += [self.offerHtml hash] * 37;
+    total += [self.offerHtml hash] * 41;
   }
   if (self.sponsor) {
-    total += [self.sponsor hash] * 41;
+    total += [self.sponsor hash] * 43;
   }
   if (self.supportEmail) {
-    total += [self.supportEmail hash] * 43;
+    total += [self.supportEmail hash] * 47;
   }
   if (self.value) {
-    total += [self.value hash] * 47;
+    total += [self.value hash] * 53;
   }
 
   return total;
@@ -149,6 +173,10 @@
     BOOL cohortsEqual = ((!otherCampaign.cohorts && !self.cohorts) ||
         (otherCampaign.cohorts && self.cohorts &&
         [otherCampaign.cohorts isEqualToArray:self.cohorts]));
+
+    BOOL confirmationHtmlEqual = ((!otherCampaign.confirmationHtml && !self.confirmationHtml) ||
+        (otherCampaign.confirmationHtml && self.confirmationHtml &&
+        [otherCampaign.confirmationHtml isEqualToString:self.confirmationHtml]));
 
     BOOL globalEqual = ((!otherCampaign.global && !self.global) ||
         (otherCampaign.global && self.global &&
@@ -190,7 +218,7 @@
         (otherCampaign.value && self.value &&
         [otherCampaign.value isEqual:self.value]));
 
-    return claimedEqual && cohortsEqual && globalEqual && merchantsEqual &&
+    return claimedEqual && cohortsEqual && confirmationHtmlEqual && globalEqual && merchantsEqual &&
         mobileImageUrl_1Equal && mobileImageUrl_2Equal && modelIdEqual && nameEqual &&
         offerHtmlEqual && sponsorEqual && supportEmailEqual && valueEqual;
   }
