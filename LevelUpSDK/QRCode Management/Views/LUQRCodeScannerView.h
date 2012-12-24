@@ -5,6 +5,7 @@
 
 @interface LUQRCodeScannerView : UIView <AVCaptureVideoDataOutputSampleBufferDelegate>
 
+@property (assign) UIColor *crossHairsColor;
 @property (weak) id<LUQRCodeScannerViewDelegate> delegate;
 
 - (void)clearSession;

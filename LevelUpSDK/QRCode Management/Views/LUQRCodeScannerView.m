@@ -55,6 +55,16 @@ static NSInteger const kFramesPerCapture = 2;
   }
 }
 
+#pragma mark - Properties
+
+- (UIColor *)crossHairsColor {
+  return self.overlayView.crossHairsColor;
+}
+
+- (void)setCrossHairsColor:(UIColor *)crossHairsColor {
+  self.overlayView.crossHairsColor = crossHairsColor;
+}
+
 #pragma mark - Private Methods
 
 - (void)createCaptureSession {

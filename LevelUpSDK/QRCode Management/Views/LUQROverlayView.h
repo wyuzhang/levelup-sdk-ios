@@ -2,8 +2,9 @@
 
 @interface LUQROverlayView : UIView
 
+@property (nonatomic, readonly) CGRect cropRect;
+@property (nonatomic, strong) UIColor *crossHairsColor;
 @property (nonatomic, weak) UIImage *image;
 @property (nonatomic, strong) NSArray *points;
-@property (nonatomic, readonly) CGRect cropRect;
 
 @end

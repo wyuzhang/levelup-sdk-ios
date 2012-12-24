@@ -21,6 +21,7 @@ static const CGFloat kCropWidth = 240.0f;
 
   if (nil != self) {
     self.backgroundColor = [UIColor clearColor];
+    self.crossHairsColor = [UIColor colorWithRed:30.0f/255.0f green:187.0f/255.0f blue:243.0f/255.0f alpha:1.0f];
   }
 
   return self;
@@ -38,6 +39,12 @@ static const CGFloat kCropWidth = 240.0f;
 
 - (UIImage *)image {
   return self.imageView.image;
+}
+
+- (void)setCrossHairsColor:(UIColor *)crossHairsColor {
+  _crossHairsColor = crossHairsColor;
+
+  [self setNeedsDisplay];
 }
 
 - (void)setImage:(UIImage *)image {
@@ -109,7 +116,7 @@ static const CGFloat kCropWidth = 240.0f;
   CGContextFillRect(c, rect);
   CGContextClearRect(c, CGRectInset(cropRect, -1.5f, -1.5f));
 
-  CGContextSetStrokeColorWithColor(c, [UIColor colorWithRed:30.0f/255.0f green:187.0f/255.0f blue:243.0f/255.0f alpha:1.0f].CGColor);
+  CGContextSetStrokeColorWithColor(c, self.crossHairsColor.CGColor);
   CGContextSetLineWidth(c, 3);
   [self drawRect:cropRect inContext:c];
 
