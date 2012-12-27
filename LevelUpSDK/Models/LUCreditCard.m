@@ -17,7 +17,11 @@
 #pragma mark - Public Methods
 
 - (NSString *)displayNumber {
-  return [@"*" stringByAppendingString:self.last_4];
+  if (self.last_4) {
+    return [@"*" stringByAppendingString:self.last_4];
+  } else {
+    return nil;
+  }
 }
 
 - (NSDictionary *)parameters {
@@ -59,32 +63,29 @@
   if (self.description) {
     total += [self.description hash] * 13;
   }
-  if (self.displayNumber) {
-    total += [self.displayNumber hash] * 17;
-  }
   if (self.expirationMonth) {
-    total += [self.expirationMonth intValue] * 19;
+    total += [self.expirationMonth intValue] * 17;
   }
   if (self.expirationYear) {
-    total += [self.expirationYear intValue] * 23;
+    total += [self.expirationYear intValue] * 19;
   }
   if (self.last_4) {
-    total += [self.last_4 hash] * 29;
+    total += [self.last_4 hash] * 23;
   }
   if (self.modelId) {
-    total += [self.modelId intValue] * 31;
+    total += [self.modelId intValue] * 29;
   }
   if (self.number) {
-    total += [self.number hash] * 37;
+    total += [self.number hash] * 31;
   }
   if (self.postalCode) {
-    total += [self.postalCode hash] * 41;
+    total += [self.postalCode hash] * 37;
   }
   if (self.promoted) {
-    total += [self.promoted intValue] * 43;
+    total += [self.promoted intValue] * 41;
   }
   if (self.type) {
-    total += [self.type hash] * 47;
+    total += [self.type hash] * 43;
   }
 
   return total;
@@ -101,10 +102,6 @@
     BOOL descriptionEqual = ((!otherCreditCard.description && !self.description) ||
         (otherCreditCard.description && self.description &&
         [otherCreditCard.description isEqualToString:self.description]));
-
-    BOOL displayNumberEqual = ((!otherCreditCard.displayNumber && !self.displayNumber) ||
-        (otherCreditCard.displayNumber && self.displayNumber &&
-        [otherCreditCard.displayNumber isEqualToString:self.displayNumber]));
 
     BOOL expirationMonthEqual = ((!otherCreditCard.expirationMonth && !self.expirationMonth) ||
         (otherCreditCard.expirationMonth && self.expirationMonth &&
@@ -138,7 +135,7 @@
         (otherCreditCard.type && self.type &&
         [otherCreditCard.type isEqualToString:self.type]));
 
-    return cvvEqual && descriptionEqual && displayNumberEqual && expirationMonthEqual &&
+    return cvvEqual && descriptionEqual && expirationMonthEqual &&
         expirationYearEqual && last_4Equal && modelIdEqual && numberEqual &&
         postalCodeEqual && promotedEqual && typeEqual;
   }
