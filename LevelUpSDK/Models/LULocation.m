@@ -43,29 +43,32 @@
   if (self.extendedAddress) {
     total += [self.extendedAddress hash] * 11;
   }
+  if (self.hours) {
+    total += [self.hours intValue] * 13;
+  }
   if (self.lat) {
-    total += [self.lat intValue] * 13;
+    total += [self.lat intValue] * 17;
   }
   if (self.locality) {
-    total += [self.locality hash] * 17;
+    total += [self.locality hash] * 23;
   }
   if (self.lng) {
-    total += [self.lng intValue] * 23;
+    total += [self.lng intValue] * 29;
   }
   if (self.modelId) {
-    total += [self.modelId intValue] * 29;
+    total += [self.modelId intValue] * 31;
   }
   if (self.phone) {
-    total += [self.phone hash] * 31;
+    total += [self.phone hash] * 37;
   }
   if (self.postalCode) {
-    total += [self.postalCode hash] * 37;
+    total += [self.postalCode hash] * 41;
   }
   if (self.region) {
-    total += [self.region hash] * 41;
+    total += [self.region hash] * 47;
   }
   if (self.streetAddress) {
-    total += [self.streetAddress hash] * 47;
+    total += [self.streetAddress hash] * 53;
   }
 
   return total;
@@ -78,6 +81,10 @@
     BOOL extendedAddressEqual = ((!otherLocation.extendedAddress && !self.extendedAddress) ||
         (otherLocation.extendedAddress && self.extendedAddress &&
         [otherLocation.extendedAddress isEqualToString:self.extendedAddress]));
+
+    BOOL hoursEqual = ((!otherLocation.hours && !self.hours) ||
+        (otherLocation.hours && self.hours &&
+        [otherLocation.hours isEqualToString:self.hours]));
 
     BOOL latEqual = ((!otherLocation.lat && !self.lat) ||
         (otherLocation.lat && self.lat &&
@@ -111,7 +118,7 @@
         (otherLocation.streetAddress && self.streetAddress &&
         [otherLocation.streetAddress isEqualToString:self.streetAddress]));
 
-    return extendedAddressEqual && latEqual && localityEqual && lngEqual &&
+    return extendedAddressEqual && hoursEqual && latEqual && localityEqual && lngEqual &&
         modelIdEqual && phoneEqual && postalCodeEqual && regionEqual &&
         streetAddressEqual;
   }
