@@ -4,6 +4,12 @@
 
 @implementation LUOrderRequest
 
++ (LUAPIRequest *)getOrdersForMerchantWithId:(NSNumber *)merchantId page:(NSUInteger)page {
+  NSString *path = [NSString stringWithFormat:@"users/%@/orders", [LUAPIClient sharedClient].currentUserId];
+
+  return [LUAPIRequest apiRequestWithMethod:@"GET" path:path parameters:@{@"merchant_ids" : merchantId, @"page" : @(page)}];
+}
+
 + (LUAPIRequest *)getOrdersForPage:(NSUInteger)page {
   NSString *path = [NSString stringWithFormat:@"users/%@/orders", [LUAPIClient sharedClient].currentUserId];
 
