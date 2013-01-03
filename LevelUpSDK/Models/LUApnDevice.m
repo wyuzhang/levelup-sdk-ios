@@ -25,7 +25,7 @@ static NSString * const DeviceIdentifierKey = @"LUDeviceToken";
                                   stringByReplacingOccurrencesOfString:@">" withString:@""]
                                  stringByReplacingOccurrencesOfString:@" " withString:@""];
 
-  [LUKeychainAccess saveString:deviceTokenString forKey:DeviceIdentifierKey];
+  [[LUKeychainAccess standardKeychainAccess] setString:deviceTokenString forKey:DeviceIdentifierKey];
 
   LUApnDevice *device = [[self alloc] init];
   device.token = deviceTokenString;
@@ -38,7 +38,7 @@ static NSString * const DeviceIdentifierKey = @"LUDeviceToken";
 }
 
 + (void)unregisterDeviceToken {
-  NSString *deviceToken = [LUKeychainAccess stringForKey:DeviceIdentifierKey];
+  NSString *deviceToken = [[LUKeychainAccess standardKeychainAccess] stringForKey:DeviceIdentifierKey];
 
   if (deviceToken.length > 0) {
     LUApnDevice *device = [[self alloc] init];

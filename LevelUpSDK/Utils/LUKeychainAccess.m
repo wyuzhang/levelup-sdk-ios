@@ -2,79 +2,130 @@
 
 @implementation LUKeychainAccess
 
-+ (BOOL)deleteStringForKey:(NSString *)key {
-	if (key == nil) {
-		return NO;
-	}
+#pragma mark - Public Methods
 
-  NSMutableDictionary *query = [self queryDictionaryForKey:key];
-  OSStatus status = SecItemDelete((__bridge CFDictionaryRef)query);
-
-  if (status == errSecSuccess) {
-    return YES;
-  }
-
-  return NO;
++ (LUKeychainAccess *)standardKeychainAccess {
+  return [[self alloc] init];
 }
 
-+ (BOOL)saveString:(NSString *)inputString forKey:(NSString	*)key {
-  BOOL success = NO;
+#pragma mark - Getters
+
+- (BOOL)boolForKey:(NSString *)key {
+  return [[self objectForKey:key] boolValue];
+}
+
+- (NSData *)dataForKey:(NSString *)key {
+  if (!key) {
+    return nil;
+  }
 
   NSMutableDictionary *query = [self queryDictionaryForKey:key];
+  query[(__bridge id)kSecMatchLimit] = (__bridge id)kSecMatchLimitOne;
+  query[(__bridge id)kSecReturnData] = (__bridge id)kCFBooleanTrue;
 
-  NSData *data = [inputString dataUsingEncoding:NSUTF8StringEncoding];
+  CFTypeRef result;
+  OSStatus error = SecItemCopyMatching((__bridge CFDictionaryRef)query, &result);
+
+  if (error == noErr) {
+    return CFBridgingRelease(result);
+  }
+
+  return nil;
+}
+
+- (double)doubleForKey:(NSString *)key {
+  return [[self objectForKey:key] doubleValue];
+}
+
+- (float)floatForKey:(NSString *)key {
+  return [[self objectForKey:key] floatValue];
+}
+
+- (NSInteger)integerForKey:(NSString *)key {
+  return [[self objectForKey:key] integerValue];
+}
+
+- (NSString *)stringForKey:(NSString *)key {
+  NSData *data = [self dataForKey:key];
+
+  if (data) {
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  }
+
+  return nil;
+}
+
+- (id)objectForKey:(NSString *)key {
+  NSData *data = [self dataForKey:key];
+
+  if (data) {
+    @try {
+      return [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    } @catch (NSException *e) {
+      NSLog(@"Unarchive of %@ failed: %@", key, e);
+    }
+  }
+
+  return nil;
+}
+
+#pragma mark - Setters
+
+- (void)setBool:(BOOL)value forKey:(NSString *)key {
+  [self setObject:@(value) forKey:key];
+}
+
+- (void)setData:(NSData *)data forKey:(NSString *)key {
+  if (!data) {
+    [self deleteObjectForKey:key];
+    return;
+  }
+
+  NSMutableDictionary *query = [self queryDictionaryForKey:key];
   query[(__bridge id)kSecValueData] = data;
 
   OSStatus addStatus = SecItemAdd((__bridge CFDictionaryRef)query, NULL);
 
-  if (addStatus == errSecSuccess) {
-    success = YES;
-  } else if (addStatus == errSecDuplicateItem) {
+  if (addStatus == errSecDuplicateItem) {
     NSMutableDictionary *updateQuery = [NSMutableDictionary dictionary];
     updateQuery[(__bridge id)kSecValueData] = data;
 
-    OSStatus updateStatus = SecItemUpdate((__bridge CFDictionaryRef)query, (__bridge CFDictionaryRef)updateQuery);
-
-    if (updateStatus == errSecSuccess) {
-      success = YES;
-    } else {
-      success = NO;
-    }
-  } else {
-    success = NO;
+    SecItemUpdate((__bridge CFDictionaryRef)query, (__bridge CFDictionaryRef)updateQuery);
   }
-
-  return success;
 }
 
-+ (NSString *)stringForKey:(NSString *)key {
-  NSString *returnString;
+- (void)setDouble:(double)value forKey:(NSString *)key {
+  [self setObject:@(value) forKey:key];
+}
 
-	if (key != nil) {
-    NSMutableDictionary *query = [self queryDictionaryForKey:key];
+- (void)setFloat:(float)value forKey:(NSString *)key {
+  [self setObject:@(value) forKey:key];
+}
 
-    query[(__bridge id)kSecMatchLimit] = (__bridge id)kSecMatchLimitOne;
-    query[(__bridge id)kSecReturnData] = (__bridge id)kCFBooleanTrue;
+- (void)setInteger:(NSInteger)value forKey:(NSString *)key {
+  [self setObject:@(value) forKey:key];
+}
 
-    CFTypeRef result;
-    NSData *data;
-    OSStatus error = SecItemCopyMatching((__bridge CFDictionaryRef)query, &result);
+- (void)setString:(NSString *)inputString forKey:(NSString *)key {
+  [self setData:[inputString dataUsingEncoding:NSUTF8StringEncoding] forKey:key];
+}
 
-    if (error == noErr) {
-      data = CFBridgingRelease(result);
-    }
-
-    if (data) {
-      returnString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    }
-  }
-
-  return returnString;
+- (void)setObject:(id)value forKey:(NSString *)key {
+  [self setData:[NSKeyedArchiver archivedDataWithRootObject:value] forKey:key];
 }
 
 #pragma mark - Private Methods
 
-+ (NSMutableDictionary *)queryDictionaryForKey:(NSString *)key {
+- (void)deleteObjectForKey:(NSString *)key {
+  if (key == nil) {
+    return;
+  }
+
+  NSMutableDictionary *query = [self queryDictionaryForKey:key];
+  SecItemDelete((__bridge CFDictionaryRef)query);
+}
+
+- (NSMutableDictionary *)queryDictionaryForKey:(NSString *)key {
   NSMutableDictionary *query = [NSMutableDictionary dictionary];
   query[(__bridge id)kSecClass] = (__bridge id)kSecClassGenericPassword;
 

@@ -1,8 +1,12 @@
+#import "LUAPIClient.h"
 #import "LUOAuthToken.h"
 
 SPEC_BEGIN(LUOAuthTokenSpec)
 
 describe(@"LUOAuthToken", ^{
+  // Because [LUOAuthToken init] calls sharedClient
+  [LUAPIClient setupWithAPIKey:@"test" developmentMode:YES];
+
   LUOAuthToken *oAuthTokenA = [[LUOAuthToken alloc] init];
   LUOAuthToken *oAuthTokenB = [[LUOAuthToken alloc] init];
   NSString *clientA = @"clientA";

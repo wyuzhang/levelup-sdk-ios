@@ -9,12 +9,12 @@
 + (NSString *)deviceIdentifier {
   static NSString * const DeviceIdentifierKey = @"LUDeviceIdentifier";
 
-  NSString *deviceIdentifier = [LUKeychainAccess stringForKey:DeviceIdentifierKey];
+  NSString *deviceIdentifier = [[LUKeychainAccess standardKeychainAccess] stringForKey:DeviceIdentifierKey];
 
   if (deviceIdentifier == nil) {
     deviceIdentifier = [self generateUUID];
 
-    [LUKeychainAccess saveString:deviceIdentifier forKey:DeviceIdentifierKey];
+    [[LUKeychainAccess standardKeychainAccess] setString:deviceIdentifier forKey:DeviceIdentifierKey];
   }
 
   return deviceIdentifier;

@@ -22,6 +22,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0201D59916A8B0790064AB53 /* LUKeychainAccessSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0201D59816A8B0790064AB53 /* LUKeychainAccessSpec.m */; };
 		021DFF4C169F27BB00215926 /* LUCampaignRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 021DFF4A169F27BB00215926 /* LUCampaignRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		021DFF4D169F27BB00215926 /* LUCampaignRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 021DFF4B169F27BB00215926 /* LUCampaignRequest.m */; };
 		022B2851166E515B00679E06 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 250637D0166B0E1E008CCE9B /* libKiwi.a */; };
@@ -318,6 +319,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0201D59816A8B0790064AB53 /* LUKeychainAccessSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUKeychainAccessSpec.m; path = Utils/LUKeychainAccessSpec.m; sourceTree = "<group>"; };
 		021DFF4A169F27BB00215926 /* LUCampaignRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCampaignRequest.h; sourceTree = "<group>"; };
 		021DFF4B169F27BB00215926 /* LUCampaignRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCampaignRequest.m; sourceTree = "<group>"; };
 		022B2855166E519800679E06 /* LUQRCodeGeneratorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUQRCodeGeneratorSpec.m; path = "QRCode Management/LUQRCodeGeneratorSpec.m"; sourceTree = "<group>"; };
@@ -557,6 +559,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0201D58216A8A7B90064AB53 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0201D59816A8B0790064AB53 /* LUKeychainAccessSpec.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		022B2854166E518100679E06 /* QRCode Management */ = {
 			isa = PBXGroup;
 			children = (
@@ -928,6 +938,7 @@
 				25AD5E2D167E672A00E43701 /* Models */,
 				022B2854166E518100679E06 /* QRCode Management */,
 				25F643BF166832D600A05C0E /* Supporting Files */,
+				0201D58216A8A7B90064AB53 /* Utils */,
 			);
 			path = LevelUpSDKTests;
 			sourceTree = "<group>";
@@ -1335,6 +1346,7 @@
 				25AD5E59167E672A00E43701 /* LUTicketSpec.m in Sources */,
 				25AD5E5A167E672A00E43701 /* LUUserAddressSpec.m in Sources */,
 				25AD5E5B167E672A00E43701 /* LUUserSpec.m in Sources */,
+				0201D59916A8B0790064AB53 /* LUKeychainAccessSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

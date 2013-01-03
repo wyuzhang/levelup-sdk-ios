@@ -124,9 +124,6 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
   if (self.categoryImageUrl_32x32_2x) {
     total += [self.categoryImageUrl_32x32_2x hash] * 13;
   }
-  if (self.description) {
-    total += [self.description hash] * 17;
-  }
   if (self.descriptionHtml) {
     total += [self.descriptionHtml hash] * 19;
   }
@@ -213,10 +210,6 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
         !self.categoryImageUrl_32x32_2x) ||
         (otherMerchant.categoryImageUrl_32x32_2x && self.categoryImageUrl_32x32_2x &&
         [otherMerchant.categoryImageUrl_32x32_2x isEqualToString:self.categoryImageUrl_32x32_2x]));
-
-    BOOL descriptionEqual = ((!otherMerchant.description && !self.description) ||
-        (otherMerchant.description && self.description &&
-        [otherMerchant.description isEqualToString:self.description]));
 
     BOOL descriptionHtmlEqual = ((!otherMerchant.descriptionHtml && !self.descriptionHtml) ||
         (otherMerchant.descriptionHtml && self.descriptionHtml &&
@@ -310,7 +303,7 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
         (otherMerchant.yelpUrl && self.yelpUrl &&
         [otherMerchant.yelpUrl isEqualToString:self.yelpUrl]));
 
-    return categoryImageUrl1Equal && categoryImageUrl2Equal && descriptionEqual && descriptionHtmlEqual &&
+    return categoryImageUrl1Equal && categoryImageUrl2Equal && descriptionHtmlEqual &&
         earnEqual && emailCaptureCohortEqual && facebookUrlEqual && featuredEqual &&
         imageUrl1Equal && imageUrl2Equal && locationsEqual && loyaltyEqual &&
         loyaltyEnabledEqual && messageForTwitterEqual && modelIdEqual && nameEqual &&
