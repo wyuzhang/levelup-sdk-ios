@@ -7,6 +7,14 @@
 #import "LUUser.h"
 #import "NSString+Escaping.h"
 
+NSString * const MerchantWebService = @"MerchantWebService";
+NSString * const MerchantYelpService = @"MerchantYelpService";
+NSString * const MerchantFacebookService = @"MerchantFacebookService";
+NSString * const MerchantTwitterService = @"MerchantTwitterService";
+NSString * const MerchantScvngrService = @"MerchantScvngrService";
+NSString * const MerchantOpenTableService = @"MerchantOpenTableService";
+NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
+
 @implementation LUMerchant
 
 #pragma mark - Serialization
@@ -84,6 +92,24 @@
   }
 
   return twitterUrl;
+}
+
+- (NSArray *)webLocations {
+  if (!_webLocations) {
+    NSMutableArray *mutableWebLocations = [[NSMutableArray alloc] init];
+
+    if ([self.url length] > 0) [mutableWebLocations addObject:@{@"service" : MerchantWebService, @"url" : self.url, @"displayName" : @"Website / Menu"}];
+    if ([self.yelpUrl length] > 0) [mutableWebLocations addObject:@{@"service" : MerchantYelpService, @"url" : self.yelpUrl, @"displayName" : @"Yelp"}];
+    if ([self.facebookUrl length] > 0) [mutableWebLocations addObject:@{@"service" : MerchantFacebookService, @"url" : self.facebookUrl, @"displayName" : @"Facebook"}];
+    if ([self.twitterUrl length] > 0) [mutableWebLocations addObject:@{@"service" : MerchantTwitterService, @"url" : self.twitterUrl, @"displayName" : @"Twitter"}];
+    if ([self.scvngrUrl length] > 0) [mutableWebLocations addObject:@{@"service" : MerchantScvngrService, @"url" : self.scvngrUrl, @"displayName" : @"SCVNGR"}];
+    if ([self.opentableUrl length] > 0) [mutableWebLocations addObject:@{@"service": MerchantOpenTableService, @"url" : self.opentableUrl, @"displayName" : @"OpenTable"}];
+    if ([self.newsletterUrl length] > 0) [mutableWebLocations addObject:@{@"service" : MerchantNewsletterService, @"url" : self.newsletterUrl, @"displayName" : @"Newsletter"}];
+
+    _webLocations = [NSArray arrayWithArray:mutableWebLocations];
+  }
+
+  return _webLocations;
 }
 
 #pragma mark - NSObject Methods

@@ -1,16 +1,21 @@
-#import <Foundation/Foundation.h>
-
 @class CLLocation;
 @class LUCohort;
 @class LULocation;
 @class LULoyalty;
 @class LUMonetaryValue;
 
+extern NSString * const MerchantWebService;
+extern NSString * const MerchantYelpService;
+extern NSString * const MerchantFacebookService;
+extern NSString * const MerchantTwitterService;
+extern NSString * const MerchantScvngrService;
+extern NSString * const MerchantOpenTableService;
+extern NSString * const MerchantNewsletterService;
+
 @interface LUMerchant : NSObject
 
 @property (nonatomic, copy) NSString *categoryImageUrl_32x32_1x;
 @property (nonatomic, copy) NSString *categoryImageUrl_32x32_2x;
-@property (nonatomic, copy) NSString *description;
 @property (nonatomic, copy) NSString *descriptionHtml;
 @property (nonatomic, strong) LUMonetaryValue *earn;
 @property (nonatomic, strong) LUCohort *emailCaptureCohort;
@@ -33,6 +38,7 @@
 @property (nonatomic, strong) LUMonetaryValue *spend;
 @property (nonatomic, copy) NSString *twitterUsername;
 @property (nonatomic, copy) NSString *url;
+@property (nonatomic, strong) NSArray *webLocations;
 @property (nonatomic, copy) NSString *yelpUrl;
 
 - (NSString *)categoryImageUrl;
