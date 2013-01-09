@@ -27,9 +27,16 @@
 + (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
                                   path:(NSString *)path
                             parameters:(NSDictionary *)parameters {
+  return [self apiRequestWithMethod:method path:path parameters:parameters skipAuthentication:NO];
+}
+
++ (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
+                                  path:(NSString *)path
+                            parameters:(NSDictionary *)parameters
+                    skipAuthentication:(BOOL)skipAuthentication {
   NSMutableDictionary *parametersWithAccessToken = [NSMutableDictionary dictionary];
 
-  if ([LUAPIClient sharedClient].accessToken) {
+  if (!skipAuthentication && [LUAPIClient sharedClient].accessToken) {
     parametersWithAccessToken[@"access_token"] = [LUAPIClient sharedClient].accessToken;
   }
 

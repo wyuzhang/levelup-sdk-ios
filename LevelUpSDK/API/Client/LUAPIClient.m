@@ -43,14 +43,19 @@ NSString * const DefaultLevelUpApiURL = @"https://api.thelevelup.com/v13";
 }
 
 - (NSOperation *)performRequest:(LUAPIRequest *)apiRequest
-               success:(LUAPISuccessBlock)success
-               failure:(LUAPIFailureBlock)failure {
+                        success:(LUAPISuccessBlock)success
+                        failure:(LUAPIFailureBlock)failure {
   AFJSONRequestOperation *requestOperation =
     [AFJSONRequestOperation JSONRequestOperationWithRequest:apiRequest.urlRequest
                                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                                                      success([LUJSONDeserializer deserializeJSON:JSON]);
-                                                    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                                                      failure([self error:error withMessagesFromJSON:JSON]);
+                                                      if (success) {
+                                                        success([LUJSONDeserializer deserializeJSON:JSON]);
+                                                      }
+                                                    }
+                                                    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                                      if (failure) {
+                                                        failure([self error:error withMessagesFromJSON:JSON]);
+                                                      }
                                                     }];
 
   [self enqueueHTTPRequestOperation:requestOperation];

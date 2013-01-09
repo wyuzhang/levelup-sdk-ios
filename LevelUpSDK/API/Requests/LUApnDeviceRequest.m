@@ -9,4 +9,8 @@
   return [LUAPIRequest apiRequestWithMethod:@"POST" path:@"apn_devices" parameters:@{@"apn_device" : apnDevice.parameters}];
 }
 
++ (LUAPIRequest *)unregisterApnDevice:(LUApnDevice *)apnDevice {
+  return [LUAPIRequest apiRequestWithMethod:@"POST" path:@"apn_devices" parameters:@{@"apn_device" : apnDevice.parameters} skipAuthentication:YES];
+}
+
 @end

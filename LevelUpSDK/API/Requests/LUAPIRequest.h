@@ -7,5 +7,9 @@
 + (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
                                   path:(NSString *)path
                             parameters:(NSDictionary *)parameters;
++ (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
+                                  path:(NSString *)path
+                            parameters:(NSDictionary *)parameters
+                    skipAuthentication:(BOOL)skipAuthentication;
 
 @end

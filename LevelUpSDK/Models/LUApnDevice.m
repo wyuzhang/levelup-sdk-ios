@@ -1,6 +1,11 @@
+#import "LUAPIClient.h"
 #import "LUApnDevice.h"
+#import "LUApnDeviceRequest.h"
 #import "LUDictionarySerializer.h"
 #import "LUJSONDeserializer.h"
+#import "LUKeychainAccess.h"
+
+static NSString * const DeviceIdentifierKey = @"LUDeviceToken";
 
 @implementation LUApnDevice
 
@@ -13,6 +18,32 @@
 }
 
 #pragma mark - Public Methods
+
++ (void)registerDeviceToken:(NSData *)deviceToken sandbox:(BOOL)sandbox {
+  NSString *deviceTokenString = [[[[deviceToken description]
+                                   stringByReplacingOccurrencesOfString:@"<" withString:@""]
+                                  stringByReplacingOccurrencesOfString:@">" withString:@""]
+                                 stringByReplacingOccurrencesOfString:@" " withString:@""];
+
+  [LUKeychainAccess saveString:deviceTokenString forKey:DeviceIdentifierKey];
+
+  LUApnDevice *device = [[self alloc] init];
+  device.token = deviceTokenString;
+  device.development = @(sandbox);
+
+  [[LUAPIClient sharedClient] performRequest:[LUApnDeviceRequest createApnDevice:device] success:nil failure:nil];
+}
+
++ (void)unregisterDeviceToken {
+  NSString *deviceToken = [LUKeychainAccess stringForKey:DeviceIdentifierKey];
+
+  if (deviceToken.length > 0) {
+    LUApnDevice *device = [[self alloc] init];
+    device.token = deviceToken;
+
+    [[LUAPIClient sharedClient] performRequest:[LUApnDeviceRequest unregisterApnDevice:device] success:nil failure:nil];
+  }
+}
 
 - (NSDictionary *)parameters {
   return [LUDictionarySerializer parametersForModel:self withNonBlankAttributesNamed:@[@"development", @"lat", @"lng", @"token"]];
