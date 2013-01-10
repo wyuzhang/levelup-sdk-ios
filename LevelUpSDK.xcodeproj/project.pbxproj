@@ -22,6 +22,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		021DFF4C169F27BB00215926 /* LUCampaignRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 021DFF4A169F27BB00215926 /* LUCampaignRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		021DFF4D169F27BB00215926 /* LUCampaignRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 021DFF4B169F27BB00215926 /* LUCampaignRequest.m */; };
 		022B2851166E515B00679E06 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 250637D0166B0E1E008CCE9B /* libKiwi.a */; };
 		022B2856166E519800679E06 /* LUQRCodeGeneratorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 022B2855166E519800679E06 /* LUQRCodeGeneratorSpec.m */; };
 		022B2888166E560C00679E06 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B02311668508F006ACA24 /* AVFoundation.framework */; };
@@ -312,6 +314,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		021DFF4A169F27BB00215926 /* LUCampaignRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCampaignRequest.h; sourceTree = "<group>"; };
+		021DFF4B169F27BB00215926 /* LUCampaignRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCampaignRequest.m; sourceTree = "<group>"; };
 		022B2855166E519800679E06 /* LUQRCodeGeneratorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUQRCodeGeneratorSpec.m; path = "QRCode Management/LUQRCodeGeneratorSpec.m"; sourceTree = "<group>"; };
 		022B288F166E573D00679E06 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		022B2891166E574B00679E06 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -706,6 +710,8 @@
 				257B018216684CC9006ACA24 /* LUApnDeviceRequest.m */,
 				F8A4F359166F99B6004B696B /* LUBundleRequest.h */,
 				F8A4F35A166F99B6004B696B /* LUBundleRequest.m */,
+				021DFF4A169F27BB00215926 /* LUCampaignRequest.h */,
+				021DFF4B169F27BB00215926 /* LUCampaignRequest.m */,
 				257B018316684CC9006ACA24 /* LUCategoryRequest.h */,
 				257B018416684CC9006ACA24 /* LUCategoryRequest.m */,
 				257B018516684CC9006ACA24 /* LUCauseRequest.h */,
@@ -1003,6 +1009,7 @@
 				F8A4F35F166F99D1004B696B /* LUBundle.h in Headers */,
 				F8E319781677908C00D75887 /* LURefund.h in Headers */,
 				02ED9BEA1688DA5600DFC994 /* NSString+HTMLStripping.h in Headers */,
+				021DFF4C169F27BB00215926 /* LUCampaignRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1280,6 +1287,7 @@
 				F8A4F360166F99D1004B696B /* LUBundle.m in Sources */,
 				F8E319791677908C00D75887 /* LURefund.m in Sources */,
 				02ED9BEB1688DA5600DFC994 /* NSString+HTMLStripping.m in Sources */,
+				021DFF4D169F27BB00215926 /* LUCampaignRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

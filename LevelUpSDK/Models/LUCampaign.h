@@ -6,6 +6,7 @@
 @interface LUCampaign : NSObject
 
 @property (nonatomic, copy) NSNumber *claimed;
+@property (nonatomic, strong) LUCohort *cohort;
 @property (nonatomic, copy) NSArray *cohorts;
 @property (nonatomic, copy) NSString *confirmationHtml;
 @property (nonatomic, copy) NSNumber *global;

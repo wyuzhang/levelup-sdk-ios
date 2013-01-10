@@ -4,6 +4,7 @@
 #import <LevelUpSDK/LUAPIRequest.h>
 #import <LevelUpSDK/LUApnDeviceRequest.h>
 #import <LevelUpSDK/LUBundleRequest.h>
+#import <LevelUpSDK/LUCampaignRequest.h>
 #import <LevelUpSDK/LUCategoryRequest.h>
 #import <LevelUpSDK/LUCauseRequest.h>
 #import <LevelUpSDK/LUClaimRequest.h>
