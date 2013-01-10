@@ -1,5 +1,3 @@
-#import <Foundation/Foundation.h>
-
 @class LUBundle;
 @class LUDonation;
 @class LUInterstitialAction;

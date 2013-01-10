@@ -11,6 +11,7 @@
 
 @interface LUOrder ()
 
+@property (nonatomic, copy) NSNumber *bundleClosed;
 @property (nonatomic, copy) NSString *createdAt;
 @property (nonatomic, copy) NSString *refundedAt;
 
@@ -59,7 +60,7 @@
 }
 
 - (BOOL)isClosed {
-  return ![self.state isEqualToString:@"pending"];
+  return [self.bundleClosed boolValue];
 }
 
 - (BOOL)wasRefunded {
