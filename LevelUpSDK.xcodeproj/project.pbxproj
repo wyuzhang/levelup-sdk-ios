@@ -41,6 +41,8 @@
 		022B2898166E59DA00679E06 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B2893166E575400679E06 /* CoreMedia.framework */; };
 		022B2899166E59DF00679E06 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B2891166E574B00679E06 /* QuartzCore.framework */; };
 		022B289A166E59E300679E06 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B288F166E573D00679E06 /* CoreLocation.framework */; };
+		02B1643616A0A47600052672 /* LUAPIErrorCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 02B1643416A0A47600052672 /* LUAPIErrorCodes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02B1643716A0A47600052672 /* LUAPIErrorCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B1643516A0A47600052672 /* LUAPIErrorCodes.m */; };
 		02ED9BEA1688DA5600DFC994 /* NSString+HTMLStripping.h in Headers */ = {isa = PBXBuildFile; fileRef = 02ED9BE81688DA5600DFC994 /* NSString+HTMLStripping.h */; };
 		02ED9BEB1688DA5600DFC994 /* NSString+HTMLStripping.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED9BE91688DA5600DFC994 /* NSString+HTMLStripping.m */; };
 		2506379D166B0DFD008CCE9B /* AFHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 25063757166B0DFD008CCE9B /* AFHTTPClient.h */; };
@@ -321,6 +323,8 @@
 		022B2891166E574B00679E06 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		022B2893166E575400679E06 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		022B2895166E575700679E06 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		02B1643416A0A47600052672 /* LUAPIErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIErrorCodes.h; sourceTree = "<group>"; };
+		02B1643516A0A47600052672 /* LUAPIErrorCodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIErrorCodes.m; sourceTree = "<group>"; };
 		02ED9BE81688DA5600DFC994 /* NSString+HTMLStripping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTMLStripping.h"; sourceTree = "<group>"; };
 		02ED9BE91688DA5600DFC994 /* NSString+HTMLStripping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTMLStripping.m"; sourceTree = "<group>"; };
 		25063757166B0DFD008CCE9B /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -665,6 +669,8 @@
 		257B00E116684756006ACA24 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				02B1643416A0A47600052672 /* LUAPIErrorCodes.h */,
+				02B1643516A0A47600052672 /* LUAPIErrorCodes.m */,
 				257B00E216684756006ACA24 /* LUBraintreePublicKey.h */,
 				257B00E316684756006ACA24 /* LUBraintreePublicKey.m */,
 			);
@@ -1010,6 +1016,7 @@
 				F8E319781677908C00D75887 /* LURefund.h in Headers */,
 				02ED9BEA1688DA5600DFC994 /* NSString+HTMLStripping.h in Headers */,
 				021DFF4C169F27BB00215926 /* LUCampaignRequest.h in Headers */,
+				02B1643616A0A47600052672 /* LUAPIErrorCodes.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1288,6 +1295,7 @@
 				F8E319791677908C00D75887 /* LURefund.m in Sources */,
 				02ED9BEB1688DA5600DFC994 /* NSString+HTMLStripping.m in Sources */,
 				021DFF4D169F27BB00215926 /* LUCampaignRequest.m in Sources */,
+				02B1643716A0A47600052672 /* LUAPIErrorCodes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

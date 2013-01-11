@@ -18,6 +18,8 @@
 #import <LevelUpSDK/LUTicketRequest.h>
 #import <LevelUpSDK/LUUserRequest.h>
 
+#import <LevelUpSDK/LUAPIErrorCodes.h>
+
 #import <LevelUpSDK/LUApnDevice.h>
 #import <LevelUpSDK/LUBundle.h>
 #import <LevelUpSDK/LUCampaign.h>
