@@ -21,10 +21,8 @@
 @property (nonatomic, strong) LUMonetaryValue *value;
 
 - (NSString *)confirmationText;
-- (NSString *)creditInformation;
 - (LUCohort *)emailCohort;
 - (LUCohort *)facebookCohort;
-- (NSString *)grabString;
 - (BOOL)isClaimed;
 - (BOOL)isGlobal;
 - (NSString *)mobileImageUrl;
@@ -32,6 +30,5 @@
 - (NSString *)successfulClaimMessageHtml;
 - (NSString *)successfulClaimMessageText;
 - (LUCohort *)twitterCohort;
-- (NSString *)unlockedString;
 
 @end
