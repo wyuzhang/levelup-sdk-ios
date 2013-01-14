@@ -29,7 +29,10 @@ static NSString * const DeviceIdentifierKey = @"LUDeviceToken";
 
   LUApnDevice *device = [[self alloc] init];
   device.token = deviceTokenString;
-  device.development = @(sandbox);
+
+  if (sandbox) {
+    device.development = @YES;
+  }
 
   [[LUAPIClient sharedClient] performRequest:[LUApnDeviceRequest createApnDevice:device] success:nil failure:nil];
 }
