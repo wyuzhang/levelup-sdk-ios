@@ -7,47 +7,13 @@ static NSMutableDictionary *registeredModels;
 
 + (id)deserializeJSON:(id)JSON {
   if ([JSON isKindOfClass:[NSArray class]]) {
-    NSMutableArray *parsed = [NSMutableArray array];
-    for (id subJSON in JSON) {
-      [parsed addObject:[self deserializeJSON:subJSON]];
-    }
-
-    return parsed;
+    return [self parseArray:JSON];
   } else if ([JSON isKindOfClass:[NSDictionary class]]) {
-    if ([JSON count] == 1) {
-      if (!registeredModels[[JSON allKeys][0]]) {
-        return [JSON allValues][0];
-      }
-
-      Class modelClass = NSClassFromString(registeredModels[[JSON allKeys][0]]);
-      id model = [[modelClass alloc] init];
-
-      NSDictionary *properties = [JSON allValues][0];
-      for (NSString *propertyName in properties) {
-        id propertyValue = properties[propertyName];
-
-        NSString *propertyNameForModel = [self propertyNameForModel:propertyName];
-
-        if ([model respondsToSelector:NSSelectorFromString(propertyNameForModel)]) {
-          id propertyValueForModel;
-          if ([propertyValue isKindOfClass:[NSDictionary class]]) {
-            propertyValueForModel = [self deserializeJSON:@{propertyName : propertyValue}];
-          } else {
-            propertyValueForModel = [self deserializeJSON:propertyValue];
-          }
-
-          [model setValue:propertyValueForModel forKey:propertyNameForModel];
-        }
-      }
-
-      return model;
-    }
-  }
-
-  if ([JSON isEqual:[NSNull null]]) {
-    return nil;
-  } else {
+    return [self parseDictionary:JSON];
+  } else if (![JSON isEqual:[NSNull null]]) {
     return JSON;
+  } else {
+    return nil;
   }
 }
 
@@ -67,6 +33,57 @@ static NSMutableDictionary *registeredModels;
 
 #pragma mark -
 #pragma mark Private Methods
+
++ (id)parseArray:(NSArray *)array {
+  NSMutableArray *parsed = [NSMutableArray array];
+  for (id subJSON in array) {
+    [parsed addObject:[self deserializeJSON:subJSON]];
+  }
+
+  return parsed;
+}
+
++ (id)parseDictionary:(NSDictionary *)dictionary {
+  NSMutableDictionary *parsedValues = [NSMutableDictionary dictionary];
+
+  for (NSString *key in [dictionary allKeys]) {
+    parsedValues[key] = [self parseProperties:dictionary[key] intoModel:key];
+  }
+
+  if (parsedValues.count == 1) {
+    return [parsedValues allValues][0];
+  } else {
+    return parsedValues;
+  }
+}
+
++ (id)parseProperties:(NSDictionary *)properties intoModel:(NSString *)modelName {
+  if (!registeredModels[modelName]) {
+    return properties;
+  }
+
+  Class modelClass = NSClassFromString(registeredModels[modelName]);
+  id model = [[modelClass alloc] init];
+
+  for (NSString *propertyName in properties) {
+    id propertyValue = properties[propertyName];
+
+    NSString *propertyNameForModel = [self propertyNameForModel:propertyName];
+
+    if ([model respondsToSelector:NSSelectorFromString(propertyNameForModel)]) {
+      id propertyValueForModel;
+      if ([propertyValue isKindOfClass:[NSDictionary class]]) {
+        propertyValueForModel = [self deserializeJSON:@{propertyName : propertyValue}];
+      } else {
+        propertyValueForModel = [self deserializeJSON:propertyValue];
+      }
+
+      [model setValue:propertyValueForModel forKey:propertyNameForModel];
+    }
+  }
+
+  return model;
+}
 
 + (NSString *)propertyNameForModel:(NSString *)string {
   if ([string isEqualToString:@"id"]) {
