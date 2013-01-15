@@ -1,5 +1,3 @@
-#import <Foundation/Foundation.h>
-
 @interface LUAPIRequest : NSObject
 
 @property (nonatomic, strong, readonly) NSURLRequest *urlRequest;

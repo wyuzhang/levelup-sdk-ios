@@ -1,5 +1,3 @@
-#import <Foundation/Foundation.h>
-
 extern NSString * const BraintreePublicKeyDevelopment;
 extern NSString * const BraintreePublicKeyProduction;
 

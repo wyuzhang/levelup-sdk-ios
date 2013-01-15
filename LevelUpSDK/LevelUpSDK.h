@@ -18,8 +18,6 @@
 #import <LevelUpSDK/LUTicketRequest.h>
 #import <LevelUpSDK/LUUserRequest.h>
 
-#import <LevelUpSDK/LUAPIErrorCodes.h>
-
 #import <LevelUpSDK/LUApnDevice.h>
 #import <LevelUpSDK/LUBundle.h>
 #import <LevelUpSDK/LUCampaign.h>
@@ -44,6 +42,8 @@
 #import <LevelUpSDK/LUTicket.h>
 #import <LevelUpSDK/LUUser.h>
 #import <LevelUpSDK/LUUserAddress.h>
+
+#import <LevelUpSDK/LUAPIErrorCodes.h>
 
 #import <LevelUpSDK/LUQRCodeGenerator.h>
 #import <LevelUpSDK/LUQRCodeScannerView.h>

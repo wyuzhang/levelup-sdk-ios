@@ -1,10 +1,34 @@
 #import "LUAPIClient.h"
+#import "LUApnDevice.h"
+#import "LUBundle.h"
+#import "LUCampaign.h"
+#import "LUCategory.h"
+#import "LUCause.h"
+#import "LUCauseCategory.h"
+#import "LUClaim.h"
+#import "LUCohort.h"
+#import "LUCreditCard.h"
+#import "LUDivision.h"
+#import "LUDonation.h"
+#import "LUInterstitialAction.h"
 #import "LUJSONDeserializer.h"
+#import "LULocation.h"
+#import "LULoyalty.h"
+#import "LUMerchandiseOrder.h"
+#import "LUMerchant.h"
+#import "LUMonetaryValue.h"
+#import "LUOAuthToken.h"
+#import "LUOrder.h"
+#import "LUQRCode.h"
+#import "LURefund.h"
+#import "LUTicket.h"
+#import "LUUser.h"
+#import "LUUserAddress.h"
 #import "NSArray+ObjectAccess.h"
 
 @implementation LUJSONDeserializer
 
-static NSMutableDictionary *registeredModels;
+#pragma mark - Public Methods
 
 + (id)deserializeJSON:(id)JSON {
   if ([JSON isKindOfClass:[NSArray class]]) {
@@ -18,22 +42,7 @@ static NSMutableDictionary *registeredModels;
   }
 }
 
-+ (void)registerModel:(Class)model withIdentifier:(NSString *)identifier {
-  [self registerModel:model withIdentifiers:@[identifier]];
-}
-
-+ (void)registerModel:(Class)model withIdentifiers:(NSArray *)identifiers {
-  if (!registeredModels) {
-    registeredModels = [[NSMutableDictionary alloc] init];
-  }
-
-  for (NSString *identifier in identifiers) {
-    [registeredModels setObject:NSStringFromClass(model) forKey:identifier];
-  }
-}
-
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - Private Methods
 
 + (id)parseArray:(NSArray *)array {
   NSMutableArray *parsed = [NSMutableArray array];
@@ -59,11 +68,11 @@ static NSMutableDictionary *registeredModels;
 }
 
 + (id)parseProperties:(NSDictionary *)properties intoModel:(NSString *)modelName {
-  if (!registeredModels[modelName]) {
+  if (![self registeredModels][modelName]) {
     return properties;
   }
 
-  Class modelClass = NSClassFromString(registeredModels[modelName]);
+  Class modelClass = [self registeredModels][modelName];
   id model = [[modelClass alloc] init];
 
   for (NSString *propertyName in properties) {
@@ -106,6 +115,61 @@ static NSMutableDictionary *registeredModels;
   }
 
   return [NSString stringWithString:output];
+}
+
+#pragma mark - Private Methods
+
+static NSDictionary *_registeredModels = nil;
+
++ (NSDictionary *)registeredModels {
+  if (!_registeredModels) {
+    _registeredModels = @{
+      @"amount" : [LUMonetaryValue class],
+      @"apn_device" : [LUApnDevice class],
+      @"balance" : [LUMonetaryValue class],
+      @"bundle" : [LUBundle class],
+      @"campaign" : [LUCampaign class],
+      @"cause" : [LUCause class],
+      @"cause_category" : [LUCauseCategory class],
+      @"claim" : [LUClaim class],
+      @"cohort" : [LUCohort class],
+      @"credit" : [LUMonetaryValue class],
+      @"credit_card" : [LUCreditCard class],
+      @"division" : [LUDivision class],
+      @"donation" : [LUDonation class],
+      @"earn" : [LUMonetaryValue class],
+      @"email_capture_cohort" : [LUCohort class],
+      @"interstitial_action" : [LUInterstitialAction class],
+      @"location" : [LULocation class],
+      @"loyalty" : [LULoyalty class],
+      @"loyalties_savings" : [LUMonetaryValue class],
+      @"onboarding" : [LUMonetaryValue class],
+      @"merchandise_order" : [LUMerchandiseOrder class],
+      @"merchant" : [LUMerchant class],
+      @"oauth_token" : [LUOAuthToken class],
+      @"onboarding" : [LUMonetaryValue class],
+      @"order" : [LUOrder class],
+      @"potential_credit": [LUMonetaryValue class],
+      @"qr_code" : [LUQRCode class],
+      @"refund" : [LURefund class],
+      @"savings": [LUMonetaryValue class],
+      @"share_cohort" : [LUCohort class],
+      @"should_spend": [LUMonetaryValue class],
+      @"spend": [LUMonetaryValue class],
+      @"spend_remaining": [LUMonetaryValue class],
+      @"ticket" : [LUTicket class],
+      @"tip": [LUMonetaryValue class],
+      @"total": [LUMonetaryValue class],
+      @"total_credit_used": [LUMonetaryValue class],
+      @"total_volume": [LUMonetaryValue class],
+      @"user" : [LUUser class],
+      @"user_address" : [LUUserAddress class],
+      @"value": [LUMonetaryValue class],
+      @"will_earn": [LUMonetaryValue class]
+    };
+  }
+
+  return _registeredModels;
 }
 
 @end

@@ -1,5 +1,6 @@
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
+#import "LUParameterSerializer.h"
 #import "LUTicket.h"
 #import "LUTicketRequest.h"
 
@@ -11,7 +12,7 @@
 + (LUAPIRequest *)createTicket:(LUTicket *)ticket {
   NSString *path = [NSString stringWithFormat:@"users/%@/tickets", [LUAPIClient sharedClient].currentUserId];
 
-  return [LUAPIRequest apiRequestWithMethod:@"POST" path:path parameters:@{@"ticket" : ticket.parameters}];
+  return [LUAPIRequest apiRequestWithMethod:@"POST" path:path parameters:@{@"ticket" : @{@"body" : ticket.body}}];
 }
 
 @end

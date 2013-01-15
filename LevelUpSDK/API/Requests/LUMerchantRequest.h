@@ -1,5 +1,3 @@
-#import <Foundation/Foundation.h>
-
 @class CLLocation;
 @class LUAPIRequest;
 @class LUCategory;

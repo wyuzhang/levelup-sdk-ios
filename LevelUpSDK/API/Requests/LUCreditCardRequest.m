@@ -1,3 +1,5 @@
+#import "BraintreeEncryption.h"
+#import "LUConstants.h"
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
 #import "LUCreditCard.h"
@@ -8,7 +10,23 @@
 + (LUAPIRequest *)createCreditCard:(LUCreditCard *)creditCard {
   NSString *path = [NSString stringWithFormat:@"users/%@/credit_cards", [LUAPIClient sharedClient].currentUserId];
 
-  return [LUAPIRequest apiRequestWithMethod:@"POST" path:path parameters:@{@"credit_card" : creditCard.parameters}];
+  NSString *braintreePublicKey;
+  if ([LUAPIClient sharedClient].developmentMode) {
+    braintreePublicKey = BraintreePublicKeyDevelopment;
+  } else {
+    braintreePublicKey = BraintreePublicKeyProduction;
+  }
+
+  BraintreeEncryption *braintree = [[BraintreeEncryption alloc] initWithPublicKey:braintreePublicKey];
+  NSDictionary *parameters = @{
+    @"cvv" : [braintree encryptString:creditCard.cvv],
+    @"expiration_month" : [braintree encryptString:[creditCard.expirationMonth stringValue]],
+    @"expiration_year" : [braintree encryptString:[creditCard.expirationYear stringValue]],
+    @"number" : [braintree encryptString:creditCard.number],
+    @"postal_code" : [braintree encryptString:creditCard.postalCode]
+  };
+
+  return [LUAPIRequest apiRequestWithMethod:@"POST" path:path parameters:@{@"credit_card" : parameters}];
 }
 
 + (LUAPIRequest *)deleteCreditCard:(LUCreditCard *)creditCard {

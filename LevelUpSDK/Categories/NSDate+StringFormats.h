@@ -1,5 +1,3 @@
-#import <Foundation/Foundation.h>
-
 @interface NSDate (StringFormats)
 
 + (NSDate *)dateFromIso8601DateTimeString:(NSString *)dateString;
