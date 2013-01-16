@@ -69,8 +69,8 @@
 		25620A14166B099700560B19 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25620A13166B099600560B19 /* CoreVideo.framework */; };
 		25620A16166B099C00560B19 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25620A15166B099C00560B19 /* ImageIO.framework */; };
 		257B00D31668363A006ACA24 /* LevelUpSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 25F643AC166832D600A05C0E /* LevelUpSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		257B00E416684756006ACA24 /* LUBraintreePublicKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B00E216684756006ACA24 /* LUBraintreePublicKey.h */; };
-		257B00E516684756006ACA24 /* LUBraintreePublicKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B00E316684756006ACA24 /* LUBraintreePublicKey.m */; };
+		257B00E416684756006ACA24 /* LUConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B00E216684756006ACA24 /* LUConstants.h */; };
+		257B00E516684756006ACA24 /* LUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B00E316684756006ACA24 /* LUConstants.m */; };
 		257B00EB1668479A006ACA24 /* LUDeviceIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B00E71668479A006ACA24 /* LUDeviceIdentifier.h */; };
 		257B00EC1668479A006ACA24 /* LUDeviceIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B00E81668479A006ACA24 /* LUDeviceIdentifier.m */; };
 		257B00ED1668479A006ACA24 /* LUKeychainAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B00E91668479A006ACA24 /* LUKeychainAccess.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -351,8 +351,8 @@
 		25620A11166B099100560B19 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		25620A13166B099600560B19 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		25620A15166B099C00560B19 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		257B00E216684756006ACA24 /* LUBraintreePublicKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBraintreePublicKey.h; sourceTree = "<group>"; };
-		257B00E316684756006ACA24 /* LUBraintreePublicKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBraintreePublicKey.m; sourceTree = "<group>"; };
+		257B00E216684756006ACA24 /* LUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUConstants.h; sourceTree = "<group>"; };
+		257B00E316684756006ACA24 /* LUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUConstants.m; sourceTree = "<group>"; };
 		257B00E71668479A006ACA24 /* LUDeviceIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUDeviceIdentifier.h; sourceTree = "<group>"; };
 		257B00E81668479A006ACA24 /* LUDeviceIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDeviceIdentifier.m; sourceTree = "<group>"; };
 		257B00E91668479A006ACA24 /* LUKeychainAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUKeychainAccess.h; sourceTree = "<group>"; };
@@ -671,8 +671,8 @@
 			children = (
 				02B1643416A0A47600052672 /* LUAPIErrorCodes.h */,
 				02B1643516A0A47600052672 /* LUAPIErrorCodes.m */,
-				257B00E216684756006ACA24 /* LUBraintreePublicKey.h */,
-				257B00E316684756006ACA24 /* LUBraintreePublicKey.m */,
+				257B00E216684756006ACA24 /* LUConstants.h */,
+				257B00E316684756006ACA24 /* LUConstants.m */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -944,7 +944,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				257B00D31668363A006ACA24 /* LevelUpSDK.h in Headers */,
-				257B00E416684756006ACA24 /* LUBraintreePublicKey.h in Headers */,
+				257B00E416684756006ACA24 /* LUConstants.h in Headers */,
 				257B00EB1668479A006ACA24 /* LUDeviceIdentifier.h in Headers */,
 				257B00ED1668479A006ACA24 /* LUKeychainAccess.h in Headers */,
 				257B014E16684C5E006ACA24 /* LUApnDevice.h in Headers */,
@@ -1226,7 +1226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				257B00E516684756006ACA24 /* LUBraintreePublicKey.m in Sources */,
+				257B00E516684756006ACA24 /* LUConstants.m in Sources */,
 				257B00EC1668479A006ACA24 /* LUDeviceIdentifier.m in Sources */,
 				257B00EE1668479A006ACA24 /* LUKeychainAccess.m in Sources */,
 				257B014F16684C5E006ACA24 /* LUApnDevice.m in Sources */,

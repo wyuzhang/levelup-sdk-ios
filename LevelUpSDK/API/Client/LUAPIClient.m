@@ -1,32 +1,43 @@
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
+#import "LUConstants.h"
 #import "LUJSONDeserializer.h"
 
 NSString * const LUAPIFailingJSONResponseErrorKey = @"LUAPIFailingJSONResponseErrorKey";
 NSString * const LUAPIFailingErrorMessageErrorKey = @"LUAPIFailingErrorMessageErrorKey";
 
-NSString * const DefaultLevelUpApiURL = @"https://api.thelevelup.com/v13";
+@interface LUAPIClient ()
+
+@property (copy, readwrite) NSString *apiKey;
+@property (assign, readwrite) BOOL developmentMode;
+
+@end
 
 @implementation LUAPIClient
 
-#pragma mark -
-#pragma mark Creation/Removal Methods
+__strong static id _sharedClient = nil;
+
+#pragma mark - Object Lifecycle Methods
 
 + (LUAPIClient *)sharedClient {
-  static dispatch_once_t pred = 0;
-  __strong static id _sharedObject = nil;
-  dispatch_once(&pred, ^{
-    @autoreleasepool {
-      _sharedObject = [[LUAPIClient alloc] initWithBaseURL:[NSURL URLWithString:DefaultLevelUpApiURL]];
-    }
-  });
-  return _sharedObject;
+  NSAssert(_sharedClient != nil, @"setupWithAPIKey:developmentMode: must be called before sharedClient");
+
+  return _sharedClient;
 }
 
-- (id)initWithBaseURL:(NSURL *)url {
-  self = [super initWithBaseURL:url];
+- (id)initWithAPIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode {
+  NSURL *baseURL;
+  if (developmentMode) {
+    baseURL = [NSURL URLWithString:LevelUpAPIBaseURLDevelopment];
+  } else {
+    baseURL = [NSURL URLWithString:LevelUpAPIBaseURLProduction];
+  }
 
+  self = [super initWithBaseURL:baseURL];
   if (self) {
+    _apiKey = apiKey;
+    _developmentMode = developmentMode;
+
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self setDefaultHeader:@"Accept" value:@"application/json"];
@@ -35,8 +46,11 @@ NSString * const DefaultLevelUpApiURL = @"https://api.thelevelup.com/v13";
   return self;
 }
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
+
++ (void)setupWithAPIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode {
+  _sharedClient = [[self alloc] initWithAPIKey:apiKey developmentMode:developmentMode];
+}
 
 - (BOOL)isNetworkUnreachable {
   return self.networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable;
@@ -63,8 +77,7 @@ NSString * const DefaultLevelUpApiURL = @"https://api.thelevelup.com/v13";
   return requestOperation;
 }
 
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - Private Methods
 
 - (NSError *)error:(NSError *)error withMessagesFromJSON:(id)JSON {
   NSMutableDictionary *userInfo = [error.userInfo mutableCopy];

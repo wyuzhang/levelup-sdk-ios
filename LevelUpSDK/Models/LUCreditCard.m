@@ -1,5 +1,6 @@
 #import "BraintreeEncryption.h"
-#import "LUBraintreePublicKey.h"
+#import "LUAPIClient.h"
+#import "LUConstants.h"
 #import "LUCreditCard.h"
 #import "LUDictionarySerializer.h"
 #import "LUJSONDeserializer.h"
@@ -16,25 +17,6 @@
 
 #pragma mark - Public Methods
 
-- (NSString *)displayNumber {
-  if (self.last_4) {
-    return [@"*" stringByAppendingString:self.last_4];
-  } else {
-    return nil;
-  }
-}
-
-- (NSDictionary *)parameters {
-  BraintreeEncryption *braintree = [[BraintreeEncryption alloc] initWithPublicKey:BRAINTREE_PUBLIC_ENCRYPTION_KEY];
-  return @{
-    @"cvv" : [braintree encryptString:self.cvv],
-    @"expiration_month" : [braintree encryptString:[self.expirationMonth stringValue]],
-    @"expiration_year" : [braintree encryptString:[self.expirationYear stringValue]],
-    @"number" : [braintree encryptString:self.number],
-    @"postal_code" : [braintree encryptString:self.postalCode]
-  };
-}
-
 + (LUCreditCard *)promotedCardFromCards:(NSArray *)cards {
   LUCreditCard *promotedCard = nil;
 
@@ -48,8 +30,34 @@
   return promotedCard;
 }
 
+- (NSString *)displayNumber {
+  if (self.last_4) {
+    return [@"*" stringByAppendingString:self.last_4];
+  } else {
+    return nil;
+  }
+}
+
 - (BOOL)isPromoted {
   return [self.promoted boolValue];
+}
+
+- (NSDictionary *)parameters {
+  NSString *braintreePublicKey;
+  if ([LUAPIClient sharedClient].developmentMode) {
+    braintreePublicKey = BraintreePublicKeyDevelopment;
+  } else {
+    braintreePublicKey = BraintreePublicKeyProduction;
+  }
+
+  BraintreeEncryption *braintree = [[BraintreeEncryption alloc] initWithPublicKey:braintreePublicKey];
+  return @{
+    @"cvv" : [braintree encryptString:self.cvv],
+    @"expiration_month" : [braintree encryptString:[self.expirationMonth stringValue]],
+    @"expiration_year" : [braintree encryptString:[self.expirationYear stringValue]],
+    @"number" : [braintree encryptString:self.number],
+    @"postal_code" : [braintree encryptString:self.postalCode]
+  };
 }
 
 #pragma mark - NSObject Methods

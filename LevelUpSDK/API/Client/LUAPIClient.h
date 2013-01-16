@@ -17,12 +17,14 @@ extern NSString * const LUAPIFailingErrorMessageErrorKey;
 @interface LUAPIClient : AFHTTPClient
 
 @property (copy) NSString *accessToken;
+@property (copy, readonly) NSString *apiKey;
 @property (readwrite, nonatomic, strong) NSURL *baseURL;
 @property (copy) NSNumber *currentUserId;
-@property (copy) NSString *levelUpClientId;
+@property (assign, readonly) BOOL developmentMode;
 
 + (LUAPIClient *)sharedClient;
 
++ (void)setupWithAPIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode;
 - (BOOL)isNetworkUnreachable;
 - (NSOperation *)performRequest:(LUAPIRequest *)apiRequest
                         success:(LUAPISuccessBlock)success

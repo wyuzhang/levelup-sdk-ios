@@ -20,7 +20,7 @@
 - (id)init {
   self = [super init];
   if (self) {
-    self.clientId = [LUAPIClient sharedClient].levelUpClientId;
+    self.clientId = [LUAPIClient sharedClient].apiKey;
   }
 
   return self;

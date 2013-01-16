@@ -15,7 +15,7 @@
 }
 
 + (LUAPIRequest *)createUser:(LUUser *)user {
-  NSDictionary *params = @{@"client_id" : [LUAPIClient sharedClient].levelUpClientId, @"user" : user.parameters};
+  NSDictionary *params = @{@"client_id" : [LUAPIClient sharedClient].apiKey, @"user" : user.parameters};
 
   return [LUAPIRequest apiRequestWithMethod:@"POST" path:@"users" parameters:params];
 }
