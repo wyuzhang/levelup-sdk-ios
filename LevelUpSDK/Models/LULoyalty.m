@@ -51,6 +51,9 @@
   if (self.spendRemaining) {
     total += [self.spendRemaining hash] * 37;
   }
+  if (self.totalVolume) {
+    total += [self.totalVolume hash] * 37;
+  }
 
   return total;
 }
@@ -91,8 +94,12 @@
         (otherLoyalty.spendRemaining && self.spendRemaining &&
         [otherLoyalty.spendRemaining isEqual:self.spendRemaining]));
 
+    BOOL totalVolumeEqual = ((!otherLoyalty.totalVolume && !self.totalVolume) ||
+        (otherLoyalty.totalVolume && self.totalVolume &&
+        [otherLoyalty.totalVolume isEqual:self.totalVolume]));
+
     return merchantIdEqual && modelIdEqual && onboardingEligibleEqual && ordersCountEqual &&
-        potentialCreditEqual && progressPercentEqual && savingsEqual && spendRemainingEqual;
+        potentialCreditEqual && progressPercentEqual && savingsEqual && spendRemainingEqual && totalVolumeEqual;
   }
 
   return NO;

@@ -10,7 +10,7 @@
     [LUJSONDeserializer registerModel:[self class]
                     withIdentifiers:@[@"amount", @"balance", @"credit", @"earn", @"onboarding", @"loyalties_savings",
                                       @"potential_credit", @"savings", @"should_spend", @"spend", @"spend_remaining",
-                                      @"tip", @"total", @"total_credit_used", @"value", @"will_earn"]];
+                                      @"tip", @"total", @"total_credit_used", @"total_volume", @"value", @"will_earn"]];
   }
 }
 

@@ -14,6 +14,7 @@
 @property (nonatomic, strong) LUMonetaryValue *savings;
 @property (nonatomic, strong) LUMonetaryValue *shouldSpend;
 @property (nonatomic, strong) LUMonetaryValue *spendRemaining;
+@property (nonatomic, strong) LUMonetaryValue *totalVolume;
 @property (nonatomic, strong) LUMonetaryValue *willEarn;
 
 - (BOOL)isOnboardingEligible;
