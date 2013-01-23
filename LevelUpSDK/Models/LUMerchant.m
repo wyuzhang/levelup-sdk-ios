@@ -5,6 +5,7 @@
 #import "LUMerchant.h"
 #import "LUMonetaryValue.h"
 #import "LUUser.h"
+#import "NSArray+ObjectAccess.h"
 #import "NSString+Escaping.h"
 
 NSString * const MerchantWebService = @"MerchantWebService";
@@ -66,7 +67,7 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
     return [@(distance1) compare:@(distance2)];
   }];
 
-  return sortedLocations[0];
+  return [sortedLocations firstObject];
 }
 
 - (LUMonetaryValue *)loyaltyAmountAvailable {

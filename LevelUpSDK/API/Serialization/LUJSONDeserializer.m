@@ -1,5 +1,6 @@
 #import "LUAPIClient.h"
 #import "LUJSONDeserializer.h"
+#import "NSArray+ObjectAccess.h"
 
 @implementation LUJSONDeserializer
 
@@ -51,7 +52,7 @@ static NSMutableDictionary *registeredModels;
   }
 
   if (parsedValues.count == 1) {
-    return [parsedValues allValues][0];
+    return [[parsedValues allValues] firstObject];
   } else {
     return parsedValues;
   }

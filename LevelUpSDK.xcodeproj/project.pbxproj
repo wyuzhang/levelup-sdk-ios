@@ -213,6 +213,8 @@
 		25F643BA166832D600A05C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A7166832D600A05C0E /* Foundation.framework */; };
 		25F643BD166832D600A05C0E /* libLevelUpSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A4166832D600A05C0E /* libLevelUpSDK.a */; };
 		25F643C3166832D600A05C0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25F643C1166832D600A05C0E /* InfoPlist.strings */; };
+		F85F87FF16B094A100F3F648 /* NSArray+ObjectAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = F85F87FD16B094A100F3F648 /* NSArray+ObjectAccess.h */; };
+		F85F880016B094A100F3F648 /* NSArray+ObjectAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = F85F87FE16B094A100F3F648 /* NSArray+ObjectAccess.m */; };
 		F8A4F35B166F99B6004B696B /* LUBundleRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F8A4F359166F99B6004B696B /* LUBundleRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8A4F35C166F99B6004B696B /* LUBundleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A4F35A166F99B6004B696B /* LUBundleRequest.m */; };
 		F8A4F35F166F99D1004B696B /* LUBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = F8A4F35D166F99D1004B696B /* LUBundle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -499,6 +501,8 @@
 		25F643B6166832D600A05C0E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		25F643C0166832D600A05C0E /* LevelUpSDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LevelUpSDKTests-Info.plist"; sourceTree = "<group>"; };
 		25F643C2166832D600A05C0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F85F87FD16B094A100F3F648 /* NSArray+ObjectAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ObjectAccess.h"; sourceTree = "<group>"; };
+		F85F87FE16B094A100F3F648 /* NSArray+ObjectAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ObjectAccess.m"; sourceTree = "<group>"; };
 		F8A4F359166F99B6004B696B /* LUBundleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBundleRequest.h; sourceTree = "<group>"; };
 		F8A4F35A166F99B6004B696B /* LUBundleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBundleRequest.m; sourceTree = "<group>"; };
 		F8A4F35D166F99D1004B696B /* LUBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUBundle.h; path = Models/LUBundle.h; sourceTree = "<group>"; };
@@ -760,6 +764,8 @@
 		257B01C216684D69006ACA24 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				F85F87FD16B094A100F3F648 /* NSArray+ObjectAccess.h */,
+				F85F87FE16B094A100F3F648 /* NSArray+ObjectAccess.m */,
 				257B01C316684D69006ACA24 /* NSDate+StringFormats.h */,
 				257B01C416684D69006ACA24 /* NSDate+StringFormats.m */,
 				257B01C516684D69006ACA24 /* NSNumber+Base36.h */,
@@ -1017,6 +1023,7 @@
 				02ED9BEA1688DA5600DFC994 /* NSString+HTMLStripping.h in Headers */,
 				021DFF4C169F27BB00215926 /* LUCampaignRequest.h in Headers */,
 				02B1643616A0A47600052672 /* LUAPIErrorCodes.h in Headers */,
+				F85F87FF16B094A100F3F648 /* NSArray+ObjectAccess.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1296,6 +1303,7 @@
 				02ED9BEB1688DA5600DFC994 /* NSString+HTMLStripping.m in Sources */,
 				021DFF4D169F27BB00215926 /* LUCampaignRequest.m in Sources */,
 				02B1643716A0A47600052672 /* LUAPIErrorCodes.m in Sources */,
+				F85F880016B094A100F3F648 /* NSArray+ObjectAccess.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
