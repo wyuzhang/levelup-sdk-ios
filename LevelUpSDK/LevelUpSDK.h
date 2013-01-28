@@ -47,5 +47,3 @@
 
 #import <LevelUpSDK/LUQRCodeGenerator.h>
 #import <LevelUpSDK/LUQRCodeScannerView.h>
-
-#import <LevelUpSDK/LUKeychainAccess.h>

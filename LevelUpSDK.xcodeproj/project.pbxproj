@@ -6,78 +6,52 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		257B00DA16684367006ACA24 /* Framework */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 257B00DB16684367006ACA24 /* Build configuration list for PBXAggregateTarget "Framework" */;
-			buildPhases = (
-				257B00E0166843A9006ACA24 /* Build Framework */,
-			);
-			dependencies = (
-				257B00DF16684376006ACA24 /* PBXTargetDependency */,
-			);
-			name = Framework;
-			productName = Framework;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		0201D59916A8B0790064AB53 /* LUKeychainAccessSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0201D59816A8B0790064AB53 /* LUKeychainAccessSpec.m */; };
 		021DFF4C169F27BB00215926 /* LUCampaignRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 021DFF4A169F27BB00215926 /* LUCampaignRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		021DFF4D169F27BB00215926 /* LUCampaignRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 021DFF4B169F27BB00215926 /* LUCampaignRequest.m */; };
-		022B2851166E515B00679E06 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 250637D0166B0E1E008CCE9B /* libKiwi.a */; };
 		022B2856166E519800679E06 /* LUQRCodeGeneratorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 022B2855166E519800679E06 /* LUQRCodeGeneratorSpec.m */; };
-		022B2888166E560C00679E06 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B02311668508F006ACA24 /* AVFoundation.framework */; };
-		022B2889166E561D00679E06 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25620A11166B099100560B19 /* CoreGraphics.framework */; };
-		022B288A166E562300679E06 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25620A13166B099600560B19 /* CoreVideo.framework */; };
-		022B288B166E562800679E06 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25620A15166B099C00560B19 /* ImageIO.framework */; };
 		022B288C166E563400679E06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B026B166853EA006ACA24 /* UIKit.framework */; };
-		022B288D166E572500679E06 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B012016684BE5006ACA24 /* MobileCoreServices.framework */; };
-		022B288E166E572900679E06 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B011E16684BB4006ACA24 /* SystemConfiguration.framework */; };
-		022B2890166E573D00679E06 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B288F166E573D00679E06 /* CoreLocation.framework */; };
-		022B2892166E574B00679E06 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B2891166E574B00679E06 /* QuartzCore.framework */; };
-		022B2894166E575400679E06 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B2893166E575400679E06 /* CoreMedia.framework */; };
-		022B2896166E575700679E06 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B2895166E575700679E06 /* Security.framework */; };
-		022B2897166E59D600679E06 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B2895166E575700679E06 /* Security.framework */; };
-		022B2898166E59DA00679E06 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B2893166E575400679E06 /* CoreMedia.framework */; };
-		022B2899166E59DF00679E06 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B2891166E574B00679E06 /* QuartzCore.framework */; };
-		022B289A166E59E300679E06 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B288F166E573D00679E06 /* CoreLocation.framework */; };
+		02941E6516B738AE00EDAF6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6416B738AE00EDAF6E /* AVFoundation.framework */; };
+		02941E6616B738F300EDAF6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6416B738AE00EDAF6E /* AVFoundation.framework */; };
+		02941E6816B7391700EDAF6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6716B7391700EDAF6E /* QuartzCore.framework */; };
+		02941E6916B7392300EDAF6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6716B7391700EDAF6E /* QuartzCore.framework */; };
+		02941E6B16B739FE00EDAF6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6A16B739FE00EDAF6E /* CoreGraphics.framework */; };
+		02941E6C16B73A0D00EDAF6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6A16B739FE00EDAF6E /* CoreGraphics.framework */; };
+		02941E6E16B73A2500EDAF6E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6D16B73A2500EDAF6E /* CoreLocation.framework */; };
+		02941E6F16B73A2E00EDAF6E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6D16B73A2500EDAF6E /* CoreLocation.framework */; };
+		02941E7116B73A5F00EDAF6E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7016B73A5F00EDAF6E /* Security.framework */; };
+		02941E7216B73A6B00EDAF6E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7016B73A5F00EDAF6E /* Security.framework */; };
+		02941E7416B73A9B00EDAF6E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7316B73A9B00EDAF6E /* CoreVideo.framework */; };
+		02941E7516B73AA200EDAF6E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7316B73A9B00EDAF6E /* CoreVideo.framework */; };
+		02941E7716B73ADB00EDAF6E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7616B73ADB00EDAF6E /* SystemConfiguration.framework */; };
+		02941E7816B73AF600EDAF6E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7616B73ADB00EDAF6E /* SystemConfiguration.framework */; };
+		02941E7A16B73B1D00EDAF6E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7916B73B1D00EDAF6E /* MobileCoreServices.framework */; };
+		02941E7B16B73B3200EDAF6E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7916B73B1D00EDAF6E /* MobileCoreServices.framework */; };
+		02941E7D16B73B5700EDAF6E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7C16B73B5700EDAF6E /* ImageIO.framework */; };
+		02941E7E16B73B5F00EDAF6E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7C16B73B5700EDAF6E /* ImageIO.framework */; };
+		02941E8016B73B7B00EDAF6E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */; };
+		02941E8116B73B8B00EDAF6E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */; };
+		02941FA316B96CBC00EDAF6E /* BraintreeAES.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8116B96CBC00EDAF6E /* BraintreeAES.h */; };
+		02941FA416B96CBC00EDAF6E /* BraintreeAES.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F8216B96CBC00EDAF6E /* BraintreeAES.m */; };
+		02941FA616B96CBC00EDAF6E /* BraintreeEncryption.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8416B96CBC00EDAF6E /* BraintreeEncryption.h */; };
+		02941FA716B96CBC00EDAF6E /* BraintreeEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F8516B96CBC00EDAF6E /* BraintreeEncryption.m */; };
+		02941FA916B96CBC00EDAF6E /* BraintreeRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8716B96CBC00EDAF6E /* BraintreeRandom.h */; };
+		02941FAA16B96CBC00EDAF6E /* BraintreeRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F8816B96CBC00EDAF6E /* BraintreeRandom.m */; };
+		02941FAB16B96CBC00EDAF6E /* BraintreeRSA.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8916B96CBC00EDAF6E /* BraintreeRSA.h */; };
+		02941FAC16B96CBC00EDAF6E /* BraintreeRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F8A16B96CBC00EDAF6E /* BraintreeRSA.m */; };
+		02941FAD16B96CBC00EDAF6E /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8D16B96CBC00EDAF6E /* NSData+Base64.h */; };
+		02941FAE16B96CBC00EDAF6E /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F8E16B96CBC00EDAF6E /* NSData+Base64.m */; };
+		02941FAF16B96CBC00EDAF6E /* SecKeyWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8F16B96CBC00EDAF6E /* SecKeyWrapper.h */; };
+		02941FB016B96CBC00EDAF6E /* SecKeyWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F9016B96CBC00EDAF6E /* SecKeyWrapper.m */; };
 		02B1643616A0A47600052672 /* LUAPIErrorCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 02B1643416A0A47600052672 /* LUAPIErrorCodes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02B1643716A0A47600052672 /* LUAPIErrorCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B1643516A0A47600052672 /* LUAPIErrorCodes.m */; };
 		02ED9BEA1688DA5600DFC994 /* NSString+HTMLStripping.h in Headers */ = {isa = PBXBuildFile; fileRef = 02ED9BE81688DA5600DFC994 /* NSString+HTMLStripping.h */; };
 		02ED9BEB1688DA5600DFC994 /* NSString+HTMLStripping.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED9BE91688DA5600DFC994 /* NSString+HTMLStripping.m */; };
-		2506379D166B0DFD008CCE9B /* AFHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 25063757166B0DFD008CCE9B /* AFHTTPClient.h */; };
-		2506379E166B0DFD008CCE9B /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 25063758166B0DFD008CCE9B /* AFHTTPClient.m */; };
-		2506379F166B0DFD008CCE9B /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 25063759166B0DFD008CCE9B /* AFHTTPRequestOperation.h */; };
-		250637A0166B0DFD008CCE9B /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2506375A166B0DFD008CCE9B /* AFHTTPRequestOperation.m */; };
-		250637A1166B0DFD008CCE9B /* AFImageRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2506375B166B0DFD008CCE9B /* AFImageRequestOperation.h */; };
-		250637A2166B0DFD008CCE9B /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2506375C166B0DFD008CCE9B /* AFImageRequestOperation.m */; };
-		250637A3166B0DFD008CCE9B /* AFJSONRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2506375D166B0DFD008CCE9B /* AFJSONRequestOperation.h */; };
-		250637A4166B0DFD008CCE9B /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2506375E166B0DFD008CCE9B /* AFJSONRequestOperation.m */; };
-		250637A5166B0DFD008CCE9B /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2506375F166B0DFD008CCE9B /* AFNetworkActivityIndicatorManager.h */; };
-		250637A6166B0DFD008CCE9B /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25063760166B0DFD008CCE9B /* AFNetworkActivityIndicatorManager.m */; };
-		250637A7166B0DFD008CCE9B /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 25063761166B0DFD008CCE9B /* AFNetworking.h */; };
-		250637A8166B0DFD008CCE9B /* AFPropertyListRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 25063762166B0DFD008CCE9B /* AFPropertyListRequestOperation.h */; };
-		250637A9166B0DFD008CCE9B /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 25063763166B0DFD008CCE9B /* AFPropertyListRequestOperation.m */; };
-		250637AA166B0DFD008CCE9B /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 25063764166B0DFD008CCE9B /* AFURLConnectionOperation.h */; };
-		250637AB166B0DFD008CCE9B /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 25063765166B0DFD008CCE9B /* AFURLConnectionOperation.m */; };
-		250637AC166B0DFD008CCE9B /* AFXMLRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 25063766166B0DFD008CCE9B /* AFXMLRequestOperation.h */; };
-		250637AD166B0DFD008CCE9B /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 25063767166B0DFD008CCE9B /* AFXMLRequestOperation.m */; };
-		250637AE166B0DFD008CCE9B /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 25063768166B0DFD008CCE9B /* UIImageView+AFNetworking.h */; };
-		250637AF166B0DFD008CCE9B /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 25063769166B0DFD008CCE9B /* UIImageView+AFNetworking.m */; };
-		25620A10166B095700560B19 /* libZXingObjC-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25620A05166B093900560B19 /* libZXingObjC-iOS.a */; };
-		25620A12166B099100560B19 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25620A11166B099100560B19 /* CoreGraphics.framework */; };
-		25620A14166B099700560B19 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25620A13166B099600560B19 /* CoreVideo.framework */; };
-		25620A16166B099C00560B19 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25620A15166B099C00560B19 /* ImageIO.framework */; };
 		257B00D31668363A006ACA24 /* LevelUpSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 25F643AC166832D600A05C0E /* LevelUpSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		257B00E416684756006ACA24 /* LUConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B00E216684756006ACA24 /* LUConstants.h */; };
 		257B00E516684756006ACA24 /* LUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B00E316684756006ACA24 /* LUConstants.m */; };
 		257B00EB1668479A006ACA24 /* LUDeviceIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B00E71668479A006ACA24 /* LUDeviceIdentifier.h */; };
 		257B00EC1668479A006ACA24 /* LUDeviceIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B00E81668479A006ACA24 /* LUDeviceIdentifier.m */; };
-		257B00ED1668479A006ACA24 /* LUKeychainAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B00E91668479A006ACA24 /* LUKeychainAccess.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		257B00EE1668479A006ACA24 /* LUKeychainAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B00EA1668479A006ACA24 /* LUKeychainAccess.m */; };
-		257B011F16684BB4006ACA24 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B011E16684BB4006ACA24 /* SystemConfiguration.framework */; };
-		257B012116684BE5006ACA24 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B012016684BE5006ACA24 /* MobileCoreServices.framework */; };
 		257B014E16684C5E006ACA24 /* LUApnDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B012216684C5E006ACA24 /* LUApnDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		257B014F16684C5E006ACA24 /* LUApnDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B012316684C5E006ACA24 /* LUApnDevice.m */; };
 		257B015016684C5E006ACA24 /* LUCampaign.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B012416684C5E006ACA24 /* LUCampaign.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -162,20 +136,6 @@
 		257B01CC16684D69006ACA24 /* NSNumber+Base36.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B01C616684D69006ACA24 /* NSNumber+Base36.m */; };
 		257B01CD16684D69006ACA24 /* NSString+Escaping.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B01C716684D69006ACA24 /* NSString+Escaping.h */; };
 		257B01CE16684D69006ACA24 /* NSString+Escaping.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B01C816684D69006ACA24 /* NSString+Escaping.m */; };
-		257B021116684FA0006ACA24 /* BraintreeAES.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B020116684FA0006ACA24 /* BraintreeAES.h */; };
-		257B021216684FA0006ACA24 /* BraintreeAES.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B020216684FA0006ACA24 /* BraintreeAES.m */; };
-		257B021316684FA0006ACA24 /* BraintreeEncryption-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 257B020316684FA0006ACA24 /* BraintreeEncryption-Prefix.pch */; };
-		257B021416684FA0006ACA24 /* BraintreeEncryption.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B020416684FA0006ACA24 /* BraintreeEncryption.h */; };
-		257B021516684FA0006ACA24 /* BraintreeEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B020516684FA0006ACA24 /* BraintreeEncryption.m */; };
-		257B021616684FA0006ACA24 /* BraintreeEncyption-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 257B020616684FA0006ACA24 /* BraintreeEncyption-Prefix.pch */; };
-		257B021716684FA0006ACA24 /* BraintreeRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B020716684FA0006ACA24 /* BraintreeRandom.h */; };
-		257B021816684FA0006ACA24 /* BraintreeRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B020816684FA0006ACA24 /* BraintreeRandom.m */; };
-		257B021916684FA0006ACA24 /* BraintreeRSA.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B020916684FA0006ACA24 /* BraintreeRSA.h */; };
-		257B021A16684FA0006ACA24 /* BraintreeRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B020A16684FA0006ACA24 /* BraintreeRSA.m */; };
-		257B021B16684FA0006ACA24 /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B020D16684FA0006ACA24 /* NSData+Base64.h */; };
-		257B021C16684FA0006ACA24 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B020E16684FA0006ACA24 /* NSData+Base64.m */; };
-		257B021D16684FA0006ACA24 /* SecKeyWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B020F16684FA0006ACA24 /* SecKeyWrapper.h */; };
-		257B021E16684FA0006ACA24 /* SecKeyWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B021016684FA0006ACA24 /* SecKeyWrapper.m */; };
 		257B022916684FE1006ACA24 /* LUQRCodeDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B022016684FE1006ACA24 /* LUQRCodeDecoder.h */; settings = {ATTRIBUTES = (); }; };
 		257B022A16684FE1006ACA24 /* LUQRCodeDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B022116684FE1006ACA24 /* LUQRCodeDecoder.m */; };
 		257B022B16684FE1006ACA24 /* LUQRCodeGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B022216684FE1006ACA24 /* LUQRCodeGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -184,7 +144,6 @@
 		257B022E16684FE1006ACA24 /* LUQRCodeScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B022616684FE1006ACA24 /* LUQRCodeScannerView.m */; };
 		257B022F16684FE1006ACA24 /* LUQROverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B022716684FE1006ACA24 /* LUQROverlayView.h */; };
 		257B023016684FE1006ACA24 /* LUQROverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B022816684FE1006ACA24 /* LUQROverlayView.m */; };
-		257B023216685090006ACA24 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B02311668508F006ACA24 /* AVFoundation.framework */; };
 		257B026C166853EA006ACA24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B026B166853EA006ACA24 /* UIKit.framework */; };
 		25AD5E45167E672A00E43701 /* LUApnDeviceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E2E167E672A00E43701 /* LUApnDeviceSpec.m */; };
 		25AD5E46167E672A00E43701 /* LUBundleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E2F167E672A00E43701 /* LUBundleSpec.m */; };
@@ -210,10 +169,11 @@
 		25AD5E5A167E672A00E43701 /* LUUserAddressSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E43167E672A00E43701 /* LUUserAddressSpec.m */; };
 		25AD5E5B167E672A00E43701 /* LUUserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD5E44167E672A00E43701 /* LUUserSpec.m */; };
 		25F643A8166832D600A05C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A7166832D600A05C0E /* Foundation.framework */; };
-		25F643B7166832D600A05C0E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643B6166832D600A05C0E /* SenTestingKit.framework */; };
 		25F643BA166832D600A05C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A7166832D600A05C0E /* Foundation.framework */; };
 		25F643BD166832D600A05C0E /* libLevelUpSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A4166832D600A05C0E /* libLevelUpSDK.a */; };
 		25F643C3166832D600A05C0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25F643C1166832D600A05C0E /* InfoPlist.strings */; };
+		45C90162129F4441AD00C796 /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35969BE4155A4B838F746A8C /* libPods-test.a */; };
+		6F444D2F83D549768CF26F9C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A39890392E641DAA8438DC9 /* libPods.a */; };
 		F85F87FF16B094A100F3F648 /* NSArray+ObjectAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = F85F87FD16B094A100F3F648 /* NSArray+ObjectAccess.h */; };
 		F85F880016B094A100F3F648 /* NSArray+ObjectAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = F85F87FE16B094A100F3F648 /* NSArray+ObjectAccess.m */; };
 		F8A4F35B166F99B6004B696B /* LUBundleRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F8A4F359166F99B6004B696B /* LUBundleRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -225,91 +185,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		022B284F166E511400679E06 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 250637C4166B0E1D008CCE9B /* Kiwi.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F5015B9E11583A77002E9A98;
-			remoteInfo = Kiwi;
-		};
-		250637CF166B0E1E008CCE9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 250637C4166B0E1D008CCE9B /* Kiwi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F5015B9F11583A77002E9A98;
-			remoteInfo = Kiwi;
-		};
-		250637D1166B0E1E008CCE9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 250637C4166B0E1D008CCE9B /* Kiwi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 832C83C7157263B300F160D5;
-			remoteInfo = "Kiwi-OSX";
-		};
-		250637D3166B0E1E008CCE9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 250637C4166B0E1D008CCE9B /* Kiwi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F5015C9E11584017002E9A98;
-			remoteInfo = KiwiTests;
-		};
-		250637D5166B0E1E008CCE9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 250637C4166B0E1D008CCE9B /* Kiwi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A3B16542139967B800E9CC6E;
-			remoteInfo = KiwiExamples;
-		};
-		25620A04166B093900560B19 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 256209F8166B093800560B19 /* ZXingObjC.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25403CB3166A96FA00E13304;
-			remoteInfo = "ZXingObjC-iOS";
-		};
-		25620A06166B093900560B19 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 256209F8166B093800560B19 /* ZXingObjC.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25403CC4166A96FA00E13304;
-			remoteInfo = "ZXingObjCTests-iOS";
-		};
-		25620A08166B093900560B19 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 256209F8166B093800560B19 /* ZXingObjC.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25404166166AADAC00E13304;
-			remoteInfo = "ZXingObjC-osx";
-		};
-		25620A0A166B093900560B19 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 256209F8166B093800560B19 /* ZXingObjC.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25404178166AADAC00E13304;
-			remoteInfo = "ZXingObjCTests-osx";
-		};
-		25620A0C166B093900560B19 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 256209F8166B093800560B19 /* ZXingObjC.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2540439E166ABA0A00E13304;
-			remoteInfo = "OS X Framework";
-		};
-		25620A0E166B094F00560B19 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 256209F8166B093800560B19 /* ZXingObjC.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 25403CB2166A96FA00E13304;
-			remoteInfo = "ZXingObjC-iOS";
-		};
-		257B00DE16684376006ACA24 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 25F6439B166832D600A05C0E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 25F643A3166832D600A05C0E;
-			remoteInfo = LevelUpSDK;
-		};
-		25F643BB166832D600A05C0E /* PBXContainerItemProxy */ = {
+		02941E6216B734C300EDAF6E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 25F6439B166832D600A05C0E /* Project object */;
 			proxyType = 1;
@@ -319,50 +195,42 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0201D59816A8B0790064AB53 /* LUKeychainAccessSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUKeychainAccessSpec.m; path = Utils/LUKeychainAccessSpec.m; sourceTree = "<group>"; };
 		021DFF4A169F27BB00215926 /* LUCampaignRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCampaignRequest.h; sourceTree = "<group>"; };
 		021DFF4B169F27BB00215926 /* LUCampaignRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCampaignRequest.m; sourceTree = "<group>"; };
 		022B2855166E519800679E06 /* LUQRCodeGeneratorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUQRCodeGeneratorSpec.m; path = "QRCode Management/LUQRCodeGeneratorSpec.m"; sourceTree = "<group>"; };
-		022B288F166E573D00679E06 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		022B2891166E574B00679E06 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		022B2893166E575400679E06 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		022B2895166E575700679E06 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		02941E6416B738AE00EDAF6E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		02941E6716B7391700EDAF6E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		02941E6A16B739FE00EDAF6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		02941E6D16B73A2500EDAF6E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		02941E7016B73A5F00EDAF6E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		02941E7316B73A9B00EDAF6E /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		02941E7616B73ADB00EDAF6E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		02941E7916B73B1D00EDAF6E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		02941E7C16B73B5700EDAF6E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		02941F8116B96CBC00EDAF6E /* BraintreeAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BraintreeAES.h; sourceTree = "<group>"; };
+		02941F8216B96CBC00EDAF6E /* BraintreeAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BraintreeAES.m; sourceTree = "<group>"; };
+		02941F8416B96CBC00EDAF6E /* BraintreeEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BraintreeEncryption.h; sourceTree = "<group>"; };
+		02941F8516B96CBC00EDAF6E /* BraintreeEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BraintreeEncryption.m; sourceTree = "<group>"; };
+		02941F8716B96CBC00EDAF6E /* BraintreeRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BraintreeRandom.h; sourceTree = "<group>"; };
+		02941F8816B96CBC00EDAF6E /* BraintreeRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BraintreeRandom.m; sourceTree = "<group>"; };
+		02941F8916B96CBC00EDAF6E /* BraintreeRSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BraintreeRSA.h; sourceTree = "<group>"; };
+		02941F8A16B96CBC00EDAF6E /* BraintreeRSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BraintreeRSA.m; sourceTree = "<group>"; };
+		02941F8D16B96CBC00EDAF6E /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		02941F8E16B96CBC00EDAF6E /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		02941F8F16B96CBC00EDAF6E /* SecKeyWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecKeyWrapper.h; sourceTree = "<group>"; };
+		02941F9016B96CBC00EDAF6E /* SecKeyWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecKeyWrapper.m; sourceTree = "<group>"; };
 		02B1643416A0A47600052672 /* LUAPIErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIErrorCodes.h; sourceTree = "<group>"; };
 		02B1643516A0A47600052672 /* LUAPIErrorCodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIErrorCodes.m; sourceTree = "<group>"; };
 		02ED9BE81688DA5600DFC994 /* NSString+HTMLStripping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTMLStripping.h"; sourceTree = "<group>"; };
 		02ED9BE91688DA5600DFC994 /* NSString+HTMLStripping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTMLStripping.m"; sourceTree = "<group>"; };
-		25063757166B0DFD008CCE9B /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
-		25063758166B0DFD008CCE9B /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
-		25063759166B0DFD008CCE9B /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		2506375A166B0DFD008CCE9B /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		2506375B166B0DFD008CCE9B /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
-		2506375C166B0DFD008CCE9B /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
-		2506375D166B0DFD008CCE9B /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
-		2506375E166B0DFD008CCE9B /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
-		2506375F166B0DFD008CCE9B /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		25063760166B0DFD008CCE9B /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
-		25063761166B0DFD008CCE9B /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		25063762166B0DFD008CCE9B /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
-		25063763166B0DFD008CCE9B /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
-		25063764166B0DFD008CCE9B /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		25063765166B0DFD008CCE9B /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		25063766166B0DFD008CCE9B /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
-		25063767166B0DFD008CCE9B /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
-		25063768166B0DFD008CCE9B /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		25063769166B0DFD008CCE9B /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		250637C4166B0E1D008CCE9B /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = Frameworks/Kiwi/Kiwi.xcodeproj; sourceTree = "<group>"; };
-		256209F8166B093800560B19 /* ZXingObjC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZXingObjC.xcodeproj; path = Frameworks/ZXingObjC/ZXingObjC.xcodeproj; sourceTree = "<group>"; };
-		25620A11166B099100560B19 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		25620A13166B099600560B19 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		25620A15166B099C00560B19 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		05C538A8A6814C6E82461EB1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		1A39890392E641DAA8438DC9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.xcconfig"; path = "Pods/Pods-test.xcconfig"; sourceTree = SOURCE_ROOT; };
 		257B00E216684756006ACA24 /* LUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUConstants.h; sourceTree = "<group>"; };
 		257B00E316684756006ACA24 /* LUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUConstants.m; sourceTree = "<group>"; };
 		257B00E71668479A006ACA24 /* LUDeviceIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUDeviceIdentifier.h; sourceTree = "<group>"; };
 		257B00E81668479A006ACA24 /* LUDeviceIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDeviceIdentifier.m; sourceTree = "<group>"; };
-		257B00E91668479A006ACA24 /* LUKeychainAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUKeychainAccess.h; sourceTree = "<group>"; };
-		257B00EA1668479A006ACA24 /* LUKeychainAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUKeychainAccess.m; sourceTree = "<group>"; };
-		257B011E16684BB4006ACA24 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		257B012016684BE5006ACA24 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		257B012216684C5E006ACA24 /* LUApnDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUApnDevice.h; path = Models/LUApnDevice.h; sourceTree = "<group>"; };
 		257B012316684C5E006ACA24 /* LUApnDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUApnDevice.m; path = Models/LUApnDevice.m; sourceTree = "<group>"; };
 		257B012416684C5E006ACA24 /* LUCampaign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUCampaign.h; path = Models/LUCampaign.h; sourceTree = "<group>"; };
@@ -447,20 +315,6 @@
 		257B01C616684D69006ACA24 /* NSNumber+Base36.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Base36.m"; sourceTree = "<group>"; };
 		257B01C716684D69006ACA24 /* NSString+Escaping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Escaping.h"; sourceTree = "<group>"; };
 		257B01C816684D69006ACA24 /* NSString+Escaping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Escaping.m"; sourceTree = "<group>"; };
-		257B020116684FA0006ACA24 /* BraintreeAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BraintreeAES.h; sourceTree = "<group>"; };
-		257B020216684FA0006ACA24 /* BraintreeAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BraintreeAES.m; sourceTree = "<group>"; };
-		257B020316684FA0006ACA24 /* BraintreeEncryption-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BraintreeEncryption-Prefix.pch"; sourceTree = "<group>"; };
-		257B020416684FA0006ACA24 /* BraintreeEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BraintreeEncryption.h; sourceTree = "<group>"; };
-		257B020516684FA0006ACA24 /* BraintreeEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BraintreeEncryption.m; sourceTree = "<group>"; };
-		257B020616684FA0006ACA24 /* BraintreeEncyption-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BraintreeEncyption-Prefix.pch"; sourceTree = "<group>"; };
-		257B020716684FA0006ACA24 /* BraintreeRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BraintreeRandom.h; sourceTree = "<group>"; };
-		257B020816684FA0006ACA24 /* BraintreeRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BraintreeRandom.m; sourceTree = "<group>"; };
-		257B020916684FA0006ACA24 /* BraintreeRSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BraintreeRSA.h; sourceTree = "<group>"; };
-		257B020A16684FA0006ACA24 /* BraintreeRSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BraintreeRSA.m; sourceTree = "<group>"; };
-		257B020D16684FA0006ACA24 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		257B020E16684FA0006ACA24 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
-		257B020F16684FA0006ACA24 /* SecKeyWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecKeyWrapper.h; sourceTree = "<group>"; };
-		257B021016684FA0006ACA24 /* SecKeyWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecKeyWrapper.m; sourceTree = "<group>"; };
 		257B022016684FE1006ACA24 /* LUQRCodeDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUQRCodeDecoder.h; sourceTree = "<group>"; };
 		257B022116684FE1006ACA24 /* LUQRCodeDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUQRCodeDecoder.m; sourceTree = "<group>"; };
 		257B022216684FE1006ACA24 /* LUQRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUQRCodeGenerator.h; sourceTree = "<group>"; };
@@ -469,7 +323,6 @@
 		257B022616684FE1006ACA24 /* LUQRCodeScannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUQRCodeScannerView.m; sourceTree = "<group>"; };
 		257B022716684FE1006ACA24 /* LUQROverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUQROverlayView.h; sourceTree = "<group>"; };
 		257B022816684FE1006ACA24 /* LUQROverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUQROverlayView.m; sourceTree = "<group>"; };
-		257B02311668508F006ACA24 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		257B026B166853EA006ACA24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		25AD5E2C167E655400E43701 /* LevelUpSDKTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LevelUpSDKTests-Prefix.pch"; sourceTree = "<group>"; };
 		25AD5E2E167E672A00E43701 /* LUApnDeviceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUApnDeviceSpec.m; sourceTree = "<group>"; };
@@ -500,9 +353,9 @@
 		25F643AB166832D600A05C0E /* LevelUpSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LevelUpSDK-Prefix.pch"; sourceTree = "<group>"; };
 		25F643AC166832D600A05C0E /* LevelUpSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelUpSDK.h; sourceTree = "<group>"; };
 		25F643B5166832D600A05C0E /* LevelUpSDKTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LevelUpSDKTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		25F643B6166832D600A05C0E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		25F643C0166832D600A05C0E /* LevelUpSDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LevelUpSDKTests-Info.plist"; sourceTree = "<group>"; };
 		25F643C2166832D600A05C0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		35969BE4155A4B838F746A8C /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85F87FD16B094A100F3F648 /* NSArray+ObjectAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ObjectAccess.h"; sourceTree = "<group>"; };
 		F85F87FE16B094A100F3F648 /* NSArray+ObjectAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ObjectAccess.m"; sourceTree = "<group>"; };
 		F8A4F359166F99B6004B696B /* LUBundleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBundleRequest.h; sourceTree = "<group>"; };
@@ -518,19 +371,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				022B289A166E59E300679E06 /* CoreLocation.framework in Frameworks */,
-				022B2899166E59DF00679E06 /* QuartzCore.framework in Frameworks */,
-				022B2898166E59DA00679E06 /* CoreMedia.framework in Frameworks */,
-				022B2897166E59D600679E06 /* Security.framework in Frameworks */,
-				25620A10166B095700560B19 /* libZXingObjC-iOS.a in Frameworks */,
-				257B023216685090006ACA24 /* AVFoundation.framework in Frameworks */,
-				25620A12166B099100560B19 /* CoreGraphics.framework in Frameworks */,
-				25620A14166B099700560B19 /* CoreVideo.framework in Frameworks */,
+				02941E6516B738AE00EDAF6E /* AVFoundation.framework in Frameworks */,
+				02941E6B16B739FE00EDAF6E /* CoreGraphics.framework in Frameworks */,
+				02941E6E16B73A2500EDAF6E /* CoreLocation.framework in Frameworks */,
+				02941E8016B73B7B00EDAF6E /* CoreMedia.framework in Frameworks */,
+				02941E7416B73A9B00EDAF6E /* CoreVideo.framework in Frameworks */,
 				25F643A8166832D600A05C0E /* Foundation.framework in Frameworks */,
-				25620A16166B099C00560B19 /* ImageIO.framework in Frameworks */,
-				257B012116684BE5006ACA24 /* MobileCoreServices.framework in Frameworks */,
-				257B011F16684BB4006ACA24 /* SystemConfiguration.framework in Frameworks */,
+				02941E7D16B73B5700EDAF6E /* ImageIO.framework in Frameworks */,
+				02941E7B16B73B3200EDAF6E /* MobileCoreServices.framework in Frameworks */,
+				02941E6816B7391700EDAF6E /* QuartzCore.framework in Frameworks */,
+				02941E7116B73A5F00EDAF6E /* Security.framework in Frameworks */,
+				02941E7716B73ADB00EDAF6E /* SystemConfiguration.framework in Frameworks */,
 				257B026C166853EA006ACA24 /* UIKit.framework in Frameworks */,
+				6F444D2F83D549768CF26F9C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,35 +391,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				022B2896166E575700679E06 /* Security.framework in Frameworks */,
-				022B2894166E575400679E06 /* CoreMedia.framework in Frameworks */,
-				022B2892166E574B00679E06 /* QuartzCore.framework in Frameworks */,
-				022B2890166E573D00679E06 /* CoreLocation.framework in Frameworks */,
-				022B288E166E572900679E06 /* SystemConfiguration.framework in Frameworks */,
-				022B288D166E572500679E06 /* MobileCoreServices.framework in Frameworks */,
-				022B2851166E515B00679E06 /* libKiwi.a in Frameworks */,
-				25F643BD166832D600A05C0E /* libLevelUpSDK.a in Frameworks */,
-				022B2888166E560C00679E06 /* AVFoundation.framework in Frameworks */,
-				022B2889166E561D00679E06 /* CoreGraphics.framework in Frameworks */,
-				022B288A166E562300679E06 /* CoreVideo.framework in Frameworks */,
+				02941E6616B738F300EDAF6E /* AVFoundation.framework in Frameworks */,
+				02941E6C16B73A0D00EDAF6E /* CoreGraphics.framework in Frameworks */,
+				02941E6F16B73A2E00EDAF6E /* CoreLocation.framework in Frameworks */,
+				02941E8116B73B8B00EDAF6E /* CoreMedia.framework in Frameworks */,
+				02941E7516B73AA200EDAF6E /* CoreVideo.framework in Frameworks */,
 				25F643BA166832D600A05C0E /* Foundation.framework in Frameworks */,
-				022B288B166E562800679E06 /* ImageIO.framework in Frameworks */,
-				25F643B7166832D600A05C0E /* SenTestingKit.framework in Frameworks */,
+				02941E7E16B73B5F00EDAF6E /* ImageIO.framework in Frameworks */,
+				02941E7A16B73B1D00EDAF6E /* MobileCoreServices.framework in Frameworks */,
+				02941E6916B7392300EDAF6E /* QuartzCore.framework in Frameworks */,
+				02941E7216B73A6B00EDAF6E /* Security.framework in Frameworks */,
+				02941E7816B73AF600EDAF6E /* SystemConfiguration.framework in Frameworks */,
 				022B288C166E563400679E06 /* UIKit.framework in Frameworks */,
+				25F643BD166832D600A05C0E /* libLevelUpSDK.a in Frameworks */,
+				45C90162129F4441AD00C796 /* libPods-test.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0201D58216A8A7B90064AB53 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				0201D59816A8B0790064AB53 /* LUKeychainAccessSpec.m */,
-			);
-			name = Utils;
-			sourceTree = "<group>";
-		};
 		022B2854166E518100679E06 /* QRCode Management */ = {
 			isa = PBXGroup;
 			children = (
@@ -575,54 +419,24 @@
 			name = "QRCode Management";
 			sourceTree = "<group>";
 		};
-		25063756166B0DFD008CCE9B /* AFNetworking */ = {
+		02941F7F16B96CBC00EDAF6E /* Braintree-Encryption */ = {
 			isa = PBXGroup;
 			children = (
-				25063757166B0DFD008CCE9B /* AFHTTPClient.h */,
-				25063758166B0DFD008CCE9B /* AFHTTPClient.m */,
-				25063759166B0DFD008CCE9B /* AFHTTPRequestOperation.h */,
-				2506375A166B0DFD008CCE9B /* AFHTTPRequestOperation.m */,
-				2506375B166B0DFD008CCE9B /* AFImageRequestOperation.h */,
-				2506375C166B0DFD008CCE9B /* AFImageRequestOperation.m */,
-				2506375D166B0DFD008CCE9B /* AFJSONRequestOperation.h */,
-				2506375E166B0DFD008CCE9B /* AFJSONRequestOperation.m */,
-				2506375F166B0DFD008CCE9B /* AFNetworkActivityIndicatorManager.h */,
-				25063760166B0DFD008CCE9B /* AFNetworkActivityIndicatorManager.m */,
-				25063761166B0DFD008CCE9B /* AFNetworking.h */,
-				25063762166B0DFD008CCE9B /* AFPropertyListRequestOperation.h */,
-				25063763166B0DFD008CCE9B /* AFPropertyListRequestOperation.m */,
-				25063764166B0DFD008CCE9B /* AFURLConnectionOperation.h */,
-				25063765166B0DFD008CCE9B /* AFURLConnectionOperation.m */,
-				25063766166B0DFD008CCE9B /* AFXMLRequestOperation.h */,
-				25063767166B0DFD008CCE9B /* AFXMLRequestOperation.m */,
-				25063768166B0DFD008CCE9B /* UIImageView+AFNetworking.h */,
-				25063769166B0DFD008CCE9B /* UIImageView+AFNetworking.m */,
+				02941F8116B96CBC00EDAF6E /* BraintreeAES.h */,
+				02941F8216B96CBC00EDAF6E /* BraintreeAES.m */,
+				02941F8416B96CBC00EDAF6E /* BraintreeEncryption.h */,
+				02941F8516B96CBC00EDAF6E /* BraintreeEncryption.m */,
+				02941F8716B96CBC00EDAF6E /* BraintreeRandom.h */,
+				02941F8816B96CBC00EDAF6E /* BraintreeRandom.m */,
+				02941F8916B96CBC00EDAF6E /* BraintreeRSA.h */,
+				02941F8A16B96CBC00EDAF6E /* BraintreeRSA.m */,
+				02941F8D16B96CBC00EDAF6E /* NSData+Base64.h */,
+				02941F8E16B96CBC00EDAF6E /* NSData+Base64.m */,
+				02941F8F16B96CBC00EDAF6E /* SecKeyWrapper.h */,
+				02941F9016B96CBC00EDAF6E /* SecKeyWrapper.m */,
 			);
-			name = AFNetworking;
-			path = Frameworks/AFNetworking/AFNetworking;
-			sourceTree = "<group>";
-		};
-		250637C5166B0E1D008CCE9B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				250637D0166B0E1E008CCE9B /* libKiwi.a */,
-				250637D2166B0E1E008CCE9B /* libKiwi-OSX.a */,
-				250637D4166B0E1E008CCE9B /* KiwiTests.octest */,
-				250637D6166B0E1E008CCE9B /* KiwiExamples.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		256209F9166B093800560B19 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				25620A05166B093900560B19 /* libZXingObjC-iOS.a */,
-				25620A07166B093900560B19 /* ZXingObjCTests-iOS.octest */,
-				25620A09166B093900560B19 /* libZXingObjC-osx.a */,
-				25620A0B166B093900560B19 /* ZXingObjCTests-osx.octest */,
-				25620A0D166B093900560B19 /* ZXingObjC.framework */,
-			);
-			name = Products;
+			name = "Braintree-Encryption";
+			path = "Frameworks/Braintree-Encryption/src";
 			sourceTree = "<group>";
 		};
 		257B00D9166838D3006ACA24 /* Models */ = {
@@ -696,8 +510,6 @@
 			children = (
 				257B00E71668479A006ACA24 /* LUDeviceIdentifier.h */,
 				257B00E81668479A006ACA24 /* LUDeviceIdentifier.m */,
-				257B00E91668479A006ACA24 /* LUKeychainAccess.h */,
-				257B00EA1668479A006ACA24 /* LUKeychainAccess.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -788,28 +600,6 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		257B01FF16684FA0006ACA24 /* Braintree-Encryption */ = {
-			isa = PBXGroup;
-			children = (
-				257B020116684FA0006ACA24 /* BraintreeAES.h */,
-				257B020216684FA0006ACA24 /* BraintreeAES.m */,
-				257B020316684FA0006ACA24 /* BraintreeEncryption-Prefix.pch */,
-				257B020416684FA0006ACA24 /* BraintreeEncryption.h */,
-				257B020516684FA0006ACA24 /* BraintreeEncryption.m */,
-				257B020616684FA0006ACA24 /* BraintreeEncyption-Prefix.pch */,
-				257B020716684FA0006ACA24 /* BraintreeRandom.h */,
-				257B020816684FA0006ACA24 /* BraintreeRandom.m */,
-				257B020916684FA0006ACA24 /* BraintreeRSA.h */,
-				257B020A16684FA0006ACA24 /* BraintreeRSA.m */,
-				257B020D16684FA0006ACA24 /* NSData+Base64.h */,
-				257B020E16684FA0006ACA24 /* NSData+Base64.m */,
-				257B020F16684FA0006ACA24 /* SecKeyWrapper.h */,
-				257B021016684FA0006ACA24 /* SecKeyWrapper.m */,
-			);
-			name = "Braintree-Encryption";
-			path = "Frameworks/Braintree-Encryption/src";
-			sourceTree = "<group>";
-		};
 		257B021F16684FE0006ACA24 /* QRCode Management */ = {
 			isa = PBXGroup;
 			children = (
@@ -870,6 +660,8 @@
 				25F643BE166832D600A05C0E /* LevelUpSDKTests */,
 				25F643A6166832D600A05C0E /* Frameworks */,
 				25F643A5166832D600A05C0E /* Products */,
+				05C538A8A6814C6E82461EB1 /* Pods.xcconfig */,
+				1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -888,23 +680,21 @@
 		25F643A6166832D600A05C0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				25063756166B0DFD008CCE9B /* AFNetworking */,
-				257B01FF16684FA0006ACA24 /* Braintree-Encryption */,
-				250637C4166B0E1D008CCE9B /* Kiwi.xcodeproj */,
-				256209F8166B093800560B19 /* ZXingObjC.xcodeproj */,
-				257B02311668508F006ACA24 /* AVFoundation.framework */,
-				25620A11166B099100560B19 /* CoreGraphics.framework */,
-				022B288F166E573D00679E06 /* CoreLocation.framework */,
-				022B2893166E575400679E06 /* CoreMedia.framework */,
-				25620A13166B099600560B19 /* CoreVideo.framework */,
+				02941F7F16B96CBC00EDAF6E /* Braintree-Encryption */,
+				02941E6416B738AE00EDAF6E /* AVFoundation.framework */,
+				02941E6A16B739FE00EDAF6E /* CoreGraphics.framework */,
+				02941E6D16B73A2500EDAF6E /* CoreLocation.framework */,
+				02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */,
+				02941E7316B73A9B00EDAF6E /* CoreVideo.framework */,
 				25F643A7166832D600A05C0E /* Foundation.framework */,
-				25620A15166B099C00560B19 /* ImageIO.framework */,
-				257B012016684BE5006ACA24 /* MobileCoreServices.framework */,
-				022B2891166E574B00679E06 /* QuartzCore.framework */,
-				022B2895166E575700679E06 /* Security.framework */,
-				25F643B6166832D600A05C0E /* SenTestingKit.framework */,
-				257B011E16684BB4006ACA24 /* SystemConfiguration.framework */,
+				02941E7916B73B1D00EDAF6E /* MobileCoreServices.framework */,
+				02941E7C16B73B5700EDAF6E /* ImageIO.framework */,
+				02941E6716B7391700EDAF6E /* QuartzCore.framework */,
+				02941E7016B73A5F00EDAF6E /* Security.framework */,
+				02941E7616B73ADB00EDAF6E /* SystemConfiguration.framework */,
 				257B026B166853EA006ACA24 /* UIKit.framework */,
+				1A39890392E641DAA8438DC9 /* libPods.a */,
+				35969BE4155A4B838F746A8C /* libPods-test.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -938,7 +728,6 @@
 				25AD5E2D167E672A00E43701 /* Models */,
 				022B2854166E518100679E06 /* QRCode Management */,
 				25F643BF166832D600A05C0E /* Supporting Files */,
-				0201D58216A8A7B90064AB53 /* Utils */,
 			);
 			path = LevelUpSDKTests;
 			sourceTree = "<group>";
@@ -963,7 +752,6 @@
 				257B00D31668363A006ACA24 /* LevelUpSDK.h in Headers */,
 				257B00E416684756006ACA24 /* LUConstants.h in Headers */,
 				257B00EB1668479A006ACA24 /* LUDeviceIdentifier.h in Headers */,
-				257B00ED1668479A006ACA24 /* LUKeychainAccess.h in Headers */,
 				257B014E16684C5E006ACA24 /* LUApnDevice.h in Headers */,
 				257B015016684C5E006ACA24 /* LUCampaign.h in Headers */,
 				257B015216684C5E006ACA24 /* LUCategory.h in Headers */,
@@ -1006,28 +794,10 @@
 				257B01C916684D69006ACA24 /* NSDate+StringFormats.h in Headers */,
 				257B01CB16684D69006ACA24 /* NSNumber+Base36.h in Headers */,
 				257B01CD16684D69006ACA24 /* NSString+Escaping.h in Headers */,
-				257B021116684FA0006ACA24 /* BraintreeAES.h in Headers */,
-				257B021316684FA0006ACA24 /* BraintreeEncryption-Prefix.pch in Headers */,
-				257B021416684FA0006ACA24 /* BraintreeEncryption.h in Headers */,
-				257B021616684FA0006ACA24 /* BraintreeEncyption-Prefix.pch in Headers */,
-				257B021716684FA0006ACA24 /* BraintreeRandom.h in Headers */,
-				257B021916684FA0006ACA24 /* BraintreeRSA.h in Headers */,
-				257B021B16684FA0006ACA24 /* NSData+Base64.h in Headers */,
-				257B021D16684FA0006ACA24 /* SecKeyWrapper.h in Headers */,
 				257B022916684FE1006ACA24 /* LUQRCodeDecoder.h in Headers */,
 				257B022B16684FE1006ACA24 /* LUQRCodeGenerator.h in Headers */,
 				257B022D16684FE1006ACA24 /* LUQRCodeScannerView.h in Headers */,
 				257B022F16684FE1006ACA24 /* LUQROverlayView.h in Headers */,
-				2506379D166B0DFD008CCE9B /* AFHTTPClient.h in Headers */,
-				2506379F166B0DFD008CCE9B /* AFHTTPRequestOperation.h in Headers */,
-				250637A1166B0DFD008CCE9B /* AFImageRequestOperation.h in Headers */,
-				250637A3166B0DFD008CCE9B /* AFJSONRequestOperation.h in Headers */,
-				250637A5166B0DFD008CCE9B /* AFNetworkActivityIndicatorManager.h in Headers */,
-				250637A7166B0DFD008CCE9B /* AFNetworking.h in Headers */,
-				250637A8166B0DFD008CCE9B /* AFPropertyListRequestOperation.h in Headers */,
-				250637AA166B0DFD008CCE9B /* AFURLConnectionOperation.h in Headers */,
-				250637AC166B0DFD008CCE9B /* AFXMLRequestOperation.h in Headers */,
-				250637AE166B0DFD008CCE9B /* UIImageView+AFNetworking.h in Headers */,
 				F8A4F35B166F99B6004B696B /* LUBundleRequest.h in Headers */,
 				F8A4F35F166F99D1004B696B /* LUBundle.h in Headers */,
 				F8E319781677908C00D75887 /* LURefund.h in Headers */,
@@ -1035,6 +805,12 @@
 				021DFF4C169F27BB00215926 /* LUCampaignRequest.h in Headers */,
 				02B1643616A0A47600052672 /* LUAPIErrorCodes.h in Headers */,
 				F85F87FF16B094A100F3F648 /* NSArray+ObjectAccess.h in Headers */,
+				02941FA316B96CBC00EDAF6E /* BraintreeAES.h in Headers */,
+				02941FA616B96CBC00EDAF6E /* BraintreeEncryption.h in Headers */,
+				02941FA916B96CBC00EDAF6E /* BraintreeRandom.h in Headers */,
+				02941FAB16B96CBC00EDAF6E /* BraintreeRSA.h in Headers */,
+				02941FAD16B96CBC00EDAF6E /* NSData+Base64.h in Headers */,
+				02941FAF16B96CBC00EDAF6E /* SecKeyWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1048,12 +824,11 @@
 				25F643A0166832D600A05C0E /* Sources */,
 				25F643A1166832D600A05C0E /* Frameworks */,
 				257B00D21668362C006ACA24 /* Headers */,
-				257B00D4166836EC006ACA24 /* Prepare Framework */,
+				0370D3ED1B994A5CA2E4E509 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				25620A0F166B094F00560B19 /* PBXTargetDependency */,
 			);
 			name = LevelUpSDK;
 			productName = LevelUpSDK;
@@ -1067,13 +842,13 @@
 				25F643B0166832D600A05C0E /* Sources */,
 				25F643B1166832D600A05C0E /* Frameworks */,
 				25F643B2166832D600A05C0E /* Resources */,
+				55A9394A540648818E3AE22B /* Copy Pods Resources */,
 				25F643B3166832D600A05C0E /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				022B2850166E511400679E06 /* PBXTargetDependency */,
-				25F643BC166832D600A05C0E /* PBXTargetDependency */,
+				02941E6316B734C300EDAF6E /* PBXTargetDependency */,
 			);
 			name = LevelUpSDKTests;
 			productName = LevelUpSDKTests;
@@ -1099,90 +874,13 @@
 			mainGroup = 25F64399166832D600A05C0E;
 			productRefGroup = 25F643A5166832D600A05C0E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 250637C5166B0E1D008CCE9B /* Products */;
-					ProjectRef = 250637C4166B0E1D008CCE9B /* Kiwi.xcodeproj */;
-				},
-				{
-					ProductGroup = 256209F9166B093800560B19 /* Products */;
-					ProjectRef = 256209F8166B093800560B19 /* ZXingObjC.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				25F643A3166832D600A05C0E /* LevelUpSDK */,
 				25F643B4166832D600A05C0E /* LevelUpSDKTests */,
-				257B00DA16684367006ACA24 /* Framework */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		250637D0166B0E1E008CCE9B /* libKiwi.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libKiwi.a;
-			remoteRef = 250637CF166B0E1E008CCE9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		250637D2166B0E1E008CCE9B /* libKiwi-OSX.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libKiwi-OSX.a";
-			remoteRef = 250637D1166B0E1E008CCE9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		250637D4166B0E1E008CCE9B /* KiwiTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = KiwiTests.octest;
-			remoteRef = 250637D3166B0E1E008CCE9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		250637D6166B0E1E008CCE9B /* KiwiExamples.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = KiwiExamples.octest;
-			remoteRef = 250637D5166B0E1E008CCE9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		25620A05166B093900560B19 /* libZXingObjC-iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libZXingObjC-iOS.a";
-			remoteRef = 25620A04166B093900560B19 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		25620A07166B093900560B19 /* ZXingObjCTests-iOS.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "ZXingObjCTests-iOS.octest";
-			remoteRef = 25620A06166B093900560B19 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		25620A09166B093900560B19 /* libZXingObjC-osx.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libZXingObjC-osx.a";
-			remoteRef = 25620A08166B093900560B19 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		25620A0B166B093900560B19 /* ZXingObjCTests-osx.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "ZXingObjCTests-osx.octest";
-			remoteRef = 25620A0A166B093900560B19 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		25620A0D166B093900560B19 /* ZXingObjC.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ZXingObjC.framework;
-			remoteRef = 25620A0C166B093900560B19 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		25F643B2166832D600A05C0E /* Resources */ = {
@@ -1196,33 +894,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		257B00D4166836EC006ACA24 /* Prepare Framework */ = {
+		0370D3ED1B994A5CA2E4E509 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Prepare Framework";
+			name = "Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n\n# Link the \"Current\" version to \"A\"\n/bin/ln -sfh A \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n";
-		};
-		257B00E0166843A9006ACA24 /* Build Framework */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Build Framework";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\nset +u\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\nSF_TARGET_NAME=${PROJECT_NAME}\nSF_EXECUTABLE_PATH=\"lib${SF_TARGET_NAME}.a\"\nSF_WRAPPER_NAME=\"${SF_TARGET_NAME}.framework\"\n\n# The following conditionals come from\n# https://github.com/kstenerud/iOS-Universal-Framework\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nSF_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nSF_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SF_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nSF_OTHER_PLATFORM=iphonesimulator\nelse\nSF_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$SF_SDK_PLATFORM$ ]]\nthen\nSF_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${SF_OTHER_PLATFORM}\"\nelse\necho \"Could not find platform name from build products directory: $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n# Build the other platform.\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${SF_OTHER_PLATFORM}${SF_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\" $ACTION\n\n# Smash the two static libraries into one fat binary and store it in the .framework\nlipo -create \"${BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" -output \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n\n# Copy the binary to the other architecture folder to have a complete framework in both.\ncp -a \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
 		25F643B3166832D600A05C0E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1237,6 +921,20 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		55A9394A540648818E3AE22B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-test-resources.sh\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1246,7 +944,6 @@
 			files = (
 				257B00E516684756006ACA24 /* LUConstants.m in Sources */,
 				257B00EC1668479A006ACA24 /* LUDeviceIdentifier.m in Sources */,
-				257B00EE1668479A006ACA24 /* LUKeychainAccess.m in Sources */,
 				257B014F16684C5E006ACA24 /* LUApnDevice.m in Sources */,
 				257B015116684C5E006ACA24 /* LUCampaign.m in Sources */,
 				257B015316684C5E006ACA24 /* LUCategory.m in Sources */,
@@ -1289,25 +986,10 @@
 				257B01CA16684D69006ACA24 /* NSDate+StringFormats.m in Sources */,
 				257B01CC16684D69006ACA24 /* NSNumber+Base36.m in Sources */,
 				257B01CE16684D69006ACA24 /* NSString+Escaping.m in Sources */,
-				257B021216684FA0006ACA24 /* BraintreeAES.m in Sources */,
-				257B021516684FA0006ACA24 /* BraintreeEncryption.m in Sources */,
-				257B021816684FA0006ACA24 /* BraintreeRandom.m in Sources */,
-				257B021A16684FA0006ACA24 /* BraintreeRSA.m in Sources */,
-				257B021C16684FA0006ACA24 /* NSData+Base64.m in Sources */,
-				257B021E16684FA0006ACA24 /* SecKeyWrapper.m in Sources */,
 				257B022A16684FE1006ACA24 /* LUQRCodeDecoder.m in Sources */,
 				257B022C16684FE1006ACA24 /* LUQRCodeGenerator.m in Sources */,
 				257B022E16684FE1006ACA24 /* LUQRCodeScannerView.m in Sources */,
 				257B023016684FE1006ACA24 /* LUQROverlayView.m in Sources */,
-				2506379E166B0DFD008CCE9B /* AFHTTPClient.m in Sources */,
-				250637A0166B0DFD008CCE9B /* AFHTTPRequestOperation.m in Sources */,
-				250637A2166B0DFD008CCE9B /* AFImageRequestOperation.m in Sources */,
-				250637A4166B0DFD008CCE9B /* AFJSONRequestOperation.m in Sources */,
-				250637A6166B0DFD008CCE9B /* AFNetworkActivityIndicatorManager.m in Sources */,
-				250637A9166B0DFD008CCE9B /* AFPropertyListRequestOperation.m in Sources */,
-				250637AB166B0DFD008CCE9B /* AFURLConnectionOperation.m in Sources */,
-				250637AD166B0DFD008CCE9B /* AFXMLRequestOperation.m in Sources */,
-				250637AF166B0DFD008CCE9B /* UIImageView+AFNetworking.m in Sources */,
 				F8A4F35C166F99B6004B696B /* LUBundleRequest.m in Sources */,
 				F8A4F360166F99D1004B696B /* LUBundle.m in Sources */,
 				F8E319791677908C00D75887 /* LURefund.m in Sources */,
@@ -1315,6 +997,12 @@
 				021DFF4D169F27BB00215926 /* LUCampaignRequest.m in Sources */,
 				02B1643716A0A47600052672 /* LUAPIErrorCodes.m in Sources */,
 				F85F880016B094A100F3F648 /* NSArray+ObjectAccess.m in Sources */,
+				02941FA416B96CBC00EDAF6E /* BraintreeAES.m in Sources */,
+				02941FA716B96CBC00EDAF6E /* BraintreeEncryption.m in Sources */,
+				02941FAA16B96CBC00EDAF6E /* BraintreeRandom.m in Sources */,
+				02941FAC16B96CBC00EDAF6E /* BraintreeRSA.m in Sources */,
+				02941FAE16B96CBC00EDAF6E /* NSData+Base64.m in Sources */,
+				02941FB016B96CBC00EDAF6E /* SecKeyWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1346,32 +1034,16 @@
 				25AD5E59167E672A00E43701 /* LUTicketSpec.m in Sources */,
 				25AD5E5A167E672A00E43701 /* LUUserAddressSpec.m in Sources */,
 				25AD5E5B167E672A00E43701 /* LUUserSpec.m in Sources */,
-				0201D59916A8B0790064AB53 /* LUKeychainAccessSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		022B2850166E511400679E06 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Kiwi;
-			targetProxy = 022B284F166E511400679E06 /* PBXContainerItemProxy */;
-		};
-		25620A0F166B094F00560B19 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ZXingObjC-iOS";
-			targetProxy = 25620A0E166B094F00560B19 /* PBXContainerItemProxy */;
-		};
-		257B00DF16684376006ACA24 /* PBXTargetDependency */ = {
+		02941E6316B734C300EDAF6E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 25F643A3166832D600A05C0E /* LevelUpSDK */;
-			targetProxy = 257B00DE16684376006ACA24 /* PBXContainerItemProxy */;
-		};
-		25F643BC166832D600A05C0E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 25F643A3166832D600A05C0E /* LevelUpSDK */;
-			targetProxy = 25F643BB166832D600A05C0E /* PBXContainerItemProxy */;
+			targetProxy = 02941E6216B734C300EDAF6E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1397,6 +1069,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_VERSION = 0.5.0;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
@@ -1414,6 +1087,7 @@
 		};
 		02AF33F416725146003B9255 /* Distribution */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05C538A8A6814C6E82461EB1 /* Pods.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
@@ -1421,7 +1095,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LevelUpSDK/LevelUpSDK-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
 				SKIP_INSTALL = YES;
@@ -1431,45 +1104,16 @@
 		};
 		02AF33F516725146003B9255 /* Distribution */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LevelUpSDK/LevelUpSDK-Prefix.pch";
 				INFOPLIST_FILE = "LevelUpSDKTests/LevelUpSDKTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = "Frameworks/**";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Distribution;
-		};
-		02AF33F616725146003B9255 /* Distribution */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Distribution;
-		};
-		257B00DC16684367006ACA24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		257B00DD16684367006ACA24 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
 		};
 		25F643C7166832D600A05C0E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1481,6 +1125,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_VERSION = 0.5.0;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1508,6 +1153,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_VERSION = 0.5.0;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
@@ -1525,6 +1171,7 @@
 		};
 		25F643CA166832D600A05C0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05C538A8A6814C6E82461EB1 /* Pods.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
@@ -1532,7 +1179,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LevelUpSDK/LevelUpSDK-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
 				SKIP_INSTALL = YES;
@@ -1542,6 +1188,7 @@
 		};
 		25F643CB166832D600A05C0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05C538A8A6814C6E82461EB1 /* Pods.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
@@ -1549,7 +1196,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LevelUpSDK/LevelUpSDK-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
 				SKIP_INSTALL = YES;
@@ -1559,42 +1205,26 @@
 		};
 		25F643CD166832D600A05C0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LevelUpSDKTests/LevelUpSDKTests-Prefix.pch";
 				INFOPLIST_FILE = "LevelUpSDKTests/LevelUpSDKTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = "Frameworks/**";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
 		25F643CE166832D600A05C0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LevelUpSDKTests/LevelUpSDKTests-Prefix.pch";
 				INFOPLIST_FILE = "LevelUpSDKTests/LevelUpSDKTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = "Frameworks/**";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -1602,16 +1232,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		257B00DB16684367006ACA24 /* Build configuration list for PBXAggregateTarget "Framework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				257B00DC16684367006ACA24 /* Debug */,
-				257B00DD16684367006ACA24 /* Release */,
-				02AF33F616725146003B9255 /* Distribution */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		25F6439E166832D600A05C0E /* Build configuration list for PBXProject "LevelUpSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
