@@ -11,7 +11,6 @@
 #import <LevelUpSDK/LUCohortRequest.h>
 #import <LevelUpSDK/LUCreditCardRequest.h>
 #import <LevelUpSDK/LUDivisionRequest.h>
-#import <LevelUpSDK/LUMerchandiseOrderRequest.h>
 #import <LevelUpSDK/LUMerchantRequest.h>
 #import <LevelUpSDK/LUOAuthTokenRequest.h>
 #import <LevelUpSDK/LUOrderRequest.h>
@@ -32,7 +31,6 @@
 #import <LevelUpSDK/LUInterstitialAction.h>
 #import <LevelUpSDK/LULocation.h>
 #import <LevelUpSDK/LULoyalty.h>
-#import <LevelUpSDK/LUMerchandiseOrder.h>
 #import <LevelUpSDK/LUMerchant.h>
 #import <LevelUpSDK/LUMonetaryValue.h>
 #import <LevelUpSDK/LUOAuthToken.h>

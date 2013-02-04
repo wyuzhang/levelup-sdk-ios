@@ -14,7 +14,6 @@
 #import "LUJSONDeserializer.h"
 #import "LULocation.h"
 #import "LULoyalty.h"
-#import "LUMerchandiseOrder.h"
 #import "LUMerchant.h"
 #import "LUMonetaryValue.h"
 #import "LUOAuthToken.h"
@@ -144,7 +143,6 @@ static NSDictionary *_registeredModels = nil;
       @"loyalty" : [LULoyalty class],
       @"loyalties_savings" : [LUMonetaryValue class],
       @"onboarding" : [LUMonetaryValue class],
-      @"merchandise_order" : [LUMerchandiseOrder class],
       @"merchant" : [LUMerchant class],
       @"oauth_token" : [LUOAuthToken class],
       @"onboarding" : [LUMonetaryValue class],
