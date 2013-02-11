@@ -3,7 +3,7 @@
 SPEC_BEGIN(LUQRCodeSpec)
 
 describe(@"LUQRCode", ^{
-  it(@"should be an LUAPIModel", ^{
+  it(@"is an LUAPIModel", ^{
     [[[LUQRCode class] should] beSubclassOfClass:[LUAPIModel class]];
   });
 });

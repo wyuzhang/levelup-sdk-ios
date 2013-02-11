@@ -1,5 +1,4 @@
 #import "LUCause.h"
-#import "NSString+Escaping.h"
 #import <UIKit/UIKit.h>
 
 @implementation LUCause
@@ -7,7 +6,11 @@
 #pragma mark - Public Methods
 
 - (BOOL)anyUserRequirements {
-  return [self isEmployerRequired] || [self isHomeAddressRequired] || [self isMinimumAgeRequired] || [self hasPartnerSpecificTerms];
+  return self.employerRequired || self.homeAddressRequired || [self hasMinimumAgeRequired] || [self hasPartnerSpecificTerms];
+}
+
+- (BOOL)hasMinimumAgeRequired {
+  return self.minimumAgeRequired && self.minimumAgeRequired.integerValue > 0;
 }
 
 - (BOOL)hasPartnerSpecificTerms {
@@ -16,26 +19,6 @@
 
 - (NSString *)imageUrl {
   return [self valueForKey:[NSString stringWithFormat:@"imageUrl_320x212_%dx", (int)[UIScreen mainScreen].scale]];
-}
-
-- (BOOL)isEmployerRequired {
-  return [self.employerRequired boolValue];
-}
-
-- (BOOL)isFeatured {
-  return [self.featured boolValue];
-}
-
-- (BOOL)isHomeAddressRequired {
-  return [self.homeAddressRequired boolValue];
-}
-
-- (BOOL)isMinimumAgeRequired {
-  return self.minimumAgeRequired != nil;
-}
-
-- (NSString *)searchNormalizedName {
-  return [self.name searchNormalizedString];
 }
 
 - (NSString *)twitterUrl {

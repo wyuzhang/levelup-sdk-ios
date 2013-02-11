@@ -1,6 +1,4 @@
-#import "Kiwi.h"
 #import "LUQRCodeGenerator.h"
-#import <SenTestingKit/SenTestingKit.h>
 #import <ZXingObjC/ZXingObjC.h>
 
 @interface QRCodeScanHelper : NSObject

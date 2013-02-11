@@ -8,7 +8,7 @@
 
 @interface LUUser : LUAPIModel
 
-@property (nonatomic, copy) NSNumber *ableToRefer;
+@property (nonatomic, assign) BOOL ableToRefer;
 @property (nonatomic, copy) NSDate *birthday;
 @property (nonatomic, strong) LUCause *cause;
 @property (nonatomic, copy) NSNumber *causeId;
@@ -30,26 +30,17 @@
 @property (nonatomic, copy, getter = theNewPassword) NSString *newPassword;
 @property (nonatomic, copy, getter = theNewPasswordConfirmation) NSString *newPasswordConfirmation;
 @property (nonatomic, copy) NSNumber *ordersCount;
-@property (nonatomic, copy) NSNumber *paymentEligible;
+@property (nonatomic, assign) BOOL paymentEligible;
 @property (nonatomic, copy) NSNumber *percentDonation;
 @property (nonatomic, copy) NSString *promotionCode;
 @property (nonatomic, strong) LUQRCode *qrCode;
 @property (nonatomic, copy) NSString *referralCode;
-@property (nonatomic, copy) NSNumber *subscribed;
+@property (nonatomic, assign) BOOL subscribed;
 @property (nonatomic, copy) NSDate *termsAcceptedTime;
-@property (nonatomic, copy) NSNumber *twitterAuthenticated;
 @property (nonatomic, copy) NSArray *userAddresses;
 @property (nonatomic, copy) NSNumber *xUserId;
 
-- (NSInteger)ageInYears;
-- (NSString *)deviceIdentifier;
 - (BOOL)hasValidQRCode;
 - (LUUserAddress *)homeAddress;
-- (BOOL)isAbleToRefer;
-- (BOOL)isPaymentEligible;
-- (BOOL)isSubscribed;
-- (NSString *)referralFacebookDescription;
-- (NSString *)referralTweetString;
-- (NSString *)referralUrl;
 
 @end

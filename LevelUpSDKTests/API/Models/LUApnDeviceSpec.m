@@ -3,7 +3,7 @@
 SPEC_BEGIN(LUApnDeviceSpec)
 
 describe(@"LUApnDevice", ^{
-  it(@"should be an LUAPIModel", ^{
+  it(@"is an LUAPIModel", ^{
     [[[LUApnDevice class] should] beSubclassOfClass:[LUAPIModel class]];
   });
 });

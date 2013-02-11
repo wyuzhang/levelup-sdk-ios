@@ -28,11 +28,11 @@
 }
 
 - (BOOL)hasNonZeroBalance {
-  return ([self.amount.amount floatValue] != 0.0f);
+  return (self.amount.amount.floatValue != 0.0f);
 }
 
 - (BOOL)hasSavings {
-  return ([self.totalCreditUsed.amount floatValue] > 0.0f);
+  return (self.totalCreditUsed.amount.floatValue > 0.0f);
 }
 
 - (BOOL)isClosed {

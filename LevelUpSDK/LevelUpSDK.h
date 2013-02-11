@@ -2,20 +2,20 @@
 
 #import <LevelUpSDK/LUAPIClient.h>
 #import <LevelUpSDK/LUAPIRequest.h>
-#import <LevelUpSDK/LUApnDeviceRequest.h>
-#import <LevelUpSDK/LUBundleRequest.h>
-#import <LevelUpSDK/LUCampaignRequest.h>
-#import <LevelUpSDK/LUCategoryRequest.h>
-#import <LevelUpSDK/LUCauseRequest.h>
-#import <LevelUpSDK/LUClaimRequest.h>
-#import <LevelUpSDK/LUCohortRequest.h>
-#import <LevelUpSDK/LUCreditCardRequest.h>
-#import <LevelUpSDK/LUDivisionRequest.h>
-#import <LevelUpSDK/LUMerchantRequest.h>
-#import <LevelUpSDK/LUOAuthTokenRequest.h>
-#import <LevelUpSDK/LUOrderRequest.h>
-#import <LevelUpSDK/LUTicketRequest.h>
-#import <LevelUpSDK/LUUserRequest.h>
+#import <LevelUpSDK/LUApnDeviceRequestBuilder.h>
+#import <LevelUpSDK/LUBundleRequestBuilder.h>
+#import <LevelUpSDK/LUCampaignRequestBuilder.h>
+#import <LevelUpSDK/LUCategoryRequestBuilder.h>
+#import <LevelUpSDK/LUCauseRequestBuilder.h>
+#import <LevelUpSDK/LUClaimRequestBuilder.h>
+#import <LevelUpSDK/LUCohortRequestBuilder.h>
+#import <LevelUpSDK/LUCreditCardRequestBuilder.h>
+#import <LevelUpSDK/LUDivisionRequestBuilder.h>
+#import <LevelUpSDK/LUMerchantRequestBuilder.h>
+#import <LevelUpSDK/LUOAuthTokenRequestBuilder.h>
+#import <LevelUpSDK/LUOrderRequestBuilder.h>
+#import <LevelUpSDK/LUTicketRequestBuilder.h>
+#import <LevelUpSDK/LUUserRequestBuilder.h>
 
 #import <LevelUpSDK/LUApnDevice.h>
 #import <LevelUpSDK/LUBundle.h>
@@ -37,7 +37,6 @@
 #import <LevelUpSDK/LUOrder.h>
 #import <LevelUpSDK/LUQRCode.h>
 #import <LevelUpSDK/LURefund.h>
-#import <LevelUpSDK/LUTicket.h>
 #import <LevelUpSDK/LUUser.h>
 #import <LevelUpSDK/LUUserAddress.h>
 

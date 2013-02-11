@@ -20,7 +20,6 @@
 #import "LUOrder.h"
 #import "LUQRCode.h"
 #import "LURefund.h"
-#import "LUTicket.h"
 #import "LUUser.h"
 #import "LUUserAddress.h"
 #import "NSArray+ObjectAccess.h"
@@ -155,7 +154,6 @@ static NSDictionary *_registeredModels = nil;
       @"should_spend": [LUMonetaryValue class],
       @"spend": [LUMonetaryValue class],
       @"spend_remaining": [LUMonetaryValue class],
-      @"ticket" : [LUTicket class],
       @"tip": [LUMonetaryValue class],
       @"total": [LUMonetaryValue class],
       @"total_credit_used": [LUMonetaryValue class],

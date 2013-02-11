@@ -3,7 +3,7 @@
 SPEC_BEGIN(LUCohortSpec)
 
 describe(@"LUCohort", ^{
-  it(@"should be an LUAPIModel", ^{
+  it(@"is an LUAPIModel", ^{
     [[[LUCohort class] should] beSubclassOfClass:[LUAPIModel class]];
   });
 });

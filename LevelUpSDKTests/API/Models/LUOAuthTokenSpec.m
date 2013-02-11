@@ -1,10 +1,9 @@
-#import "LUAPIClient.h"
 #import "LUOAuthToken.h"
 
 SPEC_BEGIN(LUOAuthTokenSpec)
 
 describe(@"LUOAuthToken", ^{
-  it(@"should be an LUAPIModel", ^{
+  it(@"is an LUAPIModel", ^{
     [[[LUAPIModel class] should] beSubclassOfClass:[LUAPIModel class]];
   });
 });

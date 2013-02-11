@@ -5,7 +5,7 @@
 
 @interface LUOrder ()
 
-@property (nonatomic, copy) NSNumber *bundleClosed;
+@property (nonatomic, assign) BOOL bundleClosed;
 @property (nonatomic, copy) NSString *createdAt;
 @property (nonatomic, copy) NSString *refundedAt;
 
@@ -20,31 +20,27 @@
 }
 
 - (BOOL)hasDonation {
-  return (self.donation && self.donation.value && [self.donation.value.amount floatValue] > 0.0f);
+  return (self.donation.value.amount.floatValue > 0.0f);
 }
 
 - (BOOL)hasEarnedCredit {
-  return (self.earn && [self.earn.amount floatValue] > 0.0f);
+  return (self.earn.amount.floatValue > 0.0f);
 }
 
 - (BOOL)hasNonZeroBalance {
-  return ([self.balance.amount floatValue] != 0.0f);
+  return (self.balance.amount.floatValue != 0.0f);
 }
 
 - (BOOL)hasTipApplied {
-  return ([self.tip.amount floatValue] > 0.0f);
+  return (self.tip.amount.floatValue > 0.0f);
 }
 
 - (BOOL)hasUsedCredit {
-  return ([self.credit.amount floatValue] > 0.0f);
+  return (self.credit.amount.floatValue > 0.0f);
 }
 
 - (BOOL)isClosed {
-  return [self.bundleClosed boolValue];
-}
-
-- (NSDate *)refundDate {
-  return [NSDate dateFromIso8601DateTimeString:self.refundedAt];
+  return self.bundleClosed;
 }
 
 - (BOOL)wasRefunded {

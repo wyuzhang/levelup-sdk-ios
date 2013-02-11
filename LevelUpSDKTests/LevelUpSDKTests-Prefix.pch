@@ -5,6 +5,7 @@
 #import "LevelUpSDK-Prefix.pch"
 
 #ifdef __OBJC__
+  #import <Nocilla/Nocilla.h>
   #import <SenTestingKit/SenTestingKit.h>
   #import <ZXingObjC/ZXingObjC.h>
 

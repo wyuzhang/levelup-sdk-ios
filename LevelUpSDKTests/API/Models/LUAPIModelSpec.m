@@ -7,7 +7,7 @@
 @end
 
 @interface LUAPIModelSubclass2 : LUAPIModel
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, copy) NSString *name;
 @end
 
 @implementation LUAPIModelSubclass2

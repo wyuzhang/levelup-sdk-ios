@@ -14,6 +14,8 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 extern NSString * const LUAPIFailingJSONResponseErrorKey;
 extern NSString * const LUAPIFailingErrorMessageErrorKey;
 
+extern NSString * const DefaultLevelUpApiURL;
+
 @interface LUAPIClient : AFHTTPClient
 
 @property (copy) NSString *accessToken;

@@ -3,7 +3,7 @@
 SPEC_BEGIN(LUDonationSpec)
 
 describe(@"LUDonation", ^{
-  it(@"should be an LUAPIModel", ^{
+  it(@"is an LUAPIModel", ^{
     [[[LUDonation class] should] beSubclassOfClass:[LUAPIModel class]];
   });
 });

@@ -3,7 +3,7 @@
 SPEC_BEGIN(LUCategorySpec)
 
 describe(@"LUCategory", ^{
-  it(@"should be an LUAPIModel", ^{
+  it(@"is an LUAPIModel", ^{
     [[[LUCategory class] should] beSubclassOfClass:[LUAPIModel class]];
   });
 });

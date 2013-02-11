@@ -5,7 +5,7 @@
 @interface LUInterstitialAction : LUAPIModel
 
 @property (nonatomic, strong) LUCampaign *campaign;
-@property (nonatomic, strong) NSString *type;
+@property (nonatomic, copy) NSString *type;
 
 - (BOOL)isCustomerAcquisitionShare;
 - (BOOL)isEmailCaptureClaim;

@@ -5,5 +5,6 @@ pod 'ZXingObjC', '~> 2.0.2'
 
 target :test, exclusive: true do
   link_with 'LevelUpSDKTests'
-  pod 'Kiwi', '~> 1.1.1'
+  pod 'Kiwi', '~> 2.0.4'
+  pod 'Nocilla', '~> 0.1'
 end

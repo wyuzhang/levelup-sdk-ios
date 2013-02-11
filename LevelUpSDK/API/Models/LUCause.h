@@ -3,10 +3,10 @@
 @interface LUCause : LUAPIModel
 
 @property (nonatomic, copy) NSString *descriptionHtml;
-@property (nonatomic, copy) NSNumber *employerRequired;
+@property (nonatomic, assign) BOOL employerRequired;
 @property (nonatomic, copy) NSString *facebookUrl;
-@property (nonatomic, copy) NSNumber *featured;
-@property (nonatomic, copy) NSNumber *homeAddressRequired;
+@property (nonatomic, assign) BOOL featured;
+@property (nonatomic, assign) BOOL homeAddressRequired;
 @property (nonatomic, copy) NSString *imageUrl_320x212_1x;
 @property (nonatomic, copy) NSString *imageUrl_320x212_2x;
 @property (nonatomic, copy) NSNumber *minimumAgeRequired;
@@ -16,13 +16,9 @@
 @property (nonatomic, copy) NSString *website;
 
 - (BOOL)anyUserRequirements;
+- (BOOL)hasMinimumAgeRequired;
 - (BOOL)hasPartnerSpecificTerms;
-- (BOOL)isEmployerRequired;
-- (BOOL)isFeatured;
 - (NSString *)imageUrl;
-- (BOOL)isHomeAddressRequired;
-- (BOOL)isMinimumAgeRequired;
-- (NSString *)searchNormalizedName;
 - (NSString *)twitterUrl;
 
 @end

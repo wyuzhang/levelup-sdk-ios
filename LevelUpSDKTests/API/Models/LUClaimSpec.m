@@ -3,7 +3,7 @@
 SPEC_BEGIN(LUClaimSpec)
 
 describe(@"LUClaim", ^{
-  it(@"should be an LUAPIModel", ^{
+  it(@"is an LUAPIModel", ^{
     [[[LUClaim class] should] beSubclassOfClass:[LUAPIModel class]];
   });
 });

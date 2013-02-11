@@ -7,7 +7,7 @@
 @property (nonatomic, copy) NSString *currencySymbol;
 @property (nonatomic, copy) NSString *formattedAmount;
 
-+ (LUMonetaryValue *)valueOrDefaultFor:(LUMonetaryValue *)value;
++ (LUMonetaryValue *)monetaryValueWithUSD:(NSNumber *)amount;
 - (NSString *)formattedAmountWithSymbol;
 - (NSString *)shortFormatWithSymbol;
 

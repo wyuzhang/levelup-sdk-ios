@@ -1,5 +1,4 @@
 #import <AVFoundation/AVFoundation.h>
-#import <Foundation/Foundation.h>
 
 typedef void (^LUQRCodeDecoderCompletionHandler)(NSString *result);
 

@@ -4,6 +4,16 @@
 
 #pragma mark - Public Methods
 
++ (LUMonetaryValue *)monetaryValueWithUSD:(NSNumber *)amount {
+  LUMonetaryValue *value = [[LUMonetaryValue alloc] init];
+  value.amount = @(amount.floatValue * 100.0f);
+  value.currencyCode = @"USD";
+  value.currencySymbol = @"$";
+  value.formattedAmount = [NSString stringWithFormat:@"%.2f", amount.floatValue];
+
+  return value;
+}
+
 - (NSString *)formattedAmountWithSymbol {
   return [self.currencySymbol stringByAppendingString:self.formattedAmount];
 }
@@ -16,22 +26,6 @@
   } else {
     return formattedAmountWithSymbol;
   }
-}
-
-+ (LUMonetaryValue *)valueOrDefaultFor:(LUMonetaryValue *)value {
-  LUMonetaryValue *finalValue;
-
-  if (nil == value) {
-    finalValue = [[LUMonetaryValue alloc] init];
-    finalValue.amount = @0;
-    finalValue.currencyCode = @"USD";
-    finalValue.currencySymbol = @"$";
-    finalValue.formattedAmount = @"0.00";
-  } else {
-    finalValue = value;
-  }
-
-  return finalValue;
 }
 
 @end

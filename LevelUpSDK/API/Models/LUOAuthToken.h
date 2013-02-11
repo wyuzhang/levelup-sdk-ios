@@ -8,8 +8,5 @@
 @property (nonatomic, copy) NSString *grantType;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *username;
-@property (nonatomic, copy) NSNumber *xUserId;
-
-- (NSString *)deviceIdentifier;
 
 @end

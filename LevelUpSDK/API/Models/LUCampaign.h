@@ -5,11 +5,11 @@
 
 @interface LUCampaign : LUAPIModel
 
-@property (nonatomic, copy) NSNumber *claimed;
+@property (nonatomic, assign) BOOL claimed;
 @property (nonatomic, strong) LUCohort *cohort;
 @property (nonatomic, copy) NSArray *cohorts;
 @property (nonatomic, copy) NSString *confirmationHtml;
-@property (nonatomic, copy) NSNumber *global;
+@property (nonatomic, assign) BOOL global;
 @property (nonatomic, copy) NSArray *merchants;
 @property (nonatomic, copy) NSString *mobileImageUrl_320x212_1x;
 @property (nonatomic, copy) NSString *mobileImageUrl_320x212_2x;
@@ -22,7 +22,6 @@
 - (NSString *)confirmationText;
 - (LUCohort *)emailCohort;
 - (LUCohort *)facebookCohort;
-- (BOOL)isClaimed;
 - (BOOL)isGlobal;
 - (NSString *)mobileImageUrl;
 - (NSString *)offerText;
