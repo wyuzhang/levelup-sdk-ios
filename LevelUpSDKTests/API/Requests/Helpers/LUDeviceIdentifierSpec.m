@@ -13,7 +13,7 @@ describe(@"LUDeviceIdentifier", ^{
 
     context(@"when a device identifier has not been stored", ^{
       beforeEach(^{
-        [[[LUKeychainAccess standardKeychainAccess] stubAndReturn:nil] stringForKey:DeviceIdentifierKey];
+        [[[LUKeychainAccess standardKeychainAccess] stub] stringForKey:DeviceIdentifierKey];
       });
 
       it(@"returns a new UUID", ^{

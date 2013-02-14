@@ -18,36 +18,6 @@ describe(@"LUMerchant", ^{
     merchant = [[LUMerchant alloc] init];
   });
 
-  describe(@"categoryImageUrl", ^{
-    NSString *categoryImage_1x = @"categoryImage_1x";
-    NSString *categoryImage_2x = @"categoryImage_2x";
-
-    beforeEach(^{
-      [merchant setValue:categoryImage_1x forKey:@"categoryImageUrl_32x32_1x"];
-      [merchant setValue:categoryImage_2x forKey:@"categoryImageUrl_32x32_2x"];
-    });
-
-    context(@"when the main screen scale is 1.0", ^{
-      beforeEach(^{
-        [[UIScreen mainScreen] stub:@selector(scale) andReturn:theValue(1.0)];
-      });
-
-      it(@"returns the categoryImageUrl at 1x", ^{
-        [[[merchant categoryImageUrl] should] equal:categoryImage_1x];
-      });
-    });
-
-    context(@"when the main screen scale is 2.0", ^{
-      beforeEach(^{
-        [[UIScreen mainScreen] stub:@selector(scale) andReturn:theValue(2.0)];
-      });
-
-      it(@"returns the categoryImageUrl at 2x", ^{
-        [[[merchant categoryImageUrl] should] equal:categoryImage_2x];
-      });
-    });
-  });
-
   describe(@"currentCredit", ^{
     context(@"when there is no loyalty", ^{
       beforeEach(^{
