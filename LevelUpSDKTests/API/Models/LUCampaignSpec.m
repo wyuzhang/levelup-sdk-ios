@@ -143,9 +143,12 @@ describe(@"LUCampaign", ^{
   });
 
   describe(@"mobileImageUrl", ^{
+    NSString *mobile_image_1x = @"mobile_image_1x";
+    NSString *mobile_image_2x = @"mobile_image_2x";
+
     beforeEach(^{
-      campaign.mobileImageUrl_320x212_1x = @"mobile_image_1x";
-      campaign.mobileImageUrl_320x212_2x = @"mobile_image_2x";
+      [campaign setValue:mobile_image_1x forKey:@"mobileImageUrl_320x212_1x"];
+      [campaign setValue:mobile_image_2x forKey:@"mobileImageUrl_320x212_2x"];
     });
 
     context(@"when the main screen scale is 1.0", ^{
@@ -154,7 +157,7 @@ describe(@"LUCampaign", ^{
       });
 
       it(@"returns the mobileImageUrl at 1x", ^{
-        [[[campaign mobileImageUrl] should] equal:campaign.mobileImageUrl_320x212_1x];
+        [[[campaign mobileImageUrl] should] equal:mobile_image_1x];
       });
     });
 
@@ -164,7 +167,7 @@ describe(@"LUCampaign", ^{
       });
 
       it(@"returns the mobileImageUrl at 2x", ^{
-        [[[campaign mobileImageUrl] should] equal:campaign.mobileImageUrl_320x212_2x];
+        [[[campaign mobileImageUrl] should] equal:mobile_image_2x];
       });
     });
   });

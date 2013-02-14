@@ -105,9 +105,12 @@ describe(@"LUCause", ^{
   });
 
   describe(@"imageUrl", ^{
+    NSString *image_1x = @"image_1x";
+    NSString *image_2x = @"image_2x";
+
     beforeEach(^{
-      cause.imageUrl_320x212_1x = @"image_1x";
-      cause.imageUrl_320x212_2x = @"image_2x";
+      [cause setValue:image_1x forKey:@"imageUrl_320x212_1x"];
+      [cause setValue:image_2x forKey:@"imageUrl_320x212_2x"];
     });
 
     context(@"when the main screen scale is 1.0", ^{
@@ -116,7 +119,7 @@ describe(@"LUCause", ^{
       });
 
       it(@"returns the imageUrl at 1x", ^{
-        [[[cause imageUrl] should] equal:cause.imageUrl_320x212_1x];
+        [[[cause imageUrl] should] equal:image_1x];
       });
     });
 
@@ -126,7 +129,7 @@ describe(@"LUCause", ^{
       });
 
       it(@"returns the imageUrl at 2x", ^{
-        [[[cause imageUrl] should] equal:cause.imageUrl_320x212_2x];
+        [[[cause imageUrl] should] equal:image_2x];
       });
     });
   });

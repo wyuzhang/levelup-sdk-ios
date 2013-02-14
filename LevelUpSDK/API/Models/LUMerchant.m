@@ -15,6 +15,15 @@ NSString * const MerchantScvngrService = @"MerchantScvngrService";
 NSString * const MerchantOpenTableService = @"MerchantOpenTableService";
 NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
 
+@interface LUMerchant ()
+
+@property (nonatomic, copy) NSString *categoryImageUrl_32x32_1x;
+@property (nonatomic, copy) NSString *categoryImageUrl_32x32_2x;
+@property (nonatomic, copy) NSString *imageUrl_280x128_1x;
+@property (nonatomic, copy) NSString *imageUrl_280x128_2x;
+
+@end
+
 @implementation LUMerchant {
   NSArray *_webLocations;
 }

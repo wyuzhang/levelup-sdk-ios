@@ -7,8 +7,6 @@
 @property (nonatomic, copy) NSString *facebookUrl;
 @property (nonatomic, assign) BOOL featured;
 @property (nonatomic, assign) BOOL homeAddressRequired;
-@property (nonatomic, copy) NSString *imageUrl_320x212_1x;
-@property (nonatomic, copy) NSString *imageUrl_320x212_2x;
 @property (nonatomic, copy) NSNumber *minimumAgeRequired;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *partnerSpecificTerms;

@@ -8,6 +8,13 @@
 #define kCohortTypeDefaultFacebook @"default_facebook"
 #define kCohortTypeDefaultTwitter @"default_twitter"
 
+@interface LUCampaign ()
+
+@property (nonatomic, copy) NSString *mobileImageUrl_320x212_1x;
+@property (nonatomic, copy) NSString *mobileImageUrl_320x212_2x;
+
+@end
+
 @implementation LUCampaign
 
 #pragma mark - Public Methods

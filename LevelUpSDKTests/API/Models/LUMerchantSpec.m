@@ -19,9 +19,12 @@ describe(@"LUMerchant", ^{
   });
 
   describe(@"categoryImageUrl", ^{
+    NSString *categoryImage_1x = @"categoryImage_1x";
+    NSString *categoryImage_2x = @"categoryImage_2x";
+
     beforeEach(^{
-      merchant.categoryImageUrl_32x32_1x = @"categoryImage_1x";
-      merchant.categoryImageUrl_32x32_2x = @"categoryImage_2x";
+      [merchant setValue:categoryImage_1x forKey:@"categoryImageUrl_32x32_1x"];
+      [merchant setValue:categoryImage_2x forKey:@"categoryImageUrl_32x32_2x"];
     });
 
     context(@"when the main screen scale is 1.0", ^{
@@ -30,7 +33,7 @@ describe(@"LUMerchant", ^{
       });
 
       it(@"returns the categoryImageUrl at 1x", ^{
-        [[[merchant categoryImageUrl] should] equal:merchant.categoryImageUrl_32x32_1x];
+        [[[merchant categoryImageUrl] should] equal:categoryImage_1x];
       });
     });
 
@@ -40,7 +43,7 @@ describe(@"LUMerchant", ^{
       });
 
       it(@"returns the categoryImageUrl at 2x", ^{
-        [[[merchant categoryImageUrl] should] equal:merchant.categoryImageUrl_32x32_2x];
+        [[[merchant categoryImageUrl] should] equal:categoryImage_2x];
       });
     });
   });
@@ -73,9 +76,12 @@ describe(@"LUMerchant", ^{
   });
 
   describe(@"imageUrl", ^{
+    NSString *image_1x = @"image_1x";
+    NSString *image_2x = @"image_2x";
+
     beforeEach(^{
-      merchant.imageUrl_280x128_1x = @"image_1x";
-      merchant.imageUrl_280x128_2x = @"image_2x";
+      [merchant setValue:image_1x forKey:@"imageUrl_280x128_1x"];
+      [merchant setValue:image_2x forKey:@"imageUrl_280x128_2x"];
     });
 
     context(@"when the main screen scale is 1.0", ^{
@@ -84,7 +90,7 @@ describe(@"LUMerchant", ^{
       });
 
       it(@"returns the imageUrl at 1x", ^{
-        [[[merchant imageUrl] should] equal:merchant.imageUrl_280x128_1x];
+        [[[merchant imageUrl] should] equal:image_1x];
       });
     });
 
@@ -94,7 +100,7 @@ describe(@"LUMerchant", ^{
       });
 
       it(@"returns the imageUrl at 2x", ^{
-        [[[merchant imageUrl] should] equal:merchant.imageUrl_280x128_2x];
+        [[[merchant imageUrl] should] equal:image_2x];
       });
     });
   });

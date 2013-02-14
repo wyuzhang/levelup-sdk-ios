@@ -11,8 +11,6 @@
 @property (nonatomic, copy) NSString *confirmationHtml;
 @property (nonatomic, assign) BOOL global;
 @property (nonatomic, copy) NSArray *merchants;
-@property (nonatomic, copy) NSString *mobileImageUrl_320x212_1x;
-@property (nonatomic, copy) NSString *mobileImageUrl_320x212_2x;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *offerHtml;
 @property (nonatomic, copy) NSString *sponsor;

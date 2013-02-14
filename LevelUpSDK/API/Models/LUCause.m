@@ -1,6 +1,13 @@
 #import "LUCause.h"
 #import <UIKit/UIKit.h>
 
+@interface LUCause ()
+
+@property (nonatomic, copy) NSString *imageUrl_320x212_1x;
+@property (nonatomic, copy) NSString *imageUrl_320x212_2x;
+
+@end
+
 @implementation LUCause
 
 #pragma mark - Public Methods
