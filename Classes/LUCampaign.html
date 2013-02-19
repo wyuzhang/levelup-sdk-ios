@@ -1,0 +1,1341 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>LUCampaign Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">LevelUpSDK </a></h1>
+				<a id="developerHome" href="../index.html">LevelUp</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">LUCampaign Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/claimed">&nbsp;&nbsp;&nbsp;&nbsp;claimed</option>
+	
+	<option value="//api/name/cohort">&nbsp;&nbsp;&nbsp;&nbsp;cohort</option>
+	
+	<option value="//api/name/cohorts">&nbsp;&nbsp;&nbsp;&nbsp;cohorts</option>
+	
+	<option value="//api/name/confirmationHtml">&nbsp;&nbsp;&nbsp;&nbsp;confirmationHtml</option>
+	
+	<option value="//api/name/global">&nbsp;&nbsp;&nbsp;&nbsp;global</option>
+	
+	<option value="//api/name/merchants">&nbsp;&nbsp;&nbsp;&nbsp;merchants</option>
+	
+	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
+	
+	<option value="//api/name/offerHtml">&nbsp;&nbsp;&nbsp;&nbsp;offerHtml</option>
+	
+	<option value="//api/name/sponsor">&nbsp;&nbsp;&nbsp;&nbsp;sponsor</option>
+	
+	<option value="//api/name/supportEmail">&nbsp;&nbsp;&nbsp;&nbsp;supportEmail</option>
+	
+	<option value="//api/name/value">&nbsp;&nbsp;&nbsp;&nbsp;value</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/confirmationText">&nbsp;&nbsp;&nbsp;&nbsp;- confirmationText</option>
+	
+	<option value="//api/name/emailCohort">&nbsp;&nbsp;&nbsp;&nbsp;- emailCohort</option>
+	
+	<option value="//api/name/facebookCohort">&nbsp;&nbsp;&nbsp;&nbsp;- facebookCohort</option>
+	
+	<option value="//api/name/isGlobal">&nbsp;&nbsp;&nbsp;&nbsp;- isGlobal</option>
+	
+	<option value="//api/name/mobileImageUrl">&nbsp;&nbsp;&nbsp;&nbsp;- mobileImageUrl</option>
+	
+	<option value="//api/name/offerText">&nbsp;&nbsp;&nbsp;&nbsp;- offerText</option>
+	
+	<option value="//api/name/successfulClaimMessageHtml">&nbsp;&nbsp;&nbsp;&nbsp;- successfulClaimMessageHtml</option>
+	
+	<option value="//api/name/successfulClaimMessageText">&nbsp;&nbsp;&nbsp;&nbsp;- successfulClaimMessageText</option>
+	
+	<option value="//api/name/twitterCohort">&nbsp;&nbsp;&nbsp;&nbsp;- twitterCohort</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/claimed">claimed</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cohort">cohort</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cohorts">cohorts</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/confirmationHtml">confirmationHtml</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/global">global</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/merchants">merchants</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/offerHtml">offerHtml</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sponsor">sponsor</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/supportEmail">supportEmail</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/value">value</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/confirmationText">confirmationText</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/emailCohort">emailCohort</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/facebookCohort">facebookCohort</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isGlobal">isGlobal</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mobileImageUrl">mobileImageUrl</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/offerText">offerText</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/successfulClaimMessageHtml">successfulClaimMessageHtml</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/successfulClaimMessageText">successfulClaimMessageText</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/twitterCohort">twitterCohort</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="LUCampaign Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">LUCampaign Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">LUAPIModel : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">LUCampaign.h<br />LUCampaign.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>LevelUp campaigns are general objects used by <a href="#//api/name/merchants">merchants</a> and advertisers. They are typically used by <a href="#//api/name/merchants">merchants</a> to
+acquire new customers and/or re-engage new customers.</p>
+
+<h2>Campaigns</h2>
+
+<p>Applications built on the LevelUp SDK will usually interact with campaigns in one of several ways:</p>
+
+<ul>
+<li>Users may scan QR codes representing a campaign, which will then claim the campaign for them, and show a success
+screen providing more information about the campaign, and ways to share the campaign online.</li>
+<li>Each users has a unique referral code which they can share with their friends. If someone joins LevelUp using their
+code, both the referring user and the new user will get LevelUp credit. Behind the scenes, these referral programs are
+implemented using &ldquo;Refer-a-Friend&rdquo; campaigns.</li>
+<li>Some <a href="#//api/name/merchants">merchants</a> support migration of loyalty cards into LevelUp credit. These are handled by &ldquo;Legacy Loyalty&rdquo;
+campaigns.</li>
+</ul>
+
+
+<h2>Cohorts</h2>
+
+<p>Users claim campaigns via <a href="#//api/name/cohorts">cohorts</a>, which represents the source of the campaign. This could be an online source (Facebook,
+Twitter, email), a user (in the case of Refer-a-Friend campaigns), or a loyalty card (for loyalty credit migrations).</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/claimed">&nbsp;&nbsp;claimed</a></code>
+		<span class="tooltip"><p>Specifies whether the campaign has been claimed by the current user.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cohort">&nbsp;&nbsp;cohort</a></code>
+		<span class="tooltip"><p>If the campaign is Refer-a-Friend, the cohort for the current user.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cohorts">&nbsp;&nbsp;cohorts</a></code>
+		<span class="tooltip"><p>The campaign&rsquo;s cohorts.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/confirmationHtml">&nbsp;&nbsp;confirmationHtml</a></code>
+		<span class="tooltip"><p>An HTML message to show the user after claiming the campaign.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/global">&nbsp;&nbsp;global</a></code>
+		<span class="tooltip"><p>Specifies if this campaign is marked as global (valid for all <a href="#//api/name/merchants">merchants</a>).</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/merchants">&nbsp;&nbsp;merchants</a></code>
+		<span class="tooltip"><p>The merchants associated with this campaign. If a campaign is <a href="#//api/name/global">global</a>, this will be empty, since a <a href="#//api/name/global">global</a> campaign
+is valid for all merchants.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+		<span class="tooltip"><p>The name of the campaign.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/offerHtml">&nbsp;&nbsp;offerHtml</a></code>
+		<span class="tooltip"><p>An HTML message describing the campaign.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sponsor">&nbsp;&nbsp;sponsor</a></code>
+		<span class="tooltip"><p>The campaign&rsquo;s sponsor.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/supportEmail">&nbsp;&nbsp;supportEmail</a></code>
+		<span class="tooltip"><p>An email address to which support inquiries should be sent.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/value">&nbsp;&nbsp;value</a></code>
+		<span class="tooltip"><p>The monetary value of the campaign. This is the amount of credit the user will receive after claiming.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/confirmationText">&ndash;&nbsp;confirmationText</a></code>
+		<span class="tooltip"><p>A helper method which returns <a href="#//api/name/confirmationHtml"><code>confirmationHtml</code></a> stripped of HTML tags.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/emailCohort">&ndash;&nbsp;emailCohort</a></code>
+		<span class="tooltip"><p>Returns an email <a href="#//api/name/cohort">cohort</a> for the campaign, if one exists.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/facebookCohort">&ndash;&nbsp;facebookCohort</a></code>
+		<span class="tooltip"><p>Returns a Facebook <a href="#//api/name/cohort">cohort</a> for the campaign, if one exists.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isGlobal">&ndash;&nbsp;isGlobal</a></code>
+		<span class="tooltip"><p>Specifies that the campaign is <a href="#//api/name/global">global</a> &mdash; if a user claims it, they will receive <a href="#//api/name/global">global</a> credit that can be used at any
+LevelUp merchant.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mobileImageUrl">&ndash;&nbsp;mobileImageUrl</a></code>
+		<span class="tooltip"><p>An associated mobile image for the campaign. Will automatically return a retina or non-retina scaled image based on the
+screen scale of the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/offerText">&ndash;&nbsp;offerText</a></code>
+		<span class="tooltip"><p>A helper method which returns the <a href="#//api/name/offerHtml"><code>offerHtml</code></a> stripped of HTML tags.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/successfulClaimMessageHtml">&ndash;&nbsp;successfulClaimMessageHtml</a></code>
+		<span class="tooltip"><p>Returns <a href="#//api/name/confirmationHtml"><code>confirmationHtml</code></a> if available, or else <a href="#//api/name/offerHtml"><code>offerHtml</code></a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/successfulClaimMessageText">&ndash;&nbsp;successfulClaimMessageText</a></code>
+		<span class="tooltip"><p>Returns <a href="#//api/name/confirmationText"><code>confirmationText</code></a> if available, or else <a href="#//api/name/offerText"><code>offerText</code></a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/twitterCohort">&ndash;&nbsp;twitterCohort</a></code>
+		<span class="tooltip"><p>Returns a Twitter <a href="#//api/name/cohort">cohort</a> for the campaign, if one exists.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/claimed" title="claimed"></a>
+	<h3 class="subsubtitle method-title">claimed</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specifies whether the campaign has been claimed by the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL claimed</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Specifies whether the campaign has been claimed by the current user.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cohort" title="cohort"></a>
+	<h3 class="subsubtitle method-title">cohort</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>If the campaign is Refer-a-Friend, the cohort for the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) LUCohort *cohort</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the campaign is Refer-a-Friend, the cohort for the current user.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cohorts" title="cohorts"></a>
+	<h3 class="subsubtitle method-title">cohorts</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The campaign&rsquo;s cohorts.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSArray *cohorts</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The campaign&rsquo;s cohorts.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/confirmationHtml" title="confirmationHtml"></a>
+	<h3 class="subsubtitle method-title">confirmationHtml</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An HTML message to show the user after claiming the campaign.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *confirmationHtml</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>An HTML message to show the user after claiming the campaign.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/global" title="global"></a>
+	<h3 class="subsubtitle method-title">global</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specifies if this campaign is marked as global (valid for all <a href="#//api/name/merchants">merchants</a>).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL global</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Specifies if this campaign is marked as global (valid for all <a href="#//api/name/merchants">merchants</a>).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/merchants" title="merchants"></a>
+	<h3 class="subsubtitle method-title">merchants</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The merchants associated with this campaign. If a campaign is <a href="#//api/name/global">global</a>, this will be empty, since a <a href="#//api/name/global">global</a> campaign
+is valid for all merchants.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSArray *merchants</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The merchants associated with this campaign. If a campaign is <a href="#//api/name/global">global</a>, this will be empty, since a <a href="#//api/name/global">global</a> campaign
+is valid for all merchants.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="subsubtitle method-title">name</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The name of the campaign.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *name</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The name of the campaign.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/offerHtml" title="offerHtml"></a>
+	<h3 class="subsubtitle method-title">offerHtml</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An HTML message describing the campaign.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *offerHtml</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>An HTML message describing the campaign.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sponsor" title="sponsor"></a>
+	<h3 class="subsubtitle method-title">sponsor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The campaign&rsquo;s sponsor.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *sponsor</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The campaign&rsquo;s sponsor.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/supportEmail" title="supportEmail"></a>
+	<h3 class="subsubtitle method-title">supportEmail</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An email address to which support inquiries should be sent.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *supportEmail</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>An email address to which support inquiries should be sent.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/value" title="value"></a>
+	<h3 class="subsubtitle method-title">value</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The monetary value of the campaign. This is the amount of credit the user will receive after claiming.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) LUMonetaryValue *value</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The monetary value of the campaign. This is the amount of credit the user will receive after claiming.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/confirmationText" title="confirmationText"></a>
+	<h3 class="subsubtitle method-title">confirmationText</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A helper method which returns <a href="#//api/name/confirmationHtml"><code>confirmationHtml</code></a> stripped of HTML tags.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)confirmationText</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A helper method which returns <a href="#//api/name/confirmationHtml"><code>confirmationHtml</code></a> stripped of HTML tags.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/emailCohort" title="emailCohort"></a>
+	<h3 class="subsubtitle method-title">emailCohort</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an email <a href="#//api/name/cohort">cohort</a> for the campaign, if one exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (LUCohort *)emailCohort</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an email <a href="#//api/name/cohort">cohort</a> for the campaign, if one exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/facebookCohort" title="facebookCohort"></a>
+	<h3 class="subsubtitle method-title">facebookCohort</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Facebook <a href="#//api/name/cohort">cohort</a> for the campaign, if one exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (LUCohort *)facebookCohort</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a Facebook <a href="#//api/name/cohort">cohort</a> for the campaign, if one exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isGlobal" title="isGlobal"></a>
+	<h3 class="subsubtitle method-title">isGlobal</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specifies that the campaign is <a href="#//api/name/global">global</a> &mdash; if a user claims it, they will receive <a href="#//api/name/global">global</a> credit that can be used at any
+LevelUp merchant.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isGlobal</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Specifies that the campaign is <a href="#//api/name/global">global</a> &mdash; if a user claims it, they will receive <a href="#//api/name/global">global</a> credit that can be used at any
+LevelUp merchant.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mobileImageUrl" title="mobileImageUrl"></a>
+	<h3 class="subsubtitle method-title">mobileImageUrl</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An associated mobile image for the campaign. Will automatically return a retina or non-retina scaled image based on the
+screen scale of the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)mobileImageUrl</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>An associated mobile image for the campaign. Will automatically return a retina or non-retina scaled image based on the
+screen scale of the device.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/offerText" title="offerText"></a>
+	<h3 class="subsubtitle method-title">offerText</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A helper method which returns the <a href="#//api/name/offerHtml"><code>offerHtml</code></a> stripped of HTML tags.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)offerText</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A helper method which returns the <a href="#//api/name/offerHtml"><code>offerHtml</code></a> stripped of HTML tags.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/successfulClaimMessageHtml" title="successfulClaimMessageHtml"></a>
+	<h3 class="subsubtitle method-title">successfulClaimMessageHtml</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns <a href="#//api/name/confirmationHtml"><code>confirmationHtml</code></a> if available, or else <a href="#//api/name/offerHtml"><code>offerHtml</code></a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)successfulClaimMessageHtml</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns <a href="#//api/name/confirmationHtml"><code>confirmationHtml</code></a> if available, or else <a href="#//api/name/offerHtml"><code>offerHtml</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/successfulClaimMessageText" title="successfulClaimMessageText"></a>
+	<h3 class="subsubtitle method-title">successfulClaimMessageText</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns <a href="#//api/name/confirmationText"><code>confirmationText</code></a> if available, or else <a href="#//api/name/offerText"><code>offerText</code></a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)successfulClaimMessageText</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns <a href="#//api/name/confirmationText"><code>confirmationText</code></a> if available, or else <a href="#//api/name/offerText"><code>offerText</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/twitterCohort" title="twitterCohort"></a>
+	<h3 class="subsubtitle method-title">twitterCohort</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Twitter <a href="#//api/name/cohort">cohort</a> for the campaign, if one exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (LUCohort *)twitterCohort</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a Twitter <a href="#//api/name/cohort">cohort</a> for the campaign, if one exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaign.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-02-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
