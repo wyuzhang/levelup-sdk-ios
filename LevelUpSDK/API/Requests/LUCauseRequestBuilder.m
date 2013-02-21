@@ -12,7 +12,7 @@
 }
 
 + (LUAPIRequest *)requestForCausesInCategory:(LUCauseCategory *)causeCategory page:(NSUInteger)page {
-  return [self requestForCausesWithParameters:@{@"category_ids" : causeCategory.modelId, @"page" : @(page)}];
+  return [self requestForCausesWithParameters:@{@"category_ids" : causeCategory.causeCategoryID, @"page" : @(page)}];
 }
 
 + (LUAPIRequest *)requestForCausesNearLocation:(CLLocation *)location page:(NSUInteger)page {

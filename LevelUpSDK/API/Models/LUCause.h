@@ -23,6 +23,11 @@
 ///-------------------------------
 
 /**
+ The unique identifier for this cause.
+ */
+@property (nonatomic, copy) NSNumber *causeID;
+
+/**
  An HTML description of the cause.
  */
 @property (nonatomic, copy) NSString *descriptionHtml;

@@ -48,4 +48,17 @@
   return [self fullStreetAddress];
 }
 
+#pragma mark - NSObject Methods
+
+- (NSString *)debugDescription {
+  return [NSString stringWithFormat:
+          @"Location [extendedAddress=%@, hours=%@, ID=%@, lat=%@, locality=%@, lng=%@, name=%@, phone=%@, postalCode=%@, region=%@, streetAddress=%@]",
+          self.extendedAddress, self.hours, self.locationID, self.lat, self.locality, self.lng, self.name, self.phone,
+          self.postalCode, self.region, self.streetAddress];
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"Location [ID=%@, streetAddress=%@]", self.locationID, self.streetAddress];
+}
+
 @end

@@ -34,6 +34,7 @@
  The street address, such as "123 Main St.".
  */
 @property (nonatomic, copy) NSString *streetAddress;
+@property (nonatomic, copy) NSNumber *userAddressID;
 
 /**
  Specifies if this address is of the type "home".

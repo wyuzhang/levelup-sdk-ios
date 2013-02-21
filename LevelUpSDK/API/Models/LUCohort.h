@@ -19,15 +19,20 @@
 @property (nonatomic, copy) NSString *code;
 
 /**
+ A long description of the cohort.
+ */
+@property (nonatomic, copy) NSString *cohortDescription;
+
+/**
+ The unique identifier for this cohort.
+ */
+@property (nonatomic, copy) NSNumber *cohortID;
+
+/**
  The type of cohort. This can be set to any value a merchant chooses, such as example specific ads or links. Common
  types are 'default_email', 'default_facebook', and 'default_twitter'.
  */
 @property (nonatomic, copy) NSString *cohortType;
-
-/**
- A long description of the cohort.
- */
-@property (nonatomic, copy) NSString *description;
 
 /**
  A suggested initial email body to use when a user shares this cohort over email.

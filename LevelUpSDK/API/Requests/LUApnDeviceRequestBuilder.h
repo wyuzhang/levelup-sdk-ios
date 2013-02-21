@@ -24,7 +24,7 @@ extern NSString * const DeviceTokenKey;
 
 /**
  Builds a request to unregister the current device token.
- 
+
  This token will have been set by a previous call to `requestToRegisterApnDevice:`.
 
  On success, this request will return the unregistered `LUApnDevice`.

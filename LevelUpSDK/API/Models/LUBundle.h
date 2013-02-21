@@ -15,9 +15,24 @@
 @property (nonatomic, strong) LUMonetaryValue *amount;
 
 /**
+ The unique identifier for this bundle.
+ */
+@property (nonatomic, copy) NSNumber *bundleID;
+
+/**
+ The date this bundle was charged.
+ */
+@property (nonatomic, copy) NSDate *chargedAt;
+
+/**
+ The date this bundle was created.
+ */
+@property (nonatomic, copy) NSDate *createdAt;
+
+/**
  The last 4 digits of the credit card used to charge the bundle.
  */
-@property (nonatomic, copy) NSString *last_4;
+@property (nonatomic, copy) NSString *last4CreditCardDigits;
 
 /**
  An array of `LUOrder` objects contained in this bundle.
@@ -33,16 +48,6 @@
  The total amount of credit used in this bundle.
  */
 @property (nonatomic, strong) LUMonetaryValue *totalCreditUsed;
-
-/**
- The date this bundle was charged.
- */
-- (NSDate *)chargeDate;
-
-/**
- The date this bundle was created.
- */
-- (NSDate *)creationDate;
 
 /**
  Specifies if this bundle contains charge information (charge date, last 4 digits of credit card).

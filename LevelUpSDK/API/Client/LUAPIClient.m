@@ -2,7 +2,6 @@
 #import "LUAPIErrorBuilder.h"
 #import "LUAPIRequest.h"
 #import "LUConstants.h"
-#import "LUJSONDeserializer.h"
 
 NSString * const LUAPIFailingJSONResponseErrorKey = @"LUAPIFailingJSONResponseErrorKey";
 NSString * const LUAPIFailingErrorMessageErrorKey = @"LUAPIFailingErrorMessageErrorKey";
@@ -64,7 +63,7 @@ __strong static id _sharedClient = nil;
     [AFJSONRequestOperation JSONRequestOperationWithRequest:apiRequest.urlRequest
                                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                                                       if (success) {
-                                                        success([LUJSONDeserializer deserializeJSON:JSON]);
+                                                        success([apiRequest.modelBuilder buildModelFromJSON:JSON]);
                                                       }
                                                     }
                                                     failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {

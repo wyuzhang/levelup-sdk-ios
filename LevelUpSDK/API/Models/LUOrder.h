@@ -24,6 +24,16 @@
 @property (nonatomic, strong) LUBundle *bundle;
 
 /**
+ Specifies if this order is closed.
+ */
+@property (nonatomic, assign) BOOL closed;
+
+/**
+ The date that this order was made.
+ */
+@property (nonatomic, copy) NSDate *createdAt;
+
+/**
  The amount of credit applied to this order.
  */
 @property (nonatomic, strong) LUMonetaryValue *credit;
@@ -59,12 +69,22 @@
 @property (nonatomic, strong) LUMerchant *merchant;
 
 /**
+ The unique identifier for this category.
+ */
+@property (nonatomic, copy) NSNumber *orderID;
+
+/**
+ The date that this order was refunded.
+ */
+@property (nonatomic, copy) NSDate *refundedAt;
+
+/**
  The amount the user spent for this order, not including tip.
  */
 @property (nonatomic, strong) LUMonetaryValue *spend;
 
 /**
- The state of order. May be one of: 'processing', 'completed', or 'refunded'.
+ The state of the order. May be one of: 'processing', 'completed', or 'refunded'.
  */
 @property (nonatomic, copy) NSString *state;
 
@@ -77,11 +97,6 @@
  The sum of `spend` and `tip`.
  */
 @property (nonatomic, strong) LUMonetaryValue *total;
-
-/**
- The date that this order was made.
- */
-- (NSDate *)creationDate;
 
 /**
  Specifies if a donation was made on this order.
@@ -107,11 +122,6 @@
  Specifies if credit was used on this order.
  */
 - (BOOL)hasUsedCredit;
-
-/**
- Specifies if this order is closed.
- */
-- (BOOL)isClosed;
 
 /**
  Specifies if this order has been refunded.

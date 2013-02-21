@@ -23,6 +23,11 @@
 @interface LUApnDevice : LUAPIModel
 
 /**
+ The unique identifier for this APN device.
+ */
+@property (nonatomic, copy) NSNumber *apnDeviceID;
+
+/**
  Specifies whether notifications should be sent to this device in development mode (which uses Apple's sandbox
  notification server) or production (which uses Apple's production notification server). Typically this would match
  `LUAPIClient`'s development mode.

@@ -59,6 +59,20 @@
   return [self firstCohortOfType:kCohortTypeDefaultTwitter];
 }
 
+#pragma mark - NSObject Methods
+
+- (NSString *)debugDescription {
+  return [NSString stringWithFormat:
+          @"Campaign [claimed=%@, cohort=%@, cohorts=%@, confirmationHtml=%@, global=%@, ID=%@, merchants=%@, mobileImageUrl_320x212_1x=%@, mobileImageUrl_320x212_2x=%@, name=%@, offerHtml=%@, sponsor=%@, supportEmail=%@, value=%@]",
+          @(self.claimed), self.cohort, self.cohorts, self.confirmationHtml, @(self.global), self.campaignID,
+          self.mobileImageUrl_320x212_1x, self.mobileImageUrl_320x212_2x, self.merchants, self.name, self.offerHtml,
+          self.sponsor, self.supportEmail, self.value];
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"Campaign [ID=%@, name=%@, value=%@]", self.campaignID, self.name, self.value];
+}
+
 #pragma mark - Private Methods
 
 - (LUCohort *)firstCohortOfType:(NSString *)type {

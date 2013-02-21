@@ -3,9 +3,14 @@
 /**
  `LUUser` is a representation of a user in the LevelUp system.
  */
+typedef NS_ENUM(NSInteger, LUGender) {
+  LUGenderNone,
+  LUGenderMale,
+  LUGenderFemale
+};
+
 @class LUCause;
 @class LUMonetaryValue;
-@class LUQRCode;
 @class LUUserAddress;
 
 @interface LUUser : LUAPIModel
@@ -33,6 +38,11 @@
 @property (nonatomic, copy) NSNumber *causeId;
 
 /**
+ Specifies if the user has connected to Facebook.
+ */
+@property (nonatomic, assign) BOOL connectedToFacebook;
+
+/**
  The amount of the user's global credit: that is, credit that can be used at any merchant.
  */
 @property (nonatomic, strong) LUMonetaryValue *credit;
@@ -53,39 +63,19 @@
 @property (nonatomic, copy) NSString *employer;
 
 /**
- If the user has connected their account with Facebook, this returns their Facebook user ID.
- */
-@property (nonatomic, copy) NSString *facebookUserId;
-
-/**
  The user's first name.
  */
 @property (nonatomic, copy) NSString *firstName;
 
 /**
- Specifies if the user is female. If `isFemale` is set to YES, then isMale will automatically be set to NO.
+ The user's gender. Maybe set to `LUGenderMale`, `LUGenderFemale` or `LUGenderNone`.
  */
-@property (nonatomic, assign) BOOL isFemale;
-
-/**
- Specifies if the user is male. If `isMale` is set to YES, then isFemale will automatically be set to NO.
- */
-@property (nonatomic, assign) BOOL isMale;
+@property (nonatomic, assign) LUGender gender;
 
 /**
  The user's last name.
  */
 @property (nonatomic, copy) NSString *lastName;
-
-/**
- The latitude of the user's location when they first signed up.
- */
-@property (nonatomic, copy) NSNumber *lat;
-
-/**
- The latitude of the user's location when they first signed up.
- */
-@property (nonatomic, copy) NSNumber *lng;
 
 /**
  The total amount of money that the user has saved using LevelUp.
@@ -119,6 +109,11 @@
 @property (nonatomic, assign) BOOL paymentEligible;
 
 /**
+ The user's payment token (typically shown in an app as a QR code).
+ */
+@property (nonatomic, copy) NSString *paymentToken;
+
+/**
  The percent of savings that the user would like to donate to their chosen `cause`.
  */
 @property (nonatomic, copy) NSNumber *percentDonation;
@@ -129,25 +124,15 @@
 @property (nonatomic, copy) NSString *promotionCode;
 
 /**
- The user's QR code.
- */
-@property (nonatomic, strong) LUQRCode *qrCode;
-
-/**
  The user's referral code. Associated with a "Refer-a-Friend" campaign. See the documentation for `LUCampaign` for
  more information.
  */
 @property (nonatomic, copy) NSString *referralCode;
 
 /**
- Specifies if the user is subscribed to LevelUp emails.
- */
-@property (nonatomic, assign) BOOL subscribed;
-
-/**
  The time at which the user accepted the LevelUp Terms & Conditions.
  */
-@property (nonatomic, copy) NSDate *termsAcceptedTime;
+@property (nonatomic, copy) NSDate *termsAcceptedAt;
 
 /**
  An array of `LUUserAddress` objects representing the user's addresses (home, work, etc.).
@@ -155,14 +140,9 @@
 @property (nonatomic, copy) NSArray *userAddresses;
 
 /**
- The user's ID. This field is set after the user gets created.
+ The unique identifier for this category.
  */
-@property (nonatomic, copy) NSNumber *xUserId;
-
-/**
- Specifies if the user is payment eligible and has non-empty QR code data.
- */
-- (BOOL)hasValidQRCode;
+@property (nonatomic, copy) NSNumber *userID;
 
 /**
  The user's home address.

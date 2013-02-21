@@ -1,3 +1,5 @@
+#import "LUAPIModelBuilder.h"
+
 /**
  `LUAPIRequest` represents a request to the LevelUp API. To perform a request, an `LUAPIRequest` instance is passed
  to the `performRequest:success:failure` method of `LUAPIClient`. `LUAPIRequest` instances should usually be created
@@ -15,6 +17,11 @@
  The HTTP method of the request: "GET", "POST", "PUT", or "DELETE".
  */
 @property (nonatomic, copy) NSString *method;
+
+/**
+ An `LUAPIModelBuilder` to parse the JSON response.
+ */
+@property (nonatomic, strong) LUAPIModelBuilder *modelBuilder;
 
 /**
  The path component of the URL of the request.

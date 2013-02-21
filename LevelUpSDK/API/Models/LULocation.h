@@ -35,6 +35,11 @@
 @property (nonatomic, copy) NSString *locality;
 
 /**
+ The unique identifier for this location.
+ */
+@property (nonatomic, copy) NSNumber *locationID;
+
+/**
  The longitude of the location.
  */
 @property (nonatomic, copy) NSNumber *lng;

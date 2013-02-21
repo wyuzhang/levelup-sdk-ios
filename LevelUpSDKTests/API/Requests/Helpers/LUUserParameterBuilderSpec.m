@@ -2,6 +2,7 @@
 #import "LUUser.h"
 #import "LUUserAddress.h"
 #import "LUUserParameterBuilder.h"
+#import "NSDate+StringFormats.h"
 
 SPEC_BEGIN(LUUserParameterBuilderSpec)
 
@@ -18,16 +19,13 @@ describe(@"LUUserParameterBuilder", ^{
       user.email = @"test@example.com";
       user.employer = @"SCVNGR";
       user.firstName = @"John";
-      user.isMale = YES;
+      user.gender = LUGenderMale;
       user.lastName = @"Smith";
-      user.lat = @40;
-      user.lng = @-70;
       user.newPassword = @"test123";
       user.newPasswordConfirmation = @"test123";
       user.percentDonation = @50;
       user.promotionCode = @"abc123";
-      user.subscribed = YES;
-      user.termsAcceptedTime = [NSDate distantPast];
+      user.termsAcceptedAt = [NSDate distantPast];
     });
 
     it(@"returns parameters for the user, plus the device identifier", ^{
@@ -35,22 +33,19 @@ describe(@"LUUserParameterBuilder", ^{
       [LUDeviceIdentifier stub:@selector(deviceIdentifier) andReturn:deviceIdentifer];
 
       NSDictionary *expectedParams = @{
-        @"born_at" : [user valueForKey:@"bornAt"],
+        @"born_at" : [user.birthday iso8601DateTimeString],
         @"custom_attributes" : user.customAttributes,
         @"device_identifier" : deviceIdentifer,
         @"email" : user.email,
         @"employer" : user.employer,
         @"first_name" : user.firstName,
-        @"gender" : [user valueForKey:@"gender"],
+        @"gender" : @"male",
         @"last_name" : user.lastName,
-        @"lat" : user.lat,
-        @"lng" : user.lng,
         @"new_password" : user.newPassword,
         @"new_password_confirmation" : user.newPasswordConfirmation,
         @"percent_donation" : user.percentDonation,
         @"promotion_code" : user.promotionCode,
-        @"subscribed" : @(user.subscribed),
-        @"terms_accepted_at" : [user valueForKey:@"termsAcceptedAt"]
+        @"terms_accepted_at" : [user.termsAcceptedAt iso8601DateTimeString]
       };
 
       [[[LUUserParameterBuilder parametersForUser:user] should] equal:expectedParams];
@@ -73,7 +68,7 @@ describe(@"LUUserParameterBuilder", ^{
         homeAddress = [[LUUserAddress alloc] init];
         homeAddress.addressType = @"home";
         homeAddress.extendedAddress = @"";
-        homeAddress.modelId = @1;
+        homeAddress.userAddressID = @1;
         homeAddress.locality = @"Cambridge";
         homeAddress.postalCode = @"01234";
         homeAddress.region = @"MA";
@@ -82,7 +77,7 @@ describe(@"LUUserParameterBuilder", ^{
         workAddress = [[LUUserAddress alloc] init];
         workAddress.addressType = @"home";
         workAddress.extendedAddress = @"2nd Floor";
-        workAddress.modelId = @2;
+        workAddress.userAddressID = @2;
         workAddress.locality = @"Boston";
         workAddress.postalCode = @"";
         workAddress.region = @"MA";
@@ -94,7 +89,7 @@ describe(@"LUUserParameterBuilder", ^{
       it(@"includes the user addresses, excluding blank properties", ^{
         NSDictionary *expectedHomeAddressParams = @{
           @"address_type" : homeAddress.addressType,
-          @"id" : homeAddress.modelId,
+          @"id" : homeAddress.userAddressID,
           @"locality" : homeAddress.locality,
           @"postal_code" : homeAddress.postalCode,
           @"region" : homeAddress.region,
@@ -104,7 +99,7 @@ describe(@"LUUserParameterBuilder", ^{
         NSDictionary *expectedWorkAddressParams = @{
           @"address_type" : workAddress.addressType,
           @"extended_address" : workAddress.extendedAddress,
-          @"id" : workAddress.modelId,
+          @"id" : workAddress.userAddressID,
           @"locality" : workAddress.locality,
           @"region" : workAddress.region,
           @"street_address" : workAddress.streetAddress

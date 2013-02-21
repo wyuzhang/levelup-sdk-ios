@@ -60,7 +60,7 @@ describe(@"LUMerchantRequestBuilder", ^{
   describe(@"requestForMerchantsNearLocation:inCategory:page:", ^{
     CLLocationDegrees lat = 45, lng = -45;
     LUCategory *category = [[LUCategory alloc] init];
-    category.modelId = @3;
+    category.categoryID = @3;
     NSUInteger page = 4;
 
     beforeEach(^{
@@ -80,7 +80,7 @@ describe(@"LUMerchantRequestBuilder", ^{
       NSDictionary *expectedParams = @{
         @"lat" : @(lat),
         @"lng" : @(lng),
-        @"category_ids" : category.modelId,
+        @"category_ids" : category.categoryID,
         @"page" : @(page)
       };
 

@@ -19,26 +19,6 @@ describe(@"LUBundle", ^{
     bundle = [[LUBundle alloc] init];
   });
 
-  describe(@"chargeDate", ^{
-    it(@"returns chargedAt as an NSDate", ^{
-      NSDate *date = [NSDate date];
-      NSString *dateString = [date iso8601DateTimeString];
-      [bundle setValue:dateString forKey:@"chargedAt"];
-
-      [[theValue([[bundle chargeDate] timeIntervalSince1970]) should] equal:[date timeIntervalSince1970] withDelta:1.0];
-    });
-  });
-
-  describe(@"creationDate", ^{
-    it(@"returns createdAt as an NSDate", ^{
-      NSDate *date = [NSDate date];
-      NSString *dateString = [date iso8601DateTimeString];
-      [bundle setValue:dateString forKey:@"createdAt"];
-
-      [[theValue([[bundle creationDate] timeIntervalSince1970]) should] equal:[date timeIntervalSince1970] withDelta:1.0];
-    });
-  });
-
   describe(@"hasChargeData", ^{
     context(@"when chargedAt is nil", ^{
       beforeEach(^{

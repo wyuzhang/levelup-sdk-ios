@@ -28,4 +28,15 @@
   }
 }
 
+#pragma mark - NSObject Methods
+
+- (NSString *)debugDescription {
+  return [NSString stringWithFormat:@"MonetaryValue [amount=%@, currencyCode=%@, currencySymbol=%@, formattedAmount=%@]",
+          self.amount, self.currencyCode, self.currencySymbol, self.formattedAmount];
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"MonetaryValue [%@]", [self formattedAmountWithSymbol]];
+}
+
 @end

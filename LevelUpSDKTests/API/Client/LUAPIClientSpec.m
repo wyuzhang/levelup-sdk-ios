@@ -2,7 +2,6 @@
 #import "LUAPIRequest.h"
 #import "LUAPIErrorBuilder.h"
 #import "LUConstants.h"
-#import "LUJSONDeserializer.h"
 
 SPEC_BEGIN(LUAPIClientSpec)
 
@@ -146,7 +145,8 @@ describe(@"LUAPIClient", ^{
 
       it(@"deserializes the response JSON and passes it to the success block", ^{
         id deserializedResponse = [KWMock mock];
-        [[LUJSONDeserializer stubAndReturn:deserializedResponse] deserializeJSON:@{@"ok" : @YES}];
+        apiRequest.modelBuilder = [LUAPIModelBuilder mock];
+        [[apiRequest.modelBuilder stubAndReturn:deserializedResponse] buildModelFromJSON:@{@"ok" : @YES}];
 
         __block id successResult;
         [client performRequest:apiRequest

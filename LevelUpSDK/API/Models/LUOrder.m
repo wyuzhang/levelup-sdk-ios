@@ -3,21 +3,9 @@
 #import "LUOrder.h"
 #import "NSDate+StringFormats.h"
 
-@interface LUOrder ()
-
-@property (nonatomic, assign) BOOL bundleClosed;
-@property (nonatomic, copy) NSString *createdAt;
-@property (nonatomic, copy) NSString *refundedAt;
-
-@end
-
 @implementation LUOrder
 
 #pragma mark - Public Methods
-
-- (NSDate *)creationDate {
-  return [NSDate dateFromIso8601DateTimeString:self.createdAt];
-}
 
 - (BOOL)hasDonation {
   return (self.donation.value.amount.floatValue > 0.0f);
@@ -39,12 +27,22 @@
   return (self.credit.amount.floatValue > 0.0f);
 }
 
-- (BOOL)isClosed {
-  return self.bundleClosed;
-}
-
 - (BOOL)wasRefunded {
   return (self.refundedAt != nil);
+}
+
+#pragma mark - NSObject Methods
+
+- (NSString *)debugDescription {
+  return [NSString stringWithFormat:
+          @"Order [balance=%@, closed=%@, createdAt=%@, credit=%@, donation=%@, earn=%@, ID=%@, interstitialAction=%@, location=%@, loyalty=%@, merchant=%@, refundedAt=%@, spend=%@, state=%@, tip=%@, total=%@]",
+          self.balance, @(self.closed), self.createdAt, self.createdAt, self.donation, self.earn, self.orderID,
+          self.interstitialAction, self.location, self.loyalty, self.merchant, self.refundedAt, self.spend, self.state,
+          self.tip, self.total];
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"Order [ID=%@, merchant=%@, total=%@]", self.orderID, self.merchant, self.total];
 }
 
 @end

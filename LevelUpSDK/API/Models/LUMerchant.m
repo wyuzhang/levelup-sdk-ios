@@ -1,5 +1,4 @@
 #import "LUCohort.h"
-#import "LUJSONDeserializer.h"
 #import "LULocation.h"
 #import "LULoyalty.h"
 #import "LUMerchant.h"
@@ -81,6 +80,21 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
   if ([self.newsletterUrl length] > 0) [mutableWebLocations addObject:@{@"service" : MerchantNewsletterService, @"url" : self.newsletterUrl, @"displayName" : @"Newsletter"}];
 
   return [NSArray arrayWithArray:mutableWebLocations];
+}
+
+#pragma mark - NSObject Methods
+
+- (NSString *)debugDescription {
+  return [NSString stringWithFormat:
+          @"Merchant [categoryImageUrl_280x128_1x=%@, categoryImageUrl_280x128_2x=%@, descriptionHtml=%@, earn=%@, emailCaptureCohort=%@, facebookUrl=%@, featured=%@, ID=%@, imageUrl_280x128_1x=%@, imageUrl_280x128_2x=%@, locations=%@, loyalty=%@, loyaltyEnabled=%@, name=%@, newsletterUrl=%@, opentableUrl=%@, publicUrl=%@, scvngrUrl=%@, spend=%@, twitterUsername=%@, url=%@, yelpUrl=%@]",
+          self.categoryImageUrl_32x32_1x, self.categoryImageUrl_32x32_2x, self.descriptionHtml, self.earn,
+          self.emailCaptureCohort, self.facebookUrl, @(self.featured), self.merchantID, self.imageUrl_280x128_1x,
+          self.imageUrl_280x128_2x, self.locations, self.loyalty, @(self.loyaltyEnabled), self.name, self.newsletterUrl,
+          self.opentableUrl, self.publicUrl, self.scvngrUrl, self.spend, self.twitterUsername, self.url, self.yelpUrl];
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"Merchant [ID=%@, name=%@]", self.merchantID, self.name];
 }
 
 @end

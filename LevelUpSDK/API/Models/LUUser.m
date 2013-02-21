@@ -1,5 +1,4 @@
 #import "LUCause.h"
-#import "LUQRCode.h"
 #import "LUUser.h"
 #import "LUUserAddress.h"
 #import "NSDate+StringFormats.h"
@@ -8,56 +7,12 @@ NSString * const GenderMale = @"male";
 NSString * const GenderFemale = @"female";
 float const SecondsInAYear = 365.25 * 24 * 60 * 60;
 
-@interface LUUser ()
-
-@property (nonatomic, copy) NSString *bornAt;
-@property (nonatomic, copy) NSString *gender;
-@property (nonatomic, copy) NSString *termsAcceptedAt;
-
-@end
-
 @implementation LUUser
-
-#pragma mark - Property Getters
-
-- (NSDate *)birthday {
-  return [NSDate dateFromIso8601DateTimeString:self.bornAt];
-}
-
-- (BOOL)isFemale {
-  return [self.gender isEqualToString:GenderFemale];
-}
-
-- (BOOL)isMale {
-  return [self.gender isEqualToString:GenderMale];
-}
-
-- (NSDate *)termsAcceptedTime {
-  return [NSDate dateFromIso8601DateTimeString:self.termsAcceptedAt];
-}
-
-#pragma mark - Property Setters
-
-- (void)setBirthday:(NSDate *)birthday {
-  self.bornAt = [birthday iso8601DateTimeString];
-}
-
-- (void)setIsFemale:(BOOL)isFemale {
-  self.gender = GenderFemale;
-}
-
-- (void)setIsMale:(BOOL)isMale {
-  self.gender = GenderMale;
-}
-
-- (void)setTermsAcceptedTime:(NSDate *)termsAcceptedTime {
-  self.termsAcceptedAt = [termsAcceptedTime iso8601DateTimeString];
-}
 
 #pragma mark - Public Methods
 
 - (BOOL)hasValidQRCode {
-  return self.paymentEligible && self.qrCode.data.length > 0;
+  return self.paymentEligible && self.paymentToken.length > 0;
 }
 
 - (LUUserAddress *)homeAddress {
@@ -70,6 +25,39 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
   }
 
   return nil;
+}
+
+#pragma mark - NSObject Methods
+
+- (NSString *)debugDescription {
+  return [NSString stringWithFormat:
+          @"User [ableToRefer=%@, birthday=%@, connectedToFacebook=%@, customAttributes=%@, email=%@, firstName=%@, gender=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, paymentEligible=%@, paymentToken=%@, percentDonation=%@, referralCode=%@, termsAcceptedAt=%@]",
+          @(self.ableToRefer), self.birthday, @(self.connectedToFacebook), self.customAttributes, self.email,
+          self.firstName, [self genderString], self.userID, self.lastName, self.merchantsVisitedCount,
+          self.ordersCount, @(self.paymentEligible), self.paymentToken, self.percentDonation, self.referralCode,
+          self.termsAcceptedAt];
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"User [firstName=%@, ID=%@, lastName=%@]", self.firstName, self.userID, self.lastName];
+}
+
+#pragma mark - Private Methods
+
+- (NSString *)genderString {
+  switch (self.gender) {
+    case LUGenderNone:
+      return @"none";
+
+    case LUGenderMale:
+      return @"male";
+
+    case LUGenderFemale:
+      return @"female";
+
+    default:
+      return nil;
+  }
 }
 
 - (NSString *)referralURL {

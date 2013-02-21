@@ -30,7 +30,7 @@ describe(@"LUCauseRequestBuilder", ^{
 
   describe(@"requestForCausesInCategory:page:", ^{
     LUCauseCategory *causeCategory = [[LUCauseCategory alloc] init];
-    causeCategory.modelId = @1;
+    causeCategory.causeCategoryID = @1;
 
     NSUInteger page = 2;
 
@@ -47,7 +47,7 @@ describe(@"LUCauseRequestBuilder", ^{
     });
 
     it(@"returns a request with the parameters for the given category and page", ^{
-      NSDictionary *expectedParams = @{@"category_ids" : causeCategory.modelId, @"page" : @(page)};
+      NSDictionary *expectedParams = @{@"category_ids" : causeCategory.causeCategoryID, @"page" : @(page)};
 
       [[request.parameters should] equal:expectedParams];
     });

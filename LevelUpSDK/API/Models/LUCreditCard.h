@@ -7,14 +7,19 @@
 @interface LUCreditCard : LUAPIModel
 
 /**
+ A string to use when describing the credit card. Includes the card's type and last 4 digits.
+ */
+@property (nonatomic, copy) NSString *creditCardDescription;
+
+/**
+ The unique identifier for this category.
+ */
+@property (nonatomic, copy) NSNumber *creditCardID;
+
+/**
  The credit card's CVV (card verification value).
  */
 @property (nonatomic, copy) NSString *cvv;
-
-/**
- A string to use when describing the credit card. Includes the card's type and last 4 digits.
- */
-@property (nonatomic, copy) NSString *description;
 
 /**
  The card's expiration month, as a number from 1 to 12.
@@ -30,7 +35,7 @@
  The last 4 digits of the credit card. This is returned by the server, and does not need to be set when creating a new
  card.
  */
-@property (nonatomic, copy) NSString *last_4;
+@property (nonatomic, copy) NSString *last4Digits;
 
 /**
  The credit card number. Should be set when creating a credit card. Will be nil when retrieving cards from the server.

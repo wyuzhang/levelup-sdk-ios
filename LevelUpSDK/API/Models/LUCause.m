@@ -40,4 +40,18 @@
   return twitterUrl;
 }
 
+#pragma mark - NSObject Methods
+
+- (NSString *)debugDescription {
+  return [NSString stringWithFormat:
+          @"Cause [descriptionHtml=%@, employerRequired=%@, facebookUrl=%@, featured=%@, homeAddressRequired=%@, ID=%@, imageUrl_320x212_1x=%@, imageUrl_320x212_2x=%@, minimumAgeRequired=%@, name=%@, partnerSpecificTerms=%@, twitterUsername=%@, website=%@]",
+          self.descriptionHtml, @(self.employerRequired), self.facebookUrl, @(self.featured), @(self.homeAddressRequired),
+          self.causeID, self.imageUrl_320x212_1x, self.imageUrl_320x212_2x, self.minimumAgeRequired, self.name,
+          self.partnerSpecificTerms, self.twitterUsername, self.website];
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"Cause [ID=%@, name=%@]", self.causeID, self.name];
+}
+
 @end

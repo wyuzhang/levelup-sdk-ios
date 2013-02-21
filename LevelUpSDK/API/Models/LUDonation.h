@@ -15,6 +15,11 @@
 @property (nonatomic, strong) LUCause *cause;
 
 /**
+ The unique identifier for this donation.
+ */
+@property (nonatomic, copy) NSNumber *donationID;
+
+/**
  The amount of money which will be donated to the cause.
  */
 @property (nonatomic, strong) LUMonetaryValue *value;

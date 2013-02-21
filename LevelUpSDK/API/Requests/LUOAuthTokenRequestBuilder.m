@@ -1,6 +1,7 @@
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
 #import "LUDeviceIdentifier.h"
+#import "LUOAuthTokenModelBuilder.h"
 #import "LUOAuthTokenRequestBuilder.h"
 
 @implementation LUOAuthTokenRequestBuilder
@@ -29,7 +30,9 @@
   parameters[@"client_id"] = [LUAPIClient sharedClient].apiKey;
   parameters[@"device_identifier"] = [LUDeviceIdentifier deviceIdentifier];
 
-  return [LUAPIRequest apiRequestWithMethod:@"POST" path:@"oauth/access_token" parameters:parameters];
+  LUAPIRequest *request = [LUAPIRequest apiRequestWithMethod:@"POST" path:@"oauth/access_token" parameters:parameters];
+  request.modelBuilder = [LUOAuthTokenModelBuilder builder];
+  return request;
 }
 
 @end

@@ -26,7 +26,7 @@
                                  }];
 
   if (category) {
-    params[@"category_ids"] = category.modelId;
+    params[@"category_ids"] = category.categoryID;
   }
 
   return [LUAPIRequest apiRequestWithMethod:@"GET" path:@"merchants" parameters:params];

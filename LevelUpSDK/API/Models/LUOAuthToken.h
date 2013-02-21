@@ -16,7 +16,7 @@
 /**
  The OAuth client ID. Must be set to the LevelUp API key.
  */
-@property (nonatomic, copy) NSString *clientId;
+@property (nonatomic, copy) NSString *clientID;
 
 /**
  A Facebook access token to use for authentication. The `grantType` must be set to "facebook" for this token to be used.
@@ -35,8 +35,18 @@
 @property (nonatomic, copy) NSString *password;
 
 /**
+ The unique identifier for this category.
+ */
+@property (nonatomic, copy) NSNumber *oauthTokenID;
+
+/**
  The username to use for authentication. The `grantType` must be set to "password" for username and password to be used.
  */
 @property (nonatomic, copy) NSString *username;
+
+/**
+ The user's ID.
+ */
+@property (nonatomic, copy) NSNumber *xUserId;
 
 @end

@@ -1,18 +1,12 @@
 #import "LURefund.h"
-#import "NSDate+StringFormats.h"
-
-@interface LURefund ()
-
-@property (nonatomic, copy) NSString *createdAt;
-
-@end
 
 @implementation LURefund
 
-#pragma mark - Public Methods
+#pragma mark - NSObject Methods
 
-- (NSDate *)creationDate {
-  return [NSDate dateFromIso8601DateTimeString:self.createdAt];
+- (NSString *)description {
+  return [NSString stringWithFormat:@"Refund [createdAt=%@, ID=%@, order=%@]", self.createdAt, self.refundID,
+          self.order];
 }
 
 @end

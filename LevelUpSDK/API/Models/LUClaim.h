@@ -14,6 +14,11 @@
 @property (nonatomic, strong) LUCampaign *campaign;
 
 /**
+ The unique identifier for this claim.
+ */
+@property (nonatomic, copy) NSNumber *claimID;
+
+/**
  The cohort through which the user claimed the campaign.
  */
 @property (nonatomic, strong) LUCohort *cohort;

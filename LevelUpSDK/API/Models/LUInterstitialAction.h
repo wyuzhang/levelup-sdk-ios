@@ -14,6 +14,11 @@
 @property (nonatomic, strong) LUCampaign *campaign;
 
 /**
+ The unique identifier for this interstitial action.
+ */
+@property (nonatomic, copy) NSNumber *interstitialActionID;
+
+/**
  A string representing the type of the action.
  */
 @property (nonatomic, copy) NSString *type;

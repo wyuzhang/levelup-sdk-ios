@@ -18,16 +18,6 @@ describe(@"LUOrder", ^{
     order = [[LUOrder alloc] init];
   });
 
-  describe(@"creationDate", ^{
-    it(@"returns createdAt as an NSDate", ^{
-      NSDate *date = [NSDate date];
-      NSString *dateString = [date iso8601DateTimeString];
-      [order setValue:dateString forKey:@"createdAt"];
-
-      [[theValue([[order creationDate] timeIntervalSince1970]) should] equal:[date timeIntervalSince1970] withDelta:1.0];
-    });
-  });
-
   describe(@"hasDonation", ^{
     context(@"when donation is nil", ^{
       beforeEach(^{
@@ -186,28 +176,6 @@ describe(@"LUOrder", ^{
 
       it(@"is YES", ^{
         [[theValue([order hasUsedCredit]) should] beYes];
-      });
-    });
-  });
-
-  describe(@"isClosed", ^{
-    context(@"when the bundle is closed", ^{
-      beforeEach(^{
-        [order setValue:@YES forKey:@"bundleClosed"];
-      });
-
-      it(@"is YES", ^{
-        [[theValue([order isClosed]) should] beYes];
-      });
-    });
-
-    context(@"when the bundle is not closed", ^{
-      beforeEach(^{
-        [order setValue:@NO forKey:@"bundleClosed"];
-      });
-
-      it(@"is NO", ^{
-        [[theValue([order isClosed]) should] beNo];
       });
     });
   });

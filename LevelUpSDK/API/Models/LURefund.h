@@ -8,13 +8,18 @@
 @interface LURefund : LUAPIModel
 
 /**
+ The time at which the refund was made.
+ */
+@property (nonatomic, copy) NSDate *createdAt;
+
+/**
  The order which was refunded.
  */
 @property (nonatomic, strong) LUOrder *order;
 
 /**
- The time at which the refund was made.
+ The unique identifier for this refund.
  */
-- (NSDate *)creationDate;
+@property (nonatomic, copy) NSNumber *refundID;
 
 @end

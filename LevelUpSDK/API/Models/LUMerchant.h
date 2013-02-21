@@ -1,3 +1,4 @@
+
 #import <CoreLocation/CoreLocation.h>
 #import "LUAPIModel.h"
 
@@ -64,6 +65,11 @@ extern NSString * const MerchantNewsletterService;
  loyalty enabled.
  */
 @property (nonatomic, assign) BOOL loyaltyEnabled;
+
+/**
+ The unique identifier for this merchant.
+ */
+@property (nonatomic, copy) NSNumber *merchantID;
 
 /**
  The merchant's name.

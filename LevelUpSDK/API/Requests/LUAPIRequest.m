@@ -1,5 +1,6 @@
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
+#import "LURootKeyModelBuilder.h"
 
 @implementation LUAPIRequest
 
@@ -21,10 +22,11 @@
 - (id)initWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters includeAccessToken:(BOOL)includeAccessToken {
   self = [super init];
   if (self) {
+    _includeAccessToken = includeAccessToken;
+    _modelBuilder = [LURootKeyModelBuilder builder];
     _method = method;
     _path = path;
     _parameters = parameters;
-    _includeAccessToken = includeAccessToken;
   }
 
   return self;

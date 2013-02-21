@@ -28,6 +28,11 @@
 @interface LUCampaign : LUAPIModel
 
 /**
+ The unique identifier for this campaign.
+ */
+@property (nonatomic, copy) NSNumber *campaignID;
+
+/**
  Specifies whether the campaign has been claimed by the current user.
  */
 @property (nonatomic, assign) BOOL claimed;

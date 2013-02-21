@@ -15,9 +15,14 @@
 @interface LULoyalty : LUAPIModel
 
 /**
+ The unique identifier for this loyalty.
+ */
+@property (nonatomic, copy) NSNumber *loyaltyID;
+
+/**
  The ID of the merchant this `LULoyalty` is for.
  */
-@property (nonatomic, copy) NSNumber *merchantId;
+@property (nonatomic, copy) NSNumber *merchantID;
 
 /**
  The number of orders the user has made at this merchant.

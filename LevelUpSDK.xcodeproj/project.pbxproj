@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021A0F3816D6B0EE00EDB9D4 /* LURootKeyModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 021A0F3616D6B0EE00EDB9D4 /* LURootKeyModelBuilder.h */; };
+		021A0F3916D6B0EE00EDB9D4 /* LURootKeyModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 021A0F3716D6B0EE00EDB9D4 /* LURootKeyModelBuilder.m */; };
+		021A0F3C16D6B22100EDB9D4 /* LUUserModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 021A0F3A16D6B21F00EDB9D4 /* LUUserModelBuilder.h */; };
+		021A0F3D16D6B22100EDB9D4 /* LUUserModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 021A0F3B16D6B22000EDB9D4 /* LUUserModelBuilder.m */; };
+		021A0F3F16D6B5C400EDB9D4 /* LUAPIModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 021A0F3E16D6B5C300EDB9D4 /* LUAPIModelBuilder.m */; };
+		021A0F4216D6BE2400EDB9D4 /* LUBundleModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 021A0F4016D6BE2100EDB9D4 /* LUBundleModelBuilder.h */; };
+		021A0F4316D6BE2400EDB9D4 /* LUBundleModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 021A0F4116D6BE2200EDB9D4 /* LUBundleModelBuilder.m */; };
+		021A0F4616D6BE7400EDB9D4 /* LUMonetaryValueModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 021A0F4416D6BE7000EDB9D4 /* LUMonetaryValueModelBuilder.h */; };
+		021A0F4716D6BE7400EDB9D4 /* LUMonetaryValueModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 021A0F4516D6BE7200EDB9D4 /* LUMonetaryValueModelBuilder.m */; };
+		021A0F4A16D6C00B00EDB9D4 /* LUCampaignModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 021A0F4816D6C00800EDB9D4 /* LUCampaignModelBuilder.h */; };
+		021A0F4B16D6C00B00EDB9D4 /* LUCampaignModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 021A0F4916D6C00900EDB9D4 /* LUCampaignModelBuilder.m */; };
+		021A0F4E16D6C17B00EDB9D4 /* LUCategoryModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 021A0F4C16D6C17500EDB9D4 /* LUCategoryModelBuilder.h */; };
+		021A0F4F16D6C17B00EDB9D4 /* LUCategoryModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 021A0F4D16D6C17900EDB9D4 /* LUCategoryModelBuilder.m */; };
+		021A0F5216D6C1C400EDB9D4 /* LUCauseModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 021A0F5016D6C1BF00EDB9D4 /* LUCauseModelBuilder.h */; };
+		021A0F5316D6C1C400EDB9D4 /* LUCauseModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 021A0F5116D6C1C100EDB9D4 /* LUCauseModelBuilder.m */; };
+		021A0F5616D6C2AC00EDB9D4 /* LUCauseCategoryModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 021A0F5416D6C2A500EDB9D4 /* LUCauseCategoryModelBuilder.h */; };
+		021A0F5716D6C2AC00EDB9D4 /* LUCauseCategoryModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 021A0F5516D6C2A900EDB9D4 /* LUCauseCategoryModelBuilder.m */; };
+		021A0F5A16D6C33B00EDB9D4 /* LUClaimModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 021A0F5816D6C33400EDB9D4 /* LUClaimModelBuilder.h */; };
+		021A0F5B16D6C33B00EDB9D4 /* LUClaimModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 021A0F5916D6C33700EDB9D4 /* LUClaimModelBuilder.m */; };
 		021DFF4C169F27BB00215926 /* LUCampaignRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 021DFF4A169F27BB00215926 /* LUCampaignRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		021DFF4D169F27BB00215926 /* LUCampaignRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 021DFF4B169F27BB00215926 /* LUCampaignRequestBuilder.m */; };
 		022B2856166E519800679E06 /* LUQRCodeGeneratorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 022B2855166E519800679E06 /* LUQRCodeGeneratorSpec.m */; };
@@ -30,7 +49,6 @@
 		025C8A2916C2C29F00364C41 /* LUMonetaryValueSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C8A1216C2C29F00364C41 /* LUMonetaryValueSpec.m */; };
 		025C8A2A16C2C29F00364C41 /* LUOAuthTokenSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C8A1316C2C29F00364C41 /* LUOAuthTokenSpec.m */; };
 		025C8A2B16C2C29F00364C41 /* LUOrderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C8A1416C2C29F00364C41 /* LUOrderSpec.m */; };
-		025C8A2C16C2C29F00364C41 /* LUQRCodeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C8A1516C2C29F00364C41 /* LUQRCodeSpec.m */; };
 		025C8A2E16C2C29F00364C41 /* LUUserAddressSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C8A1716C2C29F00364C41 /* LUUserAddressSpec.m */; };
 		025C8A2F16C2C29F00364C41 /* LUUserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C8A1816C2C29F00364C41 /* LUUserSpec.m */; };
 		025C8A3016C2C2EA00364C41 /* LUAPIClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C89FF16C2C22E00364C41 /* LUAPIClientSpec.m */; };
@@ -72,8 +90,6 @@
 		0268A1D416BC30120065E009 /* LUOAuthToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 0268A1A216BC30120065E009 /* LUOAuthToken.m */; };
 		0268A1D516BC30120065E009 /* LUOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 0268A1A316BC30120065E009 /* LUOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0268A1D616BC30120065E009 /* LUOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0268A1A416BC30120065E009 /* LUOrder.m */; };
-		0268A1D716BC30120065E009 /* LUQRCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 0268A1A516BC30120065E009 /* LUQRCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0268A1D816BC30120065E009 /* LUQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0268A1A616BC30120065E009 /* LUQRCode.m */; };
 		0268A1D916BC30120065E009 /* LURefund.h in Headers */ = {isa = PBXBuildFile; fileRef = 0268A1A716BC30120065E009 /* LURefund.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0268A1DA16BC30120065E009 /* LURefund.m in Sources */ = {isa = PBXBuildFile; fileRef = 0268A1A816BC30120065E009 /* LURefund.m */; };
 		0268A1DD16BC30120065E009 /* LUUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0268A1AB16BC30120065E009 /* LUUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -82,6 +98,30 @@
 		0268A1E016BC30120065E009 /* LUUserAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0268A1AE16BC30120065E009 /* LUUserAddress.m */; };
 		0268A21816BC43520065E009 /* LUAPIErrorBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 0268A21616BC43520065E009 /* LUAPIErrorBuilder.h */; };
 		0268A21916BC43520065E009 /* LUAPIErrorBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0268A21716BC43520065E009 /* LUAPIErrorBuilder.m */; };
+		0279544A16EE66A700FC3609 /* LUDonationModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 0279544916EE66A700FC3609 /* LUDonationModelBuilder.h */; };
+		027DA6A016D6C6810001B99C /* LUCohortModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DA69E16D6C6800001B99C /* LUCohortModelBuilder.h */; };
+		027DA6A116D6C6810001B99C /* LUCohortModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DA69F16D6C6810001B99C /* LUCohortModelBuilder.m */; };
+		027DA6A416D6C75E0001B99C /* LUCreditCardModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DA6A216D6C75D0001B99C /* LUCreditCardModelBuilder.h */; };
+		027DA6A516D6C75E0001B99C /* LUCreditCardModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DA6A316D6C75E0001B99C /* LUCreditCardModelBuilder.m */; };
+		027DA6AD16D6CDC80001B99C /* LUDonationModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DA6AB16D6CDC80001B99C /* LUDonationModelBuilder.m */; };
+		027DA6B016D6CEE80001B99C /* LUInterstitialActionModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DA6AE16D6CEE70001B99C /* LUInterstitialActionModelBuilder.h */; };
+		027DA6B116D6CEE80001B99C /* LUInterstitialActionModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DA6AF16D6CEE80001B99C /* LUInterstitialActionModelBuilder.m */; };
+		027DA6B416D6D0660001B99C /* LULocationModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DA6B216D6D0660001B99C /* LULocationModelBuilder.h */; };
+		027DA6B516D6D0660001B99C /* LULocationModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DA6B316D6D0660001B99C /* LULocationModelBuilder.m */; };
+		027DA6B816D6D1F20001B99C /* LUMerchantModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DA6B616D6D1F20001B99C /* LUMerchantModelBuilder.h */; };
+		027DA6B916D6D1F20001B99C /* LUMerchantModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DA6B716D6D1F20001B99C /* LUMerchantModelBuilder.m */; };
+		027DA6BC16D6D8300001B99C /* LULoyaltyModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DA6BA16D6D82F0001B99C /* LULoyaltyModelBuilder.h */; };
+		027DA6BD16D6D8300001B99C /* LULoyaltyModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DA6BB16D6D8300001B99C /* LULoyaltyModelBuilder.m */; };
+		027DA6C016D6DA0C0001B99C /* LUOAuthTokenModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DA6BE16D6DA090001B99C /* LUOAuthTokenModelBuilder.h */; };
+		027DA6C116D6DA0C0001B99C /* LUOAuthTokenModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DA6BF16D6DA0A0001B99C /* LUOAuthTokenModelBuilder.m */; };
+		027DA6C416D6DAEB0001B99C /* LUOrderModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DA6C216D6DAE80001B99C /* LUOrderModelBuilder.h */; };
+		027DA6C516D6DAEB0001B99C /* LUOrderModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DA6C316D6DAE90001B99C /* LUOrderModelBuilder.m */; };
+		027DA6C816D6DCA50001B99C /* LURefundModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DA6C616D6DCA20001B99C /* LURefundModelBuilder.h */; };
+		027DA6C916D6DCA50001B99C /* LURefundModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DA6C716D6DCA40001B99C /* LURefundModelBuilder.m */; };
+		027DA6CC16D6DD290001B99C /* LUUserAddressModelBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DA6CA16D6DD260001B99C /* LUUserAddressModelBuilder.h */; };
+		027DA6CD16D6DD290001B99C /* LUUserAddressModelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DA6CB16D6DD270001B99C /* LUUserAddressModelBuilder.m */; };
+		027DA6DB16D7F7000001B99C /* NSDictionary+ObjectClassAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DA6D916D7F7000001B99C /* NSDictionary+ObjectClassAccess.h */; };
+		027DA6DC16D7F7000001B99C /* NSDictionary+ObjectClassAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DA6DA16D7F7000001B99C /* NSDictionary+ObjectClassAccess.m */; };
 		02941E6516B738AE00EDAF6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6416B738AE00EDAF6E /* AVFoundation.framework */; };
 		02941E6616B738F300EDAF6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6416B738AE00EDAF6E /* AVFoundation.framework */; };
 		02941E6816B7391700EDAF6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6716B7391700EDAF6E /* QuartzCore.framework */; };
@@ -111,7 +151,7 @@
 		02941FAB16B96CBC00EDAF6E /* BraintreeRSA.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8916B96CBC00EDAF6E /* BraintreeRSA.h */; };
 		02941FAC16B96CBC00EDAF6E /* BraintreeRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F8A16B96CBC00EDAF6E /* BraintreeRSA.m */; };
 		02941FAD16B96CBC00EDAF6E /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8D16B96CBC00EDAF6E /* NSData+Base64.h */; };
-		02941FAE16B96CBC00EDAF6E /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F8E16B96CBC00EDAF6E /* NSData+Base64.m */; };
+		02941FAE16B96CBC00EDAF6E /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F8E16B96CBC00EDAF6E /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-Wno-conversion"; }; };
 		02941FAF16B96CBC00EDAF6E /* SecKeyWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8F16B96CBC00EDAF6E /* SecKeyWrapper.h */; };
 		02941FB016B96CBC00EDAF6E /* SecKeyWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F9016B96CBC00EDAF6E /* SecKeyWrapper.m */; };
 		02B1643616A0A47600052672 /* LUAPIErrorCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 02B1643416A0A47600052672 /* LUAPIErrorCodes.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -153,8 +193,6 @@
 		257B01BB16684CC9006ACA24 /* LUTicketRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B019816684CC9006ACA24 /* LUTicketRequestBuilder.m */; };
 		257B01BC16684CC9006ACA24 /* LUUserRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B019916684CC9006ACA24 /* LUUserRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		257B01BD16684CC9006ACA24 /* LUUserRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B019A16684CC9006ACA24 /* LUUserRequestBuilder.m */; };
-		257B01C016684CC9006ACA24 /* LUJSONDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B019E16684CC9006ACA24 /* LUJSONDeserializer.h */; };
-		257B01C116684CC9006ACA24 /* LUJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B019F16684CC9006ACA24 /* LUJSONDeserializer.m */; };
 		257B01C916684D69006ACA24 /* NSDate+StringFormats.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B01C316684D69006ACA24 /* NSDate+StringFormats.h */; settings = {ATTRIBUTES = (); }; };
 		257B01CA16684D69006ACA24 /* NSDate+StringFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B01C416684D69006ACA24 /* NSDate+StringFormats.m */; };
 		257B01CB16684D69006ACA24 /* NSNumber+Base36.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B01C516684D69006ACA24 /* NSNumber+Base36.h */; };
@@ -211,6 +249,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		021A0F3516D6B06400EDB9D4 /* LUAPIModelBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUAPIModelBuilder.h; sourceTree = "<group>"; };
+		021A0F3616D6B0EE00EDB9D4 /* LURootKeyModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LURootKeyModelBuilder.h; sourceTree = "<group>"; };
+		021A0F3716D6B0EE00EDB9D4 /* LURootKeyModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LURootKeyModelBuilder.m; sourceTree = "<group>"; };
+		021A0F3A16D6B21F00EDB9D4 /* LUUserModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUUserModelBuilder.h; sourceTree = "<group>"; };
+		021A0F3B16D6B22000EDB9D4 /* LUUserModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserModelBuilder.m; sourceTree = "<group>"; };
+		021A0F3E16D6B5C300EDB9D4 /* LUAPIModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIModelBuilder.m; sourceTree = "<group>"; };
+		021A0F4016D6BE2100EDB9D4 /* LUBundleModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBundleModelBuilder.h; sourceTree = "<group>"; };
+		021A0F4116D6BE2200EDB9D4 /* LUBundleModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBundleModelBuilder.m; sourceTree = "<group>"; };
+		021A0F4416D6BE7000EDB9D4 /* LUMonetaryValueModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUMonetaryValueModelBuilder.h; sourceTree = "<group>"; };
+		021A0F4516D6BE7200EDB9D4 /* LUMonetaryValueModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUMonetaryValueModelBuilder.m; sourceTree = "<group>"; };
+		021A0F4816D6C00800EDB9D4 /* LUCampaignModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCampaignModelBuilder.h; sourceTree = "<group>"; };
+		021A0F4916D6C00900EDB9D4 /* LUCampaignModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCampaignModelBuilder.m; sourceTree = "<group>"; };
+		021A0F4C16D6C17500EDB9D4 /* LUCategoryModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCategoryModelBuilder.h; sourceTree = "<group>"; };
+		021A0F4D16D6C17900EDB9D4 /* LUCategoryModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCategoryModelBuilder.m; sourceTree = "<group>"; };
+		021A0F5016D6C1BF00EDB9D4 /* LUCauseModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCauseModelBuilder.h; sourceTree = "<group>"; };
+		021A0F5116D6C1C100EDB9D4 /* LUCauseModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCauseModelBuilder.m; sourceTree = "<group>"; };
+		021A0F5416D6C2A500EDB9D4 /* LUCauseCategoryModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCauseCategoryModelBuilder.h; sourceTree = "<group>"; };
+		021A0F5516D6C2A900EDB9D4 /* LUCauseCategoryModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCauseCategoryModelBuilder.m; sourceTree = "<group>"; };
+		021A0F5816D6C33400EDB9D4 /* LUClaimModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUClaimModelBuilder.h; sourceTree = "<group>"; };
+		021A0F5916D6C33700EDB9D4 /* LUClaimModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUClaimModelBuilder.m; sourceTree = "<group>"; };
 		021DFF4A169F27BB00215926 /* LUCampaignRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCampaignRequestBuilder.h; sourceTree = "<group>"; };
 		021DFF4B169F27BB00215926 /* LUCampaignRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCampaignRequestBuilder.m; sourceTree = "<group>"; };
 		022B2855166E519800679E06 /* LUQRCodeGeneratorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUQRCodeGeneratorSpec.m; path = "QRCode Management/LUQRCodeGeneratorSpec.m"; sourceTree = "<group>"; };
@@ -234,7 +292,6 @@
 		025C8A1216C2C29F00364C41 /* LUMonetaryValueSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUMonetaryValueSpec.m; sourceTree = "<group>"; };
 		025C8A1316C2C29F00364C41 /* LUOAuthTokenSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOAuthTokenSpec.m; sourceTree = "<group>"; };
 		025C8A1416C2C29F00364C41 /* LUOrderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderSpec.m; sourceTree = "<group>"; };
-		025C8A1516C2C29F00364C41 /* LUQRCodeSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUQRCodeSpec.m; sourceTree = "<group>"; };
 		025C8A1716C2C29F00364C41 /* LUUserAddressSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserAddressSpec.m; sourceTree = "<group>"; };
 		025C8A1816C2C29F00364C41 /* LUUserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserSpec.m; sourceTree = "<group>"; };
 		025C8A3616C2E9C900364C41 /* LURefundSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LURefundSpec.m; sourceTree = "<group>"; };
@@ -275,8 +332,6 @@
 		0268A1A216BC30120065E009 /* LUOAuthToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOAuthToken.m; sourceTree = "<group>"; };
 		0268A1A316BC30120065E009 /* LUOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrder.h; sourceTree = "<group>"; };
 		0268A1A416BC30120065E009 /* LUOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrder.m; sourceTree = "<group>"; };
-		0268A1A516BC30120065E009 /* LUQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUQRCode.h; sourceTree = "<group>"; };
-		0268A1A616BC30120065E009 /* LUQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUQRCode.m; sourceTree = "<group>"; };
 		0268A1A716BC30120065E009 /* LURefund.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LURefund.h; sourceTree = "<group>"; };
 		0268A1A816BC30120065E009 /* LURefund.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LURefund.m; sourceTree = "<group>"; };
 		0268A1AB16BC30120065E009 /* LUUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUUser.h; sourceTree = "<group>"; };
@@ -285,6 +340,30 @@
 		0268A1AE16BC30120065E009 /* LUUserAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserAddress.m; sourceTree = "<group>"; };
 		0268A21616BC43520065E009 /* LUAPIErrorBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIErrorBuilder.h; sourceTree = "<group>"; };
 		0268A21716BC43520065E009 /* LUAPIErrorBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIErrorBuilder.m; sourceTree = "<group>"; };
+		0279544916EE66A700FC3609 /* LUDonationModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUDonationModelBuilder.h; sourceTree = "<group>"; };
+		027DA69E16D6C6800001B99C /* LUCohortModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCohortModelBuilder.h; sourceTree = "<group>"; };
+		027DA69F16D6C6810001B99C /* LUCohortModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCohortModelBuilder.m; sourceTree = "<group>"; };
+		027DA6A216D6C75D0001B99C /* LUCreditCardModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCreditCardModelBuilder.h; sourceTree = "<group>"; };
+		027DA6A316D6C75E0001B99C /* LUCreditCardModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCreditCardModelBuilder.m; sourceTree = "<group>"; };
+		027DA6AB16D6CDC80001B99C /* LUDonationModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDonationModelBuilder.m; sourceTree = "<group>"; };
+		027DA6AE16D6CEE70001B99C /* LUInterstitialActionModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialActionModelBuilder.h; sourceTree = "<group>"; };
+		027DA6AF16D6CEE80001B99C /* LUInterstitialActionModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialActionModelBuilder.m; sourceTree = "<group>"; };
+		027DA6B216D6D0660001B99C /* LULocationModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationModelBuilder.h; sourceTree = "<group>"; };
+		027DA6B316D6D0660001B99C /* LULocationModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationModelBuilder.m; sourceTree = "<group>"; };
+		027DA6B616D6D1F20001B99C /* LUMerchantModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUMerchantModelBuilder.h; sourceTree = "<group>"; };
+		027DA6B716D6D1F20001B99C /* LUMerchantModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUMerchantModelBuilder.m; sourceTree = "<group>"; };
+		027DA6BA16D6D82F0001B99C /* LULoyaltyModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULoyaltyModelBuilder.h; sourceTree = "<group>"; };
+		027DA6BB16D6D8300001B99C /* LULoyaltyModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULoyaltyModelBuilder.m; sourceTree = "<group>"; };
+		027DA6BE16D6DA090001B99C /* LUOAuthTokenModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOAuthTokenModelBuilder.h; sourceTree = "<group>"; };
+		027DA6BF16D6DA0A0001B99C /* LUOAuthTokenModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOAuthTokenModelBuilder.m; sourceTree = "<group>"; };
+		027DA6C216D6DAE80001B99C /* LUOrderModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderModelBuilder.h; sourceTree = "<group>"; };
+		027DA6C316D6DAE90001B99C /* LUOrderModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderModelBuilder.m; sourceTree = "<group>"; };
+		027DA6C616D6DCA20001B99C /* LURefundModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LURefundModelBuilder.h; sourceTree = "<group>"; };
+		027DA6C716D6DCA40001B99C /* LURefundModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LURefundModelBuilder.m; sourceTree = "<group>"; };
+		027DA6CA16D6DD260001B99C /* LUUserAddressModelBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUUserAddressModelBuilder.h; sourceTree = "<group>"; };
+		027DA6CB16D6DD270001B99C /* LUUserAddressModelBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserAddressModelBuilder.m; sourceTree = "<group>"; };
+		027DA6D916D7F7000001B99C /* NSDictionary+ObjectClassAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ObjectClassAccess.h"; sourceTree = "<group>"; };
+		027DA6DA16D7F7000001B99C /* NSDictionary+ObjectClassAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ObjectClassAccess.m"; sourceTree = "<group>"; };
 		02941E6416B738AE00EDAF6E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		02941E6716B7391700EDAF6E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		02941E6A16B739FE00EDAF6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -348,8 +427,6 @@
 		257B019816684CC9006ACA24 /* LUTicketRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUTicketRequestBuilder.m; sourceTree = "<group>"; };
 		257B019916684CC9006ACA24 /* LUUserRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUUserRequestBuilder.h; sourceTree = "<group>"; };
 		257B019A16684CC9006ACA24 /* LUUserRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserRequestBuilder.m; sourceTree = "<group>"; };
-		257B019E16684CC9006ACA24 /* LUJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUJSONDeserializer.h; sourceTree = "<group>"; };
-		257B019F16684CC9006ACA24 /* LUJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUJSONDeserializer.m; sourceTree = "<group>"; };
 		257B01C316684D69006ACA24 /* NSDate+StringFormats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+StringFormats.h"; sourceTree = "<group>"; };
 		257B01C416684D69006ACA24 /* NSDate+StringFormats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+StringFormats.m"; sourceTree = "<group>"; };
 		257B01C516684D69006ACA24 /* NSNumber+Base36.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Base36.h"; sourceTree = "<group>"; };
@@ -482,7 +559,6 @@
 				025C8A1216C2C29F00364C41 /* LUMonetaryValueSpec.m */,
 				025C8A1316C2C29F00364C41 /* LUOAuthTokenSpec.m */,
 				025C8A1416C2C29F00364C41 /* LUOrderSpec.m */,
-				025C8A1516C2C29F00364C41 /* LUQRCodeSpec.m */,
 				025C8A3616C2E9C900364C41 /* LURefundSpec.m */,
 				025C8A1816C2C29F00364C41 /* LUUserSpec.m */,
 				025C8A1716C2C29F00364C41 /* LUUserAddressSpec.m */,
@@ -551,8 +627,6 @@
 				0268A1A216BC30120065E009 /* LUOAuthToken.m */,
 				0268A1A316BC30120065E009 /* LUOrder.h */,
 				0268A1A416BC30120065E009 /* LUOrder.m */,
-				0268A1A516BC30120065E009 /* LUQRCode.h */,
-				0268A1A616BC30120065E009 /* LUQRCode.m */,
 				0268A1A716BC30120065E009 /* LURefund.h */,
 				0268A1A816BC30120065E009 /* LURefund.m */,
 				0268A1AB16BC30120065E009 /* LUUser.h */,
@@ -685,8 +759,48 @@
 		257B019B16684CC9006ACA24 /* Serialization */ = {
 			isa = PBXGroup;
 			children = (
-				257B019E16684CC9006ACA24 /* LUJSONDeserializer.h */,
-				257B019F16684CC9006ACA24 /* LUJSONDeserializer.m */,
+				021A0F3516D6B06400EDB9D4 /* LUAPIModelBuilder.h */,
+				021A0F3E16D6B5C300EDB9D4 /* LUAPIModelBuilder.m */,
+				021A0F4016D6BE2100EDB9D4 /* LUBundleModelBuilder.h */,
+				021A0F4116D6BE2200EDB9D4 /* LUBundleModelBuilder.m */,
+				021A0F4816D6C00800EDB9D4 /* LUCampaignModelBuilder.h */,
+				021A0F4916D6C00900EDB9D4 /* LUCampaignModelBuilder.m */,
+				021A0F4C16D6C17500EDB9D4 /* LUCategoryModelBuilder.h */,
+				021A0F4D16D6C17900EDB9D4 /* LUCategoryModelBuilder.m */,
+				021A0F5416D6C2A500EDB9D4 /* LUCauseCategoryModelBuilder.h */,
+				021A0F5516D6C2A900EDB9D4 /* LUCauseCategoryModelBuilder.m */,
+				021A0F5016D6C1BF00EDB9D4 /* LUCauseModelBuilder.h */,
+				021A0F5116D6C1C100EDB9D4 /* LUCauseModelBuilder.m */,
+				021A0F5816D6C33400EDB9D4 /* LUClaimModelBuilder.h */,
+				021A0F5916D6C33700EDB9D4 /* LUClaimModelBuilder.m */,
+				027DA69E16D6C6800001B99C /* LUCohortModelBuilder.h */,
+				027DA69F16D6C6810001B99C /* LUCohortModelBuilder.m */,
+				027DA6A216D6C75D0001B99C /* LUCreditCardModelBuilder.h */,
+				027DA6A316D6C75E0001B99C /* LUCreditCardModelBuilder.m */,
+				0279544916EE66A700FC3609 /* LUDonationModelBuilder.h */,
+				027DA6AB16D6CDC80001B99C /* LUDonationModelBuilder.m */,
+				027DA6AE16D6CEE70001B99C /* LUInterstitialActionModelBuilder.h */,
+				027DA6AF16D6CEE80001B99C /* LUInterstitialActionModelBuilder.m */,
+				027DA6B216D6D0660001B99C /* LULocationModelBuilder.h */,
+				027DA6B316D6D0660001B99C /* LULocationModelBuilder.m */,
+				027DA6BA16D6D82F0001B99C /* LULoyaltyModelBuilder.h */,
+				027DA6BB16D6D8300001B99C /* LULoyaltyModelBuilder.m */,
+				027DA6B616D6D1F20001B99C /* LUMerchantModelBuilder.h */,
+				027DA6B716D6D1F20001B99C /* LUMerchantModelBuilder.m */,
+				021A0F4416D6BE7000EDB9D4 /* LUMonetaryValueModelBuilder.h */,
+				021A0F4516D6BE7200EDB9D4 /* LUMonetaryValueModelBuilder.m */,
+				021A0F3616D6B0EE00EDB9D4 /* LURootKeyModelBuilder.h */,
+				021A0F3716D6B0EE00EDB9D4 /* LURootKeyModelBuilder.m */,
+				027DA6BE16D6DA090001B99C /* LUOAuthTokenModelBuilder.h */,
+				027DA6BF16D6DA0A0001B99C /* LUOAuthTokenModelBuilder.m */,
+				027DA6C216D6DAE80001B99C /* LUOrderModelBuilder.h */,
+				027DA6C316D6DAE90001B99C /* LUOrderModelBuilder.m */,
+				027DA6C616D6DCA20001B99C /* LURefundModelBuilder.h */,
+				027DA6C716D6DCA40001B99C /* LURefundModelBuilder.m */,
+				021A0F3A16D6B21F00EDB9D4 /* LUUserModelBuilder.h */,
+				021A0F3B16D6B22000EDB9D4 /* LUUserModelBuilder.m */,
+				027DA6CA16D6DD260001B99C /* LUUserAddressModelBuilder.h */,
+				027DA6CB16D6DD270001B99C /* LUUserAddressModelBuilder.m */,
 			);
 			path = Serialization;
 			sourceTree = "<group>";
@@ -700,6 +814,8 @@
 				2590538416C58DCA0021B411 /* NSData+HexString.m */,
 				257B01C316684D69006ACA24 /* NSDate+StringFormats.h */,
 				257B01C416684D69006ACA24 /* NSDate+StringFormats.m */,
+				027DA6D916D7F7000001B99C /* NSDictionary+ObjectClassAccess.h */,
+				027DA6DA16D7F7000001B99C /* NSDictionary+ObjectClassAccess.m */,
 				257B01C516684D69006ACA24 /* NSNumber+Base36.h */,
 				257B01C616684D69006ACA24 /* NSNumber+Base36.m */,
 				02ED9BE81688DA5600DFC994 /* NSString+HTMLStripping.h */,
@@ -853,7 +969,6 @@
 				257B01B816684CC9006ACA24 /* LUOrderRequestBuilder.h in Headers */,
 				257B01BA16684CC9006ACA24 /* LUTicketRequestBuilder.h in Headers */,
 				257B01BC16684CC9006ACA24 /* LUUserRequestBuilder.h in Headers */,
-				257B01C016684CC9006ACA24 /* LUJSONDeserializer.h in Headers */,
 				257B01C916684D69006ACA24 /* NSDate+StringFormats.h in Headers */,
 				257B01CB16684D69006ACA24 /* NSNumber+Base36.h in Headers */,
 				257B022916684FE1006ACA24 /* LUQRCodeDecoder.h in Headers */,
@@ -889,7 +1004,6 @@
 				0268A1D116BC30120065E009 /* LUMonetaryValue.h in Headers */,
 				0268A1D316BC30120065E009 /* LUOAuthToken.h in Headers */,
 				0268A1D516BC30120065E009 /* LUOrder.h in Headers */,
-				0268A1D716BC30120065E009 /* LUQRCode.h in Headers */,
 				0268A1D916BC30120065E009 /* LURefund.h in Headers */,
 				0268A1DD16BC30120065E009 /* LUUser.h in Headers */,
 				0268A1DF16BC30120065E009 /* LUUserAddress.h in Headers */,
@@ -897,6 +1011,27 @@
 				2590538516C58DCA0021B411 /* NSData+HexString.h in Headers */,
 				255CB85416C83C6E0081197A /* LUDeviceIdentifier.h in Headers */,
 				255CB85616C83C6E0081197A /* LUUserParameterBuilder.h in Headers */,
+				021A0F3816D6B0EE00EDB9D4 /* LURootKeyModelBuilder.h in Headers */,
+				021A0F3C16D6B22100EDB9D4 /* LUUserModelBuilder.h in Headers */,
+				021A0F4216D6BE2400EDB9D4 /* LUBundleModelBuilder.h in Headers */,
+				021A0F4616D6BE7400EDB9D4 /* LUMonetaryValueModelBuilder.h in Headers */,
+				021A0F4A16D6C00B00EDB9D4 /* LUCampaignModelBuilder.h in Headers */,
+				021A0F4E16D6C17B00EDB9D4 /* LUCategoryModelBuilder.h in Headers */,
+				021A0F5216D6C1C400EDB9D4 /* LUCauseModelBuilder.h in Headers */,
+				021A0F5616D6C2AC00EDB9D4 /* LUCauseCategoryModelBuilder.h in Headers */,
+				021A0F5A16D6C33B00EDB9D4 /* LUClaimModelBuilder.h in Headers */,
+				027DA6A016D6C6810001B99C /* LUCohortModelBuilder.h in Headers */,
+				027DA6A416D6C75E0001B99C /* LUCreditCardModelBuilder.h in Headers */,
+				027DA6B016D6CEE80001B99C /* LUInterstitialActionModelBuilder.h in Headers */,
+				027DA6B416D6D0660001B99C /* LULocationModelBuilder.h in Headers */,
+				027DA6B816D6D1F20001B99C /* LUMerchantModelBuilder.h in Headers */,
+				027DA6BC16D6D8300001B99C /* LULoyaltyModelBuilder.h in Headers */,
+				027DA6C016D6DA0C0001B99C /* LUOAuthTokenModelBuilder.h in Headers */,
+				027DA6C416D6DAEB0001B99C /* LUOrderModelBuilder.h in Headers */,
+				027DA6C816D6DCA50001B99C /* LURefundModelBuilder.h in Headers */,
+				027DA6CC16D6DD290001B99C /* LUUserAddressModelBuilder.h in Headers */,
+				027DA6DB16D7F7000001B99C /* NSDictionary+ObjectClassAccess.h in Headers */,
+				0279544A16EE66A700FC3609 /* LUDonationModelBuilder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1041,7 +1176,6 @@
 				257B01B916684CC9006ACA24 /* LUOrderRequestBuilder.m in Sources */,
 				257B01BB16684CC9006ACA24 /* LUTicketRequestBuilder.m in Sources */,
 				257B01BD16684CC9006ACA24 /* LUUserRequestBuilder.m in Sources */,
-				257B01C116684CC9006ACA24 /* LUJSONDeserializer.m in Sources */,
 				257B01CA16684D69006ACA24 /* NSDate+StringFormats.m in Sources */,
 				257B01CC16684D69006ACA24 /* NSNumber+Base36.m in Sources */,
 				257B022A16684FE1006ACA24 /* LUQRCodeDecoder.m in Sources */,
@@ -1077,7 +1211,6 @@
 				0268A1D216BC30120065E009 /* LUMonetaryValue.m in Sources */,
 				0268A1D416BC30120065E009 /* LUOAuthToken.m in Sources */,
 				0268A1D616BC30120065E009 /* LUOrder.m in Sources */,
-				0268A1D816BC30120065E009 /* LUQRCode.m in Sources */,
 				0268A1DA16BC30120065E009 /* LURefund.m in Sources */,
 				0268A1DE16BC30120065E009 /* LUUser.m in Sources */,
 				0268A1E016BC30120065E009 /* LUUserAddress.m in Sources */,
@@ -1085,6 +1218,28 @@
 				2590538616C58DCA0021B411 /* NSData+HexString.m in Sources */,
 				255CB85516C83C6E0081197A /* LUDeviceIdentifier.m in Sources */,
 				255CB85716C83C6E0081197A /* LUUserParameterBuilder.m in Sources */,
+				021A0F3916D6B0EE00EDB9D4 /* LURootKeyModelBuilder.m in Sources */,
+				021A0F3D16D6B22100EDB9D4 /* LUUserModelBuilder.m in Sources */,
+				021A0F3F16D6B5C400EDB9D4 /* LUAPIModelBuilder.m in Sources */,
+				021A0F4316D6BE2400EDB9D4 /* LUBundleModelBuilder.m in Sources */,
+				021A0F4716D6BE7400EDB9D4 /* LUMonetaryValueModelBuilder.m in Sources */,
+				021A0F4B16D6C00B00EDB9D4 /* LUCampaignModelBuilder.m in Sources */,
+				021A0F4F16D6C17B00EDB9D4 /* LUCategoryModelBuilder.m in Sources */,
+				021A0F5316D6C1C400EDB9D4 /* LUCauseModelBuilder.m in Sources */,
+				021A0F5716D6C2AC00EDB9D4 /* LUCauseCategoryModelBuilder.m in Sources */,
+				021A0F5B16D6C33B00EDB9D4 /* LUClaimModelBuilder.m in Sources */,
+				027DA6A116D6C6810001B99C /* LUCohortModelBuilder.m in Sources */,
+				027DA6A516D6C75E0001B99C /* LUCreditCardModelBuilder.m in Sources */,
+				027DA6AD16D6CDC80001B99C /* LUDonationModelBuilder.m in Sources */,
+				027DA6B116D6CEE80001B99C /* LUInterstitialActionModelBuilder.m in Sources */,
+				027DA6B516D6D0660001B99C /* LULocationModelBuilder.m in Sources */,
+				027DA6B916D6D1F20001B99C /* LUMerchantModelBuilder.m in Sources */,
+				027DA6BD16D6D8300001B99C /* LULoyaltyModelBuilder.m in Sources */,
+				027DA6C116D6DA0C0001B99C /* LUOAuthTokenModelBuilder.m in Sources */,
+				027DA6C516D6DAEB0001B99C /* LUOrderModelBuilder.m in Sources */,
+				027DA6C916D6DCA50001B99C /* LURefundModelBuilder.m in Sources */,
+				027DA6CD16D6DD290001B99C /* LUUserAddressModelBuilder.m in Sources */,
+				027DA6DC16D7F7000001B99C /* NSDictionary+ObjectClassAccess.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1112,7 +1267,6 @@
 				025C8A2916C2C29F00364C41 /* LUMonetaryValueSpec.m in Sources */,
 				025C8A2A16C2C29F00364C41 /* LUOAuthTokenSpec.m in Sources */,
 				025C8A2B16C2C29F00364C41 /* LUOrderSpec.m in Sources */,
-				025C8A2C16C2C29F00364C41 /* LUQRCodeSpec.m in Sources */,
 				025C8A2E16C2C29F00364C41 /* LUUserAddressSpec.m in Sources */,
 				025C8A2F16C2C29F00364C41 /* LUUserSpec.m in Sources */,
 				025C8A3016C2C2EA00364C41 /* LUAPIClientSpec.m in Sources */,
@@ -1160,9 +1314,10 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_VERSION = 0.6.4;
+				FRAMEWORK_VERSION = 0.6.5.beta.1;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
@@ -1216,9 +1371,10 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_VERSION = 0.6.4;
+				FRAMEWORK_VERSION = 0.6.5.beta.1;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1244,9 +1400,10 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_VERSION = 0.6.4;
+				FRAMEWORK_VERSION = 0.6.5.beta.1;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",

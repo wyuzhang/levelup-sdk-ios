@@ -1,5 +1,6 @@
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
+#import "LUOAuthTokenModelBuilder.h"
 #import "LUUser.h"
 #import "LUUserParameterBuilder.h"
 #import "LUUserRequestBuilder.h"
@@ -25,7 +26,9 @@
   params[@"client_id"] = [LUAPIClient sharedClient].apiKey;
   params[@"user"] = [LUUserParameterBuilder parametersForUser:user];
 
-  return [LUAPIRequest apiRequestWithMethod:@"POST" path:@"users" parameters:params];
+  LUAPIRequest *request = [LUAPIRequest apiRequestWithMethod:@"POST" path:@"users" parameters:params];
+  request.modelBuilder = [LUOAuthTokenModelBuilder builder];
+  return request;
 }
 
 + (LUAPIRequest *)requestToDisconnectFromFacebook {

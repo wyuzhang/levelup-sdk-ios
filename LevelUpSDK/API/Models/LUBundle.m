@@ -5,8 +5,6 @@
 
 @interface LUBundle ()
 
-@property (nonatomic, copy) NSString *chargedAt;
-@property (nonatomic, copy) NSString *createdAt;
 @property (nonatomic, copy) NSString *state;
 
 @end
@@ -14,14 +12,6 @@
 @implementation LUBundle
 
 #pragma mark - Public Methods
-
-- (NSDate *)chargeDate {
-  return [NSDate dateFromIso8601DateTimeString:self.chargedAt];
-}
-
-- (NSDate *)creationDate {
-  return [NSDate dateFromIso8601DateTimeString:self.createdAt];
-}
 
 - (BOOL)hasChargeData {
   return (self.chargedAt != nil);
@@ -47,6 +37,19 @@
 
     return [objectBCreationDate compare:objectACreationDate];
   }];
+}
+
+#pragma mark - NSObject Methods
+
+- (NSString *)debugDescription {
+  return [NSString stringWithFormat: @"Bundle [amount=%@, ID=%@, chargedAt=%@, createdAt=%@, last4CreditCardDigits=%@, orders=%@, refunds=%@, state=%@, totalCreditUsed=%@]",
+          self.amount, self.bundleID, self.chargedAt, self.createdAt, self.last4CreditCardDigits, self.orders,
+          self.refunds, self.state, self.totalCreditUsed];
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"Bundle [amount=%@, createdAt=%@, ID=%@, state=%@]", self.amount, self.createdAt,
+          self.bundleID, self.state];
 }
 
 @end
