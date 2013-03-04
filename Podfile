@@ -3,7 +3,7 @@ pod 'AFNetworking', '~> 1.1.0'
 pod 'LUKeychainAccess', '~> 1.0.0'
 pod 'ZXingObjC', '~> 2.0.2'
 
-target :test, exclusive: true do
+target :test, :exclusive => true do
   link_with 'LevelUpSDKTests'
   pod 'Kiwi', '~> 2.0.4'
   pod 'Nocilla', '~> 0.1'
