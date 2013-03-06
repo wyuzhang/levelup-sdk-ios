@@ -126,6 +126,7 @@ static NSDictionary *_registeredModels = nil;
       @"balance" : [LUMonetaryValue class],
       @"bundle" : [LUBundle class],
       @"campaign" : [LUCampaign class],
+      @"category" : [LUCategory class],
       @"cause" : [LUCause class],
       @"cause_category" : [LUCauseCategory class],
       @"claim" : [LUClaim class],
