@@ -8,7 +8,6 @@
 #import "LUClaim.h"
 #import "LUCohort.h"
 #import "LUCreditCard.h"
-#import "LUDivision.h"
 #import "LUDonation.h"
 #import "LUInterstitialAction.h"
 #import "LUJSONDeserializer.h"
@@ -133,7 +132,6 @@ static NSDictionary *_registeredModels = nil;
       @"cohort" : [LUCohort class],
       @"credit" : [LUMonetaryValue class],
       @"credit_card" : [LUCreditCard class],
-      @"division" : [LUDivision class],
       @"donation" : [LUDonation class],
       @"earn" : [LUMonetaryValue class],
       @"email_capture_cohort" : [LUCohort class],

@@ -10,7 +10,6 @@
 #import <LevelUpSDK/LUClaimRequestBuilder.h>
 #import <LevelUpSDK/LUCohortRequestBuilder.h>
 #import <LevelUpSDK/LUCreditCardRequestBuilder.h>
-#import <LevelUpSDK/LUDivisionRequestBuilder.h>
 #import <LevelUpSDK/LUMerchantRequestBuilder.h>
 #import <LevelUpSDK/LUOAuthTokenRequestBuilder.h>
 #import <LevelUpSDK/LUOrderRequestBuilder.h>
@@ -26,7 +25,6 @@
 #import <LevelUpSDK/LUClaim.h>
 #import <LevelUpSDK/LUCohort.h>
 #import <LevelUpSDK/LUCreditCard.h>
-#import <LevelUpSDK/LUDivision.h>
 #import <LevelUpSDK/LUDonation.h>
 #import <LevelUpSDK/LUInterstitialAction.h>
 #import <LevelUpSDK/LULocation.h>

@@ -15,7 +15,6 @@ describe(@"LUUserParameterBuilder", ^{
       user = [[LUUser alloc] init];
       user.birthday = [NSDate distantPast];
       user.customAttributes = @{@"key" : @"value"};
-      user.divisionId = @1;
       user.email = @"test@example.com";
       user.employer = @"SCVNGR";
       user.firstName = @"John";
@@ -39,7 +38,6 @@ describe(@"LUUserParameterBuilder", ^{
         @"born_at" : [user valueForKey:@"bornAt"],
         @"custom_attributes" : user.customAttributes,
         @"device_identifier" : deviceIdentifer,
-        @"division_id" : user.divisionId,
         @"email" : user.email,
         @"employer" : user.employer,
         @"first_name" : user.firstName,

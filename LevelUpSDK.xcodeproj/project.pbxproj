@@ -22,7 +22,6 @@
 		025C8A2016C2C29F00364C41 /* LUClaimSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C8A0916C2C29F00364C41 /* LUClaimSpec.m */; };
 		025C8A2116C2C29F00364C41 /* LUCohortSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C8A0A16C2C29F00364C41 /* LUCohortSpec.m */; };
 		025C8A2216C2C29F00364C41 /* LUCreditCardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C8A0B16C2C29F00364C41 /* LUCreditCardSpec.m */; };
-		025C8A2316C2C29F00364C41 /* LUDivisionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C8A0C16C2C29F00364C41 /* LUDivisionSpec.m */; };
 		025C8A2416C2C29F00364C41 /* LUDonationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C8A0D16C2C29F00364C41 /* LUDonationSpec.m */; };
 		025C8A2516C2C29F00364C41 /* LUInterstitialActionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C8A0E16C2C29F00364C41 /* LUInterstitialActionSpec.m */; };
 		025C8A2616C2C29F00364C41 /* LULocationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C8A0F16C2C29F00364C41 /* LULocationSpec.m */; };
@@ -57,8 +56,6 @@
 		0268A1C016BC30120065E009 /* LUCohort.m in Sources */ = {isa = PBXBuildFile; fileRef = 0268A18E16BC30120065E009 /* LUCohort.m */; };
 		0268A1C116BC30120065E009 /* LUCreditCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 0268A18F16BC30120065E009 /* LUCreditCard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0268A1C216BC30120065E009 /* LUCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0268A19016BC30120065E009 /* LUCreditCard.m */; };
-		0268A1C316BC30120065E009 /* LUDivision.h in Headers */ = {isa = PBXBuildFile; fileRef = 0268A19116BC30120065E009 /* LUDivision.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0268A1C416BC30120065E009 /* LUDivision.m in Sources */ = {isa = PBXBuildFile; fileRef = 0268A19216BC30120065E009 /* LUDivision.m */; };
 		0268A1C516BC30120065E009 /* LUDonation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0268A19316BC30120065E009 /* LUDonation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0268A1C616BC30120065E009 /* LUDonation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0268A19416BC30120065E009 /* LUDonation.m */; };
 		0268A1C716BC30120065E009 /* LUInterstitialAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 0268A19516BC30120065E009 /* LUInterstitialAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -146,8 +143,6 @@
 		257B01AD16684CC9006ACA24 /* LUCohortRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B018A16684CC9006ACA24 /* LUCohortRequestBuilder.m */; };
 		257B01AE16684CC9006ACA24 /* LUCreditCardRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B018B16684CC9006ACA24 /* LUCreditCardRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		257B01AF16684CC9006ACA24 /* LUCreditCardRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B018C16684CC9006ACA24 /* LUCreditCardRequestBuilder.m */; };
-		257B01B016684CC9006ACA24 /* LUDivisionRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B018D16684CC9006ACA24 /* LUDivisionRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		257B01B116684CC9006ACA24 /* LUDivisionRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B018E16684CC9006ACA24 /* LUDivisionRequestBuilder.m */; };
 		257B01B416684CC9006ACA24 /* LUMerchantRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B019116684CC9006ACA24 /* LUMerchantRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		257B01B516684CC9006ACA24 /* LUMerchantRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 257B019216684CC9006ACA24 /* LUMerchantRequestBuilder.m */; };
 		257B01B616684CC9006ACA24 /* LUOAuthTokenRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 257B019316684CC9006ACA24 /* LUOAuthTokenRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -178,7 +173,6 @@
 		2590538516C58DCA0021B411 /* NSData+HexString.h in Headers */ = {isa = PBXBuildFile; fileRef = 2590538316C58DCA0021B411 /* NSData+HexString.h */; };
 		2590538616C58DCA0021B411 /* NSData+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 2590538416C58DCA0021B411 /* NSData+HexString.m */; };
 		2590538916C58EAC0021B411 /* NSDataHexStringSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2590538816C58EAC0021B411 /* NSDataHexStringSpec.m */; };
-		2595E0DC16C5FD500055365E /* LUDivisionRequestBuilderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2595E0DB16C5FD500055365E /* LUDivisionRequestBuilderSpec.m */; };
 		2595E0DE16C5FED70055365E /* LUMerchantRequestBuilderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2595E0DD16C5FED70055365E /* LUMerchantRequestBuilderSpec.m */; };
 		2595E0E016C608430055365E /* LUOAuthTokenRequestBuilderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2595E0DF16C608430055365E /* LUOAuthTokenRequestBuilderSpec.m */; };
 		2595E0E216C60CEC0055365E /* LUOrderRequestBuilderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2595E0E116C60CEC0055365E /* LUOrderRequestBuilderSpec.m */; };
@@ -232,7 +226,6 @@
 		025C8A0916C2C29F00364C41 /* LUClaimSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUClaimSpec.m; sourceTree = "<group>"; };
 		025C8A0A16C2C29F00364C41 /* LUCohortSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCohortSpec.m; sourceTree = "<group>"; };
 		025C8A0B16C2C29F00364C41 /* LUCreditCardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCreditCardSpec.m; sourceTree = "<group>"; };
-		025C8A0C16C2C29F00364C41 /* LUDivisionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDivisionSpec.m; sourceTree = "<group>"; };
 		025C8A0D16C2C29F00364C41 /* LUDonationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDonationSpec.m; sourceTree = "<group>"; };
 		025C8A0E16C2C29F00364C41 /* LUInterstitialActionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialActionSpec.m; sourceTree = "<group>"; };
 		025C8A0F16C2C29F00364C41 /* LULocationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationSpec.m; sourceTree = "<group>"; };
@@ -266,8 +259,6 @@
 		0268A18E16BC30120065E009 /* LUCohort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCohort.m; sourceTree = "<group>"; };
 		0268A18F16BC30120065E009 /* LUCreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCreditCard.h; sourceTree = "<group>"; };
 		0268A19016BC30120065E009 /* LUCreditCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCreditCard.m; sourceTree = "<group>"; };
-		0268A19116BC30120065E009 /* LUDivision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUDivision.h; sourceTree = "<group>"; };
-		0268A19216BC30120065E009 /* LUDivision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDivision.m; sourceTree = "<group>"; };
 		0268A19316BC30120065E009 /* LUDonation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUDonation.h; sourceTree = "<group>"; };
 		0268A19416BC30120065E009 /* LUDonation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDonation.m; sourceTree = "<group>"; };
 		0268A19516BC30120065E009 /* LUInterstitialAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialAction.h; sourceTree = "<group>"; };
@@ -347,8 +338,6 @@
 		257B018A16684CC9006ACA24 /* LUCohortRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCohortRequestBuilder.m; sourceTree = "<group>"; };
 		257B018B16684CC9006ACA24 /* LUCreditCardRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCreditCardRequestBuilder.h; sourceTree = "<group>"; };
 		257B018C16684CC9006ACA24 /* LUCreditCardRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCreditCardRequestBuilder.m; sourceTree = "<group>"; };
-		257B018D16684CC9006ACA24 /* LUDivisionRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUDivisionRequestBuilder.h; sourceTree = "<group>"; };
-		257B018E16684CC9006ACA24 /* LUDivisionRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDivisionRequestBuilder.m; sourceTree = "<group>"; };
 		257B019116684CC9006ACA24 /* LUMerchantRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUMerchantRequestBuilder.h; sourceTree = "<group>"; };
 		257B019216684CC9006ACA24 /* LUMerchantRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUMerchantRequestBuilder.m; sourceTree = "<group>"; };
 		257B019316684CC9006ACA24 /* LUOAuthTokenRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOAuthTokenRequestBuilder.h; sourceTree = "<group>"; };
@@ -379,7 +368,6 @@
 		2590538316C58DCA0021B411 /* NSData+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+HexString.h"; sourceTree = "<group>"; };
 		2590538416C58DCA0021B411 /* NSData+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+HexString.m"; sourceTree = "<group>"; };
 		2590538816C58EAC0021B411 /* NSDataHexStringSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDataHexStringSpec.m; path = Categories/NSDataHexStringSpec.m; sourceTree = "<group>"; };
-		2595E0DB16C5FD500055365E /* LUDivisionRequestBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDivisionRequestBuilderSpec.m; sourceTree = "<group>"; };
 		2595E0DD16C5FED70055365E /* LUMerchantRequestBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUMerchantRequestBuilderSpec.m; sourceTree = "<group>"; };
 		2595E0DF16C608430055365E /* LUOAuthTokenRequestBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOAuthTokenRequestBuilderSpec.m; sourceTree = "<group>"; };
 		2595E0E116C60CEC0055365E /* LUOrderRequestBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderRequestBuilderSpec.m; sourceTree = "<group>"; };
@@ -486,7 +474,6 @@
 				025C8A0916C2C29F00364C41 /* LUClaimSpec.m */,
 				025C8A0A16C2C29F00364C41 /* LUCohortSpec.m */,
 				025C8A0B16C2C29F00364C41 /* LUCreditCardSpec.m */,
-				025C8A0C16C2C29F00364C41 /* LUDivisionSpec.m */,
 				025C8A0D16C2C29F00364C41 /* LUDonationSpec.m */,
 				025C8A0E16C2C29F00364C41 /* LUInterstitialActionSpec.m */,
 				025C8A0F16C2C29F00364C41 /* LULocationSpec.m */,
@@ -516,7 +503,6 @@
 				259AC74616C5B8F7005D2641 /* LUClaimRequestBuilderSpec.m */,
 				259AC74816C5BB30005D2641 /* LUCohortRequestBuilderSpec.m */,
 				259AC74A16C5E2D8005D2641 /* LUCreditCardRequestBuilderSpec.m */,
-				2595E0DB16C5FD500055365E /* LUDivisionRequestBuilderSpec.m */,
 				2595E0DD16C5FED70055365E /* LUMerchantRequestBuilderSpec.m */,
 				2595E0DF16C608430055365E /* LUOAuthTokenRequestBuilderSpec.m */,
 				2595E0E116C60CEC0055365E /* LUOrderRequestBuilderSpec.m */,
@@ -549,8 +535,6 @@
 				0268A18E16BC30120065E009 /* LUCohort.m */,
 				0268A18F16BC30120065E009 /* LUCreditCard.h */,
 				0268A19016BC30120065E009 /* LUCreditCard.m */,
-				0268A19116BC30120065E009 /* LUDivision.h */,
-				0268A19216BC30120065E009 /* LUDivision.m */,
 				0268A19316BC30120065E009 /* LUDonation.h */,
 				0268A19416BC30120065E009 /* LUDonation.m */,
 				0268A19516BC30120065E009 /* LUInterstitialAction.h */,
@@ -684,8 +668,6 @@
 				257B018A16684CC9006ACA24 /* LUCohortRequestBuilder.m */,
 				257B018B16684CC9006ACA24 /* LUCreditCardRequestBuilder.h */,
 				257B018C16684CC9006ACA24 /* LUCreditCardRequestBuilder.m */,
-				257B018D16684CC9006ACA24 /* LUDivisionRequestBuilder.h */,
-				257B018E16684CC9006ACA24 /* LUDivisionRequestBuilder.m */,
 				257B019116684CC9006ACA24 /* LUMerchantRequestBuilder.h */,
 				257B019216684CC9006ACA24 /* LUMerchantRequestBuilder.m */,
 				257B019316684CC9006ACA24 /* LUOAuthTokenRequestBuilder.h */,
@@ -866,7 +848,6 @@
 				257B01AA16684CC9006ACA24 /* LUClaimRequestBuilder.h in Headers */,
 				257B01AC16684CC9006ACA24 /* LUCohortRequestBuilder.h in Headers */,
 				257B01AE16684CC9006ACA24 /* LUCreditCardRequestBuilder.h in Headers */,
-				257B01B016684CC9006ACA24 /* LUDivisionRequestBuilder.h in Headers */,
 				257B01B416684CC9006ACA24 /* LUMerchantRequestBuilder.h in Headers */,
 				257B01B616684CC9006ACA24 /* LUOAuthTokenRequestBuilder.h in Headers */,
 				257B01B816684CC9006ACA24 /* LUOrderRequestBuilder.h in Headers */,
@@ -900,7 +881,6 @@
 				0268A1BD16BC30120065E009 /* LUClaim.h in Headers */,
 				0268A1BF16BC30120065E009 /* LUCohort.h in Headers */,
 				0268A1C116BC30120065E009 /* LUCreditCard.h in Headers */,
-				0268A1C316BC30120065E009 /* LUDivision.h in Headers */,
 				0268A1C516BC30120065E009 /* LUDonation.h in Headers */,
 				0268A1C716BC30120065E009 /* LUInterstitialAction.h in Headers */,
 				0268A1C916BC30120065E009 /* LULocation.h in Headers */,
@@ -1056,7 +1036,6 @@
 				257B01AB16684CC9006ACA24 /* LUClaimRequestBuilder.m in Sources */,
 				257B01AD16684CC9006ACA24 /* LUCohortRequestBuilder.m in Sources */,
 				257B01AF16684CC9006ACA24 /* LUCreditCardRequestBuilder.m in Sources */,
-				257B01B116684CC9006ACA24 /* LUDivisionRequestBuilder.m in Sources */,
 				257B01B516684CC9006ACA24 /* LUMerchantRequestBuilder.m in Sources */,
 				257B01B716684CC9006ACA24 /* LUOAuthTokenRequestBuilder.m in Sources */,
 				257B01B916684CC9006ACA24 /* LUOrderRequestBuilder.m in Sources */,
@@ -1090,7 +1069,6 @@
 				0268A1BE16BC30120065E009 /* LUClaim.m in Sources */,
 				0268A1C016BC30120065E009 /* LUCohort.m in Sources */,
 				0268A1C216BC30120065E009 /* LUCreditCard.m in Sources */,
-				0268A1C416BC30120065E009 /* LUDivision.m in Sources */,
 				0268A1C616BC30120065E009 /* LUDonation.m in Sources */,
 				0268A1C816BC30120065E009 /* LUInterstitialAction.m in Sources */,
 				0268A1CA16BC30120065E009 /* LULocation.m in Sources */,
@@ -1126,7 +1104,6 @@
 				025C8A2016C2C29F00364C41 /* LUClaimSpec.m in Sources */,
 				025C8A2116C2C29F00364C41 /* LUCohortSpec.m in Sources */,
 				025C8A2216C2C29F00364C41 /* LUCreditCardSpec.m in Sources */,
-				025C8A2316C2C29F00364C41 /* LUDivisionSpec.m in Sources */,
 				025C8A2416C2C29F00364C41 /* LUDonationSpec.m in Sources */,
 				025C8A2516C2C29F00364C41 /* LUInterstitialActionSpec.m in Sources */,
 				025C8A2616C2C29F00364C41 /* LULocationSpec.m in Sources */,
@@ -1150,7 +1127,6 @@
 				259AC74716C5B8F7005D2641 /* LUClaimRequestBuilderSpec.m in Sources */,
 				259AC74916C5BB30005D2641 /* LUCohortRequestBuilderSpec.m in Sources */,
 				259AC74B16C5E2D8005D2641 /* LUCreditCardRequestBuilderSpec.m in Sources */,
-				2595E0DC16C5FD500055365E /* LUDivisionRequestBuilderSpec.m in Sources */,
 				2595E0DE16C5FED70055365E /* LUMerchantRequestBuilderSpec.m in Sources */,
 				2595E0E016C608430055365E /* LUOAuthTokenRequestBuilderSpec.m in Sources */,
 				2595E0E216C60CEC0055365E /* LUOrderRequestBuilderSpec.m in Sources */,

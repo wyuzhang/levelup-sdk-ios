@@ -4,7 +4,6 @@
  `LUUser` is a representation of a user in the LevelUp system.
  */
 @class LUCause;
-@class LUDivision;
 @class LUMonetaryValue;
 @class LUQRCode;
 @class LUUserAddress;
@@ -42,16 +41,6 @@
  An arbitrary `NSDictionary` of custom attributes. This may be used to store app-specific user information.
  */
 @property (nonatomic, copy) NSDictionary *customAttributes;
-
-/**
- The user's `LUDivision`.
- */
-@property (nonatomic, strong) LUDivision *division;
-
-/**
- The ID of the user's `division`.
- */
-@property (nonatomic, copy) NSNumber *divisionId;
 
 /**
  The user's email address.

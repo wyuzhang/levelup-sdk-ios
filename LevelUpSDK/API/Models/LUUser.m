@@ -1,5 +1,4 @@
 #import "LUCause.h"
-#import "LUDivision.h"
 #import "LUQRCode.h"
 #import "LUUser.h"
 #import "LUUserAddress.h"
@@ -41,20 +40,6 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
 
 - (void)setBirthday:(NSDate *)birthday {
   self.bornAt = [birthday iso8601DateTimeString];
-}
-
-- (void)setDivision:(LUDivision *)aDivision {
-  if (_division == aDivision) {
-    return;
-  }
-
-  _division = aDivision;
-
-  if (_division) {
-    self.divisionId = _division.modelId;
-  } else {
-    self.divisionId = nil;
-  }
 }
 
 - (void)setIsFemale:(BOOL)isFemale {

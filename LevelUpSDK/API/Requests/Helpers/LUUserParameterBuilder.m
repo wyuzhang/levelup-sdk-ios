@@ -13,7 +13,6 @@
   [self addKey:@"born_at" toDictionary:params ifValuePresent:[user valueForKey:@"bornAt"]];
   [self addKey:@"custom_attributes" toDictionary:params ifValuePresent:user.customAttributes];
   [self addKey:@"device_identifier" toDictionary:params ifValuePresent:[LUDeviceIdentifier deviceIdentifier]];
-  [self addKey:@"division_id" toDictionary:params ifValuePresent:user.divisionId];
   [self addKey:@"email" toDictionary:params ifValuePresent:user.email];
   [self addKey:@"employer" toDictionary:params ifValuePresent:user.employer];
   [self addKey:@"first_name" toDictionary:params ifValuePresent:user.firstName];

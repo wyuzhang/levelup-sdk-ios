@@ -68,7 +68,7 @@
 - (NSString *)fullStreetAddress;
 
 /**
- A `CLLocation` instance associated with this division.
+ A `CLLocation` instance associated with this location.
  */
 - (CLLocation *)location;
 

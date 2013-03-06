@@ -1,4 +1,3 @@
-#import "LUDivision.h"
 #import "LUQRCode.h"
 #import "LUUser.h"
 #import "LUUserAddress.h"
@@ -92,25 +91,6 @@ describe(@"LUUser", ^{
 
       NSString *dateString = [date iso8601DateTimeString];
       [[[user valueForKey:@"bornAt"] should] equal:dateString];
-    });
-  });
-
-  describe(@"setDivision:", ^{
-    __block LUDivision *division;
-
-    beforeEach(^{
-      division = [[LUDivision alloc] init];
-      division.modelId = @1;
-
-      user.division = division;
-    });
-
-    it(@"sets the division", ^{
-      [[user.division should] equal:division];
-    });
-
-    it(@"sets the divisionId", ^{
-      [[user.divisionId should] equal:division.modelId];
     });
   });
 
