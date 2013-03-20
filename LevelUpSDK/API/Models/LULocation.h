@@ -40,6 +40,11 @@
 @property (nonatomic, copy) NSNumber *lng;
 
 /**
+ The location's name.
+ */
+@property (nonatomic, copy) NSString *name;
+
+/**
  An optional phone number for the location.
  */
 @property (nonatomic, copy) NSString *phone;
