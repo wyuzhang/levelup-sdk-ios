@@ -72,4 +72,8 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
   return nil;
 }
 
+- (NSString *)referralURL {
+  return [NSString stringWithFormat:@"https://www.thelevelup.com/c/%@", self.referralCode];
+}
+
 @end

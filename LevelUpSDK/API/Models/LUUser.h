@@ -169,4 +169,9 @@
  */
 - (LUUserAddress *)homeAddress;
 
+/**
+ The user's referral URL. When users invite friends to join LevelUp, this URL should be shared.
+ */
+- (NSString *)referralURL;
+
 @end
