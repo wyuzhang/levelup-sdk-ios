@@ -118,8 +118,10 @@ describe(@"LUAPIClient", ^{
     __block LUAPIClient *client;
 
     beforeEach(^{
-      apiRequest = [LUAPIRequest apiRequestWithMethod:@"GET" path:@"test" parameters:nil];
+      [LUAPIClient setupWithAPIKey:@"test" developmentMode:YES];
       client = [LUAPIClient sharedClient];
+
+      apiRequest = [LUAPIRequest apiRequestWithMethod:@"GET" path:@"test" parameters:nil];
     });
 
     it(@"creates an AFJSONRequestOperation operation for the request", ^{
@@ -131,14 +133,14 @@ describe(@"LUAPIClient", ^{
     });
 
     it(@"enqueues a new request operation for the request and returns it", ^{
-      NSOperation *operation =  [client performRequest:apiRequest success:nil failure:nil];
+      NSOperation *operation = [client performRequest:apiRequest success:nil failure:nil];
 
-      [[[[client valueForKey:@"operationQueue"] operations] should] contain:operation];
+      [[[client.operationQueue operations] should] contain:operation];
     });
 
     context(@"when the request succeeds", ^{
       beforeEach(^{
-        stubRequest(@"GET", @"https://api.thelevelup.com/v13/test?").
+        stubRequest(@"GET", @"https://api.staging-levelup.com/v13/test?").
         andReturn(200).
         withHeader(@"Content-Type", @"application/json").
         withBody(@"{\"ok\":true}");
@@ -161,7 +163,7 @@ describe(@"LUAPIClient", ^{
 
     context(@"when the request fails", ^{
       beforeEach(^{
-        stubRequest(@"GET", @"https://api.thelevelup.com/v13/test?").
+        stubRequest(@"GET", @"https://api.staging-levelup.com/v13/test?").
         andReturn(500).
         withHeader(@"Content-Type", @"application/json").
         withBody(@"{\"ok\":true}");

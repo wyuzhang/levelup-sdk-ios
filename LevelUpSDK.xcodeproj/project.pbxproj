@@ -380,7 +380,7 @@
 		259AC74616C5B8F7005D2641 /* LUClaimRequestBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUClaimRequestBuilderSpec.m; sourceTree = "<group>"; };
 		259AC74816C5BB30005D2641 /* LUCohortRequestBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCohortRequestBuilderSpec.m; sourceTree = "<group>"; };
 		259AC74A16C5E2D8005D2641 /* LUCreditCardRequestBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCreditCardRequestBuilderSpec.m; sourceTree = "<group>"; };
-		25AD5E2C167E655400E43701 /* LevelUpSDKTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LevelUpSDKTests-Prefix.pch"; sourceTree = "<group>"; };
+		25AD5E2C167E655400E43701 /* Unit Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Unit Tests-Prefix.pch"; sourceTree = "<group>"; };
 		25CB9EB416C7104400958C06 /* NSArrayObjectAccessSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArrayObjectAccessSpec.m; path = Categories/NSArrayObjectAccessSpec.m; sourceTree = "<group>"; };
 		25CB9EB616C7284A00958C06 /* NSDateStringFormatsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDateStringFormatsSpec.m; path = Categories/NSDateStringFormatsSpec.m; sourceTree = "<group>"; };
 		25CB9EB816C72D9100958C06 /* NSNumberBase36Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSNumberBase36Spec.m; path = Categories/NSNumberBase36Spec.m; sourceTree = "<group>"; };
@@ -389,8 +389,8 @@
 		25F643A7166832D600A05C0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		25F643AB166832D600A05C0E /* LevelUpSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LevelUpSDK-Prefix.pch"; sourceTree = "<group>"; };
 		25F643AC166832D600A05C0E /* LevelUpSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelUpSDK.h; sourceTree = "<group>"; };
-		25F643B5166832D600A05C0E /* LevelUpSDKTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LevelUpSDKTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		25F643C0166832D600A05C0E /* LevelUpSDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LevelUpSDKTests-Info.plist"; sourceTree = "<group>"; };
+		25F643B5166832D600A05C0E /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25F643C0166832D600A05C0E /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
 		35969BE4155A4B838F746A8C /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85F87FD16B094A100F3F648 /* NSArray+ObjectAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ObjectAccess.h"; sourceTree = "<group>"; };
 		F85F87FE16B094A100F3F648 /* NSArray+ObjectAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ObjectAccess.m"; sourceTree = "<group>"; };
@@ -747,7 +747,7 @@
 			isa = PBXGroup;
 			children = (
 				25F643A9166832D600A05C0E /* LevelUpSDK */,
-				25F643BE166832D600A05C0E /* LevelUpSDKTests */,
+				25F643BE166832D600A05C0E /* Unit Tests */,
 				25F643A6166832D600A05C0E /* Frameworks */,
 				25F643A5166832D600A05C0E /* Products */,
 				05C538A8A6814C6E82461EB1 /* Pods.xcconfig */,
@@ -762,7 +762,7 @@
 			isa = PBXGroup;
 			children = (
 				25F643A4166832D600A05C0E /* libLevelUpSDK.a */,
-				25F643B5166832D600A05C0E /* LevelUpSDKTests.octest */,
+				25F643B5166832D600A05C0E /* Unit Tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -811,7 +811,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		25F643BE166832D600A05C0E /* LevelUpSDKTests */ = {
+		25F643BE166832D600A05C0E /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
 				0268A1E116BC30810065E009 /* API */,
@@ -819,14 +819,14 @@
 				022B2854166E518100679E06 /* QRCode Management */,
 				25F643BF166832D600A05C0E /* Supporting Files */,
 			);
-			path = LevelUpSDKTests;
+			path = "Unit Tests";
 			sourceTree = "<group>";
 		};
 		25F643BF166832D600A05C0E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				25F643C0166832D600A05C0E /* LevelUpSDKTests-Info.plist */,
-				25AD5E2C167E655400E43701 /* LevelUpSDKTests-Prefix.pch */,
+				25F643C0166832D600A05C0E /* Unit Tests-Info.plist */,
+				25AD5E2C167E655400E43701 /* Unit Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -921,9 +921,9 @@
 			productReference = 25F643A4166832D600A05C0E /* libLevelUpSDK.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		25F643B4166832D600A05C0E /* LevelUpSDKTests */ = {
+		25F643B4166832D600A05C0E /* Unit Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 25F643CC166832D600A05C0E /* Build configuration list for PBXNativeTarget "LevelUpSDKTests" */;
+			buildConfigurationList = 25F643CC166832D600A05C0E /* Build configuration list for PBXNativeTarget "Unit Tests" */;
 			buildPhases = (
 				25F643B0166832D600A05C0E /* Sources */,
 				25F643B1166832D600A05C0E /* Frameworks */,
@@ -936,9 +936,9 @@
 			dependencies = (
 				02941E6316B734C300EDAF6E /* PBXTargetDependency */,
 			);
-			name = LevelUpSDKTests;
+			name = "Unit Tests";
 			productName = LevelUpSDKTests;
-			productReference = 25F643B5166832D600A05C0E /* LevelUpSDKTests.octest */;
+			productReference = 25F643B5166832D600A05C0E /* Unit Tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -963,7 +963,7 @@
 			projectRoot = "";
 			targets = (
 				25F643A3166832D600A05C0E /* LevelUpSDK */,
-				25F643B4166832D600A05C0E /* LevelUpSDKTests */,
+				25F643B4166832D600A05C0E /* Unit Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -1200,8 +1200,8 @@
 			baseConfigurationReference = 1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LevelUpSDK/LevelUpSDK-Prefix.pch";
-				INFOPLIST_FILE = "LevelUpSDKTests/LevelUpSDKTests-Info.plist";
+				GCC_PREFIX_HEADER = "Unit Tests/Unit Tests-Prefix.pch";
+				INFOPLIST_FILE = "Unit Tests/Unit Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -1301,8 +1301,8 @@
 			baseConfigurationReference = 1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LevelUpSDKTests/LevelUpSDKTests-Prefix.pch";
-				INFOPLIST_FILE = "LevelUpSDKTests/LevelUpSDKTests-Info.plist";
+				GCC_PREFIX_HEADER = "Unit Tests/Unit Tests-Prefix.pch";
+				INFOPLIST_FILE = "Unit Tests/Unit Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -1314,8 +1314,8 @@
 			baseConfigurationReference = 1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LevelUpSDKTests/LevelUpSDKTests-Prefix.pch";
-				INFOPLIST_FILE = "LevelUpSDKTests/LevelUpSDKTests-Info.plist";
+				GCC_PREFIX_HEADER = "Unit Tests/Unit Tests-Prefix.pch";
+				INFOPLIST_FILE = "Unit Tests/Unit Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -1345,7 +1345,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		25F643CC166832D600A05C0E /* Build configuration list for PBXNativeTarget "LevelUpSDKTests" */ = {
+		25F643CC166832D600A05C0E /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				25F643CD166832D600A05C0E /* Debug */,
