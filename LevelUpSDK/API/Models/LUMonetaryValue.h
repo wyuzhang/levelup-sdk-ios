@@ -8,22 +8,25 @@
 /**
  The amount, in cents. So $1.00 would return 100.
  */
-@property (nonatomic, copy) NSNumber *amount;
+@property (nonatomic, copy, readonly) NSNumber *amount;
 
 /**
  The currency code. Currently only "USD" is supported.
  */
-@property (nonatomic, copy) NSString *currencyCode;
+@property (nonatomic, copy, readonly) NSString *currencyCode;
 
 /**
  The symbol used to represent the currency. Currently on '$' (American Dollars) are supported.
  */
-@property (nonatomic, copy) NSString *currencySymbol;
+@property (nonatomic, copy, readonly) NSString *currencySymbol;
 
 /**
  Returns the amount formatted with a string (but no symbol). For example "1.23" represents 1 dollar and 23 cents.
  */
 @property (nonatomic, copy) NSString *formattedAmount;
+
+- (id)initWithAmount:(NSNumber *)amount currencyCode:(NSString *)currencyCode
+      currencySymbol:(NSString *)currencySymbol formattedAmount:(NSString *)formattedAmount;
 
 /**
  Returns an `LUMonetaryValue` instance for the given amount, in dollars.

@@ -2,6 +2,31 @@
 
 @implementation LULocation
 
+#pragma mark - Creation
+
+- (id)initWithExtendedAddress:(NSString *)extendedAddress hours:(NSString *)hours
+                          lat:(NSNumber *)lat locality:(NSString *)locality
+                   locationID:(NSNumber *)locationID lng:(NSNumber *)lng name:(NSString *)name
+                        phone:(NSString *)phone postalCode:(NSString *)postalCode
+                       region:(NSString *)region streetAddress:(NSString *)streetAddress {
+  self = [super init];
+  if (!self) return nil;
+
+  _extendedAddress = extendedAddress;
+  _hours = hours;
+  _lat = lat;
+  _locality = locality;
+  _locationID = locationID;
+  _lng = lng;
+  _name = name;
+  _phone = phone;
+  _postalCode = postalCode;
+  _region = region;
+  _streetAddress = streetAddress;
+
+  return self;
+}
+
 #pragma mark - Public Methods
 
 - (NSString *)fullStreetAddress {
@@ -46,6 +71,20 @@
 
 - (NSString *)title {
   return [self fullStreetAddress];
+}
+
+#pragma mark - NSObject Methods
+
+- (NSString *)debugDescription {
+  return [NSString stringWithFormat:
+          @"LULocation [extendedAddress=%@, hours=%@, ID=%@, lat=%@, locality=%@, lng=%@, name=%@, phone=%@, postalCode=%@, region=%@, streetAddress=%@]",
+          self.extendedAddress, self.hours, self.locationID, self.lat, self.locality, self.lng,
+          self.name, self.phone, self.postalCode, self.region, self.streetAddress];
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"LULocation [ID=%@, streetAddress=%@]", self.locationID,
+          self.streetAddress];
 }
 
 @end

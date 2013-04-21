@@ -28,106 +28,123 @@
 @interface LUCampaign : LUAPIModel
 
 /**
- Specifies whether the campaign has been claimed by the current user.
+ The unique identifier for this campaign.
  */
-@property (nonatomic, assign) BOOL claimed;
+@property (nonatomic, copy, readonly) NSNumber *campaignID;
 
 /**
- If the campaign is Refer-a-Friend, the cohort for the current user.
+ Specifies whether the campaign has been claimed by the current user.
  */
-@property (nonatomic, strong) LUCohort *cohort;
+@property (nonatomic, assign, readonly) BOOL claimed;
 
 /**
  The campaign's cohorts.
  */
-@property (nonatomic, copy) NSArray *cohorts;
+@property (nonatomic, copy, readonly) NSArray *cohorts;
 
 /**
  An HTML message to show the user after claiming the campaign.
  */
-@property (nonatomic, copy) NSString *confirmationHtml;
-
-/**
- Specifies if this campaign is marked as global (valid for all merchants).
- */
-@property (nonatomic, assign) BOOL global;
-
-/**
- The merchants associated with this campaign. If a campaign is global, this will be empty, since a global campaign
- is valid for all merchants.
- */
-@property (nonatomic, copy) NSArray *merchants;
-
-/**
- The name of the campaign.
- */
-@property (nonatomic, copy) NSString *name;
-
-/**
- An HTML message describing the campaign.
- */
-@property (nonatomic, copy) NSString *offerHtml;
-
-/**
- The campaign's sponsor.
- */
-@property (nonatomic, copy) NSString *sponsor;
-
-/**
- An email address to which support inquiries should be sent.
- */
-@property (nonatomic, copy) NSString *supportEmail;
-
-/**
- The monetary value of the campaign. This is the amount of credit the user will receive after claiming.
- */
-@property (nonatomic, strong) LUMonetaryValue *value;
-
-/**
- A helper method which returns `confirmationHtml` stripped of HTML tags.
- */
-- (NSString *)confirmationText;
-
-/**
- Returns an email cohort for the campaign, if one exists.
- */
-- (LUCohort *)emailCohort;
-
-/**
- Returns a Facebook cohort for the campaign, if one exists.
- */
-- (LUCohort *)facebookCohort;
+@property (nonatomic, copy, readonly) NSString *confirmationHTML;
 
 /**
  Specifies that the campaign is global -- if a user claims it, they will receive global credit that can be used at any
  LevelUp merchant.
  */
-- (BOOL)isGlobal;
+@property (nonatomic, assign, readonly) BOOL global;
 
 /**
- An associated mobile image for the campaign. Will automatically return a retina or non-retina scaled image based on the
- screen scale of the device.
+ The merchants associated with this campaign. If a campaign is global, this will be empty, since a global campaign
+ is valid for all merchants.
  */
-- (NSString *)mobileImageUrl;
+@property (nonatomic, copy, readonly) NSArray *merchants;
 
 /**
- A helper method which returns the `offerHtml` stripped of HTML tags.
+ The name of the campaign.
+ */
+@property (nonatomic, copy, readonly) NSString *name;
+
+/**
+ An HTML message describing the campaign.
+ */
+@property (nonatomic, copy, readonly) NSString *offerHTML;
+
+/**
+ The campaign's sponsor.
+ */
+@property (nonatomic, copy, readonly) NSString *sponsor;
+
+/**
+ An email address to which support inquiries should be sent.
+ */
+@property (nonatomic, copy, readonly) NSString *supportEmail;
+
+/**
+ The monetary value of the campaign. This is the amount of credit the user will receive after claiming.
+ */
+@property (nonatomic, strong, readonly) LUMonetaryValue *value;
+
+- (id)initWithCampaignID:(NSNumber *)campaignID claimed:(BOOL)claimed cohorts:(NSArray *)cohorts
+        confirmationHTML:(NSString *)confirmationHTML global:(BOOL)global
+             imageURL_1x:(NSURL *)imageURL_1x imageURL_2x:(NSURL *)imageURL_2x
+               merchants:(NSArray *)merchants name:(NSString *)name offerHTML:(NSString *)offerHTML
+      referAFriendCohort:(LUCohort *)referAFriendCohort sponsor:(NSString *)sponsor
+            supportEmail:(NSString *)supportEmail value:(LUMonetaryValue *)value;
+
+/**
+ A helper method which returns `confirmationHTML` stripped of HTML tags.
+ */
+- (NSString *)confirmationText;
+
+/**
+ An associated image for the campaign. Will automatically return a retina or non-retina scaled image based on the
+ screen scale of the device. The resolution of the image is 320x212.
+ */
+- (NSURL *)imageURL;
+
+/**
+ A helper method which returns the `offerHTML` stripped of HTML tags.
  */
 - (NSString *)offerText;
 
 /**
- Returns `confirmationHtml` if available, or else `offerHtml`.
+ A suggested initial email body to use when a user shares this campaign over email.
  */
-- (NSString *)successfulClaimMessageHtml;
+- (NSString *)shareMessageForEmailBody;
+
+/**
+ A suggested initial email subject to use when a user shares this campaign over email.
+ */
+- (NSString *)shareMessageForEmailSubject;
+
+/**
+ A suggested initial post to use when a user shares this campaign over Twitter.
+ */
+- (NSString *)shareMessageForTwitter;
+
+/**
+ The URL to use when sharing this campaign via email.
+ */
+- (NSURL *)shareURLForEmail;
+
+/**
+ The URL to use when sharing this campaign via Facebook.
+ */
+- (NSURL *)shareURLForFacebook;
+
+/**
+ The URL to use when sharing this campaign via Twitter.
+ */
+- (NSURL *)shareURLForTwitter;
+
+/**
+ Returns `confirmationHTML` if available, or else `offerHTML`.
+ */
+- (NSString *)successfulClaimMessageHTML;
 
 /**
  Returns `confirmationText` if available, or else `offerText`.
  */
 - (NSString *)successfulClaimMessageText;
-
-/**
- Returns a Twitter cohort for the campaign, if one exists.
- */
-- (LUCohort *)twitterCohort;
 
 @end

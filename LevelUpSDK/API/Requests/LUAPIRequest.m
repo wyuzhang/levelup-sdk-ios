@@ -1,4 +1,5 @@
 #import "LUAPIClient.h"
+#import "LUAbstractJSONModelFactory.h"
 #import "LUAPIRequest.h"
 
 @implementation LUAPIRequest
@@ -7,24 +8,18 @@
 
 + (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
                                   path:(NSString *)path
-                            parameters:(NSDictionary *)parameters {
-  return [[self alloc] initWithMethod:method path:path parameters:parameters includeAccessToken:YES];
-}
-
-+ (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
-                                  path:(NSString *)path
                             parameters:(NSDictionary *)parameters
-                    includeAccessToken:(BOOL)includeAccessToken {
-  return [[self alloc] initWithMethod:method path:path parameters:parameters includeAccessToken:includeAccessToken];
+                          modelFactory:(LUAbstractJSONModelFactory *)modelFactory {
+  return [[self alloc] initWithMethod:method path:path parameters:parameters modelFactory:modelFactory];
 }
 
-- (id)initWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters includeAccessToken:(BOOL)includeAccessToken {
+- (id)initWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters modelFactory:(LUAbstractJSONModelFactory *)modelFactory {
   self = [super init];
   if (self) {
+    _modelFactory = modelFactory;
     _method = method;
     _path = path;
     _parameters = parameters;
-    _includeAccessToken = includeAccessToken;
   }
 
   return self;
@@ -33,7 +28,7 @@
 #pragma mark - Public Methods
 
 - (NSURLRequest *)urlRequest {
-  return [[LUAPIClient sharedClient] requestWithMethod:self.method path:self.path parameters:[self parametersWithAccessToken]];
+  return [[LUAPIClient sharedClient] requestWithMethod:self.method path:self.path parameters:self.parameters];
 }
 
 #pragma mark - NSObject Methods
@@ -50,8 +45,6 @@
   if (self.parameters) {
     total += [[self.parameters description] hash] * 17;
   }
-
-  total += [@(self.includeAccessToken) hash] * 19;
 
   return total;
 }
@@ -72,28 +65,10 @@
                              (otherApiRequest.parameters && self.parameters &&
                               [otherApiRequest.parameters isEqualToDictionary:self.parameters]));
 
-    BOOL includeAccessTokensEqual = otherApiRequest.includeAccessToken == self.includeAccessToken;
-
-    return methodEqual && pathEqual && parametersEqual && includeAccessTokensEqual;
+    return methodEqual && pathEqual && parametersEqual;
   }
 
   return NO;
-}
-
-#pragma mark - Private Methods
-
-- (NSDictionary *)parametersWithAccessToken {
-  NSMutableDictionary *parametersWithAccessToken = [NSMutableDictionary dictionary];
-
-  if (self.includeAccessToken && [LUAPIClient sharedClient].accessToken) {
-    parametersWithAccessToken[@"access_token"] = [LUAPIClient sharedClient].accessToken;
-  }
-
-  if (self.parameters) {
-    [parametersWithAccessToken addEntriesFromDictionary:self.parameters];
-  }
-
-  return parametersWithAccessToken;
 }
 
 @end

@@ -27,7 +27,7 @@
 
  The application is responsible for securely storing these values so that when the application launches, users will
  remain logged in. As part of launching your application, you may set these values using the `accessToken` and
- `currentUserId` properties.
+ `currentUserID` properties.
 
  ## Errors
 
@@ -42,7 +42,7 @@
 
  ## Example
 
-    LUAPIRequest *request = [LUUserRequestBuilder requestForCurrentUser];
+    LUAPIRequest *request = [LUUserRequestFactory requestForCurrentUser];
     [[LUAPIClient sharedClient] performRequest:request
                                        success:^(LUUser *user) {
                                          NSLog(@"The current user is %@", user);
@@ -89,7 +89,7 @@ extern NSString * const DefaultLevelUpApiURL;
 /**
  The user ID of the authenticated user.
  */
-@property (copy) NSNumber *currentUserId;
+@property (copy) NSNumber *currentUserID;
 
 @property (copy, readonly) NSString *apiKey;
 @property (readwrite, nonatomic, strong) NSURL *baseURL;

@@ -7,14 +7,19 @@
 @interface LUCreditCard : LUAPIModel
 
 /**
+ A string that describes the credit card. Includes the card's type and last 4 digits.
+ */
+@property (nonatomic, copy, readonly) NSString *creditCardDescription;
+
+/**
+ The unique identifier for this credit card.
+ */
+@property (nonatomic, copy, readonly) NSNumber *creditCardID;
+
+/**
  The credit card's CVV (card verification value).
  */
 @property (nonatomic, copy) NSString *cvv;
-
-/**
- A string to use when describing the credit card. Includes the card's type and last 4 digits.
- */
-@property (nonatomic, copy) NSString *description;
 
 /**
  The card's expiration month, as a number from 1 to 12.
@@ -30,7 +35,7 @@
  The last 4 digits of the credit card. This is returned by the server, and does not need to be set when creating a new
  card.
  */
-@property (nonatomic, copy) NSString *last_4;
+@property (nonatomic, copy, readonly) NSString *last4Digits;
 
 /**
  The credit card number. Should be set when creating a credit card. Will be nil when retrieving cards from the server.
@@ -51,6 +56,12 @@
  The credit card type (e.g. Visa, MasterCard, etc). This will be returned by the server, but is not required when
  creating credit cards.
  */
-@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy, readonly) NSString *type;
+
+- (id)initWithCreditCardDescription:(NSString *)creditCardDescription creditCardID:(NSNumber *)creditCardID
+                                cvv:(NSString *)cvv expirationMonth:(NSNumber *)expirationMonth
+                     expirationYear:(NSNumber *)expirationYear last4Digits:(NSString *)last4Digits
+                             number:(NSString *)number postalCode:(NSString *)postalCode promoted:(BOOL)promoted
+                               type:(NSString *)type;
 
 @end

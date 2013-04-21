@@ -36,6 +36,15 @@
 @property (nonatomic, copy) NSString *streetAddress;
 
 /**
+ The unique identifier for this address.
+ */
+@property (nonatomic, copy, readonly) NSNumber *userAddressID;
+
+- (id)initWithAddressType:(NSString *)addressType extendedAddress:(NSString *)extendedAddress
+                 locality:(NSString *)locality postalCode:(NSString *)postalCode region:(NSString *)region
+            streetAddress:(NSString *)streetAddress userAddressID:(NSNumber *)userAddressID;
+
+/**
  Specifies if this address is of the type "home".
  */
 - (BOOL)isHomeAddress;

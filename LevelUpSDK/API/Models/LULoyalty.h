@@ -15,60 +15,66 @@
 @interface LULoyalty : LUAPIModel
 
 /**
+ The unique identifier for this loyalty.
+ */
+@property (nonatomic, copy, readonly) NSNumber *loyaltyID;
+
+/**
  The ID of the merchant this `LULoyalty` is for.
  */
-@property (nonatomic, copy) NSNumber *merchantId;
+@property (nonatomic, copy, readonly) NSNumber *merchantID;
 
 /**
  The number of orders the user has made at this merchant.
  */
-@property (nonatomic, copy) NSNumber *ordersCount;
+@property (nonatomic, copy, readonly) NSNumber *ordersCount;
 
 /**
  The total amount of credit available to the user at this merchant. This includes merchant-specific credit, global
  credit and campaign credit.
  */
-@property (nonatomic, strong) LUMonetaryValue *potentialCredit;
+@property (nonatomic, strong, readonly) LUMonetaryValue *potentialCredit;
 
 /**
- The user's progress towards receiving more loyalty credit, as a number between 0.0 and 1.0. For example, if a merchant
- provides $5 in credit for every $50 spent, and the user has spent $10, this number would be 0.2.
+ The user's progress towards receiving more loyalty credit, as a number between 0.0 and 100.0. For example, if a merchant
+ provides $5 in credit for every $50 spent, and the user has spent $10, this number would be 20.0.
  */
-@property (nonatomic, assign) float progress;
-
-/**
- Same as the `progress` property, but represented as a percentage from 0.0 to 100.0.
- */
-@property (nonatomic, assign) float progressPercent;
+@property (nonatomic, assign, readonly) float progressPercent;
 
 /**
  The total amount of money that this user has saved at this merchant; that is, the total amount of credit that has been
  applied to orders at this merchant over all time.
  */
-@property (nonatomic, strong) LUMonetaryValue *savings;
+@property (nonatomic, strong, readonly) LUMonetaryValue *savings;
 
 /**
  The amount of money a user spends at this merchant before receiving loyalty credit. For example if a merchant provides
  $10 of credit for every $100 spent, this will return $100.
  */
-@property (nonatomic, strong) LUMonetaryValue *shouldSpend;
+@property (nonatomic, strong, readonly) LUMonetaryValue *shouldSpend;
 
 /**
  The amount of money remaining for the user before they will receive loyalty credit. For example if a merchant provides
  $10 of credit for every $100 spent, and the user has spent $25 since the last time they received loyalty, this would
  return $75.
  */
-@property (nonatomic, strong) LUMonetaryValue *spendRemaining;
+@property (nonatomic, strong, readonly) LUMonetaryValue *spendRemaining;
 
 /**
  The total amount money the user has spent at this merchant over all time.
  */
-@property (nonatomic, strong) LUMonetaryValue *totalVolume;
+@property (nonatomic, strong, readonly) LUMonetaryValue *totalVolume;
 
 /**
  The amount of loyalty credit a user receives at this merchant. For example if a merchant provides $10 of credit for
  every $100 spent, this will return $10.
  */
-@property (nonatomic, strong) LUMonetaryValue *willEarn;
+@property (nonatomic, strong, readonly) LUMonetaryValue *willEarn;
+
+- (id)initWithLoyaltyID:(NSNumber *)loyaltyID merchantID:(NSNumber *)merchantID
+            ordersCount:(NSNumber *)ordersCount potentialCredit:(LUMonetaryValue *)potentialCredit
+        progressPercent:(float)progressPercent savings:(LUMonetaryValue *)savings
+            shouldSpend:(LUMonetaryValue *)shouldSpend spendRemaining:(LUMonetaryValue *)spendRemaining
+            totalVolume:(LUMonetaryValue *)totalVolume willEarn:(LUMonetaryValue *)willEarn;
 
 @end

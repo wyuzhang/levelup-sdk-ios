@@ -1,18 +1,41 @@
 #import "LUInterstitialAction.h"
 
-#define kCustomerAcquisitionShareType @"customer_acquisition_share"
-#define kEmailCaptureClaimType @"email_capture_claim"
-
 @implementation LUInterstitialAction
 
-#pragma mark - Public Methods
+#pragma mark - Creation
 
-- (BOOL)isCustomerAcquisitionShare {
-  return [self.type isEqualToString:kCustomerAcquisitionShareType];
+- (id)initWithCampaign:(LUCampaign *)campaign interstitialActionID:(NSNumber *)interstitialActionID
+                  type:(LUInterstitialActionType)type {
+  self = [super init];
+  if (!self) return nil;
+
+  _campaign = campaign;
+  _interstitialActionID = interstitialActionID;
+  _type = type;
+
+  return self;
 }
 
-- (BOOL)isEmailCaptureClaim {
-  return [self.type isEqualToString:kEmailCaptureClaimType];
+#pragma mark - NSObject Methods
+
+- (NSString *)description {
+  return [NSString stringWithFormat: @"LUInterstitialAction [campaign=%@, ID=%@, type=%@]", self.campaign,
+          self.interstitialActionID, [self typeString]];
+}
+
+#pragma mark - Private Methods
+
+- (NSString *)typeString {
+  switch (self.type) {
+    case LUInterstitialActionTypeCustomerAcquisitionShare:
+      return @"customer acquisition share";
+
+    case LUInterstitialActionTypeEmailCaptureClaim:
+      return @"email capture claim";
+
+    default:
+      return nil;
+  }
 }
 
 @end

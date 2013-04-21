@@ -15,12 +15,17 @@
  recommends that an application should register every time it launches.
 
  Any time a device token is registered, it should be sent to LevelUp via the SDK. Create an `LUApnDevice` instance,
- and use `LUApnDeviceRequestBuilder` to issue a request to the API.
+ and use `LUApnDeviceRequestFactory` to issue a request to the API.
 
    [1]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/IPhoneOSClientImp/IPhoneOSClientImp.html#//apple_ref/doc/uid/TP40008194-CH103-SW1
  */
 
 @interface LUApnDevice : LUAPIModel
+
+/**
+ The unique identifier for this APN device.
+ */
+@property (nonatomic, copy) NSNumber *apnDeviceID;
 
 /**
  Specifies whether notifications should be sent to this device in development mode (which uses Apple's sandbox

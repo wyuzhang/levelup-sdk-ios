@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'LevelUpSDK'
-  s.version      = '0.6.4'
+  s.version      = '0.7.0'
   s.summary      = 'An SDK for the LevelUp payment platform.'
   s.homepage     = 'http://www.thelevelup.com'
   s.license      = {
@@ -13,13 +13,22 @@ Pod::Spec.new do |s|
   }
 
   s.author       = { 'Costa Walcott' => 'costa@thelevelup.com' }
-  s.source       = { :git => 'git@github.com:TheLevelUp/whitelabel-ios-sdk.git', :tag => '0.6.4' }
+  s.source       = { :git => 'git@github.com:TheLevelUp/whitelabel-ios-sdk.git', :tag => '0.7.0' }
   s.platform     = :ios, '5.0'
-  s.source_files = 'LevelUpSDK/**/*.{h,m}', 'Frameworks/Braintree-Encryption/src'
   s.frameworks   = 'AVFoundation', 'CoreGraphics', 'CoreLocation', 'CoreMedia', 'CoreVideo', 'ImageIO', 'MobileCoreServices', 'QuartzCore', 'Security', 'SystemConfiguration'
   s.requires_arc = true
 
   s.dependency 'AFNetworking', '~> 1.1.0'
   s.dependency 'LUKeychainAccess', '~> 1.0.0'
   s.dependency 'ZXingObjC', '~> 2.0.2'
+
+  s.default_subspec = 'Core'
+
+  s.subspec 'Core' do |core|
+    core.source_files = 'LevelUpSDK/**/*.{h,m}', 'Frameworks/Braintree-Encryption/src'
+  end
+
+  s.subspec 'Testing' do |testing|
+    testing.source_files = 'Testing/**/*.{h,m}'
+  end
 end

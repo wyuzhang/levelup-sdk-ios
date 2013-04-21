@@ -2,16 +2,28 @@
 
 @implementation LUMonetaryValue
 
+#pragma mark - Creation
+
+- (id)initWithAmount:(NSNumber *)amount currencyCode:(NSString *)currencyCode
+      currencySymbol:(NSString *)currencySymbol formattedAmount:(NSString *)formattedAmount {
+  self = [super init];
+  if (!self) return nil;
+
+  _amount = amount;
+  _currencyCode = currencyCode;
+  _currencySymbol = currencySymbol;
+  _formattedAmount = formattedAmount;
+
+  return self;
+}
+
 #pragma mark - Public Methods
 
 + (LUMonetaryValue *)monetaryValueWithUSD:(NSNumber *)amount {
-  LUMonetaryValue *value = [[LUMonetaryValue alloc] init];
-  value.amount = @(amount.floatValue * 100.0f);
-  value.currencyCode = @"USD";
-  value.currencySymbol = @"$";
-  value.formattedAmount = [NSString stringWithFormat:@"%.2f", amount.floatValue];
-
-  return value;
+  return [[LUMonetaryValue alloc] initWithAmount:@(amount.floatValue * 100.0f)
+                                    currencyCode:@"USD"
+                                  currencySymbol:@"$"
+                                 formattedAmount:[NSString stringWithFormat:@"%.2f", amount.floatValue]];
 }
 
 - (NSString *)formattedAmountWithSymbol {
@@ -26,6 +38,17 @@
   } else {
     return formattedAmountWithSymbol;
   }
+}
+
+#pragma mark - NSObject Methods
+
+- (NSString *)debugDescription {
+  return [NSString stringWithFormat:@"LUMonetaryValue [amount=%@, currencyCode=%@, currencySymbol=%@, formattedAmount=%@]",
+          self.amount, self.currencyCode, self.currencySymbol, self.formattedAmount];
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"LUMonetaryValue [%@]", [self formattedAmountWithSymbol]];
 }
 
 @end

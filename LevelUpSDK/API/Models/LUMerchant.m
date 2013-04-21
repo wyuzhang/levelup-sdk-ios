@@ -1,11 +1,11 @@
 #import "LUCohort.h"
-#import "LUJSONDeserializer.h"
 #import "LULocation.h"
 #import "LULoyalty.h"
 #import "LUMerchant.h"
 #import "LUMonetaryValue.h"
 #import "LUUser.h"
 #import "NSArray+ObjectAccess.h"
+#import <UIKit/UIKit.h>
 
 NSString * const MerchantWebService = @"MerchantWebService";
 NSString * const MerchantYelpService = @"MerchantYelpService";
@@ -17,10 +17,8 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
 
 @interface LUMerchant ()
 
-@property (nonatomic, copy) NSString *categoryImageUrl_32x32_1x;
-@property (nonatomic, copy) NSString *categoryImageUrl_32x32_2x;
-@property (nonatomic, copy) NSString *imageUrl_280x128_1x;
-@property (nonatomic, copy) NSString *imageUrl_280x128_2x;
+@property (nonatomic, copy, readonly) NSURL *imageURL_1x;
+@property (nonatomic, copy, readonly) NSURL *imageURL_2x;
 
 @end
 
@@ -28,11 +26,46 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
   NSArray *_webLocations;
 }
 
-#pragma mark - Public Methods
+#pragma mark - Creation
 
-- (NSString *)categoryImageUrl {
-  return [self valueForKey:[NSString stringWithFormat:@"categoryImageUrl_32x32_%dx", (int)[UIScreen mainScreen].scale]];
+- (id)initWithDescriptionHTML:(NSString *)descriptionHTML earn:(LUMonetaryValue *)earn
+           emailCaptureCohort:(LUCohort *)emailCaptureCohort facebookURL:(NSURL *)facebookURL
+                     featured:(BOOL)featured imageURL_1x:(NSURL *)imageURL_1x
+                  imageURL_2x:(NSURL *)imageURL_2x locations:(NSArray *)locations
+                      loyalty:(LULoyalty *)loyalty loyaltyEnabled:(BOOL)loyaltyEnabled
+                   merchantID:(NSNumber *)merchantID name:(NSString *)name
+                newsletterURL:(NSURL *)newsletterURL opentableURL:(NSURL *)opentableURL
+                    publicURL:(NSURL *)publicURL scvngrURL:(NSURL *)scvngrURL
+                        spend:(LUMonetaryValue *)spend twitterUsername:(NSString *)twitterUsername
+                      yelpURL:(NSURL *)yelpURL websiteURL:(NSURL *)websiteURL {
+  self = [super init];
+  if (!self) return nil;
+
+  _descriptionHTML = descriptionHTML;
+  _earn = earn;
+  _emailCaptureCohort = emailCaptureCohort;
+  _facebookURL = facebookURL;
+  _featured = featured;
+  _imageURL_1x = imageURL_1x;
+  _imageURL_2x = imageURL_2x;
+  _locations = locations;
+  _loyalty = loyalty;
+  _loyaltyEnabled = loyaltyEnabled;
+  _merchantID = merchantID;
+  _name = name;
+  _newsletterURL = newsletterURL;
+  _opentableURL = opentableURL;
+  _publicURL = publicURL;
+  _scvngrURL = scvngrURL;
+  _spend = spend;
+  _twitterUsername = twitterUsername;
+  _yelpURL = yelpURL;
+  _websiteURL = websiteURL;
+
+  return self;
 }
+
+#pragma mark - Public Methods
 
 - (LUMonetaryValue *)currentCredit {
   if (self.loyalty) {
@@ -42,8 +75,12 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
   }
 }
 
-- (NSString *)imageUrl {
-  return [self valueForKey:[NSString stringWithFormat:@"imageUrl_280x128_%dx", (int)[UIScreen mainScreen].scale]];
+- (NSURL *)imageURL {
+  if ([UIScreen mainScreen].scale == 1.0f) {
+    return self.imageURL_1x;
+  } else {
+    return self.imageURL_2x;
+  }
 }
 
 - (LULocation *)locationNearestTo:(CLLocation *)location {
@@ -57,30 +94,40 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
   return [sortedLocations firstObject];
 }
 
-- (NSString *)twitterUrl {
-  NSString *twitterUrl;
+- (NSURL *)twitterURL {
+  if (self.twitterUsername.length == 0) return nil;
 
-  if (self.twitterUsername.length > 0) {
-    twitterUrl = [@"http://twitter.com/" stringByAppendingString:self.twitterUsername];
-  } else {
-    twitterUrl = nil;
-  }
-
-  return twitterUrl;
+  return [NSURL URLWithString:[@"http://twitter.com/" stringByAppendingString:self.twitterUsername]];
 }
 
 - (NSArray *)webLocations {
   NSMutableArray *mutableWebLocations = [[NSMutableArray alloc] init];
 
-  if ([self.url length] > 0) [mutableWebLocations addObject:@{@"service" : MerchantWebService, @"url" : self.url, @"displayName" : @"Website / Menu"}];
-  if ([self.yelpUrl length] > 0) [mutableWebLocations addObject:@{@"service" : MerchantYelpService, @"url" : self.yelpUrl, @"displayName" : @"Yelp"}];
-  if ([self.facebookUrl length] > 0) [mutableWebLocations addObject:@{@"service" : MerchantFacebookService, @"url" : self.facebookUrl, @"displayName" : @"Facebook"}];
-  if ([self.twitterUrl length] > 0) [mutableWebLocations addObject:@{@"service" : MerchantTwitterService, @"url" : self.twitterUrl, @"displayName" : @"Twitter"}];
-  if ([self.scvngrUrl length] > 0) [mutableWebLocations addObject:@{@"service" : MerchantScvngrService, @"url" : self.scvngrUrl, @"displayName" : @"SCVNGR"}];
-  if ([self.opentableUrl length] > 0) [mutableWebLocations addObject:@{@"service": MerchantOpenTableService, @"url" : self.opentableUrl, @"displayName" : @"OpenTable"}];
-  if ([self.newsletterUrl length] > 0) [mutableWebLocations addObject:@{@"service" : MerchantNewsletterService, @"url" : self.newsletterUrl, @"displayName" : @"Newsletter"}];
+  if (self.websiteURL) [mutableWebLocations addObject:@{@"service" : MerchantWebService, @"url" : self.websiteURL, @"displayName" : @"Website / Menu"}];
+  if (self.yelpURL) [mutableWebLocations addObject:@{@"service" : MerchantYelpService, @"url" : self.yelpURL, @"displayName" : @"Yelp"}];
+  if (self.facebookURL) [mutableWebLocations addObject:@{@"service" : MerchantFacebookService, @"url" : self.facebookURL, @"displayName" : @"Facebook"}];
+  if (self.twitterURL) [mutableWebLocations addObject:@{@"service" : MerchantTwitterService, @"url" : self.twitterURL, @"displayName" : @"Twitter"}];
+  if (self.scvngrURL) [mutableWebLocations addObject:@{@"service" : MerchantScvngrService, @"url" : self.scvngrURL, @"displayName" : @"SCVNGR"}];
+  if (self.opentableURL) [mutableWebLocations addObject:@{@"service": MerchantOpenTableService, @"url" : self.opentableURL, @"displayName" : @"OpenTable"}];
+  if (self.newsletterURL) [mutableWebLocations addObject:@{@"service" : MerchantNewsletterService, @"url" : self.newsletterURL, @"displayName" : @"Newsletter"}];
 
   return [NSArray arrayWithArray:mutableWebLocations];
+}
+
+#pragma mark - NSObject Methods
+
+- (NSString *)debugDescription {
+  return [NSString stringWithFormat:
+          @"LUMerchant [descriptionHTML=%@, earn=%@, emailCaptureCohort=%@, facebookURL=%@, featured=%@, ID=%@, imageURL_1x=%@, imageURL_2x=%@, locations=%@, loyalty=%@, loyaltyEnabled=%@, name=%@, newsletterURL=%@, opentableURL=%@, publicURL=%@, scvngrURL=%@, spend=%@, twitterUsername=%@, websiteURL=%@, yelpURL=%@]",
+          self.descriptionHTML, self.earn, self.emailCaptureCohort, self.facebookURL,
+          @(self.featured), self.merchantID, self.imageURL_1x, self.imageURL_2x, self.locations,
+          self.loyalty, @(self.loyaltyEnabled), self.name, self.newsletterURL, self.opentableURL,
+          self.publicURL, self.scvngrURL, self.spend, self.twitterUsername, self.websiteURL,
+          self.yelpURL];
+}
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"LUMerchant [ID=%@, name=%@]", self.merchantID, self.name];
 }
 
 @end
