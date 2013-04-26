@@ -198,6 +198,8 @@
 		F85F880016B094A100F3F648 /* NSArray+ObjectAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = F85F87FE16B094A100F3F648 /* NSArray+ObjectAccess.m */; };
 		F8A4F35B166F99B6004B696B /* LUBundleRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = F8A4F359166F99B6004B696B /* LUBundleRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8A4F35C166F99B6004B696B /* LUBundleRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A4F35A166F99B6004B696B /* LUBundleRequestBuilder.m */; };
+		F8DC759D172AFCFD00EC0883 /* NSDate+LevelUpAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DC759B172AFCFD00EC0883 /* NSDate+LevelUpAdditions.h */; };
+		F8DC759E172AFCFD00EC0883 /* NSDate+LevelUpAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DC759C172AFCFD00EC0883 /* NSDate+LevelUpAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -396,6 +398,8 @@
 		F85F87FE16B094A100F3F648 /* NSArray+ObjectAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ObjectAccess.m"; sourceTree = "<group>"; };
 		F8A4F359166F99B6004B696B /* LUBundleRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBundleRequestBuilder.h; sourceTree = "<group>"; };
 		F8A4F35A166F99B6004B696B /* LUBundleRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUBundleRequestBuilder.m; sourceTree = "<group>"; };
+		F8DC759B172AFCFD00EC0883 /* NSDate+LevelUpAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LevelUpAdditions.h"; sourceTree = "<group>"; };
+		F8DC759C172AFCFD00EC0883 /* NSDate+LevelUpAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LevelUpAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -704,6 +708,8 @@
 				257B01C616684D69006ACA24 /* NSNumber+Base36.m */,
 				02ED9BE81688DA5600DFC994 /* NSString+HTMLStripping.h */,
 				02ED9BE91688DA5600DFC994 /* NSString+HTMLStripping.m */,
+				F8DC759B172AFCFD00EC0883 /* NSDate+LevelUpAdditions.h */,
+				F8DC759C172AFCFD00EC0883 /* NSDate+LevelUpAdditions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -897,6 +903,7 @@
 				2590538516C58DCA0021B411 /* NSData+HexString.h in Headers */,
 				255CB85416C83C6E0081197A /* LUDeviceIdentifier.h in Headers */,
 				255CB85616C83C6E0081197A /* LUUserParameterBuilder.h in Headers */,
+				F8DC759D172AFCFD00EC0883 /* NSDate+LevelUpAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1085,6 +1092,7 @@
 				2590538616C58DCA0021B411 /* NSData+HexString.m in Sources */,
 				255CB85516C83C6E0081197A /* LUDeviceIdentifier.m in Sources */,
 				255CB85716C83C6E0081197A /* LUUserParameterBuilder.m in Sources */,
+				F8DC759E172AFCFD00EC0883 /* NSDate+LevelUpAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

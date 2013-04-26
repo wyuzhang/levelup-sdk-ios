@@ -2,6 +2,7 @@
 #import "LUUser.h"
 #import "LUUserAddress.h"
 #import "NSDate+StringFormats.h"
+#import "NSDate+LevelUpAdditions.h"
 
 SPEC_BEGIN(LUUserSpec)
 
@@ -24,6 +25,11 @@ describe(@"LUUser", ^{
       NSString *dateString = [date iso8601DateTimeString];
       [user setValue:dateString forKey:@"bornAt"];
 
+      [[theValue([[user birthday] timeIntervalSince1970]) should] equal:[date timeIntervalSince1970] withDelta:1.0];
+    });
+
+    it(@"returns a date from 18 years ago when bornAt is nil", ^{
+      NSDate *date = [NSDate dateWithYearsSinceNow:-18];
       [[theValue([[user birthday] timeIntervalSince1970]) should] equal:[date timeIntervalSince1970] withDelta:1.0];
     });
   });

@@ -3,6 +3,7 @@
 #import "LUUser.h"
 #import "LUUserAddress.h"
 #import "NSDate+StringFormats.h"
+#import "NSDate+LevelUpAdditions.h"
 
 NSString * const GenderMale = @"male";
 NSString * const GenderFemale = @"female";
@@ -21,7 +22,11 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
 #pragma mark - Property Getters
 
 - (NSDate *)birthday {
-  return [NSDate dateFromIso8601DateTimeString:self.bornAt];
+  if (self.bornAt) {
+    return [NSDate dateFromIso8601DateTimeString:self.bornAt];
+  } else {
+    return [NSDate dateWithYearsSinceNow:-18];
+  }
 }
 
 - (BOOL)isFemale {
