@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Core'
 
   s.subspec 'Core' do |core|
-    core.source_files = 'LevelUpSDK/**/*.{h,m}', 'Frameworks/Braintree-Encryption/src'
+    core.source_files = 'Source/**/*.{h,m}', 'Frameworks/Braintree-Encryption/src'
   end
 
   s.subspec 'Testing' do |testing|
