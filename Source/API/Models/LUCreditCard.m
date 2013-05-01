@@ -4,7 +4,7 @@
 
 #pragma mark - Creation
 
-- (id)initWithCreditCardDescription:(NSString *)creditCardDescription creditCardID:(NSNumber *)creditCardID
+- (id)initWithBIN:(NSString *)BIN CreditCardDescription:(NSString *)creditCardDescription creditCardID:(NSNumber *)creditCardID
                                 cvv:(NSString *)cvv expirationMonth:(NSNumber *)expirationMonth
                      expirationYear:(NSNumber *)expirationYear last4Digits:(NSString *)last4Digits
                              number:(NSString *)number postalCode:(NSString *)postalCode promoted:(BOOL)promoted
@@ -12,6 +12,7 @@
   self = [super init];
   if (!self) return nil;
 
+  _BIN = BIN;
   _creditCardDescription = creditCardDescription;
   _creditCardID = creditCardID;
   _cvv = cvv;

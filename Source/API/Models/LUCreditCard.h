@@ -7,6 +7,11 @@
 @interface LUCreditCard : LUAPIModel
 
 /**
+ A string representing the BIN for the card in Braintree. This can be used to identify the origin of a specific card.
+ */
+@property (nonatomic, copy, readonly) NSString *BIN;
+
+/**
  A string that describes the credit card. Includes the card's type and last 4 digits.
  */
 @property (nonatomic, copy, readonly) NSString *creditCardDescription;
@@ -58,7 +63,7 @@
  */
 @property (nonatomic, copy, readonly) NSString *type;
 
-- (id)initWithCreditCardDescription:(NSString *)creditCardDescription creditCardID:(NSNumber *)creditCardID
+- (id)initWithBIN:(NSString *)BIN CreditCardDescription:(NSString *)creditCardDescription creditCardID:(NSNumber *)creditCardID
                                 cvv:(NSString *)cvv expirationMonth:(NSNumber *)expirationMonth
                      expirationYear:(NSNumber *)expirationYear last4Digits:(NSString *)last4Digits
                              number:(NSString *)number postalCode:(NSString *)postalCode promoted:(BOOL)promoted
