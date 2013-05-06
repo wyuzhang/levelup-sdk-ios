@@ -1,6 +1,9 @@
-#import "LUAPIClient.h"
 #import "LUAbstractJSONModelFactory.h"
+#import "LUAPIClient.h"
 #import "LUAPIRequest.h"
+
+NSString * const LUAPIVersion13 = @"v13";
+NSString * const LUAPIVersion14 = @"v14";
 
 @implementation LUAPIRequest
 
@@ -8,14 +11,20 @@
 
 + (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
                                   path:(NSString *)path
+                            apiVersion:(NSString *)apiVersion
                             parameters:(NSDictionary *)parameters
                           modelFactory:(LUAbstractJSONModelFactory *)modelFactory {
-  return [[self alloc] initWithMethod:method path:path parameters:parameters modelFactory:modelFactory];
+  return [[self alloc] initWithMethod:method path:path apiVersion:apiVersion parameters:parameters modelFactory:modelFactory];
 }
 
-- (id)initWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters modelFactory:(LUAbstractJSONModelFactory *)modelFactory {
+- (id)initWithMethod:(NSString *)method
+                path:(NSString *)path
+          apiVersion:(NSString *)apiVersion
+          parameters:(NSDictionary *)parameters
+        modelFactory:(LUAbstractJSONModelFactory *)modelFactory {
   self = [super init];
   if (self) {
+    _apiVersion = apiVersion;
     _modelFactory = modelFactory;
     _method = method;
     _path = path;
@@ -28,7 +37,9 @@
 #pragma mark - Public Methods
 
 - (NSURLRequest *)urlRequest {
-  return [[LUAPIClient sharedClient] requestWithMethod:self.method path:self.path parameters:self.parameters];
+  NSString *pathWithVersion = [NSString stringWithFormat:@"%@/%@", self.apiVersion, self.path];
+
+  return [[LUAPIClient sharedClient] requestWithMethod:self.method path:pathWithVersion parameters:self.parameters];
 }
 
 #pragma mark - NSObject Methods
@@ -42,8 +53,11 @@
   if (self.path) {
     total += [self.path hash] * 13;
   }
+  if (self.apiVersion) {
+    total += [self.apiVersion hash] * 17;
+  }
   if (self.parameters) {
-    total += [[self.parameters description] hash] * 17;
+    total += [[self.parameters description] hash] * 19;
   }
 
   return total;
@@ -57,6 +71,10 @@
                         (otherApiRequest.method && self.method &&
                          [otherApiRequest.method isEqualToString:self.method]));
 
+    BOOL apiVersionEqual = ((!otherApiRequest.apiVersion && !self.apiVersion) ||
+                            (otherApiRequest.apiVersion && self.apiVersion &&
+                             [otherApiRequest.apiVersion isEqualToString:self.apiVersion]));
+
     BOOL pathEqual = ((!otherApiRequest.path && !self.path) ||
                       (otherApiRequest.path && self.path &&
                        [otherApiRequest.path isEqualToString:self.path]));
@@ -65,7 +83,7 @@
                              (otherApiRequest.parameters && self.parameters &&
                               [otherApiRequest.parameters isEqualToDictionary:self.parameters]));
 
-    return methodEqual && pathEqual && parametersEqual;
+    return methodEqual && apiVersionEqual && pathEqual && parametersEqual;
   }
 
   return NO;

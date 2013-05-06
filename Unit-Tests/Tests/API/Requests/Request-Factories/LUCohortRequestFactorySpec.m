@@ -1,4 +1,4 @@
-#import "LUAPIRequest.h"
+#import "LUAuthenticatedAPIRequest.h"
 #import "LUCohortRequestFactory.h"
 
 SPEC_BEGIN(LUCohortRequestFactorySpec)
@@ -14,6 +14,10 @@ describe(@"LUCohortRequestFactory", ^{
       request = [LUCohortRequestFactory requestForCohortWithCode:cohortCode];
     });
 
+    it(@"returns an authenticated request", ^{
+      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
+    });
+
     it(@"returns a GET request", ^{
       [[request.method should] equal:@"GET"];
     });
@@ -24,8 +28,12 @@ describe(@"LUCohortRequestFactory", ^{
       [[request.path should] equal:expectedPath];
     });
 
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
+
     it(@"returns a request with no parameters", ^{
-      [request.parameters shouldBeNil];
+      [[request.parameters should] beEmpty];
     });
   });
 });

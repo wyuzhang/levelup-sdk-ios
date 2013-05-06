@@ -1,4 +1,4 @@
-#import "LUAPIRequest.h"
+#import "LUAuthenticatedAPIRequest.h"
 #import "LUCampaignRequestFactory.h"
 
 SPEC_BEGIN(LUCampaignRequestFactorySpec)
@@ -13,6 +13,10 @@ describe(@"LUCampaignRequestFactory", ^{
       request = [LUCampaignRequestFactory requestForCampaignWithId:@1];
     });
 
+    it(@"returns an authenticated request", ^{
+      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
+    });
+
     it(@"returns a GET request", ^{
       [[request.method should] equal:@"GET"];
     });
@@ -21,8 +25,12 @@ describe(@"LUCampaignRequestFactory", ^{
       [[request.path should] equal:@"campaigns/1"];
     });
 
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
+
     it(@"returns a request with no parameters", ^{
-      [request.parameters shouldBeNil];
+      [[request.parameters should] beEmpty];
     });
   });
 });

@@ -4,25 +4,51 @@
 
 #pragma mark - Creation
 
-- (id)initWithExtendedAddress:(NSString *)extendedAddress hours:(NSString *)hours
-                          lat:(NSNumber *)lat locality:(NSString *)locality
-                   locationID:(NSNumber *)locationID lng:(NSNumber *)lng name:(NSString *)name
-                        phone:(NSString *)phone postalCode:(NSString *)postalCode
-                       region:(NSString *)region streetAddress:(NSString *)streetAddress {
+- (id)initWithCategoryIDs:(NSArray *)categoryIDs extendedAddress:(NSString *)extendedAddress hours:(NSString *)hours
+                 latitude:(NSNumber *)latitude locality:(NSString *)locality locationID:(NSNumber *)locationID
+                longitude:(NSNumber *)longitude merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName
+                     name:(NSString *)name phone:(NSString *)phone postalCode:(NSString *)postalCode
+                   region:(NSString *)region shown:(BOOL)shown streetAddress:(NSString *)streetAddress
+            updatedAtDate:(NSDate *)updatedAtDate {
   self = [super init];
   if (!self) return nil;
 
+  _categoryIDs = categoryIDs;
   _extendedAddress = extendedAddress;
   _hours = hours;
-  _lat = lat;
+  _latitude = latitude;
   _locality = locality;
   _locationID = locationID;
-  _lng = lng;
+  _longitude = longitude;
+  _merchantID = merchantID;
+  _merchantName = merchantName;
   _name = name;
   _phone = phone;
   _postalCode = postalCode;
   _region = region;
+  _shown = shown;
   _streetAddress = streetAddress;
+  _summary = NO;
+  _updatedAtDate = updatedAtDate;
+
+  return self;
+}
+
+- (id)initWithCategoryIDs:(NSArray *)categoryIDs latitude:(NSNumber *)latitude locationID:(NSNumber *)locationID
+                longitude:(NSNumber *)longitude merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName
+                    shown:(BOOL)shown updatedAtDate:(NSDate *)updatedAtDate {
+  self = [super init];
+  if (!self) return nil;
+
+  _categoryIDs = categoryIDs;
+  _latitude = latitude;
+  _locationID = locationID;
+  _longitude = longitude;
+  _merchantID = merchantID;
+  _merchantName = merchantName;
+  _shown = shown;
+  _summary = YES;
+  _updatedAtDate = updatedAtDate;
 
   return self;
 }
@@ -38,7 +64,7 @@
 }
 
 - (CLLocation *)location {
-  if (self.lat && self.lng) {
+  if (self.latitude && self.longitude) {
     CLLocationCoordinate2D coord = self.coordinate;
     return [[CLLocation alloc] initWithLatitude:coord.latitude longitude:coord.longitude];
   } else {
@@ -62,8 +88,8 @@
 #endif
 
 - (CLLocationCoordinate2D)coordinate {
-  if (self.lat && self.lng) {
-    return CLLocationCoordinate2DMake(BOUNDED(self.lat.doubleValue, -90, 90), BOUNDED(self.lng.doubleValue, -180, 180));
+  if (self.latitude && self.longitude) {
+    return CLLocationCoordinate2DMake(BOUNDED(self.latitude.doubleValue, -90, 90), BOUNDED(self.longitude.doubleValue, -180, 180));
   } else {
     return kCLLocationCoordinate2DInvalid;
   }
@@ -77,14 +103,15 @@
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LULocation [extendedAddress=%@, hours=%@, ID=%@, lat=%@, locality=%@, lng=%@, name=%@, phone=%@, postalCode=%@, region=%@, streetAddress=%@]",
-          self.extendedAddress, self.hours, self.locationID, self.lat, self.locality, self.lng,
-          self.name, self.phone, self.postalCode, self.region, self.streetAddress];
+          @"LULocation [categoryIDs=%@, extendedAddress=%@, hours=%@, ID=%@, latitude=%@, locality=%@, longitude=%@, merchantID=%@, merchantName=%@, name=%@, phone=%@, postalCode=%@, region=%@, shown=%@, summary=%@, streetAddress=%@, updatedAtDate=%@]",
+          self.categoryIDs, self.extendedAddress, self.hours, self.locationID, self.latitude, self.locality,
+          self.longitude, self.merchantID, self.merchantName, self.name, self.phone, self.postalCode, self.region,
+          @(self.shown), @(self.summary), self.streetAddress, self.updatedAtDate];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LULocation [ID=%@, streetAddress=%@]", self.locationID,
-          self.streetAddress];
+  return [NSString stringWithFormat:@"LULocation [ID=%@, latitude=%@, longitude=%@, streetAddress=%@]", self.locationID,
+          self.latitude, self.longitude, self.streetAddress];
 }
 
 @end

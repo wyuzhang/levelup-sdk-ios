@@ -1,5 +1,5 @@
 #import "LUAbstractJSONModelFactory.h"
-#import "NSArray+ObjectAccess.h"
+#import "NSArray+LUAdditions.h"
 
 @implementation LUAbstractJSONModelFactory
 
@@ -16,12 +16,9 @@
 }
 
 - (id)fromArray:(NSArray *)array {
-  NSMutableArray *parsed = [NSMutableArray array];
-  for (id subJSON in array) {
-    [parsed addObject:[self fromJSONObject:subJSON]];
-  }
-
-  return parsed;
+  return [array mappedArrayWithBlock:^(id subJSON) {
+    return [self fromJSONObject:subJSON];
+  }];
 }
 
 - (id)fromDictionary:(NSDictionary *)dictionary {
@@ -42,6 +39,10 @@
   } else {
     return nil;
   }
+}
+
+- (id)fromJSONObject:(id)JSON httpResponse:(NSHTTPURLResponse *)response {
+  return [self fromJSONObject:JSON];
 }
 
 - (NSString *)rootKey {

@@ -1,4 +1,3 @@
-#import <CoreLocation/CoreLocation.h>
 #import "LUAPIClient.h"
 #import "LUAuthenticatedAPIRequest.h"
 #import "LUCategory.h"
@@ -14,6 +13,7 @@
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
                                                     path:path
+                                              apiVersion:LUAPIVersion13
                                               parameters:@{@"page" : @(page)}
                                             modelFactory:[LUMerchantJSONFactory factory]];
 }
@@ -35,6 +35,7 @@
 
   return [LUAPIRequest apiRequestWithMethod:@"GET"
                                        path:@"merchants"
+                                 apiVersion:LUAPIVersion13
                                  parameters:params
                                modelFactory:[LUMerchantJSONFactory factory]];
 }
@@ -44,6 +45,7 @@
 
   return [LUAPIRequest apiRequestWithMethod:@"GET"
                                        path:path
+                                 apiVersion:LUAPIVersion13
                                  parameters:nil
                                modelFactory:[LUMerchantJSONFactory factory]];
 }

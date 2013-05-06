@@ -1,4 +1,3 @@
-#import <CoreLocation/CoreLocation.h>
 #import "LUAPIRequest.h"
 #import "LUCauseCategory.h"
 #import "LUCauseRequestFactory.h"
@@ -23,6 +22,10 @@ describe(@"LUCauseRequestFactory", ^{
       [[request.path should] equal:@"causes"];
     });
 
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
+
     it(@"returns a request with parameters for featured causes", ^{
       [[request.parameters should] equal:@{@"featured": @YES}];
     });
@@ -43,6 +46,10 @@ describe(@"LUCauseRequestFactory", ^{
 
     it(@"returns a request to the path 'causes'", ^{
       [[request.path should] equal:@"causes"];
+    });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
 
     it(@"returns a request with the parameters for the given category and page", ^{
@@ -69,6 +76,10 @@ describe(@"LUCauseRequestFactory", ^{
       [[request.path should] equal:@"causes"];
     });
 
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
+
     it(@"returns a request with the parameters for the given location and page", ^{
       NSDictionary *expectedParams = @{@"lat" : @(lat), @"lng" : @(lng), @"page" : @(page)};
 
@@ -89,6 +100,10 @@ describe(@"LUCauseRequestFactory", ^{
 
     it(@"returns a request to the path 'causes'", ^{
       [[request.path should] equal:@"causes"];
+    });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
 
     it(@"returns a request with the parameters for the given page", ^{

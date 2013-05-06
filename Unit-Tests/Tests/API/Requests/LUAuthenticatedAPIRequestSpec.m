@@ -7,6 +7,7 @@ SPEC_BEGIN(LUAuthenticatedAPIRequestSpec)
 describe(@"LUAuthenticatedAPIRequest", ^{
   NSString *method = @"GET";
   NSString *path = @"/example";
+  NSString *apiVersion = LUAPIVersion13;
   NSDictionary *parameters = @{@"test" : @1};
   LUAbstractJSONModelFactory *modelFactory = [LUAbstractJSONModelFactory mock];
 
@@ -17,6 +18,7 @@ describe(@"LUAuthenticatedAPIRequest", ^{
   it(@"is a LUAPIRequest", ^{
     LUAuthenticatedAPIRequest *request = [[LUAuthenticatedAPIRequest alloc] initWithMethod:method
                                                                                       path:path
+                                                                                apiVersion:apiVersion
                                                                                 parameters:parameters
                                                                               modelFactory:modelFactory];
 
@@ -34,6 +36,7 @@ describe(@"LUAuthenticatedAPIRequest", ^{
       it(@"adds the access token to the parameters", ^{
         LUAuthenticatedAPIRequest *request = [[LUAuthenticatedAPIRequest alloc] initWithMethod:method
                                                                                           path:path
+                                                                                    apiVersion:apiVersion
                                                                                     parameters:parameters
                                                                                   modelFactory:modelFactory];
 
@@ -50,6 +53,7 @@ describe(@"LUAuthenticatedAPIRequest", ^{
       it(@"sets the parameters without an access token", ^{
         LUAuthenticatedAPIRequest *request = [[LUAuthenticatedAPIRequest alloc] initWithMethod:method
                                                                                           path:path
+                                                                                    apiVersion:apiVersion
                                                                                     parameters:parameters
                                                                                   modelFactory:modelFactory];
 

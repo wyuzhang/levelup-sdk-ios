@@ -34,6 +34,10 @@ describe(@"LUOAuthTokenRequestFactory", ^{
       [[request.path should] equal:@"oauth/access_token"];
     });
 
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
+
     it(@"returns a request with the expected parameters", ^{
       NSDictionary *expectedParams = @{
         @"client_id" : apiKey,
@@ -60,6 +64,10 @@ describe(@"LUOAuthTokenRequestFactory", ^{
 
     it(@"returns a request to the path 'oauth/access_token'", ^{
       [[request.path should] equal:@"oauth/access_token"];
+    });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
 
     it(@"returns a request with the expected parameters", ^{

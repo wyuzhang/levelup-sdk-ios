@@ -30,6 +30,10 @@ describe(@"LUUserRequestFactory", ^{
     it(@"returns a request to the path 'users/<userid>'", ^{
       [[request.path should] equal:@"users/1"];
     });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
   });
 
   describe(@"requestToConnectToFacebookWithAccessToken:", ^{
@@ -47,6 +51,10 @@ describe(@"LUUserRequestFactory", ^{
 
     it(@"returns a request to the path 'users/<userid>/facebook_connections'", ^{
       [[request.path should] equal:@"users/1/facebook_connections"];
+    });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
 
     it(@"returns a request with parameters for the facebook access token", ^{
@@ -72,6 +80,10 @@ describe(@"LUUserRequestFactory", ^{
 
     it(@"returns a request to the path 'users'", ^{
       [[request.path should] equal:@"users"];
+    });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
 
     it(@"returns a request with parameters including the API key as the clientId", ^{
@@ -101,6 +113,10 @@ describe(@"LUUserRequestFactory", ^{
     it(@"returns a request to the path 'users/<userid>/facebook_connections'", ^{
       [[request.path should] equal:@"users/1/facebook_connections"];
     });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
   });
 
   describe(@"requestToRemoveCauseAffiliation", ^{
@@ -119,6 +135,10 @@ describe(@"LUUserRequestFactory", ^{
     it(@"returns a request to the path 'cause_affiliation'", ^{
       [[request.path should] equal:@"cause_affiliation"];
     });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
   });
 
   describe(@"requestToResetPasswordWithEmail:", ^{
@@ -134,6 +154,10 @@ describe(@"LUUserRequestFactory", ^{
 
     it(@"returns a request to the path 'users/forgot_password'", ^{
       [[request.path should] equal:@"users/forgot_password"];
+    });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
 
     it(@"returns a request with parameters for the user email", ^{
@@ -158,6 +182,10 @@ describe(@"LUUserRequestFactory", ^{
       [[request.path should] equal:@"cause_affiliation"];
     });
 
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
+
     it(@"returns a request with parameters for the causeId", ^{
       [[request.parameters should] equal:@{@"cause_id" : causeId}];
     });
@@ -180,6 +208,10 @@ describe(@"LUUserRequestFactory", ^{
 
     it(@"returns a request to the path 'users/<userid>'", ^{
       [[request.path should] equal:@"users/1"];
+    });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
 
     it(@"returns a request with parameters for the user", ^{

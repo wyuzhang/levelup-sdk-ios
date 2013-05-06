@@ -3,7 +3,8 @@
 @interface LULocation (FakeInstance)
 
 + (LULocation *)fakeInstance;
-+ (LULocation *)fakeInstanceWithLat:(NSNumber *)lat lng:(NSNumber *)lng;
++ (LULocation *)fakeInstanceWithLatitude:(NSNumber *)latitude longitude:(NSNumber *)longitude;
++ (LULocation *)fakeInstanceWithLocationID:(NSNumber *)locationID;
 + (LULocation *)fakeInstanceWithNoExtendedAddress;
 
 @end

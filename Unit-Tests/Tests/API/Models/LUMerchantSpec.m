@@ -70,12 +70,12 @@ describe(@"LUMerchant", ^{
 
     context(@"when the merchant has locations", ^{
       LULocation *closeLocation = [[LULocation alloc] init];
-      [closeLocation stub:@selector(lat) andReturn:@46.0f];
-      [closeLocation stub:@selector(lng) andReturn:@-71.0f];
+      [closeLocation stub:@selector(latitude) andReturn:@46.0f];
+      [closeLocation stub:@selector(longitude) andReturn:@-71.0f];
 
       LULocation *farLocation = [[LULocation alloc] init];
-      [farLocation stub:@selector(lat) andReturn:@-45.0f];
-      [farLocation stub:@selector(lng) andReturn:@-70.0f];
+      [farLocation stub:@selector(latitude) andReturn:@-45.0f];
+      [farLocation stub:@selector(longitude) andReturn:@-70.0f];
 
       LUMerchant *merchant = [LUMerchant fakeInstanceWithLocations:@[farLocation, closeLocation]];
 

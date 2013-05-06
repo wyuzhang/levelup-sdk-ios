@@ -12,6 +12,7 @@
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
                                                     path:path
+                                              apiVersion:LUAPIVersion13
                                               parameters:@{@"page" : @(page)}
                                             modelFactory:[LUBundleJSONFactory factory]];
 }

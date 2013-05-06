@@ -29,6 +29,7 @@ NSString * const LUDeviceTokenKey = @"LUDeviceToken";
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
                                                     path:@"apn_devices"
+                                              apiVersion:LUAPIVersion13
                                               parameters:@{@"apn_device" : parameters}
                                             modelFactory:nil];
 }
@@ -39,6 +40,7 @@ NSString * const LUDeviceTokenKey = @"LUDeviceToken";
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"
                                        path:@"apn_devices"
+                                 apiVersion:LUAPIVersion13
                                  parameters:@{@"apn_device" : @{@"token" : deviceToken}}
                                modelFactory:nil];
 }

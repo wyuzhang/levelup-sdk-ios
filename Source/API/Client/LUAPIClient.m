@@ -65,7 +65,7 @@ __strong static id _sharedClient = nil;
                                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                                                       if (success) {
                                                         if (apiRequest.modelFactory) {
-                                                          success([apiRequest.modelFactory fromJSONObject:JSON]);
+                                                          success([apiRequest.modelFactory fromJSONObject:JSON httpResponse:response]);
                                                         } else {
                                                           success(JSON);
                                                         }

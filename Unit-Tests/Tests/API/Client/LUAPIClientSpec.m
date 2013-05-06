@@ -121,7 +121,7 @@ describe(@"LUAPIClient", ^{
       [LUAPIClient setupWithAPIKey:@"test" developmentMode:YES];
       client = [LUAPIClient sharedClient];
 
-      apiRequest = [LUAPIRequest apiRequestWithMethod:@"GET" path:@"test" parameters:nil modelFactory:nil];
+      apiRequest = [LUAPIRequest apiRequestWithMethod:@"GET" path:@"test" apiVersion:LUAPIVersion13 parameters:nil modelFactory:nil];
     });
 
     it(@"creates an AFJSONRequestOperation operation for the request", ^{
@@ -149,7 +149,7 @@ describe(@"LUAPIClient", ^{
       it(@"creates a model object from the JSON and passes it to the success block", ^{
         id deserializedResponse = [KWMock mock];
         apiRequest.modelFactory = [LUAbstractJSONModelFactory mock];
-        [[apiRequest.modelFactory stubAndReturn:deserializedResponse] fromJSONObject:@{@"ok" : @YES}];
+        [[apiRequest.modelFactory stubAndReturn:deserializedResponse] fromJSONObject:@{@"ok" : @YES} httpResponse:any()];
 
         __block id successResult;
         [client performRequest:apiRequest

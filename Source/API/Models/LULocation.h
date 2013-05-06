@@ -1,4 +1,3 @@
-#import <CoreLocation/CoreLocation.h>
 #import "LUAPIModel.h"
 #import <MapKit/MapKit.h>
 
@@ -14,6 +13,11 @@
 @interface LULocation : LUAPIModel <MKAnnotation>
 
 /**
+ An array of category IDs to which this location belongs.
+ */
+@property (nonatomic, strong) NSArray *categoryIDs;
+
+/**
  An optional "extended" address for the location. An example would be an apartment number.
  */
 @property (nonatomic, copy, readonly) NSString *extendedAddress;
@@ -27,7 +31,7 @@
 /**
  The latitude of the location.
  */
-@property (nonatomic, copy, readonly) NSNumber *lat;
+@property (nonatomic, copy, readonly) NSNumber *latitude;
 
 /**
  The location's town or city.
@@ -42,7 +46,17 @@
 /**
  The longitude of the location.
  */
-@property (nonatomic, copy, readonly) NSNumber *lng;
+@property (nonatomic, copy, readonly) NSNumber *longitude;
+
+/**
+ The ID of this location's merchant.
+ */
+@property (nonatomic, copy) NSNumber *merchantID;
+
+/**
+ The location's merchant's name.
+ */
+@property (nonatomic, copy) NSString *merchantName;
 
 /**
  The location's name.
@@ -65,16 +79,37 @@
 @property (nonatomic, copy, readonly) NSString *region;
 
 /**
+ If `shown` is set to NO, then this location should not be displayed in-app.
+ */
+@property (nonatomic, assign) BOOL shown;
+
+/**
+ Specifies if this instance of `LULocation` is only a summary. If it is, then only `categoryIDs`, `latitude`,
+ `locationID`, `longitude`, `merchantName`, `merchantID`, `shown` and `updatedAtDate` will be set.
+ */
+@property (nonatomic, assign) BOOL summary;
+
+/**
  The location's address. If the location's address has a second line (such as an apartment number), this will be
  stored separately in the `extendedAddress` field.
  */
 @property (nonatomic, copy, readonly) NSString *streetAddress;
 
-- (id)initWithExtendedAddress:(NSString *)extendedAddress hours:(NSString *)hours
-                          lat:(NSNumber *)lat locality:(NSString *)locality
-                   locationID:(NSNumber *)locationID lng:(NSNumber *)lng name:(NSString *)name
-                        phone:(NSString *)phone postalCode:(NSString *)postalCode
-                       region:(NSString *)region streetAddress:(NSString *)streetAddress;
+/**
+ The time that this location was last changed on the server.
+ */
+@property (nonatomic, copy) NSDate *updatedAtDate;
+
+- (id)initWithCategoryIDs:(NSArray *)categoryIDs extendedAddress:(NSString *)extendedAddress hours:(NSString *)hours
+                 latitude:(NSNumber *)latitude locality:(NSString *)locality locationID:(NSNumber *)locationID
+                longitude:(NSNumber *)longitude merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName
+                     name:(NSString *)name phone:(NSString *)phone postalCode:(NSString *)postalCode
+                   region:(NSString *)region shown:(BOOL)shown streetAddress:(NSString *)streetAddress
+            updatedAtDate:(NSDate *)updatedAtDate;
+
+- (id)initWithCategoryIDs:(NSArray *)categoryIDs latitude:(NSNumber *)latitude locationID:(NSNumber *)locationID
+                longitude:(NSNumber *)longitude merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName
+                    shown:(BOOL)shown updatedAtDate:(NSDate *)updatedAtDate;
 
 /**
  If the location has both a `streetAddress` and an `extendedAddress`, this will return both values joined by a comma.

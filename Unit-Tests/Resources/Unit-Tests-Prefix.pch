@@ -12,6 +12,7 @@
   #import "LevelUpSDK.h"
   #import "LUFixtures.h"
   #import "LUTestingFactories.h"
+  #import "NSManagedObjectContext+TestContext.h"
 
   #import "Kiwi.h"
 #endif

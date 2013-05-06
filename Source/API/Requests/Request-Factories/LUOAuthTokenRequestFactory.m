@@ -32,6 +32,7 @@
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"
                                        path:@"oauth/access_token"
+                                 apiVersion:LUAPIVersion13
                                  parameters:parameters
                                modelFactory:[LUOAuthTokenJSONFactory factory]];
 }

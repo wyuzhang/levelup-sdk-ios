@@ -4,8 +4,7 @@
 #import "LUMerchant.h"
 #import "LUMonetaryValue.h"
 #import "LUUser.h"
-#import "NSArray+ObjectAccess.h"
-#import <UIKit/UIKit.h>
+#import "NSArray+LUAdditions.h"
 
 NSString * const MerchantWebService = @"MerchantWebService";
 NSString * const MerchantYelpService = @"MerchantYelpService";

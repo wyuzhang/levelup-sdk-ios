@@ -28,6 +28,10 @@ describe(@"LUOrderRequestFactory", ^{
       [[request.path should] equal:@"users/1/orders"];
     });
 
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
+
     it(@"returns a request with parameters for the given merchant and page", ^{
       [[request.parameters should] equal:@{@"merchant_ids" : merchantId, @"page" : @(page)}];
     });
@@ -50,6 +54,10 @@ describe(@"LUOrderRequestFactory", ^{
       [[request.path should] equal:@"users/1/orders"];
     });
 
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
+
     it(@"returns a request with parameters for the given page", ^{
       [[request.parameters should] equal:@{@"page" : @(page)}];
     });
@@ -66,6 +74,10 @@ describe(@"LUOrderRequestFactory", ^{
 
     it(@"returns a GET request", ^{
       [[request.method should] equal:@"GET"];
+    });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
 
     it(@"returns a request to the path 'orders/<id>'", ^{

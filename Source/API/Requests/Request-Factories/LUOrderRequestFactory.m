@@ -12,6 +12,7 @@
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
                                                     path:path
+                                              apiVersion:LUAPIVersion13
                                               parameters:@{@"merchant_ids" : merchantId, @"page" : @(page)}
                                             modelFactory:[LUOrderJSONFactory factory]];
 }
@@ -21,6 +22,7 @@
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
                                                     path:path
+                                              apiVersion:LUAPIVersion13
                                               parameters:@{@"page" : @(page)}
                                             modelFactory:[LUOrderJSONFactory factory]];
 }
@@ -30,6 +32,7 @@
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
                                                     path:path
+                                              apiVersion:LUAPIVersion13
                                               parameters:nil
                                             modelFactory:[LUOrderJSONFactory factory]];
 }

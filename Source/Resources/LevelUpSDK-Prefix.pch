@@ -3,6 +3,9 @@
 //
 
 #ifdef __OBJC__
+  #import <CoreData/CoreData.h>
+  #import <CoreGraphics/CoreGraphics.h>
+  #import <CoreLocation/CoreLocation.h>
   #import <Foundation/Foundation.h>
   #import <MobileCoreServices/MobileCoreServices.h>
   #import <SystemConfiguration/SystemConfiguration.h>

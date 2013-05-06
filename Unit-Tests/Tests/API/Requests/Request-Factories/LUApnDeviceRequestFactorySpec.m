@@ -45,6 +45,10 @@ describe(@"LUApnDeviceRequestFactory", ^{
       [[request.path should] equal:@"apn_devices"];
     });
 
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
+
     it(@"returns a request with the expected parameters", ^{
       NSDictionary *expectedParams = @{@"apn_device" : @{ @"development" : @YES, @"token" : @"A60F7DB9" } };
 
@@ -82,6 +86,10 @@ describe(@"LUApnDeviceRequestFactory", ^{
 
       it(@"returns a request to the path 'apn_devices'", ^{
         [[request.path should] equal:@"apn_devices"];
+      });
+
+      it(@"returns a request to version 13 of the API", ^{
+        [[request.apiVersion should] equal:LUAPIVersion13];
       });
 
       it(@"returns the previously registered device token in the parameters", ^{

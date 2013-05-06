@@ -1,11 +1,19 @@
 @class LUAbstractJSONModelFactory;
 
+extern NSString * const LUAPIVersion13;
+extern NSString * const LUAPIVersion14;
+
 /**
  `LUAPIRequest` represents a request to the LevelUp API. To perform a request, an `LUAPIRequest` instance is passed
  to the `performRequest:success:failure` method of `LUAPIClient`. `LUAPIRequest` instances should usually be created
  by request builders.
  */
 @interface LUAPIRequest : NSObject
+
+/**
+ The version of the LevelUp API to use for this request.
+ */
+@property (nonatomic, copy) NSString *apiVersion;
 
 /**
  The HTTP method of the request: "GET", "POST", "PUT", or "DELETE".
@@ -38,11 +46,13 @@
  */
 + (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
                                   path:(NSString *)path
+                            apiVersion:(NSString *)apiVersion
                             parameters:(NSDictionary *)parameters
                           modelFactory:(LUAbstractJSONModelFactory *)modelFactory;
 
 - (id)initWithMethod:(NSString *)method
                 path:(NSString *)path
+          apiVersion:(NSString *)apiVersion
           parameters:(NSDictionary *)parameters
         modelFactory:(LUAbstractJSONModelFactory *)modelFactory;
 

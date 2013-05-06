@@ -1,4 +1,6 @@
+#import <CoreData/CoreData.h>
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
@@ -38,6 +40,9 @@
 #import "LUUserAddress.h"
 
 #import "LUAPIErrorCodes.h"
+
+#import "LUCachedLocationSearch.h"
+#import "LULocationCacheUpdater.h"
 
 #import "LUQRCodeGenerator.h"
 #import "LUQRCodeScannerView.h"

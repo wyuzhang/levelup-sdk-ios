@@ -1,4 +1,3 @@
-#import <CoreLocation/CoreLocation.h>
 #import "LUAPIRequest.h"
 #import "LUCauseCategory.h"
 #import "LUCauseJSONFactory.h"
@@ -29,6 +28,7 @@
 + (LUAPIRequest *)requestForCausesWithParameters:(NSDictionary *)parameters {
   return [LUAPIRequest apiRequestWithMethod:@"GET"
                                        path:@"causes"
+                                 apiVersion:LUAPIVersion13
                                  parameters:parameters
                                modelFactory:[LUCauseJSONFactory factory]];
 }

@@ -57,13 +57,16 @@
 		02D68DC917381E0D005E1BA8 /* LUCreditCard+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DC717381E0D005E1BA8 /* LUCreditCard+FakeInstance.m */; };
 		02D68DCC17381F68005E1BA8 /* LUUser+FakeInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 02D68DCA17381F68005E1BA8 /* LUUser+FakeInstance.h */; };
 		02D68DCD17381F68005E1BA8 /* LUUser+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DCB17381F68005E1BA8 /* LUUser+FakeInstance.m */; };
-		2523E31317374B1D00FBDFEB /* LUWebLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 2523E31117374B1D00FBDFEB /* LUWebLink.h */; };
-		2523E31417374B1D00FBDFEB /* LUWebLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523E31217374B1D00FBDFEB /* LUWebLink.m */; };
+		02D68DD01738370F005E1BA8 /* NSRegularExpression+LUAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 02D68DCE1738370F005E1BA8 /* NSRegularExpression+LUAdditions.h */; };
+		02D68DD11738370F005E1BA8 /* NSRegularExpression+LUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DCF1738370F005E1BA8 /* NSRegularExpression+LUAdditions.m */; };
+		02D68DDA1738497A005E1BA8 /* LULocationRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DD91738497A005E1BA8 /* LULocationRequestFactorySpec.m */; };
+		2523E31317374B1D00FBDFEB /* LUWebLinkParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2523E31117374B1D00FBDFEB /* LUWebLinkParser.h */; };
+		2523E31417374B1D00FBDFEB /* LUWebLinkParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523E31217374B1D00FBDFEB /* LUWebLinkParser.m */; };
 		2523E31717374B2900FBDFEB /* LULocationSummaryJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 2523E31517374B2900FBDFEB /* LULocationSummaryJSONFactory.h */; };
 		2523E31817374B2900FBDFEB /* LULocationSummaryJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523E31617374B2900FBDFEB /* LULocationSummaryJSONFactory.m */; };
 		2523E31B17374B3F00FBDFEB /* LULocationRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 2523E31917374B3F00FBDFEB /* LULocationRequestFactory.h */; };
 		2523E31C17374B3F00FBDFEB /* LULocationRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523E31A17374B3F00FBDFEB /* LULocationRequestFactory.m */; };
-		2523E31F17374C0800FBDFEB /* LUWebLinkSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523E31E17374C0800FBDFEB /* LUWebLinkSpec.m */; };
+		2523E31F17374C0800FBDFEB /* LUWebLinkParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523E31E17374C0800FBDFEB /* LUWebLinkParserSpec.m */; };
 		2523E32217374C5C00FBDFEB /* LULocationSummaries.h in Headers */ = {isa = PBXBuildFile; fileRef = 2523E32017374C5C00FBDFEB /* LULocationSummaries.h */; };
 		2523E32317374C5C00FBDFEB /* LULocationSummaries.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523E32117374C5C00FBDFEB /* LULocationSummaries.m */; };
 		2523E32D17374D8B00FBDFEB /* LUCachedLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2523E32517374D8B00FBDFEB /* LUCachedLocation.h */; };
@@ -169,7 +172,7 @@
 		C1CAF145173052A7003B3D01 /* LUOrderRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0EB173052A7003B3D01 /* LUOrderRequestFactorySpec.m */; };
 		C1CAF146173052A7003B3D01 /* LUTicketRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0EC173052A7003B3D01 /* LUTicketRequestFactorySpec.m */; };
 		C1CAF147173052A7003B3D01 /* LUUserRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0ED173052A7003B3D01 /* LUUserRequestFactorySpec.m */; };
-		C1CAF148173052A7003B3D01 /* NSArrayObjectAccessSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0EF173052A7003B3D01 /* NSArrayObjectAccessSpec.m */; };
+		C1CAF148173052A7003B3D01 /* NSArrayLUAdditionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0EF173052A7003B3D01 /* NSArrayLUAdditionsSpec.m */; };
 		C1CAF149173052A7003B3D01 /* NSDataHexStringSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0F0173052A7003B3D01 /* NSDataHexStringSpec.m */; };
 		C1CAF14A173052A7003B3D01 /* NSDateStringFormatsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0F1173052A7003B3D01 /* NSDateStringFormatsSpec.m */; };
 		C1CAF14B173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0F2173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m */; };
@@ -296,8 +299,8 @@
 		C1CAF26917315415003B3D01 /* LUTicketRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1D317315415003B3D01 /* LUTicketRequestFactory.m */; };
 		C1CAF26A17315415003B3D01 /* LUUserRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1D417315415003B3D01 /* LUUserRequestFactory.h */; };
 		C1CAF26B17315415003B3D01 /* LUUserRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1D517315415003B3D01 /* LUUserRequestFactory.m */; };
-		C1CAF26C17315415003B3D01 /* NSArray+ObjectAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1D717315415003B3D01 /* NSArray+ObjectAccess.h */; };
-		C1CAF26D17315415003B3D01 /* NSArray+ObjectAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1D817315415003B3D01 /* NSArray+ObjectAccess.m */; };
+		C1CAF26C17315415003B3D01 /* NSArray+LUAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1D717315415003B3D01 /* NSArray+LUAdditions.h */; };
+		C1CAF26D17315415003B3D01 /* NSArray+LUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1D817315415003B3D01 /* NSArray+LUAdditions.m */; };
 		C1CAF26E17315415003B3D01 /* NSData+HexString.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1D917315415003B3D01 /* NSData+HexString.h */; };
 		C1CAF26F17315415003B3D01 /* NSData+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1DA17315415003B3D01 /* NSData+HexString.m */; };
 		C1CAF27017315415003B3D01 /* NSDate+StringFormats.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1DB17315415003B3D01 /* NSDate+StringFormats.h */; };
@@ -385,9 +388,37 @@
 		02D68DC717381E0D005E1BA8 /* LUCreditCard+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUCreditCard+FakeInstance.m"; sourceTree = "<group>"; };
 		02D68DCA17381F68005E1BA8 /* LUUser+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUUser+FakeInstance.h"; sourceTree = "<group>"; };
 		02D68DCB17381F68005E1BA8 /* LUUser+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUUser+FakeInstance.m"; sourceTree = "<group>"; };
+		02D68DCE1738370F005E1BA8 /* NSRegularExpression+LUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRegularExpression+LUAdditions.h"; sourceTree = "<group>"; };
+		02D68DCF1738370F005E1BA8 /* NSRegularExpression+LUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRegularExpression+LUAdditions.m"; sourceTree = "<group>"; };
+		02D68DD91738497A005E1BA8 /* LULocationRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationRequestFactorySpec.m; sourceTree = "<group>"; };
 		05C538A8A6814C6E82461EB1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		1A39890392E641DAA8438DC9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.xcconfig"; path = "Pods/Pods-test.xcconfig"; sourceTree = SOURCE_ROOT; };
+		2523E31117374B1D00FBDFEB /* LUWebLinkParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUWebLinkParser.h; sourceTree = "<group>"; };
+		2523E31217374B1D00FBDFEB /* LUWebLinkParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUWebLinkParser.m; sourceTree = "<group>"; };
+		2523E31517374B2900FBDFEB /* LULocationSummaryJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationSummaryJSONFactory.h; sourceTree = "<group>"; };
+		2523E31617374B2900FBDFEB /* LULocationSummaryJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationSummaryJSONFactory.m; sourceTree = "<group>"; };
+		2523E31917374B3F00FBDFEB /* LULocationRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationRequestFactory.h; sourceTree = "<group>"; };
+		2523E31A17374B3F00FBDFEB /* LULocationRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationRequestFactory.m; sourceTree = "<group>"; };
+		2523E31E17374C0800FBDFEB /* LUWebLinkParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUWebLinkParserSpec.m; sourceTree = "<group>"; };
+		2523E32017374C5C00FBDFEB /* LULocationSummaries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationSummaries.h; sourceTree = "<group>"; };
+		2523E32117374C5C00FBDFEB /* LULocationSummaries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationSummaries.m; sourceTree = "<group>"; };
+		2523E32517374D8B00FBDFEB /* LUCachedLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCachedLocation.h; sourceTree = "<group>"; };
+		2523E32617374D8B00FBDFEB /* LUCachedLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCachedLocation.m; sourceTree = "<group>"; };
+		2523E32717374D8B00FBDFEB /* LUCachedLocationSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCachedLocationSearch.h; sourceTree = "<group>"; };
+		2523E32817374D8B00FBDFEB /* LUCachedLocationSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCachedLocationSearch.m; sourceTree = "<group>"; };
+		2523E32917374D8B00FBDFEB /* LUCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCoreDataStack.h; sourceTree = "<group>"; };
+		2523E32A17374D8B00FBDFEB /* LUCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCoreDataStack.m; sourceTree = "<group>"; };
+		2523E32B17374D8B00FBDFEB /* LULocationCacheUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationCacheUpdater.h; sourceTree = "<group>"; };
+		2523E32C17374D8B00FBDFEB /* LULocationCacheUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationCacheUpdater.m; sourceTree = "<group>"; };
+		2523E33617374D9C00FBDFEB /* LUAPIObjectModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LUAPIObjectModel.xcdatamodel; sourceTree = "<group>"; };
+		2523E33717374D9C00FBDFEB /* LUPersistedObjectsInitial.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = LUPersistedObjectsInitial.sqlite; sourceTree = "<group>"; };
+		2523E33B17374DCC00FBDFEB /* LUCachedLocationSearchSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCachedLocationSearchSpec.m; sourceTree = "<group>"; };
+		2523E33C17374DCC00FBDFEB /* LUCachedLocationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCachedLocationSpec.m; sourceTree = "<group>"; };
+		2523E33D17374DCC00FBDFEB /* LULocationCacheUpdaterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationCacheUpdaterSpec.m; sourceTree = "<group>"; };
+		2523E34117374DEF00FBDFEB /* NSManagedObjectContext+TestContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TestContext.h"; sourceTree = "<group>"; };
+		2523E34217374DEF00FBDFEB /* NSManagedObjectContext+TestContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TestContext.m"; sourceTree = "<group>"; };
+		2523E34717374EA100FBDFEB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		257B026B166853EA006ACA24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2590537F16C58B4E0021B411 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		25F643A4166832D600A05C0E /* libLevelUpSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLevelUpSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -495,7 +526,7 @@
 		C1CAF0EB173052A7003B3D01 /* LUOrderRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderRequestFactorySpec.m; sourceTree = "<group>"; };
 		C1CAF0EC173052A7003B3D01 /* LUTicketRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUTicketRequestFactorySpec.m; sourceTree = "<group>"; };
 		C1CAF0ED173052A7003B3D01 /* LUUserRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserRequestFactorySpec.m; sourceTree = "<group>"; };
-		C1CAF0EF173052A7003B3D01 /* NSArrayObjectAccessSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayObjectAccessSpec.m; sourceTree = "<group>"; };
+		C1CAF0EF173052A7003B3D01 /* NSArrayLUAdditionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayLUAdditionsSpec.m; sourceTree = "<group>"; };
 		C1CAF0F0173052A7003B3D01 /* NSDataHexStringSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataHexStringSpec.m; sourceTree = "<group>"; };
 		C1CAF0F1173052A7003B3D01 /* NSDateStringFormatsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateStringFormatsSpec.m; sourceTree = "<group>"; };
 		C1CAF0F2173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryObjectClassAccessSpec.m; sourceTree = "<group>"; };
@@ -622,8 +653,8 @@
 		C1CAF1D317315415003B3D01 /* LUTicketRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUTicketRequestFactory.m; sourceTree = "<group>"; };
 		C1CAF1D417315415003B3D01 /* LUUserRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUUserRequestFactory.h; sourceTree = "<group>"; };
 		C1CAF1D517315415003B3D01 /* LUUserRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserRequestFactory.m; sourceTree = "<group>"; };
-		C1CAF1D717315415003B3D01 /* NSArray+ObjectAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ObjectAccess.h"; sourceTree = "<group>"; };
-		C1CAF1D817315415003B3D01 /* NSArray+ObjectAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ObjectAccess.m"; sourceTree = "<group>"; };
+		C1CAF1D717315415003B3D01 /* NSArray+LUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+LUAdditions.h"; sourceTree = "<group>"; };
+		C1CAF1D817315415003B3D01 /* NSArray+LUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LUAdditions.m"; sourceTree = "<group>"; };
 		C1CAF1D917315415003B3D01 /* NSData+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+HexString.h"; sourceTree = "<group>"; };
 		C1CAF1DA17315415003B3D01 /* NSData+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+HexString.m"; sourceTree = "<group>"; };
 		C1CAF1DB17315415003B3D01 /* NSDate+StringFormats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+StringFormats.h"; sourceTree = "<group>"; };
@@ -658,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02941E6516B738AE00EDAF6E /* AVFoundation.framework in Frameworks */,
+				2523E34817374EA200FBDFEB /* CoreData.framework in Frameworks */,
 				02941E6B16B739FE00EDAF6E /* CoreGraphics.framework in Frameworks */,
 				02941E6E16B73A2500EDAF6E /* CoreLocation.framework in Frameworks */,
 				02941E8016B73B7B00EDAF6E /* CoreMedia.framework in Frameworks */,
@@ -677,8 +709,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2590538016C58B4E0021B411 /* CFNetwork.framework in Frameworks */,
 				02941E6616B738F300EDAF6E /* AVFoundation.framework in Frameworks */,
+				2590538016C58B4E0021B411 /* CFNetwork.framework in Frameworks */,
+				2523E34917374EAB00FBDFEB /* CoreData.framework in Frameworks */,
 				02941E6C16B73A0D00EDAF6E /* CoreGraphics.framework in Frameworks */,
 				02941E6F16B73A2E00EDAF6E /* CoreLocation.framework in Frameworks */,
 				02941E8116B73B8B00EDAF6E /* CoreMedia.framework in Frameworks */,
@@ -762,6 +795,48 @@
 			path = "Frameworks/Braintree-Encryption/src";
 			sourceTree = "<group>";
 		};
+		2523E31017374B1D00FBDFEB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2523E31117374B1D00FBDFEB /* LUWebLinkParser.h */,
+				2523E31217374B1D00FBDFEB /* LUWebLinkParser.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2523E31D17374C0800FBDFEB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2523E31E17374C0800FBDFEB /* LUWebLinkParserSpec.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2523E32417374D8B00FBDFEB /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				2523E32517374D8B00FBDFEB /* LUCachedLocation.h */,
+				2523E32617374D8B00FBDFEB /* LUCachedLocation.m */,
+				2523E32717374D8B00FBDFEB /* LUCachedLocationSearch.h */,
+				2523E32817374D8B00FBDFEB /* LUCachedLocationSearch.m */,
+				2523E32917374D8B00FBDFEB /* LUCoreDataStack.h */,
+				2523E32A17374D8B00FBDFEB /* LUCoreDataStack.m */,
+				2523E32B17374D8B00FBDFEB /* LULocationCacheUpdater.h */,
+				2523E32C17374D8B00FBDFEB /* LULocationCacheUpdater.m */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		2523E33A17374DCC00FBDFEB /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				2523E33B17374DCC00FBDFEB /* LUCachedLocationSearchSpec.m */,
+				2523E33C17374DCC00FBDFEB /* LUCachedLocationSpec.m */,
+				2523E33D17374DCC00FBDFEB /* LULocationCacheUpdaterSpec.m */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		25F64399166832D600A05C0E = {
 			isa = PBXGroup;
 			children = (
@@ -793,6 +868,7 @@
 				02941F7F16B96CBC00EDAF6E /* Braintree-Encryption */,
 				02941E6416B738AE00EDAF6E /* AVFoundation.framework */,
 				2590537F16C58B4E0021B411 /* CFNetwork.framework */,
+				2523E34717374EA100FBDFEB /* CoreData.framework */,
 				02941E6A16B739FE00EDAF6E /* CoreGraphics.framework */,
 				02941E6D16B73A2500EDAF6E /* CoreLocation.framework */,
 				02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */,
@@ -874,6 +950,7 @@
 			children = (
 				C1CAF0AB173052A7003B3D01 /* API */,
 				C1CAF0EE173052A7003B3D01 /* Categories */,
+				2523E33A17374DCC00FBDFEB /* Persistence */,
 				C1CAF0F5173052A7003B3D01 /* QRCode Management */,
 			);
 			path = Tests;
@@ -930,6 +1007,7 @@
 		C1CAF0B0173052A7003B3D01 /* JSON Factories */ = {
 			isa = PBXGroup;
 			children = (
+				2523E31D17374C0800FBDFEB /* Helpers */,
 				C1CAF0B1173052A7003B3D01 /* LUAbstractJSONModelFactorySpec.m */,
 				C1CAF0B2173052A7003B3D01 /* LUBundleJSONFactorySpec.m */,
 				C1CAF0B3173052A7003B3D01 /* LUCampaignJSONFactorySpec.m */,
@@ -958,9 +1036,9 @@
 		C1CAF0DA173052A7003B3D01 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				C1CAF0DD173052A7003B3D01 /* Request Factories */,
 				C1CAF0DB173052A7003B3D01 /* LUAPIRequestSpec.m */,
 				C1CAF0DC173052A7003B3D01 /* LUAuthenticatedAPIRequestSpec.m */,
-				C1CAF0DD173052A7003B3D01 /* Request Factories */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -977,6 +1055,7 @@
 				C1CAF0E6173052A7003B3D01 /* LUClaimRequestFactorySpec.m */,
 				C1CAF0E7173052A7003B3D01 /* LUCohortRequestFactorySpec.m */,
 				C1CAF0E8173052A7003B3D01 /* LUCreditCardRequestFactorySpec.m */,
+				02D68DD91738497A005E1BA8 /* LULocationRequestFactorySpec.m */,
 				C1CAF0E9173052A7003B3D01 /* LUMerchantRequestFactorySpec.m */,
 				C1CAF0EA173052A7003B3D01 /* LUOAuthTokenRequestFactorySpec.m */,
 				C1CAF0EB173052A7003B3D01 /* LUOrderRequestFactorySpec.m */,
@@ -999,7 +1078,7 @@
 		C1CAF0EE173052A7003B3D01 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				C1CAF0EF173052A7003B3D01 /* NSArrayObjectAccessSpec.m */,
+				C1CAF0EF173052A7003B3D01 /* NSArrayLUAdditionsSpec.m */,
 				C1CAF0F0173052A7003B3D01 /* NSDataHexStringSpec.m */,
 				C1CAF0F1173052A7003B3D01 /* NSDateStringFormatsSpec.m */,
 				C1CAF0F2173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m */,
@@ -1024,6 +1103,7 @@
 				C1CAF15717315414003B3D01 /* API */,
 				C1CAF1D617315415003B3D01 /* Categories */,
 				C1CAF1E317315415003B3D01 /* Constants */,
+				2523E32417374D8B00FBDFEB /* Persistence */,
 				C1CAF1EA17315415003B3D01 /* QRCode Management */,
 				C1CAF2861731556B003B3D01 /* Resources */,
 				C1CAF1E917315415003B3D01 /* LevelUpSDK.h */,
@@ -1082,6 +1162,8 @@
 				C1CAF19E17315414003B3D01 /* LUInterstitialAction.m */,
 				C1CAF19F17315414003B3D01 /* LULocation.h */,
 				C1CAF1A017315414003B3D01 /* LULocation.m */,
+				2523E32017374C5C00FBDFEB /* LULocationSummaries.h */,
+				2523E32117374C5C00FBDFEB /* LULocationSummaries.m */,
 				C1CAF1A117315414003B3D01 /* LULoyalty.h */,
 				C1CAF1A217315414003B3D01 /* LULoyalty.m */,
 				C1CAF1A317315414003B3D01 /* LUMerchant.h */,
@@ -1105,6 +1187,7 @@
 		C1CAF15E17315414003B3D01 /* JSON Factories */ = {
 			isa = PBXGroup;
 			children = (
+				2523E31017374B1D00FBDFEB /* Helpers */,
 				C1CAF15F17315414003B3D01 /* LUAbstractJSONModelFactory.h */,
 				C1CAF16017315414003B3D01 /* LUAbstractJSONModelFactory.m */,
 				C1CAF16117315414003B3D01 /* LUBundleJSONFactory.h */,
@@ -1129,6 +1212,8 @@
 				C1CAF17417315414003B3D01 /* LUInterstitialActionJSONFactory.m */,
 				C1CAF17517315414003B3D01 /* LULocationJSONFactory.h */,
 				C1CAF17617315414003B3D01 /* LULocationJSONFactory.m */,
+				2523E31517374B2900FBDFEB /* LULocationSummaryJSONFactory.h */,
+				2523E31617374B2900FBDFEB /* LULocationSummaryJSONFactory.m */,
 				C1CAF17717315414003B3D01 /* LULoyaltyJSONFactory.h */,
 				C1CAF17817315414003B3D01 /* LULoyaltyJSONFactory.m */,
 				C1CAF17917315414003B3D01 /* LUMerchantJSONFactory.h */,
@@ -1153,11 +1238,11 @@
 		C1CAF1B117315414003B3D01 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				C1CAF1B617315414003B3D01 /* Request Factories */,
 				C1CAF1B217315414003B3D01 /* LUAPIRequest.h */,
 				C1CAF1B317315414003B3D01 /* LUAPIRequest.m */,
 				C1CAF1B417315414003B3D01 /* LUAuthenticatedAPIRequest.h */,
 				C1CAF1B517315414003B3D01 /* LUAuthenticatedAPIRequest.m */,
-				C1CAF1B617315414003B3D01 /* Request Factories */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1182,6 +1267,8 @@
 				C1CAF1C917315414003B3D01 /* LUCohortRequestFactory.m */,
 				C1CAF1CA17315414003B3D01 /* LUCreditCardRequestFactory.h */,
 				C1CAF1CB17315414003B3D01 /* LUCreditCardRequestFactory.m */,
+				2523E31917374B3F00FBDFEB /* LULocationRequestFactory.h */,
+				2523E31A17374B3F00FBDFEB /* LULocationRequestFactory.m */,
 				C1CAF1CC17315414003B3D01 /* LUMerchantRequestFactory.h */,
 				C1CAF1CD17315414003B3D01 /* LUMerchantRequestFactory.m */,
 				C1CAF1CE17315414003B3D01 /* LUOAuthTokenRequestFactory.h */,
@@ -1211,8 +1298,8 @@
 		C1CAF1D617315415003B3D01 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				C1CAF1D717315415003B3D01 /* NSArray+ObjectAccess.h */,
-				C1CAF1D817315415003B3D01 /* NSArray+ObjectAccess.m */,
+				C1CAF1D717315415003B3D01 /* NSArray+LUAdditions.h */,
+				C1CAF1D817315415003B3D01 /* NSArray+LUAdditions.m */,
 				C1CAF1D917315415003B3D01 /* NSData+HexString.h */,
 				C1CAF1DA17315415003B3D01 /* NSData+HexString.m */,
 				C1CAF1DB17315415003B3D01 /* NSDate+StringFormats.h */,
@@ -1221,6 +1308,8 @@
 				C1CAF1DE17315415003B3D01 /* NSDictionary+ObjectClassAccess.m */,
 				C1CAF1DF17315415003B3D01 /* NSNumber+Base36.h */,
 				C1CAF1E017315415003B3D01 /* NSNumber+Base36.m */,
+				02D68DCE1738370F005E1BA8 /* NSRegularExpression+LUAdditions.h */,
+				02D68DCF1738370F005E1BA8 /* NSRegularExpression+LUAdditions.m */,
 				C1CAF1E117315415003B3D01 /* NSString+HTMLStripping.h */,
 				C1CAF1E217315415003B3D01 /* NSString+HTMLStripping.m */,
 			);
@@ -1266,6 +1355,8 @@
 			isa = PBXGroup;
 			children = (
 				C1CAF2871731556B003B3D01 /* LevelUpSDK-Prefix.pch */,
+				2523E33517374D9C00FBDFEB /* LUAPIObjectModel.xcdatamodeld */,
+				2523E33717374D9C00FBDFEB /* LUPersistedObjectsInitial.sqlite */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1273,6 +1364,8 @@
 		C1CAF2881731560E003B3D01 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2523E34117374DEF00FBDFEB /* NSManagedObjectContext+TestContext.h */,
+				2523E34217374DEF00FBDFEB /* NSManagedObjectContext+TestContext.m */,
 				C1CAF2891731560F003B3D01 /* Unit-Tests-Info.plist */,
 				C1CAF28A1731560F003B3D01 /* Unit-Tests-Prefix.pch */,
 			);
@@ -1353,7 +1446,7 @@
 				C1CAF26617315415003B3D01 /* LUOrderRequestFactory.h in Headers */,
 				C1CAF26817315415003B3D01 /* LUTicketRequestFactory.h in Headers */,
 				C1CAF26A17315415003B3D01 /* LUUserRequestFactory.h in Headers */,
-				C1CAF26C17315415003B3D01 /* NSArray+ObjectAccess.h in Headers */,
+				C1CAF26C17315415003B3D01 /* NSArray+LUAdditions.h in Headers */,
 				C1CAF26E17315415003B3D01 /* NSData+HexString.h in Headers */,
 				C1CAF27017315415003B3D01 /* NSDate+StringFormats.h in Headers */,
 				C1CAF27217315415003B3D01 /* NSDictionary+ObjectClassAccess.h in Headers */,
@@ -1366,7 +1459,7 @@
 				C1CAF28017315415003B3D01 /* LUQRCodeGenerator.h in Headers */,
 				C1CAF28217315415003B3D01 /* LUQRCodeScannerView.h in Headers */,
 				C1CAF28417315415003B3D01 /* LUQROverlayView.h in Headers */,
-				2523E31317374B1D00FBDFEB /* LUWebLink.h in Headers */,
+				2523E31317374B1D00FBDFEB /* LUWebLinkParser.h in Headers */,
 				2523E31717374B2900FBDFEB /* LULocationSummaryJSONFactory.h in Headers */,
 				2523E31B17374B3F00FBDFEB /* LULocationRequestFactory.h in Headers */,
 				2523E32217374C5C00FBDFEB /* LULocationSummaries.h in Headers */,
@@ -1376,6 +1469,7 @@
 				2523E33317374D8B00FBDFEB /* LULocationCacheUpdater.h in Headers */,
 				02D68DC817381E0D005E1BA8 /* LUCreditCard+FakeInstance.h in Headers */,
 				02D68DCC17381F68005E1BA8 /* LUUser+FakeInstance.h in Headers */,
+				02D68DD01738370F005E1BA8 /* NSRegularExpression+LUAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1588,7 +1682,7 @@
 				C1CAF26717315415003B3D01 /* LUOrderRequestFactory.m in Sources */,
 				C1CAF26917315415003B3D01 /* LUTicketRequestFactory.m in Sources */,
 				C1CAF26B17315415003B3D01 /* LUUserRequestFactory.m in Sources */,
-				C1CAF26D17315415003B3D01 /* NSArray+ObjectAccess.m in Sources */,
+				C1CAF26D17315415003B3D01 /* NSArray+LUAdditions.m in Sources */,
 				C1CAF26F17315415003B3D01 /* NSData+HexString.m in Sources */,
 				C1CAF27117315415003B3D01 /* NSDate+StringFormats.m in Sources */,
 				C1CAF27317315415003B3D01 /* NSDictionary+ObjectClassAccess.m in Sources */,
@@ -1600,7 +1694,7 @@
 				C1CAF28117315415003B3D01 /* LUQRCodeGenerator.m in Sources */,
 				C1CAF28317315415003B3D01 /* LUQRCodeScannerView.m in Sources */,
 				C1CAF28517315415003B3D01 /* LUQROverlayView.m in Sources */,
-				2523E31417374B1D00FBDFEB /* LUWebLink.m in Sources */,
+				2523E31417374B1D00FBDFEB /* LUWebLinkParser.m in Sources */,
 				2523E31817374B2900FBDFEB /* LULocationSummaryJSONFactory.m in Sources */,
 				2523E31C17374B3F00FBDFEB /* LULocationRequestFactory.m in Sources */,
 				2523E32317374C5C00FBDFEB /* LULocationSummaries.m in Sources */,
@@ -1611,6 +1705,7 @@
 				2523E33817374D9C00FBDFEB /* LUAPIObjectModel.xcdatamodeld in Sources */,
 				02D68DC917381E0D005E1BA8 /* LUCreditCard+FakeInstance.m in Sources */,
 				02D68DCD17381F68005E1BA8 /* LUUser+FakeInstance.m in Sources */,
+				02D68DD11738370F005E1BA8 /* NSRegularExpression+LUAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1708,20 +1803,21 @@
 				C1CAF145173052A7003B3D01 /* LUOrderRequestFactorySpec.m in Sources */,
 				C1CAF146173052A7003B3D01 /* LUTicketRequestFactorySpec.m in Sources */,
 				C1CAF147173052A7003B3D01 /* LUUserRequestFactorySpec.m in Sources */,
-				C1CAF148173052A7003B3D01 /* NSArrayObjectAccessSpec.m in Sources */,
+				C1CAF148173052A7003B3D01 /* NSArrayLUAdditionsSpec.m in Sources */,
 				C1CAF149173052A7003B3D01 /* NSDataHexStringSpec.m in Sources */,
 				C1CAF14A173052A7003B3D01 /* NSDateStringFormatsSpec.m in Sources */,
 				C1CAF14B173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m in Sources */,
 				C1CAF14C173052A7003B3D01 /* NSNumberBase36Spec.m in Sources */,
 				C1CAF14D173052A7003B3D01 /* NSStringHTMLStrippingSpec.m in Sources */,
 				C1CAF14E173052A7003B3D01 /* LUQRCodeGeneratorSpec.m in Sources */,
-				2523E31F17374C0800FBDFEB /* LUWebLinkSpec.m in Sources */,
+				2523E31F17374C0800FBDFEB /* LUWebLinkParserSpec.m in Sources */,
 				2523E33917374DA200FBDFEB /* LUAPIObjectModel.xcdatamodeld in Sources */,
 				2523E34317374DEF00FBDFEB /* NSManagedObjectContext+TestContext.m in Sources */,
 				2523E34417374DF500FBDFEB /* LUCachedLocationSearchSpec.m in Sources */,
 				2523E34517374DFA00FBDFEB /* LUCachedLocationSpec.m in Sources */,
 				2523E34617374DFE00FBDFEB /* LULocationCacheUpdaterSpec.m in Sources */,
 				02D68DC5173809C1005E1BA8 /* LUClaim+FakeInstance.m in Sources */,
+				02D68DDA1738497A005E1BA8 /* LULocationRequestFactorySpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1747,7 +1843,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_VERSION = 0.7.0;
+				FRAMEWORK_VERSION = 0.8.0;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
@@ -1815,7 +1911,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_VERSION = 0.7.0;
+				FRAMEWORK_VERSION = 0.8.0;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1855,7 +1951,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_VERSION = 0.7.0;
+				FRAMEWORK_VERSION = 0.8.0;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
@@ -1977,6 +2073,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2523E33517374D9C00FBDFEB /* LUAPIObjectModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2523E33617374D9C00FBDFEB /* LUAPIObjectModel.xcdatamodel */,
+			);
+			currentVersion = 2523E33617374D9C00FBDFEB /* LUAPIObjectModel.xcdatamodel */;
+			path = LUAPIObjectModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 25F6439B166832D600A05C0E /* Project object */;
 }

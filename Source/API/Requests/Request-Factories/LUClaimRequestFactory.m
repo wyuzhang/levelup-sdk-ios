@@ -13,6 +13,7 @@
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
                                                     path:path
+                                              apiVersion:LUAPIVersion13
                                               parameters:@{@"claim" : @{@"cohort_code" : cohort.code }}
                                             modelFactory:[LUClaimJSONFactory factory]];
 }
@@ -22,6 +23,7 @@
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"
                                        path:path
+                                 apiVersion:LUAPIVersion13
                                  parameters:@{@"legacy_id" : legacyId}
                                modelFactory:[LUClaimJSONFactory factory]];
 }

@@ -11,6 +11,28 @@ describe(@"LULocation", ^{
     [[[LULocation class] should] conformToProtocol:@protocol(MKAnnotation)];
   });
 
+  // Creation
+
+  describe(@"full initializer", ^{
+    it(@"sets summary to NO", ^{
+      LULocation *location = [[LULocation alloc] initWithCategoryIDs:nil extendedAddress:nil hours:nil latitude:nil
+                                                            locality:nil locationID:nil longitude:nil merchantID:nil
+                                                        merchantName:nil name:nil phone:nil postalCode:nil
+                                                              region:nil shown:YES streetAddress:nil updatedAtDate:nil];
+
+      [[theValue(location.summary) should] beNo];
+    });
+  });
+
+  describe(@"summary initializer", ^{
+    it(@"sets summary to YES", ^{
+      LULocation *location = [[LULocation alloc] initWithCategoryIDs:nil latitude:nil locationID:nil longitude:nil
+                                                          merchantID:nil merchantName:nil shown:NO updatedAtDate:nil];
+
+      [[theValue(location.summary) should] beYes];
+    });
+  });
+
   // Public Methods
 
   describe(@"fullStreetAddress", ^{
@@ -34,25 +56,25 @@ describe(@"LULocation", ^{
   });
 
   describe(@"location", ^{
-    context(@"when the location has a lat and a lng", ^{
-      LULocation *location = [LULocation fakeInstanceWithLat:@-70.0f lng:@45.0f];
+    context(@"when the location has a latitude and a longitude", ^{
+      LULocation *location = [LULocation fakeInstanceWithLatitude:@-70.0f longitude:@45.0f];
 
       it(@"returns a CLLocation for the associated location", ^{
         id result = [location location];
         [[result should] beKindOfClass:[CLLocation class]];
 
         CLLocation *clLocation = (CLLocation *)result;
-        [[theValue(clLocation.coordinate.latitude) should] equal:location.lat];
-        [[theValue(clLocation.coordinate.longitude) should] equal:location.lng];
+        [[theValue(clLocation.coordinate.latitude) should] equal:location.latitude];
+        [[theValue(clLocation.coordinate.longitude) should] equal:location.longitude];
       });
     });
 
-    context(@"when the location doesn't have both a lat and a lng", ^{
+    context(@"when the location doesn't have both a latitude and a longitude", ^{
       it(@"is nil", ^{
-        LULocation *location = [LULocation fakeInstanceWithLat:@-70.0f lng:nil];
+        LULocation *location = [LULocation fakeInstanceWithLatitude:@-70.0f longitude:nil];
         [[location location] shouldBeNil];
 
-        location = [LULocation fakeInstanceWithLat:nil lng:@45.0f];
+        location = [LULocation fakeInstanceWithLatitude:nil longitude:@45.0f];
         [[location location] shouldBeNil];
       });
     });
@@ -73,37 +95,37 @@ describe(@"LULocation", ^{
   // MKAnnotation Methods
 
   describe(@"coordinate", ^{
-    context(@"when the location has a lat and a lng", ^{
+    context(@"when the location has a latitude and a longitude", ^{
       it(@"returns a CLLocationCoordinate2D for the associated location", ^{
-        LULocation *location = [LULocation fakeInstanceWithLat:@-70.0f lng:@45.0f];
+        LULocation *location = [LULocation fakeInstanceWithLatitude:@-70.0f longitude:@45.0f];
 
         CLLocationCoordinate2D result = [location coordinate];
-        [[@(result.latitude) should] equal:location.lat];
-        [[@(result.longitude) should] equal:location.lng];
+        [[@(result.latitude) should] equal:location.latitude];
+        [[@(result.longitude) should] equal:location.longitude];
       });
 
       it(@"bounds the latitude to [-90, 90]", ^{
-        LULocation *location = [LULocation fakeInstanceWithLat:@-100.0f lng:@45.0f];
+        LULocation *location = [LULocation fakeInstanceWithLatitude:@-100.0f longitude:@45.0f];
         [[theValue([location coordinate].latitude) should] equal:theValue(-90)];
 
-        location = [LULocation fakeInstanceWithLat:@100.0f lng:@45.0f];
+        location = [LULocation fakeInstanceWithLatitude:@100.0f longitude:@45.0f];
         [[theValue([location coordinate].latitude) should] equal:theValue(90)];
       });
 
       it(@"bounds the longitude to [-180, 180]", ^{
-        LULocation *location = [LULocation fakeInstanceWithLat:@-70.0f lng:@-200.0f];
+        LULocation *location = [LULocation fakeInstanceWithLatitude:@-70.0f longitude:@-200.0f];
         [[theValue([location coordinate].longitude) should] equal:theValue(-180)];
 
-        location = [LULocation fakeInstanceWithLat:@-70.0f lng:@200.0f];
+        location = [LULocation fakeInstanceWithLatitude:@-70.0f longitude:@200.0f];
         [[theValue([location coordinate].longitude) should] equal:theValue(180)];
       });
 
-      context(@"when the location doesn't have both a lat and a lng", ^{
+      context(@"when the location doesn't have both a latitude and a longitude", ^{
         it(@"is kCLLocationCoordinate2DInvalid", ^{
-          LULocation *location = [LULocation fakeInstanceWithLat:@-70.0f lng:nil];
+          LULocation *location = [LULocation fakeInstanceWithLatitude:@-70.0f longitude:nil];
           [[theValue([location coordinate]) should] equal:theValue(kCLLocationCoordinate2DInvalid)];
 
-          location = [LULocation fakeInstanceWithLat:nil lng:@45.0f];
+          location = [LULocation fakeInstanceWithLatitude:nil longitude:@45.0f];
           [[theValue([location coordinate]) should] equal:theValue(kCLLocationCoordinate2DInvalid)];
         });
       });

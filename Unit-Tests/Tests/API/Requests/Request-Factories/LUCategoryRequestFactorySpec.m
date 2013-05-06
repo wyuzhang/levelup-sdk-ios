@@ -21,6 +21,10 @@ describe(@"LUCategoryRequestFactory", ^{
       [[request.path should] equal:@"categories"];
     });
 
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
+
     it(@"returns a request with no parameters", ^{
       [request.parameters shouldBeNil];
     });
@@ -39,6 +43,10 @@ describe(@"LUCategoryRequestFactory", ^{
 
     it(@"returns a request to the path 'cause_categories'", ^{
       [[request.path should] equal:@"cause_categories"];
+    });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
 
     it(@"returns a request with no parameters", ^{

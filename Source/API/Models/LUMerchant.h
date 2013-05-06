@@ -1,4 +1,3 @@
-#import <CoreLocation/CoreLocation.h>
 #import "LUAPIModel.h"
 
 /**

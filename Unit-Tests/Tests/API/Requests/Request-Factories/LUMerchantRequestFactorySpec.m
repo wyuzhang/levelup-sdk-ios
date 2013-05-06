@@ -1,4 +1,3 @@
-#import <CoreLocation/CoreLocation.h>
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
 #import "LUCategory.h"
@@ -28,6 +27,10 @@ describe(@"LUMerchantRequestFactory", ^{
       [[request.path should] equal:@"users/1/merchants"];
     });
 
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
+
     it(@"returns a request with parameters for the given page", ^{
       [[request.parameters should] equal:@{@"page" : @(page)}];
     });
@@ -48,6 +51,10 @@ describe(@"LUMerchantRequestFactory", ^{
 
     it(@"returns a request to the path 'merchants'", ^{
       [[request.path should] equal:@"merchants"];
+    });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
 
     it(@"returns a request with the parameters for the given location and page", ^{
@@ -75,6 +82,10 @@ describe(@"LUMerchantRequestFactory", ^{
       [[request.path should] equal:@"merchants"];
     });
 
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
+
     it(@"returns a request with the parameters for the given location, category and page", ^{
       NSDictionary *expectedParams = @{
         @"lat" : @(lat),
@@ -98,6 +109,10 @@ describe(@"LUMerchantRequestFactory", ^{
 
     it(@"returns a request to the path 'merchants/<id>'", ^{
       [[request.path should] equal:@"merchants/1"];
+    });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
 
     it(@"returns a request with no parameters", ^{

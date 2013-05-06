@@ -15,6 +15,7 @@
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
                                                     path:path
+                                              apiVersion:LUAPIVersion13
                                               parameters:nil
                                             modelFactory:[LUCreditCardJSONFactory factory]];
 }
@@ -40,6 +41,7 @@
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
                                                     path:path
+                                              apiVersion:LUAPIVersion13
                                               parameters:@{@"credit_card" : parameters}
                                             modelFactory:[LUCreditCardJSONFactory factory]];
 }
@@ -49,6 +51,7 @@
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"DELETE"
                                                     path:path
+                                              apiVersion:LUAPIVersion13
                                               parameters:nil
                                             modelFactory:[LUCreditCardJSONFactory factory]];
 }
@@ -58,6 +61,7 @@
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"PUT"
                                                     path:path
+                                              apiVersion:LUAPIVersion13
                                               parameters:nil
                                             modelFactory:[LUCreditCardJSONFactory factory]];
 }

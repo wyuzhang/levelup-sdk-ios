@@ -1,4 +1,4 @@
-#import "LUAPIRequest.h"
+#import "LUAuthenticatedAPIRequest.h"
 #import "LUCohortJSONFactory.h"
 #import "LUCohortRequestFactory.h"
 
@@ -9,7 +9,11 @@
 + (LUAPIRequest *)requestForCohortWithCode:(NSString *)code {
   NSString *path = [NSString stringWithFormat:@"cohorts/%@", code];
 
-  return [LUAPIRequest apiRequestWithMethod:@"GET" path:path parameters:nil modelFactory:[LUCohortJSONFactory factory]];
+  return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
+                                                    path:path
+                                              apiVersion:LUAPIVersion13
+                                              parameters:nil
+                                            modelFactory:[LUCohortJSONFactory factory]];
 }
 
 @end

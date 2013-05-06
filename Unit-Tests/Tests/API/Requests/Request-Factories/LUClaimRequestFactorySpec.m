@@ -30,6 +30,10 @@ describe(@"LUClaimRequestFactory", ^{
       [[request.path should] equal:@"users/1/claims"];
     });
 
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
+
     it(@"returns a request with parameters for the cohort's code", ^{
       NSDictionary *expectedParams = @{@"claim" : @{@"cohort_code" : cohort.code }};
 
@@ -53,6 +57,10 @@ describe(@"LUClaimRequestFactory", ^{
       NSString *expectedPath = [NSString stringWithFormat:@"loyalties/legacy/%@/claims", campaignId];
 
       [[request.path should] equal:expectedPath];
+    });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
 
     it(@"returns a request with parameters including the legacy loyalty id", ^{

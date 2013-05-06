@@ -30,6 +30,10 @@ describe(@"LUCreditCardRequestFactory", ^{
     it(@"returns a request to the path 'users/<userid>/credit_cards'", ^{
       [[request.path should] equal:@"users/1/credit_cards"];
     });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
   });
 
   describe(@"requestToCreateCreditCard:", ^{
@@ -64,6 +68,10 @@ describe(@"LUCreditCardRequestFactory", ^{
       [[request.path should] equal:@"users/1/credit_cards"];
     });
 
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
+
     it(@"request a request with encrypted parameters for the credit card", ^{
       NSDictionary *expectedParams = @{
         @"credit_card" : @{
@@ -95,6 +103,10 @@ describe(@"LUCreditCardRequestFactory", ^{
     it(@"returns a request to the path 'credit_cards/<id>'", ^{
       [[request.path should] equal:@"credit_cards/1"];
     });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
+    });
   });
 
   describe(@"requestToPromoteCreditCardWithId:", ^{
@@ -112,6 +124,10 @@ describe(@"LUCreditCardRequestFactory", ^{
 
     it(@"returns a request to the path 'credit_cards/<id>/promote'", ^{
       [[request.path should] equal:@"credit_cards/1/promote"];
+    });
+
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
   });
 });

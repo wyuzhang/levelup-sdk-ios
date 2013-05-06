@@ -1,4 +1,4 @@
-#import "LUAPIRequest.h"
+#import "LUAuthenticatedAPIRequest.h"
 #import "LUCampaignJSONFactory.h"
 #import "LUCampaignRequestFactory.h"
 
@@ -9,10 +9,11 @@
 + (LUAPIRequest *)requestForCampaignWithId:(NSNumber *)campaignId {
   NSString *path = [NSString stringWithFormat:@"campaigns/%@", campaignId];
 
-  return [LUAPIRequest apiRequestWithMethod:@"GET"
-                                       path:path
-                                 parameters:nil
-                               modelFactory:[LUCampaignJSONFactory factory]];
+  return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
+                                                    path:path
+                                              apiVersion:LUAPIVersion13
+                                              parameters:nil
+                                            modelFactory:[LUCampaignJSONFactory factory]];
 }
 
 @end

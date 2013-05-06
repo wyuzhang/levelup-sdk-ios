@@ -11,6 +11,7 @@
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
                                                     path:path
+                                              apiVersion:LUAPIVersion13
                                               parameters:@{@"ticket" : @{@"body" : body}}
                                             modelFactory:nil];
 }
