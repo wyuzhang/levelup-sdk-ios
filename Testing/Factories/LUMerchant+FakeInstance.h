@@ -1,3 +1,5 @@
+#import "LUMerchant.h"
+
 @interface LUMerchant (FakeInstance)
 
 + (LUMerchant *)fakeInstance;

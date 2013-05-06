@@ -1,4 +1,7 @@
 #import "LUBundle+FakeInstance.h"
+#import "LUOrder+FakeInstance.h"
+#import "LUMonetaryValue.h"
+#import "LURefund+FakeInstance.h"
 
 @implementation LUBundle (FakeInstance)
 

@@ -1,3 +1,5 @@
+#import "LUInterstitialAction.h"
+
 @interface LUInterstitialAction (FakeInstance)
 
 + (LUInterstitialAction *)fakeInstanceForCustomerAquisition;

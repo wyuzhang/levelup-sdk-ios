@@ -1,4 +1,5 @@
 #import "LUDonation+FakeInstance.h"
+#import "LUMonetaryValue.h"
 
 @implementation LUDonation (FakeInstance)
 

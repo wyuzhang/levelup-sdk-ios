@@ -2,41 +2,47 @@
 
 @implementation LUCohort (FakeInstance)
 
-+ (NSArray *)fakeInstancesForAllAvailableCohorts {
-  return @[[self fakeInstanceForEmail], [self fakeInstanceForFacebook], [self fakeInstanceForTwitter]];
++ (LUCohort *)fakeInstance {
+  return [[LUCohort alloc] initWithCampaign:nil code:@"abcdef" cohortDescription:nil cohortID:@1 cohortType:nil
+                                  cohortURL:nil emailBody:nil messageForEmailSubject:nil messageForTwitter:nil];
 }
 
 + (LUCohort *)fakeInstanceForEmail {
-  return [[LUCohort alloc] initWithCampaign:nil code:nil cohortDescription:nil cohortID:nil
-                                 cohortType:@"default_email"
-                                  cohortURL:[NSURL URLWithString:@"http://example.com/email_cohort"]
-                                  emailBody:@"email body"
-                     messageForEmailSubject:@"email subject"
-                          messageForTwitter:nil];
+  LUCohort *cohort = [self fakeInstance];
+  [cohort setValue:@"default_email" forKey:@"cohortType"];
+  [cohort setValue:[NSURL URLWithString:@"http://example.com/email_cohort"] forKey:@"cohortURL"];
+  [cohort setValue:@"email body" forKey:@"emailBody"];
+  [cohort setValue:@"email subject" forKey:@"messageForEmailSubject"];
+  return cohort;
 }
 
 + (LUCohort *)fakeInstanceForFacebook {
-  return [[LUCohort alloc] initWithCampaign:nil code:nil cohortDescription:nil cohortID:nil
-                                 cohortType:@"default_facebook"
-                                  cohortURL:[NSURL URLWithString:@"http://example.com/facebook_cohort"]
-                                  emailBody:nil messageForEmailSubject:nil messageForTwitter:nil];
+  LUCohort *cohort = [self fakeInstance];
+  [cohort setValue:@"default_facebook" forKey:@"cohortType"];
+  [cohort setValue:[NSURL URLWithString:@"http://example.com/facebook_cohort"] forKey:@"cohortURL"];
+  return cohort;
 }
 
 + (LUCohort *)fakeInstanceForReferAFriend {
-  return [[LUCohort alloc] initWithCampaign:nil code:nil cohortDescription:nil cohortID:nil
-                                 cohortType:@"refer_a_friend"
-                                  cohortURL:[NSURL URLWithString:@"http://example.com/referAFriend"]
-                                  emailBody:@"Refer-A-Friend email body"
-                     messageForEmailSubject:@"Refer-A-Friend email subject"
-                          messageForTwitter:@"Refer-A-Friend twitter message"];
+  LUCohort *cohort = [self fakeInstance];
+  [cohort setValue:@"refer_a_friend" forKey:@"cohortType"];
+  [cohort setValue:[NSURL URLWithString:@"http://example.com/referAFriend"] forKey:@"cohortURL"];
+  [cohort setValue:@"Refer-A-Friend email body" forKey:@"emailBody"];
+  [cohort setValue:@"Refer-A-Friend email subject" forKey:@"messageForEmailSubject"];
+  [cohort setValue:@"Refer-A-Friend twitter message" forKey:@"messageForTwitter"];
+  return cohort;
 }
 
 + (LUCohort *)fakeInstanceForTwitter {
-  return [[LUCohort alloc] initWithCampaign:nil code:nil cohortDescription:nil cohortID:nil
-                                 cohortType:@"default_twitter"
-                                  cohortURL:[NSURL URLWithString:@"http://example.com/twitter_cohort"]
-                                  emailBody:nil messageForEmailSubject:nil
-                          messageForTwitter:@"twitter message"];
+  LUCohort *cohort = [self fakeInstance];
+  [cohort setValue:@"default_twitter" forKey:@"cohortType"];
+  [cohort setValue:[NSURL URLWithString:@"http://example.com/twitter_cohort"] forKey:@"cohortURL"];
+  [cohort setValue:@"twitter message" forKey:@"messageForTwitter"];
+  return cohort;
+}
+
++ (NSArray *)fakeInstancesForAllAvailableCohorts {
+  return @[[self fakeInstanceForEmail], [self fakeInstanceForFacebook], [self fakeInstanceForTwitter]];
 }
 
 @end

@@ -1,3 +1,5 @@
+#import "LUBundle.h"
+
 @interface LUBundle (FakeInstance)
 
 + (LUBundle *)fakeInstance;

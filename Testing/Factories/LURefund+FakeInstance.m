@@ -1,3 +1,4 @@
+#import "LUOrder+FakeInstance.h"
 #import "LURefund+FakeInstance.h"
 
 @implementation LURefund (FakeInstance)

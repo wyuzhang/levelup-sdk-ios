@@ -1,3 +1,5 @@
+#import "LULocation.h"
+
 @interface LULocation (FakeInstance)
 
 + (LULocation *)fakeInstance;

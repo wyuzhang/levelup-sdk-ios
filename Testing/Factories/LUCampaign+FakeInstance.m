@@ -1,4 +1,7 @@
 #import "LUCampaign+FakeInstance.h"
+#import "LUCohort+FakeInstance.h"
+#import "LUMerchant+FakeInstance.h"
+#import "LUMonetaryValue.h"
 
 @implementation LUCampaign (FakeInstance)
 

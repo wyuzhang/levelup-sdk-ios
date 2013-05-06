@@ -1,3 +1,5 @@
+#import "LUOrder.h"
+
 @interface LUOrder (FakeInstance)
 
 + (LUOrder *)fakeInstance;

@@ -1,4 +1,5 @@
 #import "LULoyalty+FakeInstance.h"
+#import "LUMonetaryValue.h"
 
 @implementation LULoyalty (FakeInstance)
 

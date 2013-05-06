@@ -1,3 +1,5 @@
+#import "LUCampaign.h"
+
 @interface LUCampaign (FakeInstance)
 
 + (LUCampaign *)fakeInstance;

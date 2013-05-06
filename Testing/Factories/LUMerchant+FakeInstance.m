@@ -1,3 +1,5 @@
+#import "LULocation+FakeInstance.h"
+#import "LULoyalty+FakeInstance.h"
 #import "LUMerchant+FakeInstance.h"
 
 @implementation LUMerchant (FakeInstance)

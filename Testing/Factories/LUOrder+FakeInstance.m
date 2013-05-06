@@ -3,7 +3,9 @@
 #import "LULocation+FakeInstance.h"
 #import "LULoyalty+FakeInstance.h"
 #import "LUMerchant+FakeInstance.h"
+#import "LUMonetaryValue.h"
 #import "LUOrder+FakeInstance.h"
+#import "NSDate+StringFormats.h"
 
 @implementation LUOrder (FakeInstance)
 

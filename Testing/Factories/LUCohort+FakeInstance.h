@@ -1,9 +1,12 @@
+#import "LUCohort.h"
+
 @interface LUCohort (FakeInstance)
 
-+ (NSArray *)fakeInstancesForAllAvailableCohorts;
++ (LUCohort *)fakeInstance;
 + (LUCohort *)fakeInstanceForEmail;
 + (LUCohort *)fakeInstanceForFacebook;
 + (LUCohort *)fakeInstanceForReferAFriend;
 + (LUCohort *)fakeInstanceForTwitter;
++ (NSArray *)fakeInstancesForAllAvailableCohorts;
 
 @end

@@ -14,7 +14,7 @@
   BOOL promoted = [attributes boolForKey:@"promoted"];
   NSString *type = [attributes stringForKey:@"type"];
 
-  return [[LUCreditCard alloc] initWithBIN:BIN CreditCardDescription:creditCardDescription creditCardID:creditCardID cvv:nil
+  return [[LUCreditCard alloc] initWithBIN:BIN creditCardDescription:creditCardDescription creditCardID:creditCardID cvv:nil
                                              expirationMonth:expirationMonth expirationYear:expirationYear
                                                  last4Digits:last4Digits number:nil postalCode:nil promoted:promoted
                                                         type:type];
