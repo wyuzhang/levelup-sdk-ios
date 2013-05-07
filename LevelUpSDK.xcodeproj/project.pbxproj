@@ -324,6 +324,11 @@
 		C1CAF28317315415003B3D01 /* LUQRCodeScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1F117315415003B3D01 /* LUQRCodeScannerView.m */; };
 		C1CAF28417315415003B3D01 /* LUQROverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1F217315415003B3D01 /* LUQROverlayView.h */; };
 		C1CAF28517315415003B3D01 /* LUQROverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1F317315415003B3D01 /* LUQROverlayView.m */; };
+		F8BC8402173981BE007F7142 /* LUWebLocations.h in Headers */ = {isa = PBXBuildFile; fileRef = F8BC8400173981BE007F7142 /* LUWebLocations.h */; };
+		F8BC8403173981BE007F7142 /* LUWebLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BC8401173981BE007F7142 /* LUWebLocations.m */; };
+		F8BC84061739884D007F7142 /* LUWebLocations+FakeInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = F8BC84041739884D007F7142 /* LUWebLocations+FakeInstance.h */; };
+		F8BC84071739884D007F7142 /* LUWebLocations+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BC84051739884D007F7142 /* LUWebLocations+FakeInstance.m */; };
+		F8BC840A173997D2007F7142 /* LUWebLocationsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BC84081739974B007F7142 /* LUWebLocationsSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -681,6 +686,11 @@
 		C1CAF2871731556B003B3D01 /* LevelUpSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LevelUpSDK-Prefix.pch"; sourceTree = "<group>"; };
 		C1CAF2891731560F003B3D01 /* Unit-Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit-Tests-Info.plist"; sourceTree = "<group>"; };
 		C1CAF28A1731560F003B3D01 /* Unit-Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit-Tests-Prefix.pch"; sourceTree = "<group>"; };
+		F8BC8400173981BE007F7142 /* LUWebLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUWebLocations.h; sourceTree = "<group>"; };
+		F8BC8401173981BE007F7142 /* LUWebLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUWebLocations.m; sourceTree = "<group>"; };
+		F8BC84041739884D007F7142 /* LUWebLocations+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUWebLocations+FakeInstance.h"; sourceTree = "<group>"; };
+		F8BC84051739884D007F7142 /* LUWebLocations+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUWebLocations+FakeInstance.m"; sourceTree = "<group>"; };
+		F8BC84081739974B007F7142 /* LUWebLocationsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUWebLocationsSpec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -771,6 +781,8 @@
 				020CF275172F020700D20672 /* LUTestingFactories.h */,
 				02D68DCA17381F68005E1BA8 /* LUUser+FakeInstance.h */,
 				02D68DCB17381F68005E1BA8 /* LUUser+FakeInstance.m */,
+				F8BC84041739884D007F7142 /* LUWebLocations+FakeInstance.h */,
+				F8BC84051739884D007F7142 /* LUWebLocations+FakeInstance.m */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -1000,6 +1012,7 @@
 				C1CAF0D7173052A7003B3D01 /* LURefundSpec.m */,
 				C1CAF0D8173052A7003B3D01 /* LUUserAddressSpec.m */,
 				C1CAF0D9173052A7003B3D01 /* LUUserSpec.m */,
+				F8BC84081739974B007F7142 /* LUWebLocationsSpec.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1180,6 +1193,8 @@
 				C1CAF1AE17315414003B3D01 /* LUUser.m */,
 				C1CAF1AF17315414003B3D01 /* LUUserAddress.h */,
 				C1CAF1B017315414003B3D01 /* LUUserAddress.m */,
+				F8BC8400173981BE007F7142 /* LUWebLocations.h */,
+				F8BC8401173981BE007F7142 /* LUWebLocations.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1470,6 +1485,8 @@
 				02D68DC817381E0D005E1BA8 /* LUCreditCard+FakeInstance.h in Headers */,
 				02D68DCC17381F68005E1BA8 /* LUUser+FakeInstance.h in Headers */,
 				02D68DD01738370F005E1BA8 /* NSRegularExpression+LUAdditions.h in Headers */,
+				F8BC8402173981BE007F7142 /* LUWebLocations.h in Headers */,
+				F8BC84061739884D007F7142 /* LUWebLocations+FakeInstance.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1706,6 +1723,8 @@
 				02D68DC917381E0D005E1BA8 /* LUCreditCard+FakeInstance.m in Sources */,
 				02D68DCD17381F68005E1BA8 /* LUUser+FakeInstance.m in Sources */,
 				02D68DD11738370F005E1BA8 /* NSRegularExpression+LUAdditions.m in Sources */,
+				F8BC8403173981BE007F7142 /* LUWebLocations.m in Sources */,
+				F8BC84071739884D007F7142 /* LUWebLocations+FakeInstance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1818,6 +1837,7 @@
 				2523E34617374DFE00FBDFEB /* LULocationCacheUpdaterSpec.m in Sources */,
 				02D68DC5173809C1005E1BA8 /* LUClaim+FakeInstance.m in Sources */,
 				02D68DDA1738497A005E1BA8 /* LULocationRequestFactorySpec.m in Sources */,
+				F8BC840A173997D2007F7142 /* LUWebLocationsSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

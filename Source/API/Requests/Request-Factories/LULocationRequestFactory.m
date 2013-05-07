@@ -1,6 +1,7 @@
 #import "LUAPIRequest.h"
 #import "LULocationRequestFactory.h"
 #import "LULocationSummaryJSONFactory.h"
+#import "LULocationJSONFactory.h"
 
 @implementation LULocationRequestFactory
 
@@ -22,6 +23,15 @@
                                  apiVersion:LUAPIVersion14
                                  parameters:nil
                                modelFactory:[LULocationSummaryJSONFactory factory]];
+}
+
++ (LUAPIRequest *)requestForLocationWithID:(NSNumber *)locationID {
+  NSString *requestPath = [@"locations/" stringByAppendingString:[locationID stringValue]];
+  return [LUAPIRequest apiRequestWithMethod:@"GET"
+                                       path:requestPath
+                                 apiVersion:LUAPIVersion14
+                                 parameters:nil
+                               modelFactory:[LULocationJSONFactory factory]];
 }
 
 @end

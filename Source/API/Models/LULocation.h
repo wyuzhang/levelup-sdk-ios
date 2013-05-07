@@ -1,6 +1,8 @@
 #import "LUAPIModel.h"
 #import <MapKit/MapKit.h>
 
+@class LUWebLocations;
+
 /**
  A LevelUp merchant has one or more locations. Take the example of a chain restaurant with multiple franchises. This
  restaurant would have a single `LUMerchant` associated with it, but each store would have its own `LULocation`.
@@ -15,7 +17,12 @@
 /**
  An array of category IDs to which this location belongs.
  */
-@property (nonatomic, strong) NSArray *categoryIDs;
+@property (nonatomic, copy, readonly) NSArray *categoryIDs;
+
+/**
+ An HTML string describing the location
+ */
+@property (nonatomic, copy, readonly) NSString *descriptionHTML;
 
 /**
  An optional "extended" address for the location. An example would be an apartment number.
@@ -100,12 +107,17 @@
  */
 @property (nonatomic, copy) NSDate *updatedAtDate;
 
-- (id)initWithCategoryIDs:(NSArray *)categoryIDs extendedAddress:(NSString *)extendedAddress hours:(NSString *)hours
+/**
+ An instance of LUWebLocations, which holds the associated web locations for this physical location
+ */
+@property (nonatomic, copy, readonly) LUWebLocations *webLocations;
+
+- (id)initWithCategoryIDs:(NSArray *)categoryIDs descriptionHTML:(NSString *)descriptionHTML extendedAddress:(NSString *)extendedAddress hours:(NSString *)hours
                  latitude:(NSNumber *)latitude locality:(NSString *)locality locationID:(NSNumber *)locationID
                 longitude:(NSNumber *)longitude merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName
                      name:(NSString *)name phone:(NSString *)phone postalCode:(NSString *)postalCode
                    region:(NSString *)region shown:(BOOL)shown streetAddress:(NSString *)streetAddress
-            updatedAtDate:(NSDate *)updatedAtDate;
+            updatedAtDate:(NSDate *)updatedAtDate webLocations:(LUWebLocations *)webLocations;
 
 - (id)initWithCategoryIDs:(NSArray *)categoryIDs latitude:(NSNumber *)latitude locationID:(NSNumber *)locationID
                 longitude:(NSNumber *)longitude merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName

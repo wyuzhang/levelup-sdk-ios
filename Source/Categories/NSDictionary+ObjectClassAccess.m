@@ -6,6 +6,10 @@
 
 #pragma mark - Public Methods
 
+- (NSArray *)arrayForKey:(id)aKey {
+  return [self objectForKey:aKey ofClass:[NSArray class]];
+}
+
 - (BOOL)boolForKey:(id)aKey {
   NSNumber *numberValue = [self numberForKey:aKey];
   if (!numberValue) return NO;

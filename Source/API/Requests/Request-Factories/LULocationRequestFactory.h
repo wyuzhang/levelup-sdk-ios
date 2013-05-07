@@ -25,4 +25,12 @@
  */
 + (LUAPIRequest *)requestForLocationSummaryPage:(NSURL *)pageURL;
 
+/**
+ Builds a request to return the details for a specific location.
+
+ On success, this request will return a `LULocation` instance for the specified ID. If there isn't a location
+ with that id, the response will be empty with a status code of 404 (Not found).
+ */
++ (LUAPIRequest *)requestForLocationWithID:(NSNumber *)locationID;
+
 @end

@@ -1,5 +1,6 @@
 @interface NSDictionary (ObjectClassAccess)
 
+- (NSArray *)arrayForKey:(id)aKey;
 - (BOOL)boolForKey:(id)aKey;
 - (NSDate *)dateForKey:(id)aKey;
 - (NSDictionary *)dictionaryForKey:(id)aKey;

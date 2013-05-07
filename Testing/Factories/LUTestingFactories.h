@@ -12,3 +12,4 @@
 #import "LUOrder+FakeInstance.h"
 #import "LURefund+FakeInstance.h"
 #import "LUUser+FakeInstance.h"
+#import "LUWebLocations+FakeInstance.h"

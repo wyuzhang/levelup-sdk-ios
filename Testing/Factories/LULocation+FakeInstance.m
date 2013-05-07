@@ -1,9 +1,11 @@
 #import "LULocation+FakeInstance.h"
+#import "LUWebLocations.h"
 
 @implementation LULocation (FakeInstance)
 
 + (LULocation *)fakeInstance {
   return [[LULocation alloc] initWithCategoryIDs:@[@1, @2]
+                                 descriptionHTML:@"pizza, pizza, pizza!"
                                  extendedAddress:@"Apt E"
                                            hours:@"Mon-Fri 9am-5pm"
                                         latitude:@70
@@ -18,7 +20,9 @@
                                           region:@"MA"
                                            shown:YES
                                    streetAddress:@"123 Main St."
-                                   updatedAtDate:[NSDate date]];
+                                   updatedAtDate:[NSDate date]
+                                    webLocations:[LUWebLocations fakeInstance]
+          ];
 }
 
 + (LULocation *)fakeInstanceWithLatitude:(NSNumber *)latitude longitude:(NSNumber *)longitude {

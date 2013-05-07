@@ -1,4 +1,5 @@
 #import "LULocationRequestFactory.h"
+#import "LULocationJSONFactory.h"
 
 SPEC_BEGIN(LULocationRequestFactorySpec)
 
@@ -40,6 +41,28 @@ describe(@"LULocationRequestFactory", ^{
 
     it(@"returns a request to version v14 of the API", ^{
       [[request.apiVersion should] equal:LUAPIVersion14];
+    });
+  });
+
+  describe(@"requestForLocationWithID:", ^{
+    beforeEach(^{
+      request = [LULocationRequestFactory requestForLocationWithID:@1];
+    });
+
+    it(@"returns a GET request", ^{
+      [[request.method should] equal:@"GET"];
+    });
+
+    it(@"returns a request to the path for the location", ^{
+      [[request.path should] equal:@"locations/1"];
+    });
+
+    it(@"returns a request to version v14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
+    });
+
+    it(@"returns a request set up to pass the response to an instance of LULocationJSONFactory", ^{
+      [[request.modelFactory should] beKindOfClass:[LULocationJSONFactory class]];
     });
   });
 });
