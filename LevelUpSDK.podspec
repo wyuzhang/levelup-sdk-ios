@@ -19,13 +19,13 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.prefix_header_file = 'Source/Resources/LevelUpSDK-Prefix.pch'
 
-  s.dependency 'AFNetworking', '~> 1.1.0'
-  s.dependency 'LUKeychainAccess', '~> 1.0.0'
-  s.dependency 'ZXingObjC', '~> 2.0.2'
-
   s.default_subspec = 'Core'
 
   s.subspec 'Core' do |core|
+    core.dependency 'AFNetworking', '~> 1.1.0'
+    core.dependency 'LUKeychainAccess', '~> 1.0.0'
+    core.dependency 'ZXingObjC', '~> 2.0.2'
+
     core.source_files = 'Source/**/*.{h,m}', 'Frameworks/Braintree-Encryption/src'
     core.resources = 'Source/Resources/*'
   end
