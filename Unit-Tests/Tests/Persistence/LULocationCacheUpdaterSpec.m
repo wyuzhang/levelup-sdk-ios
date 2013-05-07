@@ -15,8 +15,6 @@ describe(@"LULocationCacheUpdater", ^{
     testManagedObjectContext = [NSManagedObjectContext testContext];
     [LUCoreDataStack stub:@selector(managedObjectContext) andReturn:testManagedObjectContext];
 
-    [[[NSUserDefaults standardUserDefaults] stub] URLForKey:LUNextPageURLKey];
-
     [LUAPIClient setupWithAPIKey:@"test" developmentMode:YES];
     [[LUAPIClient sharedClient] stub:@selector(performRequest:success:failure:)];
 
@@ -60,10 +58,13 @@ describe(@"LULocationCacheUpdater", ^{
         }];
       });
 
-      it(@"starts retreiving pages from the last nextPageURL stored in NSUserDefaults", ^{
+      it(@"starts retreiving pages from the last nextPageURL stored in the metadata", ^{
         NSURL *testNextPageURL = [NSURL URLWithString:@"http://example.com"];
 
-        [[[NSUserDefaults standardUserDefaults] stubAndReturn:testNextPageURL] URLForKey:LUNextPageURLKey];
+        NSMutableDictionary *metadata = [[testManagedObjectContext.persistentStoreCoordinator.persistentStores[0] metadata] mutableCopy];
+        metadata[LUNextPageURLKey] = [testNextPageURL absoluteString];
+        [testManagedObjectContext.persistentStoreCoordinator.persistentStores[0] setMetadata:metadata];
+        [testManagedObjectContext save:nil];
 
         [[[LULocationRequestFactory should] receive] requestForLocationSummaryPage:testNextPageURL];
 
@@ -85,12 +86,11 @@ describe(@"LULocationCacheUpdater", ^{
         [updater startUpdating];
       });
 
-      it(@"updates the saved nextPageURL in NSUserDefaults", ^{
-        [[[NSUserDefaults standardUserDefaults] stub] setURL:any() forKey:LUNextPageURLKey];
-
-        [[[[NSUserDefaults standardUserDefaults] should] receive] setURL:nextPage2 forKey:LUNextPageURLKey];
-
+      it(@"updates the saved nextPageURL in the metadata", ^{
         [updater startUpdating];
+
+        NSDictionary *metadata = [testManagedObjectContext.persistentStoreCoordinator.persistentStores[0] metadata];
+        [[metadata[LUNextPageURLKey] should] equal:[nextPage2 absoluteString]];
       });
 
       context(@"when there is a network error", ^{

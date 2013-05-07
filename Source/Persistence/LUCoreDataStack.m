@@ -1,4 +1,5 @@
 #import "LUCoreDataStack.h"
+#import "NSArray+LUAdditions.h"
 
 NSString * const LUPersistedObjectsDefaultSqliteName = @"LUPersistedObjectsInitial";
 NSString * const LUPersistedObjectsSqliteName = @"LUPersistedObjects";
@@ -14,7 +15,28 @@ NSString * const LUPersistedObjectsSqliteName = @"LUPersistedObjects";
   return managedObjectContext;
 }
 
++ (id)metadataStringForKey:(NSString *)key {
+  NSManagedObjectContext *moc = [self managedObjectContext];
+  return [self metadataForObjectContext:moc][key];
+}
+
++ (void)setMetadataString:(NSString *)string forKey:(NSString *)key {
+  NSManagedObjectContext *moc = [self managedObjectContext];
+  NSMutableDictionary *metadata = [[self metadataForObjectContext:moc] mutableCopy];
+  metadata[key] = string;
+  [self setMetadata:metadata forObjectContext:moc];
+}
+
 #pragma mark - Private Methods
+
++ (NSDictionary *)metadataForObjectContext:(NSManagedObjectContext *)moc {
+  return [[moc.persistentStoreCoordinator.persistentStores firstObject] metadata];
+}
+
++ (void)setMetadata:(NSDictionary *)metadata forObjectContext:(NSManagedObjectContext *)moc {
+  [[moc.persistentStoreCoordinator.persistentStores firstObject] setMetadata:metadata];
+  [moc save:nil];
+}
 
 + (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
   NSURL *storeURL = [self storeURL];

@@ -45,7 +45,7 @@ NSString * const LUNextPageURLKey = @"LULocationCacheUpdaterNextPageURLKey";
 - (NSURL *)nextPageURL {
   if (_nextPageURL) return _nextPageURL;
 
-  _nextPageURL = [[NSUserDefaults standardUserDefaults] URLForKey:LUNextPageURLKey];
+  _nextPageURL = [NSURL URLWithString:[LUCoreDataStack metadataStringForKey:LUNextPageURLKey]];
   return _nextPageURL;
 }
 
@@ -71,8 +71,7 @@ NSString * const LUNextPageURLKey = @"LULocationCacheUpdaterNextPageURLKey";
     return;
   }
 
-  [[NSUserDefaults standardUserDefaults] setURL:self.nextPageURL forKey:LUNextPageURLKey];
-  [[NSUserDefaults standardUserDefaults] synchronize];
+  [LUCoreDataStack setMetadataString:[self.nextPageURL absoluteString] forKey:LUNextPageURLKey];
 
   [self.delegate locationCacheUpdaterDidFinishWithUpdates:YES];
 }
