@@ -108,6 +108,7 @@
 
 + (LUOrder *)fakeInstanceWithPendingStatus {
   LUOrder *order = [self fakeInstance];
+  [order setValue:@NO forKey:@"closed"];
   [order setValue:@(LUOrderProcessing) forKey:@"state"];
   return order;
 }
