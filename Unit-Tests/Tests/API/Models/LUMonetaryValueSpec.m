@@ -9,7 +9,18 @@ describe(@"LUMonetaryValue", ^{
 
   // Public Methods
 
-  describe(@"monetaryValueWithUSD", ^{
+  describe(@"monetaryValueWithUSCents:", ^{
+    it(@"returns a LUMonetaryValue configured for the given amount in US Cents", ^{
+      LUMonetaryValue *value = [LUMonetaryValue monetaryValueWithUSCents:@123];
+
+      [[value.amount should] equal:@123.0f];
+      [[value.currencyCode should] equal:@"USD"];
+      [[value.currencySymbol should] equal:@"$"];
+      [[value.formattedAmount should] equal:@"1.23"];
+    });
+  });
+
+  describe(@"monetaryValueWithUSD:", ^{
     it(@"returns a LUMonetaryValue configured for the given amount in USD", ^{
       LUMonetaryValue *value = [LUMonetaryValue monetaryValueWithUSD:@1.23];
 

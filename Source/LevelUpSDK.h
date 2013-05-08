@@ -13,6 +13,7 @@
 #import "LUCohortRequestFactory.h"
 #import "LUCreditCardRequestFactory.h"
 #import "LULocationRequestFactory.h"
+#import "LULoyaltyRequestFactory.h"
 #import "LUMerchantRequestFactory.h"
 #import "LUOAuthTokenRequestFactory.h"
 #import "LUOrderRequestFactory.h"

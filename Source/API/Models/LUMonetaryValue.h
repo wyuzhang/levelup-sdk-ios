@@ -29,9 +29,16 @@
       currencySymbol:(NSString *)currencySymbol formattedAmount:(NSString *)formattedAmount;
 
 /**
+ Returns an `LUMonetaryValue` instance for the given amount, in cents.
+ 
+ @param amount An amount of money, in cents.
+ */
++ (LUMonetaryValue *)monetaryValueWithUSCents:(NSNumber *)amount;
+
+/**
  Returns an `LUMonetaryValue` instance for the given amount, in dollars.
 
- @param amount An amount of money, in cents.
+ @param amount An amount of money, in dollars.
  */
 + (LUMonetaryValue *)monetaryValueWithUSD:(NSNumber *)amount;
 

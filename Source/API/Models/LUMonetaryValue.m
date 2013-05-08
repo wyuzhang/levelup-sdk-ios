@@ -19,11 +19,15 @@
 
 #pragma mark - Public Methods
 
-+ (LUMonetaryValue *)monetaryValueWithUSD:(NSNumber *)amount {
-  return [[LUMonetaryValue alloc] initWithAmount:@(amount.floatValue * 100.0f)
++ (LUMonetaryValue *)monetaryValueWithUSCents:(NSNumber *)amount {
+  return [[LUMonetaryValue alloc] initWithAmount:amount
                                     currencyCode:@"USD"
                                   currencySymbol:@"$"
-                                 formattedAmount:[NSString stringWithFormat:@"%.2f", amount.floatValue]];
+                                 formattedAmount:[NSString stringWithFormat:@"%.2f", (amount.floatValue / 100)]];
+}
+
++ (LUMonetaryValue *)monetaryValueWithUSD:(NSNumber *)amount {
+  return [self monetaryValueWithUSCents:@(amount.floatValue * 100.0f)];
 }
 
 - (NSString *)formattedAmountWithSymbol {
