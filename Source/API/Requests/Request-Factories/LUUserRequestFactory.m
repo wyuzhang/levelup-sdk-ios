@@ -52,27 +52,11 @@
                                             modelFactory:[LUUserJSONFactory factory]];
 }
 
-+ (LUAPIRequest *)requestToRemoveCauseAffiliation {
-  return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"DELETE"
-                                                    path:@"cause_affiliation"
-                                              apiVersion:LUAPIVersion13
-                                              parameters:nil
-                                            modelFactory:nil];
-}
-
 + (LUAPIRequest *)requestToResetPasswordWithEmail:(NSString *)email {
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
                                                     path:@"users/forgot_password"
                                               apiVersion:LUAPIVersion13
                                               parameters:@{@"user" : @{@"email" : email}}
-                                            modelFactory:nil];
-}
-
-+ (LUAPIRequest *)requestToSetCauseId:(NSNumber *)causeId {
-  return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
-                                                    path:@"cause_affiliation"
-                                              apiVersion:LUAPIVersion13
-                                              parameters:@{@"cause_id" : causeId}
                                             modelFactory:nil];
 }
 

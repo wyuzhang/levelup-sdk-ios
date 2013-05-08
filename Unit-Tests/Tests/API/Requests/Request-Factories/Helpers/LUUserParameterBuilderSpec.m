@@ -23,7 +23,6 @@ describe(@"LUUserParameterBuilder", ^{
       user.lastName = @"Smith";
       user.newPassword = @"test123";
       user.newPasswordConfirmation = @"test123";
-      user.percentDonation = @50;
       user.promotionCode = @"abc123";
       user.termsAcceptedDate = [NSDate distantPast];
     });
@@ -43,7 +42,6 @@ describe(@"LUUserParameterBuilder", ^{
         @"last_name" : user.lastName,
         @"new_password" : user.newPassword,
         @"new_password_confirmation" : user.newPasswordConfirmation,
-        @"percent_donation" : user.percentDonation,
         @"promotion_code" : user.promotionCode,
         @"terms_accepted_at" : [user.termsAcceptedDate iso8601DateTimeString]
       };

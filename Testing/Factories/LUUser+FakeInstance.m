@@ -6,8 +6,6 @@
 + (LUUser *)fakeInstance {
   return [[LUUser alloc] initWithAbleToRefer:YES
                                    birthdate:[NSDate distantPast]
-                                       cause:nil
-                                     causeID:nil
                          connectedToFacebook:YES
                                       credit:[LUMonetaryValue monetaryValueWithUSD:@10]
                             customAttributes:nil
@@ -21,7 +19,6 @@
                                  ordersCount:@10
                              paymentEligible:YES
                                 paymentToken:@"abcdef"
-                             percentDonation:nil
                            termsAcceptedDate:[NSDate distantPast]
                                userAddresses:nil
                                       userID:@1];

@@ -15,7 +15,6 @@ describe(@"LUUserJSONFactory", ^{
 
       [[theValue(user.ableToRefer) should] beYes];
       [[user.birthdate should] equal:[NSDate fixture]];
-      [[user.cause should] equal:[LUCause fullCause]];
       [[theValue(user.connectedToFacebook) should] beYes];
       [[user.credit should] equal:[LUMonetaryValue fullMonetaryValue]];
       [[user.customAttributes should] equal:@{@"key" : @"value"}];
@@ -29,7 +28,6 @@ describe(@"LUUserJSONFactory", ^{
       [[user.ordersCount should] equal:@10];
       [[theValue(user.paymentEligible) should] beYes];
       [[user.paymentToken should] equal:@"payment-token"];
-      [[user.percentDonation should] equal:@50];
       [[user.termsAcceptedDate should] equal:[NSDate fixture]];
       [[user.userAddresses should] equal:@[[LUUserAddress fullUserAddress]]];
       [[user.userID should] equal:@1];

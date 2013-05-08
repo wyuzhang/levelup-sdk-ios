@@ -2,6 +2,7 @@
 #import "LUCampaign+Fixtures.h"
 #import "LUCategory+Fixtures.h"
 #import "LUCause+Fixtures.h"
+#import "LUCauseAffiliation+Fixtures.h"
 #import "LUCauseCategory+Fixtures.h"
 #import "LUClaim+Fixtures.h"
 #import "LUCohort+Fixtures.h"

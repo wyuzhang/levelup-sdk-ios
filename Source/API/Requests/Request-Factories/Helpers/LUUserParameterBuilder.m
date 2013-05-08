@@ -27,7 +27,6 @@
   [self addKey:@"last_name" toDictionary:params ifValuePresent:user.lastName];
   [self addKey:@"new_password" toDictionary:params ifValuePresent:user.newPassword];
   [self addKey:@"new_password_confirmation" toDictionary:params ifValuePresent:user.newPasswordConfirmation];
-  [self addKey:@"percent_donation" toDictionary:params ifValuePresent:user.percentDonation];
   [self addKey:@"promotion_code" toDictionary:params ifValuePresent:user.promotionCode];
   [self addKey:@"terms_accepted_at" toDictionary:params ifValuePresent:[user.termsAcceptedDate iso8601DateTimeString]];
 

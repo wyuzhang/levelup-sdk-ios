@@ -9,7 +9,6 @@ typedef NS_ENUM(NSInteger, LUGender) {
   LUGenderFemale
 };
 
-@class LUCause;
 @class LUMonetaryValue;
 @class LUUserAddress;
 
@@ -25,17 +24,6 @@ typedef NS_ENUM(NSInteger, LUGender) {
  The user's birthday.
  */
 @property (nonatomic, copy) NSDate *birthdate;
-
-/**
- A optional cause chosen by the user to which they would like to donate a percentage of their
- savings. The percent is set in `percentDonation`.
- */
-@property (nonatomic, strong, readonly) LUCause *cause;
-
-/**
- The ID of the user's `cause`.
- */
-@property (nonatomic, copy, readonly) NSNumber *causeID;
 
 /**
  Specifies if the user has connected to Facebook.
@@ -115,11 +103,6 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, copy, readonly) NSString *paymentToken;
 
 /**
- The percent of savings that the user would like to donate to their chosen `cause`.
- */
-@property (nonatomic, copy) NSNumber *percentDonation;
-
-/**
  An optional promotion code that the user may specify when signing up for a new account.
  */
 @property (nonatomic, copy) NSString *promotionCode;
@@ -139,14 +122,14 @@ typedef NS_ENUM(NSInteger, LUGender) {
  */
 @property (nonatomic, copy, readonly) NSNumber *userID;
 
-- (id)initWithAbleToRefer:(BOOL)ableToRefer birthdate:(NSDate *)birthdate cause:(LUCause *)cause
-                  causeID:(NSNumber *)causeID connectedToFacebook:(BOOL)connectedToFacebook
+- (id)initWithAbleToRefer:(BOOL)ableToRefer birthdate:(NSDate *)birthdate
+      connectedToFacebook:(BOOL)connectedToFacebook
                    credit:(LUMonetaryValue *)credit customAttributes:(NSDictionary *)customAttributes
                     email:(NSString *)email employer:(NSString *)employer firstName:(NSString *)firstName
                    gender:(LUGender)gender lastName:(NSString *)lastName
          loyaltiesSavings:(LUMonetaryValue *)loyaltiesSavings merchantsVisitedCount:(NSNumber *)merchangsVisitedCount
               ordersCount:(NSNumber *)ordersCount paymentEligible:(BOOL)paymentEligible
-             paymentToken:(NSString *)paymentToken percentDonation:(NSNumber *)percentDonation
+             paymentToken:(NSString *)paymentToken 
         termsAcceptedDate:(NSDate *)termsAcceptedDate userAddresses:(NSArray *)userAddresses userID:(NSNumber *)userID;
 
 /**

@@ -119,28 +119,6 @@ describe(@"LUUserRequestFactory", ^{
     });
   });
 
-  describe(@"requestToRemoveCauseAffiliation", ^{
-    beforeEach(^{
-      request = [LUUserRequestFactory requestToRemoveCauseAffiliation];
-    });
-
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
-    });
-
-    it(@"returns a DELETE request", ^{
-      [[request.method should] equal:@"DELETE"];
-    });
-
-    it(@"returns a request to the path 'cause_affiliation'", ^{
-      [[request.path should] equal:@"cause_affiliation"];
-    });
-
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
-    });
-  });
-
   describe(@"requestToResetPasswordWithEmail:", ^{
     NSString *email = @"test@example.com";
 
@@ -164,30 +142,6 @@ describe(@"LUUserRequestFactory", ^{
       NSDictionary *expectedParams = @{@"user" : @{@"email" : email}};
 
       [[request.parameters should] equal:expectedParams];
-    });
-  });
-
-  describe(@"requestToSetCauseId:", ^{
-    NSNumber *causeId = @2;
-
-    beforeEach(^{
-      request = [LUUserRequestFactory requestToSetCauseId:causeId];
-    });
-
-    it(@"returns a POST request", ^{
-      [[request.method should] equal:@"POST"];
-    });
-
-    it(@"returns a request to the path 'cause_affiliation'", ^{
-      [[request.path should] equal:@"cause_affiliation"];
-    });
-
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
-    });
-
-    it(@"returns a request with parameters for the causeId", ^{
-      [[request.parameters should] equal:@{@"cause_id" : causeId}];
     });
   });
 

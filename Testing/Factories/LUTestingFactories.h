@@ -1,6 +1,7 @@
 #import "LUBundle+FakeInstance.h"
 #import "LUCampaign+FakeInstance.h"
 #import "LUCause+FakeInstance.h"
+#import "LUCauseAffiliation+FakeInstance.h"
 #import "LUClaim+FakeInstance.h"
 #import "LUCohort+FakeInstance.h"
 #import "LUCreditCard+FakeInstance.h"
