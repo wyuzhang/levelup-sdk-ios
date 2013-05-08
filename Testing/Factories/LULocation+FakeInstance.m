@@ -1,5 +1,6 @@
 #import "LULocation+FakeInstance.h"
 #import "LUWebLocations.h"
+#import "LUWebLocations+FakeInstance.h"
 
 @implementation LULocation (FakeInstance)
 
