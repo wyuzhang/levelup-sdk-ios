@@ -51,7 +51,7 @@
                                                                                 error:error];
 
   if (totalNumberOfLocations == 0) {
-    return nil;
+    return [NSArray array];
   } else if (totalNumberOfLocations < self.limit) {
     return [self.managedObjectContext executeFetchRequest:fetchRequestForAllLocations error:error];
   }

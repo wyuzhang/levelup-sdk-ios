@@ -55,8 +55,8 @@ describe(@"LUCachedLocationSearch", ^{
         [testManagedObjectContext save:nil];
       });
 
-      it(@"returns nil", ^{
-        [[locationSearch executeSearch:nil] shouldBeNil];
+      it(@"returns an empty array", ^{
+        [[[locationSearch executeSearch:nil] should] equal:@[]];
       });
     });
 
