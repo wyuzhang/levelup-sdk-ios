@@ -1,4 +1,5 @@
 #import "LUCause.h"
+#import "LUCause+FakeInstance.h"
 #import "LUCauseAffiliation.h"
 
 @implementation LUCauseAffiliation (FakeInstance)

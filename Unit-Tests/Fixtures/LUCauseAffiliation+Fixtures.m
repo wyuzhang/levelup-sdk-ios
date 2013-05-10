@@ -4,8 +4,8 @@
 
 + (NSDictionary *)fullJSONObject {
   return @{
-    @"causeID" : @1,
-    @"percent_donation" : @50
+    @"cause_id" : @1,
+    @"percent_donation" : @0.5
   };
 }
 

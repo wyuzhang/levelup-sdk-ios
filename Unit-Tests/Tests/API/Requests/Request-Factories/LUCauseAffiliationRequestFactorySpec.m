@@ -25,12 +25,12 @@ describe(@"LUCauseAffiliationRequestFactory", ^{
       [[request.method should] equal:@"GET"];
     });
 
-    it(@"returns a request to the path 'causes/affiliation'", ^{
-      [[request.path should] equal:@"/causes/affiliation"];
+    it(@"returns a request to the path 'cause_affiliation'", ^{
+      [[request.path should] equal:@"cause_affiliation"];
     });
 
-    it(@"returns a request to version 14 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion14];
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
   });
 
@@ -47,12 +47,12 @@ describe(@"LUCauseAffiliationRequestFactory", ^{
       [[request.method should] equal:@"DELETE"];
     });
 
-    it(@"returns a request to the path 'causes/affiliation'", ^{
-      [[request.path should] equal:@"/causes/affiliation"];
+    it(@"returns a request to the path 'cause_affiliation'", ^{
+      [[request.path should] equal:@"cause_affiliation"];
     });
 
-    it(@"returns a request to version 14 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion14];
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
   });
 
@@ -63,24 +63,22 @@ describe(@"LUCauseAffiliationRequestFactory", ^{
       request = [LUCauseAffiliationRequestFactory requestToCreateCauseAffiliation:causeAffiliation];
     });
 
-    it(@"returns a PUT request", ^{
-      [[request.method should] equal:@"PUT"];
+    it(@"returns a POST request", ^{
+      [[request.method should] equal:@"POST"];
     });
 
-    it(@"returns a request to the path 'causes/affiliation'", ^{
-      [[request.path should] equal:@"/causes/affiliation"];
+    it(@"returns a request to the path 'cause_affiliation'", ^{
+      [[request.path should] equal:@"cause_affiliation"];
     });
 
-    it(@"returns a request to version 14 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion14];
+    it(@"returns a request to version 13 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion13];
     });
 
-    it(@"returns a request with parameters for the causeId", ^{
+    it(@"returns a request with parameters for the cause affiliation", ^{
       NSDictionary *expectedParams = @{
-        @"cause_affiliation" : @{
-          @"cause_id" : causeAffiliation.causeID,
-          @"percent_donation" : causeAffiliation.percentDonation
-        }
+        @"cause_id" : causeAffiliation.causeID,
+        @"percent_donation" : causeAffiliation.percentDonation
       };
 
       [[request.parameters should] equal:expectedParams];

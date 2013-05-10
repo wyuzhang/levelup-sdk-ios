@@ -14,7 +14,7 @@ describe(@"LUCauseAffiliationJSONFactory", ^{
       LUCauseAffiliation *causeAffiliation = [factory createFromAttributes:[LUCauseAffiliation fullJSONObject]];
 
       [[causeAffiliation.causeID should] equal:@1];
-      [[causeAffiliation.percentDonation should] equal:@50];
+      [[causeAffiliation.percentDonation should] equal:@0.5];
     });
   });
 
