@@ -55,6 +55,23 @@ describe(@"LULocation", ^{
     });
   });
 
+  describe(@"imageURL", ^{
+    LULocation *location = [LULocation fakeInstanceWithLocationID:@1];
+
+    beforeEach(^{
+      [[UIScreen mainScreen] stub:@selector(scale) andReturn:theValue(2.0)];
+
+      [LUAPIClient setupWithAPIKey:@"test" developmentMode:YES];
+    });
+
+    it(@"returns a URL for the location's image, including width, height and density", ^{
+      NSURL *expected = [NSURL URLWithString:@"v14/locations/1/image?density=2&height=212&width=320"
+                               relativeToURL:[LUAPIClient sharedClient].baseURL];
+
+      [[[location imageURL] should] equal:expected];
+    });
+  });
+
   describe(@"location", ^{
     context(@"when the location has a latitude and a longitude", ^{
       LULocation *location = [LULocation fakeInstanceWithLatitude:@-70.0f longitude:@45.0f];

@@ -131,6 +131,12 @@
 - (NSString *)fullStreetAddress;
 
 /**
+ An associated image for the location. Will automatically return a retina or non-retina scaled image based on the
+ screen scale of the device. The resolution is 320x212.
+ */
+- (NSURL *)imageURL;
+
+/**
  A `CLLocation` instance associated with this location.
  */
 - (CLLocation *)location;
