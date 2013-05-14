@@ -8,6 +8,7 @@
 - (id)createFromAttributes:(NSDictionary *)attributes {
   LUMonetaryValue *willEarn = [LUMonetaryValue monetaryValueWithUSCents:[attributes numberForKey:@"merchant_earn_amount"]];
   NSNumber *merchantID = [attributes numberForKey:@"merchant_id"];
+  BOOL merchantLoyaltyEnabled = [attributes boolForKey:@"merchant_loyalty_enabled"];
   LUMonetaryValue *shouldSpend = [LUMonetaryValue monetaryValueWithUSCents:[attributes numberForKey:@"merchant_spend_amount"]];
   NSNumber *ordersCount = [attributes numberForKey:@"orders_count"];
   LUMonetaryValue *potentialCredit = [LUMonetaryValue monetaryValueWithUSCents:[attributes numberForKey:@"potential_credit_amount"]];
@@ -17,6 +18,7 @@
   LUMonetaryValue *totalVolume = [LUMonetaryValue monetaryValueWithUSCents:[attributes numberForKey:@"total_volume_amount"]];
   return [[LULoyalty alloc] initWithLoyaltyID:nil
                                    merchantID:merchantID
+                       merchantLoyaltyEnabled:merchantLoyaltyEnabled
                                   ordersCount:ordersCount
                               potentialCredit:potentialCredit
                               progressPercent:progressPercent

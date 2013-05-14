@@ -15,7 +15,7 @@
     @"interstitial_action" : [LUInterstitialAction fullJSONObject],
     @"location" : [LULocation fullJSONObject],
     @"loyalty" : [LULoyalty fullJSONObject],
-    @"merchant" : [LUMerchant minimalJSONObject],
+    @"merchant" : [LUMerchant fullJSONObject],
     @"refunded_at" : [[NSDate fixture] iso8601DateTimeString],
     @"spend" : [LUMonetaryValue fullJSONObject],
     @"state" : @"processing",

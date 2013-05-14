@@ -31,12 +31,12 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
            emailCaptureCohort:(LUCohort *)emailCaptureCohort facebookURL:(NSURL *)facebookURL
                      featured:(BOOL)featured imageURL_1x:(NSURL *)imageURL_1x
                   imageURL_2x:(NSURL *)imageURL_2x locations:(NSArray *)locations
-                      loyalty:(LULoyalty *)loyalty loyaltyEnabled:(BOOL)loyaltyEnabled
-                   merchantID:(NSNumber *)merchantID name:(NSString *)name
-                newsletterURL:(NSURL *)newsletterURL opentableURL:(NSURL *)opentableURL
-                    publicURL:(NSURL *)publicURL scvngrURL:(NSURL *)scvngrURL
-                        spend:(LUMonetaryValue *)spend twitterUsername:(NSString *)twitterUsername
-                      yelpURL:(NSURL *)yelpURL websiteURL:(NSURL *)websiteURL {
+                      loyalty:(LULoyalty *)loyalty merchantID:(NSNumber *)merchantID
+                         name:(NSString *)name newsletterURL:(NSURL *)newsletterURL
+                 opentableURL:(NSURL *)opentableURL publicURL:(NSURL *)publicURL
+                    scvngrURL:(NSURL *)scvngrURL spend:(LUMonetaryValue *)spend
+              twitterUsername:(NSString *)twitterUsername yelpURL:(NSURL *)yelpURL
+                   websiteURL:(NSURL *)websiteURL {
   self = [super init];
   if (!self) return nil;
 
@@ -49,7 +49,6 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
   _imageURL_2x = imageURL_2x;
   _locations = locations;
   _loyalty = loyalty;
-  _loyaltyEnabled = loyaltyEnabled;
   _merchantID = merchantID;
   _name = name;
   _newsletterURL = newsletterURL;
@@ -67,7 +66,7 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
 #pragma mark - Public Methods
 
 - (LUMonetaryValue *)currentCredit {
-  if (self.loyalty) {
+  if (self.loyalty.merchantLoyaltyEnabled) {
     return self.loyalty.potentialCredit;
   } else {
     return [LUMonetaryValue monetaryValueWithUSD:@0.0f];
@@ -117,12 +116,11 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUMerchant [descriptionHTML=%@, earn=%@, emailCaptureCohort=%@, facebookURL=%@, featured=%@, ID=%@, imageURL_1x=%@, imageURL_2x=%@, locations=%@, loyalty=%@, loyaltyEnabled=%@, name=%@, newsletterURL=%@, opentableURL=%@, publicURL=%@, scvngrURL=%@, spend=%@, twitterUsername=%@, websiteURL=%@, yelpURL=%@]",
+          @"LUMerchant [descriptionHTML=%@, earn=%@, emailCaptureCohort=%@, facebookURL=%@, featured=%@, ID=%@, imageURL_1x=%@, imageURL_2x=%@, locations=%@, loyalty=%@, name=%@, newsletterURL=%@, opentableURL=%@, publicURL=%@, scvngrURL=%@, spend=%@, twitterUsername=%@, websiteURL=%@, yelpURL=%@]",
           self.descriptionHTML, self.earn, self.emailCaptureCohort, self.facebookURL,
           @(self.featured), self.merchantID, self.imageURL_1x, self.imageURL_2x, self.locations,
-          self.loyalty, @(self.loyaltyEnabled), self.name, self.newsletterURL, self.opentableURL,
-          self.publicURL, self.scvngrURL, self.spend, self.twitterUsername, self.websiteURL,
-          self.yelpURL];
+          self.loyalty, self.name, self.newsletterURL, self.opentableURL, self.publicURL,
+          self.scvngrURL, self.spend, self.twitterUsername, self.websiteURL, self.yelpURL];
 }
 
 - (NSString *)description {

@@ -5,15 +5,17 @@
 #pragma mark - Creation
 
 - (id)initWithLoyaltyID:(NSNumber *)loyaltyID merchantID:(NSNumber *)merchantID
-            ordersCount:(NSNumber *)ordersCount potentialCredit:(LUMonetaryValue *)potentialCredit
-        progressPercent:(float)progressPercent savings:(LUMonetaryValue *)savings
-            shouldSpend:(LUMonetaryValue *)shouldSpend spendRemaining:(LUMonetaryValue *)spendRemaining
-            totalVolume:(LUMonetaryValue *)totalVolume willEarn:(LUMonetaryValue *)willEarn {
+ merchantLoyaltyEnabled:(BOOL)merchantLoyaltyEnabled ordersCount:(NSNumber *)ordersCount
+        potentialCredit:(LUMonetaryValue *)potentialCredit progressPercent:(float)progressPercent
+                savings:(LUMonetaryValue *)savings shouldSpend:(LUMonetaryValue *)shouldSpend
+         spendRemaining:(LUMonetaryValue *)spendRemaining totalVolume:(LUMonetaryValue *)totalVolume
+               willEarn:(LUMonetaryValue *)willEarn {
   self = [super init];
   if (!self) return nil;
 
   _loyaltyID = loyaltyID;
   _merchantID = merchantID;
+  _merchantLoyaltyEnabled = merchantLoyaltyEnabled;
   _ordersCount = ordersCount;
   _potentialCredit = potentialCredit;
   _progressPercent = progressPercent;
@@ -31,9 +33,9 @@
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LULoyalty [ID=%@, merchantID=%@, ordersCount=%@, potentialCredit=%@, progressPercent=%@, savings=%@, shouldSpend=%@, spendRemaining=%@, totalVolume=%@, willEarn=%@]",
-          self.loyaltyID, self.merchantID, self.ordersCount, self.potentialCredit, @(self.progressPercent),
-          self.savings, self.shouldSpend, self.spendRemaining, self.totalVolume, self.willEarn];
+          @"LULoyalty [ID=%@, merchantID=%@, merchantLoyaltyEnabled=%@, ordersCount=%@, potentialCredit=%@, progressPercent=%@, savings=%@, shouldSpend=%@, spendRemaining=%@, totalVolume=%@, willEarn=%@]",
+          self.loyaltyID, self.merchantID, @(self.merchantLoyaltyEnabled), self.ordersCount, self.potentialCredit,
+          @(self.progressPercent), self.savings, self.shouldSpend, self.spendRemaining, self.totalVolume, self.willEarn];
 }
 
 - (NSString *)description {

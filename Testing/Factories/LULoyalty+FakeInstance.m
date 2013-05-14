@@ -6,6 +6,7 @@
 + (LULoyalty *)fakeInstance {
   return [[LULoyalty alloc] initWithLoyaltyID:@1
                                    merchantID:@2
+                       merchantLoyaltyEnabled:YES
                                   ordersCount:@3
                               potentialCredit:[LUMonetaryValue monetaryValueWithUSD:@500.0f]
                               progressPercent:73
@@ -14,6 +15,12 @@
                                spendRemaining:[LUMonetaryValue monetaryValueWithUSD:@50.0f]
                                   totalVolume:[LUMonetaryValue monetaryValueWithUSD:@100.0f]
                                      willEarn:[LUMonetaryValue monetaryValueWithUSD:@200.0f]];
+}
+
++ (LULoyalty *)fakeInstanceWithoutMerchantLoyaltyEnabled {
+  LULoyalty *loyalty = [self fakeInstance];
+  [loyalty setValue:@NO forKey:@"merchantLoyaltyEnabled"];
+  return loyalty;
 }
 
 @end

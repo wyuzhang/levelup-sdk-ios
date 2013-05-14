@@ -25,6 +25,12 @@
 @property (nonatomic, copy, readonly) NSNumber *merchantID;
 
 /**
+ A small percent of LevelUp merchants do not provide loyalty rewards. This property specifies if the merchant has
+ loyalty enabled.
+ */
+@property (nonatomic, assign, readonly) BOOL merchantLoyaltyEnabled;
+
+/**
  The number of orders the user has made at this merchant.
  */
 @property (nonatomic, copy, readonly) NSNumber *ordersCount;
@@ -72,9 +78,10 @@
 @property (nonatomic, strong, readonly) LUMonetaryValue *willEarn;
 
 - (id)initWithLoyaltyID:(NSNumber *)loyaltyID merchantID:(NSNumber *)merchantID
-            ordersCount:(NSNumber *)ordersCount potentialCredit:(LUMonetaryValue *)potentialCredit
-        progressPercent:(float)progressPercent savings:(LUMonetaryValue *)savings
-            shouldSpend:(LUMonetaryValue *)shouldSpend spendRemaining:(LUMonetaryValue *)spendRemaining
-            totalVolume:(LUMonetaryValue *)totalVolume willEarn:(LUMonetaryValue *)willEarn;
+ merchantLoyaltyEnabled:(BOOL)merchantLoyaltyEnabled ordersCount:(NSNumber *)ordersCount
+        potentialCredit:(LUMonetaryValue *)potentialCredit progressPercent:(float)progressPercent
+                savings:(LUMonetaryValue *)savings shouldSpend:(LUMonetaryValue *)shouldSpend
+         spendRemaining:(LUMonetaryValue *)spendRemaining totalVolume:(LUMonetaryValue *)totalVolume
+               willEarn:(LUMonetaryValue *)willEarn;
 
 @end

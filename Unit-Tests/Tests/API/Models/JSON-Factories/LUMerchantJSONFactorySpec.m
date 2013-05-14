@@ -22,7 +22,6 @@ describe(@"LUMerchantJSONFactory", ^{
       [[[merchant valueForKey:@"imageURL_2x"] should] equal:[NSURL URLWithString:@"http://example.com/image_url_2x"]];
       [[merchant.locations should] equal:@[[LULocation fullLocation]]];
       [[merchant.loyalty should] equal:[LULoyalty fullLoyalty]];
-      [[theValue(merchant.loyaltyEnabled) should] beYes];
       [[merchant.merchantID should] equal:@1];
       [[merchant.name should] equal:@"Test Merchant"];
       [[merchant.newsletterURL should] equal:[NSURL URLWithString:@"http://example.com/newsletter"]];

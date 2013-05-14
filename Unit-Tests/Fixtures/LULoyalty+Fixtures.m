@@ -22,6 +22,7 @@
   return @{
     @"merchant_earn_amount" : @500,
     @"merchant_id" : @456,
+    @"merchant_loyalty_enabled" : @YES,
     @"merchant_spend_amount" : @5000,
     @"orders_count" : @77,
     @"potential_credit_amount" : @7350.11,
@@ -34,7 +35,9 @@
 }
 
 + (LULoyalty *)fullLoyalty {
-  return [[LULoyaltyJSONFactory factory] fromJSONObject:[self fullJSONObject]];
+  LULoyaltyJSONFactory *factory = [LULoyaltyJSONFactory factory];
+  factory.loyaltyEnabled = YES;
+  return [factory fromJSONObject:[self fullJSONObject]];
 }
 
 @end

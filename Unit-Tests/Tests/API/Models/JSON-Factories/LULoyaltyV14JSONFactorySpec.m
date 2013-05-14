@@ -23,6 +23,10 @@ describe(@"LULoyaltyV14JSONFactory", ^{
       [[loyalty.merchantID should] equal:@456];
     });
 
+    it(@"should set the merchantLoyaltyEnabled property", ^{
+      [[theValue(loyalty.merchantLoyaltyEnabled) should] beYes];
+    });
+
     it(@"should set the shouldSpend property", ^{
       [[loyalty.shouldSpend should] equal:[LUMonetaryValue monetaryValueWithUSCents:@5000]];
     });

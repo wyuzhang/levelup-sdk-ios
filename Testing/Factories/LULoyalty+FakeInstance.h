@@ -3,5 +3,6 @@
 @interface LULoyalty (FakeInstance)
 
 + (LULoyalty *)fakeInstance;
++ (LULoyalty *)fakeInstanceWithoutMerchantLoyaltyEnabled;
 
 @end

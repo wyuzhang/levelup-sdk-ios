@@ -17,8 +17,6 @@
   NSURL *imageURL_1x = [attributes URLForKey:@"image_url_280x128_1x"];
   NSURL *imageURL_2x = [attributes URLForKey:@"image_url_280x128_2x"];
   NSArray *locations = [[LULocationJSONFactory factory] fromJSONObject:attributes[@"locations"]];
-  LULoyalty *loyalty = [[LULoyaltyJSONFactory factory] fromJSONObject:attributes[@"loyalty"]];
-  BOOL loyaltyEnabled = [attributes boolForKey:@"loyalty_enabled"];
   NSNumber *merchantID = [attributes numberForKey:@"id"];
   NSString *name = [attributes stringForKey:@"name"];
   NSURL *newsletterURL = [attributes URLForKey:@"newsletter_url"];
@@ -30,14 +28,17 @@
   NSURL *websiteURL = [attributes URLForKey:@"url"];
   NSURL *yelpURL = [attributes URLForKey:@"yelp_url"];
 
+  LULoyaltyJSONFactory *loyaltyJSONFactory = [LULoyaltyJSONFactory factory];
+  loyaltyJSONFactory.loyaltyEnabled = [attributes boolForKey:@"loyalty_enabled"];
+  LULoyalty *loyalty = [loyaltyJSONFactory fromJSONObject:attributes[@"loyalty"]];
+
   return [[LUMerchant alloc] initWithDescriptionHTML:descriptionHTML earn:earn
                                   emailCaptureCohort:emailCaptureCohort facebookURL:facebookURL
                                             featured:featured imageURL_1x:imageURL_1x
                                          imageURL_2x:imageURL_2x locations:locations loyalty:loyalty
-                                      loyaltyEnabled:loyaltyEnabled merchantID:merchantID
-                                                name:name newsletterURL:newsletterURL
-                                        opentableURL:opentableURL publicURL:publicURL
-                                           scvngrURL:scvngrURL spend:spend
+                                          merchantID:merchantID name:name
+                                       newsletterURL:newsletterURL opentableURL:opentableURL
+                                           publicURL:publicURL scvngrURL:scvngrURL spend:spend
                                      twitterUsername:twitterUsername yelpURL:yelpURL
                                           websiteURL:websiteURL];
 }

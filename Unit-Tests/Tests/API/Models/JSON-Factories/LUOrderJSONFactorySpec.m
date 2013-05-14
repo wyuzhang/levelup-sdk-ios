@@ -22,7 +22,7 @@ describe(@"LUOrderJSONFactory", ^{
       [[order.interstitialAction should] equal:[LUInterstitialAction fullInterstitialAction]];
       [[order.location should] equal:[LULocation fullLocation]];
       [[order.loyalty should] equal:[LULoyalty fullLoyalty]];
-      [[order.merchant should] equal:[LUMerchant minimalMerchant]];
+      [[order.merchant should] equal:[LUMerchant fullMerchant]];
       [[order.orderID should] equal:@1];
       [[order.refundedDate should] equal:[NSDate fixture]];
       [[order.spend should] equal:[LUMonetaryValue fullMonetaryValue]];

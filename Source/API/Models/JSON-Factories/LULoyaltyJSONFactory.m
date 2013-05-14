@@ -17,7 +17,8 @@
   LUMonetaryValue *totalVolume = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"total_volume"]];
   LUMonetaryValue *willEarn = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"will_earn"]];
 
-  return [[LULoyalty alloc] initWithLoyaltyID:loyaltyID merchantID:merchantID ordersCount:ordersCount
+  return [[LULoyalty alloc] initWithLoyaltyID:loyaltyID merchantID:merchantID
+                       merchantLoyaltyEnabled:self.loyaltyEnabled ordersCount:ordersCount
                               potentialCredit:potentialCredit progressPercent:progressPercent
                                       savings:savings shouldSpend:shouldSpend
                                spendRemaining:spendRemaining totalVolume:totalVolume willEarn:willEarn];

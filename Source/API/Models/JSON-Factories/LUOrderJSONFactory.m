@@ -22,7 +22,6 @@
   LUMonetaryValue *earn = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"earn"]];
   LUInterstitialAction *interstitialAction = [[LUInterstitialActionJSONFactory factory] fromJSONObject:attributes[@"interstitial_action"]];
   LULocation *location = [[LULocationJSONFactory factory] fromJSONObject:attributes[@"location"]];
-  LULoyalty *loyalty = [[LULoyaltyJSONFactory factory] fromJSONObject:attributes[@"loyalty"]];
   LUMerchant *merchant = [[LUMerchantJSONFactory factory] fromJSONObject:attributes[@"merchant"]];
   NSNumber *orderID = [attributes numberForKey:@"id"];
   NSDate *refundedDate = [attributes dateForKey:@"refunded_at"];
@@ -30,6 +29,10 @@
   LUOrderState state = [self stateFromString:[attributes stringForKey:@"state"]];
   LUMonetaryValue *tip = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"tip"]];
   LUMonetaryValue *total = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"total"]];
+
+  LULoyaltyJSONFactory *loyaltyJSONFactory = [LULoyaltyJSONFactory factory];
+  loyaltyJSONFactory.loyaltyEnabled = [attributes[@"merchant"] boolForKey:@"loyalty_enabled"];
+  LULoyalty *loyalty = [loyaltyJSONFactory fromJSONObject:attributes[@"loyalty"]];
 
   return [[LUOrder alloc] initWithBalance:balance closed:closed createdDate:createdDate
                                    credit:credit donation:donation earn:earn

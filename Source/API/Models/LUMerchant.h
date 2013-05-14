@@ -54,15 +54,9 @@ extern NSString * const MerchantNewsletterService;
 @property (nonatomic, copy, readonly) NSArray *locations;
 
 /**
- An `LULoyalty` object for the user. This may be nil is `loyaltyEnabled` is false.
+ An `LULoyalty` object for the user.
  */
 @property (nonatomic, strong, readonly) LULoyalty *loyalty;
-
-/**
- A small percent of LevelUp merchants do not provide loyalty rewards. This property specifies if the merchant has
- loyalty enabled.
- */
-@property (nonatomic, assign, readonly) BOOL loyaltyEnabled;
 
 /**
  The unique identifier for this merchant.
@@ -119,12 +113,12 @@ extern NSString * const MerchantNewsletterService;
            emailCaptureCohort:(LUCohort *)emailCaptureCohort facebookURL:(NSURL *)facebookURL
                      featured:(BOOL)featured imageURL_1x:(NSURL *)imageURL_1x
                   imageURL_2x:(NSURL *)imageURL_2x locations:(NSArray *)locations
-                      loyalty:(LULoyalty *)loyalty loyaltyEnabled:(BOOL)loyaltyEnabled
-                   merchantID:(NSNumber *)merchantID name:(NSString *)name
-                newsletterURL:(NSURL *)newsletterURL opentableURL:(NSURL *)opentableURL
-                    publicURL:(NSURL *)publicURL scvngrURL:(NSURL *)scvngrURL
-                        spend:(LUMonetaryValue *)spend twitterUsername:(NSString *)twitterUsername
-                      yelpURL:(NSURL *)yelpURL websiteURL:(NSURL *)websiteURL;
+                      loyalty:(LULoyalty *)loyalty merchantID:(NSNumber *)merchantID
+                         name:(NSString *)name newsletterURL:(NSURL *)newsletterURL
+                 opentableURL:(NSURL *)opentableURL publicURL:(NSURL *)publicURL
+                    scvngrURL:(NSURL *)scvngrURL spend:(LUMonetaryValue *)spend
+              twitterUsername:(NSString *)twitterUsername yelpURL:(NSURL *)yelpURL
+                   websiteURL:(NSURL *)websiteURL;
 
 /**
  If the merchant has loyalty enabled, returns the amount of credit available to the user at this merchant. If loyalty

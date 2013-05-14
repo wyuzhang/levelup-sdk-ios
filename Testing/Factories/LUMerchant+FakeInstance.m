@@ -10,7 +10,6 @@
                                          imageURL_2x:[NSURL URLWithString:@"http://placekitten.com/g/560/256"]
                                            locations:@[[LULocation fakeInstance]]
                                              loyalty:[LULoyalty fakeInstance]
-                                      loyaltyEnabled:YES
                                           merchantID:@1
                                                 name:@"Test Merchant"
                                        newsletterURL:nil opentableURL:nil publicURL:nil scvngrURL:nil spend:nil
@@ -54,8 +53,7 @@
 
 + (LUMerchant *)fakeInstanceWithoutLoyaltyEnabled {
   LUMerchant *merchant = [LUMerchant fakeInstance];
-  [merchant setValue:nil forKey:@"loyalty"];
-  [merchant setValue:@NO forKey:@"loyaltyEnabled"];
+  [merchant.loyalty setValue:@NO forKey:@"merchantLoyaltyEnabled"];
   return merchant;
 }
 
