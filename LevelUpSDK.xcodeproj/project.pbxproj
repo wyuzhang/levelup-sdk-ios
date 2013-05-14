@@ -20,6 +20,9 @@
 		020CF2B3172F126700D20672 /* LUCause+FakeInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 020CF2B1172F126600D20672 /* LUCause+FakeInstance.h */; };
 		020CF2B4172F126700D20672 /* LUCause+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 020CF2B2172F126600D20672 /* LUCause+FakeInstance.m */; };
 		022B288C166E563400679E06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B026B166853EA006ACA24 /* UIKit.framework */; };
+		025F790017428BF10029FC49 /* LUEmailsRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 025F78FE17428BF10029FC49 /* LUEmailsRequestFactory.h */; };
+		025F790117428BF10029FC49 /* LUEmailsRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F78FF17428BF10029FC49 /* LUEmailsRequestFactory.m */; };
+		025F79041742929E0029FC49 /* LUEmailsRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F790217428FF40029FC49 /* LUEmailsRequestFactorySpec.m */; };
 		02941E6516B738AE00EDAF6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6416B738AE00EDAF6E /* AVFoundation.framework */; };
 		02941E6616B738F300EDAF6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6416B738AE00EDAF6E /* AVFoundation.framework */; };
 		02941E6816B7391700EDAF6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6716B7391700EDAF6E /* QuartzCore.framework */; };
@@ -382,6 +385,9 @@
 		020CF2AC172F047F00D20672 /* LURefund+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LURefund+FakeInstance.m"; sourceTree = "<group>"; };
 		020CF2B1172F126600D20672 /* LUCause+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUCause+FakeInstance.h"; sourceTree = "<group>"; };
 		020CF2B2172F126600D20672 /* LUCause+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUCause+FakeInstance.m"; sourceTree = "<group>"; };
+		025F78FE17428BF10029FC49 /* LUEmailsRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUEmailsRequestFactory.h; sourceTree = "<group>"; };
+		025F78FF17428BF10029FC49 /* LUEmailsRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUEmailsRequestFactory.m; sourceTree = "<group>"; };
+		025F790217428FF40029FC49 /* LUEmailsRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUEmailsRequestFactorySpec.m; sourceTree = "<group>"; };
 		02941E6416B738AE00EDAF6E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		02941E6716B7391700EDAF6E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		02941E6A16B739FE00EDAF6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1112,13 +1118,14 @@
 				C1CAF0E6173052A7003B3D01 /* LUClaimRequestFactorySpec.m */,
 				C1CAF0E7173052A7003B3D01 /* LUCohortRequestFactorySpec.m */,
 				C1CAF0E8173052A7003B3D01 /* LUCreditCardRequestFactorySpec.m */,
+				025F790217428FF40029FC49 /* LUEmailsRequestFactorySpec.m */,
 				02D68DD91738497A005E1BA8 /* LULocationRequestFactorySpec.m */,
+				F8736499173AA1900024A3F5 /* LULoyaltyRequestFactorySpec.m */,
 				C1CAF0E9173052A7003B3D01 /* LUMerchantRequestFactorySpec.m */,
 				C1CAF0EA173052A7003B3D01 /* LUOAuthTokenRequestFactorySpec.m */,
 				C1CAF0EB173052A7003B3D01 /* LUOrderRequestFactorySpec.m */,
 				C1CAF0EC173052A7003B3D01 /* LUTicketRequestFactorySpec.m */,
 				C1CAF0ED173052A7003B3D01 /* LUUserRequestFactorySpec.m */,
-				F8736499173AA1900024A3F5 /* LULoyaltyRequestFactorySpec.m */,
 			);
 			name = "Request Factories";
 			path = "Request-Factories";
@@ -1335,8 +1342,12 @@
 				C1CAF1C917315414003B3D01 /* LUCohortRequestFactory.m */,
 				C1CAF1CA17315414003B3D01 /* LUCreditCardRequestFactory.h */,
 				C1CAF1CB17315414003B3D01 /* LUCreditCardRequestFactory.m */,
+				025F78FE17428BF10029FC49 /* LUEmailsRequestFactory.h */,
+				025F78FF17428BF10029FC49 /* LUEmailsRequestFactory.m */,
 				2523E31917374B3F00FBDFEB /* LULocationRequestFactory.h */,
 				2523E31A17374B3F00FBDFEB /* LULocationRequestFactory.m */,
+				F87364A0173AA4AF0024A3F5 /* LULoyaltyRequestFactory.h */,
+				F87364A1173AA4AF0024A3F5 /* LULoyaltyRequestFactory.m */,
 				C1CAF1CC17315414003B3D01 /* LUMerchantRequestFactory.h */,
 				C1CAF1CD17315414003B3D01 /* LUMerchantRequestFactory.m */,
 				C1CAF1CE17315414003B3D01 /* LUOAuthTokenRequestFactory.h */,
@@ -1347,8 +1358,6 @@
 				C1CAF1D317315415003B3D01 /* LUTicketRequestFactory.m */,
 				C1CAF1D417315415003B3D01 /* LUUserRequestFactory.h */,
 				C1CAF1D517315415003B3D01 /* LUUserRequestFactory.m */,
-				F87364A0173AA4AF0024A3F5 /* LULoyaltyRequestFactory.h */,
-				F87364A1173AA4AF0024A3F5 /* LULoyaltyRequestFactory.m */,
 			);
 			name = "Request Factories";
 			path = "Request-Factories";
@@ -1547,6 +1556,7 @@
 				63CC1CD91739C6B00037B65F /* LUCauseAffiliationRequestFactory.h in Headers */,
 				63CC1CDD1739C7620037B65F /* LUCauseAffiliation.h in Headers */,
 				63CC1CE11739CBD60037B65F /* LUCauseAffiliationJSONFactory.h in Headers */,
+				025F790017428BF10029FC49 /* LUEmailsRequestFactory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1790,6 +1800,7 @@
 				63CC1CDA1739C6B00037B65F /* LUCauseAffiliationRequestFactory.m in Sources */,
 				63CC1CDE1739C7620037B65F /* LUCauseAffiliation.m in Sources */,
 				63CC1CE21739CBD60037B65F /* LUCauseAffiliationJSONFactory.m in Sources */,
+				025F790117428BF10029FC49 /* LUEmailsRequestFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1910,6 +1921,7 @@
 				63CC1CE91739E04D0037B65F /* LUCauseAffiliationSpec.m in Sources */,
 				63CC1CEB1739E1250037B65F /* LUCauseAffiliationRequestFactorySpec.m in Sources */,
 				63CC1CEE1739EC610037B65F /* LUCauseAffiliation+FakeInstance.m in Sources */,
+				025F79041742929E0029FC49 /* LUEmailsRequestFactorySpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1935,7 +1947,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_VERSION = 0.8.6;
+				FRAMEWORK_VERSION = 0.8.7;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
@@ -2003,7 +2015,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_VERSION = 0.8.6;
+				FRAMEWORK_VERSION = 0.8.7;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2043,7 +2055,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_VERSION = 0.8.6;
+				FRAMEWORK_VERSION = 0.8.7;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",

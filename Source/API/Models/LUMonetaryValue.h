@@ -30,7 +30,7 @@
 
 /**
  Returns an `LUMonetaryValue` instance for the given amount, in cents.
- 
+
  @param amount An amount of money, in cents.
  */
 + (LUMonetaryValue *)monetaryValueWithUSCents:(NSNumber *)amount;
