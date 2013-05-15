@@ -162,6 +162,14 @@ describe(@"NSDictionary", ^{
         [[dictionary stringForKey:@"not a string"] shouldBeNil];
       });
     });
+
+    context(@"when the value is an empty string", ^{
+      NSDictionary *dictionary = @{@"empty string" : @""};
+
+      it(@"returns nil", ^{
+        [[dictionary stringForKey:@"empty string"] shouldBeNil];
+      });
+    });
   });
 
   describe(@"URLForKey:", ^{

@@ -47,7 +47,9 @@
 }
 
 - (NSString *)stringForKey:(id)aKey {
-  return [self objectForKey:aKey ofClass:[NSString class]];
+  NSString *string = [self objectForKey:aKey ofClass:[NSString class]];
+  if (string.length == 0) return nil;
+  return string;
 }
 
 - (NSURL *)URLForKey:(id)aKey {
