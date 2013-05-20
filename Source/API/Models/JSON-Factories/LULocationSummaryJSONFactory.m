@@ -24,7 +24,7 @@
 - (id)createFromAttributes:(NSDictionary *)attributes {
   NSArray *categoryIDs;
 
-  if ([attributes[@"categories"] isKindOfClass:[NSArray array]]) {
+  if ([attributes[@"categories"] isKindOfClass:[NSArray class]]) {
     categoryIDs = attributes[@"categories"];
   }
 

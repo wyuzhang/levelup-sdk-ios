@@ -2,5 +2,6 @@
 
 + (NSDictionary *)fullJSONObject;
 + (LULocation *)fullLocation;
++ (NSDictionary *)summaryJSONObject;
 
 @end

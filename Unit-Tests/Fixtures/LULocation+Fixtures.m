@@ -36,4 +36,17 @@
   return [[LULocationJSONFactory factory] fromJSONObject:[self fullJSONObject]];
 }
 
++ (NSDictionary *)summaryJSONObject {
+  return @{
+    @"categories" : @[@1, @2, @3],
+    @"id" : @1,
+    @"latitude" : @70,
+    @"longitude" : @-45,
+    @"merchant_id" : @1,
+    @"merchant_name" : @"Dewey, Cheatem and Howe",
+    @"shown" : @1,
+    @"updated_at" : [[NSDate fixture] iso8601DateTimeString]
+  };
+}
+
 @end

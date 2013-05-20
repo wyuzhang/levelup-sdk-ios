@@ -55,6 +55,7 @@
 		02941FAE16B96CBC00EDAF6E /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F8E16B96CBC00EDAF6E /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-Wno-conversion"; }; };
 		02941FAF16B96CBC00EDAF6E /* SecKeyWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8F16B96CBC00EDAF6E /* SecKeyWrapper.h */; };
 		02941FB016B96CBC00EDAF6E /* SecKeyWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F9016B96CBC00EDAF6E /* SecKeyWrapper.m */; };
+		02BA9827174AD23100C9D647 /* LULocationSummaryJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA9825174AD22200C9D647 /* LULocationSummaryJSONFactorySpec.m */; };
 		02D68DC5173809C1005E1BA8 /* LUClaim+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DC4173809C1005E1BA8 /* LUClaim+FakeInstance.m */; };
 		02D68DC817381E0D005E1BA8 /* LUCreditCard+FakeInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 02D68DC617381E0D005E1BA8 /* LUCreditCard+FakeInstance.h */; };
 		02D68DC917381E0D005E1BA8 /* LUCreditCard+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DC717381E0D005E1BA8 /* LUCreditCard+FakeInstance.m */; };
@@ -410,6 +411,7 @@
 		02941F8E16B96CBC00EDAF6E /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		02941F8F16B96CBC00EDAF6E /* SecKeyWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecKeyWrapper.h; sourceTree = "<group>"; };
 		02941F9016B96CBC00EDAF6E /* SecKeyWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecKeyWrapper.m; sourceTree = "<group>"; };
+		02BA9825174AD22200C9D647 /* LULocationSummaryJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationSummaryJSONFactorySpec.m; sourceTree = "<group>"; };
 		02D68DC3173809C1005E1BA8 /* LUClaim+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUClaim+FakeInstance.h"; sourceTree = "<group>"; };
 		02D68DC4173809C1005E1BA8 /* LUClaim+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUClaim+FakeInstance.m"; sourceTree = "<group>"; };
 		02D68DC617381E0D005E1BA8 /* LUCreditCard+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUCreditCard+FakeInstance.h"; sourceTree = "<group>"; };
@@ -1081,6 +1083,7 @@
 				C1CAF0BA173052A7003B3D01 /* LUDonationJSONFactorySpec.m */,
 				C1CAF0BB173052A7003B3D01 /* LUInterstitialActionJSONFactorySpec.m */,
 				C1CAF0BC173052A7003B3D01 /* LULocationJSONFactorySpec.m */,
+				02BA9825174AD22200C9D647 /* LULocationSummaryJSONFactorySpec.m */,
 				C1CAF0BD173052A7003B3D01 /* LULoyaltyJSONFactorySpec.m */,
 				F87364A8173AE5250024A3F5 /* LULoyaltyV14JSONFactorySpec.m */,
 				C1CAF0BE173052A7003B3D01 /* LUMerchantJSONFactorySpec.m */,
@@ -1922,6 +1925,7 @@
 				63CC1CEB1739E1250037B65F /* LUCauseAffiliationRequestFactorySpec.m in Sources */,
 				63CC1CEE1739EC610037B65F /* LUCauseAffiliation+FakeInstance.m in Sources */,
 				025F79041742929E0029FC49 /* LUEmailsRequestFactorySpec.m in Sources */,
+				02BA9827174AD23100C9D647 /* LULocationSummaryJSONFactorySpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
