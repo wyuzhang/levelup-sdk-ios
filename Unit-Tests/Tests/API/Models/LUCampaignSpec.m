@@ -144,35 +144,6 @@ describe(@"LUCampaign", ^{
       });
     });
   });
-
-  describe(@"successfulClaimMessageHTML", ^{
-    context(@"when the campaign has non-empty confirmationHTML", ^{
-      LUCampaign *campaign = [LUCampaign fakeInstanceWithConfirmationHTML:@"<p>confirmation</p>" offerHTML:@"<p>offer</p>"];
-
-      it(@"returns the confirmationHTML", ^{
-        [[[campaign successfulClaimMessageHTML] should] equal:campaign.confirmationHTML];
-      });
-    });
-
-    context(@"when the campaign has no confirmationHTML, but has offerHTML", ^{
-      LUCampaign *campaign = [LUCampaign fakeInstanceWithConfirmationHTML:nil offerHTML:@"<p>offer</p>"];
-
-      it(@"returns the offerHTML", ^{
-        [[[campaign successfulClaimMessageHTML] should] equal:campaign.offerHTML];
-      });
-    });
-  });
-
-  describe(@"successfulClaimMessageText", ^{
-    LUCampaign *campaign = [LUCampaign fakeInstance];
-
-    it(@"returns successfulClaimMessageHTML with HTML stripped out", ^{
-      NSString *expectedText = @"This is a test.";
-      [campaign stub:@selector(successfulClaimMessageHTML) andReturn:[NSString stringWithFormat:@"<p>%@</p>", expectedText]];
-
-      [[[campaign successfulClaimMessageText] should] equal:expectedText];
-    });
-  });
 });
 
 SPEC_END

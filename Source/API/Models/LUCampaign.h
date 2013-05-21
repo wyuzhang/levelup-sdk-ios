@@ -137,14 +137,4 @@
  */
 - (NSURL *)shareURLForTwitter;
 
-/**
- Returns `confirmationHTML` if available, or else `offerHTML`.
- */
-- (NSString *)successfulClaimMessageHTML;
-
-/**
- Returns `confirmationText` if available, or else `offerText`.
- */
-- (NSString *)successfulClaimMessageText;
-
 @end

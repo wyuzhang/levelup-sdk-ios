@@ -90,18 +90,6 @@ NSString * const LUCohortTypeDefaultTwitter = @"default_twitter";
   return [self sharingCohortOfType:LUCohortTypeDefaultTwitter].cohortURL;
 }
 
-- (NSString *)successfulClaimMessageHTML {
-  if (self.confirmationHTML.length > 0) {
-    return self.confirmationHTML;
-  } else {
-    return self.offerHTML;
-  }
-}
-
-- (NSString *)successfulClaimMessageText {
-  return [[self successfulClaimMessageHTML] stringByStrippingHTML];
-}
-
 #pragma mark - NSObject Methods
 
 - (NSString *)debugDescription {
