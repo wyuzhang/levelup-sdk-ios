@@ -57,17 +57,16 @@ static NSString * const kQRCodeSentinel = @"LU";
 #pragma mark - Private
 
 - (NSString *)formattedQRCodeString {
-  if ([self isVersion0Code]) {
-    return [self version0Representation];
-  } else {
-    return [self version2Representation];
-  }
-}
+  NSArray *components = @[
+    self.baseString,
+    kCurrentQRCodeVersion,
+    kTipTypePercent,
+    [self tipPercentBase36],
+    [self glowColorIDBase36],
+    kQRCodeSentinel];
 
-- (BOOL)isVersion0Code {
-  return [self.baseString rangeOfString:@"-"].location != NSNotFound;
+  return [components componentsJoinedByString:@""];
 }
-
 - (NSString *)glowColorIDBase36 {
   return [[[NSNumber numberWithInt:self.glowColorID] base36Value] substringToIndex:1];
 }
@@ -82,22 +81,6 @@ static NSString * const kQRCodeSentinel = @"LU";
   } else {
     return tipPercentBase36;
   }
-}
-
-- (NSString *)version0Representation {
-  return [NSString stringWithFormat:@"%@-t=%d%%26c=%i", self.baseString, self.tipPercentage, self.glowColorID];
-}
-
-- (NSString *)version2Representation {
-  NSArray *components = @[
-    self.baseString,
-    kCurrentQRCodeVersion,
-    kTipTypePercent,
-    [self tipPercentBase36],
-    [self glowColorIDBase36],
-    kQRCodeSentinel];
-
-  return [components componentsJoinedByString:@""];
 }
 
 @end
