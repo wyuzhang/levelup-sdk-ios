@@ -64,6 +64,7 @@
 		02D68DD01738370F005E1BA8 /* NSRegularExpression+LUAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 02D68DCE1738370F005E1BA8 /* NSRegularExpression+LUAdditions.h */; };
 		02D68DD11738370F005E1BA8 /* NSRegularExpression+LUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DCF1738370F005E1BA8 /* NSRegularExpression+LUAdditions.m */; };
 		02D68DDA1738497A005E1BA8 /* LULocationRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DD91738497A005E1BA8 /* LULocationRequestFactorySpec.m */; };
+		2504194E174AEAE300254161 /* LUPersistedObjectsInitial.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 2523E33717374D9C00FBDFEB /* LUPersistedObjectsInitial.sqlite */; };
 		2523E31317374B1D00FBDFEB /* LUWebLinkParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2523E31117374B1D00FBDFEB /* LUWebLinkParser.h */; };
 		2523E31417374B1D00FBDFEB /* LUWebLinkParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523E31217374B1D00FBDFEB /* LUWebLinkParser.m */; };
 		2523E31717374B2900FBDFEB /* LULocationSummaryJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 2523E31517374B2900FBDFEB /* LULocationSummaryJSONFactory.h */; };
@@ -89,6 +90,7 @@
 		2523E34617374DFE00FBDFEB /* LULocationCacheUpdaterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523E33D17374DCC00FBDFEB /* LULocationCacheUpdaterSpec.m */; };
 		2523E34817374EA200FBDFEB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2523E34717374EA100FBDFEB /* CoreData.framework */; };
 		2523E34917374EAB00FBDFEB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2523E34717374EA100FBDFEB /* CoreData.framework */; };
+		2576B257174AE6FD00689973 /* LUCoreDataStackSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2576B255174AE6F200689973 /* LUCoreDataStackSpec.m */; };
 		257B026C166853EA006ACA24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B026B166853EA006ACA24 /* UIKit.framework */; };
 		2590538016C58B4E0021B411 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2590537F16C58B4E0021B411 /* CFNetwork.framework */; };
 		25F643A8166832D600A05C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A7166832D600A05C0E /* Foundation.framework */; };
@@ -449,6 +451,7 @@
 		2523E34117374DEF00FBDFEB /* NSManagedObjectContext+TestContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TestContext.h"; sourceTree = "<group>"; };
 		2523E34217374DEF00FBDFEB /* NSManagedObjectContext+TestContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TestContext.m"; sourceTree = "<group>"; };
 		2523E34717374EA100FBDFEB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2576B255174AE6F200689973 /* LUCoreDataStackSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCoreDataStackSpec.m; sourceTree = "<group>"; };
 		257B026B166853EA006ACA24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2590537F16C58B4E0021B411 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		25F643A4166832D600A05C0E /* libLevelUpSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLevelUpSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -890,6 +893,7 @@
 			children = (
 				2523E33B17374DCC00FBDFEB /* LUCachedLocationSearchSpec.m */,
 				2523E33C17374DCC00FBDFEB /* LUCachedLocationSpec.m */,
+				2576B255174AE6F200689973 /* LUCoreDataStackSpec.m */,
 				2523E33D17374DCC00FBDFEB /* LULocationCacheUpdaterSpec.m */,
 			);
 			path = Persistence;
@@ -1637,6 +1641,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2504194E174AEAE300254161 /* LUPersistedObjectsInitial.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1926,6 +1931,7 @@
 				63CC1CEE1739EC610037B65F /* LUCauseAffiliation+FakeInstance.m in Sources */,
 				025F79041742929E0029FC49 /* LUEmailsRequestFactorySpec.m in Sources */,
 				02BA9827174AD23100C9D647 /* LULocationSummaryJSONFactorySpec.m in Sources */,
+				2576B257174AE6FD00689973 /* LUCoreDataStackSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
