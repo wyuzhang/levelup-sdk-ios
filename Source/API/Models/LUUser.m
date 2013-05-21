@@ -11,14 +11,14 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
 #pragma mark - Creation
 
 - (id)initWithAbleToRefer:(BOOL)ableToRefer birthdate:(NSDate *)birthdate
-      connectedToFacebook:(BOOL)connectedToFacebook
-                   credit:(LUMonetaryValue *)credit customAttributes:(NSDictionary *)customAttributes
-                    email:(NSString *)email employer:(NSString *)employer firstName:(NSString *)firstName
-                   gender:(LUGender)gender lastName:(NSString *)lastName
-         loyaltiesSavings:(LUMonetaryValue *)loyaltiesSavings merchantsVisitedCount:(NSNumber *)merchangsVisitedCount
-              ordersCount:(NSNumber *)ordersCount paymentEligible:(BOOL)paymentEligible
-             paymentToken:(NSString *)paymentToken termsAcceptedDate:(NSDate *)termsAcceptedDate
-            userAddresses:(NSArray *)userAddresses userID:(NSNumber *)userID {
+      connectedToFacebook:(BOOL)connectedToFacebook credit:(LUMonetaryValue *)credit
+         customAttributes:(NSDictionary *)customAttributes email:(NSString *)email
+                 employer:(NSString *)employer firstName:(NSString *)firstName gender:(LUGender)gender
+                 lastName:(NSString *)lastName loyaltiesSavings:(LUMonetaryValue *)loyaltiesSavings
+    merchantsVisitedCount:(NSNumber *)merchangsVisitedCount ordersCount:(NSNumber *)ordersCount
+          paymentEligible:(BOOL)paymentEligible paymentToken:(NSString *)paymentToken
+        termsAcceptedDate:(NSDate *)termsAcceptedDate userAddresses:(NSArray *)userAddresses
+                   userID:(NSNumber *)userID {
   self = [super init];
   if (!self) return nil;
 

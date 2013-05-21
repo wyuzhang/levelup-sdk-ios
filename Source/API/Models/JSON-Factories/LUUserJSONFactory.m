@@ -28,7 +28,7 @@
   NSArray *userAddresses = [[LUUserAddressJSONFactory factory] fromJSONObject:attributes[@"user_addresses"]];
   NSNumber *userID = [attributes numberForKey:@"id"];
 
-  return [[LUUser alloc] initWithAbleToRefer:ableToRefer birthdate:birthdate 
+  return [[LUUser alloc] initWithAbleToRefer:ableToRefer birthdate:birthdate
                          connectedToFacebook:connectedToFacebook credit:credit customAttributes:customAttributes
                                        email:email employer:employer firstName:firstName gender:gender lastName:lastName
                             loyaltiesSavings:loyaltiesSavings merchantsVisitedCount:merchantsVisitedCount

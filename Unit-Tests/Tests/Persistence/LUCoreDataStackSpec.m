@@ -1,4 +1,5 @@
 #import "LUCoreDataStack.h"
+#import "LUCoreDataStore.h"
 #import "NSArray+LUAdditions.h"
 
 SPEC_BEGIN(LUCoreDataStackSpec)
@@ -10,8 +11,8 @@ describe(@"LUCoreDataStack", ^{
     __block NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
     beforeEach(^{
+      [LUCoreDataStore stub:@selector(storeURL) andReturn:[NSURL nullMock]];
       [NSManagedObjectModel stub:@selector(mergedModelFromBundles:) andReturn:[NSManagedObjectModel nullMock]];
-      [NSBundle stub:@selector(mainBundle) andReturn:[NSBundle bundleForClass:[LUCoreDataStack class]]];
 
       persistentStoreCoordinator = [NSPersistentStoreCoordinator nullMock];
       [NSPersistentStoreCoordinator stub:@selector(alloc) andReturn:persistentStoreCoordinator];
@@ -26,43 +27,7 @@ describe(@"LUCoreDataStack", ^{
 
       [LUCoreDataStack managedObjectContext];
 
-      [[spy.argument should] equal:[LUCoreDataStack storeDatabaseURL]];
-    });
-
-    context(@"when the store database doesn't exist", ^{
-      beforeEach(^{
-        [[[NSFileManager defaultManager] stubAndReturn:theValue(NO)] fileExistsAtPath:[[LUCoreDataStack storeDatabaseURL] path]];
-      });
-
-      it(@"copies the initial database to the store database", ^{
-        [[[[NSFileManager defaultManager] should] receive] copyItemAtURL:[LUCoreDataStack initialDatabaseURL]
-                                                                   toURL:[LUCoreDataStack storeDatabaseURL]
-                                                                   error:nil];
-
-        [LUCoreDataStack managedObjectContext];
-      });
-    });
-
-    context(@"when the initial database is newer than the store database", ^{
-      beforeEach(^{
-        [[[NSFileManager defaultManager] stubAndReturn:@YES] fileExistsAtPath:[[LUCoreDataStack storeDatabaseURL] path]];
-
-        [[[NSFileManager defaultManager] stubAndReturn:@{NSFileCreationDate : [NSDate distantPast]}] attributesOfItemAtPath:[[LUCoreDataStack storeDatabaseURL] path]
-                                                                                                                      error:nil];
-        [[[NSFileManager defaultManager] stubAndReturn:@{NSFileCreationDate : [NSDate date]}] attributesOfItemAtPath:[[LUCoreDataStack initialDatabaseURL] path]
-                                                                                                               error:nil];
-      });
-
-      it(@"replaces the store database with the initial database", ^{
-        [[[[NSFileManager defaultManager] should] receive] removeItemAtURL:[LUCoreDataStack storeDatabaseURL]
-                                                                     error:nil];
-
-        [[[[NSFileManager defaultManager] should] receive] copyItemAtURL:[LUCoreDataStack initialDatabaseURL]
-                                                                   toURL:[LUCoreDataStack storeDatabaseURL]
-                                                                   error:nil];
-
-        [LUCoreDataStack managedObjectContext];
-      });
+      [[spy.argument should] equal:[LUCoreDataStore storeURL]];
     });
   });
 

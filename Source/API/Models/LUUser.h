@@ -77,13 +77,14 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, copy, readonly) NSNumber *merchantsVisitedCount;
 
 /**
- A new password for the user. This will always be nil when returned by the server; to set a new password, `newPassword`
- and `newPasswordConfirmation` must both be set to the same non-empty value.
+ A new password for the user. This will always be nil when returned by the server; to set a new
+ password, `newPassword` and `newPasswordConfirmation` must both be set to the same non-empty value.
  */
 @property (nonatomic, copy, getter = theNewPassword) NSString *newPassword;
 
 /**
- New password confirmation. Must match `newPassword` in order for a new password to be successfully updated.
+ New password confirmation. Must match `newPassword` in order for a new password to be successfully
+ updated.
  */
 @property (nonatomic, copy, getter = theNewPasswordConfirmation) NSString *newPasswordConfirmation;
 
@@ -123,14 +124,14 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, copy, readonly) NSNumber *userID;
 
 - (id)initWithAbleToRefer:(BOOL)ableToRefer birthdate:(NSDate *)birthdate
-      connectedToFacebook:(BOOL)connectedToFacebook
-                   credit:(LUMonetaryValue *)credit customAttributes:(NSDictionary *)customAttributes
-                    email:(NSString *)email employer:(NSString *)employer firstName:(NSString *)firstName
-                   gender:(LUGender)gender lastName:(NSString *)lastName
-         loyaltiesSavings:(LUMonetaryValue *)loyaltiesSavings merchantsVisitedCount:(NSNumber *)merchangsVisitedCount
-              ordersCount:(NSNumber *)ordersCount paymentEligible:(BOOL)paymentEligible
-             paymentToken:(NSString *)paymentToken 
-        termsAcceptedDate:(NSDate *)termsAcceptedDate userAddresses:(NSArray *)userAddresses userID:(NSNumber *)userID;
+      connectedToFacebook:(BOOL)connectedToFacebook credit:(LUMonetaryValue *)credit
+         customAttributes:(NSDictionary *)customAttributes email:(NSString *)email
+                 employer:(NSString *)employer firstName:(NSString *)firstName gender:(LUGender)gender
+                 lastName:(NSString *)lastName loyaltiesSavings:(LUMonetaryValue *)loyaltiesSavings
+    merchantsVisitedCount:(NSNumber *)merchangsVisitedCount ordersCount:(NSNumber *)ordersCount
+          paymentEligible:(BOOL)paymentEligible paymentToken:(NSString *)paymentToken
+        termsAcceptedDate:(NSDate *)termsAcceptedDate userAddresses:(NSArray *)userAddresses
+                   userID:(NSNumber *)userID;
 
 /**
  The user's home address.

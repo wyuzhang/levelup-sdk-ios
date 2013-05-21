@@ -1,8 +1,6 @@
 #import "LUCoreDataStack.h"
+#import "LUCoreDataStore.h"
 #import "NSArray+LUAdditions.h"
-
-NSString * const LUPersistedObjectsInitialDatabaseFileName = @"LUPersistedObjectsInitial";
-NSString * const LUPersistedObjectsStoreDatabaseFileName = @"LUPersistedObjects";
 
 @implementation LUCoreDataStack
 
@@ -29,19 +27,6 @@ NSString * const LUPersistedObjectsStoreDatabaseFileName = @"LUPersistedObjects"
   [self setMetadata:metadata forObjectContext:moc];
 }
 
-#pragma mark - Public Methods (Database URLs)
-
-+ (NSURL *)initialDatabaseURL {
-  return [[NSBundle mainBundle] URLForResource:LUPersistedObjectsInitialDatabaseFileName withExtension:@"sqlite"];
-}
-
-+ (NSURL *)storeDatabaseURL {
-  NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-
-  NSString *storeFileName = [LUPersistedObjectsStoreDatabaseFileName stringByAppendingPathExtension:@"sqlite"];
-  return [applicationDocumentsDirectory URLByAppendingPathComponent:storeFileName];
-}
-
 #pragma mark - Private Methods (Store Access)
 
 + (NSDictionary *)metadataForObjectContext:(NSManagedObjectContext *)moc {
@@ -54,10 +39,6 @@ NSString * const LUPersistedObjectsStoreDatabaseFileName = @"LUPersistedObjects"
 }
 
 + (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-  if (![self storeDatabaseExists] || [self initialDatabaseNewerThanStoreDatabase]) {
-    [self replaceStoreDatabaseWithInitial];
-  }
-
   NSManagedObjectModel *mom = [NSManagedObjectModel mergedModelFromBundles:nil];
   NSPersistentStoreCoordinator *persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
 
@@ -65,7 +46,7 @@ NSString * const LUPersistedObjectsStoreDatabaseFileName = @"LUPersistedObjects"
   NSError *error;
   if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
                                                 configuration:nil
-                                                          URL:[self storeDatabaseURL]
+                                                          URL:[LUCoreDataStore storeURL]
                                                       options:options
                                                         error:&error]) {
     NSLog(@"Error while creating persistent store coordinator: %@, %@", error, [error userInfo]);
@@ -73,32 +54,6 @@ NSString * const LUPersistedObjectsStoreDatabaseFileName = @"LUPersistedObjects"
   }
 
   return persistentStoreCoordinator;
-}
-
-#pragma mark - Private Methods (Store File Access)
-
-+ (NSDate *)fileCreatedAt:(NSURL *)file {
-  NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[file path] error:nil];
-  return attributes[NSFileCreationDate];
-}
-
-+ (BOOL)initialDatabaseNewerThanStoreDatabase {
-  NSDate *storeDatabaseCreatedAt = [self fileCreatedAt:[self storeDatabaseURL]];
-  NSDate *initialDatabaseCreatedAt = [self fileCreatedAt:[self initialDatabaseURL]];
-
-  return [[storeDatabaseCreatedAt earlierDate:initialDatabaseCreatedAt] isEqualToDate:storeDatabaseCreatedAt];
-}
-
-+ (void)replaceStoreDatabaseWithInitial {
-  if ([self storeDatabaseExists]) {
-    [[NSFileManager defaultManager] removeItemAtURL:[self storeDatabaseURL] error:nil];
-  }
-
-  [[NSFileManager defaultManager] copyItemAtURL:[self initialDatabaseURL] toURL:[self storeDatabaseURL] error:nil];
-}
-
-+ (BOOL)storeDatabaseExists {
-  return [[NSFileManager defaultManager] fileExistsAtPath:[[self storeDatabaseURL] path]];
 }
 
 @end

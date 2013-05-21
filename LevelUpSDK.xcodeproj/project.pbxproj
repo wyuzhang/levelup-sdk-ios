@@ -56,6 +56,9 @@
 		02941FAF16B96CBC00EDAF6E /* SecKeyWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8F16B96CBC00EDAF6E /* SecKeyWrapper.h */; };
 		02941FB016B96CBC00EDAF6E /* SecKeyWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F9016B96CBC00EDAF6E /* SecKeyWrapper.m */; };
 		02BA9827174AD23100C9D647 /* LULocationSummaryJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA9825174AD22200C9D647 /* LULocationSummaryJSONFactorySpec.m */; };
+		02BA982A174BE19500C9D647 /* LUCoreDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 02BA9828174BE19500C9D647 /* LUCoreDataStore.h */; };
+		02BA982B174BE19500C9D647 /* LUCoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA9829174BE19500C9D647 /* LUCoreDataStore.m */; };
+		02BA982E174BE37600C9D647 /* LUCoreDataStoreSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA982C174BE36800C9D647 /* LUCoreDataStoreSpec.m */; };
 		02D68DC5173809C1005E1BA8 /* LUClaim+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DC4173809C1005E1BA8 /* LUClaim+FakeInstance.m */; };
 		02D68DC817381E0D005E1BA8 /* LUCreditCard+FakeInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 02D68DC617381E0D005E1BA8 /* LUCreditCard+FakeInstance.h */; };
 		02D68DC917381E0D005E1BA8 /* LUCreditCard+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DC717381E0D005E1BA8 /* LUCreditCard+FakeInstance.m */; };
@@ -414,6 +417,9 @@
 		02941F8F16B96CBC00EDAF6E /* SecKeyWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecKeyWrapper.h; sourceTree = "<group>"; };
 		02941F9016B96CBC00EDAF6E /* SecKeyWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecKeyWrapper.m; sourceTree = "<group>"; };
 		02BA9825174AD22200C9D647 /* LULocationSummaryJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationSummaryJSONFactorySpec.m; sourceTree = "<group>"; };
+		02BA9828174BE19500C9D647 /* LUCoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCoreDataStore.h; sourceTree = "<group>"; };
+		02BA9829174BE19500C9D647 /* LUCoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCoreDataStore.m; sourceTree = "<group>"; };
+		02BA982C174BE36800C9D647 /* LUCoreDataStoreSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCoreDataStoreSpec.m; sourceTree = "<group>"; };
 		02D68DC3173809C1005E1BA8 /* LUClaim+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUClaim+FakeInstance.h"; sourceTree = "<group>"; };
 		02D68DC4173809C1005E1BA8 /* LUClaim+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUClaim+FakeInstance.m"; sourceTree = "<group>"; };
 		02D68DC617381E0D005E1BA8 /* LUCreditCard+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUCreditCard+FakeInstance.h"; sourceTree = "<group>"; };
@@ -882,6 +888,8 @@
 				2523E32817374D8B00FBDFEB /* LUCachedLocationSearch.m */,
 				2523E32917374D8B00FBDFEB /* LUCoreDataStack.h */,
 				2523E32A17374D8B00FBDFEB /* LUCoreDataStack.m */,
+				02BA9828174BE19500C9D647 /* LUCoreDataStore.h */,
+				02BA9829174BE19500C9D647 /* LUCoreDataStore.m */,
 				2523E32B17374D8B00FBDFEB /* LULocationCacheUpdater.h */,
 				2523E32C17374D8B00FBDFEB /* LULocationCacheUpdater.m */,
 			);
@@ -894,6 +902,7 @@
 				2523E33B17374DCC00FBDFEB /* LUCachedLocationSearchSpec.m */,
 				2523E33C17374DCC00FBDFEB /* LUCachedLocationSpec.m */,
 				2576B255174AE6F200689973 /* LUCoreDataStackSpec.m */,
+				02BA982C174BE36800C9D647 /* LUCoreDataStoreSpec.m */,
 				2523E33D17374DCC00FBDFEB /* LULocationCacheUpdaterSpec.m */,
 			);
 			path = Persistence;
@@ -1564,6 +1573,7 @@
 				63CC1CDD1739C7620037B65F /* LUCauseAffiliation.h in Headers */,
 				63CC1CE11739CBD60037B65F /* LUCauseAffiliationJSONFactory.h in Headers */,
 				025F790017428BF10029FC49 /* LUEmailsRequestFactory.h in Headers */,
+				02BA982A174BE19500C9D647 /* LUCoreDataStore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1809,6 +1819,7 @@
 				63CC1CDE1739C7620037B65F /* LUCauseAffiliation.m in Sources */,
 				63CC1CE21739CBD60037B65F /* LUCauseAffiliationJSONFactory.m in Sources */,
 				025F790117428BF10029FC49 /* LUEmailsRequestFactory.m in Sources */,
+				02BA982B174BE19500C9D647 /* LUCoreDataStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1932,6 +1943,7 @@
 				025F79041742929E0029FC49 /* LUEmailsRequestFactorySpec.m in Sources */,
 				02BA9827174AD23100C9D647 /* LULocationSummaryJSONFactorySpec.m in Sources */,
 				2576B257174AE6FD00689973 /* LUCoreDataStackSpec.m in Sources */,
+				02BA982E174BE37600C9D647 /* LUCoreDataStoreSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
