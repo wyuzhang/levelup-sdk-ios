@@ -149,12 +149,19 @@ describe(@"LULocation", ^{
     });
   });
 
-  describe(@"title", ^{
-    it(@"is the fullStreetAddress", ^{
+  describe(@"subtitle", ^{
+    it(@"is the name", ^{
       LULocation *location = [LULocation fakeInstance];
-      [location stub:@selector(fullStreetAddress) andReturn:@"123 Main St"];
 
-      [[[location title] should] equal:[location fullStreetAddress]];
+      [[[location subtitle] should] equal:location.name];
+    });
+  });
+
+  describe(@"title", ^{
+    it(@"is the merchantName", ^{
+      LULocation *location = [LULocation fakeInstance];
+
+      [[[location title] should] equal:location.merchantName];
     });
   });
 });

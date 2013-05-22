@@ -112,8 +112,12 @@
   }
 }
 
+- (NSString *)subtitle {
+  return self.name;
+}
+
 - (NSString *)title {
-  return [self fullStreetAddress];
+  return self.merchantName;
 }
 
 #pragma mark - NSObject Methods
