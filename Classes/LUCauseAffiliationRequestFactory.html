@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUOAuthTokenRequestBuilder Class Reference</title>
+		<title>LUCauseAffiliationRequestFactory Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUOAuthTokenRequestBuilder Class Reference</h1>
+				<h1 class="hideInXcode">LUCauseAffiliationRequestFactory Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -42,9 +42,11 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/requestToLoginWithEmail:password:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToLoginWithEmail:password:</option>
+	<option value="//api/name/requestForCauseAffiliation">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForCauseAffiliation</option>
 	
-	<option value="//api/name/requestToLoginWithFacebookAccessToken:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToLoginWithFacebookAccessToken:</option>
+	<option value="//api/name/requestToCreateCauseAffiliation:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToCreateCauseAffiliation:</option>
+	
+	<option value="//api/name/requestToRemoveCauseAffiliation">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToRemoveCauseAffiliation</option>
 	
 	
 	
@@ -74,9 +76,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToLoginWithEmail:password:">requestToLoginWithEmail:password:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForCauseAffiliation">requestForCauseAffiliation</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToLoginWithFacebookAccessToken:">requestToLoginWithFacebookAccessToken:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToCreateCauseAffiliation:">requestToCreateCauseAffiliation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToRemoveCauseAffiliation">requestToRemoveCauseAffiliation</a></span></li>
 	
 </ul></li>
 
@@ -87,7 +91,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUOAuthTokenRequestBuilder Class Reference" name="top"></a>
+				<a title="LUCauseAffiliationRequestFactory Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -96,7 +100,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUOAuthTokenRequestBuilder Class Reference</h1>
+						<h1 class="title title-header">LUCauseAffiliationRequestFactory Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -107,7 +111,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUOAuthTokenRequestBuilder.h<br />LUOAuthTokenRequestBuilder.m</td>
+	<td class="specification-value">LUCauseAffiliationRequestFactory.h<br />LUCauseAffiliationRequestFactory.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -117,7 +121,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUOAuthTokenRequestBuilder</code> is used to build requests related to OAuth Tokens (for authentication).</p>
+						<p><code>LUCauseAffiliationRequestFactory</code> is used to build requests related to cause affiliations.</p>
 					</div>
 					
 					
@@ -135,15 +139,22 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestToLoginWithEmail:password:">+&nbsp;requestToLoginWithEmail:password:</a></code>
-		<span class="tooltip"><p>Builds a request to login via an email and password.</p></span>
+		<code><a href="#//api/name/requestForCauseAffiliation">+&nbsp;requestForCauseAffiliation</a></code>
+		<span class="tooltip"><p>Builds a request to return the cause affiliation for the current user.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestToLoginWithFacebookAccessToken:">+&nbsp;requestToLoginWithFacebookAccessToken:</a></code>
-		<span class="tooltip"><p>Builds a request to login via a Facebook access token.</p></span>
+		<code><a href="#//api/name/requestToCreateCauseAffiliation:">+&nbsp;requestToCreateCauseAffiliation:</a></code>
+		<span class="tooltip"><p>Builds a request to set the current user&rsquo;s cause.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestToRemoveCauseAffiliation">+&nbsp;requestToRemoveCauseAffiliation</a></code>
+		<span class="tooltip"><p>Builds a request to remove the current user&rsquo;s cause affiliation.</p></span>
 	</span>
 	
 	
@@ -163,35 +174,20 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestToLoginWithEmail:password:" title="requestToLoginWithEmail:password:"></a>
-	<h3 class="subsubtitle method-title">requestToLoginWithEmail:password:</h3>
+	<a name="//api/name/requestForCauseAffiliation" title="requestForCauseAffiliation"></a>
+	<h3 class="subsubtitle method-title">requestForCauseAffiliation</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to login via an email and password.</p>
+		<p>Builds a request to return the cause affiliation for the current user.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToLoginWithEmail:(NSString *)<em>email</em> password:(NSString *)<em>password</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForCauseAffiliation</code></div>
 
     
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>email</em></dt>
-			<dd><p>The email address to use for the login.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>password</em></dt>
-			<dd><p>The password to use for the login.</p></dd>
-		</dl>
-		
-	</div>
 	
 	
 	
@@ -201,9 +197,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to login via an email and password.</p>
+		<p>Builds a request to return the cause affiliation for the current user.</p>
 
-<p>On success, this request will return an <a href="../Classes/LUOAuthToken.html"><code>LUOAuthToken</code></a> instance.</p>
+<p>On success, this request will return an <a href="../Classes/LUCauseAffiliation.html"><code>LUCauseAffiliation</code></a> instance.</p>
 	</div>
 	
 	
@@ -214,25 +210,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOAuthTokenRequestBuilder.h</code><br />
+		<code class="declared-in-ref">LUCauseAffiliationRequestFactory.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestToLoginWithFacebookAccessToken:" title="requestToLoginWithFacebookAccessToken:"></a>
-	<h3 class="subsubtitle method-title">requestToLoginWithFacebookAccessToken:</h3>
+	<a name="//api/name/requestToCreateCauseAffiliation:" title="requestToCreateCauseAffiliation:"></a>
+	<h3 class="subsubtitle method-title">requestToCreateCauseAffiliation:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to login via a Facebook access token.</p>
+		<p>Builds a request to set the current user&rsquo;s cause.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToLoginWithFacebookAccessToken:(NSString *)<em>facebookAccessToken</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToCreateCauseAffiliation:(LUCauseAffiliation *)<em>causeAffiliation</em></code></div>
 
     
 	
@@ -240,8 +236,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>facebookAccessToken</em></dt>
-			<dd><p>The Facebook access token to use for the login.</p></dd>
+			<dt><em>causeAffiliation</em></dt>
+			<dd><p>The <a href="../Classes/LUCauseAffiliation.html"><code>LUCauseAffiliation</code></a> to create.</p></dd>
 		</dl>
 		
 	</div>
@@ -254,9 +250,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to login via a Facebook access token.</p>
+		<p>Builds a request to set the current user&rsquo;s cause.</p>
 
-<p>On success, this request will return an <a href="../Classes/LUOAuthToken.html"><code>LUOAuthToken</code></a> instance.</p>
+<p>On success, this request will return <code>nil</code>.</p>
 	</div>
 	
 	
@@ -267,7 +263,50 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOAuthTokenRequestBuilder.h</code><br />
+		<code class="declared-in-ref">LUCauseAffiliationRequestFactory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestToRemoveCauseAffiliation" title="requestToRemoveCauseAffiliation"></a>
+	<h3 class="subsubtitle method-title">requestToRemoveCauseAffiliation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Builds a request to remove the current user&rsquo;s cause affiliation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToRemoveCauseAffiliation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Builds a request to remove the current user&rsquo;s cause affiliation.</p>
+
+<p>On success, this request will return <code>nil</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCauseAffiliationRequestFactory.h</code><br />
 	</div>				
 	
 	
@@ -288,7 +327,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-02-22)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-05-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

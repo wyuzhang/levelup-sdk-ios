@@ -53,6 +53,8 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
+	<option value="//api/name/monetaryValueWithUSCents:">&nbsp;&nbsp;&nbsp;&nbsp;+ monetaryValueWithUSCents:</option>
+	
 	<option value="//api/name/monetaryValueWithUSD:">&nbsp;&nbsp;&nbsp;&nbsp;+ monetaryValueWithUSD:</option>
 	
 	
@@ -101,6 +103,8 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/monetaryValueWithUSCents:">monetaryValueWithUSCents:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/monetaryValueWithUSD:">monetaryValueWithUSD:</a></span></li>
 	
@@ -197,6 +201,13 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/monetaryValueWithUSCents:">+&nbsp;monetaryValueWithUSCents:</a></code>
+		<span class="tooltip"><p>Returns an <code>LUMonetaryValue</code> instance for the given <a href="#//api/name/amount">amount</a>, in cents.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/monetaryValueWithUSD:">+&nbsp;monetaryValueWithUSD:</a></code>
 		<span class="tooltip"><p>Returns an <code>LUMonetaryValue</code> instance for the given <a href="#//api/name/amount">amount</a>, in dollars.</p></span>
 	</span>
@@ -242,7 +253,7 @@ are dropped. For example, &ldquo;$1&rdquo; or &ldquo;$1.23&rdquo;.</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSNumber *amount</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *amount</code></div>
 
     
 	
@@ -283,7 +294,7 @@ are dropped. For example, &ldquo;$1&rdquo; or &ldquo;$1.23&rdquo;.</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *currencyCode</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *currencyCode</code></div>
 
     
 	
@@ -324,7 +335,7 @@ are dropped. For example, &ldquo;$1&rdquo; or &ldquo;$1.23&rdquo;.</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *currencySymbol</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *currencySymbol</code></div>
 
     
 	
@@ -403,6 +414,57 @@ are dropped. For example, &ldquo;$1&rdquo; or &ldquo;$1.23&rdquo;.</p></span>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/monetaryValueWithUSCents:" title="monetaryValueWithUSCents:"></a>
+	<h3 class="subsubtitle method-title">monetaryValueWithUSCents:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an <code>LUMonetaryValue</code> instance for the given <a href="#//api/name/amount">amount</a>, in cents.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUMonetaryValue *)monetaryValueWithUSCents:(NSNumber *)<em>amount</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>amount</em></dt>
+			<dd><p>An <a href="#//api/name/amount">amount</a> of money, in cents.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an <code>LUMonetaryValue</code> instance for the given <a href="#//api/name/amount">amount</a>, in cents.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUMonetaryValue.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/monetaryValueWithUSD:" title="monetaryValueWithUSD:"></a>
 	<h3 class="subsubtitle method-title">monetaryValueWithUSD:</h3>
 	
@@ -423,7 +485,7 @@ are dropped. For example, &ldquo;$1&rdquo; or &ldquo;$1.23&rdquo;.</p></span>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>amount</em></dt>
-			<dd><p>An <a href="#//api/name/amount">amount</a> of money, in cents.</p></dd>
+			<dd><p>An <a href="#//api/name/amount">amount</a> of money, in dollars.</p></dd>
 		</dl>
 		
 	</div>
@@ -558,7 +620,7 @@ are dropped. For example, &ldquo;$1&rdquo; or &ldquo;$1.23&rdquo;.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-02-22)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-05-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

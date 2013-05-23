@@ -40,9 +40,11 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/includeAccessToken">&nbsp;&nbsp;&nbsp;&nbsp;includeAccessToken</option>
+	<option value="//api/name/apiVersion">&nbsp;&nbsp;&nbsp;&nbsp;apiVersion</option>
 	
 	<option value="//api/name/method">&nbsp;&nbsp;&nbsp;&nbsp;method</option>
+	
+	<option value="//api/name/modelFactory">&nbsp;&nbsp;&nbsp;&nbsp;modelFactory</option>
 	
 	<option value="//api/name/parameters">&nbsp;&nbsp;&nbsp;&nbsp;parameters</option>
 	
@@ -53,9 +55,7 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/apiRequestWithMethod:path:parameters:">&nbsp;&nbsp;&nbsp;&nbsp;+ apiRequestWithMethod:path:parameters:</option>
-	
-	<option value="//api/name/apiRequestWithMethod:path:parameters:includeAccessToken:">&nbsp;&nbsp;&nbsp;&nbsp;+ apiRequestWithMethod:path:parameters:includeAccessToken:</option>
+	<option value="//api/name/apiRequestWithMethod:path:apiVersion:parameters:modelFactory:">&nbsp;&nbsp;&nbsp;&nbsp;+ apiRequestWithMethod:path:apiVersion:parameters:modelFactory:</option>
 	
 	
 	
@@ -88,9 +88,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/includeAccessToken">includeAccessToken</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/apiVersion">apiVersion</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/method">method</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/modelFactory">modelFactory</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parameters">parameters</a></span></li>
 	
@@ -102,9 +104,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/apiRequestWithMethod:path:parameters:">apiRequestWithMethod:path:parameters:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/apiRequestWithMethod:path:parameters:includeAccessToken:">apiRequestWithMethod:path:parameters:includeAccessToken:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/apiRequestWithMethod:path:apiVersion:parameters:modelFactory:">apiRequestWithMethod:path:apiVersion:parameters:modelFactory:</a></span></li>
 	
 </ul></li>
 
@@ -171,9 +171,8 @@ by request builders.</p>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/includeAccessToken">&nbsp;&nbsp;includeAccessToken</a></code>
-		<span class="tooltip"><p>Specifies whether the request should include an authentication access token is one is available. This defaults to
-YES.</p></span>
+		<code><a href="#//api/name/apiVersion">&nbsp;&nbsp;apiVersion</a></code>
+		<span class="tooltip"><p>The version of the LevelUp API to use for this request.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -181,6 +180,13 @@ YES.</p></span>
 	<span class="tooltip">
 		<code><a href="#//api/name/method">&nbsp;&nbsp;method</a></code>
 		<span class="tooltip"><p>The HTTP method of the request: &ldquo;GET&rdquo;, &ldquo;POST&rdquo;, &ldquo;PUT&rdquo;, or &ldquo;DELETE&rdquo;.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/modelFactory">&nbsp;&nbsp;modelFactory</a></code>
+		<span class="tooltip"><p>An <a href="../Classes/LUAbstractJSONModelFactory.html"><code>LUAbstractJSONModelFactory</code></a> to parse the JSON response.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -200,16 +206,9 @@ YES.</p></span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/apiRequestWithMethod:path:parameters:">+&nbsp;apiRequestWithMethod:path:parameters:</a></code>
-		<span class="tooltip"><p>Returns an <code>LUAPIRequest</code> with the specified <a href="#//api/name/method">method</a>, <a href="#//api/name/path">path</a> and <a href="#//api/name/parameters">parameters</a>. The <a href="#//api/name/includeAccessToken"><code>includeAccessToken</code></a> parameter will
+		<code><a href="#//api/name/apiRequestWithMethod:path:apiVersion:parameters:modelFactory:">+&nbsp;apiRequestWithMethod:path:apiVersion:parameters:modelFactory:</a></code>
+		<span class="tooltip"><p>Returns an <code>LUAPIRequest</code> with the specified <a href="#//api/name/method">method</a>, <a href="#//api/name/path">path</a> and <a href="#//api/name/parameters">parameters</a>. The <code>includeAccessToken</code> parameter will
 default to YES.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/apiRequestWithMethod:path:parameters:includeAccessToken:">+&nbsp;apiRequestWithMethod:path:parameters:includeAccessToken:</a></code>
-		<span class="tooltip"><p>Returns an <code>LUAPIRequest</code> with the specified <a href="#//api/name/method">method</a>, <a href="#//api/name/path">path</a>, <a href="#//api/name/parameters">parameters</a> and <a href="#//api/name/includeAccessToken"><code>includeAccessToken</code></a> setting.</p></span>
 	</span>
 	
 	
@@ -234,19 +233,18 @@ default to YES.</p></span>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/includeAccessToken" title="includeAccessToken"></a>
-	<h3 class="subsubtitle method-title">includeAccessToken</h3>
+	<a name="//api/name/apiVersion" title="apiVersion"></a>
+	<h3 class="subsubtitle method-title">apiVersion</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Specifies whether the request should include an authentication access token is one is available. This defaults to
-YES.</p>
+		<p>The version of the LevelUp API to use for this request.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL includeAccessToken</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *apiVersion</code></div>
 
     
 	
@@ -258,8 +256,7 @@ YES.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Specifies whether the request should include an authentication access token is one is available. This defaults to
-YES.</p>
+		<p>The version of the LevelUp API to use for this request.</p>
 	</div>
 	
 	
@@ -301,6 +298,47 @@ YES.</p>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>The HTTP method of the request: &ldquo;GET&rdquo;, &ldquo;POST&rdquo;, &ldquo;PUT&rdquo;, or &ldquo;DELETE&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUAPIRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/modelFactory" title="modelFactory"></a>
+	<h3 class="subsubtitle method-title">modelFactory</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An <a href="../Classes/LUAbstractJSONModelFactory.html"><code>LUAbstractJSONModelFactory</code></a> to parse the JSON response.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) LUAbstractJSONModelFactory *modelFactory</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>An <a href="../Classes/LUAbstractJSONModelFactory.html"><code>LUAbstractJSONModelFactory</code></a> to parse the JSON response.</p>
 	</div>
 	
 	
@@ -408,19 +446,19 @@ YES.</p>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/apiRequestWithMethod:path:parameters:" title="apiRequestWithMethod:path:parameters:"></a>
-	<h3 class="subsubtitle method-title">apiRequestWithMethod:path:parameters:</h3>
+	<a name="//api/name/apiRequestWithMethod:path:apiVersion:parameters:modelFactory:" title="apiRequestWithMethod:path:apiVersion:parameters:modelFactory:"></a>
+	<h3 class="subsubtitle method-title">apiRequestWithMethod:path:apiVersion:parameters:modelFactory:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns an <code>LUAPIRequest</code> with the specified <a href="#//api/name/method">method</a>, <a href="#//api/name/path">path</a> and <a href="#//api/name/parameters">parameters</a>. The <a href="#//api/name/includeAccessToken"><code>includeAccessToken</code></a> parameter will
+		<p>Returns an <code>LUAPIRequest</code> with the specified <a href="#//api/name/method">method</a>, <a href="#//api/name/path">path</a> and <a href="#//api/name/parameters">parameters</a>. The <code>includeAccessToken</code> parameter will
 default to YES.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)apiRequestWithMethod:(NSString *)<em>method</em> path:(NSString *)<em>path</em> parameters:(NSDictionary *)<em>parameters</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)apiRequestWithMethod:(NSString *)<em>method</em> path:(NSString *)<em>path</em> apiVersion:(NSString *)<em>apiVersion</em> parameters:(NSDictionary *)<em>parameters</em> modelFactory:(LUAbstractJSONModelFactory *)<em>modelFactory</em></code></div>
 
     
 	
@@ -438,8 +476,18 @@ default to YES.</p>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
+			<dt><em>apiVersion</em></dt>
+			<dd><p>The version of the API to use.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
 			<dt><em>parameters</em></dt>
 			<dd><p>A dictionary of <a href="#//api/name/parameters">parameters</a> to include with this request, or nil if the request has no <a href="#//api/name/parameters">parameters</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>modelFactory</em></dt>
+			<dd><p>An instance of <a href="../Classes/LUAbstractJSONModelFactory.html"><code>LUAbstractJSONModelFactory</code></a> which will parse the response.</p></dd>
 		</dl>
 		
 	</div>
@@ -452,74 +500,8 @@ default to YES.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns an <code>LUAPIRequest</code> with the specified <a href="#//api/name/method">method</a>, <a href="#//api/name/path">path</a> and <a href="#//api/name/parameters">parameters</a>. The <a href="#//api/name/includeAccessToken"><code>includeAccessToken</code></a> parameter will
+		<p>Returns an <code>LUAPIRequest</code> with the specified <a href="#//api/name/method">method</a>, <a href="#//api/name/path">path</a> and <a href="#//api/name/parameters">parameters</a>. The <code>includeAccessToken</code> parameter will
 default to YES.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUAPIRequest.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/apiRequestWithMethod:path:parameters:includeAccessToken:" title="apiRequestWithMethod:path:parameters:includeAccessToken:"></a>
-	<h3 class="subsubtitle method-title">apiRequestWithMethod:path:parameters:includeAccessToken:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns an <code>LUAPIRequest</code> with the specified <a href="#//api/name/method">method</a>, <a href="#//api/name/path">path</a>, <a href="#//api/name/parameters">parameters</a> and <a href="#//api/name/includeAccessToken"><code>includeAccessToken</code></a> setting.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)apiRequestWithMethod:(NSString *)<em>method</em> path:(NSString *)<em>path</em> parameters:(NSDictionary *)<em>parameters</em> includeAccessToken:(BOOL)<em>includeAccessToken</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>method</em></dt>
-			<dd><p>An HTTP method: &ldquo;GET&rdquo;, &ldquo;POST&rdquo;, &ldquo;PUT&rdquo;, or &ldquo;DELETE&rdquo;.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>path</em></dt>
-			<dd><p>The <a href="#//api/name/path">path</a> of the API request, e.g. &ldquo;/users&rdquo;.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>parameters</em></dt>
-			<dd><p>A dictionary of <a href="#//api/name/parameters">parameters</a> to include with this request, or nil if the request has no <a href="#//api/name/parameters">parameters</a>.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>includeAccessToken</em></dt>
-			<dd><p>Specifies whether this request should include an authentication token if one is available.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns an <code>LUAPIRequest</code> with the specified <a href="#//api/name/method">method</a>, <a href="#//api/name/path">path</a>, <a href="#//api/name/parameters">parameters</a> and <a href="#//api/name/includeAccessToken"><code>includeAccessToken</code></a> setting.</p>
 	</div>
 	
 	
@@ -598,7 +580,7 @@ default to YES.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-02-22)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-05-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

@@ -44,17 +44,19 @@
 	
 	<option value="//api/name/code">&nbsp;&nbsp;&nbsp;&nbsp;code</option>
 	
+	<option value="//api/name/cohortDescription">&nbsp;&nbsp;&nbsp;&nbsp;cohortDescription</option>
+	
+	<option value="//api/name/cohortID">&nbsp;&nbsp;&nbsp;&nbsp;cohortID</option>
+	
 	<option value="//api/name/cohortType">&nbsp;&nbsp;&nbsp;&nbsp;cohortType</option>
 	
-	<option value="//api/name/description">&nbsp;&nbsp;&nbsp;&nbsp;description</option>
+	<option value="//api/name/cohortURL">&nbsp;&nbsp;&nbsp;&nbsp;cohortURL</option>
 	
 	<option value="//api/name/emailBody">&nbsp;&nbsp;&nbsp;&nbsp;emailBody</option>
 	
 	<option value="//api/name/messageForEmailSubject">&nbsp;&nbsp;&nbsp;&nbsp;messageForEmailSubject</option>
 	
 	<option value="//api/name/messageForTwitter">&nbsp;&nbsp;&nbsp;&nbsp;messageForTwitter</option>
-	
-	<option value="//api/name/url">&nbsp;&nbsp;&nbsp;&nbsp;url</option>
 	
 	
 	
@@ -88,17 +90,19 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/code">code</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cohortDescription">cohortDescription</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cohortID">cohortID</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cohortType">cohortType</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/description">description</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cohortURL">cohortURL</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/emailBody">emailBody</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messageForEmailSubject">messageForEmailSubject</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messageForTwitter">messageForTwitter</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/url">url</a></span></li>
 	
 </ul></li>
 
@@ -174,6 +178,20 @@ information.</p>
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/cohortDescription">&nbsp;&nbsp;cohortDescription</a></code>
+		<span class="tooltip"><p>A long <a href="#//api/name/description">description</a> of the cohort.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cohortID">&nbsp;&nbsp;cohortID</a></code>
+		<span class="tooltip"><p>The unique identifier for this cohort.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/cohortType">&nbsp;&nbsp;cohortType</a></code>
 		<span class="tooltip"><p>The type of cohort. This can be set to any value a merchant chooses, such as example specific ads or links. Common
 types are &lsquo;default_email&rsquo;, &lsquo;default_facebook&rsquo;, and &lsquo;default_twitter&rsquo;.</p></span>
@@ -182,8 +200,8 @@ types are &lsquo;default_email&rsquo;, &lsquo;default_facebook&rsquo;, and &lsqu
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/description">&nbsp;&nbsp;description</a></code>
-		<span class="tooltip"><p>A long description of the cohort.</p></span>
+		<code><a href="#//api/name/cohortURL">&nbsp;&nbsp;cohortURL</a></code>
+		<span class="tooltip"><p>A unique URL for the cohort. This URL should be used when users share the cohort.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -204,14 +222,7 @@ types are &lsquo;default_email&rsquo;, &lsquo;default_facebook&rsquo;, and &lsqu
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/messageForTwitter">&nbsp;&nbsp;messageForTwitter</a></code>
-		<span class="tooltip"><p>A suggested initial Twitter post to use when a user shares this cohort over email.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/url">&nbsp;&nbsp;url</a></code>
-		<span class="tooltip"><p>A unique URL for the cohort. This URL should be used when users share the cohort.</p></span>
+		<span class="tooltip"><p>A suggested initial post to use when a user shares this cohort over Twitter.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -240,7 +251,7 @@ types are &lsquo;default_email&rsquo;, &lsquo;default_facebook&rsquo;, and &lsqu
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) LUCampaign *campaign</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUCampaign *campaign</code></div>
 
     
 	
@@ -281,7 +292,7 @@ types are &lsquo;default_email&rsquo;, &lsquo;default_facebook&rsquo;, and &lsqu
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *code</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *code</code></div>
 
     
 	
@@ -311,6 +322,88 @@ types are &lsquo;default_email&rsquo;, &lsquo;default_facebook&rsquo;, and &lsqu
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/cohortDescription" title="cohortDescription"></a>
+	<h3 class="subsubtitle method-title">cohortDescription</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A long <a href="#//api/name/description">description</a> of the cohort.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *cohortDescription</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A long <a href="#//api/name/description">description</a> of the cohort.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCohort.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cohortID" title="cohortID"></a>
+	<h3 class="subsubtitle method-title">cohortID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The unique identifier for this cohort.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *cohortID</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The unique identifier for this cohort.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCohort.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/cohortType" title="cohortType"></a>
 	<h3 class="subsubtitle method-title">cohortType</h3>
 	
@@ -323,7 +416,7 @@ types are &lsquo;default_email&rsquo;, &lsquo;default_facebook&rsquo;, and &lsqu
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *cohortType</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *cohortType</code></div>
 
     
 	
@@ -354,18 +447,18 @@ types are &lsquo;default_email&rsquo;, &lsquo;default_facebook&rsquo;, and &lsqu
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/description" title="description"></a>
-	<h3 class="subsubtitle method-title">description</h3>
+	<a name="//api/name/cohortURL" title="cohortURL"></a>
+	<h3 class="subsubtitle method-title">cohortURL</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A long description of the cohort.</p>
+		<p>A unique URL for the cohort. This URL should be used when users share the cohort.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *description</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSURL *cohortURL</code></div>
 
     
 	
@@ -377,7 +470,7 @@ types are &lsquo;default_email&rsquo;, &lsquo;default_facebook&rsquo;, and &lsqu
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>A long description of the cohort.</p>
+		<p>A unique URL for the cohort. This URL should be used when users share the cohort.</p>
 	</div>
 	
 	
@@ -406,7 +499,7 @@ types are &lsquo;default_email&rsquo;, &lsquo;default_facebook&rsquo;, and &lsqu
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *emailBody</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *emailBody</code></div>
 
     
 	
@@ -447,7 +540,7 @@ types are &lsquo;default_email&rsquo;, &lsquo;default_facebook&rsquo;, and &lsqu
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *messageForEmailSubject</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *messageForEmailSubject</code></div>
 
     
 	
@@ -483,12 +576,12 @@ types are &lsquo;default_email&rsquo;, &lsquo;default_facebook&rsquo;, and &lsqu
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A suggested initial Twitter post to use when a user shares this cohort over email.</p>
+		<p>A suggested initial post to use when a user shares this cohort over Twitter.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *messageForTwitter</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *messageForTwitter</code></div>
 
     
 	
@@ -500,48 +593,7 @@ types are &lsquo;default_email&rsquo;, &lsquo;default_facebook&rsquo;, and &lsqu
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>A suggested initial Twitter post to use when a user shares this cohort over email.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCohort.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/url" title="url"></a>
-	<h3 class="subsubtitle method-title">url</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>A unique URL for the cohort. This URL should be used when users share the cohort.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *url</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>A unique URL for the cohort. This URL should be used when users share the cohort.</p>
+		<p>A suggested initial post to use when a user shares this cohort over Twitter.</p>
 	</div>
 	
 	
@@ -575,7 +627,7 @@ types are &lsquo;default_email&rsquo;, &lsquo;default_facebook&rsquo;, and &lsqu
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-02-22)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-05-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

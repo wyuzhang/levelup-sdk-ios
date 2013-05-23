@@ -42,7 +42,15 @@
 	
 	<option value="//api/name/amount">&nbsp;&nbsp;&nbsp;&nbsp;amount</option>
 	
-	<option value="//api/name/last_4">&nbsp;&nbsp;&nbsp;&nbsp;last_4</option>
+	<option value="//api/name/bundleID">&nbsp;&nbsp;&nbsp;&nbsp;bundleID</option>
+	
+	<option value="//api/name/chargeDate">&nbsp;&nbsp;&nbsp;&nbsp;chargeDate</option>
+	
+	<option value="//api/name/closed">&nbsp;&nbsp;&nbsp;&nbsp;closed</option>
+	
+	<option value="//api/name/createdDate">&nbsp;&nbsp;&nbsp;&nbsp;createdDate</option>
+	
+	<option value="//api/name/last4CreditCardDigits">&nbsp;&nbsp;&nbsp;&nbsp;last4CreditCardDigits</option>
 	
 	<option value="//api/name/orders">&nbsp;&nbsp;&nbsp;&nbsp;orders</option>
 	
@@ -57,17 +65,11 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/chargeDate">&nbsp;&nbsp;&nbsp;&nbsp;- chargeDate</option>
-	
-	<option value="//api/name/creationDate">&nbsp;&nbsp;&nbsp;&nbsp;- creationDate</option>
-	
 	<option value="//api/name/hasChargeData">&nbsp;&nbsp;&nbsp;&nbsp;- hasChargeData</option>
 	
 	<option value="//api/name/hasNonZeroBalance">&nbsp;&nbsp;&nbsp;&nbsp;- hasNonZeroBalance</option>
 	
 	<option value="//api/name/hasSavings">&nbsp;&nbsp;&nbsp;&nbsp;- hasSavings</option>
-	
-	<option value="//api/name/isClosed">&nbsp;&nbsp;&nbsp;&nbsp;- isClosed</option>
 	
 	<option value="//api/name/ordersAndRefunds">&nbsp;&nbsp;&nbsp;&nbsp;- ordersAndRefunds</option>
 	
@@ -97,7 +99,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/amount">amount</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/last_4">last_4</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bundleID">bundleID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/chargeDate">chargeDate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/closed">closed</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createdDate">createdDate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/last4CreditCardDigits">last4CreditCardDigits</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/orders">orders</a></span></li>
 	
@@ -113,17 +123,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/chargeDate">chargeDate</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/creationDate">creationDate</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasChargeData">hasChargeData</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasNonZeroBalance">hasNonZeroBalance</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasSavings">hasSavings</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isClosed">isClosed</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ordersAndRefunds">ordersAndRefunds</a></span></li>
 	
@@ -164,8 +168,8 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUBundle</code> represents a bundle of <a href="#//api/name/orders">orders</a> on LevelUp. Typically LevelUp group <a href="#//api/name/orders">orders</a> together and charges a user
-once for the total sum of the <a href="#//api/name/orders">orders</a>.</p>
+						<p><code>LUBundle</code> represents a bundle of <a href="#//api/name/orders">orders</a> on LevelUp. Typically LevelUp group <a href="#//api/name/orders">orders</a> together and
+charges a user once for the total sum of the <a href="#//api/name/orders">orders</a>.</p>
 					</div>
 					
 					
@@ -190,7 +194,36 @@ once for the total sum of the <a href="#//api/name/orders">orders</a>.</p>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/last_4">&nbsp;&nbsp;last_4</a></code>
+		<code><a href="#//api/name/bundleID">&nbsp;&nbsp;bundleID</a></code>
+		<span class="tooltip"><p>The unique identifier for this bundle.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/chargeDate">&nbsp;&nbsp;chargeDate</a></code>
+		<span class="tooltip"><p>The date this bundle was charged.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/closed">&nbsp;&nbsp;closed</a></code>
+		<span class="tooltip"><p>Specifies if this bundle is closed. Open bundles are still accepting <a href="#//api/name/orders">orders</a> and have not been
+charged yet.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createdDate">&nbsp;&nbsp;createdDate</a></code>
+		<span class="tooltip"><p>The date this bundle was created.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/last4CreditCardDigits">&nbsp;&nbsp;last4CreditCardDigits</a></code>
 		<span class="tooltip"><p>The last 4 digits of the credit card used to charge the bundle.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
@@ -218,20 +251,6 @@ once for the total sum of the <a href="#//api/name/orders">orders</a>.</p>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/chargeDate">&ndash;&nbsp;chargeDate</a></code>
-		<span class="tooltip"><p>The date this bundle was charged.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/creationDate">&ndash;&nbsp;creationDate</a></code>
-		<span class="tooltip"><p>The date this bundle was created.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/hasChargeData">&ndash;&nbsp;hasChargeData</a></code>
 		<span class="tooltip"><p>Specifies if this bundle contains charge information (charge date, last 4 digits of credit card).</p></span>
 	</span>
@@ -248,13 +267,6 @@ once for the total sum of the <a href="#//api/name/orders">orders</a>.</p>
 	<span class="tooltip">
 		<code><a href="#//api/name/hasSavings">&ndash;&nbsp;hasSavings</a></code>
 		<span class="tooltip"><p>Specifies if any credit was applied to this bundle.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/isClosed">&ndash;&nbsp;isClosed</a></code>
-		<span class="tooltip"><p>Specifies if this bundle is closed. Open bundles are still accepting <a href="#//api/name/orders">orders</a> and have not been charged yet.</p></span>
 	</span>
 	
 	
@@ -290,7 +302,7 @@ once for the total sum of the <a href="#//api/name/orders">orders</a>.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) LUMonetaryValue *amount</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *amount</code></div>
 
     
 	
@@ -320,8 +332,174 @@ once for the total sum of the <a href="#//api/name/orders">orders</a>.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/last_4" title="last_4"></a>
-	<h3 class="subsubtitle method-title">last_4</h3>
+	<a name="//api/name/bundleID" title="bundleID"></a>
+	<h3 class="subsubtitle method-title">bundleID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The unique identifier for this bundle.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *bundleID</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The unique identifier for this bundle.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUBundle.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/chargeDate" title="chargeDate"></a>
+	<h3 class="subsubtitle method-title">chargeDate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The date this bundle was charged.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSDate *chargeDate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The date this bundle was charged.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUBundle.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/closed" title="closed"></a>
+	<h3 class="subsubtitle method-title">closed</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specifies if this bundle is closed. Open bundles are still accepting <a href="#//api/name/orders">orders</a> and have not been
+charged yet.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) BOOL closed</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Specifies if this bundle is closed. Open bundles are still accepting <a href="#//api/name/orders">orders</a> and have not been
+charged yet.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUBundle.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createdDate" title="createdDate"></a>
+	<h3 class="subsubtitle method-title">createdDate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The date this bundle was created.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSDate *createdDate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The date this bundle was created.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUBundle.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/last4CreditCardDigits" title="last4CreditCardDigits"></a>
+	<h3 class="subsubtitle method-title">last4CreditCardDigits</h3>
 	
 	
 	
@@ -331,7 +509,7 @@ once for the total sum of the <a href="#//api/name/orders">orders</a>.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *last_4</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *last4CreditCardDigits</code></div>
 
     
 	
@@ -372,7 +550,7 @@ once for the total sum of the <a href="#//api/name/orders">orders</a>.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSArray *orders</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSArray *orders</code></div>
 
     
 	
@@ -413,7 +591,7 @@ once for the total sum of the <a href="#//api/name/orders">orders</a>.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSArray *refunds</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSArray *refunds</code></div>
 
     
 	
@@ -454,7 +632,7 @@ once for the total sum of the <a href="#//api/name/orders">orders</a>.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) LUMonetaryValue *totalCreditUsed</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *totalCreditUsed</code></div>
 
     
 	
@@ -492,88 +670,6 @@ once for the total sum of the <a href="#//api/name/orders">orders</a>.</p>
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/chargeDate" title="chargeDate"></a>
-	<h3 class="subsubtitle method-title">chargeDate</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The date this bundle was charged.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSDate *)chargeDate</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The date this bundle was charged.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUBundle.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/creationDate" title="creationDate"></a>
-	<h3 class="subsubtitle method-title">creationDate</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The date this bundle was created.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSDate *)creationDate</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The date this bundle was created.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUBundle.h</code><br />
-	</div>				
-	
-	
-</div>
 						
 						<div class="section-method">
 	<a name="//api/name/hasChargeData" title="hasChargeData"></a>
@@ -699,47 +795,6 @@ once for the total sum of the <a href="#//api/name/orders">orders</a>.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/isClosed" title="isClosed"></a>
-	<h3 class="subsubtitle method-title">isClosed</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Specifies if this bundle is closed. Open bundles are still accepting <a href="#//api/name/orders">orders</a> and have not been charged yet.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (BOOL)isClosed</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Specifies if this bundle is closed. Open bundles are still accepting <a href="#//api/name/orders">orders</a> and have not been charged yet.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUBundle.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/ordersAndRefunds" title="ordersAndRefunds"></a>
 	<h3 class="subsubtitle method-title">ordersAndRefunds</h3>
 	
@@ -793,7 +848,7 @@ once for the total sum of the <a href="#//api/name/orders">orders</a>.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-02-22)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-05-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

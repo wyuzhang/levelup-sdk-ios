@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUOrderRequestBuilder Class Reference</title>
+		<title>LUCreditCardRequestFactory Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUOrderRequestBuilder Class Reference</h1>
+				<h1 class="hideInXcode">LUCreditCardRequestFactory Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -42,11 +42,13 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/requestForOrderWithId:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrderWithId:</option>
+	<option value="//api/name/requestForCreditCards">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForCreditCards</option>
 	
-	<option value="//api/name/requestForOrdersAtMerchantWithId:page:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrdersAtMerchantWithId:page:</option>
+	<option value="//api/name/requestToCreateCreditCard:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToCreateCreditCard:</option>
 	
-	<option value="//api/name/requestForOrdersOnPage:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrdersOnPage:</option>
+	<option value="//api/name/requestToDeleteCreditCardWithId:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToDeleteCreditCardWithId:</option>
+	
+	<option value="//api/name/requestToPromoteCreditCardWithId:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToPromoteCreditCardWithId:</option>
 	
 	
 	
@@ -76,11 +78,13 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrderWithId:">requestForOrderWithId:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForCreditCards">requestForCreditCards</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrdersAtMerchantWithId:page:">requestForOrdersAtMerchantWithId:page:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToCreateCreditCard:">requestToCreateCreditCard:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrdersOnPage:">requestForOrdersOnPage:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToDeleteCreditCardWithId:">requestToDeleteCreditCardWithId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToPromoteCreditCardWithId:">requestToPromoteCreditCardWithId:</a></span></li>
 	
 </ul></li>
 
@@ -91,7 +95,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUOrderRequestBuilder Class Reference" name="top"></a>
+				<a title="LUCreditCardRequestFactory Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -100,7 +104,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUOrderRequestBuilder Class Reference</h1>
+						<h1 class="title title-header">LUCreditCardRequestFactory Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -111,7 +115,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUOrderRequestBuilder.h<br />LUOrderRequestBuilder.m</td>
+	<td class="specification-value">LUCreditCardRequestFactory.h<br />LUCreditCardRequestFactory.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -121,7 +125,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUOrderRequestBuilder</code> is used to build requests related to retrieving orders.</p>
+						<p><code>LUCreditCardRequestFactory</code> is used to build requests related to credit cards.</p>
 					</div>
 					
 					
@@ -139,22 +143,29 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForOrdersAtMerchantWithId:page:">+&nbsp;requestForOrdersAtMerchantWithId:page:</a></code>
-		<span class="tooltip"><p>Builds a request to retrieve orders that the current user has made at a given merchant.</p></span>
+		<code><a href="#//api/name/requestForCreditCards">+&nbsp;requestForCreditCards</a></code>
+		<span class="tooltip"><p>Builds a request to return all credit cards added by the current user.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForOrdersOnPage:">+&nbsp;requestForOrdersOnPage:</a></code>
-		<span class="tooltip"><p>Builds a request to retrieve orders of the current user.</p></span>
+		<code><a href="#//api/name/requestToCreateCreditCard:">+&nbsp;requestToCreateCreditCard:</a></code>
+		<span class="tooltip"><p>Builds a request to create a credit card.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForOrderWithId:">+&nbsp;requestForOrderWithId:</a></code>
-		<span class="tooltip"><p>Builds a request to retrieve an order.</p></span>
+		<code><a href="#//api/name/requestToDeleteCreditCardWithId:">+&nbsp;requestToDeleteCreditCardWithId:</a></code>
+		<span class="tooltip"><p>Builds a request to delete a credit card.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestToPromoteCreditCardWithId:">+&nbsp;requestToPromoteCreditCardWithId:</a></code>
+		<span class="tooltip"><p>Builds a request to promote a credit card.</p></span>
 	</span>
 	
 	
@@ -174,30 +185,20 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForOrderWithId:" title="requestForOrderWithId:"></a>
-	<h3 class="subsubtitle method-title">requestForOrderWithId:</h3>
+	<a name="//api/name/requestForCreditCards" title="requestForCreditCards"></a>
+	<h3 class="subsubtitle method-title">requestForCreditCards</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve an order.</p>
+		<p>Builds a request to return all credit cards added by the current user.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrderWithId:(NSNumber *)<em>orderId</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForCreditCards</code></div>
 
     
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>orderId</em></dt>
-			<dd><p>The ID of the order to retrieve.</p></dd>
-		</dl>
-		
-	</div>
 	
 	
 	
@@ -207,9 +208,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve an order.</p>
+		<p>Builds a request to return all credit cards added by the current user.</p>
 
-<p>On success, this request will return an <a href="../Classes/LUOrder.html"><code>LUOrder</code></a> instance.</p>
+<p>On success, this request will return an array of <a href="../Classes/LUCreditCard.html"><code>LUCreditCard</code></a> instances.</p>
 	</div>
 	
 	
@@ -220,25 +221,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderRequestBuilder.h</code><br />
+		<code class="declared-in-ref">LUCreditCardRequestFactory.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForOrdersAtMerchantWithId:page:" title="requestForOrdersAtMerchantWithId:page:"></a>
-	<h3 class="subsubtitle method-title">requestForOrdersAtMerchantWithId:page:</h3>
+	<a name="//api/name/requestToCreateCreditCard:" title="requestToCreateCreditCard:"></a>
+	<h3 class="subsubtitle method-title">requestToCreateCreditCard:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve orders that the current user has made at a given merchant.</p>
+		<p>Builds a request to create a credit card.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrdersAtMerchantWithId:(NSNumber *)<em>merchantId</em> page:(NSUInteger)<em>page</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToCreateCreditCard:(LUCreditCard *)<em>creditCard</em></code></div>
 
     
 	
@@ -246,13 +247,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>merchantId</em></dt>
-			<dd><p>The ID of the merchant to search against.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>page</em></dt>
-			<dd><p>The page of orders to retrieve.</p></dd>
+			<dt><em>creditCard</em></dt>
+			<dd><p>The <a href="../Classes/LUCreditCard.html"><code>LUCreditCard</code></a> to create.</p></dd>
 		</dl>
 		
 	</div>
@@ -265,9 +261,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve orders that the current user has made at a given merchant.</p>
+		<p>Builds a request to create a credit card.</p>
 
-<p>On success, this request will return an array of <a href="../Classes/LUOrder.html"><code>LUOrder</code></a> instances.</p>
+<p>On success, this request will return the newly created <a href="../Classes/LUCreditCard.html"><code>LUCreditCard</code></a>.</p>
 	</div>
 	
 	
@@ -278,25 +274,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderRequestBuilder.h</code><br />
+		<code class="declared-in-ref">LUCreditCardRequestFactory.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForOrdersOnPage:" title="requestForOrdersOnPage:"></a>
-	<h3 class="subsubtitle method-title">requestForOrdersOnPage:</h3>
+	<a name="//api/name/requestToDeleteCreditCardWithId:" title="requestToDeleteCreditCardWithId:"></a>
+	<h3 class="subsubtitle method-title">requestToDeleteCreditCardWithId:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve orders of the current user.</p>
+		<p>Builds a request to delete a credit card.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrdersOnPage:(NSUInteger)<em>page</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToDeleteCreditCardWithId:(NSNumber *)<em>creditCardId</em></code></div>
 
     
 	
@@ -304,8 +300,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>page</em></dt>
-			<dd><p>The page of orders to retrieve.</p></dd>
+			<dt><em>creditCardId</em></dt>
+			<dd><p>The ID of a credit card to delete.</p></dd>
 		</dl>
 		
 	</div>
@@ -318,9 +314,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve orders of the current user.</p>
+		<p>Builds a request to delete a credit card.</p>
 
-<p>On success, this request will return an array of <a href="../Classes/LUOrder.html"><code>LUOrder</code></a> instances.</p>
+<p>On success, this request will return the deleted <a href="../Classes/LUCreditCard.html"><code>LUCreditCard</code></a>.</p>
 	</div>
 	
 	
@@ -331,7 +327,63 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderRequestBuilder.h</code><br />
+		<code class="declared-in-ref">LUCreditCardRequestFactory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestToPromoteCreditCardWithId:" title="requestToPromoteCreditCardWithId:"></a>
+	<h3 class="subsubtitle method-title">requestToPromoteCreditCardWithId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Builds a request to promote a credit card.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToPromoteCreditCardWithId:(NSNumber *)<em>creditCardId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>creditCardId</em></dt>
+			<dd><p>The ID of a credit card to promote.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Builds a request to promote a credit card.</p>
+
+<p>The promoted card will be the first attempted when charging a user. When a credit card is promoted, if there is another
+promoted card, that card will be un-promoted.</p>
+
+<p>On success, this request will return the <a href="../Classes/LUCreditCard.html"><code>LUCreditCard</code></a> that was promoted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCreditCardRequestFactory.h</code><br />
 	</div>				
 	
 	
@@ -352,7 +404,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-02-22)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-05-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

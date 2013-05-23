@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUApnDeviceRequestBuilder Class Reference</title>
+		<title>LUClaimRequestFactory Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUApnDeviceRequestBuilder Class Reference</h1>
+				<h1 class="hideInXcode">LUClaimRequestFactory Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -42,9 +42,9 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/requestToRegisterApnDevice:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToRegisterApnDevice:</option>
+	<option value="//api/name/requestToClaimCohort:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToClaimCohort:</option>
 	
-	<option value="//api/name/requestToUnregisterCurrentApnDevice">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToUnregisterCurrentApnDevice</option>
+	<option value="//api/name/requestToClaimLegacyLoyaltyWithId:campaignId:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToClaimLegacyLoyaltyWithId:campaignId:</option>
 	
 	
 	
@@ -74,9 +74,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToRegisterApnDevice:">requestToRegisterApnDevice:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToClaimCohort:">requestToClaimCohort:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToUnregisterCurrentApnDevice">requestToUnregisterCurrentApnDevice</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToClaimLegacyLoyaltyWithId:campaignId:">requestToClaimLegacyLoyaltyWithId:campaignId:</a></span></li>
 	
 </ul></li>
 
@@ -87,7 +87,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUApnDeviceRequestBuilder Class Reference" name="top"></a>
+				<a title="LUClaimRequestFactory Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -96,7 +96,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUApnDeviceRequestBuilder Class Reference</h1>
+						<h1 class="title title-header">LUClaimRequestFactory Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -107,7 +107,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUApnDeviceRequestBuilder.h<br />LUApnDeviceRequestBuilder.m</td>
+	<td class="specification-value">LUClaimRequestFactory.h<br />LUClaimRequestFactory.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -117,9 +117,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUApnDeviceRequestBuilder</code> is used to build requests for APN (Apple Push Notification) device tokens. If the app is
-going to handle push notifications, the device token must be registered with LevelUp, and unregistered if
-necessary. See the documentation for <a href="../Classes/LUApnDevice.html"><code>LUApnDevice</code></a> for more information.</p>
+						<p><code>LUClaimRequestFactory</code> is used to build requests related to claims.</p>
 					</div>
 					
 					
@@ -137,15 +135,15 @@ necessary. See the documentation for <a href="../Classes/LUApnDevice.html"><code
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestToRegisterApnDevice:">+&nbsp;requestToRegisterApnDevice:</a></code>
-		<span class="tooltip"><p>Builds a request to register an APN device with LevelUp.</p></span>
+		<code><a href="#//api/name/requestToClaimCohort:">+&nbsp;requestToClaimCohort:</a></code>
+		<span class="tooltip"><p>Builds a request to claim a cohort.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestToUnregisterCurrentApnDevice">+&nbsp;requestToUnregisterCurrentApnDevice</a></code>
-		<span class="tooltip"><p>Builds a request to unregister the current device token.</p></span>
+		<code><a href="#//api/name/requestToClaimLegacyLoyaltyWithId:campaignId:">+&nbsp;requestToClaimLegacyLoyaltyWithId:campaignId:</a></code>
+		<span class="tooltip"><p>Builds a request to claim a legacy loyalty campaign.</p></span>
 	</span>
 	
 	
@@ -165,18 +163,18 @@ necessary. See the documentation for <a href="../Classes/LUApnDevice.html"><code
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestToRegisterApnDevice:" title="requestToRegisterApnDevice:"></a>
-	<h3 class="subsubtitle method-title">requestToRegisterApnDevice:</h3>
+	<a name="//api/name/requestToClaimCohort:" title="requestToClaimCohort:"></a>
+	<h3 class="subsubtitle method-title">requestToClaimCohort:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to register an APN device with LevelUp.</p>
+		<p>Builds a request to claim a cohort.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToRegisterApnDevice:(LUApnDevice *)<em>apnDevice</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToClaimCohort:(LUCohort *)<em>cohort</em></code></div>
 
     
 	
@@ -184,9 +182,8 @@ necessary. See the documentation for <a href="../Classes/LUApnDevice.html"><code
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>apnDevice</em></dt>
-			<dd><p>An <a href="../Classes/LUApnDevice.html">LUApnDevice</a> containing the device token to register. The <code>token</code> property of this device must be
-set, while other <a href="../Classes/LUApnDevice.html"><code>LUApnDevice</code></a> properties are optional.</p></dd>
+			<dt><em>cohort</em></dt>
+			<dd><p>The cohort to claim.</p></dd>
 		</dl>
 		
 	</div>
@@ -199,11 +196,9 @@ set, while other <a href="../Classes/LUApnDevice.html"><code>LUApnDevice</code><
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to register an APN device with LevelUp.</p>
+		<p>Builds a request to claim a cohort.</p>
 
-<p>This method will also securely store the device token, so that it can be unregistered later.</p>
-
-<p>On success, this request will return the registered <a href="../Classes/LUApnDevice.html"><code>LUApnDevice</code></a>.</p>
+<p>On success, this request will return an instance of <a href="../Classes/LUClaim.html"><code>LUClaim</code></a>.</p>
 	</div>
 	
 	
@@ -214,27 +209,42 @@ set, while other <a href="../Classes/LUApnDevice.html"><code>LUApnDevice</code><
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUApnDeviceRequestBuilder.h</code><br />
+		<code class="declared-in-ref">LUClaimRequestFactory.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestToUnregisterCurrentApnDevice" title="requestToUnregisterCurrentApnDevice"></a>
-	<h3 class="subsubtitle method-title">requestToUnregisterCurrentApnDevice</h3>
+	<a name="//api/name/requestToClaimLegacyLoyaltyWithId:campaignId:" title="requestToClaimLegacyLoyaltyWithId:campaignId:"></a>
+	<h3 class="subsubtitle method-title">requestToClaimLegacyLoyaltyWithId:campaignId:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to unregister the current device token.</p>
+		<p>Builds a request to claim a legacy loyalty campaign.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToUnregisterCurrentApnDevice</code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToClaimLegacyLoyaltyWithId:(NSString *)<em>legacyId</em> campaignId:(NSNumber *)<em>campaignId</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>legacyId</em></dt>
+			<dd><p>An identifying string. For example, a user&rsquo;s loyalty card number.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>campaignId</em></dt>
+			<dd><p>The ID of the campaign to claim.</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
@@ -244,11 +254,10 @@ set, while other <a href="../Classes/LUApnDevice.html"><code>LUApnDevice</code><
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to unregister the current device token.</p>
+		<p>Builds a request to claim a legacy loyalty campaign.</p>
 
-<p>This token will have been set by a previous call to <a href="#//api/name/requestToRegisterApnDevice:"><code>requestToRegisterApnDevice:</code></a>.</p>
-
-<p>On success, this request will return the unregistered <a href="../Classes/LUApnDevice.html"><code>LUApnDevice</code></a>.</p>
+<p>On success, this request will return an <code>NSDictionary</code> with two keys: &ldquo;claim&rdquo; and &ldquo;merchant&rdquo;, which have an <a href="../Classes/LUClaim.html"><code>LUClaim</code></a>
+and <a href="../Classes/LUMerchant.html"><code>LUMerchant</code></a> as values, respectively.</p>
 	</div>
 	
 	
@@ -259,7 +268,7 @@ set, while other <a href="../Classes/LUApnDevice.html"><code>LUApnDevice</code><
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUApnDeviceRequestBuilder.h</code><br />
+		<code class="declared-in-ref">LUClaimRequestFactory.h</code><br />
 	</div>				
 	
 	
@@ -280,7 +289,7 @@ set, while other <a href="../Classes/LUApnDevice.html"><code>LUApnDevice</code><
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-02-22)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-05-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

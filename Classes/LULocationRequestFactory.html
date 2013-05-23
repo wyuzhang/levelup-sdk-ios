@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUTicketRequestBuilder Class Reference</title>
+		<title>LULocationRequestFactory Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUTicketRequestBuilder Class Reference</h1>
+				<h1 class="hideInXcode">LULocationRequestFactory Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -42,7 +42,11 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/requestToCreateTicketWithBody:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToCreateTicketWithBody:</option>
+	<option value="//api/name/requestForLocationSummaries">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForLocationSummaries</option>
+	
+	<option value="//api/name/requestForLocationSummaryPage:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForLocationSummaryPage:</option>
+	
+	<option value="//api/name/requestForLocationWithID:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForLocationWithID:</option>
 	
 	
 	
@@ -72,7 +76,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToCreateTicketWithBody:">requestToCreateTicketWithBody:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForLocationSummaries">requestForLocationSummaries</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForLocationSummaryPage:">requestForLocationSummaryPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForLocationWithID:">requestForLocationWithID:</a></span></li>
 	
 </ul></li>
 
@@ -83,7 +91,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUTicketRequestBuilder Class Reference" name="top"></a>
+				<a title="LULocationRequestFactory Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -92,7 +100,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUTicketRequestBuilder Class Reference</h1>
+						<h1 class="title title-header">LULocationRequestFactory Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -103,7 +111,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUTicketRequestBuilder.h<br />LUTicketRequestBuilder.m</td>
+	<td class="specification-value">LULocationRequestFactory.h<br />LULocationRequestFactory.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -113,7 +121,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUTicketRequestBuilder</code> is used to build requests related to customer support tickets.</p>
+						<p><code>LULocationRequestFactory</code> builds requests to retrieve locations.</p>
 					</div>
 					
 					
@@ -131,8 +139,22 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestToCreateTicketWithBody:">+&nbsp;requestToCreateTicketWithBody:</a></code>
-		<span class="tooltip"><p>Builds a request to create a support ticket.</p></span>
+		<code><a href="#//api/name/requestForLocationSummaries">+&nbsp;requestForLocationSummaries</a></code>
+		<span class="tooltip"><p>Builds a request to return the first page of location summaries.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestForLocationSummaryPage:">+&nbsp;requestForLocationSummaryPage:</a></code>
+		<span class="tooltip"><p>Builds a request to return the given page of location summaries.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestForLocationWithID:">+&nbsp;requestForLocationWithID:</a></code>
+		<span class="tooltip"><p>Builds a request to return the details for a specific location.</p></span>
 	</span>
 	
 	
@@ -152,18 +174,64 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestToCreateTicketWithBody:" title="requestToCreateTicketWithBody:"></a>
-	<h3 class="subsubtitle method-title">requestToCreateTicketWithBody:</h3>
+	<a name="//api/name/requestForLocationSummaries" title="requestForLocationSummaries"></a>
+	<h3 class="subsubtitle method-title">requestForLocationSummaries</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to create a support ticket.</p>
+		<p>Builds a request to return the first page of location summaries.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToCreateTicketWithBody:(NSString *)<em>body</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForLocationSummaries</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Builds a request to return the first page of location summaries.</p>
+
+<p>On success, this request will return an array of <a href="../Classes/LULocation.html"><code>LULocation</code></a> instances in summary mode. Locations are returned in
+the order that were updated (ascending). The response will include a URL for the next page of results. This URL can
+be used with <a href="#//api/name/requestForLocationSummaryPage:"><code>requestForLocationSummaryPage:</code></a> to retrieve the next page of locations. In this way, the app can keep a
+local database of all LevelUp locations, and keep the database up to date.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LULocationRequestFactory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestForLocationSummaryPage:" title="requestForLocationSummaryPage:"></a>
+	<h3 class="subsubtitle method-title">requestForLocationSummaryPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Builds a request to return the given page of location summaries.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForLocationSummaryPage:(NSURL *)<em>pageURL</em></code></div>
 
     
 	
@@ -171,8 +239,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>body</em></dt>
-			<dd><p>The body of the ticket.</p></dd>
+			<dt><em>pageURL</em></dt>
+			<dd><p>The next page of locations to request.</p></dd>
 		</dl>
 		
 	</div>
@@ -185,7 +253,12 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to create a support ticket.</p>
+		<p>Builds a request to return the given page of location summaries.</p>
+
+<p>On success, this request will return an array of <a href="../Classes/LULocation.html"><code>LULocation</code></a> instances in summary mode. If this page doesn&rsquo;t
+include any locations, the response will be empty with a status code of 204 (No Content). This URL can then be
+retried, and when results are available they will be returned. When there are additional pages of results, the response
+will also include the URL for the subsequent page of results.</p>
 	</div>
 	
 	
@@ -196,7 +269,61 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUTicketRequestBuilder.h</code><br />
+		<code class="declared-in-ref">LULocationRequestFactory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestForLocationWithID:" title="requestForLocationWithID:"></a>
+	<h3 class="subsubtitle method-title">requestForLocationWithID:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Builds a request to return the details for a specific location.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForLocationWithID:(NSNumber *)<em>locationID</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationID</em></dt>
+			<dd><p>The location ID to request.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Builds a request to return the details for a specific location.</p>
+
+<p>On success, this request will return a <a href="../Classes/LULocation.html"><code>LULocation</code></a> instance for the specified ID. If there isn&rsquo;t a location
+with that id, the response will be empty with a status code of 404 (Not found).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LULocationRequestFactory.h</code><br />
 	</div>				
 	
 	
@@ -217,7 +344,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-02-22)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-05-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

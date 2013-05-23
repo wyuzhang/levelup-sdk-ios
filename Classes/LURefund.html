@@ -40,16 +40,15 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/createdDate">&nbsp;&nbsp;&nbsp;&nbsp;createdDate</option>
+	
 	<option value="//api/name/order">&nbsp;&nbsp;&nbsp;&nbsp;order</option>
 	
+	<option value="//api/name/refundID">&nbsp;&nbsp;&nbsp;&nbsp;refundID</option>
 	
 	
 	
 	
-	
-	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/creationDate">&nbsp;&nbsp;&nbsp;&nbsp;- creationDate</option>
 	
 	
 	
@@ -75,19 +74,17 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createdDate">createdDate</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/order">order</a></span></li>
 	
-</ul></li>
-
-
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/creationDate">creationDate</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/refundID">refundID</a></span></li>
 	
 </ul></li>
+
+
+
+
 
 
 			</ul>
@@ -142,6 +139,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/createdDate">&nbsp;&nbsp;createdDate</a></code>
+		<span class="tooltip"><p>The time at which the refund was made.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/order">&nbsp;&nbsp;order</a></code>
 		<span class="tooltip"><p>The order which was refunded.</p></span>
 	</span>
@@ -149,10 +153,10 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/creationDate">&ndash;&nbsp;creationDate</a></code>
-		<span class="tooltip"><p>The time at which the refund was made.</p></span>
+		<code><a href="#//api/name/refundID">&nbsp;&nbsp;refundID</a></code>
+		<span class="tooltip"><p>The unique identifier for this refund.</p></span>
 	</span>
-	
+	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -168,6 +172,47 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/createdDate" title="createdDate"></a>
+	<h3 class="subsubtitle method-title">createdDate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The time at which the refund was made.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSDate *createdDate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The time at which the refund was made.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LURefund.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/order" title="order"></a>
 	<h3 class="subsubtitle method-title">order</h3>
 	
@@ -179,7 +224,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) LUOrder *order</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUOrder *order</code></div>
 
     
 	
@@ -208,29 +253,19 @@
 	
 </div>
 						
-					</div>
-					
-					
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
 						<div class="section-method">
-	<a name="//api/name/creationDate" title="creationDate"></a>
-	<h3 class="subsubtitle method-title">creationDate</h3>
+	<a name="//api/name/refundID" title="refundID"></a>
+	<h3 class="subsubtitle method-title">refundID</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The time at which the refund was made.</p>
+		<p>The unique identifier for this refund.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSDate *)creationDate</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *refundID</code></div>
 
     
 	
@@ -242,7 +277,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The time at which the refund was made.</p>
+		<p>The unique identifier for this refund.</p>
 	</div>
 	
 	
@@ -260,6 +295,10 @@
 </div>
 						
 					</div>
+					
+					
+					
+					
 					
 					
 				</div>
@@ -272,7 +311,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-02-22)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-05-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

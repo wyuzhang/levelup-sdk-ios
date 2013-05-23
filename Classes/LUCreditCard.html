@@ -40,15 +40,19 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/cvv">&nbsp;&nbsp;&nbsp;&nbsp;cvv</option>
+	<option value="//api/name/BIN">&nbsp;&nbsp;&nbsp;&nbsp;BIN</option>
 	
-	<option value="//api/name/description">&nbsp;&nbsp;&nbsp;&nbsp;description</option>
+	<option value="//api/name/creditCardDescription">&nbsp;&nbsp;&nbsp;&nbsp;creditCardDescription</option>
+	
+	<option value="//api/name/creditCardID">&nbsp;&nbsp;&nbsp;&nbsp;creditCardID</option>
+	
+	<option value="//api/name/cvv">&nbsp;&nbsp;&nbsp;&nbsp;cvv</option>
 	
 	<option value="//api/name/expirationMonth">&nbsp;&nbsp;&nbsp;&nbsp;expirationMonth</option>
 	
 	<option value="//api/name/expirationYear">&nbsp;&nbsp;&nbsp;&nbsp;expirationYear</option>
 	
-	<option value="//api/name/last_4">&nbsp;&nbsp;&nbsp;&nbsp;last_4</option>
+	<option value="//api/name/last4Digits">&nbsp;&nbsp;&nbsp;&nbsp;last4Digits</option>
 	
 	<option value="//api/name/number">&nbsp;&nbsp;&nbsp;&nbsp;number</option>
 	
@@ -86,15 +90,19 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cvv">cvv</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/BIN">BIN</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/description">description</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/creditCardDescription">creditCardDescription</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/creditCardID">creditCardID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cvv">cvv</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expirationMonth">expirationMonth</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expirationYear">expirationYear</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/last_4">last_4</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/last4Digits">last4Digits</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/number">number</a></span></li>
 	
@@ -164,15 +172,29 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/cvv">&nbsp;&nbsp;cvv</a></code>
-		<span class="tooltip"><p>The credit card&rsquo;s CVV (card verification value).</p></span>
+		<code><a href="#//api/name/BIN">&nbsp;&nbsp;BIN</a></code>
+		<span class="tooltip"><p>A string representing the BIN for the card in Braintree. This can be used to identify the origin of a specific card.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/description">&nbsp;&nbsp;description</a></code>
-		<span class="tooltip"><p>A string to use when describing the credit card. Includes the card&rsquo;s <a href="#//api/name/type">type</a> and last 4 digits.</p></span>
+		<code><a href="#//api/name/creditCardDescription">&nbsp;&nbsp;creditCardDescription</a></code>
+		<span class="tooltip"><p>A string that describes the credit card. Includes the card&rsquo;s <a href="#//api/name/type">type</a> and last 4 digits.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/creditCardID">&nbsp;&nbsp;creditCardID</a></code>
+		<span class="tooltip"><p>The unique identifier for this credit card.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cvv">&nbsp;&nbsp;cvv</a></code>
+		<span class="tooltip"><p>The credit card&rsquo;s CVV (card verification value).</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -192,7 +214,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/last_4">&nbsp;&nbsp;last_4</a></code>
+		<code><a href="#//api/name/last4Digits">&nbsp;&nbsp;last4Digits</a></code>
 		<span class="tooltip"><p>The last 4 digits of the credit card. This is returned by the server, and does not need to be set when creating a new
 card.</p></span>
 	</span>
@@ -241,6 +263,129 @@ creating credit cards.</p></span>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/BIN" title="BIN"></a>
+	<h3 class="subsubtitle method-title">BIN</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A string representing the BIN for the card in Braintree. This can be used to identify the origin of a specific card.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *BIN</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A string representing the BIN for the card in Braintree. This can be used to identify the origin of a specific card.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCreditCard.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/creditCardDescription" title="creditCardDescription"></a>
+	<h3 class="subsubtitle method-title">creditCardDescription</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A string that describes the credit card. Includes the card&rsquo;s <a href="#//api/name/type">type</a> and last 4 digits.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *creditCardDescription</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A string that describes the credit card. Includes the card&rsquo;s <a href="#//api/name/type">type</a> and last 4 digits.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCreditCard.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/creditCardID" title="creditCardID"></a>
+	<h3 class="subsubtitle method-title">creditCardID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The unique identifier for this credit card.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *creditCardID</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The unique identifier for this credit card.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCreditCard.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/cvv" title="cvv"></a>
 	<h3 class="subsubtitle method-title">cvv</h3>
 	
@@ -265,47 +410,6 @@ creating credit cards.</p></span>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>The credit card&rsquo;s CVV (card verification value).</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCreditCard.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/description" title="description"></a>
-	<h3 class="subsubtitle method-title">description</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>A string to use when describing the credit card. Includes the card&rsquo;s <a href="#//api/name/type">type</a> and last 4 digits.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *description</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>A string to use when describing the credit card. Includes the card&rsquo;s <a href="#//api/name/type">type</a> and last 4 digits.</p>
 	</div>
 	
 	
@@ -405,8 +509,8 @@ creating credit cards.</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/last_4" title="last_4"></a>
-	<h3 class="subsubtitle method-title">last_4</h3>
+	<a name="//api/name/last4Digits" title="last4Digits"></a>
+	<h3 class="subsubtitle method-title">last4Digits</h3>
 	
 	
 	
@@ -417,7 +521,7 @@ card.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *last_4</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *last4Digits</code></div>
 
     
 	
@@ -583,7 +687,7 @@ creating credit cards.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *type</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *type</code></div>
 
     
 	
@@ -630,7 +734,7 @@ creating credit cards.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-02-22)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-05-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

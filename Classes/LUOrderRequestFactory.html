@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUCauseRequestBuilder Class Reference</title>
+		<title>LUOrderRequestFactory Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUCauseRequestBuilder Class Reference</h1>
+				<h1 class="hideInXcode">LUOrderRequestFactory Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -42,13 +42,11 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/requestForAllFeaturedCauses">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForAllFeaturedCauses</option>
+	<option value="//api/name/requestForOrderWithId:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrderWithId:</option>
 	
-	<option value="//api/name/requestForCausesInCategory:page:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForCausesInCategory:page:</option>
+	<option value="//api/name/requestForOrdersAtMerchantWithId:page:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrdersAtMerchantWithId:page:</option>
 	
-	<option value="//api/name/requestForCausesNearLocation:page:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForCausesNearLocation:page:</option>
-	
-	<option value="//api/name/requestForCausesOnPage:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForCausesOnPage:</option>
+	<option value="//api/name/requestForOrdersOnPage:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrdersOnPage:</option>
 	
 	
 	
@@ -78,13 +76,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForAllFeaturedCauses">requestForAllFeaturedCauses</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrderWithId:">requestForOrderWithId:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForCausesInCategory:page:">requestForCausesInCategory:page:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrdersAtMerchantWithId:page:">requestForOrdersAtMerchantWithId:page:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForCausesNearLocation:page:">requestForCausesNearLocation:page:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForCausesOnPage:">requestForCausesOnPage:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrdersOnPage:">requestForOrdersOnPage:</a></span></li>
 	
 </ul></li>
 
@@ -95,7 +91,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUCauseRequestBuilder Class Reference" name="top"></a>
+				<a title="LUOrderRequestFactory Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -104,7 +100,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUCauseRequestBuilder Class Reference</h1>
+						<h1 class="title title-header">LUOrderRequestFactory Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -115,7 +111,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUCauseRequestBuilder.h<br />LUCauseRequestBuilder.m</td>
+	<td class="specification-value">LUOrderRequestFactory.h<br />LUOrderRequestFactory.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -125,7 +121,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUCauseRequestBuilder</code> builds requests to retrieve causes.</p>
+						<p><code>LUOrderRequestFactory</code> is used to build requests related to retrieving orders.</p>
 					</div>
 					
 					
@@ -143,29 +139,22 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForAllFeaturedCauses">+&nbsp;requestForAllFeaturedCauses</a></code>
-		<span class="tooltip"><p>Builds a request to retrieve all causes that have been marked as &ldquo;featured&rdquo;.</p></span>
+		<code><a href="#//api/name/requestForOrdersAtMerchantWithId:page:">+&nbsp;requestForOrdersAtMerchantWithId:page:</a></code>
+		<span class="tooltip"><p>Builds a request to retrieve orders that the current user has made at a given merchant.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForCausesInCategory:page:">+&nbsp;requestForCausesInCategory:page:</a></code>
-		<span class="tooltip"><p>Builds a request to retrieve a set of causes in a category on a specific page.</p></span>
+		<code><a href="#//api/name/requestForOrdersOnPage:">+&nbsp;requestForOrdersOnPage:</a></code>
+		<span class="tooltip"><p>Builds a request to retrieve orders of the current user.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForCausesNearLocation:page:">+&nbsp;requestForCausesNearLocation:page:</a></code>
-		<span class="tooltip"><p>Builds a request to retrieve a page of causes near a location. The exact radius may change, but is currently 50 miles.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requestForCausesOnPage:">+&nbsp;requestForCausesOnPage:</a></code>
-		<span class="tooltip"><p>Builds a request to retrieve all causes on the given page.</p></span>
+		<code><a href="#//api/name/requestForOrderWithId:">+&nbsp;requestForOrderWithId:</a></code>
+		<span class="tooltip"><p>Builds a request to retrieve an order.</p></span>
 	</span>
 	
 	
@@ -185,61 +174,18 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForAllFeaturedCauses" title="requestForAllFeaturedCauses"></a>
-	<h3 class="subsubtitle method-title">requestForAllFeaturedCauses</h3>
+	<a name="//api/name/requestForOrderWithId:" title="requestForOrderWithId:"></a>
+	<h3 class="subsubtitle method-title">requestForOrderWithId:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve all causes that have been marked as &ldquo;featured&rdquo;.</p>
+		<p>Builds a request to retrieve an order.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForAllFeaturedCauses</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve all causes that have been marked as &ldquo;featured&rdquo;.</p>
-
-<p>On success, this request will return an array of <a href="../Classes/LUCause.html"><code>LUCause</code></a> instances.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCauseRequestBuilder.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/requestForCausesInCategory:page:" title="requestForCausesInCategory:page:"></a>
-	<h3 class="subsubtitle method-title">requestForCausesInCategory:page:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve a set of causes in a category on a specific page.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForCausesInCategory:(LUCauseCategory *)<em>causeCategory</em> page:(NSUInteger)<em>page</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrderWithId:(NSNumber *)<em>orderId</em></code></div>
 
     
 	
@@ -247,13 +193,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>causeCategory</em></dt>
-			<dd><p>The <a href="../Classes/LUCauseCategory.html"><code>LUCauseCategory</code></a> of causes to retrieve.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>page</em></dt>
-			<dd><p>The page of causes to retrieve.</p></dd>
+			<dt><em>orderId</em></dt>
+			<dd><p>The ID of the order to retrieve.</p></dd>
 		</dl>
 		
 	</div>
@@ -266,9 +207,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve a set of causes in a category on a specific page.</p>
+		<p>Builds a request to retrieve an order.</p>
 
-<p>On success, this request will return an array of <a href="../Classes/LUCause.html"><code>LUCause</code></a> instances.</p>
+<p>On success, this request will return an <a href="../Classes/LUOrder.html"><code>LUOrder</code></a> instance.</p>
 	</div>
 	
 	
@@ -279,25 +220,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCauseRequestBuilder.h</code><br />
+		<code class="declared-in-ref">LUOrderRequestFactory.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForCausesNearLocation:page:" title="requestForCausesNearLocation:page:"></a>
-	<h3 class="subsubtitle method-title">requestForCausesNearLocation:page:</h3>
+	<a name="//api/name/requestForOrdersAtMerchantWithId:page:" title="requestForOrdersAtMerchantWithId:page:"></a>
+	<h3 class="subsubtitle method-title">requestForOrdersAtMerchantWithId:page:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve a page of causes near a location. The exact radius may change, but is currently 50 miles.</p>
+		<p>Builds a request to retrieve orders that the current user has made at a given merchant.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForCausesNearLocation:(CLLocation *)<em>location</em> page:(NSUInteger)<em>page</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrdersAtMerchantWithId:(NSNumber *)<em>merchantId</em> page:(NSUInteger)<em>page</em></code></div>
 
     
 	
@@ -305,13 +246,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>location</em></dt>
-			<dd><p>A <code>CLLocation</code> to use as the center of the search circle.</p></dd>
+			<dt><em>merchantId</em></dt>
+			<dd><p>The ID of the merchant to search against.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>page</em></dt>
-			<dd><p>The page of causes to retrieve.</p></dd>
+			<dd><p>The page of orders to retrieve.</p></dd>
 		</dl>
 		
 	</div>
@@ -324,9 +265,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve a page of causes near a location. The exact radius may change, but is currently 50 miles.</p>
+		<p>Builds a request to retrieve orders that the current user has made at a given merchant.</p>
 
-<p>On success, this request will return an array of <a href="../Classes/LUCause.html"><code>LUCause</code></a> instances.</p>
+<p>On success, this request will return an array of <a href="../Classes/LUOrder.html"><code>LUOrder</code></a> instances.</p>
 	</div>
 	
 	
@@ -337,25 +278,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCauseRequestBuilder.h</code><br />
+		<code class="declared-in-ref">LUOrderRequestFactory.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForCausesOnPage:" title="requestForCausesOnPage:"></a>
-	<h3 class="subsubtitle method-title">requestForCausesOnPage:</h3>
+	<a name="//api/name/requestForOrdersOnPage:" title="requestForOrdersOnPage:"></a>
+	<h3 class="subsubtitle method-title">requestForOrdersOnPage:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve all causes on the given page.</p>
+		<p>Builds a request to retrieve orders of the current user.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForCausesOnPage:(NSUInteger)<em>page</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrdersOnPage:(NSUInteger)<em>page</em></code></div>
 
     
 	
@@ -364,7 +305,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>page</em></dt>
-			<dd><p>The page of causes to retrieve.</p></dd>
+			<dd><p>The page of orders to retrieve.</p></dd>
 		</dl>
 		
 	</div>
@@ -377,9 +318,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve all causes on the given page.</p>
+		<p>Builds a request to retrieve orders of the current user.</p>
 
-<p>On success, this request will return an array of <a href="../Classes/LUCause.html"><code>LUCause</code></a> instances.</p>
+<p>On success, this request will return an array of <a href="../Classes/LUOrder.html"><code>LUOrder</code></a> instances.</p>
 	</div>
 	
 	
@@ -390,7 +331,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCauseRequestBuilder.h</code><br />
+		<code class="declared-in-ref">LUOrderRequestFactory.h</code><br />
 	</div>				
 	
 	
@@ -411,7 +352,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-02-22)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-05-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

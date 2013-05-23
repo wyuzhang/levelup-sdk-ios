@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUDivisionRequestBuilder Class Reference</title>
+		<title>LUCauseAffiliation Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUDivisionRequestBuilder Class Reference</h1>
+				<h1 class="hideInXcode">LUCauseAffiliation Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -38,11 +38,13 @@
 	
 	
 	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/causeID">&nbsp;&nbsp;&nbsp;&nbsp;causeID</option>
+	
+	<option value="//api/name/percentDonation">&nbsp;&nbsp;&nbsp;&nbsp;percentDonation</option>
 	
 	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/requestForAllDivisions">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForAllDivisions</option>
 	
 	
 	
@@ -68,13 +70,15 @@
 
 
 
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForAllDivisions">requestForAllDivisions</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/causeID">causeID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/percentDonation">percentDonation</a></span></li>
 	
 </ul></li>
+
+
 
 
 
@@ -83,7 +87,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUDivisionRequestBuilder Class Reference" name="top"></a>
+				<a title="LUCauseAffiliation Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -92,7 +96,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUDivisionRequestBuilder Class Reference</h1>
+						<h1 class="title title-header">LUCauseAffiliation Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -100,10 +104,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
+	<td class="specification-value">LUAPIModel : NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUDivisionRequestBuilder.h<br />LUDivisionRequestBuilder.m</td>
+	<td class="specification-value">LUCauseAffiliation.h<br />LUCauseAffiliation.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -113,7 +117,8 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUDivisionRequestBuilder</code> is used to build requests related to divisions.</p>
+						<p>Represents a user&rsquo;s affiliation with a cause. When choosing a cause, the user also chooses a percent
+of their savings which will be donated to the cause.</p>
 					</div>
 					
 					
@@ -131,10 +136,18 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForAllDivisions">+&nbsp;requestForAllDivisions</a></code>
-		<span class="tooltip"><p>Builds a request to retrieve all divisions.</p></span>
+		<code><a href="#//api/name/causeID">&nbsp;&nbsp;causeID</a></code>
+		<span class="tooltip"><p>The ID of the user&rsquo;s <code>cause</code>. Cause chosen by the user to which they would like to donate a percentage of their
+savings. The percent is set in <a href="#//api/name/percentDonation"><code>percentDonation</code></a>.</p></span>
 	</span>
+	<span class="task-item-suffix">property</span>
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/percentDonation">&nbsp;&nbsp;percentDonation</a></code>
+		<span class="tooltip"><p>The percent of savings that the user would like to donate to their chosen <code>cause</code>.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -145,25 +158,24 @@
 					
 					
 					
-					
-					
 					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForAllDivisions" title="requestForAllDivisions"></a>
-	<h3 class="subsubtitle method-title">requestForAllDivisions</h3>
+	<a name="//api/name/causeID" title="causeID"></a>
+	<h3 class="subsubtitle method-title">causeID</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve all divisions.</p>
+		<p>The ID of the user&rsquo;s <code>cause</code>. Cause chosen by the user to which they would like to donate a percentage of their
+savings. The percent is set in <a href="#//api/name/percentDonation"><code>percentDonation</code></a>.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForAllDivisions</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *causeID</code></div>
 
     
 	
@@ -175,9 +187,8 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve all divisions.</p>
-
-<p>On success, this request will return an array of <a href="../Classes/LUDivision.html"><code>LUDivision</code></a> instances.</p>
+		<p>The ID of the user&rsquo;s <code>cause</code>. Cause chosen by the user to which they would like to donate a percentage of their
+savings. The percent is set in <a href="#//api/name/percentDonation"><code>percentDonation</code></a>.</p>
 	</div>
 	
 	
@@ -188,13 +199,56 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUDivisionRequestBuilder.h</code><br />
+		<code class="declared-in-ref">LUCauseAffiliation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/percentDonation" title="percentDonation"></a>
+	<h3 class="subsubtitle method-title">percentDonation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The percent of savings that the user would like to donate to their chosen <code>cause</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSNumber *percentDonation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The percent of savings that the user would like to donate to their chosen <code>cause</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCauseAffiliation.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 					</div>
+					
+					
 					
 					
 					
@@ -209,7 +263,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-02-22)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-05-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
