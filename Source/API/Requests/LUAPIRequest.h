@@ -41,6 +41,7 @@ extern NSString * const LUAPIVersion14;
 
  @param method An HTTP method: "GET", "POST", "PUT", or "DELETE".
  @param path The path of the API request, e.g. "/users".
+ @param apiVersion The version of the API to use.
  @param parameters A dictionary of parameters to include with this request, or nil if the request has no parameters.
  @param modelFactory An instance of `LUAbstractJSONModelFactory` which will parse the response.
  */

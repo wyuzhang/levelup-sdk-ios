@@ -54,7 +54,7 @@ The SDK includes model classes for LevelUp domain objects, such as a user or a m
 * **[LUCampaign](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCampaign.html)**: Campaigns are promotions which can be claimed by users.
 * **[LUCategory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCategory.html)**: A merchant category, such as "Italian" or "Bar".
 * **[LUCause](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCause.html)**: A charity or organization to which users can choose to donate part of their savings.
-* **[LUCauseAffilliation](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCauseAffilliation.html)**: Represents a user's association with a cause.
+* **[LUCauseAffiliation](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCauseAffiliation.html)**: Represents a user's association with a cause.
 ** **[LUCauseCategory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCauseCategory.html)**: A cause charity, such as "Political" or "Wildlife Conservation".
 * **[LUClaim](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUClaim.html)**: Represents a user's claim on a campaign.
 * **[LUCohort](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCohort.html)**: When a user claims a campaign, they do so through a cohort. This could be through a social network or a particular advertisement.

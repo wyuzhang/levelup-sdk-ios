@@ -18,7 +18,7 @@
 
  On success, this request will return `nil`.
 
- @param causeId The `LUCauseAffiliation` to create.
+ @param causeAffiliation The `LUCauseAffiliation` to create.
  */
 + (LUAPIRequest *)requestToCreateCauseAffiliation:(LUCauseAffiliation *)causeAffiliation;
 

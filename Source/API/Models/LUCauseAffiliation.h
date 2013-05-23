@@ -1,5 +1,9 @@
 #import "LUAPIModel.h"
 
+/**
+ Represents a user's affiliation with a cause. When choosing a cause, the user also chooses a percent
+ of their savings which will be donated to the cause.
+ */
 @class LUCause;
 
 @interface LUCauseAffiliation : LUAPIModel

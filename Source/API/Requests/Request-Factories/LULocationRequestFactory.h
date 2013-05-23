@@ -22,6 +22,8 @@
  include any locations, the response will be empty with a status code of 204 (No Content). This URL can then be
  retried, and when results are available they will be returned. When there are additional pages of results, the response
  will also include the URL for the subsequent page of results.
+
+ @param pageURL The next page of locations to request.
  */
 + (LUAPIRequest *)requestForLocationSummaryPage:(NSURL *)pageURL;
 
@@ -30,6 +32,8 @@
 
  On success, this request will return a `LULocation` instance for the specified ID. If there isn't a location
  with that id, the response will be empty with a status code of 404 (Not found).
+
+ @param locationID The location ID to request.
  */
 + (LUAPIRequest *)requestForLocationWithID:(NSNumber *)locationID;
 
