@@ -108,14 +108,26 @@
 }
 
 - (NSPredicate *)predicateForRadius:(double)radius {
-  double top = self.center.coordinate.latitude - radius;
-  double bottom = self.center.coordinate.latitude + radius;
+  double minLatitude = self.center.coordinate.latitude - radius;
+  double maxLatitude = self.center.coordinate.latitude + radius;
+
+  if (minLatitude > maxLatitude) {
+    double tmp = maxLatitude;
+    maxLatitude = minLatitude;
+    minLatitude = tmp;
+  }
 
   double longitudeFudge = cos(self.center.coordinate.longitude * M_PI / 180) * radius;
-  double left = self.center.coordinate.longitude - longitudeFudge;
-  double right = self.center.coordinate.longitude + longitudeFudge;
+  double minLongitude = self.center.coordinate.longitude - longitudeFudge;
+  double maxLongitude = self.center.coordinate.longitude + longitudeFudge;
 
-  return [NSPredicate predicateWithFormat:@"(longitude BETWEEN {%@, %@}) AND (latitude BETWEEN {%@, %@})", @(left), @(right), @(top), @(bottom)];
+  if (minLongitude > maxLongitude) {
+    double tmp = maxLongitude;
+    maxLongitude = minLongitude;
+    minLongitude = tmp;
+  }
+
+  return [NSPredicate predicateWithFormat:@"(latitude BETWEEN {%@, %@}) AND (longitude BETWEEN {%@, %@})", @(minLatitude), @(maxLatitude), @(minLongitude), @(maxLongitude)];
 }
 
 @end
