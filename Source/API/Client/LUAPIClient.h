@@ -32,13 +32,27 @@
  ## Errors
 
  When an API call fails, the `failure` block passed to `performRequest:success:failure:` will be called with an `NSError`
- object containing additional information about the error. The `userInfo` dictionary for this `NSError` has keys
- for several pieces of information:
+ object containing additional information about the error. This error will have the domain `LUAPIErrorDomain`.
 
- - `LUAPIFailingURLRequestErrorKey`: An `NSURLRequest` containing the request.
- - `LUAPIFailingURLResponseErrorKey`: An `NSURLResponse` containing the response.
- - `LUAPIFailingErrorMessageErrorKey`: An optional error message from the server.
- - `LUAPIFailingJSONResponseErrorKey`: An optional JSON response from the server.
+ ### Codes
+
+ The error may have one of the following codes:
+
+ - `LUAPIErrorLoginRequired`: The client must be logged in to complete the request.
+ - `LUAPIErrorMaintenance`: The server is currently down for maintenance.
+ - `LUAPIErrorNetwork`: Was unable to get to the server because the network is down.
+ - `LUAPIErrorParsing`: The server responded with JSON that couldn't be parsed.
+ - `LUAPIErrorServer`: The server responded with an error.
+ - `LUAPIErrorUpgrade`: The SDK needs to be upgraded.
+
+ ### User Info
+
+ The `userInfo` dictionary for this `NSError` has keys for several pieces of information:
+
+ - `LUAPIErrorKeyErrorMessage`: An optional error message from the server.
+ - `LUAPIErrorKeyJSONResponse`: An optional JSON response from the server.
+ - `LUAPIErrorKeyOriginalError`: If this error was generated from another `NSError`, it is included under this key.
+ - `LUAPIErrorKeyURLResponse`: An `NSURLResponse` containing the response.
 
  ## Example
 
@@ -56,14 +70,6 @@
 
 typedef void (^LUAPISuccessBlock)(id result);
 typedef void (^LUAPIFailureBlock)(NSError *error);
-
-#define LUAPIFailingURLRequestErrorKey AFNetworkingOperationFailingURLRequestErrorKey
-#define LUAPIFailingURLResponseErrorKey AFNetworkingOperationFailingURLResponseErrorKey
-
-extern NSString * const LUAPIFailingJSONResponseErrorKey;
-extern NSString * const LUAPIFailingErrorMessageErrorKey;
-
-extern NSString * const DefaultLevelUpApiURL;
 
 @interface LUAPIClient : AFHTTPClient
 
@@ -122,11 +128,5 @@ extern NSString * const DefaultLevelUpApiURL;
 - (NSOperation *)performRequest:(LUAPIRequest *)apiRequest
                         success:(LUAPISuccessBlock)success
                         failure:(LUAPIFailureBlock)failure;
-
-/**
- Specifies if the network is currently unreachable. This can be useful for giving the user relevant information about
- API errors.
- */
-- (BOOL)isNetworkUnreachable;
 
 @end

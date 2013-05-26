@@ -4,9 +4,6 @@
 #import "LUAPIRequest.h"
 #import "LUConstants.h"
 
-NSString * const LUAPIFailingJSONResponseErrorKey = @"LUAPIFailingJSONResponseErrorKey";
-NSString * const LUAPIFailingErrorMessageErrorKey = @"LUAPIFailingErrorMessageErrorKey";
-
 @interface LUAPIClient ()
 
 @property (copy, readwrite) NSString *apiKey;
@@ -51,10 +48,6 @@ __strong static id _sharedClient = nil;
 
 + (void)setupWithAPIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode {
   _sharedClient = [[self alloc] initWithAPIKey:apiKey developmentMode:developmentMode];
-}
-
-- (BOOL)isNetworkUnreachable {
-  return self.networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable;
 }
 
 - (NSOperation *)performRequest:(LUAPIRequest *)apiRequest

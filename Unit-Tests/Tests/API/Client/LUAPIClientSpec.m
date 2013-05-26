@@ -85,34 +85,6 @@ describe(@"LUAPIClient", ^{
     });
   });
 
-  describe(@"isNetworkUnreachable", ^{
-    __block LUAPIClient *client;
-
-    beforeEach(^{
-      client = [LUAPIClient sharedClient];
-    });
-
-    context(@"when the networkReachabilityStatus is AFNetworkReachabilityStatusNotReachable", ^{
-      beforeEach(^{
-        [client setValue:@(AFNetworkReachabilityStatusNotReachable) forKey:@"networkReachabilityStatus"];
-      });
-
-      it(@"is YES", ^{
-        [[theValue([client isNetworkUnreachable]) should] beYes];
-      });
-    });
-
-    context(@"when the networkReachabilityStatus is not AFNetworkReachabilityStatusNotReachable", ^{
-      beforeEach(^{
-        [client setValue:@(AFNetworkReachabilityStatusReachableViaWiFi) forKey:@"networkReachabilityStatus"];
-      });
-
-      it(@"is NO", ^{
-        [[theValue([client isNetworkUnreachable]) should] beNo];
-      });
-    });
-  });
-
   describe(@"performRequest:success:failure:", ^{
     __block LUAPIRequest *apiRequest;
     __block LUAPIClient *client;

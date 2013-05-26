@@ -1,62 +1,141 @@
 #import "LUAPIClient.h"
 #import "LUAPIErrorBuilder.h"
+#import "LUConstants.h"
+
+NSError *errorWithHTTPStatusCode(NSInteger statusCode) {
+  NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:@"http://example.com"]
+                                                            statusCode:statusCode
+                                                           HTTPVersion:@"HTTP/1.1"
+                                                          headerFields:nil];
+
+  return [NSError errorWithDomain:AFNetworkingErrorDomain
+                             code:NSURLErrorBadServerResponse
+                         userInfo:@{AFNetworkingOperationFailingURLResponseErrorKey : response}];
+}
 
 SPEC_BEGIN(LUAPIErrorBuilderSpec)
 
 describe(@"LUAPIErrorBuilder", ^{
+  beforeEach(^{
+    [LUAPIClient setupWithAPIKey:@"test" developmentMode:YES];
+  });
+
   describe(@"error:withMessagesFromJSON:", ^{
-    it(@"returns a new error with the same domain and code", ^{
-      NSError *error = [NSError errorWithDomain:@"TestErrorDomain"
-                                           code:0
-                                       userInfo:nil];
+    context(@"when the network is not reachable", ^{
+      NSError *error = [NSError errorWithDomain:@"TestErrorDomain" code:0 userInfo:nil];
 
-      NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:nil];
+      beforeEach(^{
+        [[LUAPIClient sharedClient] stub:@selector(networkReachabilityStatus)
+                               andReturn:theValue(AFNetworkReachabilityStatusNotReachable)];
+      });
 
-      [[result shouldNot] beIdenticalTo:error];
-      [[result.domain should] equal:error.domain];
-      [[theValue(result.code) should] equal:theValue(error.code)];
-    });
-
-    context(@"when the JSON is nil", ^{
-      it(@"keeps the same userInfo", ^{
-        NSError *error = [NSError errorWithDomain:@"TestErrorDomain"
-                                             code:0
-                                         userInfo:@{@"test" : @"value"}];
+      it(@"returns an LUAPIErrorNetwork error", ^{
         NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:nil];
 
-        [[result.userInfo should] equal:error.userInfo];
+        [[result.domain should] equal:LUAPIErrorDomain];
+        [[theValue(result.code) should] equal:theValue(LUAPIErrorNetwork)];
+      });
+    });
+
+    context(@"when a JSON error is passed in", ^{
+      NSError *error = [NSError errorWithDomain:NSCocoaErrorDomain
+                                           code:NSPropertyListReadCorruptError
+                                       userInfo:nil];
+
+      it(@"returns an LUAPIErrorParsing error", ^{
+        NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:nil];
+
+        [[result.domain should] equal:LUAPIErrorDomain];
+        [[theValue(result.code) should] equal:theValue(LUAPIErrorParsing)];
+      });
+    });
+
+    context(@"when the error contains an HTTP response with code 401", ^{
+      NSError *error = errorWithHTTPStatusCode(401);
+
+      it(@"returns an LUAPIErrorLoginRequired error", ^{
+        NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:nil];
+
+        [[result.domain should] equal:LUAPIErrorDomain];
+        [[theValue(result.code) should] equal:theValue(LUAPIErrorLoginRequired)];
+      });
+    });
+
+    context(@"when the error contains an HTTP response with code 501", ^{
+      NSError *error = errorWithHTTPStatusCode(501);
+
+      it(@"returns an LUAPIErrorUpgrade error", ^{
+        NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:nil];
+
+        [[result.domain should] equal:LUAPIErrorDomain];
+        [[theValue(result.code) should] equal:theValue(LUAPIErrorUpgrade)];
+      });
+    });
+
+    context(@"when the error contains an HTTP response with code 503", ^{
+      NSError *error = errorWithHTTPStatusCode(503);
+
+      it(@"returns an LUAPIErrorMaintenance error", ^{
+        NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:nil];
+
+        [[result.domain should] equal:LUAPIErrorDomain];
+        [[theValue(result.code) should] equal:theValue(LUAPIErrorMaintenance)];
+      });
+    });
+
+    context(@"when the error contains an unmatched HTTP response", ^{
+      NSError *error = errorWithHTTPStatusCode(500);
+
+      it(@"returns an LUAPIErrorServer error", ^{
+        NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:nil];
+
+        [[result.domain should] equal:LUAPIErrorDomain];
+        [[theValue(result.code) should] equal:theValue(LUAPIErrorServer)];
+      });
+    });
+
+    context(@"when an unmatched error is passed in", ^{
+      NSError *error = [NSError errorWithDomain:@"TestErrorDomain" code:0 userInfo:nil];
+
+      it(@"returns an LUAPIErrorServer error", ^{
+        NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:nil];
+
+        [[result.domain should] equal:LUAPIErrorDomain];
+        [[theValue(result.code) should] equal:theValue(LUAPIErrorServer)];
       });
     });
 
     context(@"when the JSON is not nil", ^{
-      NSError *error = [NSError errorWithDomain:@"TestErrorDomain"
-                                           code:0
-                                       userInfo:@{@"test" : @"value"}];
+      NSError *error = errorWithHTTPStatusCode(500);
+      NSDictionary *JSON = @{@"name" : @"John Doe"};
 
       it(@"adds the JSON to the userInfo", ^{
-        NSDictionary *JSON = @{@"name" : @"John Doe"};
-        NSError *result = [LUAPIErrorBuilder error:error
-                              withMessagesFromJSON:JSON];
+        NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:JSON];
 
-        [[result.userInfo[@"test"] should] equal:error.userInfo[@"test"]];
-        [[result.userInfo[LUAPIFailingJSONResponseErrorKey] should] equal:JSON];
+        [[result.userInfo[LUAPIErrorKeyJSONResponse] should] equal:JSON];
       });
 
       context(@"when the JSON includes an error_description", ^{
+        NSError *error = errorWithHTTPStatusCode(500);
+        NSString *errorMessage = @"error message";
+        NSDictionary *JSON = @{@"error_description" : errorMessage};
+
         it(@"adds it to the userInfo", ^{
-          NSDictionary *JSON = @{@"error_description" : @"error description message"};
           NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:JSON];
 
-          [[result.userInfo[LUAPIFailingErrorMessageErrorKey] should] equal:JSON[@"error_description"]];
+          [[result.userInfo[LUAPIErrorKeyErrorMessage] should] equal:errorMessage];
         });
       });
 
       context(@"when the JSON includes an error", ^{
+        NSError *error = errorWithHTTPStatusCode(500);
+        NSString *errorMessage = @"error message";
+        NSDictionary *JSON = @{@"error" : errorMessage};
+
         it(@"adds it to the userInfo", ^{
-          NSDictionary *JSON = @{@"error" : @"error message"};
           NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:JSON];
 
-          [[result.userInfo[LUAPIFailingErrorMessageErrorKey] should] equal:JSON[@"error"]];
+          [[result.userInfo[LUAPIErrorKeyErrorMessage] should] equal:errorMessage];
         });
       });
 
@@ -65,7 +144,7 @@ describe(@"LUAPIErrorBuilder", ^{
           NSDictionary *JSON = @{@"error" : @"error message", @"error_description" : @"error_description message"};
           NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:JSON];
 
-          [[result.userInfo[LUAPIFailingErrorMessageErrorKey] should] equal:JSON[@"error_description"]];
+          [[result.userInfo[LUAPIErrorKeyErrorMessage] should] equal:JSON[@"error_description"]];
         });
       });
     });

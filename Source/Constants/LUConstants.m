@@ -5,3 +5,9 @@ NSString * const BraintreePublicKeyProduction = @"MIIBCgKCAQEAsWqrT3RkCyH6yF7ir/
 
 NSString * const LevelUpAPIBaseURLDevelopment = @"https://api.staging-levelup.com/";
 NSString * const LevelUpAPIBaseURLProduction = @"https://api.thelevelup.com/";
+
+NSString * const LUAPIErrorDomain = @"LUAPIErrorDomain";
+NSString * const LUAPIErrorKeyErrorMessage = @"LUAPIErrorKeyErrorMessage";
+NSString * const LUAPIErrorKeyJSONResponse = @"LUAPIErrorKeyJSONResponse";
+NSString * const LUAPIErrorKeyOriginalError = @"LUAPIErrorKeyOriginalError";
+NSString * const LUAPIErrorKeyURLResponse = @"LUAPIErrorKeyURLResponse";

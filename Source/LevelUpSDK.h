@@ -45,7 +45,7 @@
 #import "LUUserAddress.h"
 #import "LUWebLocations.h"
 
-#import "LUAPIErrorCodes.h"
+#import "LUConstants.h"
 
 #import "LUCachedLocationSearch.h"
 #import "LULocationCacheUpdater.h"
