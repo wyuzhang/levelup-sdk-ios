@@ -11,18 +11,14 @@
 #pragma mark - Public Methods
 
 + (LUAPIRequest *)requestForCreditCards {
-  NSString *path = [NSString stringWithFormat:@"users/%@/credit_cards", [LUAPIClient sharedClient].currentUserID];
-
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
-                                                    path:path
-                                              apiVersion:LUAPIVersion13
+                                                    path:@"credit_cards"
+                                              apiVersion:LUAPIVersion14
                                               parameters:nil
                                             modelFactory:[LUCreditCardJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestToCreateCreditCard:(LUCreditCard *)creditCard {
-  NSString *path = [NSString stringWithFormat:@"users/%@/credit_cards", [LUAPIClient sharedClient].currentUserID];
-
   NSString *braintreePublicKey;
   if ([LUAPIClient sharedClient].developmentMode) {
     braintreePublicKey = BraintreePublicKeyDevelopment;
@@ -32,16 +28,16 @@
 
   BraintreeEncryption *braintree = [[BraintreeEncryption alloc] initWithPublicKey:braintreePublicKey];
   NSDictionary *parameters = @{
-    @"cvv" : [braintree encryptString:creditCard.cvv],
-    @"expiration_month" : [braintree encryptString:[creditCard.expirationMonth stringValue]],
-    @"expiration_year" : [braintree encryptString:[creditCard.expirationYear stringValue]],
-    @"number" : [braintree encryptString:creditCard.number],
+    @"encrypted_cvv" : [braintree encryptString:creditCard.cvv],
+    @"encrypted_expiration_month" : [braintree encryptString:[creditCard.expirationMonth stringValue]],
+    @"encrypted_expiration_year" : [braintree encryptString:[creditCard.expirationYear stringValue]],
+    @"encrypted_number" : [braintree encryptString:creditCard.number],
     @"postal_code" : [braintree encryptString:creditCard.postalCode]
   };
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
-                                                    path:path
-                                              apiVersion:LUAPIVersion13
+                                                    path:@"credit_cards"
+                                              apiVersion:LUAPIVersion14
                                               parameters:@{@"credit_card" : parameters}
                                             modelFactory:[LUCreditCardJSONFactory factory]];
 }
@@ -51,17 +47,17 @@
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"DELETE"
                                                     path:path
-                                              apiVersion:LUAPIVersion13
+                                              apiVersion:LUAPIVersion14
                                               parameters:nil
                                             modelFactory:[LUCreditCardJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestToPromoteCreditCardWithID:(NSNumber *)creditCardID {
-  NSString *path = [NSString stringWithFormat:@"credit_cards/%@/promote", creditCardID];
+  NSString *path = [NSString stringWithFormat:@"credit_cards/%@", creditCardID];
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"PUT"
                                                     path:path
-                                              apiVersion:LUAPIVersion13
+                                              apiVersion:LUAPIVersion14
                                               parameters:nil
                                             modelFactory:[LUCreditCardJSONFactory factory]];
 }

@@ -14,8 +14,6 @@ describe(@"LUCreditCardRequestFactory", ^{
 
   describe(@"requestForCreditCards", ^{
     beforeEach(^{
-      [[LUAPIClient sharedClient] stub:@selector(currentUserID) andReturn:@1];
-
       request = [LUCreditCardRequestFactory requestForCreditCards];
     });
 
@@ -27,12 +25,12 @@ describe(@"LUCreditCardRequestFactory", ^{
       [[request.method should] equal:@"GET"];
     });
 
-    it(@"returns a request to the path 'users/<userid>/credit_cards'", ^{
-      [[request.path should] equal:@"users/1/credit_cards"];
+    it(@"returns a request to the path 'credit_cards'", ^{
+      [[request.path should] equal:@"credit_cards"];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
   });
 
@@ -55,8 +53,6 @@ describe(@"LUCreditCardRequestFactory", ^{
       creditCard.number = @"4111111111111111";
       creditCard.postalCode = @"01234";
 
-      [[LUAPIClient sharedClient] stub:@selector(currentUserID) andReturn:@1];
-
       request = [LUCreditCardRequestFactory requestToCreateCreditCard:creditCard];
     });
 
@@ -64,21 +60,21 @@ describe(@"LUCreditCardRequestFactory", ^{
       [[request.method should] equal:@"POST"];
     });
 
-    it(@"returns a request to the path 'users/<userid>/credit_cards'", ^{
-      [[request.path should] equal:@"users/1/credit_cards"];
+    it(@"returns a request to the path 'credit_cards'", ^{
+      [[request.path should] equal:@"credit_cards"];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
 
     it(@"request a request with encrypted parameters for the credit card", ^{
       NSDictionary *expectedParams = @{
         @"credit_card" : @{
-            @"cvv" : [braintree encryptString:creditCard.cvv],
-            @"expiration_month" : [braintree encryptString:[creditCard.expirationMonth stringValue]],
-            @"expiration_year" : [braintree encryptString:[creditCard.expirationYear stringValue]],
-            @"number" : [braintree encryptString:creditCard.number],
+            @"encrypted_cvv" : [braintree encryptString:creditCard.cvv],
+            @"encrypted_expiration_month" : [braintree encryptString:[creditCard.expirationMonth stringValue]],
+            @"encrypted_expiration_year" : [braintree encryptString:[creditCard.expirationYear stringValue]],
+            @"encrypted_number" : [braintree encryptString:creditCard.number],
             @"postal_code" : [braintree encryptString:creditCard.postalCode]
         }
       };
@@ -104,8 +100,8 @@ describe(@"LUCreditCardRequestFactory", ^{
       [[request.path should] equal:@"credit_cards/1"];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
   });
 
@@ -122,12 +118,12 @@ describe(@"LUCreditCardRequestFactory", ^{
       [[request.method should] equal:@"PUT"];
     });
 
-    it(@"returns a request to the path 'credit_cards/<id>/promote'", ^{
-      [[request.path should] equal:@"credit_cards/1/promote"];
+    it(@"returns a request to the path 'credit_cards/<id>'", ^{
+      [[request.path should] equal:@"credit_cards/1"];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
   });
 });
