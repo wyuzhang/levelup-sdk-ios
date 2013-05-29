@@ -39,7 +39,7 @@ NSString * const LUPersistedObjectsStoreDatabaseFileName = @"LUPersistedObjects"
   NSDate *storeDatabaseCreatedAt = [self fileCreatedAt:[self storeDatabaseURL]];
   NSDate *initialDatabaseCreatedAt = [self fileCreatedAt:[self initialDatabaseURL]];
 
-  return [[storeDatabaseCreatedAt earlierDate:initialDatabaseCreatedAt] isEqualToDate:storeDatabaseCreatedAt];
+  return [storeDatabaseCreatedAt compare:initialDatabaseCreatedAt] == NSOrderedDescending;
 }
 
 + (void)replaceStoreDatabaseWithInitial {

@@ -15,9 +15,28 @@ describe(@"LUCoreDataStore", ^{
       beforeEach(^{
         [[[NSFileManager defaultManager] stubAndReturn:@YES] fileExistsAtPath:[[LUCoreDataStore storeDatabaseURL] path]];
 
-        [[[NSFileManager defaultManager] stubAndReturn:@{NSFileCreationDate : [NSDate date]}] attributesOfItemAtPath:[[LUCoreDataStore storeDatabaseURL] path]
+        [[[NSFileManager defaultManager] stubAndReturn:@{NSFileCreationDate : [NSDate distantPast]}] attributesOfItemAtPath:[[LUCoreDataStore storeDatabaseURL] path]
                                                                                                                error:nil];
-        [[[NSFileManager defaultManager] stubAndReturn:@{NSFileCreationDate : [NSDate distantPast]}] attributesOfItemAtPath:[[LUCoreDataStore initialDatabaseURL] path]
+        [[[NSFileManager defaultManager] stubAndReturn:@{NSFileCreationDate : [NSDate date]}] attributesOfItemAtPath:[[LUCoreDataStore initialDatabaseURL] path]
+                                                                                                                      error:nil];
+      });
+
+      it(@"returns the store database URL without changing it", ^{
+        [[[NSFileManager defaultManager] shouldNot] receive:@selector(removeItemAtURL:error:)];
+        [[[NSFileManager defaultManager] shouldNot] receive:@selector(copyItemAtURL:toURL:error:)];
+
+        [[[LUCoreDataStore storeURL] should] equal:[LUCoreDataStore storeDatabaseURL]];
+      });
+    });
+
+    context(@"when the store database exists has the same creation time as the initial database", ^{
+      beforeEach(^{
+        [[[NSFileManager defaultManager] stubAndReturn:@YES] fileExistsAtPath:[[LUCoreDataStore storeDatabaseURL] path]];
+
+        NSDate *date = [NSDate date];
+        [[[NSFileManager defaultManager] stubAndReturn:@{NSFileCreationDate : date}] attributesOfItemAtPath:[[LUCoreDataStore storeDatabaseURL] path]
+                                                                                                               error:nil];
+        [[[NSFileManager defaultManager] stubAndReturn:@{NSFileCreationDate : date}] attributesOfItemAtPath:[[LUCoreDataStore initialDatabaseURL] path]
                                                                                                                       error:nil];
       });
 
@@ -47,9 +66,9 @@ describe(@"LUCoreDataStore", ^{
       beforeEach(^{
         [[[NSFileManager defaultManager] stubAndReturn:@YES] fileExistsAtPath:[[LUCoreDataStore storeDatabaseURL] path]];
 
-        [[[NSFileManager defaultManager] stubAndReturn:@{NSFileCreationDate : [NSDate distantPast]}] attributesOfItemAtPath:[[LUCoreDataStore storeDatabaseURL] path]
+        [[[NSFileManager defaultManager] stubAndReturn:@{NSFileCreationDate : [NSDate date]}] attributesOfItemAtPath:[[LUCoreDataStore storeDatabaseURL] path]
                                                                                                                       error:nil];
-        [[[NSFileManager defaultManager] stubAndReturn:@{NSFileCreationDate : [NSDate date]}] attributesOfItemAtPath:[[LUCoreDataStore initialDatabaseURL] path]
+        [[[NSFileManager defaultManager] stubAndReturn:@{NSFileCreationDate : [NSDate distantPast]}] attributesOfItemAtPath:[[LUCoreDataStore initialDatabaseURL] path]
                                                                                                                error:nil];
       });
 
