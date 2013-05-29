@@ -342,6 +342,7 @@
 		C1CAF28317315415003B3D01 /* LUQRCodeScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1F117315415003B3D01 /* LUQRCodeScannerView.m */; };
 		C1CAF28417315415003B3D01 /* LUQROverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1F217315415003B3D01 /* LUQROverlayView.h */; };
 		C1CAF28517315415003B3D01 /* LUQROverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1F317315415003B3D01 /* LUQROverlayView.m */; };
+		F8401CF517578F89001CB772 /* NSDictionarySafetyAdditionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F8401CF317578F82001CB772 /* NSDictionarySafetyAdditionsSpec.m */; };
 		F873649B173AA1980024A3F5 /* LULoyaltyRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F8736499173AA1900024A3F5 /* LULoyaltyRequestFactorySpec.m */; };
 		F87364A2173AA4B00024A3F5 /* LULoyaltyRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F87364A0173AA4AF0024A3F5 /* LULoyaltyRequestFactory.h */; };
 		F87364A3173AA4B00024A3F5 /* LULoyaltyRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F87364A1173AA4AF0024A3F5 /* LULoyaltyRequestFactory.m */; };
@@ -353,6 +354,8 @@
 		F8BC84061739884D007F7142 /* LUWebLocations+FakeInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = F8BC84041739884D007F7142 /* LUWebLocations+FakeInstance.h */; };
 		F8BC84071739884D007F7142 /* LUWebLocations+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BC84051739884D007F7142 /* LUWebLocations+FakeInstance.m */; };
 		F8BC840A173997D2007F7142 /* LUWebLocationsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BC84081739974B007F7142 /* LUWebLocationsSpec.m */; };
+		F8D4DB9D17569CA90000DB66 /* NSDictionary+SafetyAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D4DB9B17569CA90000DB66 /* NSDictionary+SafetyAdditions.h */; };
+		F8D4DB9E17569CA90000DB66 /* NSDictionary+SafetyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D4DB9C17569CA90000DB66 /* NSDictionary+SafetyAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -729,6 +732,7 @@
 		C1CAF2871731556B003B3D01 /* LevelUpSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LevelUpSDK-Prefix.pch"; sourceTree = "<group>"; };
 		C1CAF2891731560F003B3D01 /* Unit-Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit-Tests-Info.plist"; sourceTree = "<group>"; };
 		C1CAF28A1731560F003B3D01 /* Unit-Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit-Tests-Prefix.pch"; sourceTree = "<group>"; };
+		F8401CF317578F82001CB772 /* NSDictionarySafetyAdditionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionarySafetyAdditionsSpec.m; sourceTree = "<group>"; };
 		F8736499173AA1900024A3F5 /* LULoyaltyRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULoyaltyRequestFactorySpec.m; sourceTree = "<group>"; };
 		F87364A0173AA4AF0024A3F5 /* LULoyaltyRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULoyaltyRequestFactory.h; sourceTree = "<group>"; };
 		F87364A1173AA4AF0024A3F5 /* LULoyaltyRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULoyaltyRequestFactory.m; sourceTree = "<group>"; };
@@ -740,6 +744,8 @@
 		F8BC84041739884D007F7142 /* LUWebLocations+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUWebLocations+FakeInstance.h"; sourceTree = "<group>"; };
 		F8BC84051739884D007F7142 /* LUWebLocations+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUWebLocations+FakeInstance.m"; sourceTree = "<group>"; };
 		F8BC84081739974B007F7142 /* LUWebLocationsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUWebLocationsSpec.m; sourceTree = "<group>"; };
+		F8D4DB9B17569CA90000DB66 /* NSDictionary+SafetyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafetyAdditions.h"; sourceTree = "<group>"; };
+		F8D4DB9C17569CA90000DB66 /* NSDictionary+SafetyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafetyAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1161,6 +1167,7 @@
 				C1CAF0F2173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m */,
 				C1CAF0F3173052A7003B3D01 /* NSNumberBase36Spec.m */,
 				C1CAF0F4173052A7003B3D01 /* NSStringHTMLStrippingSpec.m */,
+				F8401CF317578F82001CB772 /* NSDictionarySafetyAdditionsSpec.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1397,6 +1404,8 @@
 				C1CAF1DC17315415003B3D01 /* NSDate+StringFormats.m */,
 				C1CAF1DD17315415003B3D01 /* NSDictionary+ObjectClassAccess.h */,
 				C1CAF1DE17315415003B3D01 /* NSDictionary+ObjectClassAccess.m */,
+				F8D4DB9B17569CA90000DB66 /* NSDictionary+SafetyAdditions.h */,
+				F8D4DB9C17569CA90000DB66 /* NSDictionary+SafetyAdditions.m */,
 				C1CAF1DF17315415003B3D01 /* NSNumber+Base36.h */,
 				C1CAF1E017315415003B3D01 /* NSNumber+Base36.m */,
 				02D68DCE1738370F005E1BA8 /* NSRegularExpression+LUAdditions.h */,
@@ -1567,6 +1576,7 @@
 				63CC1CE11739CBD60037B65F /* LUCauseAffiliationJSONFactory.h in Headers */,
 				025F790017428BF10029FC49 /* LUEmailsRequestFactory.h in Headers */,
 				02BA982A174BE19500C9D647 /* LUCoreDataStore.h in Headers */,
+				F8D4DB9D17569CA90000DB66 /* NSDictionary+SafetyAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1812,6 +1822,7 @@
 				63CC1CE21739CBD60037B65F /* LUCauseAffiliationJSONFactory.m in Sources */,
 				025F790117428BF10029FC49 /* LUEmailsRequestFactory.m in Sources */,
 				02BA982B174BE19500C9D647 /* LUCoreDataStore.m in Sources */,
+				F8D4DB9E17569CA90000DB66 /* NSDictionary+SafetyAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1936,6 +1947,7 @@
 				02BA9827174AD23100C9D647 /* LULocationSummaryJSONFactorySpec.m in Sources */,
 				2576B257174AE6FD00689973 /* LUCoreDataStackSpec.m in Sources */,
 				02BA982E174BE37600C9D647 /* LUCoreDataStoreSpec.m in Sources */,
+				F8401CF517578F89001CB772 /* NSDictionarySafetyAdditionsSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
