@@ -11,21 +11,23 @@ describe(@"LUAuthenticatedAPIRequest", ^{
   NSDictionary *parameters = @{@"test" : @1};
   LUAbstractJSONModelFactory *modelFactory = [LUAbstractJSONModelFactory mock];
 
+  __block LUAuthenticatedAPIRequest *request;
+
   beforeEach(^{
     [LUAPIClient setupWithAPIKey:@"anApiKey" developmentMode:YES];
+
+    request = [[LUAuthenticatedAPIRequest alloc] initWithMethod:method
+                                                           path:path
+                                                     apiVersion:apiVersion
+                                                     parameters:parameters
+                                                   modelFactory:modelFactory];
   });
 
   it(@"is a LUAPIRequest", ^{
-    LUAuthenticatedAPIRequest *request = [[LUAuthenticatedAPIRequest alloc] initWithMethod:method
-                                                                                      path:path
-                                                                                apiVersion:apiVersion
-                                                                                parameters:parameters
-                                                                              modelFactory:modelFactory];
-
     [[request should] beKindOfClass:[LUAPIRequest class]];
   });
 
-  describe(@"initWithMethod:path:parameters:modelFactory", ^{
+  describe(@"urlRequest", ^{
     NSString *accessToken = @"access-token";
 
     context(@"when an access token is set", ^{
@@ -33,15 +35,11 @@ describe(@"LUAuthenticatedAPIRequest", ^{
         [LUAPIClient sharedClient].accessToken = accessToken;
       });
 
-      it(@"adds the access token to the parameters", ^{
-        LUAuthenticatedAPIRequest *request = [[LUAuthenticatedAPIRequest alloc] initWithMethod:method
-                                                                                          path:path
-                                                                                    apiVersion:apiVersion
-                                                                                    parameters:parameters
-                                                                                  modelFactory:modelFactory];
+      it(@"adds the access token to the Authorization header", ^{
+        NSMutableURLRequest *urlRequest = [request urlRequest];
 
-        [[request.parameters[@"access_token"] should] equal:accessToken];
-        [[request.parameters[@"test"] should] equal:parameters[@"test"]];
+        NSString *expectedAuthorizationHeader = [NSString stringWithFormat:@"token %@", accessToken];
+        [[[urlRequest allHTTPHeaderFields][@"Authorization"] should] equal:expectedAuthorizationHeader];
       });
     });
 
@@ -50,15 +48,10 @@ describe(@"LUAuthenticatedAPIRequest", ^{
         [LUAPIClient sharedClient].accessToken = nil;
       });
 
-      it(@"sets the parameters without an access token", ^{
-        LUAuthenticatedAPIRequest *request = [[LUAuthenticatedAPIRequest alloc] initWithMethod:method
-                                                                                          path:path
-                                                                                    apiVersion:apiVersion
-                                                                                    parameters:parameters
-                                                                                  modelFactory:modelFactory];
+      it(@"doesn't add an Authorization header", ^{
+        NSMutableURLRequest *urlRequest = [request urlRequest];
 
-        [[request.parameters should] equal:parameters];
-        [request.parameters[@"access_token"] shouldBeNil];
+        [[urlRequest allHTTPHeaderFields][@"Authorization"] shouldBeNil];
       });
     });
   });

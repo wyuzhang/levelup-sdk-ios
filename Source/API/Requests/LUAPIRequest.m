@@ -36,7 +36,7 @@ NSString * const LUAPIVersion14 = @"v14";
 
 #pragma mark - Public Methods
 
-- (NSURLRequest *)urlRequest {
+- (NSMutableURLRequest *)urlRequest {
   NSString *pathWithVersion = [NSString stringWithFormat:@"%@/%@", self.apiVersion, self.path];
 
   return [[LUAPIClient sharedClient] requestWithMethod:self.method path:pathWithVersion parameters:self.parameters];

@@ -33,7 +33,7 @@ describe(@"LUCohortRequestFactory", ^{
     });
 
     it(@"returns a request with no parameters", ^{
-      [[request.parameters should] beEmpty];
+      [request.parameters shouldBeNil];
     });
   });
 });
