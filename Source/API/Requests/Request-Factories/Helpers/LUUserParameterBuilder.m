@@ -31,6 +31,8 @@
   [self addKey:@"terms_accepted_at" toDictionary:params ifValuePresent:[user.termsAcceptedDate iso8601DateTimeString]];
 
   if (user.userAddresses) {
+    params[@"user_addresses_attributes"] = [NSMutableDictionary dictionary];
+
     [user.userAddresses enumerateObjectsUsingBlock:^(LUUserAddress *address, NSUInteger idx, BOOL *stop) {
       NSMutableDictionary *addressParams = [NSMutableDictionary dictionary];
 
@@ -42,7 +44,7 @@
       [self addKey:@"region" toDictionary:addressParams ifValuePresent:address.region];
       [self addKey:@"street_address" toDictionary:addressParams ifValuePresent:address.streetAddress];
 
-      params[[NSString stringWithFormat:@"user_addresses_attributes[%d]", idx]] = addressParams;
+      params[@"user_addresses_attributes"][@(idx)] = addressParams;
     }];
   }
 
@@ -54,14 +56,6 @@
 + (void)addKey:(NSString *)key toDictionary:(NSMutableDictionary *)dictionary ifValuePresent:(id)value {
   if (value && (![value respondsToSelector:@selector(length)] || [value length] > 0)) {
     dictionary[key] = value;
-  }
-}
-
-+ (void)removeBlankValues:(NSMutableDictionary *)dictionary {
-  for (NSString *key in [dictionary allKeys]) {
-    if ([dictionary[key] isKindOfClass:[NSString class]] && [dictionary[key] length] == 0) {
-      [dictionary removeObjectForKey:key];
-    }
   }
 }
 

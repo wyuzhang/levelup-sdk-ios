@@ -39,6 +39,7 @@ __strong static id _sharedClient = nil;
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self setDefaultHeader:@"Accept" value:@"application/json"];
+    [self setParameterEncoding:AFJSONParameterEncoding];
   }
 
   return self;

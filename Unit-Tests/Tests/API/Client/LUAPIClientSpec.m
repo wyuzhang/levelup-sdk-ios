@@ -62,6 +62,11 @@ describe(@"LUAPIClient", ^{
       [[[[LUAPIClient sharedClient] valueForKey:@"defaultHeaders"][@"Accept"] should] equal:@"application/json"];
     });
 
+    it(@"encodes parameters as JSON", ^{
+      [LUAPIClient setupWithAPIKey:@"anApiKey" developmentMode:YES];
+      [[theValue([LUAPIClient sharedClient].parameterEncoding) should] equal:theValue(AFJSONParameterEncoding)];
+    });
+
     context(@"when developmentMode is YES", ^{
       beforeEach(^{
         [LUAPIClient setupWithAPIKey:@"anApiKey" developmentMode:YES];

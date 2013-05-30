@@ -101,8 +101,8 @@ describe(@"LUUserParameterBuilder", ^{
 
         NSDictionary *userParams = [LUUserParameterBuilder parametersForUser:user];
 
-        [[userParams[@"user_addresses_attributes[0]"] should] equal:expectedHomeAddressParams];
-        [[userParams[@"user_addresses_attributes[1]"] should] equal:expectedWorkAddressParams];
+        [[userParams[@"user_addresses_attributes"][@0] should] equal:expectedHomeAddressParams];
+        [[userParams[@"user_addresses_attributes"][@1] should] equal:expectedWorkAddressParams];
       });
     });
   });
