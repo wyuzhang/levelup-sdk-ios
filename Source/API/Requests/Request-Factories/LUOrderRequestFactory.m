@@ -7,13 +7,13 @@
 
 #pragma mark - Public Methods
 
-+ (LUAPIRequest *)requestForOrdersAtMerchantWithId:(NSNumber *)merchantId page:(NSUInteger)page {
++ (LUAPIRequest *)requestForOrdersAtMerchantWithID:(NSNumber *)merchantID page:(NSUInteger)page {
   NSString *path = [NSString stringWithFormat:@"users/%@/orders", [LUAPIClient sharedClient].currentUserID];
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
                                                     path:path
                                               apiVersion:LUAPIVersion13
-                                              parameters:@{@"merchant_ids" : merchantId, @"page" : @(page)}
+                                              parameters:@{@"merchant_ids" : merchantID, @"page" : @(page)}
                                             modelFactory:[LUOrderJSONFactory factory]];
 }
 
@@ -27,8 +27,8 @@
                                             modelFactory:[LUOrderJSONFactory factory]];
 }
 
-+ (LUAPIRequest *)requestForOrderWithId:(NSNumber *)orderId {
-  NSString *path = [NSString stringWithFormat:@"orders/%@", orderId];
++ (LUAPIRequest *)requestForOrderWithID:(NSNumber *)orderID {
+  NSString *path = [NSString stringWithFormat:@"orders/%@", orderID];
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
                                                     path:path

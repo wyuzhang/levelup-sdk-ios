@@ -18,13 +18,13 @@
                                             modelFactory:[LUClaimJSONFactory factory]];
 }
 
-+ (LUAPIRequest *)requestToClaimLegacyLoyaltyWithId:(NSString *)legacyId campaignId:(NSNumber *)campaignId {
-  NSString *path = [NSString stringWithFormat:@"loyalties/legacy/%@/claims", campaignId];
++ (LUAPIRequest *)requestToClaimLegacyLoyaltyWithID:(NSString *)legacyID campaignID:(NSNumber *)campaignID {
+  NSString *path = [NSString stringWithFormat:@"loyalties/legacy/%@/claims", campaignID];
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"
                                        path:path
                                  apiVersion:LUAPIVersion13
-                                 parameters:@{@"legacy_id" : legacyId}
+                                 parameters:@{@"legacy_id" : legacyID}
                                modelFactory:[LUClaimJSONFactory factory]];
 }
 

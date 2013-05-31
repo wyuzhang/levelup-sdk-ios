@@ -46,8 +46,8 @@
                                             modelFactory:[LUCreditCardJSONFactory factory]];
 }
 
-+ (LUAPIRequest *)requestToDeleteCreditCardWithId:(NSNumber *)creditCardId {
-  NSString *path = [NSString stringWithFormat:@"credit_cards/%@", creditCardId];
++ (LUAPIRequest *)requestToDeleteCreditCardWithID:(NSNumber *)creditCardID {
+  NSString *path = [NSString stringWithFormat:@"credit_cards/%@", creditCardID];
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"DELETE"
                                                     path:path
@@ -56,8 +56,8 @@
                                             modelFactory:[LUCreditCardJSONFactory factory]];
 }
 
-+ (LUAPIRequest *)requestToPromoteCreditCardWithId:(NSNumber *)creditCardId {
-  NSString *path = [NSString stringWithFormat:@"credit_cards/%@/promote", creditCardId];
++ (LUAPIRequest *)requestToPromoteCreditCardWithID:(NSNumber *)creditCardID {
+  NSString *path = [NSString stringWithFormat:@"credit_cards/%@/promote", creditCardID];
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"PUT"
                                                     path:path

@@ -27,9 +27,9 @@
 
  On success, this request will return the deleted `LUCreditCard`.
 
- @param creditCardId The ID of a credit card to delete.
+ @param creditCardID The ID of a credit card to delete.
  */
-+ (LUAPIRequest *)requestToDeleteCreditCardWithId:(NSNumber *)creditCardId;
++ (LUAPIRequest *)requestToDeleteCreditCardWithID:(NSNumber *)creditCardID;
 
 /**
  Builds a request to promote a credit card.
@@ -39,8 +39,8 @@
 
  On success, this request will return the `LUCreditCard` that was promoted.
 
- @param creditCardId The ID of a credit card to promote.
+ @param creditCardID The ID of a credit card to promote.
  */
-+ (LUAPIRequest *)requestToPromoteCreditCardWithId:(NSNumber *)creditCardId;
++ (LUAPIRequest *)requestToPromoteCreditCardWithID:(NSNumber *)creditCardID;
 
 @end

@@ -98,9 +98,9 @@ describe(@"LUMerchantRequestFactory", ^{
     });
   });
 
-  describe(@"requestForMerchantWithId:", ^{
+  describe(@"requestForMerchantWithID:", ^{
     beforeEach(^{
-      request = [LUMerchantRequestFactory requestForMerchantWithId:@1];
+      request = [LUMerchantRequestFactory requestForMerchantWithID:@1];
     });
 
     it(@"returns a GET request", ^{

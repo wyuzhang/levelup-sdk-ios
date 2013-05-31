@@ -40,8 +40,8 @@
                                modelFactory:[LUMerchantJSONFactory factory]];
 }
 
-+ (LUAPIRequest *)requestForMerchantWithId:(NSNumber *)merchantId {
-  NSString *path = [NSString stringWithFormat:@"merchants/%@", merchantId];
++ (LUAPIRequest *)requestForMerchantWithID:(NSNumber *)merchantID {
+  NSString *path = [NSString stringWithFormat:@"merchants/%@", merchantID];
 
   return [LUAPIRequest apiRequestWithMethod:@"GET"
                                        path:path

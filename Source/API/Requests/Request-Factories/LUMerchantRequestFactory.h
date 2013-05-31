@@ -43,8 +43,8 @@
 
  On success, this request will return an `LUMerchant` instance.
 
- @param merchantId The ID of the merchant to retrieve.
+ @param merchantID The ID of the merchant to retrieve.
  */
-+ (LUAPIRequest *)requestForMerchantWithId:(NSNumber *)merchantId;
++ (LUAPIRequest *)requestForMerchantWithID:(NSNumber *)merchantID;
 
 @end

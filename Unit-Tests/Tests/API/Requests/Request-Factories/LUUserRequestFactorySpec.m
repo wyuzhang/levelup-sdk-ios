@@ -86,7 +86,7 @@ describe(@"LUUserRequestFactory", ^{
       [[request.apiVersion should] equal:LUAPIVersion13];
     });
 
-    it(@"returns a request with parameters including the API key as the clientId", ^{
+    it(@"returns a request with parameters including the API key as the client_id", ^{
       [[request.parameters[@"client_id"] should] equal:apiKey];
     });
 

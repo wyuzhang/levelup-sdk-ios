@@ -87,9 +87,9 @@ describe(@"LUCreditCardRequestFactory", ^{
     });
   });
 
-  describe(@"requestToDeleteCreditCardWithId:", ^{
+  describe(@"requestToDeleteCreditCardWithID:", ^{
     beforeEach(^{
-      request = [LUCreditCardRequestFactory requestToDeleteCreditCardWithId:@1];
+      request = [LUCreditCardRequestFactory requestToDeleteCreditCardWithID:@1];
     });
 
     it(@"returns an authenticated request", ^{
@@ -109,9 +109,9 @@ describe(@"LUCreditCardRequestFactory", ^{
     });
   });
 
-  describe(@"requestToPromoteCreditCardWithId:", ^{
+  describe(@"requestToPromoteCreditCardWithID:", ^{
     beforeEach(^{
-      request = [LUCreditCardRequestFactory requestToPromoteCreditCardWithId:@1];
+      request = [LUCreditCardRequestFactory requestToPromoteCreditCardWithID:@1];
     });
 
     it(@"returns an authenticated request", ^{

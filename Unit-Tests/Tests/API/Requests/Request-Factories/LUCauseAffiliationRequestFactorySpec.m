@@ -56,7 +56,7 @@ describe(@"LUCauseAffiliationRequestFactory", ^{
     });
   });
 
-  describe(@"requestToSetCauseId:", ^{
+  describe(@"requestToCreateCauseAffiliation:", ^{
     LUCauseAffiliation *causeAffiliation = [LUCauseAffiliation fakeInstance];
 
     beforeEach(^{

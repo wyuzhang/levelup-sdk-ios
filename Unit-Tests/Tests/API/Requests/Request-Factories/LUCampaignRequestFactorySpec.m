@@ -6,11 +6,11 @@ SPEC_BEGIN(LUCampaignRequestFactorySpec)
 describe(@"LUCampaignRequestFactory", ^{
   // Public Methods
 
-  describe(@"requestForCampaignWithId:", ^{
+  describe(@"requestForCampaignWithID:", ^{
     __block LUAPIRequest *request;
 
     beforeEach(^{
-      request = [LUCampaignRequestFactory requestForCampaignWithId:@1];
+      request = [LUCampaignRequestFactory requestForCampaignWithID:@1];
     });
 
     it(@"returns an authenticated request", ^{

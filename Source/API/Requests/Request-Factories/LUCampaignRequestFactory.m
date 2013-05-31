@@ -6,8 +6,8 @@
 
 #pragma mark - Public Methods
 
-+ (LUAPIRequest *)requestForCampaignWithId:(NSNumber *)campaignId {
-  NSString *path = [NSString stringWithFormat:@"campaigns/%@", campaignId];
++ (LUAPIRequest *)requestForCampaignWithID:(NSNumber *)campaignID {
+  NSString *path = [NSString stringWithFormat:@"campaigns/%@", campaignID];
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
                                                     path:path

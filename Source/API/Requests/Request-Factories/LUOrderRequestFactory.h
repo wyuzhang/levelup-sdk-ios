@@ -10,10 +10,10 @@
 
  On success, this request will return an array of `LUOrder` instances.
 
- @param merchantId The ID of the merchant to search against.
+ @param merchantID The ID of the merchant to search against.
  @param page The page of orders to retrieve.
  */
-+ (LUAPIRequest *)requestForOrdersAtMerchantWithId:(NSNumber *)merchantId page:(NSUInteger)page;
++ (LUAPIRequest *)requestForOrdersAtMerchantWithID:(NSNumber *)merchantID page:(NSUInteger)page;
 
 /**
  Builds a request to retrieve orders of the current user.
@@ -29,8 +29,8 @@
 
  On success, this request will return an `LUOrder` instance.
 
- @param orderId The ID of the order to retrieve.
+ @param orderID The ID of the order to retrieve.
  */
-+ (LUAPIRequest *)requestForOrderWithId:(NSNumber *)orderId;
++ (LUAPIRequest *)requestForOrderWithID:(NSNumber *)orderID;
 
 @end

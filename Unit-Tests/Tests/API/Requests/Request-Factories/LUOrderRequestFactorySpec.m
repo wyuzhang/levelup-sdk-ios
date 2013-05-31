@@ -10,14 +10,14 @@ describe(@"LUOrderRequestFactory", ^{
 
   __block LUAPIRequest *request;
 
-  describe(@"requestForOrdersAtMerchantWithId:page:", ^{
-    NSNumber *merchantId = @2;
+  describe(@"requestForOrdersAtMerchantWithID:page:", ^{
+    NSNumber *merchantID = @2;
     NSUInteger page = 3;
 
     beforeEach(^{
       [[LUAPIClient sharedClient] stub:@selector(currentUserID) andReturn:@1];
 
-      request = [LUOrderRequestFactory requestForOrdersAtMerchantWithId:merchantId page:page];
+      request = [LUOrderRequestFactory requestForOrdersAtMerchantWithID:merchantID page:page];
     });
 
     it(@"returns a GET request", ^{
@@ -33,7 +33,7 @@ describe(@"LUOrderRequestFactory", ^{
     });
 
     it(@"returns a request with parameters for the given merchant and page", ^{
-      [[request.parameters should] equal:@{@"merchant_ids" : merchantId, @"page" : @(page)}];
+      [[request.parameters should] equal:@{@"merchant_ids" : merchantID, @"page" : @(page)}];
     });
   });
 
@@ -63,9 +63,9 @@ describe(@"LUOrderRequestFactory", ^{
     });
   });
 
-  describe(@"requestForOrderWithId:", ^{
+  describe(@"requestForOrderWithID:", ^{
     beforeEach(^{
-      request = [LUOrderRequestFactory requestForOrderWithId:@1];
+      request = [LUOrderRequestFactory requestForOrderWithID:@1];
     });
 
     it(@"returns an authenticated request", ^{

@@ -41,12 +41,12 @@ describe(@"LUClaimRequestFactory", ^{
     });
   });
 
-  describe(@"requestToClaimLegacyLoyaltyWithId:campaignId:", ^{
-    NSString *legacyLoyaltyId = @"abc123";
-    NSNumber *campaignId = @2;
+  describe(@"requestToClaimLegacyLoyaltyWithID:campaignID:", ^{
+    NSString *legacyLoyaltyID = @"abc123";
+    NSNumber *campaignID = @2;
 
     beforeEach(^{
-      request = [LUClaimRequestFactory requestToClaimLegacyLoyaltyWithId:legacyLoyaltyId campaignId:campaignId];
+      request = [LUClaimRequestFactory requestToClaimLegacyLoyaltyWithID:legacyLoyaltyID campaignID:campaignID];
     });
 
     it(@"returns a POST request", ^{
@@ -54,7 +54,7 @@ describe(@"LUClaimRequestFactory", ^{
     });
 
     it(@"returns a request to the path 'loyalties/legacy/<campaignid>/claims'", ^{
-      NSString *expectedPath = [NSString stringWithFormat:@"loyalties/legacy/%@/claims", campaignId];
+      NSString *expectedPath = [NSString stringWithFormat:@"loyalties/legacy/%@/claims", campaignID];
 
       [[request.path should] equal:expectedPath];
     });
@@ -64,7 +64,7 @@ describe(@"LUClaimRequestFactory", ^{
     });
 
     it(@"returns a request with parameters including the legacy loyalty id", ^{
-      [[request.parameters should] equal:@{@"legacy_id": legacyLoyaltyId}];
+      [[request.parameters should] equal:@{@"legacy_id": legacyLoyaltyID}];
     });
   });
 });

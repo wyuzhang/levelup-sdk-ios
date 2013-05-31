@@ -10,8 +10,8 @@
 
  On success, this request will return the requested `LUCampaign` instance.
 
- @param campaignId The ID of the campaign to retrieve.
+ @param campaignID The ID of the campaign to retrieve.
  */
-+ (LUAPIRequest *)requestForCampaignWithId:(NSNumber *)campaignId;
++ (LUAPIRequest *)requestForCampaignWithID:(NSNumber *)campaignID;
 
 @end

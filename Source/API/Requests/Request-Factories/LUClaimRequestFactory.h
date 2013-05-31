@@ -21,9 +21,9 @@
  On success, this request will return an `NSDictionary` with two keys: "claim" and "merchant", which have an `LUClaim`
  and `LUMerchant` as values, respectively.
 
- @param legacyId An identifying string. For example, a user's loyalty card number.
- @param campaignId The ID of the campaign to claim.
+ @param legacyID An identifying string. For example, a user's loyalty card number.
+ @param campaignID The ID of the campaign to claim.
  */
-+ (LUAPIRequest *)requestToClaimLegacyLoyaltyWithId:(NSString *)legacyId campaignId:(NSNumber *)campaignId;
++ (LUAPIRequest *)requestToClaimLegacyLoyaltyWithID:(NSString *)legacyID campaignID:(NSNumber *)campaignID;
 
 @end
