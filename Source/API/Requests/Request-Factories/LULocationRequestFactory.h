@@ -28,6 +28,16 @@
 + (LUAPIRequest *)requestForLocationSummaryPage:(NSURL *)pageURL;
 
 /**
+ Builds a request to return all the locations associated with the given merchant ID.
+
+ On success, this request will full `LULocation` instances for each location. If there isn't a merchant
+ with the given ID, the response will be empty with a status code of 404 (Not found).
+
+ @param merchantID The merchant ID to request.
+ */
++ (LUAPIRequest *)requestForLocationsWithMerchantID:(NSNumber *)merchantID;
+
+/**
  Builds a request to return the details for a specific location.
 
  On success, this request will return a `LULocation` instance for the specified ID. If there isn't a location

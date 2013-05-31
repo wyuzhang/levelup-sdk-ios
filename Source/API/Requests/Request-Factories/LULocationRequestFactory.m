@@ -1,7 +1,9 @@
 #import "LUAPIRequest.h"
+#import "LUAuthenticatedAPIRequest.h"
+#import "LULocationJSONFactory.h"
 #import "LULocationRequestFactory.h"
 #import "LULocationSummaryJSONFactory.h"
-#import "LULocationJSONFactory.h"
+#import "LULocationV14JSONFactory.h"
 
 @implementation LULocationRequestFactory
 
@@ -25,13 +27,22 @@
                                modelFactory:[LULocationSummaryJSONFactory factory]];
 }
 
++ (LUAPIRequest *)requestForLocationsWithMerchantID:(NSNumber *)merchantID {
+  NSString *requestPath = [NSString stringWithFormat:@"merchants/%@/locations", [merchantID stringValue]];
+  return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
+                                                    path:requestPath
+                                              apiVersion:LUAPIVersion13
+                                              parameters:nil
+                                            modelFactory:[LULocationJSONFactory factory]];
+}
+
 + (LUAPIRequest *)requestForLocationWithID:(NSNumber *)locationID {
   NSString *requestPath = [@"locations/" stringByAppendingString:[locationID stringValue]];
   return [LUAPIRequest apiRequestWithMethod:@"GET"
                                        path:requestPath
                                  apiVersion:LUAPIVersion14
                                  parameters:nil
-                               modelFactory:[LULocationJSONFactory factory]];
+                               modelFactory:[LULocationV14JSONFactory factory]];
 }
 
 @end
