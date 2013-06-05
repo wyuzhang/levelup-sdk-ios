@@ -39,6 +39,7 @@ __strong static id _sharedClient = nil;
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self setDefaultHeader:@"Accept" value:@"application/json"];
+    [self setDefaultHeader:@"User-Agent" value:[self userAgent]];
     [self setParameterEncoding:AFJSONParameterEncoding];
   }
 
@@ -74,6 +75,12 @@ __strong static id _sharedClient = nil;
   [self enqueueHTTPRequestOperation:requestOperation];
 
   return requestOperation;
+}
+
+#pragma mark - Private Methods
+
+- (NSString *)userAgent {
+  return [[self defaultValueForHeader:@"User-Agent"] stringByAppendingFormat:@" LevelUpSDK/%@", LevelUpSDKVersion];
 }
 
 @end

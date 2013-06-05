@@ -1,3 +1,5 @@
+extern NSString * const LevelUpSDKVersion;
+
 extern NSString * const BraintreePublicKeyDevelopment;
 extern NSString * const BraintreePublicKeyProduction;
 
