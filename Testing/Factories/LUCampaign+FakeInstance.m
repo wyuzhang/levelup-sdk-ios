@@ -5,6 +5,12 @@
 
 @implementation LUCampaign (FakeInstance)
 
++ (LUCampaign *)fakeGlobalInstance {
+  LUCampaign *campaign = [self fakeInstance];
+  [campaign setValue:@YES forKey:@"global"];
+  [campaign setValue:@[] forKey:@"merchants"];
+  return campaign;
+}
 + (LUCampaign *)fakeInstance {
   NSURL *imageURL_1x = [NSURL URLWithString:@"https://s3.amazonaws.com/levelup-production/campaigns/3944/mobile_images/original/iStock_000004840813XSmall.jpg?1360594142"];
   NSURL *imageURL_2x = [NSURL URLWithString:@"https://s3.amazonaws.com/levelup-production/campaigns/3944/mobile_images/original/iStock_000004840813XSmall.jpg?1360594142"];
@@ -12,7 +18,7 @@
   return [[LUCampaign alloc] initWithCampaignID:@1
                                         claimed:NO
                                         cohorts:[LUCohort fakeInstancesForAllAvailableCohorts]
-                               confirmationHTML:@"<p>confirmation</p>"
+                               confirmationHTML:@"<p>You just loaded $1 to your account. Visit the nearest store and pay with the app to use it.</p>"
                                          global:NO
                                     imageURL_1x:imageURL_1x imageURL_2x:imageURL_2x
                                       merchants:@[[LUMerchant fakeInstance]]
