@@ -1,3 +1,4 @@
+#import "LUAccessToken+FakeInstance.h"
 #import "LUBundle+FakeInstance.h"
 #import "LUCampaign+FakeInstance.h"
 #import "LUCause+FakeInstance.h"

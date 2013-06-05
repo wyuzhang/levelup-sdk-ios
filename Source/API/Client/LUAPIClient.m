@@ -1,7 +1,7 @@
+#import "LUAbstractJSONModelFactory.h"
 #import "LUAPIClient.h"
 #import "LUAPIConnection.h"
 #import "LUAPIErrorBuilder.h"
-#import "LUAbstractJSONModelFactory.h"
 #import "LUAPIRequest.h"
 #import "LUConstants.h"
 

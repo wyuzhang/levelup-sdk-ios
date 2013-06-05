@@ -1,11 +1,11 @@
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
+#import "LUAuthenticationRequestFactory.h"
 #import "LUDeviceIdentifier.h"
-#import "LUOAuthTokenRequestFactory.h"
 
-SPEC_BEGIN(LUOAuthTokenRequestFactorySpec)
+SPEC_BEGIN(LUAuthenticationRequestFactorySpec)
 
-describe(@"LUOAuthTokenRequestFactory", ^{
+describe(@"LUAuthenticationRequestFactory", ^{
   __block LUAPIRequest *request;
 
   // Public Methods
@@ -23,28 +23,29 @@ describe(@"LUOAuthTokenRequestFactory", ^{
     NSString *password = @"test123";
 
     beforeEach(^{
-      request = [LUOAuthTokenRequestFactory requestToLoginWithEmail:email password:password];
+      request = [LUAuthenticationRequestFactory requestToLoginWithEmail:email password:password];
     });
 
     it(@"returns a POST request", ^{
       [[request.method should] equal:@"POST"];
     });
 
-    it(@"returns a request to the path 'oauth/access_token'", ^{
-      [[request.path should] equal:@"oauth/access_token"];
+    it(@"returns a request to the path 'access_tokens'", ^{
+      [[request.path should] equal:@"access_tokens"];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
 
     it(@"returns a request with the expected parameters", ^{
       NSDictionary *expectedParams = @{
-        @"client_id" : apiKey,
-        @"device_identifier" : deviceIdentifier,
-        @"grant_type" : @"password",
-        @"password" : password,
-        @"username" : email
+        @"access_token" : @{
+          @"client_id" : apiKey,
+          @"device_identifier" : deviceIdentifier,
+          @"password" : password,
+          @"username" : email
+        }
       };
 
       [[request.parameters should] equal:expectedParams];
@@ -55,27 +56,28 @@ describe(@"LUOAuthTokenRequestFactory", ^{
     NSString *facebookAccessToken = @"facebook-access-token";
 
     beforeEach(^{
-      request = [LUOAuthTokenRequestFactory requestToLoginWithFacebookAccessToken:facebookAccessToken];
+      request = [LUAuthenticationRequestFactory requestToLoginWithFacebookAccessToken:facebookAccessToken];
     });
 
     it(@"returns a POST request", ^{
       [[request.method should] equal:@"POST"];
     });
 
-    it(@"returns a request to the path 'oauth/access_token'", ^{
-      [[request.path should] equal:@"oauth/access_token"];
+    it(@"returns a request to the path 'access_tokens'", ^{
+      [[request.path should] equal:@"access_tokens"];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
 
     it(@"returns a request with the expected parameters", ^{
       NSDictionary *expectedParams = @{
-        @"client_id" : apiKey,
-        @"device_identifier" : deviceIdentifier,
-        @"facebook_access_token" : facebookAccessToken,
-        @"grant_type" : @"facebook"
+        @"access_token" : @{
+          @"client_id" : apiKey,
+          @"device_identifier" : deviceIdentifier,
+          @"facebook_access_token" : facebookAccessToken
+        }
       };
 
       [[request.parameters should] equal:expectedParams];

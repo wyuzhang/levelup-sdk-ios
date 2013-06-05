@@ -1,6 +1,6 @@
+#import "LUAccessTokenJSONFactory.h"
 #import "LUAPIClient.h"
 #import "LUAuthenticatedAPIRequest.h"
-#import "LUOAuthTokenJSONFactory.h"
 #import "LUUser.h"
 #import "LUUserJSONFactory.h"
 #import "LUUserParameterBuilder.h"
@@ -39,7 +39,7 @@
                                        path:@"users"
                                  apiVersion:LUAPIVersion13
                                  parameters:params
-                               modelFactory:[LUOAuthTokenJSONFactory factory]];
+                               modelFactory:[LUAccessTokenJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestToDisconnectFromFacebook {

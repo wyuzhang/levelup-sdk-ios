@@ -1,4 +1,4 @@
-@interface LUOAuthToken (Fixtures)
+@interface LUAccessToken (Fixtures)
 
 + (NSDictionary *)fullJSONObject;
 

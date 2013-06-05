@@ -49,6 +49,7 @@ If the API request fails, an `NSError` instance will be passed to the `failure` 
 
 The SDK includes model classes for LevelUp domain objects, such as a user or a merchant. Instances of these objects may be returned from API calls, or may be referenced from other model objects.
 
+* **[LUAccessToken](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUAccessToken.html)**: An access token is created when a user successfully logs in, and is used to maintain an authentication session.
 * **[LUApnDevice](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUApnDevice.html)**: Represents an [Apple Push Notification](http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html) device.
 * **[LUBundle](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUBundle.html)**: A bundle of orders and refunds which are processed together.
 * **[LUCampaign](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCampaign.html)**: Campaigns are promotions which can be claimed by users.
@@ -65,7 +66,6 @@ The SDK includes model classes for LevelUp domain objects, such as a user or a m
 * **[LULoyalty](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LULoyalty.html)**: Contains information about a user's loyalty progress at a specific merchant.
 * **[LUMerchant](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUMerchant.html)**: A place of business that accepts LevelUp for payment.
 * **[LUMonetaryValue](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUMonetaryValue.html)**: Represents an amount of money of a specific currency.
-* **[LUOAuthToken](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUOAuthToken.html)**: LevelUp uses [OAuth](http://www.oauth.net) to handle authentication. An OAuth token is created when a user successfully logs in, and is used to maintain an authentication session.
 * **[LUOrder](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUOrder.html)**: An order that has been placed using LevelUp.
 * **[LURefund](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LURefund.html)**: A refund, associated with a specific order.
 * **[LUUser](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUUser.html)**: Represents a user of LevelUp.
@@ -77,6 +77,7 @@ The SDK includes a set of request factories, which generate a particular `LUAPIR
 
 Below is the full list of request factories:
 
+* [LUAuthenticationRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUAuthenticationRequestFactory.html)
 * [LUApnDeviceRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUApnDeviceRequestFactory.html)
 * [LUBundleRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUBundleRequestFactory.html)
 * [LUCampaignRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCampaignRequestFactory.html)
@@ -90,7 +91,6 @@ Below is the full list of request factories:
 * [LULocationRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LULocationRequestFactory.html)
 * [LULoyaltyRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LULoyaltyRequestFactory.html)
 * [LUMerchantRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUMerchantRequestFactory.html)
-* [LUOAuthTokenRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUOAuthTokenRequestFactory.html)
 * [LUOrderRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUOrderRequestFactory.html)
 * [LUTicketRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUTicketRequestFactory.html)
 * [LUUserRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUUserRequestFactory.html)

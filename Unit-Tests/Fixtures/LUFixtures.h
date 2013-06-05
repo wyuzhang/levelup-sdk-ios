@@ -1,3 +1,4 @@
+#import "LUAccessToken+Fixtures.h"
 #import "LUBundle+Fixtures.h"
 #import "LUCampaign+Fixtures.h"
 #import "LUCategory+Fixtures.h"
@@ -13,7 +14,6 @@
 #import "LULoyalty+Fixtures.h"
 #import "LUMerchant+Fixtures.h"
 #import "LUMonetaryValue+Fixtures.h"
-#import "LUOAuthToken+Fixtures.h"
 #import "LUOrder+Fixtures.h"
 #import "LURefund+Fixtures.h"
 #import "LUUser+Fixtures.h"

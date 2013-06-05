@@ -1,16 +1,15 @@
+#import "LUAccessTokenJSONFactory.h"
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
+#import "LUAuthenticationRequestFactory.h"
 #import "LUDeviceIdentifier.h"
-#import "LUOAuthTokenJSONFactory.h"
-#import "LUOAuthTokenRequestFactory.h"
 
-@implementation LUOAuthTokenRequestFactory
+@implementation LUAuthenticationRequestFactory
 
 #pragma mark - Public Methods
 
 + (LUAPIRequest *)requestToLoginWithEmail:(NSString *)email password:(NSString *)password {
   return [self requestWithAdditionalParameters:@{
-    @"grant_type" : @"password",
     @"username" : email,
     @"password" : password
   }];
@@ -18,7 +17,6 @@
 
 + (LUAPIRequest *)requestToLoginWithFacebookAccessToken:(NSString *)facebookAccessToken {
   return [self requestWithAdditionalParameters:@{
-    @"grant_type" : @"facebook",
     @"facebook_access_token" : facebookAccessToken
   }];
 }
@@ -31,10 +29,10 @@
   parameters[@"device_identifier"] = [LUDeviceIdentifier deviceIdentifier];
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"
-                                       path:@"oauth/access_token"
-                                 apiVersion:LUAPIVersion13
-                                 parameters:parameters
-                               modelFactory:[LUOAuthTokenJSONFactory factory]];
+                                       path:@"access_tokens"
+                                 apiVersion:LUAPIVersion14
+                                 parameters:@{@"access_token" : parameters}
+                               modelFactory:[LUAccessTokenJSONFactory factory]];
 }
 
 @end
