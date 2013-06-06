@@ -1,0 +1,46 @@
+{
+  "user": {
+    "able_to_refer": true,
+    "first_name": "John",
+    "last_initial": "D",
+    "born_at": "1980-01-01T00:00:00-05:00",
+    "email": "john.doe@example.com",
+    "employer": null,
+    "facebook_access_token": "facebook-access-token",
+    "facebook_user_id": 123456,
+    "gender": "male",
+    "id": 1,
+    "last_name": "Doe",
+    "merchants_visited_count": 0,
+    "orders_count": 0,
+    "percent_donation": "0.0",
+    "referral_code": "7NMUV8",
+    "subscribed": true,
+    "referral_code_url": "http://code.thelevelup.com/?data=HTTP://LOCALHOST:3000/C/7NMUV8",
+    "division": {
+      "id": 1,
+      "lat": "42.358431",
+      "live": true,
+      "lng": "-71.059773",
+      "name": "Boston"
+    },
+    "qr_code": {
+      "data_image_url": "https://chart.googleapis.com/chart?chl=010007DHTZL9865JM3OWQNB48A010000&chs=500x500&cht=qr",
+      "data": "010007DHTZL9865JM3OWQNB48A"
+    },
+    "credit": {
+      "amount": 0,
+      "currency_code": "USD",
+      "currency_symbol": "$",
+      "formatted_amount": "0.00"
+    },
+    "loyalties_savings": {
+      "amount": 0,
+      "currency_code": "USD",
+      "currency_symbol": "$",
+      "formatted_amount": "0.00"
+    },
+    "payment_eligible": true,
+    "user_addresses": []
+  }
+}

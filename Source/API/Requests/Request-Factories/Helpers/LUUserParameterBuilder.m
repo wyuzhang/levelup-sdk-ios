@@ -30,7 +30,7 @@
   [self addKey:@"promotion_code" toDictionary:params ifValuePresent:user.promotionCode];
   [self addKey:@"terms_accepted_at" toDictionary:params ifValuePresent:[user.termsAcceptedDate iso8601DateTimeString]];
 
-  if (user.userAddresses) {
+  if (user.userAddresses.count > 0) {
     params[@"user_addresses_attributes"] = [NSMutableDictionary dictionary];
 
     [user.userAddresses enumerateObjectsUsingBlock:^(LUUserAddress *address, NSUInteger idx, BOOL *stop) {

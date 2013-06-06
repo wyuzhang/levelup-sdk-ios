@@ -6,5 +6,5 @@ pod 'ZXingObjC', '~> 2.0.2'
 target :test, :exclusive => true do
   link_with 'Unit Tests'
   pod 'Kiwi', '~> 2.0.4'
-  pod 'Nocilla', '0.1'
+  pod 'OHHTTPStubs', '~> 1.1.2'
 end

@@ -7,16 +7,12 @@
 SPEC_BEGIN(LUAPIClientSpec)
 
 describe(@"LUAPIClient", ^{
-  beforeAll(^{
-    [[LSNocilla sharedInstance] start];
-  });
-
-  afterAll(^{
-    [[LSNocilla sharedInstance] stop];
+  beforeEach(^{
+    [[LUAPIStubbing sharedInstance] disableNetConnect];
   });
 
   afterEach(^{
-    [[LSNocilla sharedInstance] clearStubs];
+    [[LUAPIStubbing sharedInstance] clearStubs];
   });
 
   // Object Lifecycle Methods
@@ -117,10 +113,12 @@ describe(@"LUAPIClient", ^{
 
     context(@"when the request succeeds", ^{
       beforeEach(^{
-        stubRequest(@"GET", @"https://api.staging-levelup.com/v13/test?").
-        andReturn(200).
-        withHeader(@"Content-Type", @"application/json").
-        withBody(@"{\"ok\":true}");
+        LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                                  path:@"test"
+                                            HTTPMethod:@"GET"
+                                         authenticated:NO
+                                          responseData:[@"{\"ok\":true}" dataUsingEncoding:NSUTF8StringEncoding]];
+        [[LUAPIStubbing sharedInstance] addStub:stub];
       });
 
       it(@"creates a model object from the JSON and passes it to the success block", ^{
@@ -141,10 +139,13 @@ describe(@"LUAPIClient", ^{
 
     context(@"when the request fails", ^{
       beforeEach(^{
-        stubRequest(@"GET", @"https://api.staging-levelup.com/v13/test?").
-        andReturn(500).
-        withHeader(@"Content-Type", @"application/json").
-        withBody(@"{\"ok\":true}");
+        LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                                  path:@"test"
+                                            HTTPMethod:@"GET"
+                                         authenticated:NO
+                                          responseData:[@"{\"ok\":true}" dataUsingEncoding:NSUTF8StringEncoding]];
+        stub.responseCode = 500;
+        [[LUAPIStubbing sharedInstance] addStub:stub];
       });
 
       it(@"builds an error and passes it to the failure block", ^{

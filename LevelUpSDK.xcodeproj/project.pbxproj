@@ -19,10 +19,16 @@
 		020CF2AD172F048000D20672 /* LURefund+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 020CF2AC172F047F00D20672 /* LURefund+FakeInstance.m */; };
 		020CF2B3172F126700D20672 /* LUCause+FakeInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 020CF2B1172F126600D20672 /* LUCause+FakeInstance.h */; };
 		020CF2B4172F126700D20672 /* LUCause+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 020CF2B2172F126600D20672 /* LUCause+FakeInstance.m */; };
+		02293813176264F20057C381 /* claim_global.json in Resources */ = {isa = PBXBuildFile; fileRef = 02293812176264F20057C381 /* claim_global.json */; };
+		02293815176265DE0057C381 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 02293814176265DE0057C381 /* categories.json */; };
+		0229381717626B500057C381 /* location_summaries.json in Resources */ = {isa = PBXBuildFile; fileRef = 0229381617626B500057C381 /* location_summaries.json */; };
+		0229381A176280B10057C381 /* LUAPIStubFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02293819176280B00057C381 /* LUAPIStubFactory.m */; };
 		022B288C166E563400679E06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B026B166853EA006ACA24 /* UIKit.framework */; };
 		025F790017428BF10029FC49 /* LUEmailsRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 025F78FE17428BF10029FC49 /* LUEmailsRequestFactory.h */; };
 		025F790117428BF10029FC49 /* LUEmailsRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F78FF17428BF10029FC49 /* LUEmailsRequestFactory.m */; };
 		025F79041742929E0029FC49 /* LUEmailsRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F790217428FF40029FC49 /* LUEmailsRequestFactorySpec.m */; };
+		02823B9917666DB000A5E352 /* merchant_locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 02823B9817666DA300A5E352 /* merchant_locations.json */; };
+		029131DB1760DC8600F74663 /* LUAPIStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 029131DA1760DC8600F74663 /* LUAPIStub.m */; };
 		02941E6516B738AE00EDAF6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6416B738AE00EDAF6E /* AVFoundation.framework */; };
 		02941E6616B738F300EDAF6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6416B738AE00EDAF6E /* AVFoundation.framework */; };
 		02941E6816B7391700EDAF6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6716B7391700EDAF6E /* QuartzCore.framework */; };
@@ -69,6 +75,26 @@
 		02D68DDA1738497A005E1BA8 /* LULocationRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DD91738497A005E1BA8 /* LULocationRequestFactorySpec.m */; };
 		02E2913417594D15002036B4 /* LULocationV14JSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E2913217594D15002036B4 /* LULocationV14JSONFactory.h */; };
 		02E2913517594D15002036B4 /* LULocationV14JSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E2913317594D15002036B4 /* LULocationV14JSONFactory.m */; };
+		02E2915A175FCAB8002036B4 /* LUAPIStubbing.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E29144175FCAB8002036B4 /* LUAPIStubbing.m */; };
+		02E2915B175FCAB8002036B4 /* campaign.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29146175FCAB8002036B4 /* campaign.json */; };
+		02E2915C175FCAB8002036B4 /* claim.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29147175FCAB8002036B4 /* claim.json */; };
+		02E2915D175FCAB8002036B4 /* cohort.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29148175FCAB8002036B4 /* cohort.json */; };
+		02E2915E175FCAB8002036B4 /* cohort_not_found.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29149175FCAB8002036B4 /* cohort_not_found.json */; };
+		02E2915F175FCAB8002036B4 /* credit_card.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E2914A175FCAB8002036B4 /* credit_card.json */; };
+		02E29160175FCAB8002036B4 /* credit_cards-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E2914B175FCAB8002036B4 /* credit_cards-2.json */; };
+		02E29161175FCAB8002036B4 /* credit_cards-1.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E2914C175FCAB8002036B4 /* credit_cards-1.json */; };
+		02E29162175FCAB8002036B4 /* current_user.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E2914D175FCAB8002036B4 /* current_user.json */; };
+		02E29163175FCAB8002036B4 /* facebook_connected_user.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E2914E175FCAB8002036B4 /* facebook_connected_user.json */; };
+		02E29164175FCAB8002036B4 /* legacy_loyalty_claim.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E2914F175FCAB8002036B4 /* legacy_loyalty_claim.json */; };
+		02E29165175FCAB8002036B4 /* loyalty_no_credit.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29150175FCAB8002036B4 /* loyalty_no_credit.json */; };
+		02E29166175FCAB8002036B4 /* loyalty.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29151175FCAB8002036B4 /* loyalty.json */; };
+		02E29167175FCAB8002036B4 /* merchant.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29152175FCAB8002036B4 /* merchant.json */; };
+		02E29168175FCAB8002036B4 /* new_user.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29153175FCAB8002036B4 /* new_user.json */; };
+		02E29169175FCAB8002036B4 /* oauth_access_token.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29154175FCAB8002036B4 /* oauth_access_token.json */; };
+		02E2916A175FCAB8002036B4 /* order.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29155175FCAB8002036B4 /* order.json */; };
+		02E2916B175FCAB8002036B4 /* orders_page-1.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29156175FCAB8002036B4 /* orders_page-1.json */; };
+		02E2916C175FCAB8002036B4 /* orders_page-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29157175FCAB8002036B4 /* orders_page-2.json */; };
+		02E2916D175FCAB8002036B4 /* ticket.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29158175FCAB8002036B4 /* ticket.json */; };
 		02E8ACDC17594B9500A5B06F /* LULocationV14JSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E8ACDA17594B9400A5B06F /* LULocationV14JSONFactory.h */; };
 		02E8ACDD17594B9500A5B06F /* LULocationV14JSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E8ACDB17594B9500A5B06F /* LULocationV14JSONFactory.m */; };
 		02E8ACDF17594BB000A5B06F /* LULocationV14JSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E8ACDE17594BB000A5B06F /* LULocationV14JSONFactorySpec.m */; };
@@ -390,16 +416,23 @@
 		020CF272172F020700D20672 /* LUMerchant+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUMerchant+FakeInstance.m"; sourceTree = "<group>"; };
 		020CF273172F020700D20672 /* LUOrder+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUOrder+FakeInstance.h"; sourceTree = "<group>"; };
 		020CF274172F020700D20672 /* LUOrder+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUOrder+FakeInstance.m"; sourceTree = "<group>"; };
-		020CF275172F020700D20672 /* LUTestingFactories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUTestingFactories.h; sourceTree = "<group>"; };
 		020CF2A8172F025F00D20672 /* LUBundle+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUBundle+FakeInstance.h"; sourceTree = "<group>"; };
 		020CF2A9172F025F00D20672 /* LUBundle+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUBundle+FakeInstance.m"; sourceTree = "<group>"; };
 		020CF2AB172F047F00D20672 /* LURefund+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LURefund+FakeInstance.h"; sourceTree = "<group>"; };
 		020CF2AC172F047F00D20672 /* LURefund+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LURefund+FakeInstance.m"; sourceTree = "<group>"; };
 		020CF2B1172F126600D20672 /* LUCause+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUCause+FakeInstance.h"; sourceTree = "<group>"; };
 		020CF2B2172F126600D20672 /* LUCause+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUCause+FakeInstance.m"; sourceTree = "<group>"; };
+		02293812176264F20057C381 /* claim_global.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = claim_global.json; sourceTree = "<group>"; };
+		02293814176265DE0057C381 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		0229381617626B500057C381 /* location_summaries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location_summaries.json; sourceTree = "<group>"; };
+		02293818176280B00057C381 /* LUAPIStubFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIStubFactory.h; sourceTree = "<group>"; };
+		02293819176280B00057C381 /* LUAPIStubFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIStubFactory.m; sourceTree = "<group>"; };
 		025F78FE17428BF10029FC49 /* LUEmailsRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUEmailsRequestFactory.h; sourceTree = "<group>"; };
 		025F78FF17428BF10029FC49 /* LUEmailsRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUEmailsRequestFactory.m; sourceTree = "<group>"; };
 		025F790217428FF40029FC49 /* LUEmailsRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUEmailsRequestFactorySpec.m; sourceTree = "<group>"; };
+		02823B9817666DA300A5E352 /* merchant_locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = merchant_locations.json; sourceTree = "<group>"; };
+		029131D91760DC8600F74663 /* LUAPIStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIStub.h; sourceTree = "<group>"; };
+		029131DA1760DC8600F74663 /* LUAPIStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIStub.m; sourceTree = "<group>"; };
 		02941E6416B738AE00EDAF6E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		02941E6716B7391700EDAF6E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		02941E6A16B739FE00EDAF6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -437,6 +470,28 @@
 		02D68DD91738497A005E1BA8 /* LULocationRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationRequestFactorySpec.m; sourceTree = "<group>"; };
 		02E2913217594D15002036B4 /* LULocationV14JSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationV14JSONFactory.h; sourceTree = "<group>"; };
 		02E2913317594D15002036B4 /* LULocationV14JSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationV14JSONFactory.m; sourceTree = "<group>"; };
+		02E29143175FCAB8002036B4 /* LUAPIStubbing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIStubbing.h; sourceTree = "<group>"; };
+		02E29144175FCAB8002036B4 /* LUAPIStubbing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIStubbing.m; sourceTree = "<group>"; };
+		02E29146175FCAB8002036B4 /* campaign.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = campaign.json; sourceTree = "<group>"; };
+		02E29147175FCAB8002036B4 /* claim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = claim.json; sourceTree = "<group>"; };
+		02E29148175FCAB8002036B4 /* cohort.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cohort.json; sourceTree = "<group>"; };
+		02E29149175FCAB8002036B4 /* cohort_not_found.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cohort_not_found.json; sourceTree = "<group>"; };
+		02E2914A175FCAB8002036B4 /* credit_card.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credit_card.json; sourceTree = "<group>"; };
+		02E2914B175FCAB8002036B4 /* credit_cards-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "credit_cards-2.json"; sourceTree = "<group>"; };
+		02E2914C175FCAB8002036B4 /* credit_cards-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "credit_cards-1.json"; sourceTree = "<group>"; };
+		02E2914D175FCAB8002036B4 /* current_user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = current_user.json; sourceTree = "<group>"; };
+		02E2914E175FCAB8002036B4 /* facebook_connected_user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = facebook_connected_user.json; sourceTree = "<group>"; };
+		02E2914F175FCAB8002036B4 /* legacy_loyalty_claim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = legacy_loyalty_claim.json; sourceTree = "<group>"; };
+		02E29150175FCAB8002036B4 /* loyalty_no_credit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loyalty_no_credit.json; sourceTree = "<group>"; };
+		02E29151175FCAB8002036B4 /* loyalty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loyalty.json; sourceTree = "<group>"; };
+		02E29152175FCAB8002036B4 /* merchant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = merchant.json; sourceTree = "<group>"; };
+		02E29153175FCAB8002036B4 /* new_user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = new_user.json; sourceTree = "<group>"; };
+		02E29154175FCAB8002036B4 /* oauth_access_token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = oauth_access_token.json; sourceTree = "<group>"; };
+		02E29155175FCAB8002036B4 /* order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order.json; sourceTree = "<group>"; };
+		02E29156175FCAB8002036B4 /* orders_page-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "orders_page-1.json"; sourceTree = "<group>"; };
+		02E29157175FCAB8002036B4 /* orders_page-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "orders_page-2.json"; sourceTree = "<group>"; };
+		02E29158175FCAB8002036B4 /* ticket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ticket.json; sourceTree = "<group>"; };
+		02E2916E175FD3FB002036B4 /* LevelUpSDKTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelUpSDKTesting.h; sourceTree = "<group>"; };
 		02E8ACDA17594B9400A5B06F /* LULocationV14JSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationV14JSONFactory.h; sourceTree = "<group>"; };
 		02E8ACDB17594B9500A5B06F /* LULocationV14JSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationV14JSONFactory.m; sourceTree = "<group>"; };
 		02E8ACDE17594BB000A5B06F /* LULocationV14JSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationV14JSONFactorySpec.m; sourceTree = "<group>"; };
@@ -810,6 +865,8 @@
 			isa = PBXGroup;
 			children = (
 				020CF264172F020700D20672 /* Factories */,
+				02E2916E175FD3FB002036B4 /* LevelUpSDKTesting.h */,
+				02E29140175FCAB8002036B4 /* Network-Stubbing */,
 			);
 			path = Testing;
 			sourceTree = "<group>";
@@ -845,7 +902,6 @@
 				020CF274172F020700D20672 /* LUOrder+FakeInstance.m */,
 				020CF2AB172F047F00D20672 /* LURefund+FakeInstance.h */,
 				020CF2AC172F047F00D20672 /* LURefund+FakeInstance.m */,
-				020CF275172F020700D20672 /* LUTestingFactories.h */,
 				02D68DCA17381F68005E1BA8 /* LUUser+FakeInstance.h */,
 				02D68DCB17381F68005E1BA8 /* LUUser+FakeInstance.m */,
 				F8BC84041739884D007F7142 /* LUWebLocations+FakeInstance.h */,
@@ -872,6 +928,50 @@
 			);
 			name = "Braintree-Encryption";
 			path = "Frameworks/Braintree-Encryption/src";
+			sourceTree = "<group>";
+		};
+		02E29140175FCAB8002036B4 /* Network-Stubbing */ = {
+			isa = PBXGroup;
+			children = (
+				02E29145175FCAB8002036B4 /* Network-Responses */,
+				029131D91760DC8600F74663 /* LUAPIStub.h */,
+				029131DA1760DC8600F74663 /* LUAPIStub.m */,
+				02E29143175FCAB8002036B4 /* LUAPIStubbing.h */,
+				02E29144175FCAB8002036B4 /* LUAPIStubbing.m */,
+				02293818176280B00057C381 /* LUAPIStubFactory.h */,
+				02293819176280B00057C381 /* LUAPIStubFactory.m */,
+			);
+			path = "Network-Stubbing";
+			sourceTree = "<group>";
+		};
+		02E29145175FCAB8002036B4 /* Network-Responses */ = {
+			isa = PBXGroup;
+			children = (
+				02E29146175FCAB8002036B4 /* campaign.json */,
+				02293814176265DE0057C381 /* categories.json */,
+				02293812176264F20057C381 /* claim_global.json */,
+				02E29147175FCAB8002036B4 /* claim.json */,
+				02E29148175FCAB8002036B4 /* cohort.json */,
+				02E29149175FCAB8002036B4 /* cohort_not_found.json */,
+				02E2914A175FCAB8002036B4 /* credit_card.json */,
+				02E2914C175FCAB8002036B4 /* credit_cards-1.json */,
+				02E2914B175FCAB8002036B4 /* credit_cards-2.json */,
+				02E2914D175FCAB8002036B4 /* current_user.json */,
+				02E2914E175FCAB8002036B4 /* facebook_connected_user.json */,
+				02E2914F175FCAB8002036B4 /* legacy_loyalty_claim.json */,
+				0229381617626B500057C381 /* location_summaries.json */,
+				02E29150175FCAB8002036B4 /* loyalty_no_credit.json */,
+				02E29151175FCAB8002036B4 /* loyalty.json */,
+				02E29152175FCAB8002036B4 /* merchant.json */,
+				02823B9817666DA300A5E352 /* merchant_locations.json */,
+				02E29153175FCAB8002036B4 /* new_user.json */,
+				02E29154175FCAB8002036B4 /* oauth_access_token.json */,
+				02E29155175FCAB8002036B4 /* order.json */,
+				02E29156175FCAB8002036B4 /* orders_page-1.json */,
+				02E29157175FCAB8002036B4 /* orders_page-2.json */,
+				02E29158175FCAB8002036B4 /* ticket.json */,
+			);
+			path = "Network-Responses";
 			sourceTree = "<group>";
 		};
 		2523E31017374B1D00FBDFEB /* Helpers */ = {
@@ -1672,6 +1772,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				2504194E174AEAE300254161 /* LUPersistedObjectsInitial.sqlite in Resources */,
+				02E2915B175FCAB8002036B4 /* campaign.json in Resources */,
+				02E2915C175FCAB8002036B4 /* claim.json in Resources */,
+				02E2915D175FCAB8002036B4 /* cohort.json in Resources */,
+				02E2915E175FCAB8002036B4 /* cohort_not_found.json in Resources */,
+				02E2915F175FCAB8002036B4 /* credit_card.json in Resources */,
+				02E29160175FCAB8002036B4 /* credit_cards-2.json in Resources */,
+				02E29161175FCAB8002036B4 /* credit_cards-1.json in Resources */,
+				02E29162175FCAB8002036B4 /* current_user.json in Resources */,
+				02E29163175FCAB8002036B4 /* facebook_connected_user.json in Resources */,
+				02E29164175FCAB8002036B4 /* legacy_loyalty_claim.json in Resources */,
+				02E29165175FCAB8002036B4 /* loyalty_no_credit.json in Resources */,
+				02E29166175FCAB8002036B4 /* loyalty.json in Resources */,
+				02E29167175FCAB8002036B4 /* merchant.json in Resources */,
+				02E29168175FCAB8002036B4 /* new_user.json in Resources */,
+				02E29169175FCAB8002036B4 /* oauth_access_token.json in Resources */,
+				02E2916A175FCAB8002036B4 /* order.json in Resources */,
+				02E2916B175FCAB8002036B4 /* orders_page-1.json in Resources */,
+				02E2916C175FCAB8002036B4 /* orders_page-2.json in Resources */,
+				02E2916D175FCAB8002036B4 /* ticket.json in Resources */,
+				02293813176264F20057C381 /* claim_global.json in Resources */,
+				02293815176265DE0057C381 /* categories.json in Resources */,
+				0229381717626B500057C381 /* location_summaries.json in Resources */,
+				02823B9917666DB000A5E352 /* merchant_locations.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1968,6 +2091,9 @@
 				02BA982E174BE37600C9D647 /* LUCoreDataStoreSpec.m in Sources */,
 				F8401CF517578F89001CB772 /* NSDictionarySafetyAdditionsSpec.m in Sources */,
 				02E8ACDF17594BB000A5B06F /* LULocationV14JSONFactorySpec.m in Sources */,
+				02E2915A175FCAB8002036B4 /* LUAPIStubbing.m in Sources */,
+				029131DB1760DC8600F74663 /* LUAPIStub.m in Sources */,
+				0229381A176280B10057C381 /* LUAPIStubFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

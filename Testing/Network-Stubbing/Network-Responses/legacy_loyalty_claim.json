@@ -1,0 +1,1050 @@
+{
+  "claim": {
+    "expires_at": "2013-02-04T17:21:06-05:00",
+    "id": 233906,
+    "campaign": {
+      "id": 3709,
+      "name": "Loyalty Assimilation",
+      "campaign_type": "legacy_loyalty",
+      "customer_type": "any",
+      "confirmation_html": "Have a loyalty card? It pays to migrate your points: 3 points on your card = $1 in app credit.",
+      "global": false,
+      "offer_html": "Have a loyalty card? It pays to migrate your points: 3 points on your card = $1 in app credit.",
+      "sharing_enabled": true,
+      "sponsor": "whitelabel",
+      "support_email": "support@thelevelup.com",
+      "claimed": true,
+      "merchants": [
+        {
+          "merchant": {
+            "id": 4035,
+            "name": "whitelabel",
+            "loyalty_enabled": true,
+            "public_url": "http://localhost:3000/merchants/4035",
+            "image_url_280x128_1x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/280x128_1x/coming_soon.png?1348865068",
+            "image_url_280x128_1_5x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/280x128_1_5x/coming_soon.png?1348865068",
+            "image_url_280x128_2x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/280x128_2x/coming_soon.png?1348865068",
+            "image_url_290x335_1x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/290x335_1x/coming_soon.png?1348865068",
+            "image_url_320x212_1x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/320x212_1x/coming_soon.png?1348865068",
+            "image_url_320x212_1_5x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/320x212_1_5x/coming_soon.png?1348865068",
+            "image_url_320x212_2x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/320x212_2x/coming_soon.png?1348865068",
+            "image_url_400x235_1x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/400x235_1x/coming_soon.png?1348865068",
+            "description_html": "Gasp! We have not reviewed this place yet! No. One. Panic. Our usual snarky firestorm will be up shortly...but in the meantime, we suggest that you go rogue and check this place out anyway. Hey, maybe we can compare notes after?",
+            "employee_rewards_billboard_enabled": false,
+            "exemption_enabled": false,
+            "facebook_url": null,
+            "menu_url": "",
+            "newsletter_url": "",
+            "opentable_url": "",
+            "scvngr_url": "",
+            "twitter_username": null,
+            "url": "http://example.com/",
+            "yelp_url": null,
+            "categories": [
+              {
+                "category": {
+                  "id": 38,
+                  "name": "Quick Bite",
+                  "image_url_32x32_1x": "http://localhost:3000/images/merchants_images_fast_food_32x32_1x.png",
+                  "image_url_32x32_1_5x": "http://localhost:3000/images/merchants_images_fast_food_32x32_1_5x.png",
+                  "image_url_32x32_2x": "http://localhost:3000/images/merchants_images_fast_food_32x32_2x.png"
+                }
+              },
+              {
+                "category": {
+                  "id": 53,
+                  "name": "Vegan/Vegetarian Friendly",
+                  "image_url_32x32_1x": "http://localhost:3000/images/merchants_images_veg_32x32_1x.png",
+                  "image_url_32x32_1_5x": "http://localhost:3000/images/merchants_images_veg_32x32_1_5x.png",
+                  "image_url_32x32_2x": "http://localhost:3000/images/merchants_images_veg_32x32_2x.png"
+                }
+              }
+            ],
+            "category_image_url_32x32_1x": "http://localhost:3000/images/merchants_images_other_32x32_1x.png",
+            "category_image_url_32x32_1_5x": "http://localhost:3000/images/merchants_images_other_32x32_1_5x.png",
+            "category_image_url_32x32_2x": "http://localhost:3000/images/merchants_images_other_32x32_2x.png",
+            "earn": {
+              "amount": 1000,
+              "currency_code": "USD",
+              "currency_symbol": "$",
+              "formatted_amount": "10.00"
+            },
+            "featured": false,
+            "locations": [
+              {
+                "location": {
+                  "id": 4715,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Sun 10:30am - 9pm",
+                  "lat": "38.887074",
+                  "lng": "-77.002681",
+                  "locality": "Washington",
+                  "phone": "(202) 547-9338",
+                  "postal_code": "20003",
+                  "region": "DC",
+                  "street_address": "221 Pennsylvania Ave. SE "
+                }
+              },
+              {
+                "location": {
+                  "id": 5536,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Fri 10:30am - 8:00pm",
+                  "lat": "38.903826",
+                  "lng": "-77.043603",
+                  "locality": "Washington",
+                  "phone": "(202) 331-3355",
+                  "postal_code": "20036",
+                  "region": "DC",
+                  "street_address": "1901 L St NW"
+                }
+              },
+              {
+                "location": {
+                  "id": 5548,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Sun 11am - 10pm",
+                  "lat": "38.903224",
+                  "lng": "-77.040192",
+                  "locality": "Washington",
+                  "phone": "(202) 387-9338",
+                  "postal_code": "20036",
+                  "region": "DC",
+                  "street_address": "1512 Connecticut Ave"
+                }
+              },
+              {
+                "location": {
+                  "id": 5685,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Sun 8:00am - 10pm",
+                  "lat": "38.905155",
+                  "lng": "-77.049336",
+                  "locality": "Washington",
+                  "phone": "(202) 629-2100",
+                  "postal_code": "20037",
+                  "region": "DC",
+                  "street_address": "2238 M St NW"
+                }
+              },
+              {
+                "location": {
+                  "id": 5683,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Sun 11am - 10pm",
+                  "lat": "38.905106",
+                  "lng": "-77.067141",
+                  "locality": "Washington",
+                  "phone": "(202) 337-9338",
+                  "postal_code": "20007",
+                  "region": "DC",
+                  "street_address": "3333 M St. NW"
+                }
+              },
+              {
+                "location": {
+                  "id": 5684,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Sun 11am - 10pm",
+                  "lat": "38.909667",
+                  "lng": "-77.034038",
+                  "locality": "Washington",
+                  "phone": "(202) 234-7336",
+                  "postal_code": "20005",
+                  "region": "DC",
+                  "street_address": "1471 P St. NW"
+                }
+              },
+              {
+                "location": {
+                  "id": 5686,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Sun 10:30am - 11pm",
+                  "lat": "38.98104",
+                  "lng": "-77.096995",
+                  "locality": "Bethesda",
+                  "phone": "(301) 654-7336",
+                  "postal_code": "20814",
+                  "region": "MD",
+                  "street_address": "4831 Bethesda Ave."
+                }
+              },
+              {
+                "location": {
+                  "id": 5687,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Sun 11am - 10pm",
+                  "lat": "38.99267",
+                  "lng": "-76.93316",
+                  "locality": "College Park",
+                  "phone": "(240) 770-4443",
+                  "postal_code": "20740",
+                  "region": "MD",
+                  "street_address": "8300 Baltimore Ave."
+                }
+              },
+              {
+                "location": {
+                  "id": 5688,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Sun 11:00am - 9pm",
+                  "lat": "40.008005",
+                  "lng": "-75.288598",
+                  "locality": "Ardmore",
+                  "phone": "(610) 642-9400",
+                  "postal_code": "19003",
+                  "region": "PA",
+                  "street_address": "68 Coulter Ave."
+                }
+              },
+              {
+                "location": {
+                  "id": 5689,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Sun 11am - 10pm",
+                  "lat": "39.954035",
+                  "lng": "-75.201864",
+                  "locality": "Philadelphia",
+                  "phone": "(215) 386-1365",
+                  "postal_code": "19104",
+                  "region": "PA",
+                  "street_address": "3925 Walnut St."
+                }
+              },
+              {
+                "location": {
+                  "id": 5692,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Sat 11:00am - 9:00pm Sun 11am - 8pm",
+                  "lat": "38.871557",
+                  "lng": "-77.23038",
+                  "locality": "Fairfax",
+                  "phone": "(703) 992-7892",
+                  "postal_code": "22031",
+                  "region": "VA",
+                  "street_address": "2905 District Ave."
+                }
+              },
+              {
+                "location": {
+                  "id": 5693,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Sun 11am - 9pm",
+                  "lat": "38.957876",
+                  "lng": "-77.358352",
+                  "locality": "Reston",
+                  "phone": "(571) 203-0082",
+                  "postal_code": "20190",
+                  "region": "VA",
+                  "street_address": "11935 Democracy Drive"
+                }
+              },
+              {
+                "location": {
+                  "id": 5691,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Sun 11am - 10pm",
+                  "lat": "38.880179",
+                  "lng": "-77.10872",
+                  "locality": "Arlington",
+                  "phone": "(703) 522-2016",
+                  "postal_code": "22203",
+                  "region": "VA",
+                  "street_address": "4075 Wilson Blvd"
+                }
+              },
+              {
+                "location": {
+                  "id": 5537,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Sun 11:00am - 9pm",
+                  "lat": "38.903755",
+                  "lng": "-77.018917",
+                  "locality": "Washington",
+                  "phone": "(202) 289-4674",
+                  "postal_code": "20001",
+                  "region": "DC",
+                  "street_address": "1065 5th St NW"
+                }
+              },
+              {
+                "location": {
+                  "id": 5617,
+                  "visible": true,
+                  "extended_address": "",
+                  "hours": "Mon - Sun 10:30am - 10pm",
+                  "lat": "38.900886",
+                  "lng": "-77.049651",
+                  "locality": "Washington",
+                  "phone": "(202) 507-8357",
+                  "postal_code": "20052",
+                  "region": "DC",
+                  "street_address": "2221 I St NW"
+                }
+              }
+            ],
+            "loyalty": {
+              "id": null,
+              "orders_count": 0,
+              "progress_percent": 0,
+              "potential_credit": {
+                "amount": 6563,
+                "currency_code": "USD",
+                "currency_symbol": "$",
+                "formatted_amount": "65.63"
+              },
+              "total_volume": {
+                "amount": 0,
+                "currency_code": "USD",
+                "currency_symbol": "$",
+                "formatted_amount": "0.00"
+              },
+              "should_spend": {
+                "amount": 10000,
+                "currency_code": "USD",
+                "currency_symbol": "$",
+                "formatted_amount": "100.00"
+              },
+              "spend_remaining": {
+                "amount": 10000,
+                "currency_code": "USD",
+                "currency_symbol": "$",
+                "formatted_amount": "100.00"
+              },
+              "will_earn": {
+                "amount": 1000,
+                "currency_code": "USD",
+                "currency_symbol": "$",
+                "formatted_amount": "10.00"
+              }
+            },
+            "spend": {
+              "amount": 10000,
+              "currency_code": "USD",
+              "currency_symbol": "$",
+              "formatted_amount": "100.00"
+            }
+          }
+        }
+      ],
+      "mobile_image_url_320x212_1x": "https://s3.amazonaws.com/levelup-development/campaigns/3709/mobile_images/320x212_1x/g5g5_640x424.png?1357922760",
+      "mobile_image_url_320x212_1_5x": "https://s3.amazonaws.com/levelup-development/campaigns/3709/mobile_images/320x212_1_5x/g5g5_640x424.png?1357922760",
+      "mobile_image_url_320x212_2x": "https://s3.amazonaws.com/levelup-development/campaigns/3709/mobile_images/320x212_2x/g5g5_640x424.png?1357922760",
+      "value": {
+        "amount": 100000,
+        "currency_code": "USD",
+        "currency_symbol": "$",
+        "formatted_amount": "1,000.00"
+      }
+    },
+    "share_cohort": {
+      "code": "475A1QY86DZSPVBHJ2K3XCE",
+      "description": "translation missing: en.campaigns._cohort.description",
+      "id": 758586,
+      "cohort_type": null,
+      "message_for_email_subject": "Grab $1,000.00 on LevelUp",
+      "message_for_twitter": "I just grabbed $1,000.00 to spend. Grab yours too by clicking here http://localhost:3000/c/475A1QY86DZSPVBHJ2K3XCE",
+      "url": "http://localhost:3000/c/475A1QY86DZSPVBHJ2K3XCE",
+      "campaign": {
+        "id": 3709,
+        "name": "Loyalty Assimilation",
+        "campaign_type": "legacy_loyalty",
+        "customer_type": "any",
+        "confirmation_html": "Have a loyalty card? It pays to migrate your points: 3 points on your card = $1 in app credit.",
+        "global": false,
+        "offer_html": "Have a loyalty card? It pays to migrate your points: 3 points on your card = $1 in app credit.",
+        "sharing_enabled": true,
+        "sponsor": "whitelabel",
+        "support_email": "support@thelevelup.com",
+        "claimed": true,
+        "merchants": [
+          {
+            "merchant": {
+              "id": 4035,
+              "name": "whitelabel",
+              "loyalty_enabled": true,
+              "public_url": "http://localhost:3000/merchants/4035",
+              "image_url_280x128_1x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/280x128_1x/coming_soon.png?1348865068",
+              "image_url_280x128_1_5x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/280x128_1_5x/coming_soon.png?1348865068",
+              "image_url_280x128_2x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/280x128_2x/coming_soon.png?1348865068",
+              "image_url_290x335_1x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/290x335_1x/coming_soon.png?1348865068",
+              "image_url_320x212_1x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/320x212_1x/coming_soon.png?1348865068",
+              "image_url_320x212_1_5x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/320x212_1_5x/coming_soon.png?1348865068",
+              "image_url_320x212_2x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/320x212_2x/coming_soon.png?1348865068",
+              "image_url_400x235_1x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/400x235_1x/coming_soon.png?1348865068",
+              "description_html": "Gasp! We have not reviewed this place yet! No. One. Panic. Our usual snarky firestorm will be up shortly...but in the meantime, we suggest that you go rogue and check this place out anyway. Hey, maybe we can compare notes after?",
+              "employee_rewards_billboard_enabled": false,
+              "exemption_enabled": false,
+              "facebook_url": null,
+              "menu_url": "",
+              "newsletter_url": "",
+              "opentable_url": "",
+              "scvngr_url": "",
+              "twitter_username": null,
+              "url": "http://example.com/",
+              "yelp_url": null,
+              "categories": [
+                {
+                  "category": {
+                    "id": 38,
+                    "name": "Quick Bite",
+                    "image_url_32x32_1x": "http://localhost:3000/images/merchants_images_fast_food_32x32_1x.png",
+                    "image_url_32x32_1_5x": "http://localhost:3000/images/merchants_images_fast_food_32x32_1_5x.png",
+                    "image_url_32x32_2x": "http://localhost:3000/images/merchants_images_fast_food_32x32_2x.png"
+                  }
+                },
+                {
+                  "category": {
+                    "id": 53,
+                    "name": "Vegan/Vegetarian Friendly",
+                    "image_url_32x32_1x": "http://localhost:3000/images/merchants_images_veg_32x32_1x.png",
+                    "image_url_32x32_1_5x": "http://localhost:3000/images/merchants_images_veg_32x32_1_5x.png",
+                    "image_url_32x32_2x": "http://localhost:3000/images/merchants_images_veg_32x32_2x.png"
+                  }
+                }
+              ],
+              "category_image_url_32x32_1x": "http://localhost:3000/images/merchants_images_other_32x32_1x.png",
+              "category_image_url_32x32_1_5x": "http://localhost:3000/images/merchants_images_other_32x32_1_5x.png",
+              "category_image_url_32x32_2x": "http://localhost:3000/images/merchants_images_other_32x32_2x.png",
+              "earn": {
+                "amount": 1000,
+                "currency_code": "USD",
+                "currency_symbol": "$",
+                "formatted_amount": "10.00"
+              },
+              "featured": false,
+              "locations": [
+                {
+                  "location": {
+                    "id": 4715,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Sun 10:30am - 9pm",
+                    "lat": "38.887074",
+                    "lng": "-77.002681",
+                    "locality": "Washington",
+                    "phone": "(202) 547-9338",
+                    "postal_code": "20003",
+                    "region": "DC",
+                    "street_address": "221 Pennsylvania Ave. SE "
+                  }
+                },
+                {
+                  "location": {
+                    "id": 5536,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Fri 10:30am - 8:00pm",
+                    "lat": "38.903826",
+                    "lng": "-77.043603",
+                    "locality": "Washington",
+                    "phone": "(202) 331-3355",
+                    "postal_code": "20036",
+                    "region": "DC",
+                    "street_address": "1901 L St NW"
+                  }
+                },
+                {
+                  "location": {
+                    "id": 5548,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Sun 11am - 10pm",
+                    "lat": "38.903224",
+                    "lng": "-77.040192",
+                    "locality": "Washington",
+                    "phone": "(202) 387-9338",
+                    "postal_code": "20036",
+                    "region": "DC",
+                    "street_address": "1512 Connecticut Ave"
+                  }
+                },
+                {
+                  "location": {
+                    "id": 5685,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Sun 8:00am - 10pm",
+                    "lat": "38.905155",
+                    "lng": "-77.049336",
+                    "locality": "Washington",
+                    "phone": "(202) 629-2100",
+                    "postal_code": "20037",
+                    "region": "DC",
+                    "street_address": "2238 M St NW"
+                  }
+                },
+                {
+                  "location": {
+                    "id": 5683,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Sun 11am - 10pm",
+                    "lat": "38.905106",
+                    "lng": "-77.067141",
+                    "locality": "Washington",
+                    "phone": "(202) 337-9338",
+                    "postal_code": "20007",
+                    "region": "DC",
+                    "street_address": "3333 M St. NW"
+                  }
+                },
+                {
+                  "location": {
+                    "id": 5684,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Sun 11am - 10pm",
+                    "lat": "38.909667",
+                    "lng": "-77.034038",
+                    "locality": "Washington",
+                    "phone": "(202) 234-7336",
+                    "postal_code": "20005",
+                    "region": "DC",
+                    "street_address": "1471 P St. NW"
+                  }
+                },
+                {
+                  "location": {
+                    "id": 5686,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Sun 10:30am - 11pm",
+                    "lat": "38.98104",
+                    "lng": "-77.096995",
+                    "locality": "Bethesda",
+                    "phone": "(301) 654-7336",
+                    "postal_code": "20814",
+                    "region": "MD",
+                    "street_address": "4831 Bethesda Ave."
+                  }
+                },
+                {
+                  "location": {
+                    "id": 5687,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Sun 11am - 10pm",
+                    "lat": "38.99267",
+                    "lng": "-76.93316",
+                    "locality": "College Park",
+                    "phone": "(240) 770-4443",
+                    "postal_code": "20740",
+                    "region": "MD",
+                    "street_address": "8300 Baltimore Ave."
+                  }
+                },
+                {
+                  "location": {
+                    "id": 5688,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Sun 11:00am - 9pm",
+                    "lat": "40.008005",
+                    "lng": "-75.288598",
+                    "locality": "Ardmore",
+                    "phone": "(610) 642-9400",
+                    "postal_code": "19003",
+                    "region": "PA",
+                    "street_address": "68 Coulter Ave."
+                  }
+                },
+                {
+                  "location": {
+                    "id": 5689,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Sun 11am - 10pm",
+                    "lat": "39.954035",
+                    "lng": "-75.201864",
+                    "locality": "Philadelphia",
+                    "phone": "(215) 386-1365",
+                    "postal_code": "19104",
+                    "region": "PA",
+                    "street_address": "3925 Walnut St."
+                  }
+                },
+                {
+                  "location": {
+                    "id": 5692,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Sat 11:00am - 9:00pm Sun 11am - 8pm",
+                    "lat": "38.871557",
+                    "lng": "-77.23038",
+                    "locality": "Fairfax",
+                    "phone": "(703) 992-7892",
+                    "postal_code": "22031",
+                    "region": "VA",
+                    "street_address": "2905 District Ave."
+                  }
+                },
+                {
+                  "location": {
+                    "id": 5693,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Sun 11am - 9pm",
+                    "lat": "38.957876",
+                    "lng": "-77.358352",
+                    "locality": "Reston",
+                    "phone": "(571) 203-0082",
+                    "postal_code": "20190",
+                    "region": "VA",
+                    "street_address": "11935 Democracy Drive"
+                  }
+                },
+                {
+                  "location": {
+                    "id": 5691,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Sun 11am - 10pm",
+                    "lat": "38.880179",
+                    "lng": "-77.10872",
+                    "locality": "Arlington",
+                    "phone": "(703) 522-2016",
+                    "postal_code": "22203",
+                    "region": "VA",
+                    "street_address": "4075 Wilson Blvd"
+                  }
+                },
+                {
+                  "location": {
+                    "id": 5537,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Sun 11:00am - 9pm",
+                    "lat": "38.903755",
+                    "lng": "-77.018917",
+                    "locality": "Washington",
+                    "phone": "(202) 289-4674",
+                    "postal_code": "20001",
+                    "region": "DC",
+                    "street_address": "1065 5th St NW"
+                  }
+                },
+                {
+                  "location": {
+                    "id": 5617,
+                    "visible": true,
+                    "extended_address": "",
+                    "hours": "Mon - Sun 10:30am - 10pm",
+                    "lat": "38.900886",
+                    "lng": "-77.049651",
+                    "locality": "Washington",
+                    "phone": "(202) 507-8357",
+                    "postal_code": "20052",
+                    "region": "DC",
+                    "street_address": "2221 I St NW"
+                  }
+                }
+              ],
+              "loyalty": {
+                "id": null,
+                "orders_count": 0,
+                "progress_percent": 0,
+                "potential_credit": {
+                  "amount": 6563,
+                  "currency_code": "USD",
+                  "currency_symbol": "$",
+                  "formatted_amount": "65.63"
+                },
+                "total_volume": {
+                  "amount": 0,
+                  "currency_code": "USD",
+                  "currency_symbol": "$",
+                  "formatted_amount": "0.00"
+                },
+                "should_spend": {
+                  "amount": 10000,
+                  "currency_code": "USD",
+                  "currency_symbol": "$",
+                  "formatted_amount": "100.00"
+                },
+                "spend_remaining": {
+                  "amount": 10000,
+                  "currency_code": "USD",
+                  "currency_symbol": "$",
+                  "formatted_amount": "100.00"
+                },
+                "will_earn": {
+                  "amount": 1000,
+                  "currency_code": "USD",
+                  "currency_symbol": "$",
+                  "formatted_amount": "10.00"
+                }
+              },
+              "spend": {
+                "amount": 10000,
+                "currency_code": "USD",
+                "currency_symbol": "$",
+                "formatted_amount": "100.00"
+              }
+            }
+          }
+        ],
+        "mobile_image_url_320x212_1x": "https://s3.amazonaws.com/levelup-development/campaigns/3709/mobile_images/320x212_1x/g5g5_640x424.png?1357922760",
+        "mobile_image_url_320x212_1_5x": "https://s3.amazonaws.com/levelup-development/campaigns/3709/mobile_images/320x212_1_5x/g5g5_640x424.png?1357922760",
+        "mobile_image_url_320x212_2x": "https://s3.amazonaws.com/levelup-development/campaigns/3709/mobile_images/320x212_2x/g5g5_640x424.png?1357922760",
+        "value": {
+          "amount": 100000,
+          "currency_code": "USD",
+          "currency_symbol": "$",
+          "formatted_amount": "1,000.00"
+        }
+      },
+      "email_body": "I just grabbed $1,000.00 to spend. Grab yours too by clicking here http://localhost:3000/c/475A1QY86DZSPVBHJ2K3XCE",
+      "url_for_formatted_qr_code": "http://code.thelevelup.com/?data=HTTP://LOCALHOST:3000/C/475A1QY86DZSPVBHJ2K3XCE"
+    },
+    "value": {
+      "amount": 16,
+      "currency_code": "USD",
+      "currency_symbol": "$",
+      "formatted_amount": "0.16"
+    },
+    "value_remaining": {
+      "amount": 16,
+      "currency_code": "USD",
+      "currency_symbol": "$",
+      "formatted_amount": "0.16"
+    }
+  },
+  "merchant": {
+    "id": 4035,
+    "name": "whitelabel",
+    "loyalty_enabled": true,
+    "public_url": "http://localhost:3000/merchants/4035",
+    "image_url_280x128_1x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/280x128_1x/coming_soon.png?1348865068",
+    "image_url_280x128_1_5x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/280x128_1_5x/coming_soon.png?1348865068",
+    "image_url_280x128_2x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/280x128_2x/coming_soon.png?1348865068",
+    "image_url_290x335_1x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/290x335_1x/coming_soon.png?1348865068",
+    "image_url_320x212_1x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/320x212_1x/coming_soon.png?1348865068",
+    "image_url_320x212_1_5x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/320x212_1_5x/coming_soon.png?1348865068",
+    "image_url_320x212_2x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/320x212_2x/coming_soon.png?1348865068",
+    "image_url_400x235_1x": "https://s3.amazonaws.com/levelup-development/merchants/4035/images/400x235_1x/coming_soon.png?1348865068",
+    "description_html": "Gasp! We have not reviewed this place yet! No. One. Panic. Our usual snarky firestorm will be up shortly...but in the meantime, we suggest that you go rogue and check this place out anyway. Hey, maybe we can compare notes after?",
+    "employee_rewards_billboard_enabled": false,
+    "exemption_enabled": false,
+    "facebook_url": null,
+    "menu_url": "",
+    "newsletter_url": "",
+    "opentable_url": "",
+    "scvngr_url": "",
+    "twitter_username": null,
+    "url": "http://example.com/",
+    "yelp_url": null,
+    "categories": [
+      {
+        "category": {
+          "id": 38,
+          "name": "Quick Bite",
+          "image_url_32x32_1x": "http://localhost:3000/images/merchants_images_fast_food_32x32_1x.png",
+          "image_url_32x32_1_5x": "http://localhost:3000/images/merchants_images_fast_food_32x32_1_5x.png",
+          "image_url_32x32_2x": "http://localhost:3000/images/merchants_images_fast_food_32x32_2x.png"
+        }
+      },
+      {
+        "category": {
+          "id": 53,
+          "name": "Vegan/Vegetarian Friendly",
+          "image_url_32x32_1x": "http://localhost:3000/images/merchants_images_veg_32x32_1x.png",
+          "image_url_32x32_1_5x": "http://localhost:3000/images/merchants_images_veg_32x32_1_5x.png",
+          "image_url_32x32_2x": "http://localhost:3000/images/merchants_images_veg_32x32_2x.png"
+        }
+      }
+    ],
+    "category_image_url_32x32_1x": "http://localhost:3000/images/merchants_images_other_32x32_1x.png",
+    "category_image_url_32x32_1_5x": "http://localhost:3000/images/merchants_images_other_32x32_1_5x.png",
+    "category_image_url_32x32_2x": "http://localhost:3000/images/merchants_images_other_32x32_2x.png",
+    "earn": {
+      "amount": 1000,
+      "currency_code": "USD",
+      "currency_symbol": "$",
+      "formatted_amount": "10.00"
+    },
+    "featured": false,
+    "locations": [
+      {
+        "location": {
+          "id": 4715,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Sun 10:30am - 9pm",
+          "lat": "38.887074",
+          "lng": "-77.002681",
+          "locality": "Washington",
+          "phone": "(202) 547-9338",
+          "postal_code": "20003",
+          "region": "DC",
+          "street_address": "221 Pennsylvania Ave. SE "
+        }
+      },
+      {
+        "location": {
+          "id": 5536,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Fri 10:30am - 8:00pm",
+          "lat": "38.903826",
+          "lng": "-77.043603",
+          "locality": "Washington",
+          "phone": "(202) 331-3355",
+          "postal_code": "20036",
+          "region": "DC",
+          "street_address": "1901 L St NW"
+        }
+      },
+      {
+        "location": {
+          "id": 5548,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Sun 11am - 10pm",
+          "lat": "38.903224",
+          "lng": "-77.040192",
+          "locality": "Washington",
+          "phone": "(202) 387-9338",
+          "postal_code": "20036",
+          "region": "DC",
+          "street_address": "1512 Connecticut Ave"
+        }
+      },
+      {
+        "location": {
+          "id": 5685,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Sun 8:00am - 10pm",
+          "lat": "38.905155",
+          "lng": "-77.049336",
+          "locality": "Washington",
+          "phone": "(202) 629-2100",
+          "postal_code": "20037",
+          "region": "DC",
+          "street_address": "2238 M St NW"
+        }
+      },
+      {
+        "location": {
+          "id": 5683,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Sun 11am - 10pm",
+          "lat": "38.905106",
+          "lng": "-77.067141",
+          "locality": "Washington",
+          "phone": "(202) 337-9338",
+          "postal_code": "20007",
+          "region": "DC",
+          "street_address": "3333 M St. NW"
+        }
+      },
+      {
+        "location": {
+          "id": 5684,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Sun 11am - 10pm",
+          "lat": "38.909667",
+          "lng": "-77.034038",
+          "locality": "Washington",
+          "phone": "(202) 234-7336",
+          "postal_code": "20005",
+          "region": "DC",
+          "street_address": "1471 P St. NW"
+        }
+      },
+      {
+        "location": {
+          "id": 5686,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Sun 10:30am - 11pm",
+          "lat": "38.98104",
+          "lng": "-77.096995",
+          "locality": "Bethesda",
+          "phone": "(301) 654-7336",
+          "postal_code": "20814",
+          "region": "MD",
+          "street_address": "4831 Bethesda Ave."
+        }
+      },
+      {
+        "location": {
+          "id": 5687,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Sun 11am - 10pm",
+          "lat": "38.99267",
+          "lng": "-76.93316",
+          "locality": "College Park",
+          "phone": "(240) 770-4443",
+          "postal_code": "20740",
+          "region": "MD",
+          "street_address": "8300 Baltimore Ave."
+        }
+      },
+      {
+        "location": {
+          "id": 5688,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Sun 11:00am - 9pm",
+          "lat": "40.008005",
+          "lng": "-75.288598",
+          "locality": "Ardmore",
+          "phone": "(610) 642-9400",
+          "postal_code": "19003",
+          "region": "PA",
+          "street_address": "68 Coulter Ave."
+        }
+      },
+      {
+        "location": {
+          "id": 5689,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Sun 11am - 10pm",
+          "lat": "39.954035",
+          "lng": "-75.201864",
+          "locality": "Philadelphia",
+          "phone": "(215) 386-1365",
+          "postal_code": "19104",
+          "region": "PA",
+          "street_address": "3925 Walnut St."
+        }
+      },
+      {
+        "location": {
+          "id": 5692,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Sat 11:00am - 9:00pm Sun 11am - 8pm",
+          "lat": "38.871557",
+          "lng": "-77.23038",
+          "locality": "Fairfax",
+          "phone": "(703) 992-7892",
+          "postal_code": "22031",
+          "region": "VA",
+          "street_address": "2905 District Ave."
+        }
+      },
+      {
+        "location": {
+          "id": 5693,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Sun 11am - 9pm",
+          "lat": "38.957876",
+          "lng": "-77.358352",
+          "locality": "Reston",
+          "phone": "(571) 203-0082",
+          "postal_code": "20190",
+          "region": "VA",
+          "street_address": "11935 Democracy Drive"
+        }
+      },
+      {
+        "location": {
+          "id": 5691,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Sun 11am - 10pm",
+          "lat": "38.880179",
+          "lng": "-77.10872",
+          "locality": "Arlington",
+          "phone": "(703) 522-2016",
+          "postal_code": "22203",
+          "region": "VA",
+          "street_address": "4075 Wilson Blvd"
+        }
+      },
+      {
+        "location": {
+          "id": 5537,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Sun 11:00am - 9pm",
+          "lat": "38.903755",
+          "lng": "-77.018917",
+          "locality": "Washington",
+          "phone": "(202) 289-4674",
+          "postal_code": "20001",
+          "region": "DC",
+          "street_address": "1065 5th St NW"
+        }
+      },
+      {
+        "location": {
+          "id": 5617,
+          "visible": true,
+          "extended_address": "",
+          "hours": "Mon - Sun 10:30am - 10pm",
+          "lat": "38.900886",
+          "lng": "-77.049651",
+          "locality": "Washington",
+          "phone": "(202) 507-8357",
+          "postal_code": "20052",
+          "region": "DC",
+          "street_address": "2221 I St NW"
+        }
+      }
+    ],
+    "loyalty": {
+      "id": null,
+      "orders_count": 0,
+      "progress_percent": 0,
+      "potential_credit": {
+        "amount": 6563,
+        "currency_code": "USD",
+        "currency_symbol": "$",
+        "formatted_amount": "65.63"
+      },
+      "total_volume": {
+        "amount": 0,
+        "currency_code": "USD",
+        "currency_symbol": "$",
+        "formatted_amount": "0.00"
+      },
+      "should_spend": {
+        "amount": 10000,
+        "currency_code": "USD",
+        "currency_symbol": "$",
+        "formatted_amount": "100.00"
+      },
+      "spend_remaining": {
+        "amount": 10000,
+        "currency_code": "USD",
+        "currency_symbol": "$",
+        "formatted_amount": "100.00"
+      },
+      "will_earn": {
+        "amount": 1000,
+        "currency_code": "USD",
+        "currency_symbol": "$",
+        "formatted_amount": "10.00"
+      }
+    },
+    "spend": {
+      "amount": 10000,
+      "currency_code": "USD",
+      "currency_symbol": "$",
+      "formatted_amount": "100.00"
+    }
+  }
+}

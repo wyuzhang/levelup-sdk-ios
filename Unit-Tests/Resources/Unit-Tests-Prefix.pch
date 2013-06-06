@@ -5,14 +5,12 @@
 #import "LevelUpSDK-Prefix.pch"
 
 #ifdef __OBJC__
-  #import <Nocilla/Nocilla.h>
+  #import "Kiwi.h"
   #import <SenTestingKit/SenTestingKit.h>
   #import <ZXingObjC/ZXingObjC.h>
 
   #import "LevelUpSDK.h"
+  #import "LevelUpSDKTesting.h"
   #import "LUFixtures.h"
-  #import "LUTestingFactories.h"
   #import "NSManagedObjectContext+TestContext.h"
-
-  #import "Kiwi.h"
 #endif

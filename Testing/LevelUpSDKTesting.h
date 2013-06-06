@@ -14,3 +14,7 @@
 #import "LURefund+FakeInstance.h"
 #import "LUUser+FakeInstance.h"
 #import "LUWebLocations+FakeInstance.h"
+
+#import "LUAPIStub.h"
+#import "LUAPIStubbing.h"
+#import "LUAPIStubFactory.h"

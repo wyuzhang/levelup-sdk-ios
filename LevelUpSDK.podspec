@@ -31,6 +31,10 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Testing' do |testing|
-    testing.source_files = 'Testing/**/*.{h,m}'
+    testing.dependency 'Kiwi', '~> 2.0.5'
+    testing.dependency 'OHHTTPStubs', '~> 1.1.2'
+
+    testing.source_files = 'Testing/LevelUpSDKTesting.h', 'Testing/**/*.{h,m}'
+    testing.resources = 'Testing/Network-Stubbing/Network-Responses/*.json'
   end
 end

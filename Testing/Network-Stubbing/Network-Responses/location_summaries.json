@@ -1,0 +1,59 @@
+[
+  {
+    "location": {
+      "id": 1,
+      "updated_at": "2012-05-17T17:03:53-04:00",
+      "shown": true,
+      "categories": [
+        1
+      ],
+      "latitude": 42.3628,
+      "longitude": 71.06,
+      "merchant_id": 1,
+      "merchant_name": "Merchant 1"
+    }
+  },
+  {
+    "location": {
+      "id": 2,
+      "updated_at": "2012-05-18T11:39:22-04:00",
+      "shown": true,
+      "categories": [
+        2
+      ],
+      "latitude": 42.3627,
+      "longitude": 71.04,
+      "merchant_id": 2,
+      "merchant_name": "Merchant 2"
+    }
+  },
+  {
+    "location": {
+      "id": 3,
+      "updated_at": "2012-05-18T11:39:22-04:00",
+      "shown": true,
+      "categories": [
+        1,
+        2
+      ],
+      "latitude": 42.37,
+      "longitude": 71.1,
+      "merchant_id": 3,
+      "merchant_name": "Merchant 3"
+    }
+  },
+  {
+    "location": {
+      "id": 4,
+      "updated_at": "2012-05-18T11:39:22-04:00",
+      "shown": true,
+      "categories": [
+        1
+      ],
+      "latitude": 42.38,
+      "longitude": 71.2,
+      "merchant_id": 4,
+      "merchant_name": "Merchant 4"
+    }
+  }
+]

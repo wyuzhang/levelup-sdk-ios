@@ -1,0 +1,100 @@
+{
+  "merchant": {
+    "id": 4035,
+    "name": "whitelabel",
+    "public_url": "https://www.thelevelup.com/merchants/4035",
+    "image_url_280x128_1x": "https://s3.amazonaws.com/levelup-production/merchants/4035/images/280x128_1x/coming_soon.png?1348865068",
+    "image_url_280x128_1_5x": "https://s3.amazonaws.com/levelup-production/merchants/4035/images/280x128_1_5x/coming_soon.png?1348865068",
+    "image_url_280x128_2x": "https://s3.amazonaws.com/levelup-production/merchants/4035/images/280x128_2x/coming_soon.png?1348865068",
+    "image_url_290x335_1x": "https://s3.amazonaws.com/levelup-production/merchants/4035/images/290x335_1x/coming_soon.png?1348865068",
+    "image_url_320x212_1x": "https://s3.amazonaws.com/levelup-production/merchants/4035/images/320x212_1x/coming_soon.png?1348865068",
+    "image_url_320x212_1_5x": "https://s3.amazonaws.com/levelup-production/merchants/4035/images/320x212_1_5x/coming_soon.png?1348865068",
+    "image_url_320x212_2x": "https://s3.amazonaws.com/levelup-production/merchants/4035/images/320x212_2x/coming_soon.png?1348865068",
+    "image_url_400x235_1x": "https://s3.amazonaws.com/levelup-production/merchants/4035/images/400x235_1x/coming_soon.png?1348865068",
+    "description_html": "Gasp! We have not reviewed this place yet! No. One. Panic. Our usual snarky firestorm will be up shortly...but in the meantime, we suggest that you go rogue and check this place out anyway. Hey, maybe we can compare notes after?",
+    "employee_rewards_billboard_enabled": false,
+    "exemption_enabled": false,
+    "facebook_url": null,
+    "loyalty_enabled": true,
+    "menu_url": null,
+    "newsletter_url": "",
+    "opentable_url": "",
+    "scvngr_url": "",
+    "twitter_username": null,
+    "url": "http://example.com/",
+    "yelp_url": null,
+    "categories": [
+      {
+        "category": {
+          "id": 38,
+          "name": "Quick Bite",
+          "image_url_32x32_1x": "https://www.thelevelup.com/images/merchants_images_fast_food_32x32_1x.png",
+          "image_url_32x32_1_5x": "https://www.thelevelup.com/images/merchants_images_fast_food_32x32_1_5x.png",
+          "image_url_32x32_2x": "https://www.thelevelup.com/images/merchants_images_fast_food_32x32_2x.png"
+        }
+      },
+      {
+        "category": {
+          "id": 53,
+          "name": "Vegan/Vegetarian Friendly",
+          "image_url_32x32_1x": "https://www.thelevelup.com/images/merchants_images_veg_32x32_1x.png",
+          "image_url_32x32_1_5x": "https://www.thelevelup.com/images/merchants_images_veg_32x32_1_5x.png",
+          "image_url_32x32_2x": "https://www.thelevelup.com/images/merchants_images_veg_32x32_2x.png"
+        }
+      }
+    ],
+    "category_image_url_32x32_1x": "https://www.thelevelup.com/images/merchants_images_other_32x32_1x.png",
+    "category_image_url_32x32_1_5x": "https://www.thelevelup.com/images/merchants_images_other_32x32_1_5x.png",
+    "category_image_url_32x32_2x": "https://www.thelevelup.com/images/merchants_images_other_32x32_2x.png",
+    "earn": {
+      "amount": 1000,
+      "currency_code": "USD",
+      "currency_symbol": "$",
+      "formatted_amount": "10.00"
+    },
+    "featured": false,
+    "locations": [
+      {
+        "location": {
+          "id": 4715,
+          "extended_address": "",
+          "lat": "38.887074",
+          "lng": "-77.002681",
+          "locality": "Washington",
+          "phone": "",
+          "postal_code": "20003",
+          "region": "DC",
+          "street_address": "221 Pennsylvania Ave. SE"
+        }
+      }
+    ],
+    "loyalty": {
+      "orders_count": 0,
+      "progress_percent": 25,
+      "potential_credit": {
+        "amount": 500,
+        "currency_code": "USD",
+        "currency_symbol": "$",
+        "formatted_amount": "5.00"
+      },
+      "total_volume": {
+        "amount": 20000,
+        "currency_code": "USD",
+        "currency_symbol": "$",
+        "formatted_amount": "200.00"
+      },
+      "spend_remaining": {
+        "amount": 10000,
+        "currency_code": "USD",
+        "currency_symbol": "$",
+        "formatted_amount": "100.00"
+      }
+    },
+    "spend": {
+      "amount": 10000,
+      "currency_code": "USD",
+      "currency_symbol": "$",
+      "formatted_amount": "100.00"
+    }
+  }
+}

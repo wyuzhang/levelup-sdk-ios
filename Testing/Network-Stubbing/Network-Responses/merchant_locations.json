@@ -1,0 +1,70 @@
+[
+  {
+    "location" : {
+      "id" : 1,
+      "merchant_id" : 1,
+      "phone" : "(123) 123-1234",
+      "hours" : "Mon - Sun 9am - 9pm",
+      "extended_address" : "1st Floor",
+      "lat" : "38.897096",
+      "visible" : true,
+      "region" : "DC",
+      "postal_code" : "20500",
+      "lng" : "-77.036545",
+      "street_address" : "1600 Pennsylvania Ave",
+      "locality" : "Washington",
+      "name" : "White House"
+    }
+  },
+  {
+    "location" : {
+      "id" : 2,
+      "merchant_id" : 1,
+      "phone" : "(123) 123-1234",
+      "hours" : "Mon - Fri 9am - 5pm\nSat - Sun 9am - 1pm",
+      "extended_address" : "",
+      "lat" : "38.891233",
+      "visible" : true,
+      "region" : "DC",
+      "postal_code" : "20037",
+      "lng" : "-77.049793",
+      "street_address" : "2 Lincoln Memorial Circle NW",
+      "locality" : "Washington",
+      "name" : "Lincoln Memorial"
+    }
+  },
+  {
+    "location" : {
+      "id" : 3,
+      "merchant_id" : 1,
+      "phone" : "(123) 123-1234",
+      "hours" : "Mon - Fri 10:30am - 8:00pm",
+      "extended_address" : "",
+      "lat" : "38.890047",
+      "visible" : true,
+      "region" : "DC",
+      "postal_code" : "20007",
+      "lng" : "-77.043595",
+      "street_address" : "15th Street Northwest",
+      "locality" : "Washington",
+      "name" : null
+    }
+  },
+  {
+    "location" : {
+      "id" : 4,
+      "merchant_id" : 1,
+      "phone" : "(123) 123-1234",
+      "hours" : "",
+      "extended_address" : "2nd Floor",
+      "lat" : "38.890047",
+      "visible" : true,
+      "region" : "DC",
+      "postal_code" : "20007",
+      "lng" : "-77.043595",
+      "street_address" : "15th Street Northwest",
+      "locality" : "Washington",
+      "name" : null
+    }
+  }
+]

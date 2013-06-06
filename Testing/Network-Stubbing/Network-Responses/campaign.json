@@ -1,0 +1,35 @@
+{
+  "campaign": {
+    "id": 3705,
+    "name": "WhiteLabel Refer-A-Friend",
+    "campaign_type": "refer_a_friend",
+    "customer_type": "new to LevelUp",
+    "confirmation_html": "Add the sweet touch. Invite your friends to download the app, and they'll each get $3 to spend. Once they spend their $3, you'll score $3, too!",
+    "global": true,
+    "offer_html": "Add the sweet touch. Invite your friends to download the app, and they'll each get $3 to spend. Once they spend their $3, you'll score $3, too!",
+    "sharing_enabled": true,
+    "sponsor": "whitelabel",
+    "support_email": "",
+    "claimed": false,
+    "cohort": {
+      "code": "34TKI761W0FEDUSXP5MNVCL",
+      "description": "Refer-A-Friend",
+      "id": 757847,
+      "cohort_type": "refer_a_friend",
+      "message_for_email_subject": "Grab $3.00 on LevelUp",
+      "message_for_twitter": "I just grabbed $3.00 to spend on LevelUp. Grab yours too by clicking here https://www.thelevelup.com/c/34TKI761W0FEDUSXP5MNVCL",
+      "url": "https://www.thelevelup.com/c/34TKI761W0FEDUSXP5MNVCL",
+      "email_body": "I just grabbed $3.00 to spend on LevelUp. Grab yours too by clicking here https://www.thelevelup.com/c/34TKI761W0FEDUSXP5MNVCL",
+      "url_for_formatted_qr_code": "http://code.thelevelup.com/?data=HTTPS://WWW.THELEVELUP.COM/C/34TKI761W0FEDUSXP5MNVCL"
+    },
+    "mobile_image_url_320x212_1x": "https://s3.amazonaws.com/levelup-production/campaigns/3705/mobile_images/320x212_1x/g5g5_640x424.png?1357834005",
+    "mobile_image_url_320x212_1_5x": "https://s3.amazonaws.com/levelup-production/campaigns/3705/mobile_images/320x212_1_5x/g5g5_640x424.png?1357834005",
+    "mobile_image_url_320x212_2x": "https://s3.amazonaws.com/levelup-production/campaigns/3705/mobile_images/320x212_2x/g5g5_640x424.png?1357834005",
+    "value": {
+      "amount": 300,
+      "currency_code": "USD",
+      "currency_symbol": "$",
+      "formatted_amount": "3.00"
+    }
+  }
+}

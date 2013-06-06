@@ -1,0 +1,29 @@
+[
+  {
+    "category" : {
+      "image_url_32x32_1x" : "https://www.staging-levelup.com/images/merchants_images_other_32x32_1x.png",
+      "image_url_32x32_1_5x" : "https://www.staging-levelup.com/images/merchants_images_other_32x32_1_5x.png",
+      "image_url_32x32_2x" : "https://www.staging-levelup.com/images/merchants_images_other_32x32_2x.png",
+      "id" : 1,
+      "name" : "Category 1"
+    }
+  },
+  {
+    "category" : {
+      "image_url_32x32_1x" : "https://www.staging-levelup.com/images/merchants_images_american_32x32_1x.png",
+      "image_url_32x32_1_5x" : "https://www.staging-levelup.com/images/merchants_images_american_32x32_1_5x.png",
+      "image_url_32x32_2x" : "https://www.staging-levelup.com/images/merchants_images_american_32x32_2x.png",
+      "id" : 2,
+      "name" : "Category 2"
+    }
+  },
+  {
+    "category" : {
+      "image_url_32x32_1x" : "https://www.staging-levelup.com/images/merchants_images_apparel_32x32_1x.png",
+      "image_url_32x32_1_5x" : "https://www.staging-levelup.com/images/merchants_images_apparel_32x32_1_5x.png",
+      "image_url_32x32_2x" : "https://www.staging-levelup.com/images/merchants_images_apparel_32x32_2x.png",
+      "id" : 3,
+      "name" : "Category 3"
+    }
+  }
+]
