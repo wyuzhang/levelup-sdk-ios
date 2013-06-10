@@ -31,8 +31,8 @@ describe(@"LUUserRequestFactory", ^{
       [[request.path should] equal:@"users/1"];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
   });
 
@@ -82,8 +82,8 @@ describe(@"LUUserRequestFactory", ^{
       [[request.path should] equal:@"users"];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
 
     it(@"returns a request with parameters including the API key as the client_id", ^{
@@ -164,8 +164,8 @@ describe(@"LUUserRequestFactory", ^{
       [[request.path should] equal:@"users/1"];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
 
     it(@"returns a request with parameters for the user", ^{

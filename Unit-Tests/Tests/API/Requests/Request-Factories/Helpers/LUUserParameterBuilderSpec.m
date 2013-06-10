@@ -16,13 +16,10 @@ describe(@"LUUserParameterBuilder", ^{
       user.birthdate = [NSDate distantPast];
       user.customAttributes = @{@"key" : @"value"};
       user.email = @"test@example.com";
-      user.employer = @"SCVNGR";
       user.firstName = @"John";
       user.gender = LUGenderMale;
       user.lastName = @"Smith";
-      user.newPassword = @"test123";
-      user.newPasswordConfirmation = @"test123";
-      user.promotionCode = @"abc123";
+      user.password = @"test123";
       user.termsAcceptedDate = [NSDate distantPast];
     });
 
@@ -35,13 +32,11 @@ describe(@"LUUserParameterBuilder", ^{
         @"custom_attributes" : user.customAttributes,
         @"device_identifier" : deviceIdentifer,
         @"email" : user.email,
-        @"employer" : user.employer,
         @"first_name" : user.firstName,
         @"gender" : @"male",
         @"last_name" : user.lastName,
-        @"new_password" : user.newPassword,
-        @"new_password_confirmation" : user.newPasswordConfirmation,
-        @"promotion_code" : user.promotionCode,
+        @"new_password" : user.password,
+        @"password" : user.password,
         @"terms_accepted_at" : [user.termsAcceptedDate iso8601DateTimeString]
       };
 
@@ -50,11 +45,11 @@ describe(@"LUUserParameterBuilder", ^{
 
     context(@"when a user property is a blank string", ^{
       beforeEach(^{
-        user.employer = @"";
+        user.email = @"";
       });
 
       it(@"does not return a parameter for that property", ^{
-        [[LUUserParameterBuilder parametersForUser:user][@"employer"] shouldBeNil];
+        [[LUUserParameterBuilder parametersForUser:user][@"email"] shouldBeNil];
       });
     });
   });

@@ -70,7 +70,7 @@ typedef NS_ENUM(NSInteger, LUOrderState) {
 @property (nonatomic, strong, readonly) LUMerchant *merchant;
 
 /**
- The unique identifier for this category.
+ The unique identifier for this order.
  */
 @property (nonatomic, copy, readonly) NSNumber *orderID;
 

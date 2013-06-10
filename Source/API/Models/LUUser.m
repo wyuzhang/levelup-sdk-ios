@@ -9,30 +9,28 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
 
 #pragma mark - Creation
 
-- (id)initWithAbleToRefer:(BOOL)ableToRefer birthdate:(NSDate *)birthdate
-      connectedToFacebook:(BOOL)connectedToFacebook credit:(LUMonetaryValue *)credit
-         customAttributes:(NSDictionary *)customAttributes email:(NSString *)email
-                 employer:(NSString *)employer firstName:(NSString *)firstName gender:(LUGender)gender
-                 lastName:(NSString *)lastName loyaltiesSavings:(LUMonetaryValue *)loyaltiesSavings
-    merchantsVisitedCount:(NSNumber *)merchangsVisitedCount ordersCount:(NSNumber *)ordersCount
-        termsAcceptedDate:(NSDate *)termsAcceptedDate userID:(NSNumber *)userID {
+- (id)initWithBirthdate:(NSDate *)birthdate causeID:(NSNumber *)causeID connectedToFacebook:(BOOL)connectedToFacebook
+       customAttributes:(NSDictionary *)customAttributes email:(NSString *)email firstName:(NSString *)firstName
+                 gender:(LUGender)gender globalCredit:(LUMonetaryValue *)globalCredit lastName:(NSString *)lastName
+  merchantsVisitedCount:(NSNumber *)merchangsVisitedCount ordersCount:(NSNumber *)ordersCount
+      termsAcceptedDate:(NSDate *)termsAcceptedDate totalSavings:(LUMonetaryValue *)totalSavings
+                 userID:(NSNumber *)userID {
   self = [super init];
   if (!self) return nil;
 
-  _ableToRefer = ableToRefer;
   _birthdate = birthdate;
+  _causeID = causeID;
   _connectedToFacebook = connectedToFacebook;
-  _credit = credit;
   _customAttributes = customAttributes;
   _email = email;
-  _employer = employer;
   _firstName = firstName;
   _gender = gender;
+  _globalCredit = globalCredit;
   _lastName = lastName;
-  _loyaltiesSavings = loyaltiesSavings;
   _merchantsVisitedCount = merchangsVisitedCount;
   _ordersCount = ordersCount;
   _termsAcceptedDate = termsAcceptedDate;
+  _totalSavings = totalSavings;
   _userID = userID;
 
   return self;
@@ -42,14 +40,15 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUUser [ableToRefer=%@, birthdate=%@, connectedToFacebook=%@, customAttributes=%@, email=%@, firstName=%@, gender=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, termsAcceptedDate=%@]",
-          @(self.ableToRefer), self.birthdate, @(self.connectedToFacebook), self.customAttributes, self.email,
-          self.firstName, [self genderString], self.userID, self.lastName, self.merchantsVisitedCount,
-          self.ordersCount, self.termsAcceptedDate];
+          @"LUUser [birthdate=%@, causeID=%@, connectedToFacebook=%@, customAttributes=%@, email=%@, firstName=%@, gender=%@, globalCredit=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, termsAcceptedDate=%@, totalSavings=%@]",
+          self.birthdate, self.causeID, @(self.connectedToFacebook), self.customAttributes, self.email,
+          self.firstName, [self genderString], self.globalCredit, self.userID, self.lastName, self.merchantsVisitedCount,
+          self.ordersCount, self.termsAcceptedDate, self.totalSavings];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUUser [firstName=%@, ID=%@, lastName=%@]", self.firstName, self.userID, self.lastName];
+  return [NSString stringWithFormat:@"LUUser [firstName=%@, ID=%@, lastName=%@]", self.firstName, self.userID,
+          self.lastName];
 }
 
 #pragma mark - Private Methods

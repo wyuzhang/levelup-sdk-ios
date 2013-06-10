@@ -4,21 +4,20 @@
 @implementation LUUser (FakeInstance)
 
 + (LUUser *)fakeInstance {
-  return [[LUUser alloc] initWithAbleToRefer:YES
-                                   birthdate:[NSDate distantPast]
-                         connectedToFacebook:YES
-                                      credit:[LUMonetaryValue monetaryValueWithUSD:@10]
-                            customAttributes:nil
-                                       email:@"test@example.com"
-                                    employer:@"ACME, Inc."
-                                   firstName:@"Joe"
-                                      gender:LUGenderMale
-                                    lastName:@"Test"
-                            loyaltiesSavings:[LUMonetaryValue monetaryValueWithUSD:@1]
-                       merchantsVisitedCount:@5
-                                 ordersCount:@10
-                           termsAcceptedDate:[NSDate distantPast]
-                                      userID:@1];
+  return [[LUUser alloc] initWithBirthdate:[NSDate distantPast]
+                                   causeID:@1
+                       connectedToFacebook:YES
+                          customAttributes:nil
+                                     email:@"test@example.com"
+                                 firstName:@"Joe"
+                                    gender:LUGenderMale
+                              globalCredit:[LUMonetaryValue monetaryValueWithUSD:@10]
+                                  lastName:@"Test"
+                     merchantsVisitedCount:@5
+                               ordersCount:@10
+                         termsAcceptedDate:[NSDate distantPast]
+                              totalSavings:[LUMonetaryValue monetaryValueWithUSD:@1]
+                                    userID:@1];
 }
 
 @end

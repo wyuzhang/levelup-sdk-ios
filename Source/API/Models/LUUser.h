@@ -14,15 +14,14 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @interface LUUser : LUAPIModel
 
 /**
- Specifies if the user is allowed to refer other users. The server may set this to NO if the user
- has attempted to abuse the system.
- */
-@property (nonatomic, assign, readonly) BOOL ableToRefer;
-
-/**
  The user's birthday.
  */
 @property (nonatomic, copy) NSDate *birthdate;
+
+/**
+ The ID of the user's current cause, if they have selected one.
+ */
+@property (nonatomic, copy, readonly) NSNumber *causeID;
 
 /**
  Specifies if the user has connected to Facebook.
@@ -30,13 +29,7 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, assign, readonly) BOOL connectedToFacebook;
 
 /**
- The amount of the user's global credit: that is, credit that can be used at any merchant.
- */
-@property (nonatomic, strong, readonly) LUMonetaryValue *credit;
-
-/**
- An arbitrary `NSDictionary` of custom attributes. This may be used to store app-specific user
- information.
+ An arbitrary `NSDictionary` of custom attributes. This may be used to store app-specific user information.
  */
 @property (nonatomic, copy) NSDictionary *customAttributes;
 
@@ -44,11 +37,6 @@ typedef NS_ENUM(NSInteger, LUGender) {
  The user's email address.
  */
 @property (nonatomic, copy) NSString *email;
-
-/**
- The user's employer.
- */
-@property (nonatomic, copy) NSString *employer;
 
 /**
  The user's first name.
@@ -61,14 +49,14 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, assign) LUGender gender;
 
 /**
+ The amount of the user's global credit: that is, credit that can be used at any merchant.
+ */
+@property (nonatomic, strong, readonly) LUMonetaryValue *globalCredit;
+
+/**
  The user's last name.
  */
 @property (nonatomic, copy) NSString *lastName;
-
-/**
- The total amount of money that the user has saved using LevelUp.
- */
-@property (nonatomic, strong, readonly) LUMonetaryValue *loyaltiesSavings;
 
 /**
  The total number of merchants at which the user has made an order.
@@ -76,26 +64,14 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, copy, readonly) NSNumber *merchantsVisitedCount;
 
 /**
- A new password for the user. This will always be nil when returned by the server; to set a new
- password, `newPassword` and `newPasswordConfirmation` must both be set to the same non-empty value.
- */
-@property (nonatomic, copy, getter = theNewPassword) NSString *newPassword;
-
-/**
- New password confirmation. Must match `newPassword` in order for a new password to be successfully
- updated.
- */
-@property (nonatomic, copy, getter = theNewPasswordConfirmation) NSString *newPasswordConfirmation;
-
-/**
  The total number of orders that the user has made on LevelUp.
  */
 @property (nonatomic, copy, readonly) NSNumber *ordersCount;
 
 /**
- An optional promotion code that the user may specify when signing up for a new account.
+ The user's password. This is only used to set a password; it will always be nil when returned by the server.
  */
-@property (nonatomic, copy) NSString *promotionCode;
+@property (nonatomic, copy) NSString *password;
 
 /**
  The time at which the user accepted the LevelUp Terms & Conditions.
@@ -103,16 +79,20 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, copy) NSDate *termsAcceptedDate;
 
 /**
- The unique identifier for this category.
+ The total amount of money that the user has saved using LevelUp.
+ */
+@property (nonatomic, strong, readonly) LUMonetaryValue *totalSavings;
+
+/**
+ The unique identifier for this user.
  */
 @property (nonatomic, copy, readonly) NSNumber *userID;
 
-- (id)initWithAbleToRefer:(BOOL)ableToRefer birthdate:(NSDate *)birthdate
-      connectedToFacebook:(BOOL)connectedToFacebook credit:(LUMonetaryValue *)credit
-         customAttributes:(NSDictionary *)customAttributes email:(NSString *)email
-                 employer:(NSString *)employer firstName:(NSString *)firstName gender:(LUGender)gender
-                 lastName:(NSString *)lastName loyaltiesSavings:(LUMonetaryValue *)loyaltiesSavings
+- (id)initWithBirthdate:(NSDate *)birthdate causeID:(NSNumber *)causeID connectedToFacebook:(BOOL)connectedToFacebook
+       customAttributes:(NSDictionary *)customAttributes email:(NSString *)email firstName:(NSString *)firstName
+                 gender:(LUGender)gender globalCredit:(LUMonetaryValue *)globalCredit lastName:(NSString *)lastName
     merchantsVisitedCount:(NSNumber *)merchangsVisitedCount ordersCount:(NSNumber *)ordersCount
-        termsAcceptedDate:(NSDate *)termsAcceptedDate userID:(NSNumber *)userID;
+      termsAcceptedDate:(NSDate *)termsAcceptedDate totalSavings:(LUMonetaryValue *)totalSavings
+                 userID:(NSNumber *)userID;
 
 @end

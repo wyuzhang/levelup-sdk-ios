@@ -15,7 +15,7 @@
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
                                                     path:path
-                                              apiVersion:LUAPIVersion13
+                                              apiVersion:LUAPIVersion14
                                               parameters:nil
                                             modelFactory:[LUUserJSONFactory factory]];
 }
@@ -37,9 +37,9 @@
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"
                                        path:@"users"
-                                 apiVersion:LUAPIVersion13
+                                 apiVersion:LUAPIVersion14
                                  parameters:params
-                               modelFactory:[LUAccessTokenJSONFactory factory]];
+                               modelFactory:[LUUserJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestToDisconnectFromFacebook {
@@ -65,7 +65,7 @@
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"PUT"
                                                     path:path
-                                              apiVersion:LUAPIVersion13
+                                              apiVersion:LUAPIVersion14
                                               parameters:@{@"user" : [LUUserParameterBuilder parametersForUser:user]}
                                             modelFactory:[LUUserJSONFactory factory]];
 }
