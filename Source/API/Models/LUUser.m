@@ -1,5 +1,4 @@
 #import "LUUser.h"
-#import "LUUserAddress.h"
 #import "NSDate+StringFormats.h"
 
 NSString * const GenderMale = @"male";
@@ -17,8 +16,7 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
                  lastName:(NSString *)lastName loyaltiesSavings:(LUMonetaryValue *)loyaltiesSavings
     merchantsVisitedCount:(NSNumber *)merchangsVisitedCount ordersCount:(NSNumber *)ordersCount
           paymentEligible:(BOOL)paymentEligible paymentToken:(NSString *)paymentToken
-        termsAcceptedDate:(NSDate *)termsAcceptedDate userAddresses:(NSArray *)userAddresses
-                   userID:(NSNumber *)userID {
+        termsAcceptedDate:(NSDate *)termsAcceptedDate userID:(NSNumber *)userID {
   self = [super init];
   if (!self) return nil;
 
@@ -38,28 +36,9 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
   _paymentEligible = paymentEligible;
   _paymentToken = paymentToken;
   _termsAcceptedDate = termsAcceptedDate;
-  _userAddresses = userAddresses;
   _userID = userID;
 
   return self;
-}
-
-#pragma mark - Public Methods
-
-- (BOOL)hasValidQRCode {
-  return self.paymentEligible && self.paymentToken.length > 0;
-}
-
-- (LUUserAddress *)homeAddress {
-  if (self.userAddresses) {
-    for (LUUserAddress *address in self.userAddresses) {
-      if ([address isHomeAddress]) {
-        return address;
-      }
-    }
-  }
-
-  return nil;
 }
 
 #pragma mark - NSObject Methods

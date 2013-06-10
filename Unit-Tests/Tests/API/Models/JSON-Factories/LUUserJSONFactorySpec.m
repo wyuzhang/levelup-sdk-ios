@@ -29,7 +29,6 @@ describe(@"LUUserJSONFactory", ^{
       [[theValue(user.paymentEligible) should] beYes];
       [[user.paymentToken should] equal:@"payment-token"];
       [[user.termsAcceptedDate should] equal:[NSDate fixture]];
-      [[user.userAddresses should] equal:@[[LUUserAddress fullUserAddress]]];
       [[user.userID should] equal:@1];
     });
   });

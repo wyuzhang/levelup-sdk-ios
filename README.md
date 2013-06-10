@@ -51,7 +51,6 @@ The SDK includes model classes for LevelUp domain objects, such as a user or a m
 
 * **[LUAccessToken](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUAccessToken.html)**: An access token is created when a user successfully logs in, and is used to maintain an authentication session.
 * **[LUApnDevice](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUApnDevice.html)**: Represents an [Apple Push Notification](http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html) device.
-* **[LUBundle](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUBundle.html)**: A bundle of orders and refunds which are processed together.
 * **[LUCampaign](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCampaign.html)**: Campaigns are promotions which can be claimed by users.
 * **[LUCategory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCategory.html)**: A merchant category, such as "Italian" or "Bar".
 * **[LUCause](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCause.html)**: A charity or organization to which users can choose to donate part of their savings.
@@ -67,9 +66,7 @@ The SDK includes model classes for LevelUp domain objects, such as a user or a m
 * **[LUMerchant](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUMerchant.html)**: A place of business that accepts LevelUp for payment.
 * **[LUMonetaryValue](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUMonetaryValue.html)**: Represents an amount of money of a specific currency.
 * **[LUOrder](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUOrder.html)**: An order that has been placed using LevelUp.
-* **[LURefund](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LURefund.html)**: A refund, associated with a specific order.
 * **[LUUser](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUUser.html)**: Represents a user of LevelUp.
-* **[LUUserAddress](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUUserAddress.html)**: A user's address. Users may have multiple addresses, such as home and work.
 
 ## Request Factories
 
@@ -79,7 +76,6 @@ Below is the full list of request factories:
 
 * [LUAuthenticationRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUAuthenticationRequestFactory.html)
 * [LUApnDeviceRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUApnDeviceRequestFactory.html)
-* [LUBundleRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUBundleRequestFactory.html)
 * [LUCampaignRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCampaignRequestFactory.html)
 * [LUCategoryRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCategoryRequestFactory.html)
 * [LUCauseAffiliationRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCauseAfiliationRequestFactory.html)

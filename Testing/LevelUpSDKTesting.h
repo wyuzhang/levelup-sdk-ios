@@ -1,5 +1,4 @@
 #import "LUAccessToken+FakeInstance.h"
-#import "LUBundle+FakeInstance.h"
 #import "LUCampaign+FakeInstance.h"
 #import "LUCause+FakeInstance.h"
 #import "LUCauseAffiliation+FakeInstance.h"
@@ -12,7 +11,6 @@
 #import "LULoyalty+FakeInstance.h"
 #import "LUMerchant+FakeInstance.h"
 #import "LUOrder+FakeInstance.h"
-#import "LURefund+FakeInstance.h"
 #import "LUUser+FakeInstance.h"
 #import "LUWebLocations+FakeInstance.h"
 

@@ -10,7 +10,6 @@ typedef NS_ENUM(NSInteger, LUGender) {
 };
 
 @class LUMonetaryValue;
-@class LUUserAddress;
 
 @interface LUUser : LUAPIModel
 
@@ -114,11 +113,6 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, copy) NSDate *termsAcceptedDate;
 
 /**
- An array of `LUUserAddress` objects representing the user's addresses (home, work, etc.).
- */
-@property (nonatomic, copy) NSArray *userAddresses;
-
-/**
  The unique identifier for this category.
  */
 @property (nonatomic, copy, readonly) NSNumber *userID;
@@ -130,12 +124,6 @@ typedef NS_ENUM(NSInteger, LUGender) {
                  lastName:(NSString *)lastName loyaltiesSavings:(LUMonetaryValue *)loyaltiesSavings
     merchantsVisitedCount:(NSNumber *)merchangsVisitedCount ordersCount:(NSNumber *)ordersCount
           paymentEligible:(BOOL)paymentEligible paymentToken:(NSString *)paymentToken
-        termsAcceptedDate:(NSDate *)termsAcceptedDate userAddresses:(NSArray *)userAddresses
-                   userID:(NSNumber *)userID;
-
-/**
- The user's home address.
- */
-- (LUUserAddress *)homeAddress;
+        termsAcceptedDate:(NSDate *)termsAcceptedDate userID:(NSNumber *)userID;
 
 @end

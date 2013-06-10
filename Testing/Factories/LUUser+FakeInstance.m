@@ -20,7 +20,6 @@
                              paymentEligible:YES
                                 paymentToken:@"abcdef"
                            termsAcceptedDate:[NSDate distantPast]
-                               userAddresses:nil
                                       userID:@1];
 }
 

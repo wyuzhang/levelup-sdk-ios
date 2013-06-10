@@ -1,6 +1,5 @@
 #import "LUDeviceIdentifier.h"
 #import "LUUser.h"
-#import "LUUserAddress.h"
 #import "LUUserParameterBuilder.h"
 #import "NSDate+StringFormats.h"
 
@@ -56,53 +55,6 @@ describe(@"LUUserParameterBuilder", ^{
 
       it(@"does not return a parameter for that property", ^{
         [[LUUserParameterBuilder parametersForUser:user][@"employer"] shouldBeNil];
-      });
-    });
-
-    context(@"when the user has addresses", ^{
-      __block LUUserAddress *homeAddress, *workAddress;
-
-      beforeEach(^{
-        homeAddress = [[LUUserAddress alloc] init];
-        homeAddress.addressType = @"home";
-        homeAddress.extendedAddress = @"";
-        homeAddress.locality = @"Cambridge";
-        homeAddress.postalCode = @"01234";
-        homeAddress.region = @"MA";
-        homeAddress.streetAddress = @"1 Main St.";
-
-        workAddress = [[LUUserAddress alloc] init];
-        workAddress.addressType = @"home";
-        workAddress.extendedAddress = @"2nd Floor";
-        workAddress.locality = @"Boston";
-        workAddress.postalCode = @"";
-        workAddress.region = @"MA";
-        workAddress.streetAddress = @"2 Wall St.";
-
-        user.userAddresses = @[homeAddress, workAddress];
-      });
-
-      it(@"includes the user addresses, excluding blank properties", ^{
-        NSDictionary *expectedHomeAddressParams = @{
-          @"address_type" : homeAddress.addressType,
-          @"locality" : homeAddress.locality,
-          @"postal_code" : homeAddress.postalCode,
-          @"region" : homeAddress.region,
-          @"street_address" : homeAddress.streetAddress
-        };
-
-        NSDictionary *expectedWorkAddressParams = @{
-          @"address_type" : workAddress.addressType,
-          @"extended_address" : workAddress.extendedAddress,
-          @"locality" : workAddress.locality,
-          @"region" : workAddress.region,
-          @"street_address" : workAddress.streetAddress
-        };
-
-        NSDictionary *userParams = [LUUserParameterBuilder parametersForUser:user];
-
-        [[userParams[@"user_addresses_attributes"][@0] should] equal:expectedHomeAddressParams];
-        [[userParams[@"user_addresses_attributes"][@1] should] equal:expectedWorkAddressParams];
       });
     });
   });

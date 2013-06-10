@@ -10,7 +10,6 @@ typedef NS_ENUM(NSInteger, LUOrderState) {
   LUOrderRefunded
 };
 
-@class LUBundle;
 @class LUDonation;
 @class LUInterstitialAction;
 @class LULocation;

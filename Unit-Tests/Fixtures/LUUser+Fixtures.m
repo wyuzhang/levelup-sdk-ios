@@ -23,8 +23,7 @@
     @"payment_eligible" : @YES,
     @"qr_code" : @{@"data" : @"payment-token"},
     @"percent_donation" : @50,
-    @"terms_accepted_at" : [[NSDate fixture] iso8601DateTimeString],
-    @"user_addresses" : @[[LUUserAddress fullJSONObject]]
+    @"terms_accepted_at" : [[NSDate fixture] iso8601DateTimeString]
   };
 }
 

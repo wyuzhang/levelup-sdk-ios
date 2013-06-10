@@ -7,7 +7,6 @@
 #import "LUAPIRequest.h"
 #import "LUApnDeviceRequestFactory.h"
 #import "LUAuthenticationRequestFactory.h"
-#import "LUBundleRequestFactory.h"
 #import "LUCampaignRequestFactory.h"
 #import "LUCategoryRequestFactory.h"
 #import "LUCauseAffiliationRequestFactory.h"
@@ -25,7 +24,6 @@
 
 #import "LUAccessToken.h"
 #import "LUApnDevice.h"
-#import "LUBundle.h"
 #import "LUCampaign.h"
 #import "LUCategory.h"
 #import "LUCause.h"
@@ -41,9 +39,7 @@
 #import "LUMerchant.h"
 #import "LUMonetaryValue.h"
 #import "LUOrder.h"
-#import "LURefund.h"
 #import "LUUser.h"
-#import "LUUserAddress.h"
 #import "LUWebLocations.h"
 
 #import "LUConstants.h"

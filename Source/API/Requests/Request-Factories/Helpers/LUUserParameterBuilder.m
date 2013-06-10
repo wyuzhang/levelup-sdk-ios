@@ -1,6 +1,5 @@
 #import "LUDeviceIdentifier.h"
 #import "LUUser.h"
-#import "LUUserAddress.h"
 #import "LUUserParameterBuilder.h"
 #import "NSDate+StringFormats.h"
 
@@ -29,24 +28,6 @@
   [self addKey:@"new_password_confirmation" toDictionary:params ifValuePresent:user.newPasswordConfirmation];
   [self addKey:@"promotion_code" toDictionary:params ifValuePresent:user.promotionCode];
   [self addKey:@"terms_accepted_at" toDictionary:params ifValuePresent:[user.termsAcceptedDate iso8601DateTimeString]];
-
-  if (user.userAddresses.count > 0) {
-    params[@"user_addresses_attributes"] = [NSMutableDictionary dictionary];
-
-    [user.userAddresses enumerateObjectsUsingBlock:^(LUUserAddress *address, NSUInteger idx, BOOL *stop) {
-      NSMutableDictionary *addressParams = [NSMutableDictionary dictionary];
-
-      [self addKey:@"address_type" toDictionary:addressParams ifValuePresent:address.addressType];
-      [self addKey:@"extended_address" toDictionary:addressParams ifValuePresent:address.extendedAddress];
-      [self addKey:@"id" toDictionary:addressParams ifValuePresent:address.userAddressID];
-      [self addKey:@"locality" toDictionary:addressParams ifValuePresent:address.locality];
-      [self addKey:@"postal_code" toDictionary:addressParams ifValuePresent:address.postalCode];
-      [self addKey:@"region" toDictionary:addressParams ifValuePresent:address.region];
-      [self addKey:@"street_address" toDictionary:addressParams ifValuePresent:address.streetAddress];
-
-      params[@"user_addresses_attributes"][@(idx)] = addressParams;
-    }];
-  }
 
   return params;
 }

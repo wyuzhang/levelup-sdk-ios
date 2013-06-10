@@ -1,7 +1,6 @@
 #import "LUMonetaryValueJSONFactory.h"
 #import "LUUser.h"
 #import "LUUserJSONFactory.h"
-#import "LUUserAddressJSONFactory.h"
 #import "NSDictionary+ObjectClassAccess.h"
 
 @implementation LUUserJSONFactory
@@ -25,7 +24,6 @@
   BOOL paymentEligible = [attributes boolForKey:@"payment_eligible"];
   NSString *paymentToken = [attributes dictionaryForKey:@"qr_code"][@"data"];
   NSDate *termsAcceptedDate = [attributes dateForKey:@"terms_accepted_at"];
-  NSArray *userAddresses = [[LUUserAddressJSONFactory factory] fromJSONObject:attributes[@"user_addresses"]];
   NSNumber *userID = [attributes numberForKey:@"id"];
 
   return [[LUUser alloc] initWithAbleToRefer:ableToRefer birthdate:birthdate
@@ -33,8 +31,7 @@
                                        email:email employer:employer firstName:firstName gender:gender lastName:lastName
                             loyaltiesSavings:loyaltiesSavings merchantsVisitedCount:merchantsVisitedCount
                                  ordersCount:ordersCount paymentEligible:paymentEligible paymentToken:paymentToken
-                           termsAcceptedDate:termsAcceptedDate userAddresses:userAddresses
-                                      userID:userID];
+                           termsAcceptedDate:termsAcceptedDate userID:userID];
 }
 
 - (NSString *)rootKey {
