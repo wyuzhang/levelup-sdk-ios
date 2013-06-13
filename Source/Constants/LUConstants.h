@@ -17,6 +17,7 @@ typedef NS_ENUM(NSInteger, LUAPIErrorCode) {
   LUAPIErrorLoginRequired,
   LUAPIErrorMaintenance,
   LUAPIErrorNetwork,
+  LUAPIErrorNotFound,
   LUAPIErrorParsing,
   LUAPIErrorServer,
   LUAPIErrorUpgrade

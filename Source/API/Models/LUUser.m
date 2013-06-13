@@ -15,7 +15,6 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
                  employer:(NSString *)employer firstName:(NSString *)firstName gender:(LUGender)gender
                  lastName:(NSString *)lastName loyaltiesSavings:(LUMonetaryValue *)loyaltiesSavings
     merchantsVisitedCount:(NSNumber *)merchangsVisitedCount ordersCount:(NSNumber *)ordersCount
-          paymentEligible:(BOOL)paymentEligible paymentToken:(NSString *)paymentToken
         termsAcceptedDate:(NSDate *)termsAcceptedDate userID:(NSNumber *)userID {
   self = [super init];
   if (!self) return nil;
@@ -33,8 +32,6 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
   _loyaltiesSavings = loyaltiesSavings;
   _merchantsVisitedCount = merchangsVisitedCount;
   _ordersCount = ordersCount;
-  _paymentEligible = paymentEligible;
-  _paymentToken = paymentToken;
   _termsAcceptedDate = termsAcceptedDate;
   _userID = userID;
 
@@ -45,10 +42,10 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUUser [ableToRefer=%@, birthdate=%@, connectedToFacebook=%@, customAttributes=%@, email=%@, firstName=%@, gender=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, paymentEligible=%@, paymentToken=%@, termsAcceptedDate=%@]",
+          @"LUUser [ableToRefer=%@, birthdate=%@, connectedToFacebook=%@, customAttributes=%@, email=%@, firstName=%@, gender=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, termsAcceptedDate=%@]",
           @(self.ableToRefer), self.birthdate, @(self.connectedToFacebook), self.customAttributes, self.email,
           self.firstName, [self genderString], self.userID, self.lastName, self.merchantsVisitedCount,
-          self.ordersCount, @(self.paymentEligible), self.paymentToken, self.termsAcceptedDate];
+          self.ordersCount, self.termsAcceptedDate];
 }
 
 - (NSString *)description {

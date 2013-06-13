@@ -93,16 +93,6 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, copy, readonly) NSNumber *ordersCount;
 
 /**
- Specifies that the user has at least one active credit card and therefore is able to pay.
- */
-@property (nonatomic, assign, readonly) BOOL paymentEligible;
-
-/**
- The user's payment token (typically shown in an app as a QR code).
- */
-@property (nonatomic, copy, readonly) NSString *paymentToken;
-
-/**
  An optional promotion code that the user may specify when signing up for a new account.
  */
 @property (nonatomic, copy) NSString *promotionCode;
@@ -123,7 +113,6 @@ typedef NS_ENUM(NSInteger, LUGender) {
                  employer:(NSString *)employer firstName:(NSString *)firstName gender:(LUGender)gender
                  lastName:(NSString *)lastName loyaltiesSavings:(LUMonetaryValue *)loyaltiesSavings
     merchantsVisitedCount:(NSNumber *)merchangsVisitedCount ordersCount:(NSNumber *)ordersCount
-          paymentEligible:(BOOL)paymentEligible paymentToken:(NSString *)paymentToken
         termsAcceptedDate:(NSDate *)termsAcceptedDate userID:(NSNumber *)userID;
 
 @end

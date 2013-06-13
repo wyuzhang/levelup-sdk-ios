@@ -14,6 +14,7 @@
 #import "LUMerchant+Fixtures.h"
 #import "LUMonetaryValue+Fixtures.h"
 #import "LUOrder+Fixtures.h"
+#import "LUPaymentToken+Fixtures.h"
 #import "LUUser+Fixtures.h"
 #import "NSDate+Fixtures.h"
 #import "NSDate+StringFormats.h"

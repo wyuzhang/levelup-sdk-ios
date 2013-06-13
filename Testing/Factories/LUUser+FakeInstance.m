@@ -17,8 +17,6 @@
                             loyaltiesSavings:[LUMonetaryValue monetaryValueWithUSD:@1]
                        merchantsVisitedCount:@5
                                  ordersCount:@10
-                             paymentEligible:YES
-                                paymentToken:@"abcdef"
                            termsAcceptedDate:[NSDate distantPast]
                                       userID:@1];
 }

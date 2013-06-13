@@ -26,8 +26,6 @@ describe(@"LUUserJSONFactory", ^{
       [[user.loyaltiesSavings should] equal:[LUMonetaryValue fullMonetaryValue]];
       [[user.merchantsVisitedCount should] equal:@5];
       [[user.ordersCount should] equal:@10];
-      [[theValue(user.paymentEligible) should] beYes];
-      [[user.paymentToken should] equal:@"payment-token"];
       [[user.termsAcceptedDate should] equal:[NSDate fixture]];
       [[user.userID should] equal:@1];
     });

@@ -53,6 +53,9 @@
     case 401:
       return LUAPIErrorLoginRequired;
 
+    case 404:
+      return LUAPIErrorNotFound;
+
     case 501:
       return LUAPIErrorUpgrade;
 
@@ -80,20 +83,23 @@
 
 - (NSString *)localizedDescription {
   switch ([self code]) {
+    case LUAPIErrorLoginRequired:
+      return @"Authentication session has expired. Please log in again.";
+
+    case LUAPIErrorMaintenance:
+      return @"The server is currently down for maintenance. Please try again later.";
+
+    case LUAPIErrorNotFound:
+      return @"The server was not able to find the specified resource.";
+
     case LUAPIErrorNetwork:
       return @"No Internet connection available.";
 
     case LUAPIErrorParsing:
       return @"Unexpected response from the server.";
 
-    case LUAPIErrorLoginRequired:
-      return @"Authentication session has expired. Please log in again.";
-
     case LUAPIErrorUpgrade:
       return @"This version of the SDK is out of date.";
-
-    case LUAPIErrorMaintenance:
-      return @"The server is currently down for maintenance. Please try again later.";
 
     case LUAPIErrorServer:
     default:

@@ -21,8 +21,6 @@
   LUMonetaryValue *loyaltiesSavings = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"loyalties_savings"]];
   NSNumber *merchantsVisitedCount = [attributes numberForKey:@"merchants_visited_count"];
   NSNumber *ordersCount = [attributes numberForKey:@"orders_count"];
-  BOOL paymentEligible = [attributes boolForKey:@"payment_eligible"];
-  NSString *paymentToken = [attributes dictionaryForKey:@"qr_code"][@"data"];
   NSDate *termsAcceptedDate = [attributes dateForKey:@"terms_accepted_at"];
   NSNumber *userID = [attributes numberForKey:@"id"];
 
@@ -30,8 +28,7 @@
                          connectedToFacebook:connectedToFacebook credit:credit customAttributes:customAttributes
                                        email:email employer:employer firstName:firstName gender:gender lastName:lastName
                             loyaltiesSavings:loyaltiesSavings merchantsVisitedCount:merchantsVisitedCount
-                                 ordersCount:ordersCount paymentEligible:paymentEligible paymentToken:paymentToken
-                           termsAcceptedDate:termsAcceptedDate userID:userID];
+                                 ordersCount:ordersCount termsAcceptedDate:termsAcceptedDate userID:userID];
 }
 
 - (NSString *)rootKey {

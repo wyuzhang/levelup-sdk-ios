@@ -66,6 +66,7 @@ The SDK includes model classes for LevelUp domain objects, such as a user or a m
 * **[LUMerchant](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUMerchant.html)**: A place of business that accepts LevelUp for payment.
 * **[LUMonetaryValue](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUMonetaryValue.html)**: Represents an amount of money of a specific currency.
 * **[LUOrder](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUOrder.html)**: An order that has been placed using LevelUp.
+* **[LUPaymentToken](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUPaymentToken.html)**: The user's payment token.
 * **[LUUser](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUUser.html)**: Represents a user of LevelUp.
 
 ## Request Factories
@@ -88,6 +89,7 @@ Below is the full list of request factories:
 * [LULoyaltyRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LULoyaltyRequestFactory.html)
 * [LUMerchantRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUMerchantRequestFactory.html)
 * [LUOrderRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUOrderRequestFactory.html)
+* [LUPaymentTokenRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUPaymentTokenRequestFactory.html)
 * [LUTicketRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUTicketRequestFactory.html)
 * [LUUserRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUUserRequestFactory.html)
 

@@ -301,6 +301,15 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:responseData];
 }
 
++ (LUAPIStub *)stubToGetPaymentToken {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:@"payment_token"
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"payment_token"]];
+
+}
+
 + (LUAPIStub *)stubToLogInWithEmail:(NSString *)email password:(NSString *)password {
   LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion13
                                             path:@"oauth/access_token"
