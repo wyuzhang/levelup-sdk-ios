@@ -1,18 +1,21 @@
 #import "LULocation+FakeInstance.h"
 #import "LULoyalty+FakeInstance.h"
 #import "LUMerchant+FakeInstance.h"
+#import "LUMonetaryValue.h"
 
 @implementation LUMerchant (FakeInstance)
 
 + (LUMerchant *)fakeInstance {
-  return [[LUMerchant alloc] initWithDescriptionHTML:nil earn:nil emailCaptureCohort:nil facebookURL:nil featured:NO
+  return [[LUMerchant alloc] initWithDescriptionHTML:nil earn:[LUMonetaryValue monetaryValueWithUSD:@100.0f]
+                                  emailCaptureCohort:nil facebookURL:nil featured:NO
                                          imageURL_1x:[NSURL URLWithString:@"http://placekitten.com/g/280/128"]
                                          imageURL_2x:[NSURL URLWithString:@"http://placekitten.com/g/560/256"]
                                            locations:@[[LULocation fakeInstance]]
                                              loyalty:[LULoyalty fakeInstance]
                                           merchantID:@1
                                                 name:@"Test Merchant"
-                                       newsletterURL:nil opentableURL:nil publicURL:nil scvngrURL:nil spend:nil
+                                       newsletterURL:nil opentableURL:nil publicURL:nil scvngrURL:nil
+                                               spend:[LUMonetaryValue monetaryValueWithUSD:@10.0f]
                                      twitterUsername:nil yelpURL:nil websiteURL:nil];
 }
 

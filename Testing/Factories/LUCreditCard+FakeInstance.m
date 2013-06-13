@@ -8,6 +8,12 @@
                                   promoted:NO type:@"Visa"];
 }
 
++ (LUCreditCard *)fakeInstanceForPromotedCard {
+  LUCreditCard *creditCard = [self fakeInstance];
+  [creditCard setValue:@YES forKey:@"promoted"];
+  return creditCard;
+}
+
 + (LUCreditCard *)fakeInstanceWithExpirationMonth:(NSNumber *)expirationMonth expirationYear:(NSNumber *)expirationYear {
   LUCreditCard *creditCard = [self fakeInstance];
   [creditCard setValue:expirationMonth forKey:@"expirationMonth"];
