@@ -79,11 +79,11 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                                     lastName:(NSString *)lastName
                                        email:(NSString *)email
                                     password:(NSString *)password {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion13
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
                                             path:@"users"
                                       HTTPMethod:@"POST"
                                    authenticated:NO
-                                    responseData:[self responseDataFromFile:@"oauth_access_token"]];
+                                    responseData:[self responseDataFromFile:@"new_user"]];
 
   [self setDeviceIdentifier];
 
@@ -186,7 +186,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToGetCurrentUser {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion13
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:@"users/1"
                            HTTPMethod:@"GET"
                         authenticated:YES
@@ -256,7 +256,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToGetNewUser {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion13
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:@"users/1"
                            HTTPMethod:@"GET"
                         authenticated:YES
@@ -311,8 +311,8 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToLogInWithEmail:(NSString *)email password:(NSString *)password {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                            path:@"oauth/access_token"
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                            path:@"access_tokens"
                                       HTTPMethod:@"POST"
                                    authenticated:NO
                                     responseData:[self responseDataFromFile:@"oauth_access_token"]];
@@ -321,7 +321,6 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   stub.requestBodyJSON = @{
     @"client_id" : [LUAPIClient sharedClient].apiKey,
     @"device_identifier" : LUDeviceIdentifier,
-    @"grant_type" : @"password",
     @"password" : password,
     @"username" : email
   };
@@ -330,8 +329,8 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToLogInWithFacebookAccessToken:(NSString *)facebookAccessToken {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                            path:@"oauth/access_token"
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                            path:@"access_tokens"
                                       HTTPMethod:@"POST"
                                    authenticated:NO
                                     responseData:[self responseDataFromFile:@"oauth_access_token"]];
@@ -340,8 +339,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   stub.requestBodyJSON = @{
     @"client_id" : [LUAPIClient sharedClient].apiKey,
     @"device_identifier" : LUDeviceIdentifier,
-    @"facebook_access_token" : facebookAccessToken,
-    @"grant_type" : @"facebook"
+    @"facebook_access_token" : facebookAccessToken
   };
 
   return stub;
@@ -379,7 +377,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                                     newPassword:(NSString *)newPassword
                                        birthday:(NSDate *)birthday
                                          gender:(NSString *)gender {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion13
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
                                             path:@"users/1"
                                       HTTPMethod:@"PUT"
                                    authenticated:YES
@@ -407,7 +405,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                                                  email:(NSString *)email
                                                 gender:(NSString *)gender
                                               birthday:(NSDate *)birthday {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion13
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
                                             path:@"users/1"
                                       HTTPMethod:@"PUT"
                                    authenticated:YES

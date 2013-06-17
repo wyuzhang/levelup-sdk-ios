@@ -1,39 +1,18 @@
 {
   "user": {
-    "able_to_refer": true,
-    "first_name": "Test",
-    "last_initial": "U",
     "born_at": null,
+    "cause_id" : null,
+    "connected_to_facebook" : false,
+    "custom_attributes" : {},
     "email": "test@example.com",
-    "employer": null,
-    "facebook_access_token": null,
-    "facebook_user_id": null,
+    "first_name": "Test",
     "gender": null,
     "id": 1,
     "last_name": "User",
     "merchants_visited_count": 0,
     "orders_count": 0,
-    "percent_donation": "0.0",
-    "referral_code": "7NMUV8",
-    "subscribed": true,
-    "referral_code_url": "http://code.thelevelup.com/?data=HTTP://LOCALHOST:3000/C/7NMUV8",
-    "qr_code": {
-      "data_image_url": "https://chart.googleapis.com/chart?chl=LU020007DHTZL9865JM3OWQNB48A&chs=500x500&cht=qr",
-      "data": "LU020007DHTZL9865JM3OWQNB48A"
-    },
-    "credit": {
-      "amount": 0,
-      "currency_code": "USD",
-      "currency_symbol": "$",
-      "formatted_amount": "0.00"
-    },
-    "loyalties_savings": {
-      "amount": 0,
-      "currency_code": "USD",
-      "currency_symbol": "$",
-      "formatted_amount": "0.00"
-    },
-    "payment_eligible": false,
-    "user_addresses": []
+    "global_credit_amount": 0,
+    "terms_accepted_at": "2013-01-01T00:00:00-05:00",
+    "total_savings_amount": 0
   }
 }

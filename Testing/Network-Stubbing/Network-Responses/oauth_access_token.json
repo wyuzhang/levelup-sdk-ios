@@ -1,4 +1,6 @@
 {
-  "access_token": "1-abc123",
-  "x_user_id": 1
+  "access_token" : {
+    "user_id": 1,
+    "token": "1-abc123"
+  }
 }
