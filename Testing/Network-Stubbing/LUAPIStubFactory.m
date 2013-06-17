@@ -75,6 +75,26 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   return stub;
 }
 
++ (LUAPIStub *)stubToCreateUserWithFacebookAccessToken:(NSString *)facebookAccessToken {
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                            path:@"users"
+                                      HTTPMethod:@"POST"
+                                   authenticated:NO
+                                    responseData:[self responseDataFromFile:@"new_user"]];
+
+  [self setDeviceIdentifier];
+
+  stub.requestBodyJSON = @{
+    @"client_id" : [LUAPIClient sharedClient].apiKey,
+    @"user" : @{
+      @"device_identifier" : LUDeviceIdentifier,
+      @"facebook_access_token" : facebookAccessToken
+    }
+  };
+
+  return stub;
+}
+
 + (LUAPIStub *)stubToCreateUserWithFirstName:(NSString *)firstName
                                     lastName:(NSString *)lastName
                                        email:(NSString *)email

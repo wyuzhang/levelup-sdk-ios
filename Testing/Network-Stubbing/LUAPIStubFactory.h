@@ -12,6 +12,7 @@
                                      postalCode:(NSString *)postalCode;
 + (LUAPIStub *)stubToCreateGlobalClaimForCohortCode:(NSString *)code;
 + (LUAPIStub *)stubToCreateTicket:(NSString *)body;
++ (LUAPIStub *)stubToCreateUserWithFacebookAccessToken:(NSString *)facebookAccessToken;
 + (LUAPIStub *)stubToCreateUserWithFirstName:(NSString *)firstName
                                     lastName:(NSString *)lastName
                                        email:(NSString *)email

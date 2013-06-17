@@ -95,6 +95,37 @@ describe(@"LUUserRequestFactory", ^{
     });
   });
 
+  describe(@"requestToCreateUserWithFacebookAccessToken:", ^{
+    NSString *apiKey = @"api-key";
+    NSString *facebookAccessToken = @"facebook-access-token";
+
+    beforeEach(^{
+      [LUAPIClient setupWithAPIKey:apiKey developmentMode:YES];
+
+      request = [LUUserRequestFactory requestToCreateUserWithFacebookAccessToken:facebookAccessToken];
+    });
+
+    it(@"returns a POST request", ^{
+      [[request.method should] equal:@"POST"];
+    });
+
+    it(@"returns a request to the path 'users'", ^{
+      [[request.path should] equal:@"users"];
+    });
+
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
+    });
+
+    it(@"returns a request with parameters including the API key as the client_id", ^{
+      [[request.parameters[@"client_id"] should] equal:apiKey];
+    });
+
+    it(@"returns a request with the Facebook access token nested under 'user'", ^{
+      [[request.parameters[@"user"][@"facebook_access_token"] should] equal:facebookAccessToken];
+    });
+  });
+
   describe(@"requestToDisconnectFromFacebook", ^{
     beforeEach(^{
       [[LUAPIClient sharedClient] stub:@selector(currentUserID) andReturn:@1];
