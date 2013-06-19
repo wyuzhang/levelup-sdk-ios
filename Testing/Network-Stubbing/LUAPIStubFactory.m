@@ -7,6 +7,7 @@
 #import "LUCoreDataStack.h"
 #import "LUKeychainAccess.h"
 #import "LULocationCacheUpdater.h"
+#import "LUUserParameterBuilder.h"
 #import "NSDate+StringFormats.h"
 
 NSString * const LUDeviceIdentifier = @"abcdefg";
@@ -243,7 +244,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToGetLocationWithID:(NSNumber *)locationID {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion13
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:[@"locations/" stringByAppendingString:[locationID stringValue]]
                            HTTPMethod:@"GET"
                         authenticated:NO
@@ -394,6 +395,33 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   return stub;
 }
 
++ (LUAPIStub *)stubToUpdateAdditionalInfoWithFirstName:(NSString *)firstName
+                                              lastName:(NSString *)lastName
+                                                 email:(NSString *)email
+                                                gender:(NSString *)gender
+                                              birthday:(NSDate *)birthday {
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                            path:@"users/1"
+                                      HTTPMethod:@"PUT"
+                                   authenticated:YES
+                                    responseData:[self responseDataFromFile:@"current_user"]];
+
+  [self setDeviceIdentifier];
+  stub.requestBodyJSON = @{
+    @"user" : @{
+       @"born_at" : [birthday iso8601DateTimeString],
+       @"custom_attributes" : @{},
+       @"device_identifier" : LUDeviceIdentifier,
+       @"email" : email,
+       @"first_name" : firstName,
+       @"gender" : gender,
+       @"last_name" : lastName
+    }
+  };
+
+  return stub;
+}
+
 + (LUAPIStub *)stubToUpdateProfileWithFirstName:(NSString *)firstName
                                        lastName:(NSString *)lastName
                                           email:(NSString *)email
@@ -423,29 +451,16 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   return stub;
 }
 
-+ (LUAPIStub *)stubToUpdateAdditionalInfoWithFirstName:(NSString *)firstName
-                                              lastName:(NSString *)lastName
-                                                 email:(NSString *)email
-                                                gender:(NSString *)gender
-                                              birthday:(NSDate *)birthday {
++ (LUAPIStub *)stubToUpdateUser:(LUUser *)user {
+  [self setDeviceIdentifier];
+  NSDictionary *userJSON = @{@"user" : [LUUserParameterBuilder parametersForUser:user] };
+
   LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
                                             path:@"users/1"
                                       HTTPMethod:@"PUT"
                                    authenticated:YES
-                                    responseData:[self responseDataFromFile:@"current_user"]];
-
-  [self setDeviceIdentifier];
-  stub.requestBodyJSON = @{
-    @"user" : @{
-       @"born_at" : [birthday iso8601DateTimeString],
-       @"custom_attributes" : @{},
-       @"device_identifier" : LUDeviceIdentifier,
-       @"email" : email,
-       @"first_name" : firstName,
-       @"gender" : gender,
-       @"last_name" : lastName
-    }
-  };
+                                    responseData:[NSJSONSerialization dataWithJSONObject:userJSON options:0 error:nil]];
+  stub.requestBodyJSON = userJSON;
 
   return stub;
 }

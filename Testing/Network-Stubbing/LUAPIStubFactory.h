@@ -1,5 +1,6 @@
 @class LUAPIStub;
 @class LUCauseAffiliation;
+@class LUUser;
 
 @interface LUAPIStubFactory : NSObject
 
@@ -44,16 +45,17 @@
 + (LUAPIStub *)stubToPromoteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToResetPasswordRequest;
 + (LUAPIStub *)stubToSetCauseAffiliation:(LUCauseAffiliation *)causeAffiliation;
++ (LUAPIStub *)stubToUpdateAdditionalInfoWithFirstName:(NSString *)firstName
+                                              lastName:(NSString *)lastName
+                                                 email:(NSString *)email
+                                                gender:(NSString *)gender
+                                              birthday:(NSDate *)birthday __attribute__((deprecated));
 + (LUAPIStub *)stubToUpdateProfileWithFirstName:(NSString *)firstName
                                        lastName:(NSString *)lastName
                                           email:(NSString *)email
                                     newPassword:(NSString *)newPassword
                                        birthday:(NSDate *)birthday
-                                         gender:(NSString *)gender;
-+ (LUAPIStub *)stubToUpdateAdditionalInfoWithFirstName:(NSString *)firstName
-                                              lastName:(NSString *)lastName
-                                                 email:(NSString *)email
-                                                gender:(NSString *)gender
-                                              birthday:(NSDate *)birthday;
+                                         gender:(NSString *)gender __attribute__((deprecated));
++ (LUAPIStub *)stubToUpdateUser:(LUUser *)user;
 
 @end
