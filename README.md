@@ -8,6 +8,8 @@ The [LevelUp](https://www.thelevelup.com) SDK allows developers to build apps th
 
 The primary purpose of the SDK is to make it easy to issue requests to the LevelUp platform. It provides a layer on top of LevelUp's REST API. Requests may be things like signing up, logging or viewing nearby merchants. In addition, the SDK contains several utility classes to help with scanning and generating QR codes. Read below for additional information, or check out the [complete documentation](http://thelevelup.github.io/whitelabel-ios-sdk/) for a look at all the classes available with the SDK.
 
+The recommended way to access the LevelUp SDK is through [CocoaPods](http://cocoapods.org/).
+
 # Interacting with the API
 
 ## Performing Requests
@@ -16,15 +18,15 @@ Interactions with the LevelUp API occur through the [LUAPIClient](http://theleve
 
 Before issuing any requests, you must register an API key and specify if you would like to run requests against LevelUp's sandbox server or production server. This is done using the `setupWithAPIKey:developmentMode:` method:
 
-````
+```objective-c
 [[LUAPIClient sharedClient] setupWithAPIKey:API_KEY developmentMode:YES];
-````
+```
 
 An API request is an instance of [LUAPIRequest](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUAPIRequest.html). The SDK includes a set of request factories in order to create these requests (see "Request Factories" below).
 
 Requests are performed by calling `performRequest:success:failure:`:
 
-````
+```objective-c
 LUAPIRequest *request = [LUUserRequestFactory requestForCurrentUser];
 [[LUAPIClient sharedClient] performRequest:request
                                    success:^(LUUser *user) {
@@ -32,9 +34,8 @@ LUAPIRequest *request = [LUUserRequestFactory requestForCurrentUser];
                                    }
                                    failure:^(NSError *error) {
                                      NSLog(@"Error while retrieving user: %@");
-                                   }
-];
-````
+                                   }];
+```
 
 When the API call is successful, the `success` block will be called, and will be passed a result. This result differs for each call; for example, a request for the current user returns an `LUUser`, while a request for nearby merchants would return an `NSArray` of `LUMerchant` objects. The documentation for each request factory specifies the object which will be passed to `success`.
 
@@ -104,3 +105,39 @@ The [LUQRCodeGenerator](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/L
 ## Scanning Codes
 
 [LUQRCodeScannerView](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUQRCodeScannerView.html) is a `UIView` that handles scanning QR codes. It is provided with a delegate to be notified when a scan is successful.
+
+# Testing
+
+The SDK contains several optional classes to assist in testing. These can be included through a CocoaPods subspec called "Testing". The header file for these classes is `LevelUpSDKTesting.h`.
+
+There are two main categories of testing classes: factories and network stubs.
+
+## Factories
+
+To aid in testing, fake test instances of all the main LevelUp SDK classes are available. These are added in categories to the classes. For example, getting a test user is as simple as calling `[LUUser fakeInstance]`. For a full list of fake instances, see the header files in `Testing/Factories`.
+
+## Network Stubs
+
+Network stubs are also provided for all common requests. These allow you to stub out network calls so that canned responses are returned instead of connecting to the server. This is done transparently to your code.
+
+Use the `LUAPIStubbing` class to manage stubs. The `addStub:` method adds a stub, and `clearStubs` clears all stubs. Two optional methods are also available: `disableNetConnect` and `raiseOnUnexpectedRequest:`. The `disableNetConnect` method will block all network requests and return an error for any request that does not match a stub. The related `raiseOnUnexpectedRequest:` method will cause an exception to also be raised when this happens. This can be useful for finding places where stubs need to be added.
+
+Stubs are instances of the `LUAPIStub` class. `LUAPIStubFactory` provides methods to create stubs for many of the common use cases of the API. See `LUAPIStubFactory.h` in `Testing/Network-Responses` for a full list of methods.
+
+Here's a simple example of how to use network stubs:
+
+```objective-c
+[[LUAPIStubbing sharedInstance] disableNetConnect];
+[[LUAPIStubbing sharedInstance] addStub:[LUAPIStubFactory stubToGetCurrentUser]];
+
+LUAPIRequest *request = [LUUserRequestFactory requestForCurrentUser];
+[[LUAPIClient sharedClient] performRequest:request
+                                   success:^(LUUser *user) {
+                                     // ...
+                                   }
+                                   failure:^(NSError *error) {
+                                     // ...
+                                   }];
+
+[[LUAPIStubbing sharedInstance] clearStubs];
+```
