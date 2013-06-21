@@ -42,9 +42,9 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/requestForOrderWithId:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrderWithId:</option>
+	<option value="//api/name/requestForOrderWithID:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrderWithID:</option>
 	
-	<option value="//api/name/requestForOrdersAtMerchantWithId:page:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrdersAtMerchantWithId:page:</option>
+	<option value="//api/name/requestForOrdersAtMerchantWithID:page:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrdersAtMerchantWithID:page:</option>
 	
 	<option value="//api/name/requestForOrdersOnPage:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrdersOnPage:</option>
 	
@@ -76,9 +76,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrderWithId:">requestForOrderWithId:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrderWithID:">requestForOrderWithID:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrdersAtMerchantWithId:page:">requestForOrdersAtMerchantWithId:page:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrdersAtMerchantWithID:page:">requestForOrdersAtMerchantWithID:page:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrdersOnPage:">requestForOrdersOnPage:</a></span></li>
 	
@@ -139,7 +139,7 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForOrdersAtMerchantWithId:page:">+&nbsp;requestForOrdersAtMerchantWithId:page:</a></code>
+		<code><a href="#//api/name/requestForOrdersAtMerchantWithID:page:">+&nbsp;requestForOrdersAtMerchantWithID:page:</a></code>
 		<span class="tooltip"><p>Builds a request to retrieve orders that the current user has made at a given merchant.</p></span>
 	</span>
 	
@@ -153,7 +153,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForOrderWithId:">+&nbsp;requestForOrderWithId:</a></code>
+		<code><a href="#//api/name/requestForOrderWithID:">+&nbsp;requestForOrderWithID:</a></code>
 		<span class="tooltip"><p>Builds a request to retrieve an order.</p></span>
 	</span>
 	
@@ -174,8 +174,8 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForOrderWithId:" title="requestForOrderWithId:"></a>
-	<h3 class="subsubtitle method-title">requestForOrderWithId:</h3>
+	<a name="//api/name/requestForOrderWithID:" title="requestForOrderWithID:"></a>
+	<h3 class="subsubtitle method-title">requestForOrderWithID:</h3>
 	
 	
 	
@@ -185,7 +185,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrderWithId:(NSNumber *)<em>orderId</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrderWithID:(NSNumber *)<em>orderID</em></code></div>
 
     
 	
@@ -193,7 +193,7 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>orderId</em></dt>
+			<dt><em>orderID</em></dt>
 			<dd><p>The ID of the order to retrieve.</p></dd>
 		</dl>
 		
@@ -227,8 +227,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForOrdersAtMerchantWithId:page:" title="requestForOrdersAtMerchantWithId:page:"></a>
-	<h3 class="subsubtitle method-title">requestForOrdersAtMerchantWithId:page:</h3>
+	<a name="//api/name/requestForOrdersAtMerchantWithID:page:" title="requestForOrdersAtMerchantWithID:page:"></a>
+	<h3 class="subsubtitle method-title">requestForOrdersAtMerchantWithID:page:</h3>
 	
 	
 	
@@ -238,7 +238,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrdersAtMerchantWithId:(NSNumber *)<em>merchantId</em> page:(NSUInteger)<em>page</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrdersAtMerchantWithID:(NSNumber *)<em>merchantID</em> page:(NSUInteger)<em>page</em></code></div>
 
     
 	
@@ -246,7 +246,7 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>merchantId</em></dt>
+			<dt><em>merchantID</em></dt>
 			<dd><p>The ID of the merchant to search against.</p></dd>
 		</dl>
 		
@@ -352,7 +352,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-05-23)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-06-21)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

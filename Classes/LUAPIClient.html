@@ -58,8 +58,6 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/isNetworkUnreachable">&nbsp;&nbsp;&nbsp;&nbsp;- isNetworkUnreachable</option>
-	
 	<option value="//api/name/performRequest:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- performRequest:success:failure:</option>
 	
 	
@@ -109,8 +107,6 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNetworkUnreachable">isNetworkUnreachable</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performRequest:success:failure:">performRequest:success:failure:</a></span></li>
 	
@@ -179,14 +175,33 @@ remain logged in. As part of launching your application, you may set these value
 <h2>Errors</h2>
 
 <p>When an API call fails, the <code>failure</code> block passed to <a href="#//api/name/performRequest:success:failure:"><code>performRequest:success:failure:</code></a> will be called with an <code>NSError</code>
-object containing additional information about the error. The <code>userInfo</code> dictionary for this <code>NSError</code> has keys
-for several pieces of information:</p>
+object containing additional information about the error. This error will have the domain <code>LUAPIErrorDomain</code>.</p>
+
+<h3>Codes</h3>
+
+<p>The error may have one of the following codes:</p>
 
 <ul>
-<li><code>LUAPIFailingURLRequestErrorKey</code>: An <code>NSURLRequest</code> containing the request.</li>
-<li><code>LUAPIFailingURLResponseErrorKey</code>: An <code>NSURLResponse</code> containing the response.</li>
-<li><code>LUAPIFailingErrorMessageErrorKey</code>: An optional error message from the server.</li>
-<li><code>LUAPIFailingJSONResponseErrorKey</code>: An optional JSON response from the server.</li>
+<li><code>LUAPIErrorLoginRequired</code>: The client must be logged in to complete the request.</li>
+<li><code>LUAPIErrorMaintenance</code>: The server is currently down for maintenance.</li>
+<li><code>LUAPIErrorNetwork</code>: Was unable to get to the server because the network is down.</li>
+<li><code>LUAPIErrorParsing</code>: The server responded with JSON that couldn&rsquo;t be parsed.</li>
+<li><code>LUAPIErrorServer</code>: The server responded with an error.</li>
+<li><code>LUAPIErrorUpgrade</code>: The SDK needs to be upgraded.</li>
+</ul>
+
+
+<h3>User Info</h3>
+
+<p>The <code>userInfo</code> dictionary for this <code>NSError</code> has keys for several pieces of information:</p>
+
+<ul>
+<li><code>LUAPIErrorKeyAPIErrors</code>: An optional array of <a href="../Classes/LUAPIError.html"><code>LUAPIError</code></a> objects returned by the server.</li>
+<li><code>LUAPIErrorKeyErrorMessage</code>: An optional error message from the server. If multiple errors were returned, this will
+only contain the first message. <code>LUAPIErrorKeyAPIErrors</code> can be used to see all errors.</li>
+<li><code>LUAPIErrorKeyJSONResponse</code>: An optional JSON response from the server.</li>
+<li><code>LUAPIErrorKeyOriginalError</code>: If this error was generated from another <code>NSError</code>, it is included under this key.</li>
+<li><code>LUAPIErrorKeyURLResponse</code>: An <code>NSURLResponse</code> containing the response.</li>
 </ul>
 
 
@@ -256,14 +271,6 @@ for several pieces of information:</p>
 	<span class="tooltip">
 		<code><a href="#//api/name/performRequest:success:failure:">&ndash;&nbsp;performRequest:success:failure:</a></code>
 		<span class="tooltip"><p>Initiates a LevelUp API request.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/isNetworkUnreachable">&ndash;&nbsp;isNetworkUnreachable</a></code>
-		<span class="tooltip"><p>Specifies if the network is currently unreachable. This can be useful for giving the user relevant information about
-API errors.</p></span>
 	</span>
 	
 	
@@ -493,49 +500,6 @@ API errors.</p></span>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/isNetworkUnreachable" title="isNetworkUnreachable"></a>
-	<h3 class="subsubtitle method-title">isNetworkUnreachable</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Specifies if the network is currently unreachable. This can be useful for giving the user relevant information about
-API errors.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (BOOL)isNetworkUnreachable</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Specifies if the network is currently unreachable. This can be useful for giving the user relevant information about
-API errors.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUAPIClient.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/performRequest:success:failure:" title="performRequest:success:failure:"></a>
 	<h3 class="subsubtitle method-title">performRequest:success:failure:</h3>
 	
@@ -616,7 +580,7 @@ containing additional information about the error.</p></dd>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-05-23)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-06-21)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
