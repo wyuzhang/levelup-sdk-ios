@@ -23,8 +23,13 @@
   }
 
   [self addKey:@"last_name" toDictionary:params ifValuePresent:user.lastName];
-  [self addKey:@"new_password" toDictionary:params ifValuePresent:user.password];
-  [self addKey:@"password" toDictionary:params ifValuePresent:user.password];
+
+  if (user.userID) {
+    [self addKey:@"new_password" toDictionary:params ifValuePresent:user.password];
+  } else {
+    [self addKey:@"password" toDictionary:params ifValuePresent:user.password];
+  }
+
   [self addKey:@"terms_accepted_at" toDictionary:params ifValuePresent:[user.termsAcceptedDate iso8601DateTimeString]];
 
   return params;

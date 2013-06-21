@@ -35,7 +35,6 @@ describe(@"LUUserParameterBuilder", ^{
         @"first_name" : user.firstName,
         @"gender" : @"male",
         @"last_name" : user.lastName,
-        @"new_password" : user.password,
         @"password" : user.password,
         @"terms_accepted_at" : [user.termsAcceptedDate iso8601DateTimeString]
       };

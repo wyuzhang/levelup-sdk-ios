@@ -1727,7 +1727,7 @@
 		25F6439B166832D600A05C0E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = SCVNGR;
 			};
 			buildConfigurationList = 25F6439E166832D600A05C0E /* Build configuration list for PBXProject "LevelUpSDK" */;

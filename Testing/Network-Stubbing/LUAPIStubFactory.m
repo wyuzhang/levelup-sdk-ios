@@ -120,8 +120,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
       @"email" : email,
       @"first_name" : firstName,
       @"last_name" : lastName,
-      @"new_password" : password,
-      @"new_password_confirmation" : password,
+      @"password" : password,
       @"terms_accepted_at" : [[NSDate date] iso8601DateTimeString]
     }
   };
@@ -339,10 +338,12 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
   [self setDeviceIdentifier];
   stub.requestBodyJSON = @{
-    @"client_id" : [LUAPIClient sharedClient].apiKey,
-    @"device_identifier" : LUDeviceIdentifier,
-    @"password" : password,
-    @"username" : email
+    @"access_token" : @{
+      @"client_id" : [LUAPIClient sharedClient].apiKey,
+      @"device_identifier" : LUDeviceIdentifier,
+      @"password" : password,
+      @"username" : email
+    }
   };
 
   return stub;
@@ -357,9 +358,11 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
   [self setDeviceIdentifier];
   stub.requestBodyJSON = @{
-    @"client_id" : [LUAPIClient sharedClient].apiKey,
-    @"device_identifier" : LUDeviceIdentifier,
-    @"facebook_access_token" : facebookAccessToken
+    @"access_token" : @{
+      @"client_id" : [LUAPIClient sharedClient].apiKey,
+      @"device_identifier" : LUDeviceIdentifier,
+      @"facebook_access_token" : facebookAccessToken
+    }
   };
 
   return stub;
@@ -407,13 +410,13 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   stub.requestBodyJSON = @{
     @"user" : @{
       @"born_at" : [birthday iso8601DateTimeString],
+      @"custom_attributes" : @{},
       @"device_identifier" : LUDeviceIdentifier,
       @"email" : email,
       @"first_name" : firstName,
       @"gender" : gender,
       @"last_name" : lastName,
-      @"new_password" : newPassword,
-      @"new_password_confirmation" : newPassword
+      @"new_password" : newPassword
     }
   };
 
@@ -435,6 +438,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   stub.requestBodyJSON = @{
     @"user" : @{
        @"born_at" : [birthday iso8601DateTimeString],
+       @"custom_attributes" : @{},
        @"device_identifier" : LUDeviceIdentifier,
        @"email" : email,
        @"first_name" : firstName,

@@ -2,21 +2,21 @@ PODS:
   - AFNetworking (1.1.0)
   - Kiwi (2.0.6)
   - LUKeychainAccess (1.0.1)
-  - Nocilla (0.1)
+  - OHHTTPStubs (1.1.2)
   - ZXingObjC (2.0.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 1.1.0)
   - Kiwi (~> 2.0.4)
   - LUKeychainAccess (~> 1.0.0)
-  - Nocilla (= 0.1)
+  - OHHTTPStubs (~> 1.1.2)
   - ZXingObjC (~> 2.0.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
   Kiwi: 56082a80f942de4d10423d8d8a599ab30cf50228
   LUKeychainAccess: 6ba22b2e1eec24f9f2fc9c6a9087d5524a58b1a2
-  Nocilla: 17ce66cbd1b6e2a335c1e13d8d4220d34d5995fa
+  OHHTTPStubs: a840cb0fe0c2a4271018be540782cc97139dff53
   ZXingObjC: 3076a75db997092eb2f7a74bd3d380095931c58a
 
-COCOAPODS: 0.19.1
+COCOAPODS: 0.20.2
