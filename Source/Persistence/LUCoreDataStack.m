@@ -7,7 +7,7 @@
 #pragma mark - Public Methods (Managed Object Context)
 
 + (NSManagedObjectContext *)managedObjectContext {
-  NSManagedObjectContext *managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+  NSManagedObjectContext *managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSConfinementConcurrencyType];
   managedObjectContext.persistentStoreCoordinator = [self persistentStoreCoordinator];
 
   return managedObjectContext;

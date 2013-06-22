@@ -3,6 +3,7 @@
 #import <UIKit/UIKit.h>
 
 #import "LUAPIClient.h"
+#import "LUAPIConnection.h"
 #import "LUAPIRequest.h"
 #import "LUApnDeviceRequestFactory.h"
 #import "LUBundleRequestFactory.h"

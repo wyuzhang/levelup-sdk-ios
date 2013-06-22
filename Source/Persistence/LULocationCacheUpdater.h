@@ -4,6 +4,8 @@ extern NSString * const LUNextPageURLKey;
 
 @interface LULocationCacheUpdater : NSObject
 
+@property (nonatomic, assign, readonly) BOOL isUpdating;
+
 - (id)initWithDelegate:(id<LULocationCacheUpdaterDelegate>)delegate;
 - (void)startUpdating;
 - (void)stopUpdating;

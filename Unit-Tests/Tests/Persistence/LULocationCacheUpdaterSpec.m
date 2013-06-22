@@ -8,7 +8,7 @@ SPEC_BEGIN(LULocationCacheUpdaterSpec)
 
 describe(@"LULocationCacheUpdater", ^{
   __block LULocationCacheUpdater *updater;
-  __block id<LULocationCacheUpdaterDelegate> delegate;
+  __block NSObject<LULocationCacheUpdaterDelegate> *delegate;
   __block NSManagedObjectContext *testManagedObjectContext;
 
   beforeEach(^{
@@ -39,6 +39,12 @@ describe(@"LULocationCacheUpdater", ^{
 
     LULocationSummaries *page2Summaries = [[LULocationSummaries alloc] initWithLocations:@[location3, location4]
                                                                              nextPageURL:nextPage2];
+
+    it(@"sets isUpdating to YES", ^{
+      [updater startUpdating];
+
+      [[theValue(updater.isUpdating) should] beYes];
+    });
 
     context(@"when there are updates", ^{
       beforeEach(^{
@@ -74,6 +80,8 @@ describe(@"LULocationCacheUpdater", ^{
       it(@"updates the cache with location summary updates across multiple pages", ^{
         [updater startUpdating];
 
+        [[expectFutureValue(theValue(updater.isUpdating)) shouldEventually] beNo];
+
         NSInteger count = [testManagedObjectContext countForFetchRequest:[NSFetchRequest fetchRequestWithEntityName:[LUCachedLocation entityName]]
                                                                    error:nil];
 
@@ -81,13 +89,17 @@ describe(@"LULocationCacheUpdater", ^{
       });
 
       it(@"notifies the delegate", ^{
-        [[[(id)delegate should] receive] locationCacheUpdaterDidFinishWithUpdates:YES];
+        [[[delegate shouldEventually] receive] locationCacheUpdaterDidFinishWithUpdates:YES];
 
         [updater startUpdating];
+
+        [[expectFutureValue(theValue(updater.isUpdating)) shouldEventually] beNo];
       });
 
       it(@"updates the saved nextPageURL in the metadata", ^{
         [updater startUpdating];
+
+        [[expectFutureValue(theValue(updater.isUpdating)) shouldEventually] beNo];
 
         NSDictionary *metadata = [testManagedObjectContext.persistentStoreCoordinator.persistentStores[0] metadata];
         [[metadata[LUNextPageURLKey] should] equal:[nextPage2 absoluteString]];
@@ -106,7 +118,7 @@ describe(@"LULocationCacheUpdater", ^{
         });
 
         it(@"notifies the delegate of the error", ^{
-          [[[(id)delegate should] receive] locationCacheUpdaterDidReceiveNetworkError:networkError];
+          [[[delegate shouldEventually] receive] locationCacheUpdaterDidReceiveNetworkError:networkError];
 
           [updater startUpdating];
         });
@@ -118,9 +130,11 @@ describe(@"LULocationCacheUpdater", ^{
         });
 
         it(@"notifies the delegate of the error", ^{
-          [[(id)delegate should] receive:@selector(locationCacheUpdaterDidReceiveCoreDataError:)];
+          [[[delegate shouldEventually] receiveWithCountAtLeast:1] locationCacheUpdaterDidReceiveCoreDataError:nil];
 
           [updater startUpdating];
+
+          [[expectFutureValue(theValue(updater.isUpdating)) shouldEventually] beNo];
         });
       });
     });
@@ -136,7 +150,7 @@ describe(@"LULocationCacheUpdater", ^{
       });
 
       it(@"notifies the delegate", ^{
-        [[[(id)delegate should] receive] locationCacheUpdaterDidFinishWithUpdates:NO];
+        [[[delegate shouldEventually] receive] locationCacheUpdaterDidFinishWithUpdates:NO];
 
         [updater startUpdating];
       });
@@ -144,13 +158,26 @@ describe(@"LULocationCacheUpdater", ^{
   });
 
   describe(@"stopUpdating", ^{
-    it(@"cancels the current request", ^{
-      NSOperation *fakeRequest = [NSOperation mock];
-      [updater setValue:fakeRequest forKey:@"currentRequest"];
+    context(@"when the updater is updating", ^{
+      beforeEach(^{
+        [updater startUpdating];
+      });
 
-      [[[fakeRequest should] receive] cancel];
+      it(@"sets isUpdating to NO", ^{
+        [updater stopUpdating];
 
-      [updater stopUpdating];
+        [[theValue(updater.isUpdating) should] beNo];
+      });
+
+      it(@"cancels the current request", ^{
+        AFHTTPRequestOperation *fakeOperation = [NSOperation mock];
+        LUAPIConnection *connection = [[LUAPIConnection alloc] initWithAFHTTPRequestOperation:fakeOperation];
+        [updater setValue:connection forKey:@"currentRequest"];
+
+        [[[fakeOperation should] receive] cancel];
+
+        [updater stopUpdating];
+      });
     });
   });
 });

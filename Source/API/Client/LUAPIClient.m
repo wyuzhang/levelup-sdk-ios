@@ -1,4 +1,5 @@
 #import "LUAPIClient.h"
+#import "LUAPIConnection.h"
 #import "LUAPIErrorBuilder.h"
 #import "LUAbstractJSONModelFactory.h"
 #import "LUAPIRequest.h"
@@ -52,9 +53,9 @@ __strong static id _sharedClient = nil;
   _sharedClient = [[self alloc] initWithAPIKey:apiKey developmentMode:developmentMode];
 }
 
-- (NSOperation *)performRequest:(LUAPIRequest *)apiRequest
-                        success:(LUAPISuccessBlock)success
-                        failure:(LUAPIFailureBlock)failure {
+- (LUAPIConnection *)performRequest:(LUAPIRequest *)apiRequest
+                            success:(LUAPISuccessBlock)success
+                            failure:(LUAPIFailureBlock)failure {
   AFJSONRequestOperation *requestOperation =
     [AFJSONRequestOperation JSONRequestOperationWithRequest:apiRequest.urlRequest
                                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
@@ -74,7 +75,7 @@ __strong static id _sharedClient = nil;
 
   [self enqueueHTTPRequestOperation:requestOperation];
 
-  return requestOperation;
+  return [[LUAPIConnection alloc] initWithAFHTTPRequestOperation:requestOperation];
 }
 
 #pragma mark - Private Methods

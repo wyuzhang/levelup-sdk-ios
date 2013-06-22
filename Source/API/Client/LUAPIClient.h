@@ -66,6 +66,7 @@
                                        }];
  */
 
+@class LUAPIConnection;
 @class LUAPIRequest;
 
 typedef void (^LUAPISuccessBlock)(id result);
@@ -123,10 +124,10 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
  @param failure A block to be called if the API call fails. This block takes a single argument, which is an `NSError`
  containing additional information about the error.
 
- @return An NSOperation for the request.
+ @return An `LUAPIConnection` for the request.
  */
-- (NSOperation *)performRequest:(LUAPIRequest *)apiRequest
-                        success:(LUAPISuccessBlock)success
-                        failure:(LUAPIFailureBlock)failure;
+- (LUAPIConnection *)performRequest:(LUAPIRequest *)apiRequest
+                            success:(LUAPISuccessBlock)success
+                            failure:(LUAPIFailureBlock)failure;
 
 @end

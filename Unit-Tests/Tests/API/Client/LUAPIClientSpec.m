@@ -105,10 +105,10 @@ describe(@"LUAPIClient", ^{
       [client performRequest:apiRequest success:nil failure:nil];
     });
 
-    it(@"enqueues a new request operation for the request and returns it", ^{
-      NSOperation *operation = [client performRequest:apiRequest success:nil failure:nil];
+    it(@"enqueues a new request operation for the request and returns an LUAPIConnection", ^{
+      LUAPIConnection *connection = [client performRequest:apiRequest success:nil failure:nil];
 
-      [[[client.operationQueue operations] should] contain:operation];
+      [[[client.operationQueue operations] should] contain:connection.operation];
     });
 
     context(@"when the request succeeds", ^{
