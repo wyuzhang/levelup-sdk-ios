@@ -1,21 +1,21 @@
-#import "LUUserJSONFactory.h"
+#import "LUUserV14JSONFactory.h"
 
-SPEC_BEGIN(LUUserJSONFactorySpec)
+SPEC_BEGIN(LUUserV14JSONFactorySpec)
 
-describe(@"LUUserJSONFactory", ^{
-  __block LUUserJSONFactory *factory;
+describe(@"LUUserV14JSONFactory", ^{
+  __block LUUserV14JSONFactory *factory;
 
   beforeEach(^{
-    factory = [LUUserJSONFactory factory];
+    factory = [LUUserV14JSONFactory factory];
   });
 
   describe(@"createFromAttributes:", ^{
     it(@"parses a JSON dictionary into an LUUser", ^{
-      LUUser *user = [factory createFromAttributes:[LUUser fullJSONObject]];
+      LUUser *user = [factory createFromAttributes:[LUUser fullV14JSONObject]];
 
       [[user.birthdate should] equal:[NSDate fixture]];
-      [[theValue(user.connectedToFacebook) should] beYes];
       [[user.causeID should] equal:@1];
+      [[theValue(user.connectedToFacebook) should] beYes];
       [[user.customAttributes should] equal:@{@"key" : @"value"}];
       [[user.email should] equal:@"test@example.com"];
       [[user.firstName should] equal:@"Test"];

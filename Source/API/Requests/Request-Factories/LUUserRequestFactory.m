@@ -4,6 +4,7 @@
 #import "LUDeviceIdentifier.h"
 #import "LUUser.h"
 #import "LUUserJSONFactory.h"
+#import "LUUserV14JSONFactory.h"
 #import "LUUserParameterBuilder.h"
 #import "LUUserRequestFactory.h"
 
@@ -18,7 +19,7 @@
                                                     path:path
                                               apiVersion:LUAPIVersion14
                                               parameters:nil
-                                            modelFactory:[LUUserJSONFactory factory]];
+                                            modelFactory:[LUUserV14JSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestToConnectToFacebookWithAccessToken:(NSString *)facebookAccessToken {
@@ -40,7 +41,7 @@
                                        path:@"users"
                                  apiVersion:LUAPIVersion14
                                  parameters:params
-                               modelFactory:[LUUserJSONFactory factory]];
+                               modelFactory:[LUUserV14JSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestToCreateUserWithFacebookAccessToken:(NSString *)facebookAccessToken {
@@ -60,7 +61,7 @@
                                        path:@"users"
                                  apiVersion:LUAPIVersion14
                                  parameters:params
-                               modelFactory:[LUUserJSONFactory factory]];
+                               modelFactory:[LUUserV14JSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestToDisconnectFromFacebook {
@@ -88,7 +89,7 @@
                                                     path:path
                                               apiVersion:LUAPIVersion14
                                               parameters:@{@"user" : [LUUserParameterBuilder parametersForUser:user]}
-                                            modelFactory:[LUUserJSONFactory factory]];
+                                            modelFactory:[LUUserV14JSONFactory factory]];
 }
 
 @end

@@ -152,7 +152,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                                  path:@"users/1/facebook_connections"
                            HTTPMethod:@"DELETE"
                         authenticated:YES
-                         responseData:[self responseDataFromFile:@"current_user"]];
+                         responseData:[self responseDataFromFile:@"facebook_disconnected_user"]];
 }
 
 + (LUAPIStub *)stubToGetCampaignWithID:(NSNumber *)campaignID {

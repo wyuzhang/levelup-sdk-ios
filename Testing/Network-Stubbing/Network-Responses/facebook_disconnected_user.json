@@ -16,7 +16,7 @@
     },
     "custom_attributes" : {},
     "email": "john.doe@example.com",
-    "facebook_access_token": "abc123",
+    "facebook_access_token": null,
     "first_name": "John",
     "gender": "male",
     "id": 1,

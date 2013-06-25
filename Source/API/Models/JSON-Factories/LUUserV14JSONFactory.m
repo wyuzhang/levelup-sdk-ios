@@ -1,32 +1,29 @@
-#import "LUCause.h"
-#import "LUCauseJSONFactory.h"
-#import "LUMonetaryValueJSONFactory.h"
+#import "LUMonetaryValue.h"
 #import "LUUser.h"
-#import "LUUserJSONFactory.h"
+#import "LUUserV14JSONFactory.h"
 #import "NSDictionary+ObjectClassAccess.h"
 
-@implementation LUUserJSONFactory
+@implementation LUUserV14JSONFactory
 
 #pragma mark - Public Methods
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
   NSDate *birthdate = [attributes dateForKey:@"born_at"];
-  BOOL connectedToFacebook = [attributes stringForKey:@"facebook_access_token"].length > 0;
+  NSNumber *causeID = [attributes numberForKey:@"cause_id"];
+  BOOL connectedToFacebook = [attributes boolForKey:@"connected_to_facebook"];
   NSDictionary *customAttributes = [attributes dictionaryForKey:@"custom_attributes"];
   NSString *email = [attributes stringForKey:@"email"];
   NSString *firstName = [attributes stringForKey:@"first_name"];
   LUGender gender = [self genderFromString:[attributes stringForKey:@"gender"]];
-  LUMonetaryValue *globalCredit = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"credit"]];
+  LUMonetaryValue *globalCredit = [LUMonetaryValue monetaryValueWithUSCents:[attributes numberForKey:@"global_credit_amount"]];
   NSString *lastName = [attributes stringForKey:@"last_name"];
   NSNumber *merchantsVisitedCount = [attributes numberForKey:@"merchants_visited_count"];
   NSNumber *ordersCount = [attributes numberForKey:@"orders_count"];
   NSDate *termsAcceptedDate = [attributes dateForKey:@"terms_accepted_at"];
-  LUMonetaryValue *totalSavings = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"loyalties_savings"]];
+  LUMonetaryValue *totalSavings = [LUMonetaryValue monetaryValueWithUSCents:[attributes numberForKey:@"total_savings_amount"]];
   NSNumber *userID = [attributes numberForKey:@"id"];
 
-  LUCause *cause = [[LUCauseJSONFactory factory] fromJSONObject:attributes[@"cause"]];
-
-  return [[LUUser alloc] initWithBirthdate:birthdate causeID:cause.causeID connectedToFacebook:connectedToFacebook
+  return [[LUUser alloc] initWithBirthdate:birthdate causeID:causeID connectedToFacebook:connectedToFacebook
                           customAttributes:customAttributes email:email firstName:firstName gender:gender
                               globalCredit:globalCredit lastName:lastName merchantsVisitedCount:merchantsVisitedCount
                                ordersCount:ordersCount termsAcceptedDate:termsAcceptedDate totalSavings:totalSavings
