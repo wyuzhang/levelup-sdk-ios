@@ -8,6 +8,7 @@ extern NSString * const LevelUpAPIBaseURLProduction;
 
 // See LUAPIClient.h for documentation on these error keys and error codes.
 extern NSString * const LUAPIErrorDomain;
+extern NSString * const LUAPIErrorKeyAPIErrors;
 extern NSString * const LUAPIErrorKeyErrorMessage;
 extern NSString * const LUAPIErrorKeyJSONResponse;
 extern NSString * const LUAPIErrorKeyOriginalError;

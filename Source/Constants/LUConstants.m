@@ -9,6 +9,7 @@ NSString * const LevelUpAPIBaseURLDevelopment = @"https://api.staging-levelup.co
 NSString * const LevelUpAPIBaseURLProduction = @"https://api.thelevelup.com/";
 
 NSString * const LUAPIErrorDomain = @"LUAPIErrorDomain";
+NSString * const LUAPIErrorKeyAPIErrors = @"LUAPIErrorKeyAPIErrors";
 NSString * const LUAPIErrorKeyErrorMessage = @"LUAPIErrorKeyErrorMessage";
 NSString * const LUAPIErrorKeyJSONResponse = @"LUAPIErrorKeyJSONResponse";
 NSString * const LUAPIErrorKeyOriginalError = @"LUAPIErrorKeyOriginalError";

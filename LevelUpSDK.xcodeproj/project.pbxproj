@@ -30,6 +30,13 @@
 		025F790017428BF10029FC49 /* LUEmailsRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 025F78FE17428BF10029FC49 /* LUEmailsRequestFactory.h */; };
 		025F790117428BF10029FC49 /* LUEmailsRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F78FF17428BF10029FC49 /* LUEmailsRequestFactory.m */; };
 		025F79041742929E0029FC49 /* LUEmailsRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F790217428FF40029FC49 /* LUEmailsRequestFactorySpec.m */; };
+		0274B83C17739B7800FD5B43 /* LUAPIError.h in Headers */ = {isa = PBXBuildFile; fileRef = 0274B83A17739B7800FD5B43 /* LUAPIError.h */; };
+		0274B83D17739B7800FD5B43 /* LUAPIError.m in Sources */ = {isa = PBXBuildFile; fileRef = 0274B83B17739B7800FD5B43 /* LUAPIError.m */; };
+		0274B84017739BAA00FD5B43 /* LUAPIErrorJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0274B83E17739BAA00FD5B43 /* LUAPIErrorJSONFactory.h */; };
+		0274B84117739BAA00FD5B43 /* LUAPIErrorJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0274B83F17739BAA00FD5B43 /* LUAPIErrorJSONFactory.m */; };
+		0274B8441773A21600FD5B43 /* LUAPIErrorJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0274B8421773A1F700FD5B43 /* LUAPIErrorJSONFactorySpec.m */; };
+		0274B84B1773A37B00FD5B43 /* LUAPIError+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 0274B84A1773A37A00FD5B43 /* LUAPIError+Fixtures.m */; };
+		0274B84D1773A4D200FD5B43 /* LUAPIErrorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0274B84C1773A4D100FD5B43 /* LUAPIErrorSpec.m */; };
 		02823B9917666DB000A5E352 /* merchant_locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 02823B9817666DA300A5E352 /* merchant_locations.json */; };
 		029131DB1760DC8600F74663 /* LUAPIStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 029131DA1760DC8600F74663 /* LUAPIStub.m */; };
 		02941E6516B738AE00EDAF6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6416B738AE00EDAF6E /* AVFoundation.framework */; };
@@ -420,6 +427,14 @@
 		025F78FE17428BF10029FC49 /* LUEmailsRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUEmailsRequestFactory.h; sourceTree = "<group>"; };
 		025F78FF17428BF10029FC49 /* LUEmailsRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUEmailsRequestFactory.m; sourceTree = "<group>"; };
 		025F790217428FF40029FC49 /* LUEmailsRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUEmailsRequestFactorySpec.m; sourceTree = "<group>"; };
+		0274B83A17739B7800FD5B43 /* LUAPIError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIError.h; sourceTree = "<group>"; };
+		0274B83B17739B7800FD5B43 /* LUAPIError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIError.m; sourceTree = "<group>"; };
+		0274B83E17739BAA00FD5B43 /* LUAPIErrorJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIErrorJSONFactory.h; sourceTree = "<group>"; };
+		0274B83F17739BAA00FD5B43 /* LUAPIErrorJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIErrorJSONFactory.m; sourceTree = "<group>"; };
+		0274B8421773A1F700FD5B43 /* LUAPIErrorJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIErrorJSONFactorySpec.m; sourceTree = "<group>"; };
+		0274B8491773A37A00FD5B43 /* LUAPIError+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUAPIError+Fixtures.h"; sourceTree = "<group>"; };
+		0274B84A1773A37A00FD5B43 /* LUAPIError+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUAPIError+Fixtures.m"; sourceTree = "<group>"; };
+		0274B84C1773A4D100FD5B43 /* LUAPIErrorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIErrorSpec.m; sourceTree = "<group>"; };
 		02823B9817666DA300A5E352 /* merchant_locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = merchant_locations.json; sourceTree = "<group>"; };
 		029131D91760DC8600F74663 /* LUAPIStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIStub.h; sourceTree = "<group>"; };
 		029131DA1760DC8600F74663 /* LUAPIStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIStub.m; sourceTree = "<group>"; };
@@ -1058,6 +1073,8 @@
 			children = (
 				C1CAF09B173052A7003B3D01 /* LUAccessToken+Fixtures.h */,
 				C1CAF09C173052A7003B3D01 /* LUAccessToken+Fixtures.m */,
+				0274B8491773A37A00FD5B43 /* LUAPIError+Fixtures.h */,
+				0274B84A1773A37A00FD5B43 /* LUAPIError+Fixtures.m */,
 				C1CAF080173052A7003B3D01 /* LUCampaign+Fixtures.h */,
 				C1CAF081173052A7003B3D01 /* LUCampaign+Fixtures.m */,
 				C1CAF082173052A7003B3D01 /* LUCategory+Fixtures.h */,
@@ -1136,6 +1153,7 @@
 				C1CAF0B0173052A7003B3D01 /* JSON Factories */,
 				C1CAF0D5173052A7003B3D01 /* LUAccessTokenTokenSpec.m */,
 				C1CAF0C5173052A7003B3D01 /* LUAPIModelSpec.m */,
+				0274B84C1773A4D100FD5B43 /* LUAPIErrorSpec.m */,
 				C1CAF0C6173052A7003B3D01 /* LUApnDeviceSpec.m */,
 				C1CAF0C8173052A7003B3D01 /* LUCampaignSpec.m */,
 				C1CAF0C9173052A7003B3D01 /* LUCategorySpec.m */,
@@ -1165,6 +1183,7 @@
 				2523E31D17374C0800FBDFEB /* Helpers */,
 				C1CAF0B1173052A7003B3D01 /* LUAbstractJSONModelFactorySpec.m */,
 				C1CAF0C0173052A7003B3D01 /* LUAccessTokenJSONFactorySpec.m */,
+				0274B8421773A1F700FD5B43 /* LUAPIErrorJSONFactorySpec.m */,
 				C1CAF0B3173052A7003B3D01 /* LUCampaignJSONFactorySpec.m */,
 				C1CAF0B4173052A7003B3D01 /* LUCategoryJSONFactorySpec.m */,
 				63CC1CE61739DB6A0037B65F /* LUCauseAffiliationJSONFactorySpec.m */,
@@ -1301,6 +1320,8 @@
 				C1CAF15E17315414003B3D01 /* JSON Factories */,
 				C1CAF1A717315414003B3D01 /* LUAccessToken.h */,
 				C1CAF1A817315414003B3D01 /* LUAccessToken.m */,
+				0274B83A17739B7800FD5B43 /* LUAPIError.h */,
+				0274B83B17739B7800FD5B43 /* LUAPIError.m */,
 				C1CAF18717315414003B3D01 /* LUAPIModel.h */,
 				C1CAF18817315414003B3D01 /* LUAPIModel.m */,
 				C1CAF18917315414003B3D01 /* LUApnDevice.h */,
@@ -1355,6 +1376,8 @@
 				C1CAF16017315414003B3D01 /* LUAbstractJSONModelFactory.m */,
 				C1CAF17D17315414003B3D01 /* LUAccessTokenJSONFactory.h */,
 				C1CAF17E17315414003B3D01 /* LUAccessTokenJSONFactory.m */,
+				0274B83E17739BAA00FD5B43 /* LUAPIErrorJSONFactory.h */,
+				0274B83F17739BAA00FD5B43 /* LUAPIErrorJSONFactory.m */,
 				C1CAF16317315414003B3D01 /* LUCampaignJSONFactory.h */,
 				C1CAF16417315414003B3D01 /* LUCampaignJSONFactory.m */,
 				C1CAF16517315414003B3D01 /* LUCategoryJSONFactory.h */,
@@ -1651,6 +1674,8 @@
 				25CA82DE176A173C0073383C /* LUPaymentToken.h in Headers */,
 				25CA82E2176A188A0073383C /* LUPaymentTokenJSONFactory.h in Headers */,
 				25CA82E6176A18EE0073383C /* LUPaymentTokenRequestFactory.h in Headers */,
+				0274B83C17739B7800FD5B43 /* LUAPIError.h in Headers */,
+				0274B84017739BAA00FD5B43 /* LUAPIErrorJSONFactory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1920,6 +1945,8 @@
 				25CA82DF176A173C0073383C /* LUPaymentToken.m in Sources */,
 				25CA82E3176A188A0073383C /* LUPaymentTokenJSONFactory.m in Sources */,
 				25CA82E7176A18EE0073383C /* LUPaymentTokenRequestFactory.m in Sources */,
+				0274B83D17739B7800FD5B43 /* LUAPIError.m in Sources */,
+				0274B84117739BAA00FD5B43 /* LUAPIErrorJSONFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2044,6 +2071,9 @@
 				25D43F74176A1DE80051ED2F /* LUPaymentTokenJSONFactorySpec.m in Sources */,
 				25D43F77176A1E2D0051ED2F /* LUPaymentToken+Fixtures.m in Sources */,
 				25D43F79176A1FD40051ED2F /* LUPaymentTokenRequestFactorySpec.m in Sources */,
+				0274B8441773A21600FD5B43 /* LUAPIErrorJSONFactorySpec.m in Sources */,
+				0274B84B1773A37B00FD5B43 /* LUAPIError+Fixtures.m in Sources */,
+				0274B84D1773A4D200FD5B43 /* LUAPIErrorSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

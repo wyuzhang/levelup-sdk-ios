@@ -1,4 +1,5 @@
 #import "LUAccessToken+Fixtures.h"
+#import "LUAPIError+Fixtures.h"
 #import "LUCampaign+Fixtures.h"
 #import "LUCategory+Fixtures.h"
 #import "LUCause+Fixtures.h"

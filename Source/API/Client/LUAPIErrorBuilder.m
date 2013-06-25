@@ -1,5 +1,6 @@
 #import "LUAPIClient.h"
 #import "LUAPIErrorBuilder.h"
+#import "LUAPIErrorJSONFactory.h"
 #import "LUConstants.h"
 
 @interface LUAPIErrorBuilder ()
@@ -30,6 +31,14 @@
 }
 
 #pragma mark - Private Methods (Error Building)
+
+- (NSArray *)apiErrors {
+  id errors = [[LUAPIErrorJSONFactory factory] fromJSONObject:self.JSON];
+
+  if (![errors isKindOfClass:[NSArray class]]) return nil;
+
+  return errors;
+}
 
 - (NSError *)buildError {
   return [NSError errorWithDomain:LUAPIErrorDomain
@@ -68,6 +77,10 @@
 }
 
 - (NSString *)errorMessage {
+  if ([self apiErrors]) {
+    return [[self apiErrors][0] message];
+  }
+
   if (!self.JSON || ![self.JSON isKindOfClass:[NSDictionary class]]) return nil;
 
   NSDictionary *responseDict = (NSDictionary *)self.JSON;
@@ -131,6 +144,10 @@
 
   if ([self response]) {
     userInfo[LUAPIErrorKeyURLResponse] = [self response];
+  }
+
+  if ([self apiErrors]) {
+    userInfo[LUAPIErrorKeyAPIErrors] = [self apiErrors];
   }
 
   return userInfo;

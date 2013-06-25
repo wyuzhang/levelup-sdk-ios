@@ -49,7 +49,9 @@
 
  The `userInfo` dictionary for this `NSError` has keys for several pieces of information:
 
- - `LUAPIErrorKeyErrorMessage`: An optional error message from the server.
+ - `LUAPIErrorKeyAPIErrors`: An optional array of `LUAPIError` objects returned by the server.
+ - `LUAPIErrorKeyErrorMessage`: An optional error message from the server. If multiple errors were returned, this will
+ only contain the first message. `LUAPIErrorKeyAPIErrors` can be used to see all errors.
  - `LUAPIErrorKeyJSONResponse`: An optional JSON response from the server.
  - `LUAPIErrorKeyOriginalError`: If this error was generated from another `NSError`, it is included under this key.
  - `LUAPIErrorKeyURLResponse`: An `NSURLResponse` containing the response.

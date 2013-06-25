@@ -1,4 +1,5 @@
 #import "LUAPIClient.h"
+#import "LUAPIError.h"
 #import "LUAPIErrorBuilder.h"
 #import "LUConstants.h"
 
@@ -145,6 +146,35 @@ describe(@"LUAPIErrorBuilder", ^{
           NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:JSON];
 
           [[result.userInfo[LUAPIErrorKeyErrorMessage] should] equal:JSON[@"error_description"]];
+        });
+      });
+
+      context(@"when the JSON contains an array of v14 errors", ^{
+        NSError *error = errorWithHTTPStatusCode(500);
+        NSArray *JSON = @[@{@"error" : [LUAPIError fullJSONObject]}, @{@"error" : [LUAPIError fullJSONObject2]}];
+
+        it(@"parses the errors and adds them to the userInfo", ^{
+          NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:JSON];
+
+          NSArray *errors = result.userInfo[LUAPIErrorKeyAPIErrors];
+
+          [[errors should] haveCountOf:2];
+
+          [[errors[0] should] beKindOfClass:[LUAPIError class]];
+          [[[errors[0] message] should] equal:JSON[0][@"error"][@"message"]];
+          [[[errors[0] object] should] equal:JSON[0][@"error"][@"object"]];
+          [[[errors[0] property] should] equal:JSON[0][@"error"][@"property"]];
+
+          [[errors[1] should] beKindOfClass:[LUAPIError class]];
+          [[[errors[1] message] should] equal:JSON[1][@"error"][@"message"]];
+          [[[errors[1] object] should] equal:JSON[1][@"error"][@"object"]];
+          [[[errors[1] property] should] equal:JSON[1][@"error"][@"property"]];
+        });
+
+        it(@"sets the first error's message in the userInfo", ^{
+          NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:JSON];
+
+          [[result.userInfo[LUAPIErrorKeyErrorMessage] should] equal:JSON[0][@"error"][@"message"]];
         });
       });
     });
