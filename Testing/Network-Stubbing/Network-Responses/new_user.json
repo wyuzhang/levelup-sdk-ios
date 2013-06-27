@@ -3,7 +3,7 @@
     "born_at": null,
     "cause_id" : null,
     "connected_to_facebook" : false,
-    "custom_attributes" : {},
+    "custom_attributes" : null,
     "email": "test@example.com",
     "first_name": "Test",
     "gender": null,

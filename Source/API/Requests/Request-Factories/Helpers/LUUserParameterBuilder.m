@@ -30,7 +30,7 @@
     [self addKey:@"password" toDictionary:params ifValuePresent:user.password];
   }
 
-  [self addKey:@"terms_accepted_at" toDictionary:params ifValuePresent:[user.termsAcceptedDate iso8601DateTimeString]];
+  params[@"terms_accepted"] = @(user.termsAccepted);
 
   return params;
 }

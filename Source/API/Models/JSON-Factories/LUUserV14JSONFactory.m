@@ -19,15 +19,15 @@
   NSString *lastName = [attributes stringForKey:@"last_name"];
   NSNumber *merchantsVisitedCount = [attributes numberForKey:@"merchants_visited_count"];
   NSNumber *ordersCount = [attributes numberForKey:@"orders_count"];
-  NSDate *termsAcceptedDate = [attributes dateForKey:@"terms_accepted_at"];
+  BOOL termsAccepted = [attributes dateForKey:@"terms_accepted_at"] != nil;
   LUMonetaryValue *totalSavings = [LUMonetaryValue monetaryValueWithUSCents:[attributes numberForKey:@"total_savings_amount"]];
   NSNumber *userID = [attributes numberForKey:@"id"];
 
   return [[LUUser alloc] initWithBirthdate:birthdate causeID:causeID connectedToFacebook:connectedToFacebook
                           customAttributes:customAttributes email:email firstName:firstName gender:gender
                               globalCredit:globalCredit lastName:lastName merchantsVisitedCount:merchantsVisitedCount
-                               ordersCount:ordersCount termsAcceptedDate:termsAcceptedDate totalSavings:totalSavings
-                                      userID:userID];
+                               ordersCount:ordersCount termsAccepted:termsAccepted totalSavings:totalSavings
+                                    userID:userID];
 }
 
 - (NSString *)rootKey {

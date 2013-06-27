@@ -74,9 +74,9 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, copy) NSString *password;
 
 /**
- The time at which the user accepted the LevelUp Terms & Conditions.
+ Specifies if the user has accepted the LevelUp Terms & Conditions.
  */
-@property (nonatomic, copy) NSDate *termsAcceptedDate;
+@property (nonatomic, assign) BOOL termsAccepted;
 
 /**
  The total amount of money that the user has saved using LevelUp.
@@ -92,7 +92,6 @@ typedef NS_ENUM(NSInteger, LUGender) {
        customAttributes:(NSDictionary *)customAttributes email:(NSString *)email firstName:(NSString *)firstName
                  gender:(LUGender)gender globalCredit:(LUMonetaryValue *)globalCredit lastName:(NSString *)lastName
     merchantsVisitedCount:(NSNumber *)merchangsVisitedCount ordersCount:(NSNumber *)ordersCount
-      termsAcceptedDate:(NSDate *)termsAcceptedDate totalSavings:(LUMonetaryValue *)totalSavings
-                 userID:(NSNumber *)userID;
+          termsAccepted:(BOOL)termsAccepted totalSavings:(LUMonetaryValue *)totalSavings userID:(NSNumber *)userID;
 
 @end

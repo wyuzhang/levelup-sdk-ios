@@ -1,5 +1,4 @@
 #import "LUUser.h"
-#import "NSDate+StringFormats.h"
 
 NSString * const GenderMale = @"male";
 NSString * const GenderFemale = @"female";
@@ -13,8 +12,7 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
        customAttributes:(NSDictionary *)customAttributes email:(NSString *)email firstName:(NSString *)firstName
                  gender:(LUGender)gender globalCredit:(LUMonetaryValue *)globalCredit lastName:(NSString *)lastName
   merchantsVisitedCount:(NSNumber *)merchangsVisitedCount ordersCount:(NSNumber *)ordersCount
-      termsAcceptedDate:(NSDate *)termsAcceptedDate totalSavings:(LUMonetaryValue *)totalSavings
-                 userID:(NSNumber *)userID {
+      termsAccepted:(BOOL)termsAccepted totalSavings:(LUMonetaryValue *)totalSavings userID:(NSNumber *)userID {
   self = [super init];
   if (!self) return nil;
 
@@ -29,7 +27,7 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
   _lastName = lastName;
   _merchantsVisitedCount = merchangsVisitedCount;
   _ordersCount = ordersCount;
-  _termsAcceptedDate = termsAcceptedDate;
+  _termsAccepted = termsAccepted;
   _totalSavings = totalSavings;
   _userID = userID;
 
@@ -40,10 +38,10 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUUser [birthdate=%@, causeID=%@, connectedToFacebook=%@, customAttributes=%@, email=%@, firstName=%@, gender=%@, globalCredit=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, termsAcceptedDate=%@, totalSavings=%@]",
+          @"LUUser [birthdate=%@, causeID=%@, connectedToFacebook=%@, customAttributes=%@, email=%@, firstName=%@, gender=%@, globalCredit=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, termsAccepted=%@, totalSavings=%@]",
           self.birthdate, self.causeID, @(self.connectedToFacebook), self.customAttributes, self.email,
           self.firstName, [self genderString], self.globalCredit, self.userID, self.lastName, self.merchantsVisitedCount,
-          self.ordersCount, self.termsAcceptedDate, self.totalSavings];
+          self.ordersCount, @(self.termsAccepted), self.totalSavings];
 }
 
 - (NSString *)description {

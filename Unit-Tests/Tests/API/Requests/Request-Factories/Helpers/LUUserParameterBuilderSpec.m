@@ -20,7 +20,7 @@ describe(@"LUUserParameterBuilder", ^{
       user.gender = LUGenderMale;
       user.lastName = @"Smith";
       user.password = @"test123";
-      user.termsAcceptedDate = [NSDate distantPast];
+      user.termsAccepted = YES;
     });
 
     it(@"returns parameters for the user, plus the device identifier", ^{
@@ -36,7 +36,7 @@ describe(@"LUUserParameterBuilder", ^{
         @"gender" : @"male",
         @"last_name" : user.lastName,
         @"password" : user.password,
-        @"terms_accepted_at" : [user.termsAcceptedDate iso8601DateTimeString]
+        @"terms_accepted" : @YES
       };
 
       [[[LUUserParameterBuilder parametersForUser:user] should] equal:expectedParams];

@@ -15,7 +15,7 @@
                                   lastName:@"Test"
                      merchantsVisitedCount:@5
                                ordersCount:@10
-                         termsAcceptedDate:[NSDate distantPast]
+                             termsAccepted:YES
                               totalSavings:[LUMonetaryValue monetaryValueWithUSD:@1]
                                     userID:@1];
 }

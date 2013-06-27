@@ -3,7 +3,7 @@
     "born_at": "1980-01-01T00:00:00-05:00",
     "cause_id" : 1,
     "connected_to_facebook": false,
-    "custom_attributes" : {},
+    "custom_attributes" : null,
     "email": "john.doe@example.com",
     "first_name": "John",
     "gender": "male",

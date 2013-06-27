@@ -18,16 +18,18 @@
   return [[NSDate iso8601DateTimeFormatter] dateFromString:finalDateString];
 }
 
+- (NSString *)iso8601DateTimeString {
+  return [[NSDate iso8601DateTimeFormatter] stringFromDate:self];
+}
+
+#pragma mark - Private Methods
+
 + (NSDateFormatter *)iso8601DateTimeFormatter {
   NSDateFormatter *iso8601DateTimeFormatter = [[NSDateFormatter alloc] init];
   [iso8601DateTimeFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZ"];
   [iso8601DateTimeFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
 
   return iso8601DateTimeFormatter;
-}
-
-- (NSString *)iso8601DateTimeString {
-  return [[NSDate iso8601DateTimeFormatter] stringFromDate:self];
 }
 
 @end

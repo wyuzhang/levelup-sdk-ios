@@ -24,7 +24,7 @@ describe(@"LUUserV14JSONFactory", ^{
       [[user.lastName should] equal:@"User"];
       [[user.merchantsVisitedCount should] equal:@5];
       [[user.ordersCount should] equal:@10];
-      [[user.termsAcceptedDate should] equal:[NSDate fixture]];
+      [[theValue(user.termsAccepted) should] beYes];
       [[user.totalSavings should] equal:[LUMonetaryValue fullMonetaryValue]];
       [[user.userID should] equal:@1];
     });

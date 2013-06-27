@@ -13,11 +13,8 @@
                                      postalCode:(NSString *)postalCode;
 + (LUAPIStub *)stubToCreateGlobalClaimForCohortCode:(NSString *)code;
 + (LUAPIStub *)stubToCreateTicket:(NSString *)body;
++ (LUAPIStub *)stubToCreateUser:(LUUser *)user;
 + (LUAPIStub *)stubToCreateUserWithFacebookAccessToken:(NSString *)facebookAccessToken;
-+ (LUAPIStub *)stubToCreateUserWithFirstName:(NSString *)firstName
-                                    lastName:(NSString *)lastName
-                                       email:(NSString *)email
-                                    password:(NSString *)password;
 + (LUAPIStub *)stubToDeleteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToFacebookConnectWithFacebookAccessToken:(NSString *)facebookAccessToken;
 + (LUAPIStub *)stubToFacebookDisconnect;
@@ -45,17 +42,6 @@
 + (LUAPIStub *)stubToPromoteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToResetPasswordRequest;
 + (LUAPIStub *)stubToSetCauseAffiliation:(LUCauseAffiliation *)causeAffiliation;
-+ (LUAPIStub *)stubToUpdateAdditionalInfoWithFirstName:(NSString *)firstName
-                                              lastName:(NSString *)lastName
-                                                 email:(NSString *)email
-                                                gender:(NSString *)gender
-                                              birthday:(NSDate *)birthday __attribute__((deprecated));
-+ (LUAPIStub *)stubToUpdateProfileWithFirstName:(NSString *)firstName
-                                       lastName:(NSString *)lastName
-                                          email:(NSString *)email
-                                    newPassword:(NSString *)newPassword
-                                       birthday:(NSDate *)birthday
-                                         gender:(NSString *)gender __attribute__((deprecated));
 + (LUAPIStub *)stubToUpdateUser:(LUUser *)user;
 
 @end
