@@ -51,7 +51,7 @@
   [OHHTTPStubs removeAllRequestHandlers];
 
   [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-    for (LUAPIStub *stub in self.stubs) {
+    for (LUAPIStub *stub in [self.stubs reverseObjectEnumerator]) {
       if ([stub matchesRequest:request]) {
         if (onlyCheck) {
           return OHHTTPStubsResponseUseStub;
