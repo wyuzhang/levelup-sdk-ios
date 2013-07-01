@@ -1,7 +1,6 @@
 #import "LUAPIStub.h"
 #import "LUAPIStubbing.h"
 #import "LUConstants.h"
-#import "Kiwi.h"
 #import <OHHTTPStubs/OHHTTPStubs.h>
 
 @interface LUAPIStubbing ()
@@ -40,8 +39,6 @@
 
   [OHHTTPStubs removeAllRequestHandlers];
   [OHHTTPStubs setEnabled:NO];
-
-  [NSDate clearStubs];
 }
 
 - (void)addStub:(LUAPIStub *)stub {

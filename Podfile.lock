@@ -7,7 +7,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 1.1.0)
-  - Kiwi (~> 2.0.4)
+  - Kiwi (~> 2.0.6)
   - LUKeychainAccess (~> 1.0.0)
   - OHHTTPStubs (~> 1.1.2)
   - ZXingObjC (~> 2.0.2)
