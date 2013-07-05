@@ -1,6 +1,11 @@
 #import "LUClaim+Fixtures.h"
+#import "LUClaimJSONFactory.h"
 
 @implementation LUClaim (Fixtures)
+
++ (LUClaim *)fullClaim {
+  return [[LUClaimJSONFactory factory] fromJSONObject:[self fullJSONObject]];
+}
 
 + (NSDictionary *)fullJSONObject {
   return @{

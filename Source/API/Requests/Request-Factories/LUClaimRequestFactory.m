@@ -3,6 +3,7 @@
 #import "LUClaimJSONFactory.h"
 #import "LUClaimRequestFactory.h"
 #import "LUCohort.h"
+#import "LULegacyLoyaltyClaimJSONFactory.h"
 
 @implementation LUClaimRequestFactory
 
@@ -14,7 +15,7 @@
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
                                                     path:path
                                               apiVersion:LUAPIVersion13
-                                              parameters:@{@"claim" : @{@"cohort_code" : cohort.code }}
+                                              parameters:@{@"claim" : @{@"cohort_code" : cohort.code}}
                                             modelFactory:[LUClaimJSONFactory factory]];
 }
 
@@ -25,7 +26,7 @@
                                        path:path
                                  apiVersion:LUAPIVersion13
                                  parameters:@{@"legacy_id" : legacyID}
-                               modelFactory:[LUClaimJSONFactory factory]];
+                               modelFactory:[LULegacyLoyaltyClaimJSONFactory factory]];
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "LUCreditCard+Fixtures.h"
 #import "LUDonation+Fixtures.h"
 #import "LUInterstitialAction+Fixtures.h"
+#import "LULegacyLoyaltyClaim+Fixtures.h"
 #import "LULocation+Fixtures.h"
 #import "LULoyalty+Fixtures.h"
 #import "LUMerchant+Fixtures.h"

@@ -35,6 +35,7 @@
 #import "LUCreditCard.h"
 #import "LUDonation.h"
 #import "LUInterstitialAction.h"
+#import "LULegacyLoyaltyClaim.h"
 #import "LULocation.h"
 #import "LULoyalty.h"
 #import "LUMerchant.h"

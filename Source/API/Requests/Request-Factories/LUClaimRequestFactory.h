@@ -18,8 +18,7 @@
 /**
  Builds a request to claim a legacy loyalty campaign.
 
- On success, this request will return an `NSDictionary` with two keys: "claim" and "merchant", which have an `LUClaim`
- and `LUMerchant` as values, respectively.
+ On success, this request will return an `LULegacyLoyaltyClaim`.
 
  @param legacyID An identifying string. For example, a user's loyalty card number.
  @param campaignID The ID of the campaign to claim.
