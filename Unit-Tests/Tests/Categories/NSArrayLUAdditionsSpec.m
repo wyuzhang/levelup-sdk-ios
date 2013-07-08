@@ -3,12 +3,12 @@
 SPEC_BEGIN(NSArrayLUAdditionsSpec)
 
 describe(@"NSArray", ^{
-  describe(@"firstObject", ^{
+  describe(@"lu_firstObject", ^{
     context(@"when the array is empty", ^{
       NSArray *array = [NSArray array];
 
       it(@"is nil", ^{
-        [[array firstObject] shouldBeNil];
+        [[array lu_firstObject] shouldBeNil];
       });
     });
 
@@ -16,7 +16,7 @@ describe(@"NSArray", ^{
       NSArray *array = @[@1, @2, @3];
 
       it(@"is the first object", ^{
-        [[[array firstObject] should] equal:@1];
+        [[[array lu_firstObject] should] equal:@1];
       });
     });
   });
@@ -25,7 +25,7 @@ describe(@"NSArray", ^{
     it(@"runs the block for each element in the array, returning a new array with the results", ^{
       NSArray *numbers = @[@1, @2, @3];
 
-      NSArray *numbersToStrings = [numbers mappedArrayWithBlock:^(id obj) {
+      NSArray *numbersToStrings = [numbers lu_mappedArrayWithBlock:^(id obj) {
         return [obj stringValue];
       }];
 

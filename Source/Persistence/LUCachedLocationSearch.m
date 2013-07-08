@@ -38,7 +38,7 @@
     [locations setArray:[locations subarrayWithRange:NSMakeRange(0, self.limit)]];
   }
 
-  return [locations mappedArrayWithBlock:^(LUCachedLocation *cachedLocation) {
+  return [locations lu_mappedArrayWithBlock:^(LUCachedLocation *cachedLocation) {
     return [cachedLocation toLocation];
   }];
 }

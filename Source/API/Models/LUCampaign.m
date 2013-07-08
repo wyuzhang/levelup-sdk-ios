@@ -51,7 +51,7 @@ NSString * const LUCohortTypeDefaultTwitter = @"default_twitter";
 #pragma mark - Public Methods
 
 - (NSString *)confirmationText {
-  return [self.confirmationHTML stringByStrippingHTML];
+  return [self.confirmationHTML lu_stringByStrippingHTML];
 }
 
 - (NSURL *)imageURL {
@@ -63,7 +63,7 @@ NSString * const LUCohortTypeDefaultTwitter = @"default_twitter";
 }
 
 - (NSString *)offerText {
-  return [self.offerHTML stringByStrippingHTML];
+  return [self.offerHTML lu_stringByStrippingHTML];
 }
 
 - (NSString *)shareMessageForEmailBody {

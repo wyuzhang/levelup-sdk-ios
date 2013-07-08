@@ -6,54 +6,54 @@
 
 #pragma mark - Public Methods
 
-- (NSArray *)arrayForKey:(id)aKey {
-  return [self objectForKey:aKey ofClass:[NSArray class]];
+- (NSArray *)lu_arrayForKey:(id)aKey {
+  return [self lu_objectForKey:aKey ofClass:[NSArray class]];
 }
 
-- (BOOL)boolForKey:(id)aKey {
-  NSNumber *numberValue = [self numberForKey:aKey];
+- (BOOL)lu_boolForKey:(id)aKey {
+  NSNumber *numberValue = [self lu_numberForKey:aKey];
   if (!numberValue) return NO;
 
   return [numberValue boolValue];
 }
 
-- (NSDate *)dateForKey:(id)aKey {
-  NSString *stringValue = [self stringForKey:aKey];
+- (NSDate *)lu_dateForKey:(id)aKey {
+  NSString *stringValue = [self lu_stringForKey:aKey];
   if (!stringValue) return nil;
 
-  return [NSDate dateFromIso8601DateTimeString:stringValue];
+  return [NSDate lu_dateFromIso8601DateTimeString:stringValue];
 }
 
-- (NSDictionary *)dictionaryForKey:(id)aKey {
-  return [self objectForKey:aKey ofClass:[NSDictionary class]];
+- (NSDictionary *)lu_dictionaryForKey:(id)aKey {
+  return [self lu_objectForKey:aKey ofClass:[NSDictionary class]];
 }
 
-- (float)floatForKey:(id)aKey {
-  NSNumber *numberValue = [self numberForKey:aKey];
+- (float)lu_floatForKey:(id)aKey {
+  NSNumber *numberValue = [self lu_numberForKey:aKey];
   if (!numberValue) return 0.0f;
 
   return [numberValue floatValue];
 }
 
-- (NSNumber *)numberForKey:(id)aKey {
-  NSNumber *number = [self objectForKey:aKey ofClass:[NSNumber class]];
+- (NSNumber *)lu_numberForKey:(id)aKey {
+  NSNumber *number = [self lu_objectForKey:aKey ofClass:[NSNumber class]];
   if (number) return number;
 
-  NSString *string = [self stringForKey:aKey];
+  NSString *string = [self lu_stringForKey:aKey];
   if (!string) return nil;
 
   NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
   return [formatter numberFromString:string];
 }
 
-- (NSString *)stringForKey:(id)aKey {
-  NSString *string = [self objectForKey:aKey ofClass:[NSString class]];
+- (NSString *)lu_stringForKey:(id)aKey {
+  NSString *string = [self lu_objectForKey:aKey ofClass:[NSString class]];
   if (string.length == 0) return nil;
   return string;
 }
 
-- (NSURL *)URLForKey:(id)aKey {
-  NSString *string = [self objectForKey:aKey ofClass:[NSString class]];
+- (NSURL *)lu_URLForKey:(id)aKey {
+  NSString *string = [self lu_objectForKey:aKey ofClass:[NSString class]];
   if (!string) return nil;
 
   return [NSURL URLWithString:string];
@@ -61,7 +61,7 @@
 
 #pragma mark - Private Methods
 
-- (id)objectForKey:(id)aKey ofClass:(Class)aClass {
+- (id)lu_objectForKey:(id)aKey ofClass:(Class)aClass {
   id value = [self objectForKey:aKey];
   if (!value || ![value isKindOfClass:aClass]) return nil;
 

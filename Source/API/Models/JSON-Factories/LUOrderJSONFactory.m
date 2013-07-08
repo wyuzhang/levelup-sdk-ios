@@ -15,23 +15,23 @@
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
   LUMonetaryValue *balance = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"balance"]];
-  BOOL closed = [attributes boolForKey:@"bundle_closed"];
-  NSDate *createdDate = [NSDate dateFromIso8601DateTimeString:attributes[@"created_at"]];
+  BOOL closed = [attributes lu_boolForKey:@"bundle_closed"];
+  NSDate *createdDate = [NSDate lu_dateFromIso8601DateTimeString:attributes[@"created_at"]];
   LUMonetaryValue *credit = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"credit"]];
   LUDonation *donation = [[LUDonationJSONFactory factory] fromJSONObject:attributes[@"donation"]];
   LUMonetaryValue *earn = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"earn"]];
   LUInterstitialAction *interstitialAction = [[LUInterstitialActionJSONFactory factory] fromJSONObject:attributes[@"interstitial_action"]];
   LULocation *location = [[LULocationJSONFactory factory] fromJSONObject:attributes[@"location"]];
   LUMerchant *merchant = [[LUMerchantJSONFactory factory] fromJSONObject:attributes[@"merchant"]];
-  NSNumber *orderID = [attributes numberForKey:@"id"];
-  NSDate *refundedDate = [attributes dateForKey:@"refunded_at"];
+  NSNumber *orderID = [attributes lu_numberForKey:@"id"];
+  NSDate *refundedDate = [attributes lu_dateForKey:@"refunded_at"];
   LUMonetaryValue *spend = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"spend"]];
-  LUOrderState state = [self stateFromString:[attributes stringForKey:@"state"]];
+  LUOrderState state = [self stateFromString:[attributes lu_stringForKey:@"state"]];
   LUMonetaryValue *tip = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"tip"]];
   LUMonetaryValue *total = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"total"]];
 
   LULoyaltyJSONFactory *loyaltyJSONFactory = [LULoyaltyJSONFactory factory];
-  loyaltyJSONFactory.loyaltyEnabled = [attributes[@"merchant"] boolForKey:@"loyalty_enabled"];
+  loyaltyJSONFactory.loyaltyEnabled = [attributes[@"merchant"] lu_boolForKey:@"loyalty_enabled"];
   LULoyalty *loyalty = [loyaltyJSONFactory fromJSONObject:attributes[@"loyalty"]];
 
   return [[LUOrder alloc] initWithBalance:balance closed:closed createdDate:createdDate

@@ -1,6 +1,6 @@
 @interface NSArray (LUAdditions)
 
-- (id)firstObject;
-- (NSArray *)mappedArrayWithBlock:(id (^)(id obj))block;
+- (id)lu_firstObject;
+- (NSArray *)lu_mappedArrayWithBlock:(id (^)(id obj))block;
 
 @end

@@ -28,7 +28,7 @@ describe(@"LUUserParameterBuilder", ^{
       [LUDeviceIdentifier stub:@selector(deviceIdentifier) andReturn:deviceIdentifer];
 
       NSDictionary *expectedParams = @{
-        @"born_at" : [user.birthdate iso8601DateTimeString],
+        @"born_at" : [user.birthdate lu_iso8601DateTimeString],
         @"custom_attributes" : user.customAttributes,
         @"device_identifier" : deviceIdentifer,
         @"email" : user.email,

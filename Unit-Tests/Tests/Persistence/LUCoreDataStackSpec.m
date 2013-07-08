@@ -41,7 +41,7 @@ describe(@"LUCoreDataStack", ^{
       NSManagedObjectContext *testManagedObjectContext = [NSManagedObjectContext testContext];
       [LUCoreDataStack stub:@selector(managedObjectContext) andReturn:testManagedObjectContext];
 
-      persistentStore = [testManagedObjectContext.persistentStoreCoordinator.persistentStores firstObject];
+      persistentStore = [testManagedObjectContext.persistentStoreCoordinator.persistentStores lu_firstObject];
       [persistentStore setMetadata:metadata];
       [testManagedObjectContext save:nil];
     });

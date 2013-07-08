@@ -6,7 +6,7 @@ SPEC_BEGIN(NSDictionaryObjectClassAccessSpec)
 describe(@"NSDictionary", ^{
   // Public Methods
 
-  describe(@"boolForKey:", ^{
+  describe(@"lu_boolForKey:", ^{
     NSDictionary *dict = @{
       @"0" : @"0",
       @"1" : @"1",
@@ -15,31 +15,31 @@ describe(@"NSDictionary", ^{
     };
 
     it(@"returns NO for '0' and YES for '1'", ^{
-      [[theValue([dict boolForKey:@"0"]) should] beNo];
-      [[theValue([dict boolForKey:@"1"]) should] beYes];
+      [[theValue([dict lu_boolForKey:@"0"]) should] beNo];
+      [[theValue([dict lu_boolForKey:@"1"]) should] beYes];
     });
 
     it(@"returns NO for 0 and YES for 1", ^{
-      [[theValue([dict boolForKey:@0]) should] beNo];
-      [[theValue([dict boolForKey:@1]) should] beYes];
+      [[theValue([dict lu_boolForKey:@0]) should] beNo];
+      [[theValue([dict lu_boolForKey:@1]) should] beYes];
     });
 
     it(@"returns NO for anything other a string or number", ^{
       NSDictionary *dictionary = @{@"array" : @[]};
 
-      [[theValue([dictionary boolForKey:@"array"]) should] beNo];
-      [[theValue([dictionary boolForKey:@"nil"]) should] beNo];
+      [[theValue([dictionary lu_boolForKey:@"array"]) should] beNo];
+      [[theValue([dictionary lu_boolForKey:@"nil"]) should] beNo];
     });
   });
 
-  describe(@"dateForKey:", ^{
+  describe(@"lu_dateForKey:", ^{
     context(@"when the value is an ISO 8601 date string", ^{
       NSDictionary *dictionary = @{@"date" : @"2012-12-04T18:10:45-05:00"};
 
       it(@"returns the string converted to an NSDate", ^{
-        NSDate *expected = [NSDate dateFromIso8601DateTimeString:dictionary[@"date"]];
+        NSDate *expected = [NSDate lu_dateFromIso8601DateTimeString:dictionary[@"date"]];
 
-        [[[dictionary dateForKey:@"date"] should] equal:expected];
+        [[[dictionary lu_dateForKey:@"date"] should] equal:expected];
       });
     });
 
@@ -47,7 +47,7 @@ describe(@"NSDictionary", ^{
       NSDictionary *dictionary = @{@"not date" : @"not a date"};
 
       it(@"returns nil", ^{
-        [[dictionary dateForKey:@"not date"] shouldBeNil];
+        [[dictionary lu_dateForKey:@"not date"] shouldBeNil];
       });
     });
 
@@ -55,17 +55,17 @@ describe(@"NSDictionary", ^{
       NSDictionary *dictionary = @{@"not date" : @0};
 
       it(@"returns nil", ^{
-        [[dictionary dateForKey:@"not date"] shouldBeNil];
+        [[dictionary lu_dateForKey:@"not date"] shouldBeNil];
       });
     });
   });
 
-  describe(@"dictionaryForKey:", ^{
+  describe(@"lu_dictionaryForKey:", ^{
     context(@"when the value is a dictionary", ^{
       NSDictionary *dictionary = @{@"dict" : @{@"another" : @"dictionary"}};
 
       it(@"returns the dictionary", ^{
-        [[[dictionary dictionaryForKey:@"dict"] should] equal:dictionary[@"dict"]];
+        [[[dictionary lu_dictionaryForKey:@"dict"] should] equal:dictionary[@"dict"]];
       });
     });
 
@@ -73,7 +73,7 @@ describe(@"NSDictionary", ^{
       NSDictionary *dictionary = @{@"not dictionary" : @"a string"};
 
       it(@"returns nil", ^{
-        [[dictionary numberForKey:@"not dictionary"] shouldBeNil];
+        [[dictionary lu_dictionaryForKey:@"not dictionary"] shouldBeNil];
       });
     });
 
@@ -81,17 +81,17 @@ describe(@"NSDictionary", ^{
       NSDictionary *dictionary = @{@"not number" : @"string"};
 
       it(@"returns nil", ^{
-        [[dictionary numberForKey:@"not number"] shouldBeNil];
+        [[dictionary lu_dictionaryForKey:@"not number"] shouldBeNil];
       });
     });
   });
 
-  describe(@"floatForKey:", ^{
+  describe(@"lu_floatForKey:", ^{
     context(@"when the value is a float as a string", ^{
       NSDictionary *dictionary = @{@"float" : @"1.5"};
 
       it(@"returns the string converted to a float", ^{
-        [[theValue([dictionary floatForKey:@"float"]) should] equal:theValue(1.5f)];
+        [[theValue([dictionary lu_floatForKey:@"float"]) should] equal:theValue(1.5f)];
       });
     });
 
@@ -99,7 +99,7 @@ describe(@"NSDictionary", ^{
       NSDictionary *dictionary = @{@"float" : @1.5};
 
       it(@"the number as a float", ^{
-        [[theValue([dictionary floatForKey:@"float"]) should] equal:theValue(1.5f)];
+        [[theValue([dictionary lu_floatForKey:@"float"]) should] equal:theValue(1.5f)];
       });
     });
 
@@ -107,7 +107,7 @@ describe(@"NSDictionary", ^{
       NSDictionary *dictionary = @{@"not float" : @"string"};
 
       it(@"returns 0.0f", ^{
-        [[theValue([dictionary floatForKey:@"not float"]) should] equal:theValue(0.0f)];
+        [[theValue([dictionary lu_floatForKey:@"not float"]) should] equal:theValue(0.0f)];
       });
     });
 
@@ -115,17 +115,17 @@ describe(@"NSDictionary", ^{
       NSDictionary *dictionary = @{@"not float" : @[]};
 
       it(@"returns 0.0f", ^{
-        [[theValue([dictionary floatForKey:@"not float"]) should] equal:theValue(0.0f)];
+        [[theValue([dictionary lu_floatForKey:@"not float"]) should] equal:theValue(0.0f)];
       });
     });
   });
 
-  describe(@"numberForKey:", ^{
+  describe(@"lu_numberForKey:", ^{
     context(@"when the value is a number", ^{
       NSDictionary *dictionary = @{@"number" : @1};
 
       it(@"returns the number", ^{
-        [[[dictionary numberForKey:@"number"] should] equal:@1];
+        [[[dictionary lu_numberForKey:@"number"] should] equal:@1];
       });
     });
 
@@ -133,7 +133,7 @@ describe(@"NSDictionary", ^{
       NSDictionary *dictionary = @{@"number" : @"1"};
 
       it(@"returns the string converted to a number", ^{
-        [[[dictionary numberForKey:@"number"] should] equal:@1];
+        [[[dictionary lu_numberForKey:@"number"] should] equal:@1];
       });
     });
 
@@ -141,17 +141,17 @@ describe(@"NSDictionary", ^{
       NSDictionary *dictionary = @{@"not number" : @"string"};
 
       it(@"returns nil", ^{
-        [[dictionary numberForKey:@"not number"] shouldBeNil];
+        [[dictionary lu_numberForKey:@"not number"] shouldBeNil];
       });
     });
   });
 
-  describe(@"stringForKey:", ^{
+  describe(@"lu_stringForKey:", ^{
     context(@"when the value is a string", ^{
       NSDictionary *dictionary = @{@"a string" : @"string"};
 
       it(@"returns the string", ^{
-        [[[dictionary stringForKey:@"a string"] should] equal:@"string"];
+        [[[dictionary lu_stringForKey:@"a string"] should] equal:@"string"];
       });
     });
 
@@ -159,7 +159,7 @@ describe(@"NSDictionary", ^{
       NSDictionary *dictionary = @{@"not a string" : @0};
 
       it(@"returns nil", ^{
-        [[dictionary stringForKey:@"not a string"] shouldBeNil];
+        [[dictionary lu_stringForKey:@"not a string"] shouldBeNil];
       });
     });
 
@@ -167,17 +167,17 @@ describe(@"NSDictionary", ^{
       NSDictionary *dictionary = @{@"empty string" : @""};
 
       it(@"returns nil", ^{
-        [[dictionary stringForKey:@"empty string"] shouldBeNil];
+        [[dictionary lu_stringForKey:@"empty string"] shouldBeNil];
       });
     });
   });
 
-  describe(@"URLForKey:", ^{
+  describe(@"lu_URLForKey:", ^{
     context(@"when the value is a URL", ^{
       NSDictionary *dictionary = @{@"url" : @"http://example.com"};
 
       it(@"returns the URL as an NSURL", ^{
-        [[[dictionary URLForKey:@"url"] should] equal:[NSURL URLWithString:dictionary[@"url"]]];
+        [[[dictionary lu_URLForKey:@"url"] should] equal:[NSURL URLWithString:dictionary[@"url"]]];
       });
     });
 
@@ -185,7 +185,7 @@ describe(@"NSDictionary", ^{
       NSDictionary *dictionary = @{@"not url" : @"bad url"};
 
       it(@"returns nil", ^{
-        [[dictionary URLForKey:@"not url"] shouldBeNil];
+        [[dictionary lu_URLForKey:@"not url"] shouldBeNil];
       });
     });
   });

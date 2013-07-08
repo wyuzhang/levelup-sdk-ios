@@ -1,5 +1,5 @@
 @interface NSData (HexString)
 
-- (NSString *)hexString;
+- (NSString *)lu_hexString;
 
 @end

@@ -82,7 +82,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
   NSMutableDictionary *responseUserJSON = [userJSON mutableCopy];
   if (user.termsAccepted) {
-    responseUserJSON[@"terms_accepted_at"] = [[NSDate date] iso8601DateTimeString];
+    responseUserJSON[@"terms_accepted_at"] = [[NSDate date] lu_iso8601DateTimeString];
   }
   NSDictionary *responseJSON = @{ @"user" : responseUserJSON };
 

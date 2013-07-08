@@ -6,7 +6,7 @@
 
 + (NSDictionary *)fullJSONObject {
   return @{
-    @"born_at" : [[NSDate fixture] iso8601DateTimeString],
+    @"born_at" : [[NSDate fixture] lu_iso8601DateTimeString],
     @"cause" : [LUCause fullJSONObject],
     @"credit" : [LUMonetaryValue fullJSONObject],
     @"custom_attributes" : @{@"key" : @"value"},
@@ -19,13 +19,13 @@
     @"loyalties_savings" : [LUMonetaryValue fullJSONObject],
     @"merchants_visited_count" : @5,
     @"orders_count" : @10,
-    @"terms_accepted_at" : [[NSDate fixture] iso8601DateTimeString]
+    @"terms_accepted_at" : [[NSDate fixture] lu_iso8601DateTimeString]
   };
 }
 
 + (NSDictionary *)fullV14JSONObject {
   return @{
-    @"born_at" : [[NSDate fixture] iso8601DateTimeString],
+    @"born_at" : [[NSDate fixture] lu_iso8601DateTimeString],
     @"cause_id" : @1,
     @"connected_to_facebook" : @YES,
     @"custom_attributes" : @{@"key" : @"value"},
@@ -37,7 +37,7 @@
     @"last_name" : @"User",
     @"merchants_visited_count" : @5,
     @"orders_count" : @10,
-    @"terms_accepted_at" : [[NSDate fixture] iso8601DateTimeString],
+    @"terms_accepted_at" : [[NSDate fixture] lu_iso8601DateTimeString],
     @"total_savings_amount" : [LUMonetaryValue fullMonetaryValue].amount
   };
 }

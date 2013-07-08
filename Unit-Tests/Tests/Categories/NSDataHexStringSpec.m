@@ -10,7 +10,7 @@ describe(@"NSData", ^{
     it(@"returns the data as a hex string", ^{
       NSString *expected = @"A60F7DB95AEE64C08EF5DBE2D2BC00A1";
 
-      [[[data hexString] should] equal:expected];
+      [[[data lu_hexString] should] equal:expected];
     });
   });
 });

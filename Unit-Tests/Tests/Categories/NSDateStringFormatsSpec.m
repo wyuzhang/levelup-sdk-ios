@@ -11,7 +11,7 @@ describe(@"NSDate", ^{
   describe(@"dateFromIso8601DateTimeString:", ^{
     it(@"returns an NSDate given an ISO 8601 string", ^{
 
-      NSDate *date = [NSDate dateFromIso8601DateTimeString:dateString];
+      NSDate *date = [NSDate lu_dateFromIso8601DateTimeString:dateString];
       [[theValue([date timeIntervalSince1970]) should] equal:theValue(secondsSince1970)];
     });
   });
@@ -20,7 +20,7 @@ describe(@"NSDate", ^{
     it(@"returns the date as an ISO 8601 string", ^{
       NSDate *date = [NSDate dateWithTimeIntervalSince1970:secondsSince1970];
 
-      [[[date iso8601DateTimeString] should] equal:dateString];
+      [[[date lu_iso8601DateTimeString] should] equal:dateString];
     });
   });
 });

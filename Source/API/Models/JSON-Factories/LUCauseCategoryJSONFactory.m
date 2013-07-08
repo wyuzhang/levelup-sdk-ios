@@ -5,8 +5,8 @@
 @implementation LUCauseCategoryJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  NSNumber *causeCategoryID = [attributes numberForKey:@"id"];
-  NSString *name = [attributes stringForKey:@"name"];
+  NSNumber *causeCategoryID = [attributes lu_numberForKey:@"id"];
+  NSString *name = [attributes lu_stringForKey:@"name"];
 
   return [[LUCauseCategory alloc] initWithCauseCategoryID:causeCategoryID name:name];
 }

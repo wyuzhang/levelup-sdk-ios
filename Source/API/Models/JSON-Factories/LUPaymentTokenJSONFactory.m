@@ -5,8 +5,8 @@
 @implementation LUPaymentTokenJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  NSString *data = [attributes stringForKey:@"data"];
-  NSNumber *paymentTokenID = [attributes numberForKey:@"id"];
+  NSString *data = [attributes lu_stringForKey:@"data"];
+  NSNumber *paymentTokenID = [attributes lu_numberForKey:@"id"];
 
   return [[LUPaymentToken alloc] initWithData:data paymentTokenID:paymentTokenID];
 }

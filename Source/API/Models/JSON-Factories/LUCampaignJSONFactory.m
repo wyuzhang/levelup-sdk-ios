@@ -8,19 +8,19 @@
 @implementation LUCampaignJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  NSNumber *campaignID = [attributes numberForKey:@"id"];
-  BOOL claimed = [attributes boolForKey:@"claimed"];
+  NSNumber *campaignID = [attributes lu_numberForKey:@"id"];
+  BOOL claimed = [attributes lu_boolForKey:@"claimed"];
   NSArray *cohorts = [[LUCohortJSONFactory factory] fromJSONObject:attributes[@"cohorts"]];
-  NSString *confirmationHTML = [attributes stringForKey:@"confirmation_html"];
-  NSURL *imageURL_1x = [attributes URLForKey:@"mobile_image_url_320x212_1x"];
-  NSURL *imageURL_2x = [attributes URLForKey:@"mobile_image_url_320x212_2x"];
+  NSString *confirmationHTML = [attributes lu_stringForKey:@"confirmation_html"];
+  NSURL *imageURL_1x = [attributes lu_URLForKey:@"mobile_image_url_320x212_1x"];
+  NSURL *imageURL_2x = [attributes lu_URLForKey:@"mobile_image_url_320x212_2x"];
   NSArray *merchants = [[LUMerchantJSONFactory factory] fromJSONObject:attributes[@"merchants"]];
-  BOOL global = merchants.count == 0 && [attributes boolForKey:@"global"];
-  NSString *name = [attributes stringForKey:@"name"];
-  NSString *offerHTML = [attributes stringForKey:@"offer_html"];
+  BOOL global = merchants.count == 0 && [attributes lu_boolForKey:@"global"];
+  NSString *name = [attributes lu_stringForKey:@"name"];
+  NSString *offerHTML = [attributes lu_stringForKey:@"offer_html"];
   LUCohort *referAFriendCohort = [[LUCohortJSONFactory factory] fromJSONObject:attributes[@"cohort"]];
-  NSString *sponsor = [attributes stringForKey:@"sponsor"];
-  NSString *supportEmail = [attributes stringForKey:@"support_email"];
+  NSString *sponsor = [attributes lu_stringForKey:@"sponsor"];
+  NSString *supportEmail = [attributes lu_stringForKey:@"support_email"];
   LUMonetaryValue *value = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"value"]];
 
   return [[LUCampaign alloc] initWithCampaignID:campaignID claimed:claimed cohorts:cohorts

@@ -28,13 +28,13 @@
     categoryIDs = attributes[@"categories"];
   }
 
-  NSNumber *latitude = [attributes numberForKey:@"latitude"];
-  NSNumber *locationID = [attributes numberForKey:@"id"];
-  NSNumber *longitude = [attributes numberForKey:@"longitude"];
-  NSNumber *merchantID = [attributes numberForKey:@"merchant_id"];
-  NSString *merchantName = [attributes stringForKey:@"merchant_name"];
-  BOOL shown = [attributes boolForKey:@"shown"];
-  NSDate *updatedAtDate = [NSDate dateFromIso8601DateTimeString:attributes[@"updated_at"]];
+  NSNumber *latitude = [attributes lu_numberForKey:@"latitude"];
+  NSNumber *locationID = [attributes lu_numberForKey:@"id"];
+  NSNumber *longitude = [attributes lu_numberForKey:@"longitude"];
+  NSNumber *merchantID = [attributes lu_numberForKey:@"merchant_id"];
+  NSString *merchantName = [attributes lu_stringForKey:@"merchant_name"];
+  BOOL shown = [attributes lu_boolForKey:@"shown"];
+  NSDate *updatedAtDate = [NSDate lu_dateFromIso8601DateTimeString:attributes[@"updated_at"]];
 
   return [[LULocation alloc] initWithCategoryIDs:categoryIDs latitude:latitude locationID:locationID longitude:longitude
                                       merchantID:merchantID merchantName:merchantName shown:shown

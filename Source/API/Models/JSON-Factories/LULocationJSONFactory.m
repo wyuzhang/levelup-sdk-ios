@@ -5,18 +5,18 @@
 @implementation LULocationJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  NSString *extendedAddress = [attributes stringForKey:@"extended_address"];
-  NSString *hours = [attributes stringForKey:@"hours"];
-  NSNumber *latitude = [attributes numberForKey:@"lat"];
-  NSString *locality = [attributes stringForKey:@"locality"];
-  NSNumber *locationID = [attributes numberForKey:@"id"];
-  NSNumber *longitude = [attributes numberForKey:@"lng"];
-  NSNumber *merchantID = [attributes numberForKey:@"merchant_id"];
-  NSString *name = [attributes stringForKey:@"name"];
-  NSString *phone = [attributes stringForKey:@"phone"];
-  NSString *postalCode = [attributes stringForKey:@"postal_code"];
-  NSString *region = [attributes stringForKey:@"region"];
-  NSString *streetAddress = [attributes stringForKey:@"street_address"];
+  NSString *extendedAddress = [attributes lu_stringForKey:@"extended_address"];
+  NSString *hours = [attributes lu_stringForKey:@"hours"];
+  NSNumber *latitude = [attributes lu_numberForKey:@"lat"];
+  NSString *locality = [attributes lu_stringForKey:@"locality"];
+  NSNumber *locationID = [attributes lu_numberForKey:@"id"];
+  NSNumber *longitude = [attributes lu_numberForKey:@"lng"];
+  NSNumber *merchantID = [attributes lu_numberForKey:@"merchant_id"];
+  NSString *name = [attributes lu_stringForKey:@"name"];
+  NSString *phone = [attributes lu_stringForKey:@"phone"];
+  NSString *postalCode = [attributes lu_stringForKey:@"postal_code"];
+  NSString *region = [attributes lu_stringForKey:@"region"];
+  NSString *streetAddress = [attributes lu_stringForKey:@"street_address"];
 
   return [[LULocation alloc] initWithCategoryIDs:nil descriptionHTML:nil extendedAddress:extendedAddress hours:hours
                                         latitude:latitude locality:locality locationID:locationID longitude:longitude

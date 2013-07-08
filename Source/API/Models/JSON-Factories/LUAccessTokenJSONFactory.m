@@ -5,8 +5,8 @@
 @implementation LUAccessTokenJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  NSString *token = [attributes stringForKey:@"token"];
-  NSNumber *userID = [attributes numberForKey:@"user_id"];
+  NSString *token = [attributes lu_stringForKey:@"token"];
+  NSNumber *userID = [attributes lu_numberForKey:@"user_id"];
 
   return [[LUAccessToken alloc] initWithToken:token userID:userID];
 }

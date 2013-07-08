@@ -45,7 +45,7 @@
     @"shown" : @1,
     @"street_address" : @"1 Main St",
     @"twitter_url" : @"http://twitter.com/pizza",
-    @"updated_at" : [[NSDate fixture] iso8601DateTimeString],
+    @"updated_at" : [[NSDate fixture] lu_iso8601DateTimeString],
     @"yelp_url" : @"http://yelp.com/pizza"
   };
 }
@@ -67,7 +67,7 @@
     @"merchant_id" : @1,
     @"merchant_name" : @"Dewey, Cheatem and Howe",
     @"shown" : @1,
-    @"updated_at" : [[NSDate fixture] iso8601DateTimeString]
+    @"updated_at" : [[NSDate fixture] lu_iso8601DateTimeString]
   };
 }
 

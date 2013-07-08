@@ -1,5 +1,5 @@
 @interface NSNumber (Base36)
 
-- (NSString *)base36Value;
+- (NSString *)lu_base36Value;
 
 @end

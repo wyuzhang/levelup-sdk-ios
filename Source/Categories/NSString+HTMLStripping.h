@@ -1,5 +1,5 @@
 @interface NSString (HTMLStripping)
 
-- (NSString *)stringByStrippingHTML;
+- (NSString *)lu_stringByStrippingHTML;
 
 @end

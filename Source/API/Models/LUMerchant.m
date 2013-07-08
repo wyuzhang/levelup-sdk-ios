@@ -89,7 +89,7 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
     return [@(distance1) compare:@(distance2)];
   }];
 
-  return [sortedLocations firstObject];
+  return [sortedLocations lu_firstObject];
 }
 
 - (NSURL *)twitterURL {

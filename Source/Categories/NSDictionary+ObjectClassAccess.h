@@ -1,12 +1,12 @@
 @interface NSDictionary (ObjectClassAccess)
 
-- (NSArray *)arrayForKey:(id)aKey;
-- (BOOL)boolForKey:(id)aKey;
-- (NSDate *)dateForKey:(id)aKey;
-- (NSDictionary *)dictionaryForKey:(id)aKey;
-- (float)floatForKey:(id)aKey;
-- (NSNumber *)numberForKey:(id)aKey;
-- (NSString *)stringForKey:(id)aKey;
-- (NSURL *)URLForKey:(id)aKey;
+- (NSArray *)lu_arrayForKey:(id)aKey;
+- (BOOL)lu_boolForKey:(id)aKey;
+- (NSDate *)lu_dateForKey:(id)aKey;
+- (NSDictionary *)lu_dictionaryForKey:(id)aKey;
+- (float)lu_floatForKey:(id)aKey;
+- (NSNumber *)lu_numberForKey:(id)aKey;
+- (NSString *)lu_stringForKey:(id)aKey;
+- (NSURL *)lu_URLForKey:(id)aKey;
 
 @end

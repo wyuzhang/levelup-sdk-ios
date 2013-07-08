@@ -5,19 +5,19 @@
 @implementation LUCauseJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  NSNumber *causeID = [attributes numberForKey:@"id"];
-  NSString *descriptionHTML = [attributes stringForKey:@"description_html"];
-  BOOL employerRequired = [attributes boolForKey:@"employer_required"];
-  NSURL *facebookURL = [attributes URLForKey:@"facebook_url"];
-  BOOL featured = [attributes boolForKey:@"featured"];
-  BOOL homeAddressRequired = [attributes boolForKey:@"home_address_required"];
-  NSURL *imageURL_1x = [attributes URLForKey:@"image_url_320x212_1x"];
-  NSURL *imageURL_2x = [attributes URLForKey:@"image_url_320x212_2x"];
-  NSNumber *minimumAgeRequired = [attributes numberForKey:@"minimum_age_required"];
-  NSString *name = [attributes stringForKey:@"name"];
-  NSString *partnerSpecificTerms = [attributes stringForKey:@"partner_specific_terms"];
-  NSString *twitterUsername = [attributes stringForKey:@"twitter_username"];
-  NSURL *websiteURL = [attributes URLForKey:@"website"];
+  NSNumber *causeID = [attributes lu_numberForKey:@"id"];
+  NSString *descriptionHTML = [attributes lu_stringForKey:@"description_html"];
+  BOOL employerRequired = [attributes lu_boolForKey:@"employer_required"];
+  NSURL *facebookURL = [attributes lu_URLForKey:@"facebook_url"];
+  BOOL featured = [attributes lu_boolForKey:@"featured"];
+  BOOL homeAddressRequired = [attributes lu_boolForKey:@"home_address_required"];
+  NSURL *imageURL_1x = [attributes lu_URLForKey:@"image_url_320x212_1x"];
+  NSURL *imageURL_2x = [attributes lu_URLForKey:@"image_url_320x212_2x"];
+  NSNumber *minimumAgeRequired = [attributes lu_numberForKey:@"minimum_age_required"];
+  NSString *name = [attributes lu_stringForKey:@"name"];
+  NSString *partnerSpecificTerms = [attributes lu_stringForKey:@"partner_specific_terms"];
+  NSString *twitterUsername = [attributes lu_stringForKey:@"twitter_username"];
+  NSURL *websiteURL = [attributes lu_URLForKey:@"website"];
 
   return [[LUCause alloc] initWithCauseID:causeID descriptionHTML:descriptionHTML
                          employerRequired:employerRequired facebookURL:facebookURL featured:featured

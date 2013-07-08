@@ -3,7 +3,7 @@
 @implementation NSString (HTMLStripping)
 
 // Adapted from http://stackoverflow.com/a/4886998
-- (NSString *)stringByStrippingHTML {
+- (NSString *)lu_stringByStrippingHTML {
   NSString *s = [self copy];
 
   NSRange r;

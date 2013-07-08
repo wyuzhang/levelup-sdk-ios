@@ -5,8 +5,8 @@
 @implementation LUCategoryJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  NSNumber *categoryID = [attributes numberForKey:@"id"];
-  NSString *name = [attributes stringForKey:@"name"];
+  NSNumber *categoryID = [attributes lu_numberForKey:@"id"];
+  NSString *name = [attributes lu_stringForKey:@"name"];
 
   return [[LUCategory alloc] initWithCategoryID:categoryID name:name];
 }

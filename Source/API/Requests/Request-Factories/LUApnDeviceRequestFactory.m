@@ -12,7 +12,7 @@ NSString * const LUDeviceTokenKey = @"LUDeviceToken";
 #pragma mark - Public Methods
 
 + (LUAPIRequest *)requestToRegisterApnDevice:(LUApnDevice *)apnDevice {
-  [[LUKeychainAccess standardKeychainAccess] setString:[apnDevice.token hexString] forKey:LUDeviceTokenKey];
+  [[LUKeychainAccess standardKeychainAccess] setString:[apnDevice.token lu_hexString] forKey:LUDeviceTokenKey];
 
   NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
 
@@ -20,7 +20,7 @@ NSString * const LUDeviceTokenKey = @"LUDeviceToken";
     parameters[@"development"] = @YES;
   }
 
-  parameters[@"token"] = [apnDevice.token hexString];
+  parameters[@"token"] = [apnDevice.token lu_hexString];
 
   if (apnDevice.lat && apnDevice.lng) {
     parameters[@"lat"] = apnDevice.lat;

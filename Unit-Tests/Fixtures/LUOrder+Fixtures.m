@@ -7,7 +7,7 @@
   return @{
     @"balance" : [LUMonetaryValue fullJSONObject],
     @"closed" : @NO,
-    @"created_at" : [[NSDate fixture] iso8601DateTimeString],
+    @"created_at" : [[NSDate fixture] lu_iso8601DateTimeString],
     @"credit" : [LUMonetaryValue fullJSONObject],
     @"donation" : [LUDonation fullJSONObject],
     @"earn" : [LUMonetaryValue fullJSONObject],
@@ -16,7 +16,7 @@
     @"location" : [LULocation fullJSONObject],
     @"loyalty" : [LULoyalty fullJSONObject],
     @"merchant" : [LUMerchant fullJSONObject],
-    @"refunded_at" : [[NSDate fixture] iso8601DateTimeString],
+    @"refunded_at" : [[NSDate fixture] lu_iso8601DateTimeString],
     @"spend" : [LUMonetaryValue fullJSONObject],
     @"state" : @"processing",
     @"tip" : [LUMonetaryValue fullJSONObject],

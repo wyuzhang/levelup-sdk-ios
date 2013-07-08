@@ -6,29 +6,29 @@
 @implementation LULocationV14JSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  NSArray *categoryIDs = [attributes arrayForKey:@"categories"];
-  NSString *descriptionHTML = [attributes stringForKey:@"description_html"];
-  NSString *extendedAddress = [attributes stringForKey:@"extended_address"];
-  NSString *hours = [attributes stringForKey:@"hours"];
-  NSNumber *latitude = [attributes numberForKey:@"latitude"];
-  NSString *locality = [attributes stringForKey:@"locality"];
-  NSNumber *locationID = [attributes numberForKey:@"id"];
-  NSNumber *longitude = [attributes numberForKey:@"longitude"];
-  NSNumber *merchantID = [attributes numberForKey:@"merchant_id"];
-  NSString *merchantName = [attributes stringForKey:@"merchant_name"];
-  NSString *name = [attributes stringForKey:@"name"];
-  NSString *phone = [attributes stringForKey:@"phone"];
-  NSString *postalCode = [attributes stringForKey:@"postal_code"];
-  NSString *region = [attributes stringForKey:@"region"];
-  BOOL shown = [attributes boolForKey:@"shown"];
-  NSString *streetAddress = [attributes stringForKey:@"street_address"];
-  LUWebLocations *webLocations = [[LUWebLocations alloc] initWithFacebookAddress:[attributes stringForKey:@"facebook_url"]
-                                                                     menuAddress:[attributes stringForKey:@"menu_url"]
-                                                               newsletterAddress:[attributes stringForKey:@"newsletter_url"]
-                                                                opentableAddress:[attributes stringForKey:@"opentable_url"]
-                                                                  twitterAddress:[attributes stringForKey:@"twitter_url"]
-                                                                     yelpAddress:[attributes stringForKey:@"yelp_url"]];
-  NSDate *updatedAtDate = [attributes dateForKey:@"updated_at"];
+  NSArray *categoryIDs = [attributes lu_arrayForKey:@"categories"];
+  NSString *descriptionHTML = [attributes lu_stringForKey:@"description_html"];
+  NSString *extendedAddress = [attributes lu_stringForKey:@"extended_address"];
+  NSString *hours = [attributes lu_stringForKey:@"hours"];
+  NSNumber *latitude = [attributes lu_numberForKey:@"latitude"];
+  NSString *locality = [attributes lu_stringForKey:@"locality"];
+  NSNumber *locationID = [attributes lu_numberForKey:@"id"];
+  NSNumber *longitude = [attributes lu_numberForKey:@"longitude"];
+  NSNumber *merchantID = [attributes lu_numberForKey:@"merchant_id"];
+  NSString *merchantName = [attributes lu_stringForKey:@"merchant_name"];
+  NSString *name = [attributes lu_stringForKey:@"name"];
+  NSString *phone = [attributes lu_stringForKey:@"phone"];
+  NSString *postalCode = [attributes lu_stringForKey:@"postal_code"];
+  NSString *region = [attributes lu_stringForKey:@"region"];
+  BOOL shown = [attributes lu_boolForKey:@"shown"];
+  NSString *streetAddress = [attributes lu_stringForKey:@"street_address"];
+  LUWebLocations *webLocations = [[LUWebLocations alloc] initWithFacebookAddress:[attributes lu_stringForKey:@"facebook_url"]
+                                                                     menuAddress:[attributes lu_stringForKey:@"menu_url"]
+                                                               newsletterAddress:[attributes lu_stringForKey:@"newsletter_url"]
+                                                                opentableAddress:[attributes lu_stringForKey:@"opentable_url"]
+                                                                  twitterAddress:[attributes lu_stringForKey:@"twitter_url"]
+                                                                     yelpAddress:[attributes lu_stringForKey:@"yelp_url"]];
+  NSDate *updatedAtDate = [attributes lu_dateForKey:@"updated_at"];
 
   return [[LULocation alloc] initWithCategoryIDs:categoryIDs descriptionHTML:descriptionHTML extendedAddress:extendedAddress
                                            hours:hours latitude:latitude locality:locality locationID:locationID longitude:longitude

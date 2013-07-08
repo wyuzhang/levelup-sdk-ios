@@ -2,7 +2,7 @@
 
 @implementation NSDictionary (SafetyAdditions)
 
-- (id)safeValueForKey:(NSString *)key {
+- (id)lu_safeValueForKey:(NSString *)key {
   id value = [self valueForKey:key];
   if (value == [NSNull null]) {
     value = nil;
@@ -15,7 +15,7 @@
 
 @implementation NSMutableDictionary (SafetyAdditions)
 
-- (void)setSafeValue:(id)value forKey:(NSString *)key {
+- (void)lu_setSafeValue:(id)value forKey:(NSString *)key {
   if (!value) {
     value = [NSNull null];
   }

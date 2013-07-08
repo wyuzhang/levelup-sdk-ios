@@ -7,8 +7,8 @@
 @implementation LUCauseAffiliationJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  NSNumber *causeID = [attributes numberForKey:@"cause_id"];
-  NSNumber *percentDonation = [attributes numberForKey:@"percent_donation"];
+  NSNumber *causeID = [attributes lu_numberForKey:@"cause_id"];
+  NSNumber *percentDonation = [attributes lu_numberForKey:@"percent_donation"];
 
   return [[LUCauseAffiliation alloc] initWithCauseID:causeID percentDonation:percentDonation];
 }

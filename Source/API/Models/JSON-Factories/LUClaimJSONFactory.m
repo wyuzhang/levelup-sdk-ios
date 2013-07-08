@@ -8,7 +8,7 @@
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
   LUCampaign *campaign = [[LUCampaignJSONFactory factory] fromJSONObject:attributes[@"campaign"]];
-  NSNumber *claimID = [attributes numberForKey:@"id"];
+  NSNumber *claimID = [attributes lu_numberForKey:@"id"];
   LUCohort *cohort = [[LUCohortJSONFactory factory] fromJSONObject:attributes[@"cohort"]];
   LUCohort *shareCohort = [[LUCohortJSONFactory factory] fromJSONObject:attributes[@"share_cohort"]];
 

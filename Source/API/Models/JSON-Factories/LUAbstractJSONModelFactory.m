@@ -16,7 +16,7 @@
 }
 
 - (id)fromArray:(NSArray *)array {
-  return [array mappedArrayWithBlock:^(id subJSON) {
+  return [array lu_mappedArrayWithBlock:^(id subJSON) {
     return [self fromJSONObject:subJSON];
   }];
 }

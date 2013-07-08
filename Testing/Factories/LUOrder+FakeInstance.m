@@ -12,7 +12,7 @@
 + (LUOrder *)fakeInstance {
   return [[LUOrder alloc] initWithBalance:[LUMonetaryValue monetaryValueWithUSD:@5.46f]
                                    closed:YES
-                              createdDate:[NSDate dateFromIso8601DateTimeString:@"2012-12-24T16:58:23-05:00"]
+                              createdDate:[NSDate lu_dateFromIso8601DateTimeString:@"2012-12-24T16:58:23-05:00"]
                                    credit:[LUMonetaryValue monetaryValueWithUSD:@1.0f]
                                  donation:[LUDonation fakeInstance]
                                      earn:[LUMonetaryValue monetaryValueWithUSD:@2.0f]

@@ -2,7 +2,7 @@
 
 @implementation NSNumber (Base36)
 
-- (NSString *)base36Value {
+- (NSString *)lu_base36Value {
   NSString *base36 = @"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   NSInteger integerValue = [self integerValue];

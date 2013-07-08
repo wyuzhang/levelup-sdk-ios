@@ -2,7 +2,7 @@
 
 @implementation NSArray (LUAdditions)
 
-- (id)firstObject {
+- (id)lu_firstObject {
   if (self.count <= 0) {
     return nil;
   }
@@ -10,7 +10,7 @@
   return [self objectAtIndex:0];
 }
 
-- (NSArray *)mappedArrayWithBlock:(id (^)(id obj))block {
+- (NSArray *)lu_mappedArrayWithBlock:(id (^)(id obj))block {
   NSMutableArray *new = [NSMutableArray array];
 
   for (id obj in self) {

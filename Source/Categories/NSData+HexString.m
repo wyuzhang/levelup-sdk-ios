@@ -2,7 +2,7 @@
 
 @implementation NSData (HexString)
 
-- (NSString *)hexString {
+- (NSString *)lu_hexString {
   NSMutableString *buffer = [NSMutableString stringWithCapacity:self.length * 2];
 
   const unsigned char *bytes = [self bytes];

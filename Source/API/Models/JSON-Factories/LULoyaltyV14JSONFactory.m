@@ -6,16 +6,16 @@
 @implementation LULoyaltyV14JSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  LUMonetaryValue *willEarn = [LUMonetaryValue monetaryValueWithUSCents:[attributes numberForKey:@"merchant_earn_amount"]];
-  NSNumber *merchantID = [attributes numberForKey:@"merchant_id"];
-  BOOL merchantLoyaltyEnabled = [attributes boolForKey:@"merchant_loyalty_enabled"];
-  LUMonetaryValue *shouldSpend = [LUMonetaryValue monetaryValueWithUSCents:[attributes numberForKey:@"merchant_spend_amount"]];
-  NSNumber *ordersCount = [attributes numberForKey:@"orders_count"];
-  LUMonetaryValue *potentialCredit = [LUMonetaryValue monetaryValueWithUSCents:[attributes numberForKey:@"potential_credit_amount"]];
-  CGFloat progressPercent = [[attributes numberForKey:@"progress_percentage"] floatValue] / 100;
-  LUMonetaryValue *savings = [LUMonetaryValue monetaryValueWithUSCents:[attributes numberForKey:@"savings_amount"]];
-  LUMonetaryValue *spendRemaining = [LUMonetaryValue monetaryValueWithUSCents:[attributes numberForKey:@"spend_remaining_amount"]];
-  LUMonetaryValue *totalVolume = [LUMonetaryValue monetaryValueWithUSCents:[attributes numberForKey:@"total_volume_amount"]];
+  LUMonetaryValue *willEarn = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"merchant_earn_amount"]];
+  NSNumber *merchantID = [attributes lu_numberForKey:@"merchant_id"];
+  BOOL merchantLoyaltyEnabled = [attributes lu_boolForKey:@"merchant_loyalty_enabled"];
+  LUMonetaryValue *shouldSpend = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"merchant_spend_amount"]];
+  NSNumber *ordersCount = [attributes lu_numberForKey:@"orders_count"];
+  LUMonetaryValue *potentialCredit = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"potential_credit_amount"]];
+  CGFloat progressPercent = [[attributes lu_numberForKey:@"progress_percentage"] floatValue] / 100;
+  LUMonetaryValue *savings = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"savings_amount"]];
+  LUMonetaryValue *spendRemaining = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"spend_remaining_amount"]];
+  LUMonetaryValue *totalVolume = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"total_volume_amount"]];
   return [[LULoyalty alloc] initWithLoyaltyID:nil
                                    merchantID:merchantID
                        merchantLoyaltyEnabled:merchantLoyaltyEnabled

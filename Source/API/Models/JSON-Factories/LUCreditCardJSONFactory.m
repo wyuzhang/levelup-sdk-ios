@@ -5,14 +5,14 @@
 @implementation LUCreditCardJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  NSString *BIN = [attributes stringForKey:@"bin"];
-  NSString *creditCardDescription = [attributes stringForKey:@"description"];
-  NSNumber *creditCardID = [attributes numberForKey:@"id"];
-  NSNumber *expirationMonth = [attributes numberForKey:@"expiration_month"];
-  NSNumber *expirationYear = [attributes numberForKey:@"expiration_year"];
-  NSString *last4Digits = [attributes stringForKey:@"last_4"];
-  BOOL promoted = [attributes boolForKey:@"promoted"];
-  NSString *type = [attributes stringForKey:@"type"];
+  NSString *BIN = [attributes lu_stringForKey:@"bin"];
+  NSString *creditCardDescription = [attributes lu_stringForKey:@"description"];
+  NSNumber *creditCardID = [attributes lu_numberForKey:@"id"];
+  NSNumber *expirationMonth = [attributes lu_numberForKey:@"expiration_month"];
+  NSNumber *expirationYear = [attributes lu_numberForKey:@"expiration_year"];
+  NSString *last4Digits = [attributes lu_stringForKey:@"last_4"];
+  BOOL promoted = [attributes lu_boolForKey:@"promoted"];
+  NSString *type = [attributes lu_stringForKey:@"type"];
 
   return [[LUCreditCard alloc] initWithBIN:BIN creditCardDescription:creditCardDescription creditCardID:creditCardID cvv:nil
                                              expirationMonth:expirationMonth expirationYear:expirationYear

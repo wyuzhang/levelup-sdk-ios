@@ -68,11 +68,11 @@ static NSString * const kQRCodeSentinel = @"LU";
   return [components componentsJoinedByString:@""];
 }
 - (NSString *)glowColorIDBase36 {
-  return [[[NSNumber numberWithInt:self.glowColorID] base36Value] substringToIndex:1];
+  return [[[NSNumber numberWithInt:self.glowColorID] lu_base36Value] substringToIndex:1];
 }
 
 - (NSString *)tipPercentBase36 {
-  NSString *tipPercentBase36 = [[NSNumber numberWithInteger:self.tipPercentage] base36Value];
+  NSString *tipPercentBase36 = [[NSNumber numberWithInteger:self.tipPercentage] lu_base36Value];
 
   if (tipPercentBase36.length < 2) {
     return [NSString stringWithFormat:@"0%@", tipPercentBase36];

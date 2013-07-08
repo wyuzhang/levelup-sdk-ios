@@ -1,11 +1,11 @@
 @interface NSDictionary (SafetyAdditions)
 
-- (id)safeValueForKey:(NSString *)key;
+- (id)lu_safeValueForKey:(NSString *)key;
 
 @end
 
 @interface NSMutableDictionary (SafetyAdditions)
 
-- (void)setSafeValue:(id)value forKey:(NSString *)key;
+- (void)lu_setSafeValue:(id)value forKey:(NSString *)key;
 
 @end

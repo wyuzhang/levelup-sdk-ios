@@ -6,11 +6,11 @@
 @implementation LULoyaltyJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  NSNumber *loyaltyID = [attributes numberForKey:@"id"];
-  NSNumber *merchantID = [attributes numberForKey:@"merchant_id"];
-  NSNumber *ordersCount = [attributes numberForKey:@"orders_count"];
+  NSNumber *loyaltyID = [attributes lu_numberForKey:@"id"];
+  NSNumber *merchantID = [attributes lu_numberForKey:@"merchant_id"];
+  NSNumber *ordersCount = [attributes lu_numberForKey:@"orders_count"];
   LUMonetaryValue *potentialCredit = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"potential_credit"]];
-  float progressPercent = [attributes floatForKey:@"progress_percent"];
+  float progressPercent = [attributes lu_floatForKey:@"progress_percent"];
   LUMonetaryValue *savings = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"savings"]];
   LUMonetaryValue *shouldSpend = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"should_spend"]];
   LUMonetaryValue *spendRemaining = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"spend_remaining"]];

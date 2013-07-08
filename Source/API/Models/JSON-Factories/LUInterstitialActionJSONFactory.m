@@ -7,8 +7,8 @@
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
   LUCampaign *campaign = [[LUCampaignJSONFactory factory] fromDictionary:attributes[@"campaign"]];
-  NSNumber *interstitialActionID = [attributes numberForKey:@"id"];
-  LUInterstitialActionType type = [self typeFromString:[attributes stringForKey:@"type"]];
+  NSNumber *interstitialActionID = [attributes lu_numberForKey:@"id"];
+  LUInterstitialActionType type = [self typeFromString:[attributes lu_stringForKey:@"type"]];
 
   return [[LUInterstitialAction alloc] initWithCampaign:campaign interstitialActionID:interstitialActionID type:type];
 }

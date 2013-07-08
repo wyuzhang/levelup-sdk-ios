@@ -30,11 +30,11 @@
 #pragma mark - Private Methods (Store Access)
 
 + (NSDictionary *)metadataForObjectContext:(NSManagedObjectContext *)moc {
-  return [[moc.persistentStoreCoordinator.persistentStores firstObject] metadata];
+  return [[moc.persistentStoreCoordinator.persistentStores lu_firstObject] metadata];
 }
 
 + (void)setMetadata:(NSDictionary *)metadata forObjectContext:(NSManagedObjectContext *)moc {
-  [[moc.persistentStoreCoordinator.persistentStores firstObject] setMetadata:metadata];
+  [[moc.persistentStoreCoordinator.persistentStores lu_firstObject] setMetadata:metadata];
   [moc save:nil];
 }
 

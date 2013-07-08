@@ -5,11 +5,11 @@ SPEC_BEGIN(NSNumberBase36Spec)
 describe(@"NSNumber", ^{
   // Public Methods
 
-  describe(@"base36Value", ^{
+  describe(@"lu_base36Value", ^{
     it(@"returns the number as a base36 string", ^{
       NSNumber *number = @50;
 
-      [[[number base36Value] should] equal:@"1E"];
+      [[[number lu_base36Value] should] equal:@"1E"];
     });
   });
 });
