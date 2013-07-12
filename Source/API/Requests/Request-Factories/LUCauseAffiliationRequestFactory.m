@@ -2,6 +2,7 @@
 #import "LUCauseAffiliation.h"
 #import "LUCauseAffiliationJSONFactory.h"
 #import "LUCauseAffiliationRequestFactory.h"
+#import "NSDictionary+SafetyAdditions.h"
 
 @implementation LUCauseAffiliationRequestFactory
 
@@ -14,7 +15,9 @@
 }
 
 + (LUAPIRequest *)requestToCreateCauseAffiliation:(LUCauseAffiliation *)causeAffiliation {
-  NSDictionary *parameters = @{@"cause_id" : causeAffiliation.causeID, @"percent_donation" : causeAffiliation.percentDonation};
+  NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+  [parameters lu_setSafeValue:causeAffiliation.causeID forKey:@"cause_id"];
+  [parameters lu_setSafeValue:causeAffiliation.percentDonation forKey:@"percent_donation"];
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
                                                     path:@"cause_affiliation"
