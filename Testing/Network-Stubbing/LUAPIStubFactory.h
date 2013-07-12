@@ -13,6 +13,7 @@
                                      postalCode:(NSString *)postalCode;
 + (LUAPIStub *)stubToCreateGlobalClaimForCohortCode:(NSString *)code;
 + (LUAPIStub *)stubToCreateTicket:(NSString *)body;
++ (LUAPIStub *)stubToCreateUser;
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user;
 + (LUAPIStub *)stubToCreateUserWithFacebookAccessToken:(NSString *)facebookAccessToken;
 + (LUAPIStub *)stubToDeleteCreditCardWithID:(NSNumber *)creditCardID;
@@ -37,11 +38,13 @@
 + (LUAPIStub *)stubToGetOrdersOnPage:(NSNumber *)page;
 + (LUAPIStub *)stubToGetOrdersWithMerchantID:(NSNumber *)merchantID page:(NSNumber *)page;
 + (LUAPIStub *)stubToGetPaymentToken;
++ (LUAPIStub *)stubToLogIn;
 + (LUAPIStub *)stubToLogInWithEmail:(NSString *)email password:(NSString *)password;
 + (LUAPIStub *)stubToLogInWithFacebookAccessToken:(NSString *)facebookAccessToken;
 + (LUAPIStub *)stubToPromoteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToResetPasswordRequest;
 + (LUAPIStub *)stubToSetCauseAffiliation:(LUCauseAffiliation *)causeAffiliation;
++ (LUAPIStub *)stubToUpdateUser;
 + (LUAPIStub *)stubToUpdateUser:(LUUser *)user;
 
 @end

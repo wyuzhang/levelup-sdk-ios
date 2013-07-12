@@ -76,9 +76,21 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   return stub;
 }
 
++ (LUAPIStub *)stubToCreateUser {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                              path:@"users"
+                                        HTTPMethod:@"POST"
+                                    authenticated:NO
+                                      responseData:[self responseDataFromFile:@"current_user"]];
+}
+
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user {
+  LUAPIStub *stub = [self stubToCreateUser];
+
   [self setDeviceIdentifier];
+
   NSDictionary *userJSON = [LUUserParameterBuilder parametersForUser:user];
+  stub.requestBodyJSON = @{ @"client_id" : [LUAPIClient sharedClient].apiKey, @"user" : userJSON };
 
   NSMutableDictionary *responseUserJSON = [userJSON mutableCopy];
   if (user.termsAccepted) {
@@ -86,13 +98,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   }
   NSDictionary *responseJSON = @{ @"user" : responseUserJSON };
 
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                            path:@"users"
-                                      HTTPMethod:@"POST"
-                                   authenticated:NO
-                                    responseData:[NSJSONSerialization dataWithJSONObject:responseJSON options:0 error:nil]];
-
-  stub.requestBodyJSON = @{ @"client_id" : [LUAPIClient sharedClient].apiKey, @"user" : userJSON };
+  stub.responseData = [NSJSONSerialization dataWithJSONObject:responseJSON options:0 error:nil];
 
   return stub;
 }
@@ -318,12 +324,16 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
 }
 
++ (LUAPIStub *)stubToLogIn {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:@"access_tokens"
+                           HTTPMethod:@"POST"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"oauth_access_token"]];
+}
+
 + (LUAPIStub *)stubToLogInWithEmail:(NSString *)email password:(NSString *)password {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                            path:@"access_tokens"
-                                      HTTPMethod:@"POST"
-                                   authenticated:NO
-                                    responseData:[self responseDataFromFile:@"oauth_access_token"]];
+  LUAPIStub *stub = [self stubToLogIn];
 
   [self setDeviceIdentifier];
   stub.requestBodyJSON = @{
@@ -383,15 +393,20 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   return stub;
 }
 
-+ (LUAPIStub *)stubToUpdateUser:(LUUser *)user {
-  [self setDeviceIdentifier];
-  NSDictionary *userJSON = @{@"user" : [LUUserParameterBuilder parametersForUser:user] };
++ (LUAPIStub *)stubToUpdateUser {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:@"users/1"
+                           HTTPMethod:@"PUT"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"current_user"]];
+}
 
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                            path:@"users/1"
-                                      HTTPMethod:@"PUT"
-                                   authenticated:YES
-                                    responseData:[NSJSONSerialization dataWithJSONObject:userJSON options:0 error:nil]];
++ (LUAPIStub *)stubToUpdateUser:(LUUser *)user {
+  LUAPIStub *stub = [self stubToUpdateUser];
+  [self setDeviceIdentifier];
+
+  NSDictionary *userJSON = @{@"user" : [LUUserParameterBuilder parametersForUser:user] };
+  stub.responseData = [NSJSONSerialization dataWithJSONObject:userJSON options:0 error:nil];
   stub.requestBodyJSON = userJSON;
 
   return stub;
