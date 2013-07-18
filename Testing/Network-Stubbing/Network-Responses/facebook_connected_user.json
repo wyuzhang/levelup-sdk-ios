@@ -1,40 +1,18 @@
 {
   "user": {
     "born_at": "1980-01-01T00:00:00-05:00",
-    "cause" : {
-      "id" : 1,
-      "facebook_url" : "",
-      "partner_specific_terms" : "",
-      "home_address_required" : false,
-      "featured" : false,
-      "minimum_age_required" : null,
-      "twitter_username" : "",
-      "description_html" : "A test cause",
-      "website" : "https://thelevelup.com",
-      "name" : "Test Cause",
-      "employer_required" : false
-    },
-    "custom_attributes" : {},
+    "cause_id" : 1,
+    "connected_to_facebook": true,
+    "custom_attributes" : null,
     "email": "john.doe@example.com",
-    "facebook_access_token": "abc123",
     "first_name": "John",
     "gender": "male",
     "id": 1,
     "last_name": "Doe",
     "merchants_visited_count": 0,
     "orders_count": 0,
-    "credit" : {
-      "amount" : 1000,
-      "currency_code" : "USD",
-      "formatted_amount" : "10.00",
-      "currency_symbol" : "$"
-    },
+    "global_credit_amount": 1000,
     "terms_accepted_at": "2013-01-01T00:00:00-05:00",
-    "loyalties_savings": {
-      "amount" : 5000,
-      "currency_code" : "USD",
-      "formatted_amount" : "50.00",
-      "currency_symbol" : "$"
-    }
+    "total_savings_amount": 5000
   }
 }

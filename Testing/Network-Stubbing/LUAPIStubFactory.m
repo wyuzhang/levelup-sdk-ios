@@ -132,21 +132,21 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToFacebookConnectWithFacebookAccessToken:(NSString *)facebookAccessToken {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                            path:@"users/1/facebook_connections"
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                            path:@"facebook_connections"
                                       HTTPMethod:@"POST"
                                    authenticated:YES
-                                    responseData:[self responseDataFromFile:@"facebook_connected_user"]];
-  stub.requestBodyJSON = @{ @"facebook_access_token" : facebookAccessToken };
+                                    responseData:nil];
+  stub.requestBodyJSON = @{@"user" : @{@"facebook_access_token" : facebookAccessToken} };
   return stub;
 }
 
 + (LUAPIStub *)stubToFacebookDisconnect {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                 path:@"users/1/facebook_connections"
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:@"facebook_connections"
                            HTTPMethod:@"DELETE"
                         authenticated:YES
-                         responseData:[self responseDataFromFile:@"facebook_disconnected_user"]];
+                         responseData:nil];
 }
 
 + (LUAPIStub *)stubToGetCampaignWithID:(NSNumber *)campaignID {
@@ -197,6 +197,12 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"credit_cards-2"]];
+}
+
++ (LUAPIStub *)stubToGetCurrentFacebookConnectedUser {
+  LUAPIStub *stub = [self stubToGetCurrentUser];
+  stub.responseData = [self responseDataFromFile:@"facebook_connected_user"];
+  return stub;
 }
 
 + (LUAPIStub *)stubToGetCurrentUser {

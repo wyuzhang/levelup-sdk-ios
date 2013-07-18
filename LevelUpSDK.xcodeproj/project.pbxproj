@@ -10,10 +10,6 @@
 		020231711779E0B100B057D1 /* LUAPIConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0202316F1779E0B100B057D1 /* LUAPIConnection.h */; };
 		020231721779E0B100B057D1 /* LUAPIConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 020231701779E0B100B057D1 /* LUAPIConnection.m */; };
 		020231751779E2CD00B057D1 /* LUAPIConnectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 020231731779E2B900B057D1 /* LUAPIConnectionSpec.m */; };
-		02023178177A355500B057D1 /* LUUserV14JSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 02023176177A355500B057D1 /* LUUserV14JSONFactory.h */; };
-		02023179177A355500B057D1 /* LUUserV14JSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02023177177A355500B057D1 /* LUUserV14JSONFactory.m */; };
-		0202317C177A37BA00B057D1 /* LUUserV14JSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0202317A177A374C00B057D1 /* LUUserV14JSONFactorySpec.m */; };
-		0202317E177A399500B057D1 /* facebook_disconnected_user.json in Resources */ = {isa = PBXBuildFile; fileRef = 0202317D177A399500B057D1 /* facebook_disconnected_user.json */; };
 		020CF28D172F020800D20672 /* LUCampaign+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 020CF266172F020700D20672 /* LUCampaign+FakeInstance.m */; };
 		020CF28E172F020800D20672 /* LUCohort+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 020CF268172F020700D20672 /* LUCohort+FakeInstance.m */; };
 		020CF28F172F020800D20672 /* LUDonation+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 020CF26A172F020700D20672 /* LUDonation+FakeInstance.m */; };
@@ -34,6 +30,7 @@
 		025F790017428BF10029FC49 /* LUEmailsRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 025F78FE17428BF10029FC49 /* LUEmailsRequestFactory.h */; };
 		025F790117428BF10029FC49 /* LUEmailsRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F78FF17428BF10029FC49 /* LUEmailsRequestFactory.m */; };
 		025F79041742929E0029FC49 /* LUEmailsRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F790217428FF40029FC49 /* LUEmailsRequestFactorySpec.m */; };
+		02704A5F17B96496009AF443 /* facebook_connected_user.json in Resources */ = {isa = PBXBuildFile; fileRef = 02704A5E17B96496009AF443 /* facebook_connected_user.json */; };
 		0274B83C17739B7800FD5B43 /* LUAPIError.h in Headers */ = {isa = PBXBuildFile; fileRef = 0274B83A17739B7800FD5B43 /* LUAPIError.h */; };
 		0274B83D17739B7800FD5B43 /* LUAPIError.m in Sources */ = {isa = PBXBuildFile; fileRef = 0274B83B17739B7800FD5B43 /* LUAPIError.m */; };
 		0274B84017739BAA00FD5B43 /* LUAPIErrorJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0274B83E17739BAA00FD5B43 /* LUAPIErrorJSONFactory.h */; };
@@ -96,7 +93,6 @@
 		02E29160175FCAB8002036B4 /* credit_cards-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E2914B175FCAB8002036B4 /* credit_cards-2.json */; };
 		02E29161175FCAB8002036B4 /* credit_cards-1.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E2914C175FCAB8002036B4 /* credit_cards-1.json */; };
 		02E29162175FCAB8002036B4 /* current_user.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E2914D175FCAB8002036B4 /* current_user.json */; };
-		02E29163175FCAB8002036B4 /* facebook_connected_user.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E2914E175FCAB8002036B4 /* facebook_connected_user.json */; };
 		02E29164175FCAB8002036B4 /* legacy_loyalty_claim.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E2914F175FCAB8002036B4 /* legacy_loyalty_claim.json */; };
 		02E29165175FCAB8002036B4 /* loyalty_no_credit.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29150175FCAB8002036B4 /* loyalty_no_credit.json */; };
 		02E29166175FCAB8002036B4 /* loyalty.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29151175FCAB8002036B4 /* loyalty.json */; };
@@ -408,10 +404,6 @@
 		0202316F1779E0B100B057D1 /* LUAPIConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIConnection.h; sourceTree = "<group>"; };
 		020231701779E0B100B057D1 /* LUAPIConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIConnection.m; sourceTree = "<group>"; };
 		020231731779E2B900B057D1 /* LUAPIConnectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIConnectionSpec.m; sourceTree = "<group>"; };
-		02023176177A355500B057D1 /* LUUserV14JSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUUserV14JSONFactory.h; sourceTree = "<group>"; };
-		02023177177A355500B057D1 /* LUUserV14JSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserV14JSONFactory.m; sourceTree = "<group>"; };
-		0202317A177A374C00B057D1 /* LUUserV14JSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserV14JSONFactorySpec.m; sourceTree = "<group>"; };
-		0202317D177A399500B057D1 /* facebook_disconnected_user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = facebook_disconnected_user.json; sourceTree = "<group>"; };
 		020CF265172F020700D20672 /* LUCampaign+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUCampaign+FakeInstance.h"; sourceTree = "<group>"; };
 		020CF266172F020700D20672 /* LUCampaign+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUCampaign+FakeInstance.m"; sourceTree = "<group>"; };
 		020CF267172F020700D20672 /* LUCohort+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUCohort+FakeInstance.h"; sourceTree = "<group>"; };
@@ -441,6 +433,7 @@
 		025F78FE17428BF10029FC49 /* LUEmailsRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUEmailsRequestFactory.h; sourceTree = "<group>"; };
 		025F78FF17428BF10029FC49 /* LUEmailsRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUEmailsRequestFactory.m; sourceTree = "<group>"; };
 		025F790217428FF40029FC49 /* LUEmailsRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUEmailsRequestFactorySpec.m; sourceTree = "<group>"; };
+		02704A5E17B96496009AF443 /* facebook_connected_user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = facebook_connected_user.json; sourceTree = "<group>"; };
 		0274B83A17739B7800FD5B43 /* LUAPIError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIError.h; sourceTree = "<group>"; };
 		0274B83B17739B7800FD5B43 /* LUAPIError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIError.m; sourceTree = "<group>"; };
 		0274B83E17739BAA00FD5B43 /* LUAPIErrorJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIErrorJSONFactory.h; sourceTree = "<group>"; };
@@ -499,7 +492,6 @@
 		02E2914B175FCAB8002036B4 /* credit_cards-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "credit_cards-2.json"; sourceTree = "<group>"; };
 		02E2914C175FCAB8002036B4 /* credit_cards-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "credit_cards-1.json"; sourceTree = "<group>"; };
 		02E2914D175FCAB8002036B4 /* current_user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = current_user.json; sourceTree = "<group>"; };
-		02E2914E175FCAB8002036B4 /* facebook_connected_user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = facebook_connected_user.json; sourceTree = "<group>"; };
 		02E2914F175FCAB8002036B4 /* legacy_loyalty_claim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = legacy_loyalty_claim.json; sourceTree = "<group>"; };
 		02E29150175FCAB8002036B4 /* loyalty_no_credit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loyalty_no_credit.json; sourceTree = "<group>"; };
 		02E29151175FCAB8002036B4 /* loyalty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loyalty.json; sourceTree = "<group>"; };
@@ -966,8 +958,7 @@
 				02E2914C175FCAB8002036B4 /* credit_cards-1.json */,
 				02E2914B175FCAB8002036B4 /* credit_cards-2.json */,
 				02E2914D175FCAB8002036B4 /* current_user.json */,
-				02E2914E175FCAB8002036B4 /* facebook_connected_user.json */,
-				0202317D177A399500B057D1 /* facebook_disconnected_user.json */,
+				02704A5E17B96496009AF443 /* facebook_connected_user.json */,
 				02E2914F175FCAB8002036B4 /* legacy_loyalty_claim.json */,
 				0229381617626B500057C381 /* location_summaries.json */,
 				02E29150175FCAB8002036B4 /* loyalty_no_credit.json */,
@@ -1231,7 +1222,6 @@
 				C1CAF0C1173052A7003B3D01 /* LUOrderJSONFactorySpec.m */,
 				25D43F73176A1DE80051ED2F /* LUPaymentTokenJSONFactorySpec.m */,
 				C1CAF0C4173052A7003B3D01 /* LUUserJSONFactorySpec.m */,
-				0202317A177A374C00B057D1 /* LUUserV14JSONFactorySpec.m */,
 			);
 			name = "JSON Factories";
 			path = "JSON-Factories";
@@ -1452,8 +1442,6 @@
 				25CA82E1176A188A0073383C /* LUPaymentTokenJSONFactory.m */,
 				C1CAF18517315414003B3D01 /* LUUserJSONFactory.h */,
 				C1CAF18617315414003B3D01 /* LUUserJSONFactory.m */,
-				02023176177A355500B057D1 /* LUUserV14JSONFactory.h */,
-				02023177177A355500B057D1 /* LUUserV14JSONFactory.m */,
 			);
 			name = "JSON Factories";
 			path = "JSON-Factories";
@@ -1709,7 +1697,6 @@
 				25CA82E6176A18EE0073383C /* LUPaymentTokenRequestFactory.h in Headers */,
 				0274B83C17739B7800FD5B43 /* LUAPIError.h in Headers */,
 				0274B84017739BAA00FD5B43 /* LUAPIErrorJSONFactory.h in Headers */,
-				02023178177A355500B057D1 /* LUUserV14JSONFactory.h in Headers */,
 				258F5331178760FA000FDE79 /* LULegacyLoyaltyClaimJSONFactory.h in Headers */,
 				258F5335178763E8000FDE79 /* LULegacyLoyaltyClaim.h in Headers */,
 			);
@@ -1798,7 +1785,6 @@
 				02E29160175FCAB8002036B4 /* credit_cards-2.json in Resources */,
 				02E29161175FCAB8002036B4 /* credit_cards-1.json in Resources */,
 				02E29162175FCAB8002036B4 /* current_user.json in Resources */,
-				02E29163175FCAB8002036B4 /* facebook_connected_user.json in Resources */,
 				02E29164175FCAB8002036B4 /* legacy_loyalty_claim.json in Resources */,
 				02E29165175FCAB8002036B4 /* loyalty_no_credit.json in Resources */,
 				02E29166175FCAB8002036B4 /* loyalty.json in Resources */,
@@ -1814,7 +1800,7 @@
 				0229381717626B500057C381 /* location_summaries.json in Resources */,
 				02823B9917666DB000A5E352 /* merchant_locations.json in Resources */,
 				025B6DDE176A713C00713242 /* payment_token.json in Resources */,
-				0202317E177A399500B057D1 /* facebook_disconnected_user.json in Resources */,
+				02704A5F17B96496009AF443 /* facebook_connected_user.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1983,7 +1969,6 @@
 				25CA82E7176A18EE0073383C /* LUPaymentTokenRequestFactory.m in Sources */,
 				0274B83D17739B7800FD5B43 /* LUAPIError.m in Sources */,
 				0274B84117739BAA00FD5B43 /* LUAPIErrorJSONFactory.m in Sources */,
-				02023179177A355500B057D1 /* LUUserV14JSONFactory.m in Sources */,
 				258F5332178760FA000FDE79 /* LULegacyLoyaltyClaimJSONFactory.m in Sources */,
 				258F5336178763E8000FDE79 /* LULegacyLoyaltyClaim.m in Sources */,
 			);
@@ -2112,7 +2097,6 @@
 				0274B8441773A21600FD5B43 /* LUAPIErrorJSONFactorySpec.m in Sources */,
 				0274B84B1773A37B00FD5B43 /* LUAPIError+Fixtures.m in Sources */,
 				0274B84D1773A4D200FD5B43 /* LUAPIErrorSpec.m in Sources */,
-				0202317C177A37BA00B057D1 /* LUUserV14JSONFactorySpec.m in Sources */,
 				258F533917876531000FDE79 /* LULegacyLoyaltyClaimSpec.m in Sources */,
 				258F533B1787655A000FDE79 /* LULegacyLoyaltyClaimJSONFactorySpec.m in Sources */,
 				258F5341178765B0000FDE79 /* LULegacyLoyaltyClaim+Fixtures.m in Sources */,

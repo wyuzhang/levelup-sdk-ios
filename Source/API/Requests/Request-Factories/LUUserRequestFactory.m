@@ -4,7 +4,6 @@
 #import "LUDeviceIdentifier.h"
 #import "LUUser.h"
 #import "LUUserJSONFactory.h"
-#import "LUUserV14JSONFactory.h"
 #import "LUUserParameterBuilder.h"
 #import "LUUserRequestFactory.h"
 
@@ -19,17 +18,15 @@
                                                     path:path
                                               apiVersion:LUAPIVersion14
                                               parameters:nil
-                                            modelFactory:[LUUserV14JSONFactory factory]];
+                                            modelFactory:[LUUserJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestToConnectToFacebookWithAccessToken:(NSString *)facebookAccessToken {
-  NSString *path = [NSString stringWithFormat:@"users/%@/facebook_connections", [LUAPIClient sharedClient].currentUserID];
-
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
-                                                    path:path
-                                              apiVersion:LUAPIVersion13
-                                              parameters:@{@"facebook_access_token" : facebookAccessToken}
-                                            modelFactory:[LUUserJSONFactory factory]];
+                                                    path:@"facebook_connections"
+                                              apiVersion:LUAPIVersion14
+                                              parameters:@{@"user" : @{@"facebook_access_token" : facebookAccessToken} }
+                                            modelFactory:nil];
 }
 
 + (LUAPIRequest *)requestToCreateUser:(LUUser *)user {
@@ -41,7 +38,7 @@
                                        path:@"users"
                                  apiVersion:LUAPIVersion14
                                  parameters:params
-                               modelFactory:[LUUserV14JSONFactory factory]];
+                               modelFactory:[LUUserJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestToCreateUserWithFacebookAccessToken:(NSString *)facebookAccessToken {
@@ -61,17 +58,15 @@
                                        path:@"users"
                                  apiVersion:LUAPIVersion14
                                  parameters:params
-                               modelFactory:[LUUserV14JSONFactory factory]];
+                               modelFactory:[LUUserJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestToDisconnectFromFacebook {
-  NSString *path = [NSString stringWithFormat:@"users/%@/facebook_connections", [LUAPIClient sharedClient].currentUserID];
-
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"DELETE"
-                                                    path:path
-                                              apiVersion:LUAPIVersion13
+                                                    path:@"facebook_connections"
+                                              apiVersion:LUAPIVersion14
                                               parameters:nil
-                                            modelFactory:[LUUserJSONFactory factory]];
+                                            modelFactory:nil];
 }
 
 + (LUAPIRequest *)requestToResetPasswordWithEmail:(NSString *)email {
@@ -89,7 +84,7 @@
                                                     path:path
                                               apiVersion:LUAPIVersion14
                                               parameters:@{@"user" : [LUUserParameterBuilder parametersForUser:user]}
-                                            modelFactory:[LUUserV14JSONFactory factory]];
+                                            modelFactory:[LUUserJSONFactory factory]];
 }
 
 @end

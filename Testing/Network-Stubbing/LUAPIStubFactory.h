@@ -25,6 +25,7 @@
 + (LUAPIStub *)stubToGetCohortNotFound:(NSString *)code;
 + (LUAPIStub *)stubToGetCreditCardsOneResult;
 + (LUAPIStub *)stubToGetCreditCardsTwoResults;
++ (LUAPIStub *)stubToGetCurrentFacebookConnectedUser;
 + (LUAPIStub *)stubToGetCurrentUser;
 + (LUAPIStub *)stubToGetLocationSummariesFirstPage;
 + (LUAPIStub *)stubToGetLocationSummariesLastPage;

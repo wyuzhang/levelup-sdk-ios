@@ -14,8 +14,8 @@ describe(@"LUUserJSONFactory", ^{
       LUUser *user = [factory createFromAttributes:[LUUser fullJSONObject]];
 
       [[user.birthdate should] equal:[NSDate fixture]];
-      [[theValue(user.connectedToFacebook) should] beYes];
       [[user.causeID should] equal:@1];
+      [[theValue(user.connectedToFacebook) should] beYes];
       [[user.customAttributes should] equal:@{@"key" : @"value"}];
       [[user.email should] equal:@"test@example.com"];
       [[user.firstName should] equal:@"Test"];

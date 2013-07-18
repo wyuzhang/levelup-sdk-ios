@@ -40,25 +40,27 @@ describe(@"LUUserRequestFactory", ^{
     NSString *facebookAccessToken = @"facebook-access-token";
 
     beforeEach(^{
-      [[LUAPIClient sharedClient] stub:@selector(currentUserID) andReturn:@1];
-
       request = [LUUserRequestFactory requestToConnectToFacebookWithAccessToken:facebookAccessToken];
+    });
+
+    it(@"returns an authenticated request", ^{
+      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a POST request", ^{
       [[request.method should] equal:@"POST"];
     });
 
-    it(@"returns a request to the path 'users/<userid>/facebook_connections'", ^{
-      [[request.path should] equal:@"users/1/facebook_connections"];
+    it(@"returns a request to the path 'facebook_connections'", ^{
+      [[request.path should] equal:@"facebook_connections"];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
 
     it(@"returns a request with parameters for the facebook access token", ^{
-      [[request.parameters should] equal:@{@"facebook_access_token" : facebookAccessToken}];
+      [[request.parameters should] equal:@{@"user" : @{@"facebook_access_token" : facebookAccessToken}}];
     });
   });
 
@@ -128,8 +130,6 @@ describe(@"LUUserRequestFactory", ^{
 
   describe(@"requestToDisconnectFromFacebook", ^{
     beforeEach(^{
-      [[LUAPIClient sharedClient] stub:@selector(currentUserID) andReturn:@1];
-
       request = [LUUserRequestFactory requestToDisconnectFromFacebook];
     });
 
@@ -141,12 +141,12 @@ describe(@"LUUserRequestFactory", ^{
       [[request.method should] equal:@"DELETE"];
     });
 
-    it(@"returns a request to the path 'users/<userid>/facebook_connections'", ^{
-      [[request.path should] equal:@"users/1/facebook_connections"];
+    it(@"returns a request to the path 'facebook_connections'", ^{
+      [[request.path should] equal:@"facebook_connections"];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
   });
 
