@@ -324,6 +324,11 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
 }
 
++ (LUAPIStub *)stubToGetURL:(NSString *)url withBody:(NSString *)body {
+  return [LUAPIStub stubForWebURL:[NSURL URLWithString:url]
+                         withBody:body];
+}
+
 + (LUAPIStub *)stubToLogIn {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:@"access_tokens"

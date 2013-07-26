@@ -38,6 +38,7 @@
 + (LUAPIStub *)stubToGetOrdersOnPage:(NSNumber *)page;
 + (LUAPIStub *)stubToGetOrdersWithMerchantID:(NSNumber *)merchantID page:(NSNumber *)page;
 + (LUAPIStub *)stubToGetPaymentToken;
++ (LUAPIStub *)stubToGetURL:(NSString *)url withBody:(NSString *)body;
 + (LUAPIStub *)stubToLogIn;
 + (LUAPIStub *)stubToLogInWithEmail:(NSString *)email password:(NSString *)password;
 + (LUAPIStub *)stubToLogInWithFacebookAccessToken:(NSString *)facebookAccessToken;
