@@ -82,7 +82,7 @@ NSString * const MerchantNewsletterService = @"MerchantNewsletterService";
 }
 
 - (LULocation *)locationNearestTo:(CLLocation *)location {
-  NSArray *sortedLocations = [self.locations sortedArrayUsingComparator:^(id obj1, id obj2) {
+  NSArray *sortedLocations = [self.locations sortedArrayUsingComparator:^(LULocation *obj1, LULocation *obj2) {
     CLLocationDistance distance1 = [[obj1 location] distanceFromLocation:location];
     CLLocationDistance distance2 = [[obj2 location] distanceFromLocation:location];
 
