@@ -87,7 +87,6 @@
 		02D68DD01738370F005E1BA8 /* NSRegularExpression+LUAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 02D68DCE1738370F005E1BA8 /* NSRegularExpression+LUAdditions.h */; };
 		02D68DD11738370F005E1BA8 /* NSRegularExpression+LUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DCF1738370F005E1BA8 /* NSRegularExpression+LUAdditions.m */; };
 		02D68DDA1738497A005E1BA8 /* LULocationRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DD91738497A005E1BA8 /* LULocationRequestFactorySpec.m */; };
-		02E2913517594D15002036B4 /* LULocationV14JSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E2913317594D15002036B4 /* LULocationV14JSONFactory.m */; };
 		02E2915A175FCAB8002036B4 /* LUAPIStubbing.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E29144175FCAB8002036B4 /* LUAPIStubbing.m */; };
 		02E2915B175FCAB8002036B4 /* campaign.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29146175FCAB8002036B4 /* campaign.json */; };
 		02E2915C175FCAB8002036B4 /* claim.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29147175FCAB8002036B4 /* claim.json */; };
@@ -1764,7 +1763,7 @@
 		25F6439B166832D600A05C0E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = SCVNGR;
 			};
 			buildConfigurationList = 25F6439E166832D600A05C0E /* Build configuration list for PBXProject "LevelUpSDK" */;
@@ -1978,7 +1977,6 @@
 				02BA982B174BE19500C9D647 /* LUCoreDataStore.m in Sources */,
 				F8D4DB9E17569CA90000DB66 /* NSDictionary+SafetyAdditions.m in Sources */,
 				02E8ACDD17594B9500A5B06F /* LULocationV14JSONFactory.m in Sources */,
-				02E2913517594D15002036B4 /* LULocationV14JSONFactory.m in Sources */,
 				020231721779E0B100B057D1 /* LUAPIConnection.m in Sources */,
 				25CA82DF176A173C0073383C /* LUPaymentToken.m in Sources */,
 				25CA82E3176A188A0073383C /* LUPaymentTokenJSONFactory.m in Sources */,
@@ -2235,7 +2233,7 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
