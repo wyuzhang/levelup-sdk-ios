@@ -2,37 +2,38 @@
 #import "LUAuthenticatedAPIRequest.h"
 #import "LUOrderJSONFactory.h"
 #import "LUOrderRequestFactory.h"
+#import "NSURL+LUAdditions.h"
 
 @implementation LUOrderRequestFactory
 
 #pragma mark - Public Methods
 
-+ (LUAPIRequest *)requestForOrdersAtMerchantWithID:(NSNumber *)merchantID page:(NSUInteger)page {
-  NSString *path = [NSString stringWithFormat:@"users/%@/orders", [LUAPIClient sharedClient].currentUserID];
++ (LUAPIRequest *)requestForOrders {
+  NSString *path = [NSString stringWithFormat:@"apps/%@/orders", [LUAPIClient sharedClient].appID];
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
                                                     path:path
-                                              apiVersion:LUAPIVersion13
-                                              parameters:@{@"merchant_ids" : merchantID, @"page" : @(page)}
+                                              apiVersion:LUAPIVersion14
+                                              parameters:nil
                                             modelFactory:[LUOrderJSONFactory factory]];
 }
 
-+ (LUAPIRequest *)requestForOrdersOnPage:(NSUInteger)page {
-  NSString *path = [NSString stringWithFormat:@"users/%@/orders", [LUAPIClient sharedClient].currentUserID];
++ (LUAPIRequest *)requestForOrdersOnPage:(NSURL *)pageURL {
+  if (!pageURL) return [self requestForOrders];
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
-                                                    path:path
-                                              apiVersion:LUAPIVersion13
-                                              parameters:@{@"page" : @(page)}
+                                                    path:[pageURL lu_pathAndQueryWithoutAPIVersion]
+                                              apiVersion:LUAPIVersion14
+                                              parameters:nil
                                             modelFactory:[LUOrderJSONFactory factory]];
 }
 
-+ (LUAPIRequest *)requestForOrderWithID:(NSNumber *)orderID {
-  NSString *path = [NSString stringWithFormat:@"orders/%@", orderID];
++ (LUAPIRequest *)requestForOrderWithUUID:(NSString *)UUID {
+  NSString *path = [NSString stringWithFormat:@"orders/%@", UUID];
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
                                                     path:path
-                                              apiVersion:LUAPIVersion13
+                                              apiVersion:LUAPIVersion14
                                               parameters:nil
                                             modelFactory:[LUOrderJSONFactory factory]];
 }

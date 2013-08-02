@@ -1,4 +1,5 @@
 #import "LULocation.h"
+#import "NSURL+LUAdditions.h"
 
 SPEC_BEGIN(LULocationSpec)
 
@@ -57,18 +58,14 @@ describe(@"LULocation", ^{
 
   describe(@"imageURL", ^{
     LULocation *location = [LULocation fakeInstanceWithLocationID:@1];
+    NSURL *URL = [NSURL URLWithString:@"http://example.com/path/to/image"];
 
     beforeEach(^{
-      [[UIScreen mainScreen] stub:@selector(scale) andReturn:theValue(2.0)];
-
-      [LUAPIClient setupWithAppID:@"1" APIKey:@"test" developmentMode:YES];
+      [NSURL stub:@selector(lu_imageURLForLocationWithID:) andReturn:URL withArguments:@1];
     });
 
-    it(@"returns a URL for the location's image, including width, height and density", ^{
-      NSURL *expected = [NSURL URLWithString:@"v14/locations/1/image?density=2&height=212&width=320"
-                               relativeToURL:[LUAPIClient sharedClient].baseURL];
-
-      [[[location imageURL] should] equal:expected];
+    it(@"returns the URL of the location image request", ^{
+      [[[location imageURL] should] equal:URL];
     });
   });
 

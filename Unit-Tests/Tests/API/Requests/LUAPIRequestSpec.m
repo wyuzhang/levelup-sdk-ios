@@ -34,7 +34,7 @@ describe(@"LUAPIRequest", ^{
 
   // Public Methods
 
-  describe(@"urlRequest", ^{
+  describe(@"URLRequest", ^{
     beforeEach(^{
       apiRequest = [LUAPIRequest apiRequestWithMethod:method path:path apiVersion:apiVersion parameters:parameters modelFactory:modelFactory];
     });
@@ -44,7 +44,7 @@ describe(@"LUAPIRequest", ^{
         NSString *fullPath = [NSString stringWithFormat:@"%@/%@", apiVersion, path];
         NSURLRequest *expected = [[LUAPIClient sharedClient] requestWithMethod:method path:fullPath parameters:parameters];
 
-        [[[apiRequest urlRequest] should] equal:expected];
+        [[[apiRequest URLRequest] should] equal:expected];
       });
     });
   });

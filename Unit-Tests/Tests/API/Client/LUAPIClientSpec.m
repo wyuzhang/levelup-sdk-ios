@@ -119,7 +119,7 @@ describe(@"LUAPIClient", ^{
 
     it(@"creates an AFJSONRequestOperation operation for the request", ^{
       [AFJSONRequestOperation stub:@selector(JSONRequestOperationWithRequest:success:failure:)];
-      [[[AFJSONRequestOperation should] receive] JSONRequestOperationWithRequest:apiRequest.urlRequest
+      [[[AFJSONRequestOperation should] receive] JSONRequestOperationWithRequest:[apiRequest URLRequest]
                                                                          success:any()
                                                                          failure:any()];
       [client performRequest:apiRequest success:nil failure:nil];

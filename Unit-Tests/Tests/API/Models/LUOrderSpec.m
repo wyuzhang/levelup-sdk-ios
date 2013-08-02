@@ -1,7 +1,6 @@
-#import "LUDonation.h"
 #import "LUMonetaryValue.h"
 #import "LUOrder.h"
-#import "NSDate+StringFormats.h"
+#import "NSURL+LUAdditions.h"
 
 SPEC_BEGIN(LUOrderSpec)
 
@@ -12,34 +11,46 @@ describe(@"LUOrder", ^{
 
   // Public Methods
 
-  describe(@"hasDonation", ^{
-    context(@"when donation is nil", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithoutDonation];
+  describe(@"closed", ^{
+    context(@"when bundleClosedDate is nil", ^{
+      LUOrder *order = [LUOrder fakeInstanceWithBundleOpen];
 
       it(@"is NO", ^{
-        [[theValue([order hasDonation]) should] beNo];
+        [[theValue([order closed]) should] beNo];
       });
     });
 
-    context(@"when there is donation with 0 value", ^{
-      LUDonation *donation = [[LUDonation alloc] initWithCause:nil
-                                                    donationID:nil
-                                                         value:[LUMonetaryValue monetaryValueWithUSD:@0.0f]];
-      LUOrder *order = [LUOrder fakeInstanceWithDonation:donation];
-
-      it(@"is NO", ^{
-        [[theValue([order hasDonation]) should] beNo];
-      });
-    });
-
-    context(@"when there is donation with positive value", ^{
-      LUDonation *donation = [[LUDonation alloc] initWithCause:nil
-                                                    donationID:nil
-                                                         value:[LUMonetaryValue monetaryValueWithUSD:@2.0f]];
-      LUOrder *order = [LUOrder fakeInstanceWithDonation:donation];
+    context(@"when bundleClosedDate is non-nil", ^{
+      LUOrder *order = [LUOrder fakeInstance];
 
       it(@"is YES", ^{
-        [[theValue([order hasDonation]) should] beYes];
+        [[theValue([order closed]) should] beYes];
+      });
+    });
+  });
+
+  describe(@"hasContribution", ^{
+    context(@"when contribution is nil", ^{
+      LUOrder *order = [LUOrder fakeInstanceWithoutContribution];
+
+      it(@"is NO", ^{
+        [[theValue([order hasContribution]) should] beNo];
+      });
+    });
+
+    context(@"when there is contribution with 0 value", ^{
+      LUOrder *order = [LUOrder fakeInstanceWithContribution:[LUMonetaryValue monetaryValueWithUSD:@0.0f]];
+
+      it(@"is NO", ^{
+        [[theValue([order hasContribution]) should] beNo];
+      });
+    });
+
+    context(@"when there is donaticontributionon with positive value", ^{
+      LUOrder *order = [LUOrder fakeInstanceWithContribution:[LUMonetaryValue monetaryValueWithUSD:@2.0f]];
+
+      it(@"is YES", ^{
+        [[theValue([order hasContribution]) should] beYes];
       });
     });
   });
@@ -137,6 +148,31 @@ describe(@"LUOrder", ^{
       it(@"is YES", ^{
         [[theValue([order hasUsedCredit]) should] beYes];
       });
+    });
+  });
+
+  describe(@"imageURL", ^{
+    LUOrder *order = [LUOrder fakeInstance];
+    NSURL *URL = [NSURL URLWithString:@"http://example.com/path/to/image"];
+
+    beforeEach(^{
+      [NSURL stub:@selector(lu_imageURLForLocationWithID:) andReturn:URL withArguments:order.locationID];
+    });
+
+    it(@"returns the URL of the location image request", ^{
+      [[[order imageURL] should] equal:URL];
+    });
+  });
+
+  describe(@"singleLineAddress", ^{
+    LUOrder *order = [LUOrder fakeInstance];
+
+    it(@"is combination of all the address elements", ^{
+      NSString *expected = [NSString stringWithFormat:@"%@, %@, %@, %@ %@",
+                            order.locationStreetAddress, order.locationExtendedAddress, order.locationLocality,
+                            order.locationRegion, order.locationPostalCode];
+
+      [[[order singleLineAddress] should] equal:expected];
     });
   });
 

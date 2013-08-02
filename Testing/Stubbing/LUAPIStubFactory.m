@@ -213,6 +213,28 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:[self responseDataFromFile:@"current_user"]];
 }
 
++ (LUAPIStub *)stubToGetInterstitialNotFoundForOrderWithUUID:(NSString *)UUID {
+  NSString *path = [NSString stringWithFormat:@"orders/%@/interstitial", UUID];
+
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                            path:path
+                                      HTTPMethod:@"GET"
+                                   authenticated:YES
+                                    responseData:nil];
+  stub.responseCode = 404;
+  return stub;
+}
+
++ (LUAPIStub *)stubToGetInterstitialForOrderWithUUID:(NSString *)UUID {
+  NSString *path = [NSString stringWithFormat:@"orders/%@/interstitial", UUID];
+
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:path
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"interstitial"]];
+}
+
 + (LUAPIStub *)stubToGetLocationSummariesFirstPage {
   LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
                                             path:@"locations?first"
@@ -234,7 +256,6 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                         authenticated:NO
                          responseData:nil];
 }
-
 
 + (LUAPIStub *)stubToGetLocationsForAppFirstPageNearLocation:(CLLocation *)location {
   NSString *path = [NSString stringWithFormat:@"apps/%@/locations?lat=%@&lng=%@", [LUAPIClient sharedClient].appID,
@@ -271,6 +292,14 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:[self responseDataFromFile:@"location"]];
 }
 
++ (LUAPIStub *)stubToGetLoyaltyDisabledForMerchantWithID:(NSNumber *)merchantID {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:[NSString stringWithFormat:@"merchants/%@/loyalty", [merchantID stringValue]]
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"loyalty_disabled"]];
+}
+
 + (LUAPIStub *)stubToGetLoyaltyForMerchantWithID:(NSNumber *)merchantID {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:[NSString stringWithFormat:@"merchants/%@/loyalty", [merchantID stringValue]]
@@ -303,42 +332,52 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:[self responseDataFromFile:@"new_user"]];
 }
 
-+ (LUAPIStub *)stubToGetOrderWithID:(NSNumber *)orderID {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                 path:[@"orders/" stringByAppendingString:[orderID stringValue]]
++ (LUAPIStub *)stubToGetOrderWithUUID:(NSString *)UUID {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:[@"orders/" stringByAppendingString:UUID]
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"order"]];
 }
 
-+ (LUAPIStub *)stubToGetOrdersOnPage:(NSNumber *)page {
-  NSData *responseData;
-  if ([page integerValue] == 1) {
-    responseData = [self responseDataFromFile:@"orders_page-1"];
-  } else if ([page integerValue] == 2) {
-    responseData = [self responseDataFromFile:@"orders_page-2"];
-  }
++ (LUAPIStub *)stubToGetOrdersFirstPage {
+  NSString *path = [NSString stringWithFormat:@"apps/%@/orders", [LUAPIClient sharedClient].appID];
 
-  return [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                 path:[@"users/1/orders?page=" stringByAppendingString:[page stringValue]]
-                           HTTPMethod:@"GET"
-                        authenticated:YES
-                         responseData:responseData];
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                            path:path
+                                      HTTPMethod:@"GET"
+                                   authenticated:NO
+                                    responseData:[self responseDataFromFile:@"orders_page-1"]];
+
+  NSString *nextPageURLString = [NSString stringWithFormat:@"%@?page=2", [stub.URL absoluteString]];
+  stub.responseHeaders = @{@"Link" : [NSString stringWithFormat:@"<%@>; rel=\"next\"", nextPageURLString]};
+
+  return stub;
 }
 
-+ (LUAPIStub *)stubToGetOrdersWithMerchantID:(NSNumber *)merchantID page:(NSNumber *)page {
-  NSData *responseData;
-  if ([page integerValue] == 1) {
-    responseData = [self responseDataFromFile:@"orders_page-1"];
-  } else if ([page integerValue] == 2) {
-    responseData = [self responseDataFromFile:@"orders_page-2"];
-  }
++ (LUAPIStub *)stubToGetOrdersLastPage {
+  NSString *path = [NSString stringWithFormat:@"apps/%@/orders?last", [LUAPIClient sharedClient].appID];
 
-  return [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                 path:[NSString stringWithFormat:@"users/1/orders?merchant_ids=%@&page=%@", [merchantID stringValue], [page stringValue]]
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:path
                            HTTPMethod:@"GET"
-                        authenticated:YES
-                         responseData:responseData];
+                        authenticated:NO
+                         responseData:nil];
+}
+
++ (LUAPIStub *)stubToGetOrdersSecondPage {
+  NSString *path = [NSString stringWithFormat:@"apps/%@/orders?page=2", [LUAPIClient sharedClient].appID];
+
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                            path:path
+                                      HTTPMethod:@"GET"
+                                   authenticated:NO
+                                    responseData:[self responseDataFromFile:@"orders_page-2"]];
+
+  NSString *nextPageURLString = [[stub.URL absoluteString] stringByReplacingOccurrencesOfString:@"page=2" withString:@"last"];
+  stub.responseHeaders = @{@"Link" : [NSString stringWithFormat:@"<%@>; rel=\"next\"", nextPageURLString]};
+
+  return stub;
 }
 
 + (LUAPIStub *)stubToGetPaymentToken {

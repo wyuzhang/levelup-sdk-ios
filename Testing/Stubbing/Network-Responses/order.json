@@ -1,131 +1,26 @@
 {
   "order": {
-    "balance": {
-      "amount": 300,
-      "currency_code": "USD",
-      "currency_symbol": "$",
-      "formatted_amount": "3.00"
-    },
-    "created_at": "2012-12-24T17:58:04-04:00",
-    "credit": {
-      "amount": 100,
-      "currency_code": "USD",
-      "currency_symbol": "$",
-      "formatted_amount": "1.00"
-    },
-    "earn": {
-      "amount": 0,
-      "currency_code": "USD",
-      "currency_symbol": "$",
-      "formatted_amount": "0.00"
-    },
-    "id": 24,
-    "interstitial_action": {
-      "campaign": {
-        "claimed": false,
-        "cohorts": [
-          {
-            "cohort": {
-              "cohort_type": "default_email",
-              "email_body": "Test Email Body",
-              "message_for_email_subject": "Test Email Subject"
-            }
-          }
-        ],
-        "value": {
-          "amount": 100,
-          "currency_code": "USD",
-          "currency_symbol": "$",
-          "formatted_amount": "1.00"
-        },
-        "sponsor": "Merchant 1"
-      },
-      "type": "customer_acquisition_share"
-    },
-    "location": {
-      "extended_address": null,
-      "hours": null,
-      "id": 1,
-      "lat": "42.362733",
-      "lng": "-71.058461",
-      "locality": "Boston",
-      "phone": "",
-      "postal_code": "01234",
-      "region": "MA",
-      "street_address": "123 Main St"
-    },
-    "loyalty": {
-      "id": 70915,
-      "orders_count": 8,
-      "potential_credit": {
-        "amount": 3786,
-        "currency_code": "USD",
-        "currency_symbol": "$",
-        "formatted_amount": "37.86"
-      },
-      "progress_percent": 0,
-      "spend_remaining": {
-        "amount": 9965,
-        "currency_code": "USD",
-        "currency_symbol": "$",
-        "formatted_amount": "99.65"
-      },
-      "total_volume": {
-        "amount": 35,
-        "currency_code": "USD",
-        "currency_symbol": "$",
-        "formatted_amount": "0.35"
-      }
-    },
-    "merchant": {
-      "id": 1,
-      "image_url_280x128_1_5x": "https://s3.amazonaws.com/levelup-development/merchants/1/images/280x128_1_5x/levelupcafe.jpg?1345126790",
-      "image_url_280x128_1x": "https://s3.amazonaws.com/levelup-development/merchants/1/images/280x128_1x/levelupcafe.jpg?1345126790",
-      "image_url_280x128_2x": "https://s3.amazonaws.com/levelup-development/merchants/1/images/280x128_2x/levelupcafe.jpg?1345126790",
-      "image_url_290x335_1x": "https://s3.amazonaws.com/levelup-development/merchants/1/images/290x335_1x/levelupcafe.jpg?1345126790",
-      "image_url_320x212_1_5x": "https://s3.amazonaws.com/levelup-development/merchants/1/images/320x212_1_5x/levelupcafe.jpg?1345126790",
-      "image_url_320x212_1x": "https://s3.amazonaws.com/levelup-development/merchants/1/images/320x212_1x/levelupcafe.jpg?1345126790",
-      "image_url_320x212_2x": "https://s3.amazonaws.com/levelup-development/merchants/1/images/320x212_2x/levelupcafe.jpg?1345126790",
-      "image_url_400x235_1x": "https://s3.amazonaws.com/levelup-development/merchants/1/images/400x235_1x/levelupcafe.jpg?1345126790",
-      "name": "Merchant 1",
-      "public_url": "http://localhost:3000/merchants/1"
-    },
-    "merchant_funded_credit": {
-      "amount": 5,
-      "currency_code": "USD",
-      "currency_symbol": "$",
-      "formatted_amount": "0.05"
-    },
-    "refunded_at": null,
-    "spend": {
-      "amount": 400,
-      "currency_code": "USD",
-      "currency_symbol": "$",
-      "formatted_amount": "4.00"
-    },
-    "state": "completed",
-    "tip": {
-      "amount": 0,
-      "currency_code": "USD",
-      "currency_symbol": "$",
-      "formatted_amount": "0.00"
-    },
-    "total": {
-      "amount": 400,
-      "currency_code": "USD",
-      "currency_symbol": "$",
-      "formatted_amount": "4.00"
-    },
-    "unfunded_credit": {
-      "amount": 5,
-      "currency_code": "USD",
-      "currency_symbol": "$",
-      "formatted_amount": "0.05"
-    },
-    "user": {
-      "able_to_refer": true,
-      "first_name": "Test",
-      "last_initial": "U"
-    }
+    "balance_amount" : 300,
+    "bundle_closed_at" : "2012-12-24T17:58:04-04:00",
+    "bundle_descriptor" : "LevelUp",
+    "contribution_amount" : 0,
+    "contribution_target" : null,
+    "created_at" : "2012-12-24T17:58:04-04:00",
+    "credit_applied_amount" : 100,
+    "credit_earned_amount": 0,
+    "location_extended_address" : null,
+    "location_id" : 1,
+    "location_locality" : "Boston",
+    "location_postal_code" : "01234",
+    "location_region" : "MA",
+    "location_street_address" : "123 Main St",
+    "merchant_id" : 1,
+    "merchant_name" : "Merchant 1",
+    "refunded_at" : null,
+    "spend_amount" : 400,
+    "tip_amount" : 0,
+    "total_amount" : 400,
+    "transacted_at" : "2012-12-24T17:58:04-04:00",
+    "uuid" : "229c5670f3010130147e3c075468379e"
   }
 }

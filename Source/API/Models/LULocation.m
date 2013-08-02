@@ -1,6 +1,7 @@
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
 #import "LULocation.h"
+#import "NSURL+LUAdditions.h"
 
 @implementation LULocation
 
@@ -68,16 +69,7 @@
 }
 
 - (NSURL *)imageURL {
-  NSDictionary *parameters = @{
-    @"width" : @320,
-    @"height" : @212,
-    @"density" : @((int)[UIScreen mainScreen].scale)
-  };
-
-  NSString *path = [NSString stringWithFormat:@"%@/locations/%@/image?%@", LUAPIVersion14, [self.locationID stringValue],
-                    AFQueryStringFromParametersWithEncoding(parameters, NSUTF8StringEncoding)];
-
-  return [NSURL URLWithString:path relativeToURL:[LUAPIClient sharedClient].baseURL];
+  return [NSURL lu_imageURLForLocationWithID:self.locationID];
 }
 
 - (CLLocation *)location {

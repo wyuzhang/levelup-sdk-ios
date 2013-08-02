@@ -5,24 +5,21 @@
 + (LUOrder *)fakeInstance;
 
 + (LUOrder *)fakeInstanceWithOnlySpend;
-+ (LUOrder *)fakeInstanceWithOnlySpendAndDonation;
++ (LUOrder *)fakeInstanceWithOnlySpendAndContribution;
 
 + (LUOrder *)fakeInstanceWithCredit:(LUMonetaryValue *)credit;
-+ (LUOrder *)fakeInstanceWithDonation:(LUDonation *)donation;
++ (LUOrder *)fakeInstanceWithContribution:(LUMonetaryValue *)contribution;
 + (LUOrder *)fakeInstanceWithEarn:(LUMonetaryValue *)earn;
 + (LUOrder *)fakeInstanceWithTip:(LUMonetaryValue *)tip;
 
 + (LUOrder *)fakeInstanceWithoutTip;
-+ (LUOrder *)fakeInstanceWithoutDonation;
++ (LUOrder *)fakeInstanceWithoutContribution;
 + (LUOrder *)fakeInstanceWithZeroBalance;
 + (LUOrder *)fakeInstanceWithoutCreditApplied;
 + (LUOrder *)fakeInstanceWithoutCreditEarned;
 + (LUOrder *)fakeInstanceWithMultipleMissingAttributes;
 
-+ (LUOrder *)fakeInstanceWithPendingStatus;
++ (LUOrder *)fakeInstanceWithBundleOpen;
 + (LUOrder *)fakeInstanceWithRefundedStatus;
-
-+ (LUOrder *)fakeInstanceWithoutInterstitial;
-+ (LUOrder *)fakeInstanceWithoutLoyalty;
 
 @end

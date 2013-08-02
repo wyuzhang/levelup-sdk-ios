@@ -10,62 +10,11 @@ describe(@"LUOrderRequestFactory", ^{
 
   __block LUAPIRequest *request;
 
-  describe(@"requestForOrdersAtMerchantWithID:page:", ^{
-    NSNumber *merchantID = @2;
-    NSUInteger page = 3;
-
+  describe(@"requestForOrders", ^{
     beforeEach(^{
-      [[LUAPIClient sharedClient] stub:@selector(currentUserID) andReturn:@1];
+      [LUAPIClient setupWithAppID:@"1" APIKey:@"test" developmentMode:YES];
 
-      request = [LUOrderRequestFactory requestForOrdersAtMerchantWithID:merchantID page:page];
-    });
-
-    it(@"returns a GET request", ^{
-      [[request.method should] equal:@"GET"];
-    });
-
-    it(@"returns a request to the path 'users/<userid>/orders'", ^{
-      [[request.path should] equal:@"users/1/orders"];
-    });
-
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
-    });
-
-    it(@"returns a request with parameters for the given merchant and page", ^{
-      [[request.parameters should] equal:@{@"merchant_ids" : merchantID, @"page" : @(page)}];
-    });
-  });
-
-  describe(@"requestForOrdersOnPage:", ^{
-    NSUInteger page = 2;
-
-    beforeEach(^{
-      [[LUAPIClient sharedClient] stub:@selector(currentUserID) andReturn:@1];
-
-      request = [LUOrderRequestFactory requestForOrdersOnPage:page];
-    });
-
-    it(@"returns a GET request", ^{
-      [[request.method should] equal:@"GET"];
-    });
-
-    it(@"returns a request to the path 'users/<userid>/orders'", ^{
-      [[request.path should] equal:@"users/1/orders"];
-    });
-
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
-    });
-
-    it(@"returns a request with parameters for the given page", ^{
-      [[request.parameters should] equal:@{@"page" : @(page)}];
-    });
-  });
-
-  describe(@"requestForOrderWithID:", ^{
-    beforeEach(^{
-      request = [LUOrderRequestFactory requestForOrderWithID:@1];
+      request = [LUOrderRequestFactory requestForOrders];
     });
 
     it(@"returns an authenticated request", ^{
@@ -76,12 +25,62 @@ describe(@"LUOrderRequestFactory", ^{
       [[request.method should] equal:@"GET"];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to the path 'apps/:id/orders'", ^{
+      [[request.path should] equal:@"apps/1/orders"];
     });
 
-    it(@"returns a request to the path 'orders/<id>'", ^{
-      [[request.path should] equal:@"orders/1"];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
+    });
+  });
+
+  describe(@"requestForOrdersOnPage:", ^{
+    NSURL *pageURL = [NSURL URLWithString:@"http://example.com/next_page?key=value"];
+
+    beforeEach(^{
+      request = [LUOrderRequestFactory requestForOrdersOnPage:pageURL];
+    });
+
+    it(@"returns an authenticated request", ^{
+      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
+    });
+
+    it(@"returns a GET request", ^{
+      [[request.method should] equal:@"GET"];
+    });
+
+    it(@"returns a request to the path provided by the page URL", ^{
+      [[request.path should] equal:@"next_page?key=value"];
+    });
+
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
+    });
+  });
+
+  describe(@"requestForOrderWithUUID:", ^{
+    NSString *UUID = @"dc3ef230f251013007583c075468379e";
+
+    beforeEach(^{
+      request = [LUOrderRequestFactory requestForOrderWithUUID:UUID];
+    });
+
+    it(@"returns an authenticated request", ^{
+      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
+    });
+
+    it(@"returns a GET request", ^{
+      [[request.method should] equal:@"GET"];
+    });
+
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
+    });
+
+    it(@"returns a request to the path 'orders/<uuid>'", ^{
+      NSString *expectedPath = [NSString stringWithFormat:@"orders/%@", UUID];
+
+      [[request.path should] equal:expectedPath];
     });
   });
 });

@@ -58,8 +58,13 @@ extern NSString * const LUAPIVersion14;
         modelFactory:(LUAbstractJSONModelFactory *)modelFactory;
 
 /**
+ Returns an `NSURL` instance for this API request.
+ */
+- (NSURL *)URL;
+
+/**
  Returns an `NSMutableURLRequest` instance for this API request.
  */
-- (NSMutableURLRequest *)urlRequest;
+- (NSMutableURLRequest *)URLRequest;
 
 @end

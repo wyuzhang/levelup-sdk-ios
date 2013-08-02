@@ -62,7 +62,7 @@ __strong static id _sharedClient = nil;
                             success:(LUAPISuccessBlock)success
                             failure:(LUAPIFailureBlock)failure {
   AFJSONRequestOperation *requestOperation =
-    [AFJSONRequestOperation JSONRequestOperationWithRequest:apiRequest.urlRequest
+    [AFJSONRequestOperation JSONRequestOperationWithRequest:apiRequest.URLRequest
                                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                                                       if (success) {
                                                         LUAPIResponse *apiResponse = [[LUAPIResponse alloc] initWithHTTPURLResponse:response];

@@ -1,5 +1,3 @@
-#import "LUDonation+FakeInstance.h"
-#import "LUInterstitialAction+FakeInstance.h"
 #import "LULocation+FakeInstance.h"
 #import "LULoyalty+FakeInstance.h"
 #import "LUMerchant+FakeInstance.h"
@@ -11,33 +9,39 @@
 
 + (LUOrder *)fakeInstance {
   return [[LUOrder alloc] initWithBalance:[LUMonetaryValue monetaryValueWithUSD:@5.46f]
-                                   closed:YES
+                         bundleClosedDate:[NSDate lu_dateFromIso8601DateTimeString:@"2012-12-24T16:58:23-05:00"]
+                         bundleDescriptor:@"LevelUp"
+                             contribution:[LUMonetaryValue monetaryValueWithUSD:@0.49f]
+                   contributionTargetName:@"Test Cause"
                               createdDate:[NSDate lu_dateFromIso8601DateTimeString:@"2012-12-24T16:58:23-05:00"]
                                    credit:[LUMonetaryValue monetaryValueWithUSD:@1.0f]
-                                 donation:[LUDonation fakeInstance]
                                      earn:[LUMonetaryValue monetaryValueWithUSD:@2.0f]
-                       interstitialAction:[LUInterstitialAction fakeInstanceForCustomerAquisition]
-                                 location:[LULocation fakeInstance]
-                                  loyalty:[LULoyalty fakeInstance]
-                                 merchant:[LUMerchant fakeInstance]
-                                  orderID:@1
+                  locationExtendedAddress:@"Apt E"
+                               locationID:@1
+                         locationLocality:@"Boston"
+                       locationPostalCode:@"01234"
+                           locationRegion:@"MA"
+                    locationStreetAddress:@"123 Main St."
+                               merchantID:@2
+                             merchantName:@"Test Merchant"
                              refundedDate:nil
                                     spend:[LUMonetaryValue monetaryValueWithUSD:@4.99f]
-                                    state:LUOrderCompleted
                                       tip:[LUMonetaryValue monetaryValueWithUSD:@0.98f]
-                                    total:[LUMonetaryValue monetaryValueWithUSD:@4.48f]];
+                                    total:[LUMonetaryValue monetaryValueWithUSD:@4.48f]
+                           transactedDate:[NSDate lu_dateFromIso8601DateTimeString:@"2012-12-24T16:58:23-05:00"]
+                                     UUID:@"97067bb0f250013007de3c075468379e"];
 }
 
 + (LUOrder *)fakeInstanceWithOnlySpend {
   LUOrder *order = [self fakeInstance];
   [order setValue:nil forKey:@"credit"];
-  [order setValue:nil forKey:@"donation"];
+  [order setValue:nil forKey:@"contribution"];
   [order setValue:nil forKey:@"earn"];
   [order setValue:nil forKey:@"tip"];
   return order;
 }
 
-+ (LUOrder *)fakeInstanceWithOnlySpendAndDonation {
++ (LUOrder *)fakeInstanceWithOnlySpendAndContribution {
   LUOrder *order = [self fakeInstance];
   [order setValue:nil forKey:@"credit"];
   [order setValue:nil forKey:@"earn"];
@@ -51,9 +55,10 @@
   return order;
 }
 
-+ (LUOrder *)fakeInstanceWithDonation:(LUDonation *)donation {
++ (LUOrder *)fakeInstanceWithContribution:(LUMonetaryValue *)contribution {
   LUOrder *order = [self fakeInstance];
-  [order setValue:donation forKey:@"donation"];
+  [order setValue:contribution forKey:@"contribution"];
+  [order setValue:@"Test Charity" forKey:@"contributionTargetName"];
   return order;
 }
 
@@ -75,9 +80,10 @@
   return order;
 }
 
-+ (LUOrder *)fakeInstanceWithoutDonation {
++ (LUOrder *)fakeInstanceWithoutContribution {
   LUOrder *order = [self fakeInstance];
-  [order setValue:nil forKey:@"donation"];
+  [order setValue:nil forKey:@"contribution"];
+  [order setValue:nil forKey:@"contributionTargetName"];
   return order;
 }
 
@@ -101,34 +107,20 @@
 
 + (LUOrder *)fakeInstanceWithMultipleMissingAttributes {
   LUOrder *order = [self fakeInstance];
-  [order setValue:nil forKey:@"donation"];
+  [order setValue:nil forKey:@"contribution"];
   [order setValue:[LUMonetaryValue monetaryValueWithUSD:@0.0] forKey:@"earn"];
   return order;
 }
 
-+ (LUOrder *)fakeInstanceWithPendingStatus {
++ (LUOrder *)fakeInstanceWithBundleOpen {
   LUOrder *order = [self fakeInstance];
-  [order setValue:@NO forKey:@"closed"];
-  [order setValue:@(LUOrderProcessing) forKey:@"state"];
+  [order setValue:nil forKey:@"bundleClosedDate"];
   return order;
 }
 
 + (LUOrder *)fakeInstanceWithRefundedStatus {
   LUOrder *order = [self fakeInstance];
   [order setValue:[NSDate date] forKey:@"refundedDate"];
-  return order;
-}
-
-+ (LUOrder *)fakeInstanceWithoutInterstitial {
-  LUOrder *order = [self fakeInstance];
-  [order setValue:nil forKey:@"interstitialAction"];
-  return order;
-}
-
-+ (LUOrder *)fakeInstanceWithoutLoyalty {
-  LUOrder *order = [self fakeInstance];
-  [order setValue:nil forKey:@"loyalty"];
-  [order setValue:[LUMerchant fakeInstanceWithoutLoyaltyEnabled] forKey:@"merchant"];
   return order;
 }
 

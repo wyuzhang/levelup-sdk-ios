@@ -3,16 +3,16 @@
 
 @implementation LUAuthenticatedAPIRequest
 
-- (NSMutableURLRequest *)urlRequest {
-  NSMutableURLRequest *urlRequest = [super urlRequest];
+- (NSMutableURLRequest *)URLRequest {
+  NSMutableURLRequest *URLRequest = [super URLRequest];
 
   if ([LUAPIClient sharedClient].accessToken) {
     NSString *authorization = [NSString stringWithFormat:@"token %@", [LUAPIClient sharedClient].accessToken];
 
-    [urlRequest addValue:authorization forHTTPHeaderField:@"Authorization"];
+    [URLRequest addValue:authorization forHTTPHeaderField:@"Authorization"];
   }
 
-  return urlRequest;
+  return URLRequest;
 }
 
 @end

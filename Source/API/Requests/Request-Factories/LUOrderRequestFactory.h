@@ -6,31 +6,30 @@
 @interface LUOrderRequestFactory : NSObject
 
 /**
- Builds a request to retrieve orders that the current user has made at a given merchant.
+ Builds a request to retrieve orders that the current user has made at merchants associated with the app.
 
- On success, this request will return an array of `LUOrder` instances.
-
- @param merchantID The ID of the merchant to search against.
- @param page The page of orders to retrieve.
+ On success, this request will return an array of `LUOrder` instances. The response will include a URL for the next page
+ of results. This URL can be used with `requestForOrdersOnPage:` to retrieve the next page of orders.
  */
-+ (LUAPIRequest *)requestForOrdersAtMerchantWithID:(NSNumber *)merchantID page:(NSUInteger)page;
++ (LUAPIRequest *)requestForOrders;
 
 /**
- Builds a request to retrieve orders of the current user.
+ Builds a request to retrieve the given page of orders.
 
- On success, this request will return an array of `LUOrder` instances.
+ On success, this request will return an array of `LUOrder` instances. If this page doesn't include any orders, the
+ response will be empty with a status code of 204 (No Content).
 
- @param page The page of orders to retrieve.
+ @param pageURL The next page of orders to request.
  */
-+ (LUAPIRequest *)requestForOrdersOnPage:(NSUInteger)page;
++ (LUAPIRequest *)requestForOrdersOnPage:(NSURL *)pageURL;
 
 /**
  Builds a request to retrieve an order.
 
  On success, this request will return an `LUOrder` instance.
 
- @param orderID The ID of the order to retrieve.
+ @param UUID The UUID of the order to retrieve.
  */
-+ (LUAPIRequest *)requestForOrderWithID:(NSNumber *)orderID;
++ (LUAPIRequest *)requestForOrderWithUUID:(NSString *)UUID;
 
 @end

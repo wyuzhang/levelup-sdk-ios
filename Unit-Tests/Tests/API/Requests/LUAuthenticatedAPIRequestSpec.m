@@ -36,7 +36,7 @@ describe(@"LUAuthenticatedAPIRequest", ^{
       });
 
       it(@"adds the access token to the Authorization header", ^{
-        NSMutableURLRequest *urlRequest = [request urlRequest];
+        NSMutableURLRequest *urlRequest = [request URLRequest];
 
         NSString *expectedAuthorizationHeader = [NSString stringWithFormat:@"token %@", accessToken];
         [[[urlRequest allHTTPHeaderFields][@"Authorization"] should] equal:expectedAuthorizationHeader];
@@ -49,7 +49,7 @@ describe(@"LUAuthenticatedAPIRequest", ^{
       });
 
       it(@"doesn't add an Authorization header", ^{
-        NSMutableURLRequest *urlRequest = [request urlRequest];
+        NSMutableURLRequest *urlRequest = [request URLRequest];
 
         [[urlRequest allHTTPHeaderFields][@"Authorization"] shouldBeNil];
       });

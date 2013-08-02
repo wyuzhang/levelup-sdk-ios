@@ -12,4 +12,14 @@
                          range:NSMakeRange(0, string.length)];
 }
 
+- (NSString *)lu_removeMatchesInString:(NSString *)string {
+  NSMutableString *mutableString = [string mutableCopy];
+  [self replaceMatchesInString:mutableString
+                        options:0
+                          range:NSMakeRange(0, string.length)
+                   withTemplate:@""];
+
+  return [NSString stringWithString:mutableString];
+}
+
 @end

@@ -1,10 +1,10 @@
-#import "LUInterstitialAction.h"
+#import "LUInterstitial.h"
 
 SPEC_BEGIN(LUInterstitialActionSpec)
 
 describe(@"LUInterstitialAction", ^{
   it(@"is an LUAPIModel", ^{
-    [[[LUInterstitialAction class] should] beSubclassOfClass:[LUAPIModel class]];
+    [[[LUInterstitial class] should] beSubclassOfClass:[LUAPIModel class]];
   });
 });
 

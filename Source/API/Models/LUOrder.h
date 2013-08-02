@@ -3,18 +3,7 @@
 /**
  `LUOrder` represents an order made using LevelUp.
  */
-typedef NS_ENUM(NSInteger, LUOrderState) {
-  LUOrderNoState,
-  LUOrderProcessing,
-  LUOrderCompleted,
-  LUOrderRefunded
-};
 
-@class LUDonation;
-@class LUInterstitialAction;
-@class LULocation;
-@class LULoyalty;
-@class LUMerchant;
 @class LUMonetaryValue;
 
 @interface LUOrder : LUAPIModel
@@ -25,12 +14,27 @@ typedef NS_ENUM(NSInteger, LUOrderState) {
 @property (nonatomic, strong, readonly) LUMonetaryValue *balance;
 
 /**
- Specifies if this order is closed.
+ The date that this order's bundle was closed. If this is `nil`, then this order hasn't been closed.
  */
-@property (nonatomic, assign, readonly) BOOL closed;
+@property (nonatomic, copy, readonly) NSDate *bundleClosedDate;
 
 /**
- The date that this order was made.
+ The descriptor that will appear on the user's statement, if this order has been closed.
+ */
+@property (nonatomic, copy, readonly) NSString *bundleDescriptor;
+
+/**
+ The contribution associated with this order (if one was made).
+ */
+@property (nonatomic, strong, readonly) LUMonetaryValue *contribution;
+
+/**
+ The name of the contribution associated with this order, if one was made.
+ */
+@property (nonatomic, strong, readonly) NSString *contributionTargetName;
+
+/**
+ The date that this order was created.
  */
 @property (nonatomic, copy, readonly) NSDate *createdDate;
 
@@ -40,42 +44,53 @@ typedef NS_ENUM(NSInteger, LUOrderState) {
 @property (nonatomic, strong, readonly) LUMonetaryValue *credit;
 
 /**
- The donation associated with this order (if one was made).
- */
-@property (nonatomic, strong, readonly) LUDonation *donation;
-
-/**
  The amount of credit the user earned with this purchase.
  */
 @property (nonatomic, strong, readonly) LUMonetaryValue *earn;
 
 /**
- When displaying the receipt for this order, also show this intestitial action.
+ An optional "extended" address for the location at which this order was made. An example would be an apartment number.
  */
-@property (nonatomic, strong, readonly) LUInterstitialAction *interstitialAction;
+@property (nonatomic, copy, readonly) NSString *locationExtendedAddress;
 
 /**
- The `LULocation` at which this order was made.
+ The ID of the location at which this order was made.
  */
-@property (nonatomic, strong, readonly) LULocation *location;
+@property (nonatomic, copy, readonly) NSNumber *locationID;
 
 /**
- The user's loyalty at the merchant at which the order was made.
+ The town or city of the location at which this order was made.
  */
-@property (nonatomic, strong, readonly) LULoyalty *loyalty;
+@property (nonatomic, copy, readonly) NSString *locationLocality;
 
 /**
- The merchant at which the order was made.
+ The postal code of the location at which this order was made.
  */
-@property (nonatomic, strong, readonly) LUMerchant *merchant;
+@property (nonatomic, copy, readonly) NSString *locationPostalCode;
 
 /**
- The unique identifier for this order.
+ The region of the location at which this order was made.
  */
-@property (nonatomic, copy, readonly) NSNumber *orderID;
+@property (nonatomic, copy, readonly) NSString *locationRegion;
 
 /**
- The date that this order was refunded.
+ The street address of the location at which this order was made.
+ */
+@property (nonatomic, copy, readonly) NSString *locationStreetAddress;
+
+/**
+ The ID of the merchant at which this order was made.
+ */
+@property (nonatomic, copy, readonly) NSNumber *merchantID;
+
+/**
+ The name of the merchant at which this order was made.
+ */
+@property (nonatomic, copy, readonly) NSString *merchantName;
+
+/**
+ If this order has been refunded, the date that this order was refunded. If the order hasn't been refunded, this will
+ be `nil`.
  */
 @property (nonatomic, copy, readonly) NSDate *refundedDate;
 
@@ -83,11 +98,6 @@ typedef NS_ENUM(NSInteger, LUOrderState) {
  The amount the user spent for this order, not including tip.
  */
 @property (nonatomic, strong, readonly) LUMonetaryValue *spend;
-
-/**
- The state of the order.
- */
-@property (nonatomic, assign, readonly) LUOrderState state;
 
 /**
  The tip made for this order.
@@ -99,19 +109,36 @@ typedef NS_ENUM(NSInteger, LUOrderState) {
  */
 @property (nonatomic, strong, readonly) LUMonetaryValue *total;
 
-- (id)initWithBalance:(LUMonetaryValue *)balance closed:(BOOL)closed
-          createdDate:(NSDate *)createdDate credit:(LUMonetaryValue *)credit
-             donation:(LUDonation *)donation earn:(LUMonetaryValue *)earn
-   interstitialAction:(LUInterstitialAction *)interstitialAction location:(LULocation *)location
-              loyalty:(LULoyalty *)loyalty merchant:(LUMerchant *)merchant
-              orderID:(NSNumber *)orderID refundedDate:(NSDate *)refundedDate
-                spend:(LUMonetaryValue *)spend state:(LUOrderState)state tip:(LUMonetaryValue *)tip
-                total:(LUMonetaryValue *)total;
+/**
+ The date that this order was transacted.
+ */
+@property (nonatomic, copy, readonly) NSDate *transactedDate;
 
 /**
- Specifies if a donation was made on this order.
+ The unique identifier for this order.
  */
-- (BOOL)hasDonation;
+@property (nonatomic, copy, readonly) NSString *UUID;
+
+- (id)initWithBalance:(LUMonetaryValue *)balance bundleClosedDate:(NSDate *)bundleClosedDate
+     bundleDescriptor:(NSString *)bundleDescriptor contribution:(LUMonetaryValue *)contribution
+contributionTargetName:(NSString *)contributionTargetName createdDate:(NSDate *)createdDate
+               credit:(LUMonetaryValue *)credit earn:(LUMonetaryValue *)earn
+locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber *)locationID
+     locationLocality:(NSString *)locationLocality locationPostalCode:(NSString *)locationPostalCode
+       locationRegion:(NSString *)locationRegion locationStreetAddress:(NSString *)locationStreetAddress
+           merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName refundedDate:(NSDate *)refundedDate
+                spend:(LUMonetaryValue *)spend tip:(LUMonetaryValue *)tip total:(LUMonetaryValue *)total
+       transactedDate:(NSDate *)transactedDate UUID:(NSString *)UUID;
+
+/**
+ Specifies if an order is closed.
+ */
+- (BOOL)closed;
+
+/**
+ Specifies if a contribution was made on this order.
+ */
+- (BOOL)hasContribution;
 
 /**
  Specifies if the user earned credit on this order.
@@ -132,6 +159,18 @@ typedef NS_ENUM(NSInteger, LUOrderState) {
  Specifies if credit was used on this order.
  */
 - (BOOL)hasUsedCredit;
+
+/**
+ An associated image for the order's location. Will automatically return a retina or non-retina scaled image based on
+ the screen scale of the device. The resolution is 320x212.
+ */
+- (NSURL *)imageURL;
+
+/**
+ A helper method which returns all the address fields in one line. The format is "<full street address>, <locality>,
+ <region> <postal code>". For example: "123 Main Street, Apt 2A, Boston, MA 01234".
+ */
+- (NSString *)singleLineAddress;
 
 /**
  Specifies if this order has been refunded.

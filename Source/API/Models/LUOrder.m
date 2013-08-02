@@ -1,99 +1,113 @@
-#import "LUDonation.h"
+#import "LUAPIClient.h"
+#import "LUAPIRequest.h"
 #import "LUMonetaryValue.h"
 #import "LUOrder.h"
-#import "NSDate+StringFormats.h"
+#import "NSURL+LUAdditions.h"
 
 @implementation LUOrder
 
 #pragma mark - Creation
 
-- (id)initWithBalance:(LUMonetaryValue *)balance closed:(BOOL)closed
-          createdDate:(NSDate *)createdDate credit:(LUMonetaryValue *)credit
-             donation:(LUDonation *)donation earn:(LUMonetaryValue *)earn
-   interstitialAction:(LUInterstitialAction *)interstitialAction location:(LULocation *)location
-              loyalty:(LULoyalty *)loyalty merchant:(LUMerchant *)merchant
-              orderID:(NSNumber *)orderID refundedDate:(NSDate *)refundedDate
-                spend:(LUMonetaryValue *)spend state:(LUOrderState)state tip:(LUMonetaryValue *)tip
-                total:(LUMonetaryValue *)total {
+- (id)initWithBalance:(LUMonetaryValue *)balance bundleClosedDate:(NSDate *)bundleClosedDate
+     bundleDescriptor:(NSString *)bundleDescriptor contribution:(LUMonetaryValue *)contribution
+contributionTargetName:(NSString *)contributionTargetName createdDate:(NSDate *)createdDate
+               credit:(LUMonetaryValue *)credit earn:(LUMonetaryValue *)earn
+locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber *)locationID
+     locationLocality:(NSString *)locationLocality locationPostalCode:(NSString *)locationPostalCode
+       locationRegion:(NSString *)locationRegion locationStreetAddress:(NSString *)locationStreetAddress
+           merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName refundedDate:(NSDate *)refundedDate
+                spend:(LUMonetaryValue *)spend tip:(LUMonetaryValue *)tip total:(LUMonetaryValue *)total
+       transactedDate:(NSDate *)transactedDate UUID:(NSString *)UUID {
   self = [super init];
   if (!self) return nil;
 
   _balance = balance;
-  _closed = closed;
+  _bundleClosedDate = bundleClosedDate;
+  _bundleDescriptor = bundleDescriptor;
+  _contribution = contribution;
+  _contributionTargetName = contributionTargetName;
   _createdDate = createdDate;
   _credit = credit;
-  _donation = donation;
   _earn = earn;
-  _interstitialAction = interstitialAction;
-  _location = location;
-  _loyalty = loyalty;
-  _merchant = merchant;
-  _orderID = orderID;
+  _locationExtendedAddress = locationExtendedAddress;
+  _locationID = locationID;
+  _locationLocality = locationLocality;
+  _locationPostalCode = locationPostalCode;
+  _locationRegion = locationRegion;
+  _locationStreetAddress = locationStreetAddress;
+  _merchantID = merchantID;
+  _merchantName = merchantName;
   _refundedDate = refundedDate;
   _spend = spend;
-  _state = state;
   _tip = tip;
   _total = total;
+  _transactedDate = transactedDate;
+  _UUID = UUID;
 
   return self;
 }
 
 #pragma mark - Public Methods
 
-- (BOOL)hasDonation {
-  return (self.donation.value.amount.floatValue > 0.0f);
+- (BOOL)closed {
+  return self.bundleClosedDate != nil;
+}
+
+- (BOOL)hasContribution {
+  return [self.contribution.amount floatValue] > 0.0f;
 }
 
 - (BOOL)hasEarnedCredit {
-  return (self.earn.amount.floatValue > 0.0f);
+  return [self.earn.amount floatValue] > 0.0f;
 }
 
 - (BOOL)hasNonZeroBalance {
-  return (self.balance.amount.floatValue != 0.0f);
+  return [self.balance.amount floatValue] != 0.0f;
 }
 
 - (BOOL)hasTipApplied {
-  return (self.tip.amount.floatValue > 0.0f);
+  return [self.tip.amount floatValue] > 0.0f;
 }
 
 - (BOOL)hasUsedCredit {
-  return (self.credit.amount.floatValue > 0.0f);
+  return [self.credit.amount floatValue] > 0.0f;
+}
+
+- (NSURL *)imageURL {
+  return [NSURL lu_imageURLForLocationWithID:self.locationID];
+}
+
+- (NSString *)singleLineAddress {
+  NSString *fullStreetAddress;
+
+  if (self.locationExtendedAddress.length > 0) {
+    fullStreetAddress = [NSString stringWithFormat:@"%@, %@", self.locationStreetAddress, self.locationExtendedAddress];
+  } else {
+    fullStreetAddress = self.locationStreetAddress;
+  }
+
+  return [NSString stringWithFormat:@"%@, %@, %@ %@", fullStreetAddress, self.locationLocality, self.locationRegion,
+          self.locationPostalCode];
 }
 
 - (BOOL)wasRefunded {
-  return (self.refundedDate != nil);
+  return self.refundedDate != nil;
 }
 
 #pragma mark - NSObject Methods
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUOrder [balance=%@, closed=%@, createdDate=%@, credit=%@, donation=%@, earn=%@, ID=%@, interstitialAction=%@, location=%@, loyalty=%@, merchant=%@, refundedDate=%@, spend=%@, state=%@, tip=%@, total=%@]",
-          self.balance, @(self.closed), self.createdDate, self.credit, self.donation, self.earn, self.orderID,
-          self.interstitialAction, self.location, self.loyalty, self.merchant, self.refundedDate, self.spend,
-          [self stateString], self.tip, self.total];
+          @"LUOrder [balance=%@, bundleClosedDate=%@, bundleDescriptor=%@, contribution=%@, contributionTargetName=%@, createdDate=%@, credit=%@, earn=%@, locationExtendedAddress=%@, locationID=%@, locationLocality=%@, locationPostalCode=%@, locationRegion=%@, locationStreetAddress=%@, merchantID=%@, merchantName=%@, refundedDate=%@, spend=%@, tip=%@, total=%@, transactedDate=%@, UUID=%@]",
+          self.balance, self.bundleClosedDate, self.bundleDescriptor, self.contribution, self.contributionTargetName,
+          self.createdDate, self.credit, self.earn, self.locationExtendedAddress, self.locationID, self.locationLocality,
+          self.locationPostalCode, self.locationRegion, self.locationStreetAddress, self.merchantID, self.merchantName,
+          self.refundedDate, self.spend, self.tip, self.total, self.transactedDate, self.UUID];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUOrder [ID=%@, merchant=%@, total=%@]", self.orderID, self.merchant, self.total];
-}
-
-#pragma mark - Private Methods
-
-- (NSString *)stateString {
-  switch (self.state) {
-    case LUOrderCompleted:
-      return @"completed";
-
-    case LUOrderProcessing:
-      return @"processing";
-
-    case LUOrderRefunded:
-      return @"refunded";
-
-    default:
-      return nil;
-  }
+  return [NSString stringWithFormat:@"LUOrder [merchantName=%@, total=%@, UUID=%@]", self.merchantName, self.total,
+          self.UUID];
 }
 
 @end

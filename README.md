@@ -60,8 +60,7 @@ The SDK includes model classes for LevelUp domain objects, such as a user or a m
 * **[LUClaim](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUClaim.html)**: Represents a user's claim on a campaign.
 * **[LUCohort](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCohort.html)**: When a user claims a campaign, they do so through a cohort. This could be through a social network or a particular advertisement.
 * **[LUCreditCard](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCreditCard.html)**: Users have one or more credit cards to use as payment methods.
-* **[LUDonation](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUDonation.html)**: If a user has chosen a cause, and they place a qualifying order, an `LUDonation` will be created along with the order.
-* **[LUInterstitialAction](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUInterstitialAction.html)**: Interstitial actions may be shown on some merchant or receipt screens to promote a campaign.
+**[LUInterstitial](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUInterstitial.html)**: Interstitial actions may be shown on some merchant or receipt screens to promote a campaign.
 * **[LULocation](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LULocation.html)**: A merchant has one or more locations, which are physical places users can pay.
 * **[LULoyalty](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LULoyalty.html)**: Contains information about a user's loyalty progress at a specific merchant.
 * **[LUMerchant](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUMerchant.html)**: A place of business that accepts LevelUp for payment.
@@ -76,8 +75,8 @@ The SDK includes a set of request factories, which generate a particular `LUAPIR
 
 Below is the full list of request factories:
 
-* [LUAuthenticationRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUAuthenticationRequestFactory.html)
 * [LUApnDeviceRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUApnDeviceRequestFactory.html)
+* [LUAuthenticationRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUAuthenticationRequestFactory.html)
 * [LUCampaignRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCampaignRequestFactory.html)
 * [LUCategoryRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCategoryRequestFactory.html)
 * [LUCauseAffiliationRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCauseAfiliationRequestFactory.html)
@@ -86,6 +85,7 @@ Below is the full list of request factories:
 * [LUCohortRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCohortRequestFactory.html)
 * [LUCreditCardRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUCreditCardRequestFactory.html)
 * [LUEmailsRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUEmailsRequestFactory.html)
+* [LUInterstitialRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUInterstitialRequestFactory.html)
 * [LULocationRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LULocationRequestFactory.html)
 * [LULoyaltyRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LULoyaltyRequestFactory.html)
 * [LUMerchantRequestFactory](http://thelevelup.github.io/whitelabel-ios-sdk/Classes/LUMerchantRequestFactory.html)

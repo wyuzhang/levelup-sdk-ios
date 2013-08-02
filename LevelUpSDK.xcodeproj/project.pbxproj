@@ -12,8 +12,6 @@
 		020231751779E2CD00B057D1 /* LUAPIConnectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 020231731779E2B900B057D1 /* LUAPIConnectionSpec.m */; };
 		020CF28D172F020800D20672 /* LUCampaign+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 020CF266172F020700D20672 /* LUCampaign+FakeInstance.m */; };
 		020CF28E172F020800D20672 /* LUCohort+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 020CF268172F020700D20672 /* LUCohort+FakeInstance.m */; };
-		020CF28F172F020800D20672 /* LUDonation+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 020CF26A172F020700D20672 /* LUDonation+FakeInstance.m */; };
-		020CF290172F020800D20672 /* LUInterstitialAction+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 020CF26C172F020700D20672 /* LUInterstitialAction+FakeInstance.m */; };
 		020CF291172F020800D20672 /* LULocation+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 020CF26E172F020700D20672 /* LULocation+FakeInstance.m */; };
 		020CF292172F020800D20672 /* LULoyalty+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 020CF270172F020700D20672 /* LULoyalty+FakeInstance.m */; };
 		020CF293172F020800D20672 /* LUMerchant+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 020CF272172F020700D20672 /* LUMerchant+FakeInstance.m */; };
@@ -82,6 +80,26 @@
 		02BA982A174BE19500C9D647 /* LUCoreDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 02BA9828174BE19500C9D647 /* LUCoreDataStore.h */; };
 		02BA982B174BE19500C9D647 /* LUCoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA9829174BE19500C9D647 /* LUCoreDataStore.m */; };
 		02BA982E174BE37600C9D647 /* LUCoreDataStoreSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA982C174BE36800C9D647 /* LUCoreDataStoreSpec.m */; };
+		02CD575317D90673006205C6 /* LUInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CD574B17D90673006205C6 /* LUInterstitial.h */; };
+		02CD575417D90673006205C6 /* LUInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD574C17D90673006205C6 /* LUInterstitial.m */; };
+		02CD575517D90673006205C6 /* LUInterstitialClaimAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CD574D17D90673006205C6 /* LUInterstitialClaimAction.h */; };
+		02CD575617D90673006205C6 /* LUInterstitialClaimAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD574E17D90673006205C6 /* LUInterstitialClaimAction.m */; };
+		02CD575717D90673006205C6 /* LUInterstitialShareAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CD574F17D90673006205C6 /* LUInterstitialShareAction.h */; };
+		02CD575817D90673006205C6 /* LUInterstitialShareAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD575017D90673006205C6 /* LUInterstitialShareAction.m */; };
+		02CD575917D90673006205C6 /* LUInterstitialURLAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CD575117D90673006205C6 /* LUInterstitialURLAction.h */; };
+		02CD575A17D90673006205C6 /* LUInterstitialURLAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD575217D90673006205C6 /* LUInterstitialURLAction.m */; };
+		02CD575D17D9068C006205C6 /* LUInterstitialJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CD575B17D9068C006205C6 /* LUInterstitialJSONFactory.h */; };
+		02CD575E17D9068C006205C6 /* LUInterstitialJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD575C17D9068C006205C6 /* LUInterstitialJSONFactory.m */; };
+		02CD576117D906B7006205C6 /* LUInterstitialRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CD575F17D906B7006205C6 /* LUInterstitialRequestFactory.h */; };
+		02CD576217D906B7006205C6 /* LUInterstitialRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD576017D906B7006205C6 /* LUInterstitialRequestFactory.m */; };
+		02CD576517D906C9006205C6 /* NSURL+LUAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CD576317D906C9006205C6 /* NSURL+LUAdditions.h */; };
+		02CD576617D906C9006205C6 /* NSURL+LUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD576417D906C9006205C6 /* NSURL+LUAdditions.m */; };
+		02CD576917D906E3006205C6 /* LUInterstitial+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD576817D906E3006205C6 /* LUInterstitial+FakeInstance.m */; };
+		02CD576B17D9070C006205C6 /* interstitial.json in Resources */ = {isa = PBXBuildFile; fileRef = 02CD576A17D9070C006205C6 /* interstitial.json */; };
+		02CD576D17D90717006205C6 /* loyalty_disabled.json in Resources */ = {isa = PBXBuildFile; fileRef = 02CD576C17D90717006205C6 /* loyalty_disabled.json */; };
+		02CD577017D90752006205C6 /* LUInterstitial+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD576F17D90752006205C6 /* LUInterstitial+Fixtures.m */; };
+		02CD577217D9079C006205C6 /* LUInterstitialJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD577117D9079C006205C6 /* LUInterstitialJSONFactorySpec.m */; };
+		02CD577417D907B6006205C6 /* NSURLLUAdditionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD577317D907B6006205C6 /* NSURLLUAdditionsSpec.m */; };
 		02D68DC5173809C1005E1BA8 /* LUClaim+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DC4173809C1005E1BA8 /* LUClaim+FakeInstance.m */; };
 		02D68DC817381E0D005E1BA8 /* LUCreditCard+FakeInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 02D68DC617381E0D005E1BA8 /* LUCreditCard+FakeInstance.h */; };
 		02D68DC917381E0D005E1BA8 /* LUCreditCard+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DC717381E0D005E1BA8 /* LUCreditCard+FakeInstance.m */; };
@@ -176,8 +194,6 @@
 		C1CAF0FC173052A7003B3D01 /* LUClaim+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF089173052A7003B3D01 /* LUClaim+Fixtures.m */; };
 		C1CAF0FD173052A7003B3D01 /* LUCohort+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF08B173052A7003B3D01 /* LUCohort+Fixtures.m */; };
 		C1CAF0FE173052A7003B3D01 /* LUCreditCard+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF08D173052A7003B3D01 /* LUCreditCard+Fixtures.m */; };
-		C1CAF0FF173052A7003B3D01 /* LUDonation+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF08F173052A7003B3D01 /* LUDonation+Fixtures.m */; };
-		C1CAF100173052A7003B3D01 /* LUInterstitialAction+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF092173052A7003B3D01 /* LUInterstitialAction+Fixtures.m */; };
 		C1CAF101173052A7003B3D01 /* LULocation+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF094173052A7003B3D01 /* LULocation+Fixtures.m */; };
 		C1CAF102173052A7003B3D01 /* LULoyalty+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF096173052A7003B3D01 /* LULoyalty+Fixtures.m */; };
 		C1CAF103173052A7003B3D01 /* LUMerchant+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF098173052A7003B3D01 /* LUMerchant+Fixtures.m */; };
@@ -196,8 +212,6 @@
 		C1CAF114173052A7003B3D01 /* LUClaimJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0B7173052A7003B3D01 /* LUClaimJSONFactorySpec.m */; };
 		C1CAF115173052A7003B3D01 /* LUCohortJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0B8173052A7003B3D01 /* LUCohortJSONFactorySpec.m */; };
 		C1CAF116173052A7003B3D01 /* LUCreditCardJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0B9173052A7003B3D01 /* LUCreditCardJSONFactorySpec.m */; };
-		C1CAF117173052A7003B3D01 /* LUDonationJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0BA173052A7003B3D01 /* LUDonationJSONFactorySpec.m */; };
-		C1CAF118173052A7003B3D01 /* LUInterstitialActionJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0BB173052A7003B3D01 /* LUInterstitialActionJSONFactorySpec.m */; };
 		C1CAF119173052A7003B3D01 /* LULocationJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0BC173052A7003B3D01 /* LULocationJSONFactorySpec.m */; };
 		C1CAF11A173052A7003B3D01 /* LULoyaltyJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0BD173052A7003B3D01 /* LULoyaltyJSONFactorySpec.m */; };
 		C1CAF11B173052A7003B3D01 /* LUMerchantJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0BE173052A7003B3D01 /* LUMerchantJSONFactorySpec.m */; };
@@ -214,7 +228,6 @@
 		C1CAF129173052A7003B3D01 /* LUClaimSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0CC173052A7003B3D01 /* LUClaimSpec.m */; };
 		C1CAF12A173052A7003B3D01 /* LUCohortSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0CD173052A7003B3D01 /* LUCohortSpec.m */; };
 		C1CAF12B173052A7003B3D01 /* LUCreditCardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0CE173052A7003B3D01 /* LUCreditCardSpec.m */; };
-		C1CAF12C173052A7003B3D01 /* LUDonationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0CF173052A7003B3D01 /* LUDonationSpec.m */; };
 		C1CAF12D173052A7003B3D01 /* LUInterstitialActionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0D0173052A7003B3D01 /* LUInterstitialActionSpec.m */; };
 		C1CAF12E173052A7003B3D01 /* LULocationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0D1173052A7003B3D01 /* LULocationSpec.m */; };
 		C1CAF12F173052A7003B3D01 /* LULoyaltySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0D2173052A7003B3D01 /* LULoyaltySpec.m */; };
@@ -266,10 +279,6 @@
 		C1CAF20717315415003B3D01 /* LUCohortJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF16E17315414003B3D01 /* LUCohortJSONFactory.m */; };
 		C1CAF20817315415003B3D01 /* LUCreditCardJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF16F17315414003B3D01 /* LUCreditCardJSONFactory.h */; };
 		C1CAF20917315415003B3D01 /* LUCreditCardJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF17017315414003B3D01 /* LUCreditCardJSONFactory.m */; };
-		C1CAF20A17315415003B3D01 /* LUDonationJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF17117315414003B3D01 /* LUDonationJSONFactory.h */; };
-		C1CAF20B17315415003B3D01 /* LUDonationJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF17217315414003B3D01 /* LUDonationJSONFactory.m */; };
-		C1CAF20C17315415003B3D01 /* LUInterstitialActionJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF17317315414003B3D01 /* LUInterstitialActionJSONFactory.h */; };
-		C1CAF20D17315415003B3D01 /* LUInterstitialActionJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF17417315414003B3D01 /* LUInterstitialActionJSONFactory.m */; };
 		C1CAF20E17315415003B3D01 /* LULocationJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF17517315414003B3D01 /* LULocationJSONFactory.h */; };
 		C1CAF20F17315415003B3D01 /* LULocationJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF17617315414003B3D01 /* LULocationJSONFactory.m */; };
 		C1CAF21017315415003B3D01 /* LULoyaltyJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF17717315414003B3D01 /* LULoyaltyJSONFactory.h */; };
@@ -302,10 +311,6 @@
 		C1CAF23117315415003B3D01 /* LUCohort.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF19817315414003B3D01 /* LUCohort.m */; };
 		C1CAF23217315415003B3D01 /* LUCreditCard.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF19917315414003B3D01 /* LUCreditCard.h */; };
 		C1CAF23317315415003B3D01 /* LUCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF19A17315414003B3D01 /* LUCreditCard.m */; };
-		C1CAF23417315415003B3D01 /* LUDonation.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF19B17315414003B3D01 /* LUDonation.h */; };
-		C1CAF23517315415003B3D01 /* LUDonation.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF19C17315414003B3D01 /* LUDonation.m */; };
-		C1CAF23617315415003B3D01 /* LUInterstitialAction.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF19D17315414003B3D01 /* LUInterstitialAction.h */; };
-		C1CAF23717315415003B3D01 /* LUInterstitialAction.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF19E17315414003B3D01 /* LUInterstitialAction.m */; };
 		C1CAF23817315415003B3D01 /* LULocation.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF19F17315414003B3D01 /* LULocation.h */; };
 		C1CAF23917315415003B3D01 /* LULocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1A017315414003B3D01 /* LULocation.m */; };
 		C1CAF23A17315415003B3D01 /* LULoyalty.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1A117315414003B3D01 /* LULoyalty.h */; };
@@ -414,10 +419,6 @@
 		020CF266172F020700D20672 /* LUCampaign+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUCampaign+FakeInstance.m"; sourceTree = "<group>"; };
 		020CF267172F020700D20672 /* LUCohort+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUCohort+FakeInstance.h"; sourceTree = "<group>"; };
 		020CF268172F020700D20672 /* LUCohort+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUCohort+FakeInstance.m"; sourceTree = "<group>"; };
-		020CF269172F020700D20672 /* LUDonation+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUDonation+FakeInstance.h"; sourceTree = "<group>"; };
-		020CF26A172F020700D20672 /* LUDonation+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUDonation+FakeInstance.m"; sourceTree = "<group>"; };
-		020CF26B172F020700D20672 /* LUInterstitialAction+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUInterstitialAction+FakeInstance.h"; sourceTree = "<group>"; };
-		020CF26C172F020700D20672 /* LUInterstitialAction+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUInterstitialAction+FakeInstance.m"; sourceTree = "<group>"; };
 		020CF26D172F020700D20672 /* LULocation+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LULocation+FakeInstance.h"; sourceTree = "<group>"; };
 		020CF26E172F020700D20672 /* LULocation+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LULocation+FakeInstance.m"; sourceTree = "<group>"; };
 		020CF26F172F020700D20672 /* LULoyalty+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LULoyalty+FakeInstance.h"; sourceTree = "<group>"; };
@@ -483,6 +484,28 @@
 		02BA9828174BE19500C9D647 /* LUCoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCoreDataStore.h; sourceTree = "<group>"; };
 		02BA9829174BE19500C9D647 /* LUCoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCoreDataStore.m; sourceTree = "<group>"; };
 		02BA982C174BE36800C9D647 /* LUCoreDataStoreSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCoreDataStoreSpec.m; sourceTree = "<group>"; };
+		02CD574B17D90673006205C6 /* LUInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitial.h; sourceTree = "<group>"; };
+		02CD574C17D90673006205C6 /* LUInterstitial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitial.m; sourceTree = "<group>"; };
+		02CD574D17D90673006205C6 /* LUInterstitialClaimAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialClaimAction.h; sourceTree = "<group>"; };
+		02CD574E17D90673006205C6 /* LUInterstitialClaimAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialClaimAction.m; sourceTree = "<group>"; };
+		02CD574F17D90673006205C6 /* LUInterstitialShareAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialShareAction.h; sourceTree = "<group>"; };
+		02CD575017D90673006205C6 /* LUInterstitialShareAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialShareAction.m; sourceTree = "<group>"; };
+		02CD575117D90673006205C6 /* LUInterstitialURLAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialURLAction.h; sourceTree = "<group>"; };
+		02CD575217D90673006205C6 /* LUInterstitialURLAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialURLAction.m; sourceTree = "<group>"; };
+		02CD575B17D9068C006205C6 /* LUInterstitialJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialJSONFactory.h; sourceTree = "<group>"; };
+		02CD575C17D9068C006205C6 /* LUInterstitialJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialJSONFactory.m; sourceTree = "<group>"; };
+		02CD575F17D906B7006205C6 /* LUInterstitialRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialRequestFactory.h; sourceTree = "<group>"; };
+		02CD576017D906B7006205C6 /* LUInterstitialRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialRequestFactory.m; sourceTree = "<group>"; };
+		02CD576317D906C9006205C6 /* NSURL+LUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+LUAdditions.h"; sourceTree = "<group>"; };
+		02CD576417D906C9006205C6 /* NSURL+LUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+LUAdditions.m"; sourceTree = "<group>"; };
+		02CD576717D906E3006205C6 /* LUInterstitial+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUInterstitial+FakeInstance.h"; sourceTree = "<group>"; };
+		02CD576817D906E3006205C6 /* LUInterstitial+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUInterstitial+FakeInstance.m"; sourceTree = "<group>"; };
+		02CD576A17D9070C006205C6 /* interstitial.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = interstitial.json; sourceTree = "<group>"; };
+		02CD576C17D90717006205C6 /* loyalty_disabled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loyalty_disabled.json; sourceTree = "<group>"; };
+		02CD576E17D90752006205C6 /* LUInterstitial+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUInterstitial+Fixtures.h"; sourceTree = "<group>"; };
+		02CD576F17D90752006205C6 /* LUInterstitial+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUInterstitial+Fixtures.m"; sourceTree = "<group>"; };
+		02CD577117D9079C006205C6 /* LUInterstitialJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialJSONFactorySpec.m; sourceTree = "<group>"; };
+		02CD577317D907B6006205C6 /* NSURLLUAdditionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLLUAdditionsSpec.m; sourceTree = "<group>"; };
 		02D68DC3173809C1005E1BA8 /* LUClaim+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUClaim+FakeInstance.h"; sourceTree = "<group>"; };
 		02D68DC4173809C1005E1BA8 /* LUClaim+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUClaim+FakeInstance.m"; sourceTree = "<group>"; };
 		02D68DC617381E0D005E1BA8 /* LUCreditCard+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUCreditCard+FakeInstance.h"; sourceTree = "<group>"; };
@@ -594,11 +617,7 @@
 		C1CAF08B173052A7003B3D01 /* LUCohort+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUCohort+Fixtures.m"; sourceTree = "<group>"; };
 		C1CAF08C173052A7003B3D01 /* LUCreditCard+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUCreditCard+Fixtures.h"; sourceTree = "<group>"; };
 		C1CAF08D173052A7003B3D01 /* LUCreditCard+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUCreditCard+Fixtures.m"; sourceTree = "<group>"; };
-		C1CAF08E173052A7003B3D01 /* LUDonation+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUDonation+Fixtures.h"; sourceTree = "<group>"; };
-		C1CAF08F173052A7003B3D01 /* LUDonation+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUDonation+Fixtures.m"; sourceTree = "<group>"; };
 		C1CAF090173052A7003B3D01 /* LUFixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUFixtures.h; sourceTree = "<group>"; };
-		C1CAF091173052A7003B3D01 /* LUInterstitialAction+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUInterstitialAction+Fixtures.h"; sourceTree = "<group>"; };
-		C1CAF092173052A7003B3D01 /* LUInterstitialAction+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUInterstitialAction+Fixtures.m"; sourceTree = "<group>"; };
 		C1CAF093173052A7003B3D01 /* LULocation+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LULocation+Fixtures.h"; sourceTree = "<group>"; };
 		C1CAF094173052A7003B3D01 /* LULocation+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LULocation+Fixtures.m"; sourceTree = "<group>"; };
 		C1CAF095173052A7003B3D01 /* LULoyalty+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LULoyalty+Fixtures.h"; sourceTree = "<group>"; };
@@ -625,8 +644,6 @@
 		C1CAF0B7173052A7003B3D01 /* LUClaimJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUClaimJSONFactorySpec.m; sourceTree = "<group>"; };
 		C1CAF0B8173052A7003B3D01 /* LUCohortJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCohortJSONFactorySpec.m; sourceTree = "<group>"; };
 		C1CAF0B9173052A7003B3D01 /* LUCreditCardJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCreditCardJSONFactorySpec.m; sourceTree = "<group>"; };
-		C1CAF0BA173052A7003B3D01 /* LUDonationJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDonationJSONFactorySpec.m; sourceTree = "<group>"; };
-		C1CAF0BB173052A7003B3D01 /* LUInterstitialActionJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialActionJSONFactorySpec.m; sourceTree = "<group>"; };
 		C1CAF0BC173052A7003B3D01 /* LULocationJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationJSONFactorySpec.m; sourceTree = "<group>"; };
 		C1CAF0BD173052A7003B3D01 /* LULoyaltyJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULoyaltyJSONFactorySpec.m; sourceTree = "<group>"; };
 		C1CAF0BE173052A7003B3D01 /* LUMerchantJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUMerchantJSONFactorySpec.m; sourceTree = "<group>"; };
@@ -643,7 +660,6 @@
 		C1CAF0CC173052A7003B3D01 /* LUClaimSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUClaimSpec.m; sourceTree = "<group>"; };
 		C1CAF0CD173052A7003B3D01 /* LUCohortSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCohortSpec.m; sourceTree = "<group>"; };
 		C1CAF0CE173052A7003B3D01 /* LUCreditCardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCreditCardSpec.m; sourceTree = "<group>"; };
-		C1CAF0CF173052A7003B3D01 /* LUDonationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDonationSpec.m; sourceTree = "<group>"; };
 		C1CAF0D0173052A7003B3D01 /* LUInterstitialActionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialActionSpec.m; sourceTree = "<group>"; };
 		C1CAF0D1173052A7003B3D01 /* LULocationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationSpec.m; sourceTree = "<group>"; };
 		C1CAF0D2173052A7003B3D01 /* LULoyaltySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULoyaltySpec.m; sourceTree = "<group>"; };
@@ -695,10 +711,6 @@
 		C1CAF16E17315414003B3D01 /* LUCohortJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCohortJSONFactory.m; sourceTree = "<group>"; };
 		C1CAF16F17315414003B3D01 /* LUCreditCardJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCreditCardJSONFactory.h; sourceTree = "<group>"; };
 		C1CAF17017315414003B3D01 /* LUCreditCardJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCreditCardJSONFactory.m; sourceTree = "<group>"; };
-		C1CAF17117315414003B3D01 /* LUDonationJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUDonationJSONFactory.h; sourceTree = "<group>"; };
-		C1CAF17217315414003B3D01 /* LUDonationJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDonationJSONFactory.m; sourceTree = "<group>"; };
-		C1CAF17317315414003B3D01 /* LUInterstitialActionJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialActionJSONFactory.h; sourceTree = "<group>"; };
-		C1CAF17417315414003B3D01 /* LUInterstitialActionJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialActionJSONFactory.m; sourceTree = "<group>"; };
 		C1CAF17517315414003B3D01 /* LULocationJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationJSONFactory.h; sourceTree = "<group>"; };
 		C1CAF17617315414003B3D01 /* LULocationJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationJSONFactory.m; sourceTree = "<group>"; };
 		C1CAF17717315414003B3D01 /* LULoyaltyJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULoyaltyJSONFactory.h; sourceTree = "<group>"; };
@@ -731,10 +743,6 @@
 		C1CAF19817315414003B3D01 /* LUCohort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCohort.m; sourceTree = "<group>"; };
 		C1CAF19917315414003B3D01 /* LUCreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCreditCard.h; sourceTree = "<group>"; };
 		C1CAF19A17315414003B3D01 /* LUCreditCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCreditCard.m; sourceTree = "<group>"; };
-		C1CAF19B17315414003B3D01 /* LUDonation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUDonation.h; sourceTree = "<group>"; };
-		C1CAF19C17315414003B3D01 /* LUDonation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDonation.m; sourceTree = "<group>"; };
-		C1CAF19D17315414003B3D01 /* LUInterstitialAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialAction.h; sourceTree = "<group>"; };
-		C1CAF19E17315414003B3D01 /* LUInterstitialAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialAction.m; sourceTree = "<group>"; };
 		C1CAF19F17315414003B3D01 /* LULocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocation.h; sourceTree = "<group>"; };
 		C1CAF1A017315414003B3D01 /* LULocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocation.m; sourceTree = "<group>"; };
 		C1CAF1A117315414003B3D01 /* LULoyalty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULoyalty.h; sourceTree = "<group>"; };
@@ -903,10 +911,8 @@
 				020CF268172F020700D20672 /* LUCohort+FakeInstance.m */,
 				02D68DC617381E0D005E1BA8 /* LUCreditCard+FakeInstance.h */,
 				02D68DC717381E0D005E1BA8 /* LUCreditCard+FakeInstance.m */,
-				020CF269172F020700D20672 /* LUDonation+FakeInstance.h */,
-				020CF26A172F020700D20672 /* LUDonation+FakeInstance.m */,
-				020CF26B172F020700D20672 /* LUInterstitialAction+FakeInstance.h */,
-				020CF26C172F020700D20672 /* LUInterstitialAction+FakeInstance.m */,
+				02CD576717D906E3006205C6 /* LUInterstitial+FakeInstance.h */,
+				02CD576817D906E3006205C6 /* LUInterstitial+FakeInstance.m */,
 				020CF26D172F020700D20672 /* LULocation+FakeInstance.h */,
 				020CF26E172F020700D20672 /* LULocation+FakeInstance.m */,
 				020CF26F172F020700D20672 /* LULoyalty+FakeInstance.h */,
@@ -963,6 +969,21 @@
 			path = "Frameworks/Braintree-Encryption/src";
 			sourceTree = "<group>";
 		};
+		02CD574A17D90673006205C6 /* Interstitials */ = {
+			isa = PBXGroup;
+			children = (
+				02CD574B17D90673006205C6 /* LUInterstitial.h */,
+				02CD574C17D90673006205C6 /* LUInterstitial.m */,
+				02CD574D17D90673006205C6 /* LUInterstitialClaimAction.h */,
+				02CD574E17D90673006205C6 /* LUInterstitialClaimAction.m */,
+				02CD574F17D90673006205C6 /* LUInterstitialShareAction.h */,
+				02CD575017D90673006205C6 /* LUInterstitialShareAction.m */,
+				02CD575117D90673006205C6 /* LUInterstitialURLAction.h */,
+				02CD575217D90673006205C6 /* LUInterstitialURLAction.m */,
+			);
+			path = Interstitials;
+			sourceTree = "<group>";
+		};
 		02E29140175FCAB8002036B4 /* Stubbing */ = {
 			isa = PBXGroup;
 			children = (
@@ -994,8 +1015,10 @@
 				02E2914B175FCAB8002036B4 /* credit_cards-2.json */,
 				02E2914D175FCAB8002036B4 /* current_user.json */,
 				02704A5E17B96496009AF443 /* facebook_connected_user.json */,
+				02CD576A17D9070C006205C6 /* interstitial.json */,
 				02E2914F175FCAB8002036B4 /* legacy_loyalty_claim.json */,
 				0229381617626B500057C381 /* location_summaries.json */,
+				02CD576C17D90717006205C6 /* loyalty_disabled.json */,
 				02E29150175FCAB8002036B4 /* loyalty_no_credit.json */,
 				02E29151175FCAB8002036B4 /* loyalty.json */,
 				02E29152175FCAB8002036B4 /* merchant.json */,
@@ -1125,11 +1148,9 @@
 				C1CAF08B173052A7003B3D01 /* LUCohort+Fixtures.m */,
 				C1CAF08C173052A7003B3D01 /* LUCreditCard+Fixtures.h */,
 				C1CAF08D173052A7003B3D01 /* LUCreditCard+Fixtures.m */,
-				C1CAF08E173052A7003B3D01 /* LUDonation+Fixtures.h */,
-				C1CAF08F173052A7003B3D01 /* LUDonation+Fixtures.m */,
 				C1CAF090173052A7003B3D01 /* LUFixtures.h */,
-				C1CAF091173052A7003B3D01 /* LUInterstitialAction+Fixtures.h */,
-				C1CAF092173052A7003B3D01 /* LUInterstitialAction+Fixtures.m */,
+				02CD576E17D90752006205C6 /* LUInterstitial+Fixtures.h */,
+				02CD576F17D90752006205C6 /* LUInterstitial+Fixtures.m */,
 				258F533F178765B0000FDE79 /* LULegacyLoyaltyClaim+Fixtures.h */,
 				258F5340178765B0000FDE79 /* LULegacyLoyaltyClaim+Fixtures.m */,
 				C1CAF093173052A7003B3D01 /* LULocation+Fixtures.h */,
@@ -1200,7 +1221,6 @@
 				C1CAF0CC173052A7003B3D01 /* LUClaimSpec.m */,
 				C1CAF0CD173052A7003B3D01 /* LUCohortSpec.m */,
 				C1CAF0CE173052A7003B3D01 /* LUCreditCardSpec.m */,
-				C1CAF0CF173052A7003B3D01 /* LUDonationSpec.m */,
 				C1CAF0D0173052A7003B3D01 /* LUInterstitialActionSpec.m */,
 				258F53371787652E000FDE79 /* LULegacyLoyaltyClaimSpec.m */,
 				C1CAF0D1173052A7003B3D01 /* LULocationSpec.m */,
@@ -1229,8 +1249,7 @@
 				C1CAF0B7173052A7003B3D01 /* LUClaimJSONFactorySpec.m */,
 				C1CAF0B8173052A7003B3D01 /* LUCohortJSONFactorySpec.m */,
 				C1CAF0B9173052A7003B3D01 /* LUCreditCardJSONFactorySpec.m */,
-				C1CAF0BA173052A7003B3D01 /* LUDonationJSONFactorySpec.m */,
-				C1CAF0BB173052A7003B3D01 /* LUInterstitialActionJSONFactorySpec.m */,
+				02CD577117D9079C006205C6 /* LUInterstitialJSONFactorySpec.m */,
 				258F533A1787655A000FDE79 /* LULegacyLoyaltyClaimJSONFactorySpec.m */,
 				C1CAF0BC173052A7003B3D01 /* LULocationJSONFactorySpec.m */,
 				02BA9825174AD22200C9D647 /* LULocationSummaryJSONFactorySpec.m */,
@@ -1299,9 +1318,10 @@
 				C1CAF0F0173052A7003B3D01 /* NSDataHexStringSpec.m */,
 				C1CAF0F1173052A7003B3D01 /* NSDateStringFormatsSpec.m */,
 				C1CAF0F2173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m */,
+				F8401CF317578F82001CB772 /* NSDictionarySafetyAdditionsSpec.m */,
 				C1CAF0F3173052A7003B3D01 /* NSNumberBase36Spec.m */,
 				C1CAF0F4173052A7003B3D01 /* NSStringHTMLStrippingSpec.m */,
-				F8401CF317578F82001CB772 /* NSDictionarySafetyAdditionsSpec.m */,
+				02CD577317D907B6006205C6 /* NSURLLUAdditionsSpec.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1356,6 +1376,7 @@
 		C1CAF15D17315414003B3D01 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				02CD574A17D90673006205C6 /* Interstitials */,
 				C1CAF15E17315414003B3D01 /* JSON Factories */,
 				C1CAF1A717315414003B3D01 /* LUAccessToken.h */,
 				C1CAF1A817315414003B3D01 /* LUAccessToken.m */,
@@ -1381,10 +1402,6 @@
 				C1CAF19817315414003B3D01 /* LUCohort.m */,
 				C1CAF19917315414003B3D01 /* LUCreditCard.h */,
 				C1CAF19A17315414003B3D01 /* LUCreditCard.m */,
-				C1CAF19B17315414003B3D01 /* LUDonation.h */,
-				C1CAF19C17315414003B3D01 /* LUDonation.m */,
-				C1CAF19D17315414003B3D01 /* LUInterstitialAction.h */,
-				C1CAF19E17315414003B3D01 /* LUInterstitialAction.m */,
 				258F5333178763E7000FDE79 /* LULegacyLoyaltyClaim.h */,
 				258F5334178763E8000FDE79 /* LULegacyLoyaltyClaim.m */,
 				C1CAF19F17315414003B3D01 /* LULocation.h */,
@@ -1432,10 +1449,8 @@
 				C1CAF16E17315414003B3D01 /* LUCohortJSONFactory.m */,
 				C1CAF16F17315414003B3D01 /* LUCreditCardJSONFactory.h */,
 				C1CAF17017315414003B3D01 /* LUCreditCardJSONFactory.m */,
-				C1CAF17117315414003B3D01 /* LUDonationJSONFactory.h */,
-				C1CAF17217315414003B3D01 /* LUDonationJSONFactory.m */,
-				C1CAF17317315414003B3D01 /* LUInterstitialActionJSONFactory.h */,
-				C1CAF17417315414003B3D01 /* LUInterstitialActionJSONFactory.m */,
+				02CD575B17D9068C006205C6 /* LUInterstitialJSONFactory.h */,
+				02CD575C17D9068C006205C6 /* LUInterstitialJSONFactory.m */,
 				258F532F178760FA000FDE79 /* LULegacyLoyaltyClaimJSONFactory.h */,
 				258F5330178760FA000FDE79 /* LULegacyLoyaltyClaimJSONFactory.m */,
 				C1CAF17517315414003B3D01 /* LULocationJSONFactory.h */,
@@ -1501,6 +1516,8 @@
 				C1CAF1CB17315414003B3D01 /* LUCreditCardRequestFactory.m */,
 				025F78FE17428BF10029FC49 /* LUEmailsRequestFactory.h */,
 				025F78FF17428BF10029FC49 /* LUEmailsRequestFactory.m */,
+				02CD575F17D906B7006205C6 /* LUInterstitialRequestFactory.h */,
+				02CD576017D906B7006205C6 /* LUInterstitialRequestFactory.m */,
 				2523E31917374B3F00FBDFEB /* LULocationRequestFactory.h */,
 				2523E31A17374B3F00FBDFEB /* LULocationRequestFactory.m */,
 				F87364A0173AA4AF0024A3F5 /* LULoyaltyRequestFactory.h */,
@@ -1550,6 +1567,8 @@
 				02D68DCF1738370F005E1BA8 /* NSRegularExpression+LUAdditions.m */,
 				C1CAF1E117315415003B3D01 /* NSString+HTMLStripping.h */,
 				C1CAF1E217315415003B3D01 /* NSString+HTMLStripping.m */,
+				02CD576317D906C9006205C6 /* NSURL+LUAdditions.h */,
+				02CD576417D906C9006205C6 /* NSURL+LUAdditions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1632,8 +1651,6 @@
 				C1CAF20417315415003B3D01 /* LUClaimJSONFactory.h in Headers */,
 				C1CAF20617315415003B3D01 /* LUCohortJSONFactory.h in Headers */,
 				C1CAF20817315415003B3D01 /* LUCreditCardJSONFactory.h in Headers */,
-				C1CAF20A17315415003B3D01 /* LUDonationJSONFactory.h in Headers */,
-				C1CAF20C17315415003B3D01 /* LUInterstitialActionJSONFactory.h in Headers */,
 				C1CAF20E17315415003B3D01 /* LULocationJSONFactory.h in Headers */,
 				C1CAF21017315415003B3D01 /* LULoyaltyJSONFactory.h in Headers */,
 				C1CAF21217315415003B3D01 /* LUMerchantJSONFactory.h in Headers */,
@@ -1650,8 +1667,6 @@
 				C1CAF22E17315415003B3D01 /* LUClaim.h in Headers */,
 				C1CAF23017315415003B3D01 /* LUCohort.h in Headers */,
 				C1CAF23217315415003B3D01 /* LUCreditCard.h in Headers */,
-				C1CAF23417315415003B3D01 /* LUDonation.h in Headers */,
-				C1CAF23617315415003B3D01 /* LUInterstitialAction.h in Headers */,
 				C1CAF23817315415003B3D01 /* LULocation.h in Headers */,
 				C1CAF23A17315415003B3D01 /* LULoyalty.h in Headers */,
 				C1CAF23C17315415003B3D01 /* LUMerchant.h in Headers */,
@@ -1719,6 +1734,13 @@
 				F8EAF0EF17BA865900197388 /* LUCacheManager.h in Headers */,
 				029053BD17BD4AAB00527576 /* LUAPIResponse.h in Headers */,
 				029053BF17BD4AAB00527576 /* LUWebLinkParser.h in Headers */,
+				02CD575317D90673006205C6 /* LUInterstitial.h in Headers */,
+				02CD575517D90673006205C6 /* LUInterstitialClaimAction.h in Headers */,
+				02CD575717D90673006205C6 /* LUInterstitialShareAction.h in Headers */,
+				02CD575917D90673006205C6 /* LUInterstitialURLAction.h in Headers */,
+				02CD575D17D9068C006205C6 /* LUInterstitialJSONFactory.h in Headers */,
+				02CD576117D906B7006205C6 /* LUInterstitialRequestFactory.h in Headers */,
+				02CD576517D906C9006205C6 /* NSURL+LUAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1821,6 +1843,8 @@
 				025B6DDE176A713C00713242 /* payment_token.json in Resources */,
 				02704A5F17B96496009AF443 /* facebook_connected_user.json in Resources */,
 				029053C217BD4ACF00527576 /* app_locations.json in Resources */,
+				02CD576B17D9070C006205C6 /* interstitial.json in Resources */,
+				02CD576D17D90717006205C6 /* loyalty_disabled.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1906,8 +1930,6 @@
 				C1CAF20517315415003B3D01 /* LUClaimJSONFactory.m in Sources */,
 				C1CAF20717315415003B3D01 /* LUCohortJSONFactory.m in Sources */,
 				C1CAF20917315415003B3D01 /* LUCreditCardJSONFactory.m in Sources */,
-				C1CAF20B17315415003B3D01 /* LUDonationJSONFactory.m in Sources */,
-				C1CAF20D17315415003B3D01 /* LUInterstitialActionJSONFactory.m in Sources */,
 				C1CAF20F17315415003B3D01 /* LULocationJSONFactory.m in Sources */,
 				C1CAF21117315415003B3D01 /* LULoyaltyJSONFactory.m in Sources */,
 				C1CAF21317315415003B3D01 /* LUMerchantJSONFactory.m in Sources */,
@@ -1924,8 +1946,6 @@
 				C1CAF22F17315415003B3D01 /* LUClaim.m in Sources */,
 				C1CAF23117315415003B3D01 /* LUCohort.m in Sources */,
 				C1CAF23317315415003B3D01 /* LUCreditCard.m in Sources */,
-				C1CAF23517315415003B3D01 /* LUDonation.m in Sources */,
-				C1CAF23717315415003B3D01 /* LUInterstitialAction.m in Sources */,
 				C1CAF23917315415003B3D01 /* LULocation.m in Sources */,
 				C1CAF23B17315415003B3D01 /* LULoyalty.m in Sources */,
 				C1CAF23D17315415003B3D01 /* LUMerchant.m in Sources */,
@@ -1993,6 +2013,13 @@
 				F8EAF0F017BA865900197388 /* LUCacheManager.m in Sources */,
 				029053BE17BD4AAB00527576 /* LUAPIResponse.m in Sources */,
 				029053C017BD4AAB00527576 /* LUWebLinkParser.m in Sources */,
+				02CD575417D90673006205C6 /* LUInterstitial.m in Sources */,
+				02CD575617D90673006205C6 /* LUInterstitialClaimAction.m in Sources */,
+				02CD575817D90673006205C6 /* LUInterstitialShareAction.m in Sources */,
+				02CD575A17D90673006205C6 /* LUInterstitialURLAction.m in Sources */,
+				02CD575E17D9068C006205C6 /* LUInterstitialJSONFactory.m in Sources */,
+				02CD576217D906B7006205C6 /* LUInterstitialRequestFactory.m in Sources */,
+				02CD576617D906C9006205C6 /* NSURL+LUAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2002,8 +2029,6 @@
 			files = (
 				020CF28D172F020800D20672 /* LUCampaign+FakeInstance.m in Sources */,
 				020CF28E172F020800D20672 /* LUCohort+FakeInstance.m in Sources */,
-				020CF28F172F020800D20672 /* LUDonation+FakeInstance.m in Sources */,
-				020CF290172F020800D20672 /* LUInterstitialAction+FakeInstance.m in Sources */,
 				020CF291172F020800D20672 /* LULocation+FakeInstance.m in Sources */,
 				020CF292172F020800D20672 /* LULoyalty+FakeInstance.m in Sources */,
 				020CF293172F020800D20672 /* LUMerchant+FakeInstance.m in Sources */,
@@ -2015,8 +2040,6 @@
 				C1CAF0FC173052A7003B3D01 /* LUClaim+Fixtures.m in Sources */,
 				C1CAF0FD173052A7003B3D01 /* LUCohort+Fixtures.m in Sources */,
 				C1CAF0FE173052A7003B3D01 /* LUCreditCard+Fixtures.m in Sources */,
-				C1CAF0FF173052A7003B3D01 /* LUDonation+Fixtures.m in Sources */,
-				C1CAF100173052A7003B3D01 /* LUInterstitialAction+Fixtures.m in Sources */,
 				C1CAF101173052A7003B3D01 /* LULocation+Fixtures.m in Sources */,
 				C1CAF102173052A7003B3D01 /* LULoyalty+Fixtures.m in Sources */,
 				C1CAF103173052A7003B3D01 /* LUMerchant+Fixtures.m in Sources */,
@@ -2035,8 +2058,6 @@
 				C1CAF114173052A7003B3D01 /* LUClaimJSONFactorySpec.m in Sources */,
 				C1CAF115173052A7003B3D01 /* LUCohortJSONFactorySpec.m in Sources */,
 				C1CAF116173052A7003B3D01 /* LUCreditCardJSONFactorySpec.m in Sources */,
-				C1CAF117173052A7003B3D01 /* LUDonationJSONFactorySpec.m in Sources */,
-				C1CAF118173052A7003B3D01 /* LUInterstitialActionJSONFactorySpec.m in Sources */,
 				C1CAF119173052A7003B3D01 /* LULocationJSONFactorySpec.m in Sources */,
 				C1CAF11A173052A7003B3D01 /* LULoyaltyJSONFactorySpec.m in Sources */,
 				C1CAF11B173052A7003B3D01 /* LUMerchantJSONFactorySpec.m in Sources */,
@@ -2053,7 +2074,6 @@
 				C1CAF129173052A7003B3D01 /* LUClaimSpec.m in Sources */,
 				C1CAF12A173052A7003B3D01 /* LUCohortSpec.m in Sources */,
 				C1CAF12B173052A7003B3D01 /* LUCreditCardSpec.m in Sources */,
-				C1CAF12C173052A7003B3D01 /* LUDonationSpec.m in Sources */,
 				C1CAF12D173052A7003B3D01 /* LUInterstitialActionSpec.m in Sources */,
 				C1CAF12E173052A7003B3D01 /* LULocationSpec.m in Sources */,
 				C1CAF12F173052A7003B3D01 /* LULoyaltySpec.m in Sources */,
@@ -2124,6 +2144,10 @@
 				F8EAF0E817BA817F00197388 /* LUCacheManagerSpec.m in Sources */,
 				029053C617BD4AFF00527576 /* LUAPIResponseSpec.m in Sources */,
 				029053C717BD4AFF00527576 /* LUWebLinkParserSpec.m in Sources */,
+				02CD576917D906E3006205C6 /* LUInterstitial+FakeInstance.m in Sources */,
+				02CD577017D90752006205C6 /* LUInterstitial+Fixtures.m in Sources */,
+				02CD577217D9079C006205C6 /* LUInterstitialJSONFactorySpec.m in Sources */,
+				02CD577417D907B6006205C6 /* NSURLLUAdditionsSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
