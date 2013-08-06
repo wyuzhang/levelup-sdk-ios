@@ -29,7 +29,8 @@
 + (LUAPIStub *)stubToGetCurrentUser;
 + (LUAPIStub *)stubToGetLocationSummariesFirstPage;
 + (LUAPIStub *)stubToGetLocationSummariesLastPage;
-+ (LUAPIStub *)stubToGetLocationsWithMerchantID:(NSNumber *)merchantID;
++ (LUAPIStub *)stubToGetLocationsForAppFirstPageNearLocation:(CLLocation *)location;
++ (LUAPIStub *)stubToGetLocationsForAppLastPage;
 + (LUAPIStub *)stubToGetLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToGetLoyaltyForMerchantWithID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetLoyaltyNoCreditForMerchantWithID:(NSNumber *)merchantID;

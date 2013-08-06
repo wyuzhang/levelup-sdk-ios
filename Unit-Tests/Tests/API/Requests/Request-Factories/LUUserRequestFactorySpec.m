@@ -70,7 +70,7 @@ describe(@"LUUserRequestFactory", ^{
     NSDictionary *userParams = @{@"params" : @"for user"};
 
     beforeEach(^{
-      [LUAPIClient setupWithAPIKey:apiKey developmentMode:YES];
+      [LUAPIClient setupWithAppID:@"1" APIKey:apiKey developmentMode:YES];
       [[LUUserParameterBuilder stubAndReturn:userParams] parametersForUser:user];
 
       request = [LUUserRequestFactory requestToCreateUser:user];
@@ -102,7 +102,7 @@ describe(@"LUUserRequestFactory", ^{
     NSString *facebookAccessToken = @"facebook-access-token";
 
     beforeEach(^{
-      [LUAPIClient setupWithAPIKey:apiKey developmentMode:YES];
+      [LUAPIClient setupWithAppID:@"1" APIKey:apiKey developmentMode:YES];
 
       request = [LUUserRequestFactory requestToCreateUserWithFacebookAccessToken:facebookAccessToken];
     });

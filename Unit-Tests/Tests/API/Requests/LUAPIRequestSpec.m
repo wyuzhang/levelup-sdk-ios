@@ -14,7 +14,7 @@ describe(@"LUAPIRequest", ^{
   __block LUAPIRequest *apiRequest;
 
   beforeEach(^{
-    [LUAPIClient setupWithAPIKey:@"anApiKey" developmentMode:YES];
+    [LUAPIClient setupWithAppID:@"1" APIKey:@"anApiKey" developmentMode:YES];
   });
 
   // Object Lifecycle Methods

@@ -26,7 +26,7 @@ describe(@"LUAPIClient", ^{
 
     context(@"after setup", ^{
       beforeEach(^{
-        [LUAPIClient setupWithAPIKey:@"anApiKey" developmentMode:YES];
+        [LUAPIClient setupWithAppID:@"1" APIKey:@"anApiKey" developmentMode:YES];
       });
 
       it(@"returns an LUAPIClient", ^{
@@ -42,46 +42,66 @@ describe(@"LUAPIClient", ^{
     });
   });
 
-  describe(@"setupWithAPIKey:developmentMode:", ^{
-    it(@"enables the network activity manager", ^{
-      [LUAPIClient setupWithAPIKey:@"anApiKey" developmentMode:YES];
-      [[theValue([AFNetworkActivityIndicatorManager sharedManager].enabled) should] beYes];
+  describe(@"setupWithAppID:APIKey:developmentMode:", ^{
+    context(@"with a missing app ID", ^{
+      it(@"throws an exception", ^{
+        [[theBlock(^{ [LUAPIClient setupWithAppID:nil APIKey:@"anApiKey" developmentMode:YES]; }) should] raise];
+      });
     });
 
-    it(@"registers for JSON requests", ^{
-      [LUAPIClient setupWithAPIKey:@"anApiKey" developmentMode:YES];
-      [[[[LUAPIClient sharedClient] valueForKey:@"registeredHTTPOperationClassNames"] should] contain:@"AFJSONRequestOperation"];
+    context(@"with a missing API key", ^{
+      it(@"throws an exception", ^{
+        [[theBlock(^{ [LUAPIClient setupWithAppID:@"1" APIKey:nil developmentMode:YES]; }) should] raise];
+      });
     });
 
-    it(@"sets the default Accept header to 'application/json'", ^{
-      [LUAPIClient setupWithAPIKey:@"anApiKey" developmentMode:YES];
-      [[[[LUAPIClient sharedClient] valueForKey:@"defaultHeaders"][@"Accept"] should] equal:@"application/json"];
+    context(@"with an empty API key", ^{
+      it(@"throws an exception", ^{
+        [[theBlock(^{ [LUAPIClient setupWithAppID:@"1" APIKey:@"" developmentMode:YES]; }) should] raise];
+      });
     });
 
-    it(@"encodes parameters as JSON", ^{
-      [LUAPIClient setupWithAPIKey:@"anApiKey" developmentMode:YES];
-      [[theValue([LUAPIClient sharedClient].parameterEncoding) should] equal:theValue(AFJSONParameterEncoding)];
-    });
-
-    context(@"when developmentMode is YES", ^{
+    context(@"with an app ID and API key", ^{
       beforeEach(^{
-        [LUAPIClient setupWithAPIKey:@"anApiKey" developmentMode:YES];
+        [LUAPIClient setupWithAppID:@"1" APIKey:@"anApiKey" developmentMode:YES];
       });
 
-      it(@"sets baseURL to the development URL", ^{
-        NSURL *expected = [NSURL URLWithString:LevelUpAPIBaseURLDevelopment];
-        [[[LUAPIClient sharedClient].baseURL should] equal:expected];
-      });
-    });
-
-    context(@"when developmentMode is NO", ^{
-      beforeEach(^{
-        [LUAPIClient setupWithAPIKey:@"anApiKey" developmentMode:NO];
+      it(@"enables the network activity manager", ^{
+        [[theValue([AFNetworkActivityIndicatorManager sharedManager].enabled) should] beYes];
       });
 
-      it(@"sets baseURL to the production URL", ^{
-        NSURL *expected = [NSURL URLWithString:LevelUpAPIBaseURLProduction];
-        [[[LUAPIClient sharedClient].baseURL should] equal:expected];
+      it(@"registers for JSON requests", ^{
+        [[[[LUAPIClient sharedClient] valueForKey:@"registeredHTTPOperationClassNames"] should] contain:@"AFJSONRequestOperation"];
+      });
+
+      it(@"sets the default Accept header to 'application/json'", ^{
+        [[[[LUAPIClient sharedClient] valueForKey:@"defaultHeaders"][@"Accept"] should] equal:@"application/json"];
+      });
+
+      it(@"encodes parameters as JSON", ^{
+        [[theValue([LUAPIClient sharedClient].parameterEncoding) should] equal:theValue(AFJSONParameterEncoding)];
+      });
+
+      context(@"when developmentMode is YES", ^{
+        beforeEach(^{
+          [LUAPIClient setupWithAppID:@"1" APIKey:@"anApiKey" developmentMode:YES];
+        });
+
+        it(@"sets baseURL to the development URL", ^{
+          NSURL *expected = [NSURL URLWithString:LevelUpAPIBaseURLDevelopment];
+          [[[LUAPIClient sharedClient].baseURL should] equal:expected];
+        });
+      });
+
+      context(@"when developmentMode is NO", ^{
+        beforeEach(^{
+          [LUAPIClient setupWithAppID:@"1" APIKey:@"anApiKey" developmentMode:NO];
+        });
+
+        it(@"sets baseURL to the production URL", ^{
+          NSURL *expected = [NSURL URLWithString:LevelUpAPIBaseURLProduction];
+          [[[LUAPIClient sharedClient].baseURL should] equal:expected];
+        });
       });
     });
   });
@@ -91,7 +111,7 @@ describe(@"LUAPIClient", ^{
     __block LUAPIClient *client;
 
     beforeEach(^{
-      [LUAPIClient setupWithAPIKey:@"test" developmentMode:YES];
+      [LUAPIClient setupWithAppID:@"1" APIKey:@"test" developmentMode:YES];
       client = [LUAPIClient sharedClient];
 
       apiRequest = [LUAPIRequest apiRequestWithMethod:@"GET" path:@"test" apiVersion:LUAPIVersion13 parameters:nil modelFactory:nil];
@@ -112,28 +132,41 @@ describe(@"LUAPIClient", ^{
     });
 
     context(@"when the request succeeds", ^{
+      __block LUAPIStub *stub;
       beforeEach(^{
-        LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                                  path:@"test"
-                                            HTTPMethod:@"GET"
-                                         authenticated:NO
-                                          responseData:[@"{\"ok\":true}" dataUsingEncoding:NSUTF8StringEncoding]];
+        stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                       path:@"test"
+                                 HTTPMethod:@"GET"
+                              authenticated:NO
+                               responseData:[@"{\"ok\":true}" dataUsingEncoding:NSUTF8StringEncoding]];
         [[LUAPIStubbing sharedInstance] addStub:stub];
       });
 
       it(@"creates a model object from the JSON and passes it to the success block", ^{
         id deserializedResponse = [KWMock mock];
         apiRequest.modelFactory = [LUAbstractJSONModelFactory mock];
-        [[apiRequest.modelFactory stubAndReturn:deserializedResponse] fromJSONObject:@{@"ok" : @YES} httpResponse:any()];
+        [[apiRequest.modelFactory stubAndReturn:deserializedResponse] fromJSONObject:@{@"ok" : @YES}];
 
         __block id successResult;
         [client performRequest:apiRequest
-                       success:^(id result) {
+                       success:^(id result, LUAPIResponse *response) {
                          successResult = result;
                        }
                        failure:nil];
 
         [[successResult shouldEventually] equal:deserializedResponse];
+      });
+
+      it(@"creates an LUAPIResponse and passes it to the success block", ^{
+        __block LUAPIResponse *successResponse;
+        [client performRequest:apiRequest
+                       success:^(id result, LUAPIResponse *response) {
+                         successResponse = response;
+                       }
+                       failure:nil];
+
+        [[successResponse shouldEventually] beNonNil];
+        [[successResponse.HTTPURLResponse.allHeaderFields shouldEventually] equal:stub.responseHeaders];
       });
     });
 

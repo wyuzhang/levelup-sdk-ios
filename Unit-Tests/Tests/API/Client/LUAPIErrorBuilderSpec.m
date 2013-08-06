@@ -18,7 +18,7 @@ SPEC_BEGIN(LUAPIErrorBuilderSpec)
 
 describe(@"LUAPIErrorBuilder", ^{
   beforeEach(^{
-    [LUAPIClient setupWithAPIKey:@"test" developmentMode:YES];
+    [LUAPIClient setupWithAppID:@"1" APIKey:@"test" developmentMode:YES];
   });
 
   describe(@"error:withMessagesFromJSON:", ^{

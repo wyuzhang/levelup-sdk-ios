@@ -2,7 +2,6 @@
 #import "LUCoreDataStack.h"
 #import "LULocationCacheUpdater.h"
 #import "LULocationRequestFactory.h"
-#import "LULocationSummaries.h"
 
 SPEC_BEGIN(LULocationCacheUpdaterSpec)
 
@@ -15,7 +14,7 @@ describe(@"LULocationCacheUpdater", ^{
     testManagedObjectContext = [NSManagedObjectContext testContext];
     [LUCoreDataStack stub:@selector(managedObjectContext) andReturn:testManagedObjectContext];
 
-    [LUAPIClient setupWithAPIKey:@"test" developmentMode:YES];
+    [LUAPIClient setupWithAppID:@"1" APIKey:@"test" developmentMode:YES];
     [[LUAPIClient sharedClient] stub:@selector(performRequest:success:failure:)];
 
     delegate = [KWMock nullMockForProtocol:@protocol(LULocationCacheUpdaterDelegate)];
@@ -34,11 +33,15 @@ describe(@"LULocationCacheUpdater", ^{
     LULocation *location3 = [LULocation fakeInstanceWithLocationID:@3];
     LULocation *location4 = [LULocation fakeInstanceWithLocationID:@4];
 
-    LULocationSummaries *page1Summaries = [[LULocationSummaries alloc] initWithLocations:@[location1, location2]
-                                                                             nextPageURL:nextPage1];
+    __block LUAPIResponse *apiResponse1, *apiResponse2;
 
-    LULocationSummaries *page2Summaries = [[LULocationSummaries alloc] initWithLocations:@[location3, location4]
-                                                                             nextPageURL:nextPage2];
+    beforeEach(^{
+      apiResponse1 = [LUAPIResponse mock];
+      [apiResponse1 stub:@selector(nextPageURL) andReturn:nextPage1];
+
+      apiResponse2 = [LUAPIResponse mock];
+      [apiResponse2 stub:@selector(nextPageURL) andReturn:nextPage2];
+    });
 
     it(@"sets isUpdating to YES", ^{
       [updater startUpdating];
@@ -53,11 +56,11 @@ describe(@"LULocationCacheUpdater", ^{
           LUAPISuccessBlock successBlock = params[1];
 
           if ([request isEqual:[LULocationRequestFactory requestForLocationSummaries]]) {
-            successBlock(page1Summaries);
-          } else if ([request isEqual:[LULocationRequestFactory requestForLocationSummaryPage:nextPage1]]) {
-            successBlock(page2Summaries);
-          } else if ([request isEqual:[LULocationRequestFactory requestForLocationSummaryPage:nextPage2]]) {
-            successBlock(nil);
+            successBlock(@[location1, location2], apiResponse1);
+          } else if ([request isEqual:[LULocationRequestFactory requestForLocationSummariesOnPage:nextPage1]]) {
+            successBlock(@[location3, location4], apiResponse2);
+          } else if ([request isEqual:[LULocationRequestFactory requestForLocationSummariesOnPage:nextPage2]]) {
+            successBlock(nil, nil);
           }
 
           return nil;
@@ -72,7 +75,7 @@ describe(@"LULocationCacheUpdater", ^{
         [testManagedObjectContext.persistentStoreCoordinator.persistentStores[0] setMetadata:metadata];
         [testManagedObjectContext save:nil];
 
-        [[[LULocationRequestFactory should] receive] requestForLocationSummaryPage:testNextPageURL];
+        [[[LULocationRequestFactory should] receive] requestForLocationSummariesOnPage:testNextPageURL];
 
         [updater startUpdating];
       });
@@ -143,7 +146,7 @@ describe(@"LULocationCacheUpdater", ^{
       beforeEach(^{
         [[LUAPIClient sharedClient] stub:@selector(performRequest:success:failure:) withBlock:^id(NSArray *params) {
           LUAPISuccessBlock successBlock = params[1];
-          successBlock(nil);
+          successBlock(nil, nil);
 
           return nil;
         }];

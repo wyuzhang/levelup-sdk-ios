@@ -45,6 +45,8 @@
 #import "LUUser.h"
 #import "LUWebLocations.h"
 
+#import "LUAPIResponse.h"
+
 #import "LUConstants.h"
 
 #import "LUCachedLocationSearch.h"

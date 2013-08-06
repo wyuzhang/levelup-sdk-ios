@@ -41,10 +41,6 @@
   }
 }
 
-- (id)fromJSONObject:(id)JSON httpResponse:(NSHTTPURLResponse *)response {
-  return [self fromJSONObject:JSON];
-}
-
 - (NSString *)rootKey {
   return nil;
 }

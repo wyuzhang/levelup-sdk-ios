@@ -70,8 +70,9 @@
 
 @class LUAPIConnection;
 @class LUAPIRequest;
+@class LUAPIResponse;
 
-typedef void (^LUAPISuccessBlock)(id result);
+typedef void (^LUAPISuccessBlock)(id result, LUAPIResponse *response);
 typedef void (^LUAPIFailureBlock)(NSError *error);
 
 @interface LUAPIClient : AFHTTPClient
@@ -85,10 +86,11 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 
  This method must be called before performing any API requests.
 
+ @param appID Your LevelUp App ID.
  @param apiKey Your LevelUp API key.
  @param developmentMode Specifies if requests should go to sandbox or production.
  */
-+ (void)setupWithAPIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode;
++ (void)setupWithAppID:(NSString *)appID APIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode;
 
 /**
  The access token of an authenticated user.
@@ -101,6 +103,7 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 @property (copy) NSNumber *currentUserID;
 
 @property (copy, readonly) NSString *apiKey;
+@property (copy, readonly) NSString *appID;
 @property (readwrite, nonatomic, strong) NSURL *baseURL;
 @property (assign, readonly) BOOL developmentMode;
 
@@ -113,7 +116,7 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 
  @return The shared `LUAPIClient` instance.
 
- @exception NSInternalInconsistencyException If this method is called before `setupWithAPIKey:developmentMode:`.
+ @exception NSInternalInconsistencyException If this method is called before `setupWithAppID:APIKey:developmentMode:`.
  */
 + (LUAPIClient *)sharedClient;
 

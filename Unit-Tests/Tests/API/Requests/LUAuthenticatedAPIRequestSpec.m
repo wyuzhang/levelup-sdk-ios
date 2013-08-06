@@ -14,7 +14,7 @@ describe(@"LUAuthenticatedAPIRequest", ^{
   __block LUAuthenticatedAPIRequest *request;
 
   beforeEach(^{
-    [LUAPIClient setupWithAPIKey:@"anApiKey" developmentMode:YES];
+    [LUAPIClient setupWithAppID:@"1" APIKey:@"anApiKey" developmentMode:YES];
 
     request = [[LUAuthenticatedAPIRequest alloc] initWithMethod:method
                                                            path:path

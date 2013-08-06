@@ -61,7 +61,7 @@ describe(@"LULocation", ^{
     beforeEach(^{
       [[UIScreen mainScreen] stub:@selector(scale) andReturn:theValue(2.0)];
 
-      [LUAPIClient setupWithAPIKey:@"test" developmentMode:YES];
+      [LUAPIClient setupWithAppID:@"1" APIKey:@"test" developmentMode:YES];
     });
 
     it(@"returns a URL for the location's image, including width, height and density", ^{

@@ -1,25 +1,9 @@
 #import "LULocation.h"
-#import "LULocationSummaries.h"
 #import "LULocationSummaryJSONFactory.h"
-#import "LUWebLinkParser.h"
 #import "NSDate+StringFormats.h"
 #import "NSDictionary+ObjectClassAccess.h"
 
 @implementation LULocationSummaryJSONFactory
-
-- (id)fromJSONObject:(id)JSON httpResponse:(NSHTTPURLResponse *)response {
-  id result = [super fromJSONObject:JSON httpResponse:response];
-
-  if (![result isKindOfClass:[NSArray class]]) return nil;
-
-  NSArray *locations = result;
-
-  NSString *linkHeader = [response allHeaderFields][@"Link"];
-  LUWebLinkParser *webLink = [[LUWebLinkParser alloc] initWithHeaderValue:linkHeader];
-  NSURL *nextPageURL = webLink.nextURL;
-
-  return [[LULocationSummaries alloc] initWithLocations:locations nextPageURL:nextPageURL];
-}
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
   NSArray *categoryIDs;

@@ -3,6 +3,7 @@
 #import "LUAPIConnection.h"
 #import "LUAPIErrorBuilder.h"
 #import "LUAPIRequest.h"
+#import "LUAPIResponse.h"
 #import "LUConstants.h"
 
 @interface LUAPIClient ()
@@ -19,12 +20,15 @@ __strong static id _sharedClient = nil;
 #pragma mark - Object Lifecycle Methods
 
 + (LUAPIClient *)sharedClient {
-  NSAssert(_sharedClient != nil, @"setupWithAPIKey:developmentMode: must be called before sharedClient");
+  NSAssert(_sharedClient != nil, @"setupWithAppID:APIKey:developmentMode: must be called before sharedClient");
 
   return _sharedClient;
 }
 
-- (id)initWithAPIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode {
+- (id)initWithAppID:(NSString *)appID APIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode {
+  NSAssert(appID.length > 0, @"An app ID is required");
+  NSAssert(apiKey.length > 0, @"An API key is required");
+
   NSURL *baseURL;
   if (developmentMode) {
     baseURL = [NSURL URLWithString:LevelUpAPIBaseURLDevelopment];
@@ -34,6 +38,7 @@ __strong static id _sharedClient = nil;
 
   self = [super initWithBaseURL:baseURL];
   if (self) {
+    _appID = appID;
     _apiKey = apiKey;
     _developmentMode = developmentMode;
 
@@ -49,8 +54,8 @@ __strong static id _sharedClient = nil;
 
 #pragma mark - Public Methods
 
-+ (void)setupWithAPIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode {
-  _sharedClient = [[self alloc] initWithAPIKey:apiKey developmentMode:developmentMode];
++ (void)setupWithAppID:(NSString *)appID APIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode {
+  _sharedClient = [[self alloc] initWithAppID:appID APIKey:apiKey developmentMode:developmentMode];
 }
 
 - (LUAPIConnection *)performRequest:(LUAPIRequest *)apiRequest
@@ -60,10 +65,12 @@ __strong static id _sharedClient = nil;
     [AFJSONRequestOperation JSONRequestOperationWithRequest:apiRequest.urlRequest
                                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                                                       if (success) {
+                                                        LUAPIResponse *apiResponse = [[LUAPIResponse alloc] initWithHTTPURLResponse:response];
+
                                                         if (apiRequest.modelFactory) {
-                                                          success([apiRequest.modelFactory fromJSONObject:JSON httpResponse:response]);
+                                                          success([apiRequest.modelFactory fromJSONObject:JSON], apiResponse);
                                                         } else {
-                                                          success(JSON);
+                                                          success(JSON, apiResponse);
                                                         }
                                                       }
                                                     }

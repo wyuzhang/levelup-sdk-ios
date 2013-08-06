@@ -14,7 +14,7 @@ describe(@"LUAuthenticationRequestFactory", ^{
   NSString *deviceIdentifier = @"12345";
 
   beforeEach(^{
-    [LUAPIClient setupWithAPIKey:apiKey developmentMode:YES];
+    [LUAPIClient setupWithAppID:@"1" APIKey:apiKey developmentMode:YES];
     [LUDeviceIdentifier stub:@selector(deviceIdentifier) andReturn:deviceIdentifier];
   });
 

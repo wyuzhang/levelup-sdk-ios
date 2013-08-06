@@ -235,12 +235,32 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:nil];
 }
 
-+ (LUAPIStub *)stubToGetLocationsWithMerchantID:(NSNumber *)merchantID {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                 path:[NSString stringWithFormat:@"merchants/%@/locations", merchantID]
+
++ (LUAPIStub *)stubToGetLocationsForAppFirstPageNearLocation:(CLLocation *)location {
+  NSString *path = [NSString stringWithFormat:@"apps/%@/locations?lat=%@&lng=%@", [LUAPIClient sharedClient].appID,
+                    @(location.coordinate.latitude), @(location.coordinate.longitude)];
+
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                            path:path
+                                      HTTPMethod:@"GET"
+                                   authenticated:NO
+                                    responseData:[self responseDataFromFile:@"app_locations"]];
+
+  NSString *baseLocationsURLString = [NSString stringWithFormat:@"%@%@/%@", [[LUAPIClient sharedClient].baseURL description], LUAPIVersion14, path];
+  [LUCoreDataStack setMetadataString:[baseLocationsURLString stringByAppendingString:@"&first"] forKey:LUNextPageURLKey];
+  stub.responseHeaders = @{@"Link" : [NSString stringWithFormat:@"<%@&last>; rel=\"next\"", baseLocationsURLString]};
+
+  return stub;
+}
+
++ (LUAPIStub *)stubToGetLocationsForAppLastPage {
+  NSString *path = [NSString stringWithFormat:@"apps/%@/locations?last", [LUAPIClient sharedClient].appID];
+
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:path
                            HTTPMethod:@"GET"
                         authenticated:NO
-                         responseData:[self responseDataFromFile:@"merchant_locations"]];
+                         responseData:nil];
 }
 
 + (LUAPIStub *)stubToGetLocationWithID:(NSNumber *)locationID {

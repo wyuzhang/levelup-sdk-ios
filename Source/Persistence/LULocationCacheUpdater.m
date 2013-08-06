@@ -1,11 +1,11 @@
 #import "LUAPIClient.h"
 #import "LUAPIConnection.h"
+#import "LUAPIResponse.h"
 #import "LUCachedLocation.h"
 #import "LUCoreDataStack.h"
 #import "LULocation.h"
 #import "LULocationCacheUpdater.h"
 #import "LULocationRequestFactory.h"
-#import "LULocationSummaries.h"
 
 NSString * const LUNextPageURLKey = @"LULocationCacheUpdaterNextPageURLKey";
 
@@ -75,16 +75,16 @@ NSString * const LUNextPageURLKey = @"LULocationCacheUpdaterNextPageURLKey";
 
 - (void)retrieveNextPageOfLocations:(NSURL *)nextPageURL {
   self.currentRequest =
-    [[LUAPIClient sharedClient] performRequest:[LULocationRequestFactory requestForLocationSummaryPage:nextPageURL]
-                                       success:^(LULocationSummaries *summaries) {
-                                         if (!summaries || !self.isUpdating) {
+    [[LUAPIClient sharedClient] performRequest:[LULocationRequestFactory requestForLocationSummariesOnPage:nextPageURL]
+                                       success:^(NSArray *locations, LUAPIResponse *response) {
+                                         if (!locations || !self.isUpdating) {
                                            [self finishedUpdatingLocations];
                                            return;
                                          }
 
-                                         [self updateLocations:summaries];
+                                         [self updateLocations:locations response:response];
 
-                                         [self retrieveNextPageOfLocations:summaries.nextPageURL];
+                                         [self retrieveNextPageOfLocations:[response nextPageURL]];
                                        }
                                        failure:^(NSError *error) {
                                          [self.delegate locationCacheUpdaterDidReceiveNetworkError:error];
@@ -93,10 +93,10 @@ NSString * const LUNextPageURLKey = @"LULocationCacheUpdaterNextPageURLKey";
   self.currentRequest.successCallbackQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
 }
 
-- (void)updateLocations:(LULocationSummaries *)summaries {
+- (void)updateLocations:(NSArray *)locations response:(LUAPIResponse *)response {
   dispatch_async(self.locationUpdaterQueue, ^{
     NSManagedObjectContext *moc = [LUCoreDataStack managedObjectContext];
-    for (LULocation *location in summaries.locations) {
+    for (LULocation *location in locations) {
       LUCachedLocation *cachedLocation = [LUCachedLocation findOrBuildWithLocationID:location.locationID managedObjectContext:moc];
       [cachedLocation updatePropertiesFromLocation:location];
     }
@@ -111,7 +111,7 @@ NSString * const LUNextPageURLKey = @"LULocationCacheUpdaterNextPageURLKey";
       return;
     }
 
-    [LUCoreDataStack setMetadataString:[summaries.nextPageURL absoluteString] forKey:LUNextPageURLKey];
+    [LUCoreDataStack setMetadataString:[[response nextPageURL] absoluteString] forKey:LUNextPageURLKey];
 
     self.locationsChanged = YES;
   });
