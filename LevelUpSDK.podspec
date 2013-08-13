@@ -23,6 +23,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |core|
     core.dependency 'AFNetworking', '~> 1.1.0'
+    core.dependency 'AutoCoding', '~> 2.0.2'
     core.dependency 'LUKeychainAccess', '~> 1.0.0'
     core.dependency 'ZXingObjC', '~> 2.0.2'
 
@@ -34,6 +35,6 @@ Pod::Spec.new do |s|
     testing.dependency 'OHHTTPStubs', '~> 1.1.2'
 
     testing.source_files = 'Testing/LevelUpSDKTesting.h', 'Testing/**/*.{h,m}'
-    testing.resources = 'Testing/Network-Stubbing/Network-Responses/*.json'
+    testing.resources = 'Testing/Stubbing/Network-Responses/*.json'
   end
 end

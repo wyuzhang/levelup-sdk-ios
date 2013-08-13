@@ -388,6 +388,11 @@
 		F8BC840A173997D2007F7142 /* LUWebLocationsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BC84081739974B007F7142 /* LUWebLocationsSpec.m */; };
 		F8D4DB9D17569CA90000DB66 /* NSDictionary+SafetyAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D4DB9B17569CA90000DB66 /* NSDictionary+SafetyAdditions.h */; };
 		F8D4DB9E17569CA90000DB66 /* NSDictionary+SafetyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D4DB9C17569CA90000DB66 /* NSDictionary+SafetyAdditions.m */; };
+		F8EAF0E817BA817F00197388 /* LUCacheManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EAF0E617BA817800197388 /* LUCacheManagerSpec.m */; };
+		F8EAF0EB17BA827B00197388 /* LUKeychainAccess+StubbingAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8EAF0E917BA827B00197388 /* LUKeychainAccess+StubbingAdditions.h */; };
+		F8EAF0EC17BA827B00197388 /* LUKeychainAccess+StubbingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EAF0EA17BA827B00197388 /* LUKeychainAccess+StubbingAdditions.m */; };
+		F8EAF0EF17BA865900197388 /* LUCacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F8EAF0ED17BA865900197388 /* LUCacheManager.h */; };
+		F8EAF0F017BA865900197388 /* LUCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EAF0EE17BA865900197388 /* LUCacheManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -814,6 +819,11 @@
 		F8BC84081739974B007F7142 /* LUWebLocationsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUWebLocationsSpec.m; sourceTree = "<group>"; };
 		F8D4DB9B17569CA90000DB66 /* NSDictionary+SafetyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafetyAdditions.h"; sourceTree = "<group>"; };
 		F8D4DB9C17569CA90000DB66 /* NSDictionary+SafetyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafetyAdditions.m"; sourceTree = "<group>"; };
+		F8EAF0E617BA817800197388 /* LUCacheManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCacheManagerSpec.m; sourceTree = "<group>"; };
+		F8EAF0E917BA827B00197388 /* LUKeychainAccess+StubbingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUKeychainAccess+StubbingAdditions.h"; sourceTree = "<group>"; };
+		F8EAF0EA17BA827B00197388 /* LUKeychainAccess+StubbingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUKeychainAccess+StubbingAdditions.m"; sourceTree = "<group>"; };
+		F8EAF0ED17BA865900197388 /* LUCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCacheManager.h; sourceTree = "<group>"; };
+		F8EAF0EE17BA865900197388 /* LUCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCacheManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -869,7 +879,7 @@
 			children = (
 				020CF264172F020700D20672 /* Factories */,
 				02E2916E175FD3FB002036B4 /* LevelUpSDKTesting.h */,
-				02E29140175FCAB8002036B4 /* Network-Stubbing */,
+				02E29140175FCAB8002036B4 /* Stubbing */,
 			);
 			path = Testing;
 			sourceTree = "<group>";
@@ -931,7 +941,7 @@
 			path = "Frameworks/Braintree-Encryption/src";
 			sourceTree = "<group>";
 		};
-		02E29140175FCAB8002036B4 /* Network-Stubbing */ = {
+		02E29140175FCAB8002036B4 /* Stubbing */ = {
 			isa = PBXGroup;
 			children = (
 				02E29145175FCAB8002036B4 /* Network-Responses */,
@@ -941,8 +951,10 @@
 				02E29144175FCAB8002036B4 /* LUAPIStubbing.m */,
 				02293818176280B00057C381 /* LUAPIStubFactory.h */,
 				02293819176280B00057C381 /* LUAPIStubFactory.m */,
+				F8EAF0E917BA827B00197388 /* LUKeychainAccess+StubbingAdditions.h */,
+				F8EAF0EA17BA827B00197388 /* LUKeychainAccess+StubbingAdditions.m */,
 			);
-			path = "Network-Stubbing";
+			path = Stubbing;
 			sourceTree = "<group>";
 		};
 		02E29145175FCAB8002036B4 /* Network-Responses */ = {
@@ -1000,6 +1012,8 @@
 				2523E32617374D8B00FBDFEB /* LUCachedLocation.m */,
 				2523E32717374D8B00FBDFEB /* LUCachedLocationSearch.h */,
 				2523E32817374D8B00FBDFEB /* LUCachedLocationSearch.m */,
+				F8EAF0ED17BA865900197388 /* LUCacheManager.h */,
+				F8EAF0EE17BA865900197388 /* LUCacheManager.m */,
 				2523E32917374D8B00FBDFEB /* LUCoreDataStack.h */,
 				2523E32A17374D8B00FBDFEB /* LUCoreDataStack.m */,
 				02BA9828174BE19500C9D647 /* LUCoreDataStore.h */,
@@ -1015,6 +1029,7 @@
 			children = (
 				2523E33B17374DCC00FBDFEB /* LUCachedLocationSearchSpec.m */,
 				2523E33C17374DCC00FBDFEB /* LUCachedLocationSpec.m */,
+				F8EAF0E617BA817800197388 /* LUCacheManagerSpec.m */,
 				2576B255174AE6F200689973 /* LUCoreDataStackSpec.m */,
 				02BA982C174BE36800C9D647 /* LUCoreDataStoreSpec.m */,
 				2523E33D17374DCC00FBDFEB /* LULocationCacheUpdaterSpec.m */,
@@ -1699,6 +1714,8 @@
 				0274B84017739BAA00FD5B43 /* LUAPIErrorJSONFactory.h in Headers */,
 				258F5331178760FA000FDE79 /* LULegacyLoyaltyClaimJSONFactory.h in Headers */,
 				258F5335178763E8000FDE79 /* LULegacyLoyaltyClaim.h in Headers */,
+				F8EAF0EB17BA827B00197388 /* LUKeychainAccess+StubbingAdditions.h in Headers */,
+				F8EAF0EF17BA865900197388 /* LUCacheManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1971,6 +1988,8 @@
 				0274B84117739BAA00FD5B43 /* LUAPIErrorJSONFactory.m in Sources */,
 				258F5332178760FA000FDE79 /* LULegacyLoyaltyClaimJSONFactory.m in Sources */,
 				258F5336178763E8000FDE79 /* LULegacyLoyaltyClaim.m in Sources */,
+				F8EAF0EC17BA827B00197388 /* LUKeychainAccess+StubbingAdditions.m in Sources */,
+				F8EAF0F017BA865900197388 /* LUCacheManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2100,6 +2119,7 @@
 				258F533917876531000FDE79 /* LULegacyLoyaltyClaimSpec.m in Sources */,
 				258F533B1787655A000FDE79 /* LULegacyLoyaltyClaimJSONFactorySpec.m in Sources */,
 				258F5341178765B0000FDE79 /* LULegacyLoyaltyClaim+Fixtures.m in Sources */,
+				F8EAF0E817BA817F00197388 /* LUCacheManagerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

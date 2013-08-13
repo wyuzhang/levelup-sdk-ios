@@ -1,5 +1,6 @@
 PODS:
   - AFNetworking (1.1.0)
+  - AutoCoding (2.0.2)
   - Kiwi (2.0.6)
   - LUKeychainAccess (1.0.1)
   - OHHTTPStubs (1.1.2)
@@ -7,6 +8,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 1.1.0)
+  - AutoCoding (~> 2.0.2)
   - Kiwi (~> 2.0.6)
   - LUKeychainAccess (~> 1.0.0)
   - OHHTTPStubs (~> 1.1.2)
@@ -14,9 +16,10 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
+  AutoCoding: 5ca26eac460ed177d07dbd4572a3e980238001dd
   Kiwi: 56082a80f942de4d10423d8d8a599ab30cf50228
   LUKeychainAccess: 6ba22b2e1eec24f9f2fc9c6a9087d5524a58b1a2
   OHHTTPStubs: a840cb0fe0c2a4271018be540782cc97139dff53
-  ZXingObjC: 3076a75db997092eb2f7a74bd3d380095931c58a
+  ZXingObjC: 9b2918fbb89d1febfdc7b2b1debd1dc6bf60f97a
 
-COCOAPODS: 0.22.2
+COCOAPODS: 0.23.0

@@ -48,6 +48,7 @@
 #import "LUConstants.h"
 
 #import "LUCachedLocationSearch.h"
+#import "LUCacheManager.h"
 #import "LULocationCacheUpdater.h"
 
 #import "LUQRCodeGenerator.h"
