@@ -15,8 +15,17 @@ describe(@"LUUserRequestFactory", ^{
   describe(@"requestForCurrentUser", ^{
     beforeEach(^{
       [[LUAPIClient sharedClient] stub:@selector(currentUserID) andReturn:@1];
+    });
 
+    it(@"forwards the message to +requestForUserWithID:", ^{
+      [[[LUUserRequestFactory should] receive] requestForUserWithID:@1];
       request = [LUUserRequestFactory requestForCurrentUser];
+    });
+  });
+
+  describe(@"requestForUserWithID:", ^{
+    beforeEach(^{
+      request = [LUUserRequestFactory requestForUserWithID:@1];
     });
 
     it(@"returns an authenticated request", ^{

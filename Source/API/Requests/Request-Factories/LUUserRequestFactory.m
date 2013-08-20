@@ -12,7 +12,11 @@
 #pragma mark - Public Methods
 
 + (LUAPIRequest *)requestForCurrentUser {
-  NSString *path = [NSString stringWithFormat:@"users/%@", [LUAPIClient sharedClient].currentUserID];
+  return [self requestForUserWithID:[LUAPIClient sharedClient].currentUserID];
+}
+
++ (LUAPIRequest *)requestForUserWithID:(NSNumber *)userID {
+  NSString *path = [NSString stringWithFormat:@"users/%@", userID];
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
                                                     path:path
