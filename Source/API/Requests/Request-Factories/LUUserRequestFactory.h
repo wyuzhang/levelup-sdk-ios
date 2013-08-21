@@ -17,7 +17,7 @@
  Builds a request to fetch the user with the given user ID.
 
  On success, this request will return an `LUUser` instance.
- 
+
  @param userID The ID for the user requested.
  */
 + (LUAPIRequest *)requestForUserWithID:(NSNumber *)userID;
