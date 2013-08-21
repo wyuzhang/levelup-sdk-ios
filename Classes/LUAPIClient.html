@@ -49,7 +49,7 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/setupWithAPIKey:developmentMode:">&nbsp;&nbsp;&nbsp;&nbsp;+ setupWithAPIKey:developmentMode:</option>
+	<option value="//api/name/setupWithAppID:APIKey:developmentMode:">&nbsp;&nbsp;&nbsp;&nbsp;+ setupWithAppID:APIKey:developmentMode:</option>
 	
 	<option value="//api/name/sharedClient">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedClient</option>
 	
@@ -98,7 +98,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setupWithAPIKey:developmentMode:">setupWithAPIKey:developmentMode:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setupWithAppID:APIKey:developmentMode:">setupWithAppID:APIKey:developmentMode:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedClient">sharedClient</a></span></li>
 	
@@ -151,7 +151,7 @@
 
 <h2>Setup</h2>
 
-<p>Before using <code>LUAPIClient</code>, it must be set up with a valid API key. This is done with <a href="#//api/name/setupWithAPIKey:developmentMode:"><code>setupWithAPIKey:developmentMode:</code></a>.</p>
+<p>Before using <code>LUAPIClient</code>, it must be set up with a valid API key. This is done with <code>setupWithAPIKey:developmentMode:</code>.</p>
 
 <h2>Issuing Requests</h2>
 
@@ -233,7 +233,7 @@ only contain the first message. <code>LUAPIErrorKeyAPIErrors</code> can be used 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setupWithAPIKey:developmentMode:">+&nbsp;setupWithAPIKey:developmentMode:</a></code>
+		<code><a href="#//api/name/setupWithAppID:APIKey:developmentMode:">+&nbsp;setupWithAppID:APIKey:developmentMode:</a></code>
 		<span class="tooltip"><p>Sets up the LevelUp SDK.</p></span>
 	</span>
 	
@@ -378,8 +378,8 @@ only contain the first message. <code>LUAPIErrorKeyAPIErrors</code> can be used 
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/setupWithAPIKey:developmentMode:" title="setupWithAPIKey:developmentMode:"></a>
-	<h3 class="subsubtitle method-title">setupWithAPIKey:developmentMode:</h3>
+	<a name="//api/name/setupWithAppID:APIKey:developmentMode:" title="setupWithAppID:APIKey:developmentMode:"></a>
+	<h3 class="subsubtitle method-title">setupWithAppID:APIKey:developmentMode:</h3>
 	
 	
 	
@@ -389,12 +389,17 @@ only contain the first message. <code>LUAPIErrorKeyAPIErrors</code> can be used 
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)setupWithAPIKey:(NSString *)<em>apiKey</em> developmentMode:(BOOL)<em>developmentMode</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)setupWithAppID:(NSString *)<em>appID</em> APIKey:(NSString *)<em>apiKey</em> developmentMode:(BOOL)<em>developmentMode</em></code></div>
 
     
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appID</em></dt>
+			<dd><p>Your LevelUp App ID.</p></dd>
+		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>apiKey</em></dt>
@@ -474,7 +479,7 @@ only contain the first message. <code>LUAPIErrorKeyAPIErrors</code> can be used 
 		
 		<dl class="argument-def exception-def">
 			<dt><em>NSInternalInconsistencyException</em></dt>
-			<dd><p>If this method is called before <a href="#//api/name/setupWithAPIKey:developmentMode:"><code>setupWithAPIKey:developmentMode:</code></a>.</p></dd>
+			<dd><p>If this method is called before <a href="#//api/name/setupWithAppID:APIKey:developmentMode:"><code>setupWithAppID:APIKey:developmentMode:</code></a>.</p></dd>
 		</dl>
 		
 	</div>
@@ -511,7 +516,7 @@ only contain the first message. <code>LUAPIErrorKeyAPIErrors</code> can be used 
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSOperation *)performRequest:(LUAPIRequest *)<em>apiRequest</em> success:(LUAPISuccessBlock)<em>success</em> failure:(LUAPIFailureBlock)<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (LUAPIConnection *)performRequest:(LUAPIRequest *)<em>apiRequest</em> success:(LUAPISuccessBlock)<em>success</em> failure:(LUAPIFailureBlock)<em>failure</em></code></div>
 
     
 	
@@ -541,7 +546,7 @@ containing additional information about the error.</p></dd>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An NSOperation for the request.</p>
+		<p>An <a href="../Classes/LUAPIConnection.html"><code>LUAPIConnection</code></a> for the request.</p>
 	</div>
 	
 	
@@ -580,7 +585,7 @@ containing additional information about the error.</p></dd>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-06-21)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-08-21)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

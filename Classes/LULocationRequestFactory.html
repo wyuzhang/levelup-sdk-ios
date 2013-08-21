@@ -42,13 +42,15 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
+	<option value="//api/name/requestForAppLocationsNearLocation:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForAppLocationsNearLocation:</option>
+	
+	<option value="//api/name/requestForAppLocationsOnPage:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForAppLocationsOnPage:</option>
+	
 	<option value="//api/name/requestForLocationSummaries">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForLocationSummaries</option>
 	
-	<option value="//api/name/requestForLocationSummaryPage:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForLocationSummaryPage:</option>
+	<option value="//api/name/requestForLocationSummariesOnPage:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForLocationSummariesOnPage:</option>
 	
 	<option value="//api/name/requestForLocationWithID:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForLocationWithID:</option>
-	
-	<option value="//api/name/requestForLocationsWithMerchantID:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForLocationsWithMerchantID:</option>
 	
 	
 	
@@ -78,13 +80,15 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForAppLocationsNearLocation:">requestForAppLocationsNearLocation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForAppLocationsOnPage:">requestForAppLocationsOnPage:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForLocationSummaries">requestForLocationSummaries</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForLocationSummaryPage:">requestForLocationSummaryPage:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForLocationSummariesOnPage:">requestForLocationSummariesOnPage:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForLocationWithID:">requestForLocationWithID:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForLocationsWithMerchantID:">requestForLocationsWithMerchantID:</a></span></li>
 	
 </ul></li>
 
@@ -143,6 +147,20 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/requestForAppLocationsNearLocation:">+&nbsp;requestForAppLocationsNearLocation:</a></code>
+		<span class="tooltip"><p>Builds a request to return the first page of locations for merchants associated with the app.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestForAppLocationsOnPage:">+&nbsp;requestForAppLocationsOnPage:</a></code>
+		<span class="tooltip"><p>Builds a request to return the given page of locations for merchants associated with the app.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/requestForLocationSummaries">+&nbsp;requestForLocationSummaries</a></code>
 		<span class="tooltip"><p>Builds a request to return the first page of location summaries.</p></span>
 	</span>
@@ -150,15 +168,8 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForLocationSummaryPage:">+&nbsp;requestForLocationSummaryPage:</a></code>
+		<code><a href="#//api/name/requestForLocationSummariesOnPage:">+&nbsp;requestForLocationSummariesOnPage:</a></code>
 		<span class="tooltip"><p>Builds a request to return the given page of location summaries.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requestForLocationsWithMerchantID:">+&nbsp;requestForLocationsWithMerchantID:</a></code>
-		<span class="tooltip"><p>Builds a request to return all the locations associated with the given merchant ID.</p></span>
 	</span>
 	
 	
@@ -183,6 +194,117 @@
 					<div class="section section-methods">
 						<a title="Class Methods" name="class_methods"></a>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/requestForAppLocationsNearLocation:" title="requestForAppLocationsNearLocation:"></a>
+	<h3 class="subsubtitle method-title">requestForAppLocationsNearLocation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Builds a request to return the first page of locations for merchants associated with the app.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForAppLocationsNearLocation:(CLLocation *)<em>location</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>location</em></dt>
+			<dd><p>The location to use for sorting.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Builds a request to return the first page of locations for merchants associated with the app.</p>
+
+<p>On success, this request will full <a href="../Classes/LULocation.html"><code>LULocation</code></a> instances for each location, sorted relative to the distance from the
+given location. The response will include a URL for the next page of results. This URL is retrieved by calling
+<code>nextPageURL</code> on the <a href="../Classes/LUAPIResponse.html"><code>LUAPIResponse</code></a> instance that is returned along with the results. This URL can be used with
+<code>requestForLocationsOnPage:</code> to retrieve the next page of locations.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LULocationRequestFactory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestForAppLocationsOnPage:" title="requestForAppLocationsOnPage:"></a>
+	<h3 class="subsubtitle method-title">requestForAppLocationsOnPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Builds a request to return the given page of locations for merchants associated with the app.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForAppLocationsOnPage:(NSURL *)<em>pageURL</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pageURL</em></dt>
+			<dd><p>The next page of locations to request.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Builds a request to return the given page of locations for merchants associated with the app.</p>
+
+<p>On success, this request will full <a href="../Classes/LULocation.html"><code>LULocation</code></a> instances for each location. If this page doesn&rsquo;t
+include any locations, the response will be an empty array. When there are additional pages of results, the
+<a href="../Classes/LUAPIResponse.html"><code>LUAPIResponse</code></a> will also include the URL for the next page of results.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LULocationRequestFactory.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/requestForLocationSummaries" title="requestForLocationSummaries"></a>
@@ -211,9 +333,10 @@
 		<p>Builds a request to return the first page of location summaries.</p>
 
 <p>On success, this request will return an array of <a href="../Classes/LULocation.html"><code>LULocation</code></a> instances in summary mode. Locations are returned in
-the order that were updated (ascending). The response will include a URL for the next page of results. This URL can
-be used with <a href="#//api/name/requestForLocationSummaryPage:"><code>requestForLocationSummaryPage:</code></a> to retrieve the next page of locations. In this way, the app can keep a
-local database of all LevelUp locations, and keep the database up to date.</p>
+the order that were updated (ascending). The response will include a URL for the next page of results. This URL is
+retrieved by calling <code>nextPageURL</code> on the <a href="../Classes/LUAPIResponse.html"><code>LUAPIResponse</code></a> instance that is returned along with the results. This URL
+can be used with <a href="#//api/name/requestForLocationSummariesOnPage:"><code>requestForLocationSummariesOnPage:</code></a> to retrieve the next page of locations. In this way, the app can
+keep a local database of all LevelUp locations, and keep the database up to date.</p>
 	</div>
 	
 	
@@ -231,8 +354,8 @@ local database of all LevelUp locations, and keep the database up to date.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForLocationSummaryPage:" title="requestForLocationSummaryPage:"></a>
-	<h3 class="subsubtitle method-title">requestForLocationSummaryPage:</h3>
+	<a name="//api/name/requestForLocationSummariesOnPage:" title="requestForLocationSummariesOnPage:"></a>
+	<h3 class="subsubtitle method-title">requestForLocationSummariesOnPage:</h3>
 	
 	
 	
@@ -242,7 +365,7 @@ local database of all LevelUp locations, and keep the database up to date.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForLocationSummaryPage:(NSURL *)<em>pageURL</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForLocationSummariesOnPage:(NSURL *)<em>pageURL</em></code></div>
 
     
 	
@@ -251,7 +374,7 @@ local database of all LevelUp locations, and keep the database up to date.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>pageURL</em></dt>
-			<dd><p>The next page of locations to request.</p></dd>
+			<dd><p>The next page of location summaries to request.</p></dd>
 		</dl>
 		
 	</div>
@@ -268,8 +391,8 @@ local database of all LevelUp locations, and keep the database up to date.</p>
 
 <p>On success, this request will return an array of <a href="../Classes/LULocation.html"><code>LULocation</code></a> instances in summary mode. If this page doesn&rsquo;t
 include any locations, the response will be empty with a status code of 204 (No Content). This URL can then be
-retried, and when results are available they will be returned. When there are additional pages of results, the response
-will also include the URL for the subsequent page of results.</p>
+retried, and when results are available they will be returned. When there are additional pages of results, the
+<a href="../Classes/LUAPIResponse.html"><code>LUAPIResponse</code></a> will also include the URL for the next page of results.</p>
 	</div>
 	
 	
@@ -340,60 +463,6 @@ with that id, the response will be empty with a status code of 404 (Not found).<
 	
 </div>
 						
-						<div class="section-method">
-	<a name="//api/name/requestForLocationsWithMerchantID:" title="requestForLocationsWithMerchantID:"></a>
-	<h3 class="subsubtitle method-title">requestForLocationsWithMerchantID:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Builds a request to return all the locations associated with the given merchant ID.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForLocationsWithMerchantID:(NSNumber *)<em>merchantID</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>merchantID</em></dt>
-			<dd><p>The merchant ID to request.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to return all the locations associated with the given merchant ID.</p>
-
-<p>On success, this request will full <a href="../Classes/LULocation.html"><code>LULocation</code></a> instances for each location. If there isn&rsquo;t a merchant
-with the given ID, the response will be empty with a status code of 404 (Not found).</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LULocationRequestFactory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
 					</div>
 					
 					
@@ -409,7 +478,7 @@ with the given ID, the response will be empty with a status code of 404 (Not fou
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-06-21)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-08-21)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
