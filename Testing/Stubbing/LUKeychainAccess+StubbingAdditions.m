@@ -27,11 +27,11 @@ static NSMutableDictionary *_keychain;
 }
 
 - (id)fakeObjectForKey:(NSString *)key {
-  return [_keychain objectForKey:key];
+  return [_keychain valueForKey:key];
 }
 
 - (void)fakeSetObject:(id)object forKey:(NSString *)key {
-  [_keychain setObject:object forKey:key];
+  [_keychain setValue:object forKey:key];
 }
 
 @end
