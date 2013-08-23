@@ -1,5 +1,5 @@
 #import "LUAuthenticatedAPIRequest.h"
-#import "LULoyaltyV14JSONFactory.h"
+#import "LULoyaltyJSONFactory.h"
 
 SPEC_BEGIN(LULoyaltyRequestFactorySpec)
 
@@ -28,7 +28,7 @@ describe(@"LULoyaltyRequestFactory", ^{
     });
 
     it(@"returns a request with an attached LULoyaltyJSONFactory", ^{
-      [[request.modelFactory should] beKindOfClass:[LULoyaltyV14JSONFactory class]];
+      [[request.modelFactory should] beKindOfClass:[LULoyaltyJSONFactory class]];
     });
   });
 });

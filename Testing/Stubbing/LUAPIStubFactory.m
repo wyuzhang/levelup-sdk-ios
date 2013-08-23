@@ -2,7 +2,6 @@
 #import "LUAPIRequest.h"
 #import "LUAPIStub.h"
 #import "LUAPIStubFactory.h"
-#import "LUCauseAffiliation.h"
 #import "LUCoreDataStack.h"
 #import "LUKeychainAccess.h"
 #import "LULocationCacheUpdater.h"
@@ -459,16 +458,6 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                            HTTPMethod:@"POST"
                         authenticated:NO
                          responseData:nil];
-}
-
-+ (LUAPIStub *)stubToSetCauseAffiliation:(LUCauseAffiliation *)causeAffiliation {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                            path:@"cause_affiliation"
-                                      HTTPMethod:@"POST"
-                                   authenticated:YES
-                                    responseData:nil];
-  stub.requestBodyJSON = @{ @"cause_id" : causeAffiliation.causeID, @"percent_donation" : causeAffiliation.percentDonation };
-  return stub;
 }
 
 + (LUAPIStub *)stubToUpdateUser {

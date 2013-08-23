@@ -1,5 +1,4 @@
 @class LUAPIStub;
-@class LUCauseAffiliation;
 @class LUUser;
 
 @interface LUAPIStubFactory : NSObject
@@ -50,7 +49,6 @@
 + (LUAPIStub *)stubToLogInWithFacebookAccessToken:(NSString *)facebookAccessToken;
 + (LUAPIStub *)stubToPromoteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToResetPasswordRequest;
-+ (LUAPIStub *)stubToSetCauseAffiliation:(LUCauseAffiliation *)causeAffiliation;
 + (LUAPIStub *)stubToUpdateUser;
 + (LUAPIStub *)stubToUpdateUser:(LUUser *)user;
 

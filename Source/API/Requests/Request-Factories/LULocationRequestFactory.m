@@ -2,7 +2,7 @@
 #import "LUAPIRequest.h"
 #import "LULocationRequestFactory.h"
 #import "LULocationSummaryJSONFactory.h"
-#import "LULocationV14JSONFactory.h"
+#import "LULocationJSONFactory.h"
 #import "NSURL+LUAdditions.h"
 
 @implementation LULocationRequestFactory
@@ -15,7 +15,7 @@
                                        path:requestPath
                                  apiVersion:LUAPIVersion14
                                  parameters:params
-                               modelFactory:[LULocationV14JSONFactory factory]];
+                               modelFactory:[LULocationJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestForAppLocationsOnPage:(NSURL *)pageURL {
@@ -25,7 +25,7 @@
                                        path:[pageURL lu_pathAndQueryWithoutAPIVersion]
                                  apiVersion:LUAPIVersion14
                                  parameters:nil
-                               modelFactory:[LULocationV14JSONFactory factory]];
+                               modelFactory:[LULocationJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestForLocationSummaries {
@@ -52,7 +52,7 @@
                                        path:requestPath
                                  apiVersion:LUAPIVersion14
                                  parameters:nil
-                               modelFactory:[LULocationV14JSONFactory factory]];
+                               modelFactory:[LULocationJSONFactory factory]];
 }
 
 @end

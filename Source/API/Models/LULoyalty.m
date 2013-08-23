@@ -4,16 +4,14 @@
 
 #pragma mark - Creation
 
-- (id)initWithLoyaltyID:(NSNumber *)loyaltyID merchantID:(NSNumber *)merchantID
- merchantLoyaltyEnabled:(BOOL)merchantLoyaltyEnabled ordersCount:(NSNumber *)ordersCount
-        potentialCredit:(LUMonetaryValue *)potentialCredit progressPercent:(float)progressPercent
-                savings:(LUMonetaryValue *)savings shouldSpend:(LUMonetaryValue *)shouldSpend
-         spendRemaining:(LUMonetaryValue *)spendRemaining totalVolume:(LUMonetaryValue *)totalVolume
-               willEarn:(LUMonetaryValue *)willEarn {
+- (id)initWithMerchantID:(NSNumber *)merchantID merchantLoyaltyEnabled:(BOOL)merchantLoyaltyEnabled
+             ordersCount:(NSNumber *)ordersCount potentialCredit:(LUMonetaryValue *)potentialCredit
+         progressPercent:(float)progressPercent savings:(LUMonetaryValue *)savings
+             shouldSpend:(LUMonetaryValue *)shouldSpend spendRemaining:(LUMonetaryValue *)spendRemaining
+             totalVolume:(LUMonetaryValue *)totalVolume willEarn:(LUMonetaryValue *)willEarn {
   self = [super init];
   if (!self) return nil;
 
-  _loyaltyID = loyaltyID;
   _merchantID = merchantID;
   _merchantLoyaltyEnabled = merchantLoyaltyEnabled;
   _ordersCount = ordersCount;
@@ -33,13 +31,13 @@
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LULoyalty [ID=%@, merchantID=%@, merchantLoyaltyEnabled=%@, ordersCount=%@, potentialCredit=%@, progressPercent=%@, savings=%@, shouldSpend=%@, spendRemaining=%@, totalVolume=%@, willEarn=%@]",
-          self.loyaltyID, self.merchantID, @(self.merchantLoyaltyEnabled), self.ordersCount, self.potentialCredit,
+          @"LULoyalty [merchantID=%@, merchantLoyaltyEnabled=%@, ordersCount=%@, potentialCredit=%@, progressPercent=%@, savings=%@, shouldSpend=%@, spendRemaining=%@, totalVolume=%@, willEarn=%@]",
+          self.merchantID, @(self.merchantLoyaltyEnabled), self.ordersCount, self.potentialCredit,
           @(self.progressPercent), self.savings, self.shouldSpend, self.spendRemaining, self.totalVolume, self.willEarn];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LULoyalty [ID=%@, merchantID=%@]", self.loyaltyID, self.merchantID];
+  return [NSString stringWithFormat:@"LULoyalty [merchantID=%@]", self.merchantID];
 }
 
 @end

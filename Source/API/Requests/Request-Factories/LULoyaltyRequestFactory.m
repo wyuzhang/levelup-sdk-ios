@@ -1,6 +1,6 @@
 #import "LUAuthenticatedAPIRequest.h"
+#import "LULoyaltyJSONFactory.h"
 #import "LULoyaltyRequestFactory.h"
-#import "LULoyaltyV14JSONFactory.h"
 
 @implementation LULoyaltyRequestFactory
 
@@ -9,7 +9,7 @@
                                          path:[NSString stringWithFormat:@"merchants/%@/loyalty", [merchantID stringValue]]
                                    apiVersion:LUAPIVersion14
                                    parameters:nil
-                                 modelFactory:[LULoyaltyV14JSONFactory factory]];
+                                 modelFactory:[LULoyaltyJSONFactory factory]];
 }
 
 @end

@@ -3,44 +3,62 @@
 SPEC_BEGIN(LULoyaltyJSONFactorySpec)
 
 describe(@"LULoyaltyJSONFactory", ^{
-  __block LULoyaltyJSONFactory *factory;
+  __block LULoyalty *loyalty;
 
-  beforeEach(^{
-    factory = [LULoyaltyJSONFactory factory];
+  beforeAll(^{
+    LULoyaltyJSONFactory *factory = [LULoyaltyJSONFactory factory];
+    loyalty = [factory createFromAttributes:[LULoyalty fullJSONObject]];
   });
 
   describe(@"createFromAttributes:", ^{
-    it(@"parses a JSON dictionary into an LULoyalty", ^{
-      LULoyalty *loyalty = [factory createFromAttributes:[LULoyalty fullJSONObject]];
-
-      [[loyalty.loyaltyID should] equal:@1];
-      [[loyalty.merchantID should] equal:@2];
-      [[theValue(loyalty.merchantLoyaltyEnabled) should] beNo];
-      [[loyalty.ordersCount should] equal:@100];
-      [[loyalty.potentialCredit should] equal:[LUMonetaryValue fullMonetaryValue]];
-      [[theValue(loyalty.progressPercent) should] equal:theValue(0.5f)];
-      [[loyalty.savings should] equal:[LUMonetaryValue fullMonetaryValue]];
-      [[loyalty.shouldSpend should] equal:[LUMonetaryValue fullMonetaryValue]];
-      [[loyalty.spendRemaining should] equal:[LUMonetaryValue fullMonetaryValue]];
-      [[loyalty.totalVolume should] equal:[LUMonetaryValue fullMonetaryValue]];
-      [[loyalty.willEarn should] equal:[LUMonetaryValue fullMonetaryValue]];
+    it(@"parses a JSON dictionary into an instance of LULoyalty", ^{
+      [[loyalty should] beKindOfClass:[LULoyalty class]];
     });
 
-    context(@"when loyaltyEnabled is YES", ^{
-      beforeEach(^{
-        factory.loyaltyEnabled = YES;
-      });
+    it(@"should set the willEarn property", ^{
+      [[loyalty.willEarn should] equal:[LUMonetaryValue monetaryValueWithUSCents:@500]];
+    });
 
-      it(@"sets merchantLoyaltyEnabled to YES", ^{
-        LULoyalty *loyalty = [factory createFromAttributes:[LULoyalty fullJSONObject]];
+    it(@"should set the merchantID property", ^{
+      [[loyalty.merchantID should] equal:@456];
+    });
 
-        [[theValue(loyalty.merchantLoyaltyEnabled) should] beYes];
-      });
+    it(@"should set the merchantLoyaltyEnabled property", ^{
+      [[theValue(loyalty.merchantLoyaltyEnabled) should] beYes];
+    });
+
+    it(@"should set the shouldSpend property", ^{
+      [[loyalty.shouldSpend should] equal:[LUMonetaryValue monetaryValueWithUSCents:@5000]];
+    });
+
+    it(@"should set the ordersCount property", ^{
+      [[loyalty.ordersCount should] equal:@77];
+    });
+
+    it(@"should set the potentialCredit property", ^{
+      [[loyalty.potentialCredit should] equal:[LUMonetaryValue monetaryValueWithUSCents:@7350.11]];
+    });
+
+    it(@"should set the progressPercent property", ^{
+      [[theValue(loyalty.progressPercent) should] equal:theValue(0.42f)];
+    });
+
+    it(@"should set the savings property", ^{
+      [[loyalty.savings should] equal:[LUMonetaryValue monetaryValueWithUSCents:@835]];
+    });
+
+    it(@"should set the spendRemaining property", ^{
+      [[loyalty.spendRemaining should] equal:[LUMonetaryValue monetaryValueWithUSCents:@427]];
+    });
+
+    it(@"should set the totalVolume property", ^{
+      [[loyalty.totalVolume should] equal:[LUMonetaryValue monetaryValueWithUSCents:@6317]];
     });
   });
 
   describe(@"rootKey", ^{
-    it(@"is 'loyalty'", ^{
+    it(@"returns 'loyalty'", ^{
+      LULoyaltyJSONFactory *factory = [LULoyaltyJSONFactory factory];
       [[[factory rootKey] should] equal:@"loyalty"];
     });
   });

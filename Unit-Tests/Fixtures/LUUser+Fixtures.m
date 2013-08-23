@@ -1,4 +1,3 @@
-#import "LUCause+Fixtures.h"
 #import "LUUser+Fixtures.h"
 #import "LUUserJSONFactory.h"
 

@@ -7,12 +7,13 @@
 
 #pragma mark - Creation
 
-- (id)initWithCategoryIDs:(NSArray *)categoryIDs descriptionHTML:(NSString *)descriptionHTML extendedAddress:(NSString *)extendedAddress hours:(NSString *)hours
-                 latitude:(NSNumber *)latitude locality:(NSString *)locality locationID:(NSNumber *)locationID
-                longitude:(NSNumber *)longitude merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName
-                     name:(NSString *)name phone:(NSString *)phone postalCode:(NSString *)postalCode
-                   region:(NSString *)region shown:(BOOL)shown streetAddress:(NSString *)streetAddress
-            updatedAtDate:(NSDate *)updatedAtDate webLocations:(LUWebLocations *)webLocations {
+- (id)initWithCategoryIDs:(NSArray *)categoryIDs descriptionHTML:(NSString *)descriptionHTML
+          extendedAddress:(NSString *)extendedAddress hours:(NSString *)hours latitude:(NSNumber *)latitude
+                 locality:(NSString *)locality locationID:(NSNumber *)locationID longitude:(NSNumber *)longitude
+               merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName name:(NSString *)name
+                    phone:(NSString *)phone postalCode:(NSString *)postalCode region:(NSString *)region
+                    shown:(BOOL)shown streetAddress:(NSString *)streetAddress updatedAtDate:(NSDate *)updatedAtDate
+             webLocations:(LUWebLocations *)webLocations {
   self = [super init];
   if (!self) return nil;
 

@@ -1,7 +1,7 @@
 #import "LUAuthenticatedAPIRequest.h"
 #import "LULocationRequestFactory.h"
 #import "LULocationSummaryJSONFactory.h"
-#import "LULocationV14JSONFactory.h"
+#import "LULocationJSONFactory.h"
 
 SPEC_BEGIN(LULocationRequestFactorySpec)
 
@@ -28,8 +28,8 @@ describe(@"LULocationRequestFactory", ^{
       [[request.apiVersion should] equal:LUAPIVersion14];
     });
 
-    it(@"returns a request set up to pass the response to an instance of LULocationV14JSONFactory", ^{
-      [[request.modelFactory should] beKindOfClass:[LULocationV14JSONFactory class]];
+    it(@"returns a request set up to pass the response to an instance of LULocationJSONFactory", ^{
+      [[request.modelFactory should] beKindOfClass:[LULocationJSONFactory class]];
     });
 
     it(@"returns a request with the parameters for the given location", ^{
@@ -58,8 +58,8 @@ describe(@"LULocationRequestFactory", ^{
       [[request.apiVersion should] equal:LUAPIVersion14];
     });
 
-    it(@"returns a request set up to pass the response to an instance of LULocationV14JSONFactory", ^{
-      [[request.modelFactory should] beKindOfClass:[LULocationV14JSONFactory class]];
+    it(@"returns a request set up to pass the response to an instance of LULocationJSONFactory", ^{
+      [[request.modelFactory should] beKindOfClass:[LULocationJSONFactory class]];
     });
   });
 
@@ -127,7 +127,7 @@ describe(@"LULocationRequestFactory", ^{
     });
 
     it(@"returns a request set up to pass the response to an instance of LULocationJSONFactory", ^{
-      [[request.modelFactory should] beKindOfClass:[LULocationV14JSONFactory class]];
+      [[request.modelFactory should] beKindOfClass:[LULocationJSONFactory class]];
     });
   });
 });

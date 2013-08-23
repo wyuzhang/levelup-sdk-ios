@@ -1,7 +1,5 @@
 #import "LUCacheManager.h"
 #import "LUKeychainAccess.h"
-#import "LULoyaltyJSONFactory.h"
-#import "LUUserJSONFactory.h"
 
 NSString * const LUCachedUserKey = @"LUCachedUserKey";
 NSString * const LUCachedLoyaltyKey = @"LUCachedLoyaltyKey";

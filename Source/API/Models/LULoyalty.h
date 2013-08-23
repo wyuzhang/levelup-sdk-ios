@@ -15,11 +15,6 @@
 @interface LULoyalty : LUAPIModel
 
 /**
- The unique identifier for this loyalty.
- */
-@property (nonatomic, copy, readonly) NSNumber *loyaltyID;
-
-/**
  The ID of the merchant this `LULoyalty` is for.
  */
 @property (nonatomic, copy, readonly) NSNumber *merchantID;
@@ -77,11 +72,10 @@
  */
 @property (nonatomic, strong, readonly) LUMonetaryValue *willEarn;
 
-- (id)initWithLoyaltyID:(NSNumber *)loyaltyID merchantID:(NSNumber *)merchantID
- merchantLoyaltyEnabled:(BOOL)merchantLoyaltyEnabled ordersCount:(NSNumber *)ordersCount
-        potentialCredit:(LUMonetaryValue *)potentialCredit progressPercent:(float)progressPercent
-                savings:(LUMonetaryValue *)savings shouldSpend:(LUMonetaryValue *)shouldSpend
-         spendRemaining:(LUMonetaryValue *)spendRemaining totalVolume:(LUMonetaryValue *)totalVolume
-               willEarn:(LUMonetaryValue *)willEarn;
+- (id)initWithMerchantID:(NSNumber *)merchantID merchantLoyaltyEnabled:(BOOL)merchantLoyaltyEnabled
+             ordersCount:(NSNumber *)ordersCount potentialCredit:(LUMonetaryValue *)potentialCredit
+         progressPercent:(float)progressPercent savings:(LUMonetaryValue *)savings
+             shouldSpend:(LUMonetaryValue *)shouldSpend spendRemaining:(LUMonetaryValue *)spendRemaining
+             totalVolume:(LUMonetaryValue *)totalVolume willEarn:(LUMonetaryValue *)willEarn;
 
 @end
