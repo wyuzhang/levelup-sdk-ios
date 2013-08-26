@@ -9,10 +9,10 @@
 
 + (NSDictionary *)fullJSONObject {
   return @{
-    @"campaign" : [LUCampaign minimalJSONObject],
+    @"code" : @"test-code",
     @"id" : @1,
-    @"cohort" : [LUCohort minimalJSONObject],
-    @"share_cohort" : [LUCohort minimalJSONObject]
+    @"value_amount" : @500,
+    @"value_remaining_amount" : @300
   };
 }
 

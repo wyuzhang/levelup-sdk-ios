@@ -1,4 +1,3 @@
-#import "LUCohortJSONFactory.h"
 #import "LULocationJSONFactory.h"
 #import "LULoyaltyJSONFactory.h"
 #import "LUMerchant.h"
@@ -11,7 +10,6 @@
 - (id)createFromAttributes:(NSDictionary *)attributes {
   NSString *descriptionHTML = [attributes lu_stringForKey:@"description_html"];
   LUMonetaryValue *earn = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"earn"]];
-  LUCohort *emailCaptureCohort = [[LUCohortJSONFactory factory] fromJSONObject:attributes[@"email_capture_cohort"]];
   NSURL *facebookURL = [attributes lu_URLForKey:@"facebook_url"];
   BOOL featured = [attributes lu_boolForKey:@"featured"];
   NSURL *imageURL_1x = [attributes lu_URLForKey:@"image_url_280x128_1x"];
@@ -32,10 +30,8 @@
   loyaltyJSONFactory.loyaltyEnabled = [attributes lu_boolForKey:@"loyalty_enabled"];
   LULoyalty *loyalty = [loyaltyJSONFactory fromJSONObject:attributes[@"loyalty"]];
 
-  return [[LUMerchant alloc] initWithDescriptionHTML:descriptionHTML earn:earn
-                                  emailCaptureCohort:emailCaptureCohort facebookURL:facebookURL
-                                            featured:featured imageURL_1x:imageURL_1x
-                                         imageURL_2x:imageURL_2x locations:locations loyalty:loyalty
+  return [[LUMerchant alloc] initWithDescriptionHTML:descriptionHTML earn:earn facebookURL:facebookURL featured:featured
+                                         imageURL_1x:imageURL_1x imageURL_2x:imageURL_2x locations:locations loyalty:loyalty
                                           merchantID:merchantID name:name
                                        newsletterURL:newsletterURL opentableURL:opentableURL
                                            publicURL:publicURL scvngrURL:scvngrURL spend:spend

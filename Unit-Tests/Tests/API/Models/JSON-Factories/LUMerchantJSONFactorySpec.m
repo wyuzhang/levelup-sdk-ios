@@ -15,7 +15,6 @@ describe(@"LUMerchantJSONFactory", ^{
 
       [[merchant.descriptionHTML should] equal:@"<p>description</p>"];
       [[merchant.earn should] equal:[LUMonetaryValue fullMonetaryValue]];
-      [[merchant.emailCaptureCohort should] equal:[LUCohort minimalCohort]];
       [[merchant.facebookURL should] equal:[NSURL URLWithString:@"http://facebook.com/example"]];
       [[theValue(merchant.featured) should] beYes];
       [[[merchant valueForKey:@"imageURL_1x"] should] equal:[NSURL URLWithString:@"http://example.com/image_url_1x"]];

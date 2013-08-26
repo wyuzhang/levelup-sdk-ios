@@ -1,7 +1,6 @@
 #import "LUAPIClient.h"
-#import "LUAPIRequest.h"
+#import "LUAuthenticatedAPIRequest.h"
 #import "LUClaimRequestFactory.h"
-#import "LUCohort.h"
 
 SPEC_BEGIN(LUClaimRequestFactorySpec)
 
@@ -10,34 +9,29 @@ describe(@"LUClaimRequestFactory", ^{
 
   __block LUAPIRequest *request;
 
-  describe(@"requestToClaimCohort:", ^{
-    LUCohort *cohort = [[LUCohort alloc] initWithCampaign:nil code:@"ABCDEF" cohortDescription:nil
-                                                 cohortID:nil cohortType:nil cohortURL:nil
-                                                emailBody:nil messageForEmailSubject:nil
-                                        messageForTwitter:nil];
+  describe(@"requestToClaimCampaignWithCode:", ^{
+    NSString *code = @"testcode";
 
     beforeEach(^{
-      [[LUAPIClient sharedClient] stub:@selector(currentUserID) andReturn:@1];
+      request = [LUClaimRequestFactory requestToClaimCampaignWithCode:code];
+    });
 
-      request = [LUClaimRequestFactory requestToClaimCohort:cohort];
+    it(@"returns an authenticated request", ^{
+      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a POST request", ^{
       [[request.method should] equal:@"POST"];
     });
 
-    it(@"returns a request to the path 'users/<userid>/claims'", ^{
-      [[request.path should] equal:@"users/1/claims"];
+    it(@"returns a request to the path 'codes/<code>/claims'", ^{
+      NSString *expectedPath = [NSString stringWithFormat:@"codes/%@/claims", code];
+
+      [[request.path should] equal:expectedPath];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
-    });
-
-    it(@"returns a request with parameters for the cohort's code", ^{
-      NSDictionary *expectedParams = @{@"claim" : @{@"cohort_code" : cohort.code }};
-
-      [[request.parameters should] equal:expectedParams];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
   });
 
@@ -47,6 +41,10 @@ describe(@"LUClaimRequestFactory", ^{
 
     beforeEach(^{
       request = [LUClaimRequestFactory requestToClaimLegacyLoyaltyWithID:legacyLoyaltyID campaignID:campaignID];
+    });
+
+    it(@"returns an authenticated request", ^{
+      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a POST request", ^{
@@ -59,12 +57,14 @@ describe(@"LUClaimRequestFactory", ^{
       [[request.path should] equal:expectedPath];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
 
     it(@"returns a request with parameters including the legacy loyalty id", ^{
-      [[request.parameters should] equal:@{@"legacy_id": legacyLoyaltyID}];
+      NSDictionary *expectedParams = @{@"legacy_loyalty" : @{@"legacy_id" : legacyLoyaltyID}};
+
+      [[request.parameters should] equal:expectedParams];
     });
   });
 });

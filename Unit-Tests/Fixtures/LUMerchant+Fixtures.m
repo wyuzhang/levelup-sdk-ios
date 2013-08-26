@@ -18,7 +18,6 @@
   return @{
     @"description_html" : @"<p>description</p>",
     @"earn" : [LUMonetaryValue fullJSONObject],
-    @"email_capture_cohort" : [LUCohort minimalJSONObject],
     @"facebook_url" : @"http://facebook.com/example",
     @"featured" : @YES,
     @"id" : @1,

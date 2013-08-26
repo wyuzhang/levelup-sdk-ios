@@ -4,7 +4,6 @@
  An `LUMerchant` is a place of business that takes LevelUp for payment. Merchants have one or more physical locations
  where LevelUp is accepted, represented as `LULocation` instances.
  */
-@class LUCohort;
 @class LULocation;
 @class LULoyalty;
 @class LUMonetaryValue;
@@ -29,13 +28,6 @@ extern NSString * const MerchantNewsletterService;
  spend, `earn` will be $10.
  */
 @property (nonatomic, strong, readonly) LUMonetaryValue *earn;
-
-/**
- Some merchants may have an associated `LUCampaign` for capturing user's email addresses. If they do,
- `emailCaptureCohort` will contain the cohort that users claim for this campaign. See `LUCampaign` for additional
- discussion.
- */
-@property (nonatomic, strong, readonly) LUCohort *emailCaptureCohort;
 
 /**
  An optional URL containing a Facebook URL for this merchant.
@@ -109,16 +101,12 @@ extern NSString * const MerchantNewsletterService;
  */
 @property (nonatomic, copy, readonly) NSURL *websiteURL;
 
-- (id)initWithDescriptionHTML:(NSString *)descriptionHTML earn:(LUMonetaryValue *)earn
-           emailCaptureCohort:(LUCohort *)emailCaptureCohort facebookURL:(NSURL *)facebookURL
-                     featured:(BOOL)featured imageURL_1x:(NSURL *)imageURL_1x
-                  imageURL_2x:(NSURL *)imageURL_2x locations:(NSArray *)locations
-                      loyalty:(LULoyalty *)loyalty merchantID:(NSNumber *)merchantID
-                         name:(NSString *)name newsletterURL:(NSURL *)newsletterURL
-                 opentableURL:(NSURL *)opentableURL publicURL:(NSURL *)publicURL
-                    scvngrURL:(NSURL *)scvngrURL spend:(LUMonetaryValue *)spend
-              twitterUsername:(NSString *)twitterUsername yelpURL:(NSURL *)yelpURL
-                   websiteURL:(NSURL *)websiteURL;
+- (id)initWithDescriptionHTML:(NSString *)descriptionHTML earn:(LUMonetaryValue *)earn facebookURL:(NSURL *)facebookURL
+                     featured:(BOOL)featured imageURL_1x:(NSURL *)imageURL_1x imageURL_2x:(NSURL *)imageURL_2x
+                    locations:(NSArray *)locations loyalty:(LULoyalty *)loyalty merchantID:(NSNumber *)merchantID
+                         name:(NSString *)name newsletterURL:(NSURL *)newsletterURL opentableURL:(NSURL *)opentableURL
+                    publicURL:(NSURL *)publicURL scvngrURL:(NSURL *)scvngrURL spend:(LUMonetaryValue *)spend
+              twitterUsername:(NSString *)twitterUsername yelpURL:(NSURL *)yelpURL websiteURL:(NSURL *)websiteURL;
 
 /**
  If the merchant has loyalty enabled, returns the amount of credit available to the user at this merchant. If loyalty

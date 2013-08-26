@@ -1,0 +1,9 @@
+[
+  {
+    "error" : {
+      "object" : "claim",
+      "message" : "This doesn't appear to be a LevelUp Code.",
+      "property" : "base"
+    }
+  }
+]

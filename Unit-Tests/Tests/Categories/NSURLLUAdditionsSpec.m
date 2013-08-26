@@ -9,6 +9,25 @@ describe(@"NSURL", ^{
     [[UIScreen mainScreen] stub:@selector(scale) andReturn:theValue(2.0)];
   });
 
+  describe(@"lu_imageURLForCampaignWithID:", ^{
+    context(@"when the campaignID is nil", ^{
+      specify(^{
+        [[NSURL lu_imageURLForCampaignWithID:nil] shouldBeNil];
+      });
+    });
+
+    context(@"when the campaignID is not nil", ^{
+      NSNumber *campaignID = @1;
+
+      it(@"returns a URL with to the campaign's image with image parameters added", ^{
+        NSURL *expectedURL = [NSURL URLWithString:[@"v14/campaigns/1/image?" stringByAppendingString:imageQueryParameters]
+                                    relativeToURL:[LUAPIClient sharedClient].baseURL];
+
+        [[[NSURL lu_imageURLForCampaignWithID:campaignID] should] equal:expectedURL];
+      });
+    });
+  });
+
   describe(@"lu_imageURLForImageWithBase:", ^{
     context(@"when the base is nil", ^{
       specify(^{

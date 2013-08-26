@@ -2,24 +2,19 @@
 #import "LUAuthenticatedAPIRequest.h"
 #import "LUClaimJSONFactory.h"
 #import "LUClaimRequestFactory.h"
-#import "LUCohort.h"
-#import "LULegacyLoyaltyClaimJSONFactory.h"
 #import "NSDictionary+SafetyAdditions.h"
 
 @implementation LUClaimRequestFactory
 
 #pragma mark - Public Methods
 
-+ (LUAPIRequest *)requestToClaimCohort:(LUCohort *)cohort {
-  NSString *path = [NSString stringWithFormat:@"users/%@/claims", [LUAPIClient sharedClient].currentUserID];
-
-  NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-  [parameters lu_setSafeValue:cohort.code forKey:@"cohort_code"];
++ (LUAPIRequest *)requestToClaimCampaignWithCode:(NSString *)code {
+  NSString *path = [NSString stringWithFormat:@"codes/%@/claims", code];
 
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
                                                     path:path
-                                              apiVersion:LUAPIVersion13
-                                              parameters:@{@"claim" : parameters}
+                                              apiVersion:LUAPIVersion14
+                                              parameters:nil
                                             modelFactory:[LUClaimJSONFactory factory]];
 }
 
@@ -27,13 +22,13 @@
   NSString *path = [NSString stringWithFormat:@"loyalties/legacy/%@/claims", campaignID];
 
   NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-  [parameters lu_setSafeValue:legacyID forKey:@"legacy_id"];
+  [parameters lu_setSafeValue:@{@"legacy_id" : legacyID} forKey:@"legacy_loyalty"];
 
-  return [LUAPIRequest apiRequestWithMethod:@"POST"
-                                       path:path
-                                 apiVersion:LUAPIVersion13
-                                 parameters:parameters
-                               modelFactory:[LULegacyLoyaltyClaimJSONFactory factory]];
+  return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
+                                                    path:path
+                                              apiVersion:LUAPIVersion14
+                                              parameters:parameters
+                                            modelFactory:[LUClaimJSONFactory factory]];
 }
 
 @end

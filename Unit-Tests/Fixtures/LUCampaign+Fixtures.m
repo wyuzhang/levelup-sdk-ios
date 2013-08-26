@@ -9,20 +9,20 @@
 
 + (NSDictionary *)fullJSONObject {
   return @{
-    @"claimed" : @YES,
-    @"cohort" : [LUCohort fullJSONObject],
-    @"cohorts" : @[[LUCohort minimalJSONObject]],
+    @"applies_to_all_merchants" : @NO,
     @"confirmation_html" : @"<p>confirmation</p>",
-    @"global" : @NO,
     @"id" : @1,
-    @"merchants" : @[[LUMerchant minimalJSONObject]],
-    @"mobile_image_url_320x212_1x" : @"http://example.com/image_url_1x",
-    @"mobile_image_url_320x212_2x" : @"http://example.com/image_url_2x",
+    @"message_for_email_body" : @"email body",
+    @"message_for_email_subject" : @"email subject",
+    @"message_for_facebook" : @"facebook message",
+    @"message_for_twitter" : @"twitter message",
     @"name" : @"Test Campaign",
     @"offer_html" : @"<p>offer</p>",
+    @"share_url_email" : @"http://example.com/EM-TEST",
+    @"share_url_facebook" : @"http://example.com/FB-TEST",
+    @"share_url_twitter" : @"http://example.com/TW-TEST",
     @"sponsor" : @"Sponsor",
-    @"support_email" : @"support@example.com",
-    @"value" : [LUMonetaryValue fullJSONObject]
+    @"value_amount" : [LUMonetaryValue fullMonetaryValue].amount
   };
 }
 

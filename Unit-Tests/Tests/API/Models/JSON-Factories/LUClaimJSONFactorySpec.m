@@ -13,10 +13,10 @@ describe(@"LUClaimJSONFactory", ^{
     it(@"parses a JSON dictionary into an LUClaim", ^{
       LUClaim *claim = [factory createFromAttributes:[LUClaim fullJSONObject]];
 
-      [[claim.campaign should] equal:[LUCampaign minimalCampaign]];
+      [[claim.code should] equal:@"test-code"];
       [[claim.claimID should] equal:@1];
-      [[claim.cohort should] equal:[LUCohort minimalCohort]];
-      [[claim.shareCohort should] equal:[LUCohort minimalCohort]];
+      [[claim.value should] equal:[LUMonetaryValue monetaryValueWithUSCents:@500]];
+      [[claim.valueRemaining should] equal:[LUMonetaryValue monetaryValueWithUSCents:@300]];
     });
   });
 

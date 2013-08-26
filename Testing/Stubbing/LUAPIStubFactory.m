@@ -16,22 +16,30 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
 #pragma mark - Public Methods
 
++ (LUAPIStub *)stubToClaimCampaignWithCode:(NSString *)code {
+  NSDictionary *responseJSON = @{
+    @"claim" : @{
+      @"campaign_id" : @2,
+      @"code" : code,
+      @"id" : @1,
+      @"value_amount" : @5,
+      @"value_remaining" : @2
+    }
+  };
+
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:[NSString stringWithFormat:@"codes/%@/claims", code]
+                           HTTPMethod:@"POST"
+                        authenticated:YES
+                         responseData:[self responseDataFromJSON:responseJSON]];
+}
+
 + (LUAPIStub *)stubToClaimLegacyLoyaltyWithID:(NSString *)loyaltyID campaignID:(NSNumber *)campaignID {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion13
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:[NSString stringWithFormat:@"loyalties/legacy/%@/claims", [campaignID stringValue]]
                            HTTPMethod:@"POST"
                         authenticated:NO
                          responseData:[self responseDataFromFile:@"legacy_loyalty_claim"]];
-}
-
-+ (LUAPIStub *)stubToCreateClaimForCohortCode:(NSString *)code {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                            path:@"users/1/claims"
-                                      HTTPMethod:@"POST"
-                                   authenticated:YES
-                                    responseData:[self responseDataFromFile:@"claim"]];
-  stub.requestBodyJSON = @{@"claim" : @{ @"cohort_code" : code } };
-  return stub;
 }
 
 + (LUAPIStub *)stubToCreateCreditCardWithNumber:(NSString *)number
@@ -53,16 +61,6 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
       @"postal_code" : postalCode
     }
   };
-  return stub;
-}
-
-+ (LUAPIStub *)stubToCreateGlobalClaimForCohortCode:(NSString *)code {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                            path:@"users/1/claims"
-                                      HTTPMethod:@"POST"
-                                   authenticated:YES
-                                    responseData:[self responseDataFromFile:@"claim_global"]];
-  stub.requestBodyJSON = @{ @"claim" : @{ @"cohort_code" : code } };
   return stub;
 }
 
@@ -98,7 +96,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   }
   NSDictionary *responseJSON = @{ @"user" : responseUserJSON };
 
-  stub.responseData = [NSJSONSerialization dataWithJSONObject:responseJSON options:0 error:nil];
+  stub.responseData = [self responseDataFromJSON:responseJSON];
 
   return stub;
 }
@@ -149,8 +147,26 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:nil];
 }
 
++ (LUAPIStub *)stubToFailToClaimCampaignWithCode:(NSString *)code {
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                            path:[NSString stringWithFormat:@"codes/%@/claims", code]
+                                      HTTPMethod:@"POST"
+                                   authenticated:YES
+                                    responseData:[self responseDataFromFile:@"failed_claim"]];
+  stub.responseCode = 404;
+  return stub;
+}
+
++ (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:[NSString stringWithFormat:@"codes/%@/campaign", code]
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"campaign"]];
+}
+
 + (LUAPIStub *)stubToGetCampaignWithID:(NSNumber *)campaignID {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion13
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:[@"campaigns/" stringByAppendingString:[campaignID stringValue]]
                            HTTPMethod:@"GET"
                         authenticated:NO
@@ -163,24 +179,6 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                            HTTPMethod:@"GET"
                         authenticated:NO
                          responseData:[self responseDataFromFile:@"categories"]];
-}
-
-+ (LUAPIStub *)stubToGetCohort:(NSString *)code {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                 path:[@"cohorts/" stringByAppendingString:code]
-                           HTTPMethod:@"GET"
-                        authenticated:NO
-                         responseData:[self responseDataFromFile:@"cohort"]];
-}
-
-+ (LUAPIStub *)stubToGetCohortNotFound:(NSString *)code {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                            path:[@"cohorts/" stringByAppendingString:code]
-                                      HTTPMethod:@"GET"
-                                   authenticated:NO
-                                    responseData:[self responseDataFromFile:@"cohort_not_found"]];
-  stub.responseCode = 404;
-  return stub;
 }
 
 + (LUAPIStub *)stubToGetCreditCardsOneResult {
@@ -314,6 +312,16 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"loyalty_no_credit"]];
+}
+
++ (LUAPIStub *)stubToGetMerchantIDs:(NSArray *)merchantIDs forCampaignWithID:(NSNumber *)campaignID {
+  NSString *path = [NSString stringWithFormat:@"campaigns/%@/merchants", [campaignID stringValue]];
+
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:path
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromJSON:merchantIDs]];
 }
 
 + (LUAPIStub *)stubToGetMerchantWithID:(NSNumber *)merchantID {
@@ -476,7 +484,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   [self setDeviceIdentifier];
 
   NSDictionary *userJSON = @{@"user" : [LUUserParameterBuilder parametersForUser:user] };
-  stub.responseData = [NSJSONSerialization dataWithJSONObject:userJSON options:0 error:nil];
+  stub.responseData = [self responseDataFromJSON:userJSON];
   stub.requestBodyJSON = userJSON;
 
   return stub;
@@ -487,6 +495,12 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 + (NSData *)responseDataFromFile:(NSString *)file {
   NSString *responseFile = [[NSBundle bundleForClass:[self class]] pathForResource:file ofType:@"json"];
   return [NSData dataWithContentsOfFile:responseFile];
+}
+
++ (NSData *)responseDataFromJSON:(id)JSON {
+  if (!JSON) return nil;
+
+  return [NSJSONSerialization dataWithJSONObject:JSON options:0 error:nil];
 }
 
 + (void)setDeviceIdentifier {

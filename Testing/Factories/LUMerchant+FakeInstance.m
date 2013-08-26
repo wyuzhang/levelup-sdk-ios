@@ -7,7 +7,7 @@
 
 + (LUMerchant *)fakeInstance {
   return [[LUMerchant alloc] initWithDescriptionHTML:nil earn:[LUMonetaryValue monetaryValueWithUSD:@100.0f]
-                                  emailCaptureCohort:nil facebookURL:nil featured:NO
+                                         facebookURL:nil featured:NO
                                          imageURL_1x:[NSURL URLWithString:@"http://placekitten.com/g/280/128"]
                                          imageURL_2x:[NSURL URLWithString:@"http://placekitten.com/g/560/256"]
                                            locations:@[[LULocation fakeInstance]]

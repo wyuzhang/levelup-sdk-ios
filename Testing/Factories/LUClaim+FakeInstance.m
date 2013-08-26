@@ -1,28 +1,19 @@
-#import "LUCampaign+FakeInstance.h"
 #import "LUClaim+FakeInstance.h"
-#import "LUCohort+FakeInstance.h"
+#import "LUMonetaryValue.h"
 #import "NSArray+LUAdditions.h"
 
 @implementation LUClaim (FakeInstance)
 
-+ (LUClaim *)fakeGlobalInstance {
-  return [[LUClaim alloc] initWithCampaign:[LUCampaign fakeGlobalInstance]
-                                   claimID:@1
-                                    cohort:[LUCohort fakeInstanceForEmail]
-                               shareCohort:[LUCohort fakeInstanceForFacebook]];
-}
-
 + (LUClaim *)fakeInstance {
-  return [[LUClaim alloc] initWithCampaign:[LUCampaign fakeInstance]
-                                   claimID:@1
-                                    cohort:[LUCohort fakeInstanceForEmail]
-                               shareCohort:[LUCohort fakeInstanceForFacebook]];
+  return [self fakeInstanceForCampaignWithCode:@"code"];
 }
 
-+ (LUClaim *)fakeInstanceForMerchantWithID:(NSNumber *)merchantID {
-    LUClaim *claim = [self fakeInstance];
-    [[claim.campaign.merchants lu_firstObject] setValue:merchantID forKey:@"merchantID"];
-    return claim;
++ (LUClaim *)fakeInstanceForCampaignWithCode:(NSString *)code {
+  return [[LUClaim alloc] initWithCampaignID:@2
+                                     claimID:@1
+                                        code:code
+                                       value:[LUMonetaryValue monetaryValueWithUSD:@5]
+                              valueRemaining:[LUMonetaryValue monetaryValueWithUSD:@2]];
 }
 
 @end

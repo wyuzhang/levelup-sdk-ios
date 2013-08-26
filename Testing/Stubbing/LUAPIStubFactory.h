@@ -4,14 +4,13 @@
 
 @interface LUAPIStubFactory : NSObject
 
++ (LUAPIStub *)stubToClaimCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToClaimLegacyLoyaltyWithID:(NSString *)loyaltyID campaignID:(NSNumber *)campaignID;
-+ (LUAPIStub *)stubToCreateClaimForCohortCode:(NSString *)code;
 + (LUAPIStub *)stubToCreateCreditCardWithNumber:(NSString *)number
                                             cvv:(NSString *)cvv
                                 expirationMonth:(NSNumber *)expirationMonth
                                  expirationYear:(NSNumber *)expirationYear
                                      postalCode:(NSString *)postalCode;
-+ (LUAPIStub *)stubToCreateGlobalClaimForCohortCode:(NSString *)code;
 + (LUAPIStub *)stubToCreateTicket:(NSString *)body;
 + (LUAPIStub *)stubToCreateUser;
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user;
@@ -19,10 +18,10 @@
 + (LUAPIStub *)stubToDeleteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToFacebookConnectWithFacebookAccessToken:(NSString *)facebookAccessToken;
 + (LUAPIStub *)stubToFacebookDisconnect;
++ (LUAPIStub *)stubToFailToClaimCampaignWithCode:(NSString *)code;
++ (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithID:(NSNumber *)campaignID;
 + (LUAPIStub *)stubToGetCategories;
-+ (LUAPIStub *)stubToGetCohort:(NSString *)code;
-+ (LUAPIStub *)stubToGetCohortNotFound:(NSString *)code;
 + (LUAPIStub *)stubToGetCreditCardsOneResult;
 + (LUAPIStub *)stubToGetCreditCardsTwoResults;
 + (LUAPIStub *)stubToGetCurrentFacebookConnectedUser;
@@ -37,6 +36,7 @@
 + (LUAPIStub *)stubToGetLoyaltyDisabledForMerchantWithID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetLoyaltyForMerchantWithID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetLoyaltyNoCreditForMerchantWithID:(NSNumber *)merchantID;
++ (LUAPIStub *)stubToGetMerchantIDs:(NSArray *)merchantIDs forCampaignWithID:(NSNumber *)campaignID;
 + (LUAPIStub *)stubToGetMerchantWithID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetNewUser;
 + (LUAPIStub *)stubToGetOrderWithUUID:(NSString *)UUID;

@@ -1,34 +1,33 @@
 #import "LUCampaign.h"
 #import "LUCampaignJSONFactory.h"
-#import "LUCohortJSONFactory.h"
-#import "LUMerchantJSONFactory.h"
-#import "LUMonetaryValueJSONFactory.h"
+#import "LUMonetaryValue.h"
 #import "NSDictionary+ObjectClassAccess.h"
 
 @implementation LUCampaignJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
   NSNumber *campaignID = [attributes lu_numberForKey:@"id"];
-  BOOL claimed = [attributes lu_boolForKey:@"claimed"];
-  NSArray *cohorts = [[LUCohortJSONFactory factory] fromJSONObject:attributes[@"cohorts"]];
   NSString *confirmationHTML = [attributes lu_stringForKey:@"confirmation_html"];
-  NSURL *imageURL_1x = [attributes lu_URLForKey:@"mobile_image_url_320x212_1x"];
-  NSURL *imageURL_2x = [attributes lu_URLForKey:@"mobile_image_url_320x212_2x"];
-  NSArray *merchants = [[LUMerchantJSONFactory factory] fromJSONObject:attributes[@"merchants"]];
-  BOOL global = merchants.count == 0 && [attributes lu_boolForKey:@"global"];
+  BOOL global = [attributes lu_boolForKey:@"applies_to_all_merchants"];
+  NSString *messageForEmailBody = [attributes lu_stringForKey:@"message_for_email_body"];
+  NSString *messageForEmailSubject = [attributes lu_stringForKey:@"message_for_email_subject"];
+  NSString *messageForFacebook = [attributes lu_stringForKey:@"message_for_facebook"];
+  NSString *messageForTwitter = [attributes lu_stringForKey:@"message_for_twitter"];
   NSString *name = [attributes lu_stringForKey:@"name"];
   NSString *offerHTML = [attributes lu_stringForKey:@"offer_html"];
-  LUCohort *referAFriendCohort = [[LUCohortJSONFactory factory] fromJSONObject:attributes[@"cohort"]];
+  BOOL shareable = [attributes lu_boolForKey:@"shareable"];
+  NSURL *shareURLEmail = [attributes lu_URLForKey:@"share_url_email"];
+  NSURL *shareURLFacebook = [attributes lu_URLForKey:@"share_url_facebook"];
+  NSURL *shareURLTwitter = [attributes lu_URLForKey:@"share_url_twitter"];
   NSString *sponsor = [attributes lu_stringForKey:@"sponsor"];
-  NSString *supportEmail = [attributes lu_stringForKey:@"support_email"];
-  LUMonetaryValue *value = [[LUMonetaryValueJSONFactory factory] fromJSONObject:attributes[@"value"]];
+  LUMonetaryValue *value = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"value_amount"]];
 
-  return [[LUCampaign alloc] initWithCampaignID:campaignID claimed:claimed cohorts:cohorts
-                               confirmationHTML:confirmationHTML global:global
-                                    imageURL_1x:imageURL_1x imageURL_2x:imageURL_2x
-                                      merchants:merchants name:name offerHTML:offerHTML
-                             referAFriendCohort:referAFriendCohort sponsor:sponsor
-                                   supportEmail:supportEmail value:value];
+  return [[LUCampaign alloc] initWithCampaignID:campaignID confirmationHTML:confirmationHTML global:global
+                            messageForEmailBody:messageForEmailBody messageForEmailSubject:messageForEmailSubject
+                             messageForFacebook:messageForFacebook messageForTwitter:messageForTwitter name:name
+                                      offerHTML:offerHTML shareable:shareable shareURLEmail:shareURLEmail
+                                          shareURLFacebook:shareURLFacebook shareURLTwitter:shareURLTwitter
+                                        sponsor:sponsor value:value];
 }
 
 - (NSString *)rootKey {

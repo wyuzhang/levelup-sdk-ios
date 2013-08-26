@@ -14,18 +14,18 @@ describe(@"LUCampaignJSONFactory", ^{
       LUCampaign *campaign = [factory createFromAttributes:[LUCampaign fullJSONObject]];
 
       [[campaign.campaignID should] equal:@1];
-      [[theValue(campaign.claimed) should] beYes];
-      [[campaign.cohorts should] equal:@[[LUCohort minimalCohort]]];
       [[campaign.confirmationHTML should] equal:@"<p>confirmation</p>"];
       [[theValue(campaign.global) should] beNo];
-      [[campaign.merchants should] equal:@[[LUMerchant minimalMerchant]]];
-      [[[campaign valueForKey:@"imageURL_1x"] should] equal:[NSURL URLWithString:@"http://example.com/image_url_1x"]];
-      [[[campaign valueForKey:@"imageURL_2x"] should] equal:[NSURL URLWithString:@"http://example.com/image_url_2x"]];
+      [[campaign.messageForEmailBody should] equal:@"email body"];
+      [[campaign.messageForEmailSubject should] equal:@"email subject"];
+      [[campaign.messageForFacebook should] equal:@"facebook message"];
+      [[campaign.messageForTwitter should] equal:@"twitter message"];
       [[campaign.name should] equal:@"Test Campaign"];
       [[campaign.offerHTML should] equal:@"<p>offer</p>"];
-      [[[campaign valueForKey:@"referAFriendCohort"] should] equal:[LUCohort fullCohort]];
+      [[campaign.shareURLEmail should] equal:[NSURL URLWithString:@"http://example.com/EM-TEST"]];
+      [[campaign.shareURLFacebook should] equal:[NSURL URLWithString:@"http://example.com/FB-TEST"]];
+      [[campaign.shareURLTwitter should] equal:[NSURL URLWithString:@"http://example.com/TW-TEST"]];
       [[campaign.sponsor should] equal:@"Sponsor"];
-      [[campaign.supportEmail should] equal:@"support@example.com"];
       [[campaign.value should] equal:[LUMonetaryValue fullMonetaryValue]];
     });
   });

@@ -2,8 +2,7 @@
 
 @interface LUClaim (FakeInstance)
 
-+ (LUClaim *)fakeGlobalInstance;
 + (LUClaim *)fakeInstance;
-+ (LUClaim *)fakeInstanceForMerchantWithID:(NSNumber *)merchantID;
++ (LUClaim *)fakeInstanceForCampaignWithCode:(NSString *)code;
 
 @end

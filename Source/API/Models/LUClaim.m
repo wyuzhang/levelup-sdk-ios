@@ -1,18 +1,20 @@
 #import "LUClaim.h"
+#import "LUMonetaryValue.h"
 
 @implementation LUClaim
 
 #pragma mark - Creation
 
-- (id)initWithCampaign:(LUCampaign *)campaign claimID:(NSNumber *)claimID cohort:(LUCohort *)cohort
-           shareCohort:(LUCohort *)shareCohort {
+- (id)initWithCampaignID:(NSNumber *)campaignID claimID:(NSNumber *)claimID code:(NSString *)code
+                   value:(LUMonetaryValue *)value valueRemaining:(LUMonetaryValue *)valueRemaining {
   self = [super init];
   if (!self) return nil;
 
-  _campaign = campaign;
+  _campaignID = campaignID;
   _claimID = claimID;
-  _cohort = cohort;
-  _shareCohort = shareCohort;
+  _code = code;
+  _value = value;
+  _valueRemaining = valueRemaining;
 
   return self;
 }
@@ -20,12 +22,12 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)debugDescription {
-  return [NSString stringWithFormat:@"LUClaim [campaign=%@, cohort=%@, ID=%@, shareCohort=%@]",
-          self.campaign, self.cohort, self.claimID, self.shareCohort];
+  return [NSString stringWithFormat:@"LUClaim [campaignID=%@, code=%@, ID=%@, value=%@, valueRemaining=%@]",
+          self.campaignID, self.code, self.claimID, self.value, self.valueRemaining];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUClaim [campaign=%@, ID=%@]", self.campaign, self.claimID];
+  return [NSString stringWithFormat:@"LUClaim [campaignID=%@, ID=%@]", self.code, self.claimID];
 }
 
 @end
