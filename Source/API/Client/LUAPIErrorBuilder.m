@@ -95,6 +95,10 @@
 }
 
 - (NSString *)localizedDescription {
+  if ([self errorMessage].length > 0) {
+    return [self errorMessage];
+  }
+
   switch ([self code]) {
     case LUAPIErrorLoginRequired:
       return @"Authentication session has expired. Please log in again.";
