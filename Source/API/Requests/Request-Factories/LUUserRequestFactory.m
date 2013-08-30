@@ -27,7 +27,7 @@
 
 + (LUAPIRequest *)requestToConnectToFacebookWithAccessToken:(NSString *)facebookAccessToken {
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
-                                                    path:@"facebook_connections"
+                                                    path:@"facebook_connection"
                                               apiVersion:LUAPIVersion14
                                               parameters:@{@"user" : @{@"facebook_access_token" : facebookAccessToken} }
                                             modelFactory:nil];
@@ -67,7 +67,7 @@
 
 + (LUAPIRequest *)requestToDisconnectFromFacebook {
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"DELETE"
-                                                    path:@"facebook_connections"
+                                                    path:@"facebook_connection"
                                               apiVersion:LUAPIVersion14
                                               parameters:nil
                                             modelFactory:nil];

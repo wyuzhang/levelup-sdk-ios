@@ -60,8 +60,8 @@ describe(@"LUUserRequestFactory", ^{
       [[request.method should] equal:@"POST"];
     });
 
-    it(@"returns a request to the path 'facebook_connections'", ^{
-      [[request.path should] equal:@"facebook_connections"];
+    it(@"returns a request to the path 'facebook_connection'", ^{
+      [[request.path should] equal:@"facebook_connection"];
     });
 
     it(@"returns a request to version 14 of the API", ^{
@@ -150,8 +150,8 @@ describe(@"LUUserRequestFactory", ^{
       [[request.method should] equal:@"DELETE"];
     });
 
-    it(@"returns a request to the path 'facebook_connections'", ^{
-      [[request.path should] equal:@"facebook_connections"];
+    it(@"returns a request to the path 'facebook_connection'", ^{
+      [[request.path should] equal:@"facebook_connection"];
     });
 
     it(@"returns a request to version 14 of the API", ^{

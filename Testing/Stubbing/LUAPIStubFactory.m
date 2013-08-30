@@ -133,7 +133,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
 + (LUAPIStub *)stubToFacebookConnectWithFacebookAccessToken:(NSString *)facebookAccessToken {
   LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                            path:@"facebook_connections"
+                                            path:@"facebook_connection"
                                       HTTPMethod:@"POST"
                                    authenticated:YES
                                     responseData:nil];
@@ -143,7 +143,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
 + (LUAPIStub *)stubToFacebookDisconnect {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                 path:@"facebook_connections"
+                                 path:@"facebook_connection"
                            HTTPMethod:@"DELETE"
                         authenticated:YES
                          responseData:nil];
