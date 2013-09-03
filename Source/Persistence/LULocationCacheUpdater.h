@@ -1,3 +1,13 @@
+/**
+ `LULocationCacheUpdater` is used to update the local database of summary info for all LevelUp locations.
+
+ An initial database seed is provided in the SDK, and only changes to locations are sent from the platform.
+
+ Updates are made in the background. A `LULocationCacheUpdaterDelegate` is provided, and will be notified when update
+ finishes, and whether any updates were made. The delegate is also notified of any errors, either with Core Data or
+ over the network.
+ */
+
 extern NSString * const LUNextPageURLKey;
 
 @protocol LULocationCacheUpdaterDelegate;
