@@ -4,10 +4,9 @@
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
 		<title>LUClaim Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
-		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.1 (build 840)" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -40,13 +39,15 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/campaign">&nbsp;&nbsp;&nbsp;&nbsp;campaign</option>
+	<option value="//api/name/campaignID">&nbsp;&nbsp;&nbsp;&nbsp;campaignID</option>
 	
 	<option value="//api/name/claimID">&nbsp;&nbsp;&nbsp;&nbsp;claimID</option>
 	
-	<option value="//api/name/cohort">&nbsp;&nbsp;&nbsp;&nbsp;cohort</option>
+	<option value="//api/name/code">&nbsp;&nbsp;&nbsp;&nbsp;code</option>
 	
-	<option value="//api/name/shareCohort">&nbsp;&nbsp;&nbsp;&nbsp;shareCohort</option>
+	<option value="//api/name/value">&nbsp;&nbsp;&nbsp;&nbsp;value</option>
+	
+	<option value="//api/name/valueRemaining">&nbsp;&nbsp;&nbsp;&nbsp;valueRemaining</option>
 	
 	
 	
@@ -76,13 +77,15 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/campaign">campaign</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/campaignID">campaignID</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/claimID">claimID</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cohort">cohort</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/code">code</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shareCohort">shareCohort</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/value">value</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/valueRemaining">valueRemaining</a></span></li>
 	
 </ul></li>
 
@@ -119,13 +122,13 @@
 </tr>
 						</tbody></table></div>
 					
-					
-					
+                    
+                    
 					
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>When a user claims a <a href="#//api/name/campaign">campaign</a>, an <code>LUClaim</code> object is created and returned.</p>
+						<p>When a user claims a campaign, an <code>LUClaim</code> object is created and returned.</p>
 					</div>
 					
 					
@@ -143,29 +146,31 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/campaign">&nbsp;&nbsp;campaign</a></code>
-		<span class="tooltip"><p>The campaign associated with this claim.</p></span>
+		<code><a href="#//api/name/campaignID">&nbsp;&nbsp;campaignID</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/claimID">&nbsp;&nbsp;claimID</a></code>
-		<span class="tooltip"><p>The unique identifier for this claim.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/cohort">&nbsp;&nbsp;cohort</a></code>
-		<span class="tooltip"><p>The cohort through which the user claimed the <a href="#//api/name/campaign">campaign</a>.</p></span>
+		<code><a href="#//api/name/code">&nbsp;&nbsp;code</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/shareCohort">&nbsp;&nbsp;shareCohort</a></code>
-		<span class="tooltip"><p>A <a href="#//api/name/cohort">cohort</a> that may be shared by the user after completing the claim.</p></span>
+		<code><a href="#//api/name/value">&nbsp;&nbsp;value</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/valueRemaining">&nbsp;&nbsp;valueRemaining</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -183,18 +188,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/campaign" title="campaign"></a>
-	<h3 class="subsubtitle method-title">campaign</h3>
+	<a name="//api/name/campaignID" title="campaignID"></a>
+	<h3 class="subsubtitle method-title">campaignID</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The campaign associated with this claim.</p>
+		<p>The ID of the campaign that was claimed.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUCampaign *campaign</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *campaignID</code></div>
 
     
 	
@@ -206,7 +211,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The campaign associated with this claim.</p>
+		<p>The ID of the campaign that was claimed.</p>
 	</div>
 	
 	
@@ -265,18 +270,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/cohort" title="cohort"></a>
-	<h3 class="subsubtitle method-title">cohort</h3>
+	<a name="//api/name/code" title="code"></a>
+	<h3 class="subsubtitle method-title">code</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The cohort through which the user claimed the <a href="#//api/name/campaign">campaign</a>.</p>
+		<p>The code of the campaign that was claimed.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUCohort *cohort</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *code</code></div>
 
     
 	
@@ -288,7 +293,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The cohort through which the user claimed the <a href="#//api/name/campaign">campaign</a>.</p>
+		<p>The code of the campaign that was claimed.</p>
 	</div>
 	
 	
@@ -306,18 +311,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/shareCohort" title="shareCohort"></a>
-	<h3 class="subsubtitle method-title">shareCohort</h3>
+	<a name="//api/name/value" title="value"></a>
+	<h3 class="subsubtitle method-title">value</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A <a href="#//api/name/cohort">cohort</a> that may be shared by the user after completing the claim.</p>
+		<p>The full value of the claim.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUCohort *shareCohort</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *value</code></div>
 
     
 	
@@ -329,7 +334,50 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>A <a href="#//api/name/cohort">cohort</a> that may be shared by the user after completing the claim.</p>
+		<p>The full value of the claim.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUClaim.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/valueRemaining" title="valueRemaining"></a>
+	<h3 class="subsubtitle method-title">valueRemaining</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The <a href="#//api/name/value">value</a> remaining on the claim. As the user spends money, this amount will go down, and will be zero once they&rsquo;ve
+used up the full <a href="#//api/name/value">value</a> of the claim.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *valueRemaining</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The <a href="#//api/name/value">value</a> remaining on the claim. As the user spends money, this amount will go down, and will be zero once they&rsquo;ve
+used up the full <a href="#//api/name/value">value</a> of the claim.</p>
 	</div>
 	
 	
@@ -353,6 +401,8 @@
 					
 					
 					
+                    
+                    
 				</div>
 				<div class="main-navigation navigation-bottom">
 					<ul>
@@ -363,9 +413,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-08-21)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-09-06)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						
 					</div>
 				</div>

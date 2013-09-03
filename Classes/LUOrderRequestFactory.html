@@ -4,10 +4,9 @@
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
 		<title>LUOrderRequestFactory Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
-		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.1 (build 840)" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -42,9 +41,9 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/requestForOrderWithID:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrderWithID:</option>
+	<option value="//api/name/requestForOrderWithUUID:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrderWithUUID:</option>
 	
-	<option value="//api/name/requestForOrdersAtMerchantWithID:page:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrdersAtMerchantWithID:page:</option>
+	<option value="//api/name/requestForOrders">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrders</option>
 	
 	<option value="//api/name/requestForOrdersOnPage:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrdersOnPage:</option>
 	
@@ -76,9 +75,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrderWithID:">requestForOrderWithID:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrderWithUUID:">requestForOrderWithUUID:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrdersAtMerchantWithID:page:">requestForOrdersAtMerchantWithID:page:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrders">requestForOrders</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrdersOnPage:">requestForOrdersOnPage:</a></span></li>
 	
@@ -115,8 +114,8 @@
 </tr>
 						</tbody></table></div>
 					
-					
-					
+                    
+                    
 					
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
@@ -139,22 +138,19 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForOrdersAtMerchantWithID:page:">+&nbsp;requestForOrdersAtMerchantWithID:page:</a></code>
-		<span class="tooltip"><p>Builds a request to retrieve orders that the current user has made at a given merchant.</p></span>
+		<code><a href="#//api/name/requestForOrders">+&nbsp;requestForOrders</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/requestForOrdersOnPage:">+&nbsp;requestForOrdersOnPage:</a></code>
-		<span class="tooltip"><p>Builds a request to retrieve orders of the current user.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForOrderWithID:">+&nbsp;requestForOrderWithID:</a></code>
-		<span class="tooltip"><p>Builds a request to retrieve an order.</p></span>
+		<code><a href="#//api/name/requestForOrderWithUUID:">+&nbsp;requestForOrderWithUUID:</a></code>
 	</span>
 	
 	
@@ -174,8 +170,8 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForOrderWithID:" title="requestForOrderWithID:"></a>
-	<h3 class="subsubtitle method-title">requestForOrderWithID:</h3>
+	<a name="//api/name/requestForOrderWithUUID:" title="requestForOrderWithUUID:"></a>
+	<h3 class="subsubtitle method-title">requestForOrderWithUUID:</h3>
 	
 	
 	
@@ -185,7 +181,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrderWithID:(NSNumber *)<em>orderID</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrderWithUUID:(NSString *)<em>UUID</em></code></div>
 
     
 	
@@ -193,8 +189,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>orderID</em></dt>
-			<dd><p>The ID of the order to retrieve.</p></dd>
+			<dt><em>UUID</em></dt>
+			<dd><p>The UUID of the order to retrieve.</p></dd>
 		</dl>
 		
 	</div>
@@ -227,35 +223,20 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForOrdersAtMerchantWithID:page:" title="requestForOrdersAtMerchantWithID:page:"></a>
-	<h3 class="subsubtitle method-title">requestForOrdersAtMerchantWithID:page:</h3>
+	<a name="//api/name/requestForOrders" title="requestForOrders"></a>
+	<h3 class="subsubtitle method-title">requestForOrders</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve orders that the current user has made at a given merchant.</p>
+		<p>Builds a request to retrieve orders that the current user has made at merchants associated with the app.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrdersAtMerchantWithID:(NSNumber *)<em>merchantID</em> page:(NSUInteger)<em>page</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrders</code></div>
 
     
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>merchantID</em></dt>
-			<dd><p>The ID of the merchant to search against.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>page</em></dt>
-			<dd><p>The page of orders to retrieve.</p></dd>
-		</dl>
-		
-	</div>
 	
 	
 	
@@ -265,9 +246,10 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve orders that the current user has made at a given merchant.</p>
+		<p>Builds a request to retrieve orders that the current user has made at merchants associated with the app.</p>
 
-<p>On success, this request will return an array of <a href="../Classes/LUOrder.html"><code>LUOrder</code></a> instances.</p>
+<p>On success, this request will return an array of <a href="../Classes/LUOrder.html"><code>LUOrder</code></a> instances. The response will include a URL for the next page
+of results. This URL can be used with <a href="#//api/name/requestForOrdersOnPage:"><code>requestForOrdersOnPage:</code></a> to retrieve the next page of orders.</p>
 	</div>
 	
 	
@@ -291,12 +273,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve orders of the current user.</p>
+		<p>Builds a request to retrieve the given page of orders.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrdersOnPage:(NSUInteger)<em>page</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrdersOnPage:(NSURL *)<em>pageURL</em></code></div>
 
     
 	
@@ -304,8 +286,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>page</em></dt>
-			<dd><p>The page of orders to retrieve.</p></dd>
+			<dt><em>pageURL</em></dt>
+			<dd><p>The next page of orders to request.</p></dd>
 		</dl>
 		
 	</div>
@@ -318,9 +300,10 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve orders of the current user.</p>
+		<p>Builds a request to retrieve the given page of orders.</p>
 
-<p>On success, this request will return an array of <a href="../Classes/LUOrder.html"><code>LUOrder</code></a> instances.</p>
+<p>On success, this request will return an array of <a href="../Classes/LUOrder.html"><code>LUOrder</code></a> instances. If this page doesn&rsquo;t include any orders, the
+response will be empty with a status code of 204 (No Content).</p>
 	</div>
 	
 	
@@ -342,6 +325,8 @@
 					
 					
 					
+                    
+                    
 				</div>
 				<div class="main-navigation navigation-bottom">
 					<ul>
@@ -352,9 +337,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-08-21)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-09-06)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						
 					</div>
 				</div>

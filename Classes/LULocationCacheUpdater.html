@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUAccessToken Class Reference</title>
+		<title>LULocationCacheUpdater Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUAccessToken Class Reference</h1>
+				<h1 class="hideInXcode">LULocationCacheUpdater Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -31,17 +31,8 @@
 	
 	
 	
-	<option value="tasks">Tasks</option>
 	
 	
-	
-	
-	
-	<option value="properties">Properties</option>
-	
-	<option value="//api/name/token">&nbsp;&nbsp;&nbsp;&nbsp;token</option>
-	
-	<option value="//api/name/userID">&nbsp;&nbsp;&nbsp;&nbsp;userID</option>
 	
 	
 	
@@ -61,21 +52,9 @@
 
 
 
-<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
-	
-</ul></li>
 
 
 
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/token">token</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userID">userID</a></span></li>
-	
-</ul></li>
 
 
 
@@ -86,7 +65,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUAccessToken Class Reference" name="top"></a>
+				<a title="LULocationCacheUpdater Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -95,7 +74,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUAccessToken Class Reference</h1>
+						<h1 class="title title-header">LULocationCacheUpdater Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -103,10 +82,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">LUAPIModel : NSObject</td>
+	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUAccessToken.h<br />LUAccessToken.m</td>
+	<td class="specification-value">LULocationCacheUpdater.h<br />LULocationCacheUpdater.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -116,132 +95,22 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUAccessToken</code> represents an authentication <a href="#//api/name/token">token</a> that is used for logins. It includes a <a href="#//api/name/token">token</a> and the user&rsquo;s ID.</p>
+						<p><code>LULocationCacheUpdater</code> is used to update the local database of summary info for all LevelUp locations.</p>
+
+<p>An initial database seed is provided in the SDK, and only changes to locations are sent from the platform.</p>
+
+<p>Updates are made in the background. A <a href="../Protocols/LULocationCacheUpdaterDelegate.html"><code>LULocationCacheUpdaterDelegate</code></a> is provided, and will be notified when update
+finishes, and whether any updates were made. The delegate is also notified of any errors, either with Core Data or
+over the network.</p>
 					</div>
 					
 					
 					
 					
 					
-					<div class="section section-tasks">
-						<a title="Tasks" name="tasks"></a>
-						<h2 class="subtitle subtitle-tasks">Tasks</h2>
-						
-						
-						
-						
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/token">&nbsp;&nbsp;token</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/userID">&nbsp;&nbsp;userID</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li>
-						</ul>
-						
-					</div>
 					
 					
 					
-					
-					
-					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/token" title="token"></a>
-	<h3 class="subsubtitle method-title">token</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>A unique access token returned by the server after authentication succeeds. In order for users to remain authenticated
-between application launches, this value should be securely stored. See <a href="../Classes/LUAPIClient.html"><code>LUAPIClient</code></a> for more information.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *token</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>A unique access token returned by the server after authentication succeeds. In order for users to remain authenticated
-between application launches, this value should be securely stored. See <a href="../Classes/LUAPIClient.html"><code>LUAPIClient</code></a> for more information.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUAccessToken.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/userID" title="userID"></a>
-	<h3 class="subsubtitle method-title">userID</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The user&rsquo;s ID.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *userID</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The user&rsquo;s ID.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUAccessToken.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
 					
 					
 					

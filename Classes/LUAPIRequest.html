@@ -4,10 +4,9 @@
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
 		<title>LUAPIRequest Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
-		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.1 (build 840)" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -62,7 +61,9 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/urlRequest">&nbsp;&nbsp;&nbsp;&nbsp;- urlRequest</option>
+	<option value="//api/name/URL">&nbsp;&nbsp;&nbsp;&nbsp;- URL</option>
+	
+	<option value="//api/name/URLRequest">&nbsp;&nbsp;&nbsp;&nbsp;- URLRequest</option>
 	
 	
 	
@@ -112,7 +113,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/urlRequest">urlRequest</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/URL">URL</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/URLRequest">URLRequest</a></span></li>
 	
 </ul></li>
 
@@ -145,8 +148,8 @@
 </tr>
 						</tbody></table></div>
 					
-					
-					
+                    
+                    
 					
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
@@ -172,50 +175,48 @@ by request builders.</p>
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/apiVersion">&nbsp;&nbsp;apiVersion</a></code>
-		<span class="tooltip"><p>The version of the LevelUp API to use for this request.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/method">&nbsp;&nbsp;method</a></code>
-		<span class="tooltip"><p>The HTTP method of the request: &ldquo;GET&rdquo;, &ldquo;POST&rdquo;, &ldquo;PUT&rdquo;, or &ldquo;DELETE&rdquo;.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/modelFactory">&nbsp;&nbsp;modelFactory</a></code>
-		<span class="tooltip"><p>An <a href="../Classes/LUAbstractJSONModelFactory.html"><code>LUAbstractJSONModelFactory</code></a> to parse the JSON response.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/path">&nbsp;&nbsp;path</a></code>
-		<span class="tooltip"><p>The path component of the URL of the request.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/parameters">&nbsp;&nbsp;parameters</a></code>
-		<span class="tooltip"><p>An <code>NSDictionary</code> of values to be passed as parameters.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/apiRequestWithMethod:path:apiVersion:parameters:modelFactory:">+&nbsp;apiRequestWithMethod:path:apiVersion:parameters:modelFactory:</a></code>
-		<span class="tooltip"><p>Returns an <code>LUAPIRequest</code> with the specified <a href="#//api/name/method">method</a>, <a href="#//api/name/path">path</a> and <a href="#//api/name/parameters">parameters</a>. The <code>includeAccessToken</code> parameter will
-default to YES.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/urlRequest">&ndash;&nbsp;urlRequest</a></code>
-		<span class="tooltip"><p>Returns an <code>NSMutableURLRequest</code> instance for this API request.</p></span>
+		<code><a href="#//api/name/URL">&ndash;&nbsp;URL</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/URLRequest">&ndash;&nbsp;URLRequest</a></code>
 	</span>
 	
 	
@@ -321,7 +322,7 @@ default to YES.</p></span>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An <a href="../Classes/LUAbstractJSONModelFactory.html"><code>LUAbstractJSONModelFactory</code></a> to parse the JSON response.</p>
+		<p>An <code>LUAbstractJSONModelFactory</code> to parse the JSON response.</p>
 	</div>		
 	
     
@@ -338,7 +339,7 @@ default to YES.</p></span>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>An <a href="../Classes/LUAbstractJSONModelFactory.html"><code>LUAbstractJSONModelFactory</code></a> to parse the JSON response.</p>
+		<p>An <code>LUAbstractJSONModelFactory</code> to parse the JSON response.</p>
 	</div>
 	
 	
@@ -403,7 +404,7 @@ default to YES.</p></span>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The path component of the URL of the request.</p>
+		<p>The path component of the <a href="#//api/name/URL">URL</a> of the request.</p>
 	</div>		
 	
     
@@ -420,7 +421,7 @@ default to YES.</p></span>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The path component of the URL of the request.</p>
+		<p>The path component of the <a href="#//api/name/URL">URL</a> of the request.</p>
 	</div>
 	
 	
@@ -487,7 +488,7 @@ default to YES.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>modelFactory</em></dt>
-			<dd><p>An instance of <a href="../Classes/LUAbstractJSONModelFactory.html"><code>LUAbstractJSONModelFactory</code></a> which will parse the response.</p></dd>
+			<dd><p>An instance of <code>LUAbstractJSONModelFactory</code> which will parse the response.</p></dd>
 		</dl>
 		
 	</div>
@@ -527,8 +528,49 @@ default to YES.</p>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/urlRequest" title="urlRequest"></a>
-	<h3 class="subsubtitle method-title">urlRequest</h3>
+	<a name="//api/name/URL" title="URL"></a>
+	<h3 class="subsubtitle method-title">URL</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an <code>NSURL</code> instance for this API request.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSURL *)URL</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an <code>NSURL</code> instance for this API request.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUAPIRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/URLRequest" title="URLRequest"></a>
+	<h3 class="subsubtitle method-title">URLRequest</h3>
 	
 	
 	
@@ -538,7 +580,7 @@ default to YES.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSMutableURLRequest *)urlRequest</code></div>
+	<div class="method-subsection method-declaration"><code>- (NSMutableURLRequest *)URLRequest</code></div>
 
     
 	
@@ -570,6 +612,8 @@ default to YES.</p>
 					</div>
 					
 					
+                    
+                    
 				</div>
 				<div class="main-navigation navigation-bottom">
 					<ul>
@@ -580,9 +624,9 @@ default to YES.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-08-21)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-09-06)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						
 					</div>
 				</div>

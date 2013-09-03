@@ -4,10 +4,9 @@
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
 		<title>LUClaimRequestFactory Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
-		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.1 (build 840)" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -42,7 +41,7 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/requestToClaimCohort:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToClaimCohort:</option>
+	<option value="//api/name/requestToClaimCampaignWithCode:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToClaimCampaignWithCode:</option>
 	
 	<option value="//api/name/requestToClaimLegacyLoyaltyWithID:campaignID:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToClaimLegacyLoyaltyWithID:campaignID:</option>
 	
@@ -74,7 +73,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToClaimCohort:">requestToClaimCohort:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToClaimCampaignWithCode:">requestToClaimCampaignWithCode:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToClaimLegacyLoyaltyWithID:campaignID:">requestToClaimLegacyLoyaltyWithID:campaignID:</a></span></li>
 	
@@ -111,8 +110,8 @@
 </tr>
 						</tbody></table></div>
 					
-					
-					
+                    
+                    
 					
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
@@ -135,15 +134,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestToClaimCohort:">+&nbsp;requestToClaimCohort:</a></code>
-		<span class="tooltip"><p>Builds a request to claim a cohort.</p></span>
+		<code><a href="#//api/name/requestToClaimCampaignWithCode:">+&nbsp;requestToClaimCampaignWithCode:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/requestToClaimLegacyLoyaltyWithID:campaignID:">+&nbsp;requestToClaimLegacyLoyaltyWithID:campaignID:</a></code>
-		<span class="tooltip"><p>Builds a request to claim a legacy loyalty campaign.</p></span>
 	</span>
 	
 	
@@ -163,18 +160,18 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestToClaimCohort:" title="requestToClaimCohort:"></a>
-	<h3 class="subsubtitle method-title">requestToClaimCohort:</h3>
+	<a name="//api/name/requestToClaimCampaignWithCode:" title="requestToClaimCampaignWithCode:"></a>
+	<h3 class="subsubtitle method-title">requestToClaimCampaignWithCode:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to claim a cohort.</p>
+		<p>Builds a request to claim a campaign.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToClaimCohort:(LUCohort *)<em>cohort</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToClaimCampaignWithCode:(NSString *)<em>code</em></code></div>
 
     
 	
@@ -182,8 +179,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>cohort</em></dt>
-			<dd><p>The cohort to claim.</p></dd>
+			<dt><em>code</em></dt>
+			<dd><p>The code of the campaign to claim.</p></dd>
 		</dl>
 		
 	</div>
@@ -196,7 +193,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to claim a cohort.</p>
+		<p>Builds a request to claim a campaign.</p>
 
 <p>On success, this request will return an instance of <a href="../Classes/LUClaim.html"><code>LUClaim</code></a>.</p>
 	</div>
@@ -256,7 +253,7 @@
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Builds a request to claim a legacy loyalty campaign.</p>
 
-<p>On success, this request will return an <a href="../Classes/LULegacyLoyaltyClaim.html"><code>LULegacyLoyaltyClaim</code></a>.</p>
+<p>On success, this request will return an <a href="../Classes/LUClaim.html"><code>LUClaim</code></a>.</p>
 	</div>
 	
 	
@@ -278,6 +275,8 @@
 					
 					
 					
+                    
+                    
 				</div>
 				<div class="main-navigation navigation-bottom">
 					<ul>
@@ -288,9 +287,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-08-21)</span><br />
+						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-09-06)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						
 					</div>
 				</div>
