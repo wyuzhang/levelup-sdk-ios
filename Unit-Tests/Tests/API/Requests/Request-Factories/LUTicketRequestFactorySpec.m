@@ -16,16 +16,16 @@ describe(@"LUTicketRequestFactory", ^{
       request = [LUTicketRequestFactory requestToCreateTicketWithBody:body];
     });
 
-    it(@"returns a GET request", ^{
+    it(@"returns a POST request", ^{
       [[request.method should] equal:@"POST"];
     });
 
-    it(@"returns a request to the path 'users/<userid>/tickets'", ^{
-      [[request.path should] equal:@"users/1/tickets"];
+    it(@"returns a request to the path 'tickets'", ^{
+      [[request.path should] equal:@"tickets"];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
 
     it(@"returns a request with parameters for the ticket body", ^{

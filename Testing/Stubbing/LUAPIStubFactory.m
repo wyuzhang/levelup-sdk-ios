@@ -65,8 +65,8 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToCreateTicket:(NSString *)body {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                            path:@"users/1/tickets"
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                            path:@"tickets"
                                       HTTPMethod:@"POST"
                                    authenticated:YES
                                     responseData:[self responseDataFromFile:@"ticket"]];
