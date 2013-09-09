@@ -1,3 +1,5 @@
+// Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
+
 /**
  `LULocationCacheUpdater` is used to update the local database of summary info for all LevelUp locations.
 

@@ -1,3 +1,5 @@
+// Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
+
 /**
  `LUAuthenticationRequestFactory` is used to build requests to authenticate with the API.
  */

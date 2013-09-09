@@ -1,3 +1,5 @@
+// Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
+
 /**
  Parses a "Web Link" HTTP header: http://tools.ietf.org/html/rfc5988.
 

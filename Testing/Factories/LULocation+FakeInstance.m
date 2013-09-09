@@ -1,3 +1,5 @@
+// Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
+
 #import "LULocation+FakeInstance.h"
 #import "LUWebLocations.h"
 #import "LUWebLocations+FakeInstance.h"

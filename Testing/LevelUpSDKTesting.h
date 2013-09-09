@@ -1,3 +1,5 @@
+// Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
+
 #import "LUAccessToken+FakeInstance.h"
 #import "LUCampaign+FakeInstance.h"
 #import "LUClaim+FakeInstance.h"

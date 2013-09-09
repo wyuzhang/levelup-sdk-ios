@@ -1,3 +1,5 @@
+// Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
+
 /**
  `LUPaymentTokenRequestFactory` is used to build the request to retrieve a user's payment token.
  */

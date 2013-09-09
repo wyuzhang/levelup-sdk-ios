@@ -1,3 +1,5 @@
+// Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
+
 #import "LUCreditCard.h"
 #import "LUCreditCardJSONFactory.h"
 #import "NSDictionary+ObjectClassAccess.h"

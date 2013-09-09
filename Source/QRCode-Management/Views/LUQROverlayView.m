@@ -1,3 +1,5 @@
+// Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
+
 #import "LUQROverlayView.h"
 
 static const CGFloat kXPadding = 0.0f;

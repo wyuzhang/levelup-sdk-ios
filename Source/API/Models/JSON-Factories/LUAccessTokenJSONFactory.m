@@ -1,3 +1,5 @@
+// Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
+
 #import "LUAccessToken.h"
 #import "LUAccessTokenJSONFactory.h"
 #import "NSDictionary+ObjectClassAccess.h"

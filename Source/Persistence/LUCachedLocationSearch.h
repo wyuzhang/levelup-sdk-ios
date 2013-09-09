@@ -1,3 +1,5 @@
+// Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
+
 /**
  `LUCachedLocationSearch` is used to query a locally cached database of information on all LevelUp locations.
 

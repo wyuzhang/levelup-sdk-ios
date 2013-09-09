@@ -1,3 +1,5 @@
+// Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
+
 /**
  `LUOrderRequestFactory` is used to build requests related to retrieving orders.
  */

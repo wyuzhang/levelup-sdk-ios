@@ -1,3 +1,5 @@
+// Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
+
 /**
  `LUApnDeviceRequestFactory` is used to build requests for APN (Apple Push Notification) device tokens. If the app is
  going to handle push notifications, the device token must be registered with LevelUp, and unregistered if
