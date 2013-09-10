@@ -24,12 +24,12 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)debugDescription {
-  return [NSString stringWithFormat:@"LUClaim [campaignID=%@, code=%@, ID=%@, value=%@, valueRemaining=%@]",
-          self.campaignID, self.code, self.claimID, self.value, self.valueRemaining];
+  return [NSString stringWithFormat:@"LUClaim [address=%p, campaignID=%@, code=%@, ID=%@, value=%@, valueRemaining=%@]",
+          self, self.campaignID, self.code, self.claimID, self.value, self.valueRemaining];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUClaim [campaignID=%@, ID=%@]", self.code, self.claimID];
+  return [NSString stringWithFormat:@"LUClaim [address=%p, campaignID=%@, ID=%@]", self, self.code, self.claimID];
 }
 
 @end

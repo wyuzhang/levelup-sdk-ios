@@ -64,7 +64,7 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUWebLocation [facebookAddress=%@, menuAddress=%@, newsletterAddress=%@, opentableAddress=%@, twitterAddress=%@, yelpAddress=%@", self.facebookAddress, self.menuAddress, self.newsletterAddress, self.opentableAddress, self.twitterAddress, self.yelpAddress];
+  return [NSString stringWithFormat:@"LUWebLocation [address=%p, facebookAddress=%@, menuAddress=%@, newsletterAddress=%@, opentableAddress=%@, twitterAddress=%@, yelpAddress=%@", self, self.facebookAddress, self.menuAddress, self.newsletterAddress, self.opentableAddress, self.twitterAddress, self.yelpAddress];
 }
 
 @end

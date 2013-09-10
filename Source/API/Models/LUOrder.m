@@ -100,15 +100,15 @@ locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUOrder [balance=%@, bundleClosedDate=%@, bundleDescriptor=%@, contribution=%@, contributionTargetName=%@, createdDate=%@, credit=%@, earn=%@, locationExtendedAddress=%@, locationID=%@, locationLocality=%@, locationPostalCode=%@, locationRegion=%@, locationStreetAddress=%@, merchantID=%@, merchantName=%@, refundedDate=%@, spend=%@, tip=%@, total=%@, transactedDate=%@, UUID=%@]",
-          self.balance, self.bundleClosedDate, self.bundleDescriptor, self.contribution, self.contributionTargetName,
+          @"LUOrder [address=%p, balance=%@, bundleClosedDate=%@, bundleDescriptor=%@, contribution=%@, contributionTargetName=%@, createdDate=%@, credit=%@, earn=%@, locationExtendedAddress=%@, locationID=%@, locationLocality=%@, locationPostalCode=%@, locationRegion=%@, locationStreetAddress=%@, merchantID=%@, merchantName=%@, refundedDate=%@, spend=%@, tip=%@, total=%@, transactedDate=%@, UUID=%@]",
+          self, self.balance, self.bundleClosedDate, self.bundleDescriptor, self.contribution, self.contributionTargetName,
           self.createdDate, self.credit, self.earn, self.locationExtendedAddress, self.locationID, self.locationLocality,
           self.locationPostalCode, self.locationRegion, self.locationStreetAddress, self.merchantID, self.merchantName,
           self.refundedDate, self.spend, self.tip, self.total, self.transactedDate, self.UUID];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUOrder [merchantName=%@, total=%@, UUID=%@]", self.merchantName, self.total,
+  return [NSString stringWithFormat:@"LUOrder [address=%p, merchantName=%@, total=%@, UUID=%@]", self, self.merchantName, self.total,
           self.UUID];
 }
 

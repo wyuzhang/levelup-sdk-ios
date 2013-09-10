@@ -28,7 +28,7 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUAPIError [message=%@, object=%@, property=%@]", self.message, self.object,
+  return [NSString stringWithFormat:@"LUAPIError [address=%p, message=%@, object=%@, property=%@]", self, self.message, self.object,
           self.property];
 }
 

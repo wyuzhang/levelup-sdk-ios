@@ -49,12 +49,12 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)debugDescription {
-  return [NSString stringWithFormat:@"LUMonetaryValue [amount=%@, currencyCode=%@, currencySymbol=%@, formattedAmount=%@]",
-          self.amount, self.currencyCode, self.currencySymbol, self.formattedAmount];
+  return [NSString stringWithFormat:@"LUMonetaryValue [address=%p, amount=%@, currencyCode=%@, currencySymbol=%@, formattedAmount=%@]",
+          self, self.amount, self.currencyCode, self.currencySymbol, self.formattedAmount];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUMonetaryValue [%@]", [self formattedAmountWithSymbol]];
+  return [NSString stringWithFormat:@"LUMonetaryValue [address=%p, formattedAmountWithSymbol=%@]", self, [self formattedAmountWithSymbol]];
 }
 
 @end

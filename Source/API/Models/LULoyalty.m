@@ -33,13 +33,13 @@
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LULoyalty [merchantID=%@, merchantLoyaltyEnabled=%@, ordersCount=%@, potentialCredit=%@, progressPercent=%@, savings=%@, shouldSpend=%@, spendRemaining=%@, totalVolume=%@, willEarn=%@]",
-          self.merchantID, @(self.merchantLoyaltyEnabled), self.ordersCount, self.potentialCredit,
+          @"LULoyalty [address=%p, merchantID=%@, merchantLoyaltyEnabled=%@, ordersCount=%@, potentialCredit=%@, progressPercent=%@, savings=%@, shouldSpend=%@, spendRemaining=%@, totalVolume=%@, willEarn=%@]",
+          self, self.merchantID, @(self.merchantLoyaltyEnabled), self.ordersCount, self.potentialCredit,
           @(self.progressPercent), self.savings, self.shouldSpend, self.spendRemaining, self.totalVolume, self.willEarn];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LULoyalty [merchantID=%@]", self.merchantID];
+  return [NSString stringWithFormat:@"LULoyalty [address=%p, merchantID=%@]", self, self.merchantID];
 }
 
 @end

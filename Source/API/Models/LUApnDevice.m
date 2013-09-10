@@ -7,12 +7,12 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)debugDescription {
-  return [NSString stringWithFormat:@"LUApnDevice [development=%@, ID=%@, lat=%@, lng=%@, token=%@]", @(self.development),
+  return [NSString stringWithFormat:@"LUApnDevice [address=%p, development=%@, ID=%@, lat=%@, lng=%@, token=%@]", self, @(self.development),
           self.apnDeviceID, self.lat, self.lng, self.token];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUApnDevice [ID=%@, token=%@]", self.apnDeviceID, self.token];
+  return [NSString stringWithFormat:@"LUApnDevice [address=%p, ID=%@, token=%@]", self, self.apnDeviceID, self.token];
 }
 
 @end

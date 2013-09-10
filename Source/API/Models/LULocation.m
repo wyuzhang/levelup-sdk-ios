@@ -119,14 +119,14 @@
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LULocation [categoryIDs=%@, descriptionHTML=%@, extendedAddress=%@, hours=%@, ID=%@, latitude=%@, locality=%@, longitude=%@, merchantID=%@, merchantName=%@, name=%@, phone=%@, postalCode=%@, region=%@, shown=%@, summary=%@, streetAddress=%@, updatedAtDate=%@, webLocations=%@]",
-          self.categoryIDs, self.descriptionHTML, self.extendedAddress, self.hours, self.locationID, self.latitude, self.locality,
+          @"LULocation [address=%p, categoryIDs=%@, descriptionHTML=%@, extendedAddress=%@, hours=%@, ID=%@, latitude=%@, locality=%@, longitude=%@, merchantID=%@, merchantName=%@, name=%@, phone=%@, postalCode=%@, region=%@, shown=%@, summary=%@, streetAddress=%@, updatedAtDate=%@, webLocations=%@]",
+          self, self.categoryIDs, self.descriptionHTML, self.extendedAddress, self.hours, self.locationID, self.latitude, self.locality,
           self.longitude, self.merchantID, self.merchantName, self.name, self.phone, self.postalCode, self.region,
           @(self.shown), @(self.summary), self.streetAddress, self.updatedAtDate, self.webLocations];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LULocation [ID=%@, latitude=%@, longitude=%@, streetAddress=%@]", self.locationID,
+  return [NSString stringWithFormat:@"LULocation [address=%p, ID=%@, latitude=%@, longitude=%@, streetAddress=%@]", self, self.locationID,
           self.latitude, self.longitude, self.streetAddress];
 }
 

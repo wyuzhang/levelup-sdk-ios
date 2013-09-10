@@ -18,7 +18,7 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUInterstitialURLAction [URL=%@]", self.URL];
+  return [NSString stringWithFormat:@"LUInterstitialURLAction [address=%p, URL=%@]", self, self.URL];
 }
 
 @end

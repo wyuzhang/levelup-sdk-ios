@@ -58,14 +58,14 @@
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUCampaign [confirmationHTML=%@, global=%@, messageForEmailBody=%@, messageForEmailSubject=%@, messageForFacebook=%@, messageForTwitter=%@, ID=%@, name=%@, offerHTML=%@, shareable=%@, shareURLEmail=%@, shareURLFacebook=%@, shareURLTwitter=%@, sponsor=%@, value=%@]",
-          self.confirmationHTML, @(self.global), self.messageForEmailBody, self.messageForEmailSubject,
+          @"LUCampaign [address=%p, confirmationHTML=%@, global=%@, messageForEmailBody=%@, messageForEmailSubject=%@, messageForFacebook=%@, messageForTwitter=%@, ID=%@, name=%@, offerHTML=%@, shareable=%@, shareURLEmail=%@, shareURLFacebook=%@, shareURLTwitter=%@, sponsor=%@, value=%@]",
+          self, self.confirmationHTML, @(self.global), self.messageForEmailBody, self.messageForEmailSubject,
           self.messageForFacebook, self.messageForTwitter, self.campaignID, self.name, self.offerHTML,
           @(self.shareable), self.shareURLEmail, self.shareURLFacebook, self.shareURLTwitter, self.sponsor, self.value];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUCampaign [ID=%@, name=%@, value=%@]", self.campaignID, self.name, self.value];
+  return [NSString stringWithFormat:@"LUCampaign [address=%p, ID=%@, name=%@, value=%@]", self, self.campaignID, self.name, self.value];
 }
 
 @end

@@ -18,7 +18,7 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUInterstitialClaimAction [campaignCode=%@]", self.campaignCode];
+  return [NSString stringWithFormat:@"LUInterstitialClaimAction [address=%p, campaignCode=%@]", self, self.campaignCode];
 }
 
 @end

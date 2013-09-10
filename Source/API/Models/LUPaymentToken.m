@@ -19,7 +19,7 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUPaymentToken [data=%@, paymentTokenID=%@]", self.data, self.paymentTokenID];
+  return [NSString stringWithFormat:@"LUPaymentToken [address=%p, data=%@, paymentTokenID=%@]", self, self.data, self.paymentTokenID];
 }
 
 @end

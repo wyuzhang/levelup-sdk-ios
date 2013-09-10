@@ -38,8 +38,8 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUInterstitial [action=%@, actionType=%@, descriptionHTML=%@, imageURL=%@, title=%@]",
-          self.action, [self actionTypeString], self.descriptionHTML, self.imageURL, self.title];
+  return [NSString stringWithFormat:@"LUInterstitial [address=%p, action=%@, actionType=%@, descriptionHTML=%@, imageURL=%@, title=%@]",
+          self, self.action, [self actionTypeString], self.descriptionHTML, self.imageURL, self.title];
 }
 
 #pragma mark - Private Methods

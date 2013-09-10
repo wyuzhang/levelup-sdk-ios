@@ -48,14 +48,14 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUUser [birthdate=%@, causeID=%@, connectedToFacebook=%@, customAttributes=%@, email=%@, firstName=%@, gender=%@, globalCredit=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, termsAccepted=%@, totalSavings=%@]",
-          self.birthdate, self.causeID, @(self.connectedToFacebook), self.customAttributes, self.email,
+          @"LUUser [address=%p, birthdate=%@, causeID=%@, connectedToFacebook=%@, customAttributes=%@, email=%@, firstName=%@, gender=%@, globalCredit=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, termsAccepted=%@, totalSavings=%@]",
+          self, self.birthdate, self.causeID, @(self.connectedToFacebook), self.customAttributes, self.email,
           self.firstName, [self genderString], self.globalCredit, self.userID, self.lastName, self.merchantsVisitedCount,
           self.ordersCount, @(self.termsAccepted), self.totalSavings];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUUser [firstName=%@, ID=%@, lastName=%@]", self.firstName, self.userID,
+  return [NSString stringWithFormat:@"LUUser [address=%p, firstName=%@, ID=%@, lastName=%@]", self, self.firstName, self.userID,
           self.lastName];
 }
 

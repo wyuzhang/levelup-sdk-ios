@@ -19,7 +19,7 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUAccessToken [token=%@, userID=%@]", self.token, self.userID];
+  return [NSString stringWithFormat:@"LUAccessToken [address=%p, token=%@, userID=%@]", self, self.token, self.userID];
 }
 
 @end

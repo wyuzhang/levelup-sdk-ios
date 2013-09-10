@@ -27,8 +27,8 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUInterstitialShareAction [messageForEmailBody=%@, messageForEmailSubject=%@, messageForFacebook=%@, messageForTwitter=%@, shareURLEmail=%@, shareURLFacebook=%@, shareURLTwitter=%@]",
-          self.messageForEmailBody, self.messageForEmailSubject, self.messageForFacebook, self.messageForTwitter,
+  return [NSString stringWithFormat:@"LUInterstitialShareAction [address=%p, messageForEmailBody=%@, messageForEmailSubject=%@, messageForFacebook=%@, messageForTwitter=%@, shareURLEmail=%@, shareURLFacebook=%@, shareURLTwitter=%@]",
+          self, self.messageForEmailBody, self.messageForEmailSubject, self.messageForFacebook, self.messageForTwitter,
           self.shareURLEmail, self.shareURLFacebook, self.shareURLTwitter];
 }
 
