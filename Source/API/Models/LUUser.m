@@ -21,7 +21,7 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
   _birthdate = birthdate;
   _causeID = causeID;
   _connectedToFacebook = connectedToFacebook;
-  _customAttributes = customAttributes;
+  _customAttributes = [customAttributes mutableCopy];
   _email = email;
   _firstName = firstName;
   _gender = gender;
@@ -34,6 +34,14 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
   _userID = userID;
 
   return self;
+}
+
+#pragma mark - Getters
+
+- (NSMutableDictionary *)customAttributes {
+  if (_customAttributes) return _customAttributes;
+  _customAttributes = [NSMutableDictionary dictionary];
+  return _customAttributes;
 }
 
 #pragma mark - NSObject Methods

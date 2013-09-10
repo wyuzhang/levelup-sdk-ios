@@ -31,9 +31,9 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, assign, readonly) BOOL connectedToFacebook;
 
 /**
- An arbitrary `NSDictionary` of custom attributes. This may be used to store app-specific user information.
+ An arbitrary `NSMutableDictionary` of custom attributes. This may be used to store app-specific user information.
  */
-@property (nonatomic, copy) NSDictionary *customAttributes;
+@property (nonatomic, copy) NSMutableDictionary *customAttributes;
 
 /**
  The user's email address.
