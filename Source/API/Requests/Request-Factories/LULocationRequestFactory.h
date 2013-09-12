@@ -4,6 +4,7 @@
  `LULocationRequestFactory` builds requests to retrieve locations.
  */
 @class LUAPIRequest;
+@class CLLocation;
 
 @interface LULocationRequestFactory : NSObject
 
