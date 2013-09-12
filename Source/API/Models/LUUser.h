@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, LUGender) {
 /**
  An arbitrary `NSMutableDictionary` of custom attributes. This may be used to store app-specific user information.
  */
-@property (nonatomic, copy) NSMutableDictionary *customAttributes;
+@property (nonatomic, strong) NSMutableDictionary *customAttributes;
 
 /**
  The user's email address.
