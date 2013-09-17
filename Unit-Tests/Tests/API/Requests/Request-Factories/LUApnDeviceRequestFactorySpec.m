@@ -30,7 +30,7 @@ describe(@"LUApnDeviceRequestFactory", ^{
     });
 
     it(@"stores the token string in the keychain", ^{
-      [[[[LUKeychainAccess standardKeychainAccess] should] receive] setString:@"A60F7DB9" forKey:LUDeviceTokenKey];
+      [[[LUKeychainAccess standardKeychainAccess] should] receive:@selector(setString:forKey:) withArguments:@"A60F7DB9", LUDeviceTokenKey];
 
       [LUApnDeviceRequestFactory requestToRegisterApnDevice:apnDevice];
     });

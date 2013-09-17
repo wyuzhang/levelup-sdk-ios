@@ -16,7 +16,7 @@ describe(@"LUUserParameterBuilder", ^{
     beforeEach(^{
       user = [[LUUser alloc] init];
       user.birthdate = [NSDate distantPast];
-      user.customAttributes = @{@"key" : @"value"};
+      user.customAttributes[@"key"] = @"value";
       user.email = @"test@example.com";
       user.firstName = @"John";
       user.gender = LUGenderMale;
