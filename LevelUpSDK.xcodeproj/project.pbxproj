@@ -314,6 +314,8 @@
 		F87364A6173AE3E10024A3F5 /* LULoyaltyJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F87364A4173AE3E10024A3F5 /* LULoyaltyJSONFactory.h */; };
 		F87364A7173AE3E10024A3F5 /* LULoyaltyJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F87364A5173AE3E10024A3F5 /* LULoyaltyJSONFactory.m */; };
 		F87364A9173AE5250024A3F5 /* LULoyaltyJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F87364A8173AE5250024A3F5 /* LULoyaltyJSONFactorySpec.m */; };
+		F88A3DB017E8E57C008D5254 /* LUUserGenderTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F88A3DAE17E8E576008D5254 /* LUUserGenderTransformer.m */; };
+		F88A3DB317E8E590008D5254 /* LUUserGenderTransformerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F88A3DB217E8E590008D5254 /* LUUserGenderTransformerSpec.m */; };
 		F8BC8402173981BE007F7142 /* LUWebLocations.h in Headers */ = {isa = PBXBuildFile; fileRef = F8BC8400173981BE007F7142 /* LUWebLocations.h */; };
 		F8BC8403173981BE007F7142 /* LUWebLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BC8401173981BE007F7142 /* LUWebLocations.m */; };
 		F8BC84061739884D007F7142 /* LUWebLocations+FakeInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = F8BC84041739884D007F7142 /* LUWebLocations+FakeInstance.h */; };
@@ -666,6 +668,9 @@
 		F87364A4173AE3E10024A3F5 /* LULoyaltyJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULoyaltyJSONFactory.h; sourceTree = "<group>"; };
 		F87364A5173AE3E10024A3F5 /* LULoyaltyJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULoyaltyJSONFactory.m; sourceTree = "<group>"; };
 		F87364A8173AE5250024A3F5 /* LULoyaltyJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULoyaltyJSONFactorySpec.m; sourceTree = "<group>"; };
+		F88A3DAD17E8E576008D5254 /* LUUserGenderTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUUserGenderTransformer.h; sourceTree = "<group>"; };
+		F88A3DAE17E8E576008D5254 /* LUUserGenderTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserGenderTransformer.m; sourceTree = "<group>"; };
+		F88A3DB217E8E590008D5254 /* LUUserGenderTransformerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserGenderTransformerSpec.m; sourceTree = "<group>"; };
 		F8BC8400173981BE007F7142 /* LUWebLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUWebLocations.h; sourceTree = "<group>"; };
 		F8BC8401173981BE007F7142 /* LUWebLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUWebLocations.m; sourceTree = "<group>"; };
 		F8BC84041739884D007F7142 /* LUWebLocations+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUWebLocations+FakeInstance.h"; sourceTree = "<group>"; };
@@ -1000,6 +1005,7 @@
 				C1CAF0EE173052A7003B3D01 /* Categories */,
 				2523E33A17374DCC00FBDFEB /* Persistence */,
 				C1CAF0F5173052A7003B3D01 /* QRCode Management */,
+				F88A3DB117E8E590008D5254 /* Transformers */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -1146,6 +1152,7 @@
 				C1CAF1EA17315415003B3D01 /* QRCode Management */,
 				C1CAF2861731556B003B3D01 /* Resources */,
 				C1CAF1E917315415003B3D01 /* LevelUpSDK.h */,
+				F88A3DAC17E8E576008D5254 /* Transformers */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1386,6 +1393,23 @@
 				C1CAF28A1731560F003B3D01 /* Unit-Tests-Prefix.pch */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F88A3DAC17E8E576008D5254 /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				F88A3DAD17E8E576008D5254 /* LUUserGenderTransformer.h */,
+				F88A3DAE17E8E576008D5254 /* LUUserGenderTransformer.m */,
+			);
+			path = Transformers;
+			sourceTree = "<group>";
+		};
+		F88A3DB117E8E590008D5254 /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				F88A3DB217E8E590008D5254 /* LUUserGenderTransformerSpec.m */,
+			);
+			path = Transformers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1717,6 +1741,7 @@
 				F87364A3173AA4B00024A3F5 /* LULoyaltyRequestFactory.m in Sources */,
 				F87364A7173AE3E10024A3F5 /* LULoyaltyJSONFactory.m in Sources */,
 				02BA982B174BE19500C9D647 /* LUCoreDataStore.m in Sources */,
+				F88A3DB017E8E57C008D5254 /* LUUserGenderTransformer.m in Sources */,
 				F8D4DB9E17569CA90000DB66 /* NSDictionary+SafetyAdditions.m in Sources */,
 				020231721779E0B100B057D1 /* LUAPIConnection.m in Sources */,
 				25CA82DF176A173C0073383C /* LUPaymentToken.m in Sources */,
@@ -1746,6 +1771,7 @@
 				020CF28D172F020800D20672 /* LUCampaign+FakeInstance.m in Sources */,
 				020CF291172F020800D20672 /* LULocation+FakeInstance.m in Sources */,
 				020CF292172F020800D20672 /* LULoyalty+FakeInstance.m in Sources */,
+				F88A3DB317E8E590008D5254 /* LUUserGenderTransformerSpec.m in Sources */,
 				020CF294172F020800D20672 /* LUOrder+FakeInstance.m in Sources */,
 				C1CAF0F8173052A7003B3D01 /* LUCampaign+Fixtures.m in Sources */,
 				C1CAF0F9173052A7003B3D01 /* LUCategory+Fixtures.m in Sources */,
@@ -1913,7 +1939,6 @@
 				GCC_PREFIX_HEADER = "Unit-Tests/Resources/Unit-Tests-Prefix.pch";
 				INFOPLIST_FILE = "Unit-Tests/Resources/Unit-Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Distribution;
@@ -2039,7 +2064,6 @@
 				GCC_PREFIX_HEADER = "Unit-Tests/Resources/Unit-Tests-Prefix.pch";
 				INFOPLIST_FILE = "Unit-Tests/Resources/Unit-Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -2052,7 +2076,6 @@
 				GCC_PREFIX_HEADER = "Unit-Tests/Resources/Unit-Tests-Prefix.pch";
 				INFOPLIST_FILE = "Unit-Tests/Resources/Unit-Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;

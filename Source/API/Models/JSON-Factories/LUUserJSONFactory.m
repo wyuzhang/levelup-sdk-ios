@@ -16,7 +16,7 @@
   NSDictionary *customAttributes = [attributes lu_dictionaryForKey:@"custom_attributes"];
   NSString *email = [attributes lu_stringForKey:@"email"];
   NSString *firstName = [attributes lu_stringForKey:@"first_name"];
-  LUGender gender = [self genderFromString:[attributes lu_stringForKey:@"gender"]];
+  LUGender gender = [LUUser genderForGenderString:[attributes lu_stringForKey:@"gender"]];
   LUMonetaryValue *globalCredit = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"global_credit_amount"]];
   NSString *lastName = [attributes lu_stringForKey:@"last_name"];
   NSNumber *merchantsVisitedCount = [attributes lu_numberForKey:@"merchants_visited_count"];
@@ -34,18 +34,6 @@
 
 - (NSString *)rootKey {
   return @"user";
-}
-
-#pragma mark - Private Methods
-
-- (LUGender)genderFromString:(NSString *)genderString {
-  if ([genderString isEqualToString:@"male"]) {
-    return LUGenderMale;
-  } else if ([genderString isEqualToString:@"female"]) {
-    return LUGenderFemale;
-  } else {
-    return LUGenderUnspecified;
-  }
 }
 
 @end

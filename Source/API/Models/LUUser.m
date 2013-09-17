@@ -1,12 +1,13 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
 #import "LUUser.h"
-
-NSString * const GenderMale = @"male";
-NSString * const GenderFemale = @"female";
-float const SecondsInAYear = 365.25 * 24 * 60 * 60;
+#import "LUUserGenderTransformer.h"
 
 @implementation LUUser
+
++ (void)load {
+  [NSValueTransformer setValueTransformer:[[LUUserGenderTransformer alloc] init] forName:LUUserGenderTransformerName];
+}
 
 #pragma mark - Creation
 
@@ -50,7 +51,7 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
   return [NSString stringWithFormat:
           @"LUUser [address=%p, birthdate=%@, causeID=%@, connectedToFacebook=%@, customAttributes=%@, email=%@, firstName=%@, gender=%@, globalCredit=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, termsAccepted=%@, totalSavings=%@]",
           self, self.birthdate, self.causeID, @(self.connectedToFacebook), self.customAttributes, self.email,
-          self.firstName, [self genderString], self.globalCredit, self.userID, self.lastName, self.merchantsVisitedCount,
+          self.firstName, [[self class] genderStringForGender:self.gender], self.globalCredit, self.userID, self.lastName, self.merchantsVisitedCount,
           self.ordersCount, @(self.termsAccepted), self.totalSavings];
 }
 
@@ -59,22 +60,16 @@ float const SecondsInAYear = 365.25 * 24 * 60 * 60;
           self.lastName];
 }
 
-#pragma mark - Private Methods
+#pragma mark - Gender transformations
 
-- (NSString *)genderString {
-  switch (self.gender) {
-    case LUGenderUnspecified:
-      return @"none";
++ (LUGender)genderForGenderString:(NSString *)genderString {
+  NSValueTransformer *transformer = [NSValueTransformer valueTransformerForName:LUUserGenderTransformerName];
+  return [[transformer reverseTransformedValue:genderString] integerValue];
+}
 
-    case LUGenderMale:
-      return @"male";
-
-    case LUGenderFemale:
-      return @"female";
-
-    default:
-      return nil;
-  }
++ (NSString *)genderStringForGender:(LUGender)gender {
+  NSValueTransformer *transformer = [NSValueTransformer valueTransformerForName:LUUserGenderTransformerName];
+  return [transformer transformedValue:@(gender)];
 }
 
 @end

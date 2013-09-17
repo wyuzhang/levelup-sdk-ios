@@ -18,11 +18,8 @@
   [self addKey:@"email" toDictionary:params ifValuePresent:user.email];
   [self addKey:@"first_name" toDictionary:params ifValuePresent:user.firstName];
 
-  if (user.gender == LUGenderFemale) {
-    params[@"gender"] = @"female";
-  } else if (user.gender == LUGenderMale) {
-    params[@"gender"] = @"male";
-  }
+  NSString *genderString = [[LUUser genderStringForGender:user.gender] lowercaseString];
+  [self addKey:@"gender" toDictionary:params ifValuePresent:genderString];
 
   [self addKey:@"last_name" toDictionary:params ifValuePresent:user.lastName];
 

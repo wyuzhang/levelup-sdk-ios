@@ -90,6 +90,18 @@ typedef NS_ENUM(NSInteger, LUGender) {
  */
 @property (nonatomic, copy, readonly) NSNumber *userID;
 
+/**
+ Returns an enumerated value representing a gender.
+ @param genderString The string representation of the gender. This string is case insensitive.
+ */
++ (LUGender)genderForGenderString:(NSString *)genderString;
+
+/**
+ Returns a string representation of the gender for display. The return string will be capitalized (Male, Female).
+ @param gender The enumerated value for the gender.
+ */
++ (NSString *)genderStringForGender:(LUGender)gender;
+
 - (id)initWithBirthdate:(NSDate *)birthdate causeID:(NSNumber *)causeID connectedToFacebook:(BOOL)connectedToFacebook
        customAttributes:(NSDictionary *)customAttributes email:(NSString *)email firstName:(NSString *)firstName
                  gender:(LUGender)gender globalCredit:(LUMonetaryValue *)globalCredit lastName:(NSString *)lastName
