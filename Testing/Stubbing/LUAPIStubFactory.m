@@ -20,7 +20,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 + (LUAPIStub *)stubToClaimCampaignWithCode:(NSString *)code {
   NSDictionary *responseJSON = @{
     @"claim" : @{
-      @"campaign_id" : @2,
+      @"campaign_id" : @1,
       @"code" : code,
       @"id" : @1,
       @"value_amount" : @5,
@@ -156,6 +156,14 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                                     responseData:[self responseDataFromFile:@"failed_claim"]];
   stub.responseCode = 404;
   return stub;
+}
+
++ (LUAPIStub *)stubToGetCampaignForMerchantWithCode:(NSString *)code {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:[NSString stringWithFormat:@"codes/%@/campaign", code]
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"campaign_nonglobal"]];
 }
 
 + (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code {

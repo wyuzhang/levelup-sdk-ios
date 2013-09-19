@@ -155,6 +155,7 @@
 		25F643A8166832D600A05C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A7166832D600A05C0E /* Foundation.framework */; };
 		25F643BA166832D600A05C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A7166832D600A05C0E /* Foundation.framework */; };
 		25F643BD166832D600A05C0E /* libLevelUpSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A4166832D600A05C0E /* libLevelUpSDK.a */; };
+		404504D817EB9648000A7211 /* campaign_nonglobal.json in Resources */ = {isa = PBXBuildFile; fileRef = 404504D717EB9648000A7211 /* campaign_nonglobal.json */; };
 		45C90162129F4441AD00C796 /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35969BE4155A4B838F746A8C /* libPods-test.a */; };
 		6F444D2F83D549768CF26F9C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A39890392E641DAA8438DC9 /* libPods.a */; };
 		C1CAF0F8173052A7003B3D01 /* LUCampaign+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF081173052A7003B3D01 /* LUCampaign+Fixtures.m */; };
@@ -496,6 +497,7 @@
 		25F643A7166832D600A05C0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		25F643B5166832D600A05C0E /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35969BE4155A4B838F746A8C /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		404504D717EB9648000A7211 /* campaign_nonglobal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = campaign_nonglobal.json; sourceTree = "<group>"; };
 		C1CAF080173052A7003B3D01 /* LUCampaign+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUCampaign+Fixtures.h"; sourceTree = "<group>"; };
 		C1CAF081173052A7003B3D01 /* LUCampaign+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUCampaign+Fixtures.m"; sourceTree = "<group>"; };
 		C1CAF082173052A7003B3D01 /* LUCategory+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUCategory+Fixtures.h"; sourceTree = "<group>"; };
@@ -846,6 +848,7 @@
 			children = (
 				029053C117BD4ACA00527576 /* app_locations.json */,
 				02E29146175FCAB8002036B4 /* campaign.json */,
+				404504D717EB9648000A7211 /* campaign_nonglobal.json */,
 				02293814176265DE0057C381 /* categories.json */,
 				02E2914A175FCAB8002036B4 /* credit_card.json */,
 				02E2914C175FCAB8002036B4 /* credit_cards-1.json */,
@@ -1600,6 +1603,7 @@
 				02293815176265DE0057C381 /* categories.json in Resources */,
 				0229381717626B500057C381 /* location_summaries.json in Resources */,
 				025B6DDE176A713C00713242 /* payment_token.json in Resources */,
+				404504D817EB9648000A7211 /* campaign_nonglobal.json in Resources */,
 				02704A5F17B96496009AF443 /* facebook_connected_user.json in Resources */,
 				029053C217BD4ACF00527576 /* app_locations.json in Resources */,
 				02CD576B17D9070C006205C6 /* interstitial.json in Resources */,

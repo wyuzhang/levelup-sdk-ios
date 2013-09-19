@@ -20,6 +20,7 @@
 + (LUAPIStub *)stubToFacebookConnectWithFacebookAccessToken:(NSString *)facebookAccessToken;
 + (LUAPIStub *)stubToFacebookDisconnect;
 + (LUAPIStub *)stubToFailToClaimCampaignWithCode:(NSString *)code;
++ (LUAPIStub *)stubToGetCampaignForMerchantWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithID:(NSNumber *)campaignID;
 + (LUAPIStub *)stubToGetCategories;
