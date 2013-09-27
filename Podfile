@@ -3,7 +3,7 @@ platform :ios, '5.0'
 pod 'AFNetworking', '~> 1.1.0'
 pod 'AutoCoding', '~> 2.0.2'
 pod 'LUKeychainAccess', '~> 1.1.1'
-pod 'ZXingObjC', '~> 2.0.2'
+pod 'ZXingObjC', '~> 2.2.0'
 
 target :test, :exclusive => true do
   link_with 'Unit Tests'

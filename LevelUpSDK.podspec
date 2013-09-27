@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
     core.dependency 'AFNetworking', '~> 1.1.0'
     core.dependency 'AutoCoding', '~> 2.0.2'
     core.dependency 'LUKeychainAccess', '~> 1.1.1'
-    core.dependency 'ZXingObjC', '~> 2.0.2'
+    core.dependency 'ZXingObjC', '~> 2.2.0'
 
     core.source_files = 'Source/**/*.{h,m}', 'Frameworks/Braintree-Encryption/src'
     core.resources = 'Source/Resources/*'
