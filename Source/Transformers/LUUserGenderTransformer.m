@@ -31,7 +31,6 @@ NSString * const LUUserGenderTransformerName = @"LUUserGenderTransformerName";
   _genderMap = [[NSMapTable alloc] init];
   [_genderMap setObject:@"male" forKey:@(LUGenderMale)];
   [_genderMap setObject:@"female" forKey:@(LUGenderFemale)];
-  [_genderMap setObject:@"unspecified" forKey:@(LUGenderUnspecified)];
   return _genderMap;
 }
 
