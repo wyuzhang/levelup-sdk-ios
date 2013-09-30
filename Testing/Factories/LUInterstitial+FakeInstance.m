@@ -45,6 +45,7 @@
 + (LUInterstitial *)fakeInstanceWithAction:(id)action actionType:(LUInterstitialActionType)actionType {
   return [[LUInterstitial alloc] initWithAction:action
                                      actionType:actionType
+                                    calloutText:@"Get $1"
                                 descriptionHTML:@"<p>Grab $1.00 to spend on anything at Test Merchant. Enjoy!</p>"
                                        imageURL:[NSURL URLWithString:@"https://www.staging-levelup.com/v14/campaigns/1/image"]
                                           title:@"$1 at Test Merchant"];

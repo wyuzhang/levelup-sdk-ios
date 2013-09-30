@@ -14,6 +14,7 @@
     @"action" : @{
       @"code" : @"testcode",
     },
+    @"callout_text" : @"test callout",
     @"description_html" : @"<p>interstitial description</p>",
     @"image_url" : @"http://example.com/interstitial-image",
     @"title" : @"Interstitial Title",
@@ -27,6 +28,7 @@
 
 + (NSDictionary *)fullNoActionJSONObject {
   return @{
+    @"callout_text" : @"test callout",
     @"description_html" : @"<p>interstitial description</p>",
     @"image_url" : @"http://example.com/interstitial-image",
     @"title" : @"Interstitial Title",
@@ -49,6 +51,7 @@
       @"share_url_facebook" : @"http://example.com/facebook",
       @"share_url_twitter" : @"http://example.com/twitter",
     },
+    @"callout_text" : @"test callout",
     @"description_html" : @"<p>interstitial description</p>",
     @"image_url" : @"http://example.com/interstitial-image",
     @"title" : @"Interstitial Title",
@@ -65,6 +68,7 @@
     @"action" : @{
       @"url" : @"http://example.com",
     },
+    @"callout_text" : @"test callout",
     @"description_html" : @"<p>interstitial description</p>",
     @"image_url" : @"http://example.com/interstitial-image",
     @"title" : @"Interstitial Title",

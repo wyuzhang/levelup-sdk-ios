@@ -18,6 +18,7 @@ describe(@"LUInterstitialJSONFactory", ^{
       [interstitial.action shouldBeNil];
       [[theValue(interstitial.actionType) should] equal:theValue(LUInterstitialActionTypeNone)];
 
+      [[interstitial.calloutText should] equal:@"test callout"];
       [[interstitial.descriptionHTML should] equal:@"<p>interstitial description</p>"];
       [[[interstitial.imageURL absoluteString] should] match:hasPrefix(@"http://example.com/interstitial-image")];
       [[interstitial.title should] equal:@"Interstitial Title"];
@@ -30,6 +31,7 @@ describe(@"LUInterstitialJSONFactory", ^{
       [[[interstitial.action campaignCode] should] equal:@"testcode"];
       [[theValue(interstitial.actionType) should] equal:theValue(LUInterstitialActionTypeClaim)];
 
+      [[interstitial.calloutText should] equal:@"test callout"];
       [[interstitial.descriptionHTML should] equal:@"<p>interstitial description</p>"];
       [[[interstitial.imageURL absoluteString] should] match:hasPrefix(@"http://example.com/interstitial-image")];
       [[interstitial.title should] equal:@"Interstitial Title"];
@@ -48,6 +50,7 @@ describe(@"LUInterstitialJSONFactory", ^{
       [[[interstitial.action shareURLTwitter] should] equal:[NSURL URLWithString:@"http://example.com/twitter"]];
       [[theValue(interstitial.actionType) should] equal:theValue(LUInterstitialActionTypeShare)];
 
+      [[interstitial.calloutText should] equal:@"test callout"];
       [[interstitial.descriptionHTML should] equal:@"<p>interstitial description</p>"];
       [[[interstitial.imageURL absoluteString] should] match:hasPrefix(@"http://example.com/interstitial-image")];
       [[interstitial.title should] equal:@"Interstitial Title"];
@@ -60,6 +63,7 @@ describe(@"LUInterstitialJSONFactory", ^{
       [[[interstitial.action URL] should] equal:[NSURL URLWithString:@"http://example.com"]];
       [[theValue(interstitial.actionType) should] equal:theValue(LUInterstitialActionTypeURL)];
 
+      [[interstitial.calloutText should] equal:@"test callout"];
       [[interstitial.descriptionHTML should] equal:@"<p>interstitial description</p>"];
       [[[interstitial.imageURL absoluteString] should] match:hasPrefix(@"http://example.com/interstitial-image")];
       [[interstitial.title should] equal:@"Interstitial Title"];

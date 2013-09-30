@@ -12,12 +12,13 @@
 - (id)createFromAttributes:(NSDictionary *)attributes {
   LUInterstitialActionType actionType = [self actionTypeFromString:[attributes lu_stringForKey:@"type"]];
   id action = [self actionForType:actionType withAttributes:attributes[@"action"]];
+  NSString *calloutText = [attributes lu_stringForKey:@"callout_text"];
   NSString *descriptionHTML = [attributes lu_stringForKey:@"description_html"];
   NSURL *imageURL = [attributes lu_URLForKey:@"image_url"];
   NSString *title = [attributes lu_stringForKey:@"title"];
 
-  return [[LUInterstitial alloc] initWithAction:action actionType:actionType descriptionHTML:descriptionHTML
-                                       imageURL:imageURL title:title];
+  return [[LUInterstitial alloc] initWithAction:action actionType:actionType calloutText:calloutText
+                                descriptionHTML:descriptionHTML imageURL:imageURL title:title];
 }
 
 - (NSString *)rootKey {

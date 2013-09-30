@@ -11,13 +11,14 @@
 
 #pragma mark - Creation
 
-- (id)initWithAction:(id)action actionType:(LUInterstitialActionType)actionType
+- (id)initWithAction:(id)action actionType:(LUInterstitialActionType)actionType calloutText:(NSString *)calloutText
      descriptionHTML:(NSString *)descriptionHTML imageURL:(NSURL *)imageURL title:(NSString *)title {
   self = [super init];
   if (!self) return nil;
 
   _action = action;
   _actionType = actionType;
+  _calloutText = calloutText;
   _descriptionHTML = descriptionHTML;
   _imageURL = imageURL;
   _title = title;
@@ -38,8 +39,8 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUInterstitial [address=%p, action=%@, actionType=%@, descriptionHTML=%@, imageURL=%@, title=%@]",
-          self, self.action, [self actionTypeString], self.descriptionHTML, self.imageURL, self.title];
+  return [NSString stringWithFormat:@"LUInterstitial [address=%p, action=%@, actionType=%@, calloutText=%@, descriptionHTML=%@, imageURL=%@, title=%@]",
+          self, self.action, [self actionTypeString], self.calloutText, self.descriptionHTML, self.imageURL, self.title];
 }
 
 #pragma mark - Private Methods

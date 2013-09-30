@@ -49,6 +49,11 @@ typedef NS_ENUM(NSInteger, LUInterstitialActionType) {
 @property (nonatomic, assign, readonly) LUInterstitialActionType actionType;
 
 /**
+ The callout text for the interstitial.
+ */
+@property (nonatomic, copy, readonly) NSString *calloutText;
+
+/**
  An HTML description of the interstitial.
  */
 @property (nonatomic, copy, readonly) NSString *descriptionHTML;
@@ -64,7 +69,7 @@ typedef NS_ENUM(NSInteger, LUInterstitialActionType) {
  */
 @property (nonatomic, copy, readonly) NSString *title;
 
-- (id)initWithAction:(id)action actionType:(LUInterstitialActionType)actionType
+- (id)initWithAction:(id)action actionType:(LUInterstitialActionType)actionType calloutText:(NSString *)calloutText
      descriptionHTML:(NSString *)descriptionHTML imageURL:(NSURL *)imageURL title:(NSString *)title;
 
 /**

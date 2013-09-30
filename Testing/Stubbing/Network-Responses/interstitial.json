@@ -8,6 +8,7 @@
       "message_for_email_body" : "Email body",
       "share_url_facebook" : "https://www.staging-levelup.com/c/FB-TEST"
     },
+    "callout_text" : "Get $1",
     "image_url" : "https://www.staging-levelup.com/v14/campaigns/1/image",
     "title" : "$1 at Test Merchant",
     "type" : "share",
