@@ -13,7 +13,11 @@
   NSMutableDictionary *params = [NSMutableDictionary dictionary];
 
   [self addKey:@"born_at" toDictionary:params ifValuePresent:[user.birthdate lu_iso8601DateTimeString]];
-  [self addKey:@"custom_attributes" toDictionary:params ifValuePresent:user.customAttributes];
+
+  if (user.userID) {
+    [self addKey:@"custom_attributes" toDictionary:params ifValuePresent:user.customAttributes];
+  }
+
   [self addKey:@"device_identifier" toDictionary:params ifValuePresent:[LUDeviceIdentifier deviceIdentifier]];
   [self addKey:@"email" toDictionary:params ifValuePresent:user.email];
   [self addKey:@"first_name" toDictionary:params ifValuePresent:user.firstName];

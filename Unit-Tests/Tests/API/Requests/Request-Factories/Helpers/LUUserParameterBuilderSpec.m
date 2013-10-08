@@ -16,7 +16,6 @@ describe(@"LUUserParameterBuilder", ^{
     beforeEach(^{
       user = [[LUUser alloc] init];
       user.birthdate = [NSDate distantPast];
-      user.customAttributes[@"key"] = @"value";
       user.email = @"test@example.com";
       user.firstName = @"John";
       user.gender = LUGenderMale;
@@ -31,7 +30,6 @@ describe(@"LUUserParameterBuilder", ^{
 
       NSDictionary *expectedParams = @{
         @"born_at" : [user.birthdate lu_iso8601DateTimeString],
-        @"custom_attributes" : user.customAttributes,
         @"device_identifier" : deviceIdentifer,
         @"email" : user.email,
         @"first_name" : user.firstName,
@@ -51,6 +49,24 @@ describe(@"LUUserParameterBuilder", ^{
 
       it(@"does not return a parameter for that property", ^{
         [[LUUserParameterBuilder parametersForUser:user][@"email"] shouldBeNil];
+      });
+    });
+
+    context(@"when a user is new", ^{
+      it(@"does not include custom attributes", ^{
+        user.customAttributes[@"key"] = @"value";
+        [[LUUserParameterBuilder parametersForUser:user][@"custom_attributes"] shouldBeNil];
+      });
+    });
+
+    context(@"when a user is existing", ^{
+      beforeEach(^{
+        [user setValue:@1 forKey:@"userID"];
+      });
+
+      it(@"does include custom attributes", ^{
+        user.customAttributes[@"key"] = @"value";
+        [[LUUserParameterBuilder parametersForUser:user][@"custom_attributes"] shouldNotBeNil];
       });
     });
   });
