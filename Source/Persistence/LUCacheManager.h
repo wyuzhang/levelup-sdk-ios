@@ -13,5 +13,6 @@ extern NSString * const LUCachedUserKey;
 + (LUUser *)cachedUser;
 + (void)cacheLoyalty:(LULoyalty *)loyalty;
 + (void)cacheUser:(LUUser *)user;
++ (void)setKeychainErrorHandler:(id<LUKeychainErrorHandler>)keychainErrorHandler;
 
 @end

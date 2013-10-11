@@ -36,6 +36,10 @@ static LUUser *_cachedUser;
   [self cacheObject:user forKey:LUCachedUserKey];
 }
 
++ (void)setKeychainErrorHandler:(id<LUKeychainErrorHandler>)keychainErrorHandler {
+  [self keychainAccess].errorHandler = keychainErrorHandler;
+}
+
 #pragma mark - Private Methods
 
 + (void)cacheObject:(id)object forKey:(NSString *)key {
@@ -47,7 +51,12 @@ static LUUser *_cachedUser;
 }
 
 + (LUKeychainAccess *)keychainAccess {
-  return [LUKeychainAccess standardKeychainAccess];
+  static LUKeychainAccess *_keychainAccess;
+
+  if (_keychainAccess) return _keychainAccess;
+
+  _keychainAccess = [LUKeychainAccess standardKeychainAccess];
+  return _keychainAccess;
 }
 
 @end

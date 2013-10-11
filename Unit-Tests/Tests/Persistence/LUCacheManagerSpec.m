@@ -94,6 +94,16 @@ describe(@"LUCacheManager", ^{
       });
     });
   });
+
+  describe(@"error handling", ^{
+    it(@"accepts an error handler for LUKeychainAccess", ^{
+      id<LUKeychainErrorHandler> errorHandler = [KWMock mockForProtocol:@protocol(LUKeychainErrorHandler)];
+
+      [LUCacheManager setKeychainErrorHandler:errorHandler];
+
+      [[(id)keychainAccess.errorHandler should] equal:errorHandler];
+    });
+  });
 });
 
 SPEC_END
