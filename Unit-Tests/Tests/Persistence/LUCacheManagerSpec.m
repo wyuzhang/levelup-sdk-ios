@@ -6,62 +6,91 @@
 SPEC_BEGIN(LUCacheManagerSpec)
 
 describe(@"LUCacheManager", ^{
+  __block LUKeychainAccess *keychainAccess;
+
   beforeAll(^{
     [LUKeychainAccess stubKeychainAccess];
+
+    keychainAccess = [LUKeychainAccess nullMock];
+    [LUKeychainAccess stub:@selector(standardKeychainAccess) andReturn:keychainAccess];
   });
 
   beforeEach(^{
     [LUKeychainAccess clearKeychainData];
   });
 
-  describe(@"caching users", ^{
-    __block LUUser *user;
+  describe(@"caching loyalty", ^{
+    LULoyalty *loyalty = [LULoyalty fakeInstance];
 
-    beforeAll(^{
-      user = [LUUser fakeInstance];
-    });
+    context(@"when loyalty gets cached", ^{
+      it(@"saves the loyalty into the keychain", ^{
+        [[[keychainAccess should] receive] setObject:loyalty forKey:LUCachedLoyaltyKey];
 
-    describe(@"cacheUserForJSON:", ^{
-      it(@"should save the user JSON into the keychain", ^{
-        [LUCacheManager cacheUser:user];
-        [[[[LUKeychainAccess standardKeychainAccess] objectForKey:LUCachedUserKey] should] equal:user];
+        [LUCacheManager cacheLoyalty:loyalty];
+      });
+
+      it(@"saves the loyalty in memory", ^{
+        [LUCacheManager cacheLoyalty:loyalty];
+
+        [[[keychainAccess shouldNot] receive] objectForKey:LUCachedLoyaltyKey];
+
+        [[[LUCacheManager cachedLoyalty] should] equal:loyalty];
       });
     });
 
-    describe(@"cachedUser", ^{
+    context(@"when loyalty is cached in the keychain but not in memory", ^{
       beforeEach(^{
-        [LUCacheManager cacheUser:user];
+        [LUCacheManager cacheLoyalty:nil];
+        [[keychainAccess stubAndReturn:loyalty] objectForKey:LUCachedLoyaltyKey];
       });
 
-      it(@"should return a User object created from the stored JSON", ^{
-        LUUser *returnedUser = [LUCacheManager cachedUser];
-        [[returnedUser should] equal:user];
+      it(@"returns the cached loyalty", ^{
+        [[[LUCacheManager cachedLoyalty] should] equal:loyalty];
+      });
+
+      it(@"retrieves the loyalty from the keychain once, then stores it in memory", ^{
+        [[[keychainAccess should] receiveWithCount:1] objectForKey:LUCachedLoyaltyKey];
+
+        [[[LUCacheManager cachedLoyalty] should] equal:loyalty];
+        [[[LUCacheManager cachedLoyalty] should] equal:loyalty];
       });
     });
   });
 
-  describe(@"caching loyalty", ^{
-    __block LULoyalty *loyalty;
+  describe(@"caching a user", ^{
+    LUUser *user = [LUUser fakeInstance];
 
-    beforeAll(^{
-      loyalty = [LULoyalty fakeInstance];
-    });
+    context(@"when a user gets cached", ^{
+      it(@"saves the user into the keychain", ^{
+        [[[keychainAccess should] receive] setObject:user forKey:LUCachedUserKey];
 
-    describe(@"cacheLoyaltyForJSON:", ^{
-      it(@"should save the loyalty JSON into the keychain", ^{
-        [LUCacheManager cacheLoyalty:loyalty];
-        [[[[LUKeychainAccess standardKeychainAccess] objectForKey:LUCachedLoyaltyKey] should] equal:loyalty];
+        [LUCacheManager cacheUser:user];
+      });
+
+      it(@"saves the user in memory", ^{
+        [LUCacheManager cacheUser:user];
+
+        [[[keychainAccess shouldNot] receive] objectForKey:LUCachedUserKey];
+
+        [[[LUCacheManager cachedUser] should] equal:user];
       });
     });
 
-    describe(@"cachedLoyalty", ^{
+    context(@"when a user is cached in the keychain but not in memory", ^{
       beforeEach(^{
-        [LUCacheManager cacheLoyalty:loyalty];
+        [LUCacheManager cacheUser:nil];
+        [[keychainAccess stubAndReturn:user] objectForKey:LUCachedUserKey];
       });
 
-      it(@"should return a Loyalty object created from the stored JSON", ^{
-        LULoyalty *returnedLoyalty = [LUCacheManager cachedLoyalty];
-        [[returnedLoyalty should] equal:loyalty];
+      it(@"returns the cached user", ^{
+        [[[LUCacheManager cachedUser] should] equal:user];
+      });
+
+      it(@"retrieves the user from the keychain once, then stores it in memory", ^{
+        [[[keychainAccess should] receiveWithCount:1] objectForKey:LUCachedUserKey];
+
+        [LUCacheManager cachedUser];
+        [LUCacheManager cachedUser];
       });
     });
   });
