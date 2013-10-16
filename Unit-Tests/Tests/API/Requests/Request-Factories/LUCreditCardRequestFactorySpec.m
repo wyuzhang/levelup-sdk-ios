@@ -1,6 +1,6 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
-#import "BraintreeEncryption.h"
+#import "BTEncryption.h"
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
 #import "LUAuthenticatedAPIRequest.h"
@@ -38,11 +38,11 @@ describe(@"LUCreditCardRequestFactory", ^{
 
   describe(@"requestToCreateCreditCard:", ^{
     __block LUCreditCard *creditCard;
-    __block BraintreeEncryption *braintree;
+    __block BTEncryption *braintree;
 
     beforeEach(^{
-      braintree = [BraintreeEncryption mock];
-      [BraintreeEncryption stub:@selector(alloc) andReturn:braintree];
+      braintree = [BTEncryption mock];
+      [BTEncryption stub:@selector(alloc) andReturn:braintree];
       [braintree stub:@selector(initWithPublicKey:) andReturn:braintree];
       [(KWMock *)braintree stub:@selector(encryptString:) withBlock:^(NSArray *params) {
         return [NSString stringWithFormat:@"Encrypted: %@", params[0]];

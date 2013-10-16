@@ -24,6 +24,7 @@ Pod::Spec.new do |s|
   s.subspec 'Core' do |core|
     core.dependency 'AFNetworking', '1.1.0'
     core.dependency 'AutoCoding', '2.0.2'
+    core.dependency 'Braintree', '2.1.2'
     core.dependency 'LUKeychainAccess', '1.2.0'
     core.dependency 'ZXingObjC', '2.2.2'
 

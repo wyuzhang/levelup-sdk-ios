@@ -1,6 +1,6 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
-#import "BraintreeEncryption.h"
+#import "BTEncryption.h"
 #import "LUAPIClient.h"
 #import "LUAuthenticatedAPIRequest.h"
 #import "LUConstants.h"
@@ -28,7 +28,7 @@
     braintreePublicKey = BraintreePublicKeyProduction;
   }
 
-  BraintreeEncryption *braintree = [[BraintreeEncryption alloc] initWithPublicKey:braintreePublicKey];
+  BTEncryption *braintree = [[BTEncryption alloc] initWithPublicKey:braintreePublicKey];
   NSDictionary *parameters = @{
     @"encrypted_cvv" : [braintree encryptString:creditCard.cvv],
     @"encrypted_expiration_month" : [braintree encryptString:[creditCard.expirationMonth stringValue]],

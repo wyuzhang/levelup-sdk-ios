@@ -57,18 +57,6 @@
 		02941E7E16B73B5F00EDAF6E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7C16B73B5700EDAF6E /* ImageIO.framework */; };
 		02941E8016B73B7B00EDAF6E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */; };
 		02941E8116B73B8B00EDAF6E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */; };
-		02941FA316B96CBC00EDAF6E /* BraintreeAES.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8116B96CBC00EDAF6E /* BraintreeAES.h */; };
-		02941FA416B96CBC00EDAF6E /* BraintreeAES.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F8216B96CBC00EDAF6E /* BraintreeAES.m */; };
-		02941FA616B96CBC00EDAF6E /* BraintreeEncryption.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8416B96CBC00EDAF6E /* BraintreeEncryption.h */; };
-		02941FA716B96CBC00EDAF6E /* BraintreeEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F8516B96CBC00EDAF6E /* BraintreeEncryption.m */; };
-		02941FA916B96CBC00EDAF6E /* BraintreeRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8716B96CBC00EDAF6E /* BraintreeRandom.h */; };
-		02941FAA16B96CBC00EDAF6E /* BraintreeRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F8816B96CBC00EDAF6E /* BraintreeRandom.m */; };
-		02941FAB16B96CBC00EDAF6E /* BraintreeRSA.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8916B96CBC00EDAF6E /* BraintreeRSA.h */; };
-		02941FAC16B96CBC00EDAF6E /* BraintreeRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F8A16B96CBC00EDAF6E /* BraintreeRSA.m */; };
-		02941FAD16B96CBC00EDAF6E /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8D16B96CBC00EDAF6E /* NSData+Base64.h */; };
-		02941FAE16B96CBC00EDAF6E /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F8E16B96CBC00EDAF6E /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-Wno-conversion"; }; };
-		02941FAF16B96CBC00EDAF6E /* SecKeyWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 02941F8F16B96CBC00EDAF6E /* SecKeyWrapper.h */; };
-		02941FB016B96CBC00EDAF6E /* SecKeyWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 02941F9016B96CBC00EDAF6E /* SecKeyWrapper.m */; };
 		02BA9827174AD23100C9D647 /* LULocationSummaryJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA9825174AD22200C9D647 /* LULocationSummaryJSONFactorySpec.m */; };
 		02BA982A174BE19500C9D647 /* LUCoreDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 02BA9828174BE19500C9D647 /* LUCoreDataStore.h */; };
 		02BA982B174BE19500C9D647 /* LUCoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA9829174BE19500C9D647 /* LUCoreDataStore.m */; };
@@ -389,18 +377,6 @@
 		02941E7916B73B1D00EDAF6E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		02941E7C16B73B5700EDAF6E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		02941F8116B96CBC00EDAF6E /* BraintreeAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BraintreeAES.h; sourceTree = "<group>"; };
-		02941F8216B96CBC00EDAF6E /* BraintreeAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BraintreeAES.m; sourceTree = "<group>"; };
-		02941F8416B96CBC00EDAF6E /* BraintreeEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BraintreeEncryption.h; sourceTree = "<group>"; };
-		02941F8516B96CBC00EDAF6E /* BraintreeEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BraintreeEncryption.m; sourceTree = "<group>"; };
-		02941F8716B96CBC00EDAF6E /* BraintreeRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BraintreeRandom.h; sourceTree = "<group>"; };
-		02941F8816B96CBC00EDAF6E /* BraintreeRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BraintreeRandom.m; sourceTree = "<group>"; };
-		02941F8916B96CBC00EDAF6E /* BraintreeRSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BraintreeRSA.h; sourceTree = "<group>"; };
-		02941F8A16B96CBC00EDAF6E /* BraintreeRSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BraintreeRSA.m; sourceTree = "<group>"; };
-		02941F8D16B96CBC00EDAF6E /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		02941F8E16B96CBC00EDAF6E /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
-		02941F8F16B96CBC00EDAF6E /* SecKeyWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecKeyWrapper.h; sourceTree = "<group>"; };
-		02941F9016B96CBC00EDAF6E /* SecKeyWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecKeyWrapper.m; sourceTree = "<group>"; };
 		02BA9825174AD22200C9D647 /* LULocationSummaryJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationSummaryJSONFactorySpec.m; sourceTree = "<group>"; };
 		02BA9828174BE19500C9D647 /* LUCoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCoreDataStore.h; sourceTree = "<group>"; };
 		02BA9829174BE19500C9D647 /* LUCoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCoreDataStore.m; sourceTree = "<group>"; };
@@ -792,26 +768,6 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
-		02941F7F16B96CBC00EDAF6E /* Braintree-Encryption */ = {
-			isa = PBXGroup;
-			children = (
-				02941F8116B96CBC00EDAF6E /* BraintreeAES.h */,
-				02941F8216B96CBC00EDAF6E /* BraintreeAES.m */,
-				02941F8416B96CBC00EDAF6E /* BraintreeEncryption.h */,
-				02941F8516B96CBC00EDAF6E /* BraintreeEncryption.m */,
-				02941F8716B96CBC00EDAF6E /* BraintreeRandom.h */,
-				02941F8816B96CBC00EDAF6E /* BraintreeRandom.m */,
-				02941F8916B96CBC00EDAF6E /* BraintreeRSA.h */,
-				02941F8A16B96CBC00EDAF6E /* BraintreeRSA.m */,
-				02941F8D16B96CBC00EDAF6E /* NSData+Base64.h */,
-				02941F8E16B96CBC00EDAF6E /* NSData+Base64.m */,
-				02941F8F16B96CBC00EDAF6E /* SecKeyWrapper.h */,
-				02941F9016B96CBC00EDAF6E /* SecKeyWrapper.m */,
-			);
-			name = "Braintree-Encryption";
-			path = "Frameworks/Braintree-Encryption/src";
-			sourceTree = "<group>";
-		};
 		02CD574A17D90673006205C6 /* Interstitials */ = {
 			isa = PBXGroup;
 			children = (
@@ -933,7 +889,6 @@
 		25F643A6166832D600A05C0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				02941F7F16B96CBC00EDAF6E /* Braintree-Encryption */,
 				02941E6416B738AE00EDAF6E /* AVFoundation.framework */,
 				2590537F16C58B4E0021B411 /* CFNetwork.framework */,
 				2523E34717374EA100FBDFEB /* CoreData.framework */,
@@ -1422,12 +1377,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02941FA316B96CBC00EDAF6E /* BraintreeAES.h in Headers */,
-				02941FA616B96CBC00EDAF6E /* BraintreeEncryption.h in Headers */,
-				02941FA916B96CBC00EDAF6E /* BraintreeRandom.h in Headers */,
-				02941FAB16B96CBC00EDAF6E /* BraintreeRSA.h in Headers */,
-				02941FAD16B96CBC00EDAF6E /* NSData+Base64.h in Headers */,
-				02941FAF16B96CBC00EDAF6E /* SecKeyWrapper.h in Headers */,
 				C1CAF1F417315415003B3D01 /* LUAPIClient.h in Headers */,
 				C1CAF1F617315415003B3D01 /* LUAPIErrorBuilder.h in Headers */,
 				C1CAF1F817315415003B3D01 /* LUAbstractJSONModelFactory.h in Headers */,
@@ -1677,12 +1626,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02941FA416B96CBC00EDAF6E /* BraintreeAES.m in Sources */,
-				02941FA716B96CBC00EDAF6E /* BraintreeEncryption.m in Sources */,
-				02941FAA16B96CBC00EDAF6E /* BraintreeRandom.m in Sources */,
-				02941FAC16B96CBC00EDAF6E /* BraintreeRSA.m in Sources */,
-				02941FAE16B96CBC00EDAF6E /* NSData+Base64.m in Sources */,
-				02941FB016B96CBC00EDAF6E /* SecKeyWrapper.m in Sources */,
 				C1CAF1F517315415003B3D01 /* LUAPIClient.m in Sources */,
 				C1CAF1F717315415003B3D01 /* LUAPIErrorBuilder.m in Sources */,
 				C1CAF1F917315415003B3D01 /* LUAbstractJSONModelFactory.m in Sources */,
