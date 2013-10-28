@@ -143,6 +143,7 @@
 		25F643A8166832D600A05C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A7166832D600A05C0E /* Foundation.framework */; };
 		25F643BA166832D600A05C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A7166832D600A05C0E /* Foundation.framework */; };
 		25F643BD166832D600A05C0E /* libLevelUpSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A4166832D600A05C0E /* libLevelUpSDK.a */; };
+		40140B54181EAD52005A66BF /* current_user_minimal.json in Resources */ = {isa = PBXBuildFile; fileRef = 40140B53181EAD4B005A66BF /* current_user_minimal.json */; };
 		404504D817EB9648000A7211 /* campaign_nonglobal.json in Resources */ = {isa = PBXBuildFile; fileRef = 404504D717EB9648000A7211 /* campaign_nonglobal.json */; };
 		45C90162129F4441AD00C796 /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35969BE4155A4B838F746A8C /* libPods-test.a */; };
 		6F444D2F83D549768CF26F9C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A39890392E641DAA8438DC9 /* libPods.a */; };
@@ -473,6 +474,7 @@
 		25F643A7166832D600A05C0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		25F643B5166832D600A05C0E /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35969BE4155A4B838F746A8C /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40140B53181EAD4B005A66BF /* current_user_minimal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = current_user_minimal.json; sourceTree = "<group>"; };
 		404504D717EB9648000A7211 /* campaign_nonglobal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = campaign_nonglobal.json; sourceTree = "<group>"; };
 		C1CAF080173052A7003B3D01 /* LUCampaign+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUCampaign+Fixtures.h"; sourceTree = "<group>"; };
 		C1CAF081173052A7003B3D01 /* LUCampaign+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUCampaign+Fixtures.m"; sourceTree = "<group>"; };
@@ -810,6 +812,7 @@
 				02E2914C175FCAB8002036B4 /* credit_cards-1.json */,
 				02E2914B175FCAB8002036B4 /* credit_cards-2.json */,
 				02E2914D175FCAB8002036B4 /* current_user.json */,
+				40140B53181EAD4B005A66BF /* current_user_minimal.json */,
 				02704A5E17B96496009AF443 /* facebook_connected_user.json */,
 				021EA6E617D92A11004F4DAF /* failed_claim.json */,
 				02CD576A17D9070C006205C6 /* interstitial.json */,
@@ -1548,6 +1551,7 @@
 				02E2916A175FCAB8002036B4 /* order.json in Resources */,
 				02E2916B175FCAB8002036B4 /* orders_page-1.json in Resources */,
 				02E2916C175FCAB8002036B4 /* orders_page-2.json in Resources */,
+				40140B54181EAD52005A66BF /* current_user_minimal.json in Resources */,
 				02E2916D175FCAB8002036B4 /* ticket.json in Resources */,
 				02293815176265DE0057C381 /* categories.json in Resources */,
 				0229381717626B500057C381 /* location_summaries.json in Resources */,

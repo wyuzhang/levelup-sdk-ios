@@ -28,6 +28,7 @@
 + (LUAPIStub *)stubToGetCreditCardsTwoResults;
 + (LUAPIStub *)stubToGetCurrentFacebookConnectedUser;
 + (LUAPIStub *)stubToGetCurrentUser;
++ (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfo;
 + (LUAPIStub *)stubToGetInterstitialNotFoundForOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToGetInterstitialForOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToGetLocationSummariesFirstPage;

@@ -220,6 +220,14 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:[self responseDataFromFile:@"current_user"]];
 }
 
++ (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfo {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:@"users/1"
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"current_user_minimal"]];
+}
+
 + (LUAPIStub *)stubToGetInterstitialNotFoundForOrderWithUUID:(NSString *)UUID {
   NSString *path = [NSString stringWithFormat:@"orders/%@/interstitial", UUID];
 

@@ -1,0 +1,18 @@
+{
+  "user": {
+    "born_at": null,
+    "cause_id" : 1,
+    "connected_to_facebook": false,
+    "custom_attributes" : null,
+    "email": "john.doe@example.com",
+    "first_name": "John",
+    "gender": null,
+    "id": 1,
+    "last_name": "Doe",
+    "merchants_visited_count": 0,
+    "orders_count": 0,
+    "global_credit_amount": 1000,
+    "terms_accepted_at": "2013-01-01T00:00:00-05:00",
+    "total_savings_amount": 5000
+  }
+}
