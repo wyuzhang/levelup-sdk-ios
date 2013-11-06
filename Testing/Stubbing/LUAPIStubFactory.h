@@ -29,6 +29,7 @@
 + (LUAPIStub *)stubToGetCurrentFacebookConnectedUser;
 + (LUAPIStub *)stubToGetCurrentUser;
 + (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfo;
++ (LUAPIStub *)stubToGetIneligiblePaymentToken;
 + (LUAPIStub *)stubToGetInterstitialNotFoundForOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToGetInterstitialForOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToGetLocationSummariesFirstPage;

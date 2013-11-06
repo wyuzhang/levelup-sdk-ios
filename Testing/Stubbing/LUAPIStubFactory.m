@@ -228,6 +228,16 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:[self responseDataFromFile:@"current_user_minimal"]];
 }
 
++ (LUAPIStub *)stubToGetIneligiblePaymentToken {
+  LUAPIStub *stub =  [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                             path:@"payment_token"
+                                       HTTPMethod:@"GET"
+                                    authenticated:YES
+                                     responseData:nil];
+  stub.responseCode = 404;
+  return stub;
+}
+
 + (LUAPIStub *)stubToGetInterstitialNotFoundForOrderWithUUID:(NSString *)UUID {
   NSString *path = [NSString stringWithFormat:@"orders/%@/interstitial", UUID];
 
@@ -409,9 +419,8 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:@"payment_token"
                            HTTPMethod:@"GET"
-                        authenticated:NO
+                        authenticated:YES
                          responseData:[self responseDataFromFile:@"payment_token"]];
-
 }
 
 + (LUAPIStub *)stubToGetURL:(NSString *)url withBody:(NSString *)body {
