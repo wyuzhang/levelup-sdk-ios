@@ -92,7 +92,9 @@ A core feature of an app built on the LevelUp platform is the ability to display
 
 ## Generating Codes
 
-The [LUQRCodeGenerator](http://thelevelup.github.io/levelup-ios-sdk/Classes/LUQRCodeGenerator.html) class is used to generate a `UIImage` containing user's QR code, along with optional information such as a tip percentage.
+The [LUPaymentQRCodeGenerator](http://thelevelup.github.io/levelup-ios-sdk/Classes/LUPaymentQRCodeGenerator.html) class is used to generate a `UIImage` containing user's QR code, along with optional information such as a tip percentage.
+
+To generate a QR code for an arbitrary `NSString`, use [LUGenericQRCodeGenerator](http://thelevelup.github.io/levelup-ios-sdk/Classes/LUGenericQRCodeGenerator.html).
 
 ## Scanning Codes
 

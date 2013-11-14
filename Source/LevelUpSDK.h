@@ -47,5 +47,6 @@
 #import "LUCacheManager.h"
 #import "LULocationCacheUpdater.h"
 
-#import "LUQRCodeGenerator.h"
+#import "LUGenericQRCodeGenerator.h"
+#import "LUPaymentQRCodeGenerator.h"
 #import "LUQRCodeScannerView.h"

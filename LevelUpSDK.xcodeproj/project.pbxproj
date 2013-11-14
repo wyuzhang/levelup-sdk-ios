@@ -57,6 +57,9 @@
 		02941E7E16B73B5F00EDAF6E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7C16B73B5700EDAF6E /* ImageIO.framework */; };
 		02941E8016B73B7B00EDAF6E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */; };
 		02941E8116B73B8B00EDAF6E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */; };
+		02AA944E18352C4400218730 /* LUGenericQRCodeGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 02AA944C18352C4400218730 /* LUGenericQRCodeGenerator.h */; };
+		02AA944F18352C4400218730 /* LUGenericQRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AA944D18352C4400218730 /* LUGenericQRCodeGenerator.m */; };
+		02AA94521835306F00218730 /* LUGenericQRCodeGeneratorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AA94501835301400218730 /* LUGenericQRCodeGeneratorSpec.m */; };
 		02BA9827174AD23100C9D647 /* LULocationSummaryJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA9825174AD22200C9D647 /* LULocationSummaryJSONFactorySpec.m */; };
 		02BA982A174BE19500C9D647 /* LUCoreDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 02BA9828174BE19500C9D647 /* LUCoreDataStore.h */; };
 		02BA982B174BE19500C9D647 /* LUCoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA9829174BE19500C9D647 /* LUCoreDataStore.m */; };
@@ -201,7 +204,7 @@
 		C1CAF14B173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0F2173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m */; };
 		C1CAF14C173052A7003B3D01 /* NSNumberBase36Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0F3173052A7003B3D01 /* NSNumberBase36Spec.m */; };
 		C1CAF14D173052A7003B3D01 /* NSStringHTMLStrippingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0F4173052A7003B3D01 /* NSStringHTMLStrippingSpec.m */; };
-		C1CAF14E173052A7003B3D01 /* LUQRCodeGeneratorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0F6173052A7003B3D01 /* LUQRCodeGeneratorSpec.m */; };
+		C1CAF14E173052A7003B3D01 /* LUPaymentQRCodeGeneratorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0F6173052A7003B3D01 /* LUPaymentQRCodeGeneratorSpec.m */; };
 		C1CAF1F417315415003B3D01 /* LUAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF15917315414003B3D01 /* LUAPIClient.h */; };
 		C1CAF1F517315415003B3D01 /* LUAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF15A17315414003B3D01 /* LUAPIClient.m */; };
 		C1CAF1F617315415003B3D01 /* LUAPIErrorBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF15B17315414003B3D01 /* LUAPIErrorBuilder.h */; };
@@ -291,8 +294,8 @@
 		C1CAF27D17315415003B3D01 /* LevelUpSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1E917315415003B3D01 /* LevelUpSDK.h */; };
 		C1CAF27E17315415003B3D01 /* LUQRCodeDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1EB17315415003B3D01 /* LUQRCodeDecoder.h */; };
 		C1CAF27F17315415003B3D01 /* LUQRCodeDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1EC17315415003B3D01 /* LUQRCodeDecoder.m */; };
-		C1CAF28017315415003B3D01 /* LUQRCodeGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1ED17315415003B3D01 /* LUQRCodeGenerator.h */; };
-		C1CAF28117315415003B3D01 /* LUQRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1EE17315415003B3D01 /* LUQRCodeGenerator.m */; };
+		C1CAF28017315415003B3D01 /* LUPaymentQRCodeGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1ED17315415003B3D01 /* LUPaymentQRCodeGenerator.h */; };
+		C1CAF28117315415003B3D01 /* LUPaymentQRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1EE17315415003B3D01 /* LUPaymentQRCodeGenerator.m */; };
 		C1CAF28217315415003B3D01 /* LUQRCodeScannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1F017315415003B3D01 /* LUQRCodeScannerView.h */; };
 		C1CAF28317315415003B3D01 /* LUQRCodeScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1F117315415003B3D01 /* LUQRCodeScannerView.m */; };
 		C1CAF28417315415003B3D01 /* LUQROverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1F217315415003B3D01 /* LUQROverlayView.h */; };
@@ -378,6 +381,9 @@
 		02941E7916B73B1D00EDAF6E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		02941E7C16B73B5700EDAF6E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		02AA944C18352C4400218730 /* LUGenericQRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUGenericQRCodeGenerator.h; sourceTree = "<group>"; };
+		02AA944D18352C4400218730 /* LUGenericQRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUGenericQRCodeGenerator.m; sourceTree = "<group>"; };
+		02AA94501835301400218730 /* LUGenericQRCodeGeneratorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUGenericQRCodeGeneratorSpec.m; sourceTree = "<group>"; };
 		02BA9825174AD22200C9D647 /* LULocationSummaryJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationSummaryJSONFactorySpec.m; sourceTree = "<group>"; };
 		02BA9828174BE19500C9D647 /* LUCoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCoreDataStore.h; sourceTree = "<group>"; };
 		02BA9829174BE19500C9D647 /* LUCoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCoreDataStore.m; sourceTree = "<group>"; };
@@ -542,7 +548,7 @@
 		C1CAF0F2173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryObjectClassAccessSpec.m; sourceTree = "<group>"; };
 		C1CAF0F3173052A7003B3D01 /* NSNumberBase36Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNumberBase36Spec.m; sourceTree = "<group>"; };
 		C1CAF0F4173052A7003B3D01 /* NSStringHTMLStrippingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringHTMLStrippingSpec.m; sourceTree = "<group>"; };
-		C1CAF0F6173052A7003B3D01 /* LUQRCodeGeneratorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUQRCodeGeneratorSpec.m; sourceTree = "<group>"; };
+		C1CAF0F6173052A7003B3D01 /* LUPaymentQRCodeGeneratorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentQRCodeGeneratorSpec.m; sourceTree = "<group>"; };
 		C1CAF15917315414003B3D01 /* LUAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIClient.h; sourceTree = "<group>"; };
 		C1CAF15A17315414003B3D01 /* LUAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIClient.m; sourceTree = "<group>"; };
 		C1CAF15B17315414003B3D01 /* LUAPIErrorBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIErrorBuilder.h; sourceTree = "<group>"; };
@@ -632,8 +638,8 @@
 		C1CAF1E917315415003B3D01 /* LevelUpSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelUpSDK.h; sourceTree = "<group>"; };
 		C1CAF1EB17315415003B3D01 /* LUQRCodeDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUQRCodeDecoder.h; sourceTree = "<group>"; };
 		C1CAF1EC17315415003B3D01 /* LUQRCodeDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUQRCodeDecoder.m; sourceTree = "<group>"; };
-		C1CAF1ED17315415003B3D01 /* LUQRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUQRCodeGenerator.h; sourceTree = "<group>"; };
-		C1CAF1EE17315415003B3D01 /* LUQRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUQRCodeGenerator.m; sourceTree = "<group>"; };
+		C1CAF1ED17315415003B3D01 /* LUPaymentQRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUPaymentQRCodeGenerator.h; sourceTree = "<group>"; };
+		C1CAF1EE17315415003B3D01 /* LUPaymentQRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentQRCodeGenerator.m; sourceTree = "<group>"; };
 		C1CAF1F017315415003B3D01 /* LUQRCodeScannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUQRCodeScannerView.h; sourceTree = "<group>"; };
 		C1CAF1F117315415003B3D01 /* LUQRCodeScannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUQRCodeScannerView.m; sourceTree = "<group>"; };
 		C1CAF1F217315415003B3D01 /* LUQROverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUQROverlayView.h; sourceTree = "<group>"; };
@@ -1097,7 +1103,8 @@
 		C1CAF0F5173052A7003B3D01 /* QRCode Management */ = {
 			isa = PBXGroup;
 			children = (
-				C1CAF0F6173052A7003B3D01 /* LUQRCodeGeneratorSpec.m */,
+				02AA94501835301400218730 /* LUGenericQRCodeGeneratorSpec.m */,
+				C1CAF0F6173052A7003B3D01 /* LUPaymentQRCodeGeneratorSpec.m */,
 			);
 			name = "QRCode Management";
 			path = "QRCode-Management";
@@ -1314,10 +1321,12 @@
 		C1CAF1EA17315415003B3D01 /* QRCode Management */ = {
 			isa = PBXGroup;
 			children = (
+				02AA944C18352C4400218730 /* LUGenericQRCodeGenerator.h */,
+				02AA944D18352C4400218730 /* LUGenericQRCodeGenerator.m */,
+				C1CAF1ED17315415003B3D01 /* LUPaymentQRCodeGenerator.h */,
+				C1CAF1EE17315415003B3D01 /* LUPaymentQRCodeGenerator.m */,
 				C1CAF1EB17315415003B3D01 /* LUQRCodeDecoder.h */,
 				C1CAF1EC17315415003B3D01 /* LUQRCodeDecoder.m */,
-				C1CAF1ED17315415003B3D01 /* LUQRCodeGenerator.h */,
-				C1CAF1EE17315415003B3D01 /* LUQRCodeGenerator.m */,
 				C1CAF1EF17315415003B3D01 /* Views */,
 			);
 			name = "QRCode Management";
@@ -1389,6 +1398,7 @@
 				C1CAF20817315415003B3D01 /* LUCreditCardJSONFactory.h in Headers */,
 				C1CAF21417315415003B3D01 /* LUMonetaryValueJSONFactory.h in Headers */,
 				C1CAF21617315415003B3D01 /* LUAccessTokenJSONFactory.h in Headers */,
+				02AA944E18352C4400218730 /* LUGenericQRCodeGenerator.h in Headers */,
 				C1CAF21817315415003B3D01 /* LUOrderJSONFactory.h in Headers */,
 				C1CAF21E17315415003B3D01 /* LUUserJSONFactory.h in Headers */,
 				C1CAF22017315415003B3D01 /* LUAPIModel.h in Headers */,
@@ -1425,7 +1435,7 @@
 				C1CAF27A17315415003B3D01 /* LUConstants.h in Headers */,
 				C1CAF27D17315415003B3D01 /* LevelUpSDK.h in Headers */,
 				C1CAF27E17315415003B3D01 /* LUQRCodeDecoder.h in Headers */,
-				C1CAF28017315415003B3D01 /* LUQRCodeGenerator.h in Headers */,
+				C1CAF28017315415003B3D01 /* LUPaymentQRCodeGenerator.h in Headers */,
 				C1CAF28217315415003B3D01 /* LUQRCodeScannerView.h in Headers */,
 				C1CAF28417315415003B3D01 /* LUQROverlayView.h in Headers */,
 				2523E31717374B2900FBDFEB /* LULocationSummaryJSONFactory.h in Headers */,
@@ -1674,8 +1684,9 @@
 				C1CAF27717315415003B3D01 /* NSString+HTMLStripping.m in Sources */,
 				C1CAF27B17315415003B3D01 /* LUConstants.m in Sources */,
 				C1CAF27F17315415003B3D01 /* LUQRCodeDecoder.m in Sources */,
-				C1CAF28117315415003B3D01 /* LUQRCodeGenerator.m in Sources */,
+				C1CAF28117315415003B3D01 /* LUPaymentQRCodeGenerator.m in Sources */,
 				C1CAF28317315415003B3D01 /* LUQRCodeScannerView.m in Sources */,
+				02AA944F18352C4400218730 /* LUGenericQRCodeGenerator.m in Sources */,
 				C1CAF28517315415003B3D01 /* LUQROverlayView.m in Sources */,
 				2523E31817374B2900FBDFEB /* LULocationSummaryJSONFactory.m in Sources */,
 				2523E31C17374B3F00FBDFEB /* LULocationRequestFactory.m in Sources */,
@@ -1756,6 +1767,7 @@
 				C1CAF12E173052A7003B3D01 /* LULocationSpec.m in Sources */,
 				C1CAF12F173052A7003B3D01 /* LULoyaltySpec.m in Sources */,
 				C1CAF131173052A7003B3D01 /* LUMonetaryValueSpec.m in Sources */,
+				02AA94521835306F00218730 /* LUGenericQRCodeGeneratorSpec.m in Sources */,
 				C1CAF132173052A7003B3D01 /* LUAccessTokenTokenSpec.m in Sources */,
 				C1CAF133173052A7003B3D01 /* LUOrderSpec.m in Sources */,
 				C1CAF136173052A7003B3D01 /* LUUserSpec.m in Sources */,
@@ -1778,7 +1790,7 @@
 				C1CAF14B173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m in Sources */,
 				C1CAF14C173052A7003B3D01 /* NSNumberBase36Spec.m in Sources */,
 				C1CAF14D173052A7003B3D01 /* NSStringHTMLStrippingSpec.m in Sources */,
-				C1CAF14E173052A7003B3D01 /* LUQRCodeGeneratorSpec.m in Sources */,
+				C1CAF14E173052A7003B3D01 /* LUPaymentQRCodeGeneratorSpec.m in Sources */,
 				2523E33917374DA200FBDFEB /* LUAPIObjectModel.xcdatamodeld in Sources */,
 				2523E34317374DEF00FBDFEB /* NSManagedObjectContext+TestContext.m in Sources */,
 				2523E34417374DF500FBDFEB /* LUCachedLocationSearchSpec.m in Sources */,
