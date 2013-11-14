@@ -1,6 +1,6 @@
 PODS:
   - AFNetworking (1.1.0)
-  - AutoCoding (2.0.2)
+  - AutoCoding (2.0.3)
   - Braintree (2.1.2)
   - Kiwi (2.0.6)
   - LUKeychainAccess (1.2.0)
@@ -9,7 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 1.1.0)
-  - AutoCoding (= 2.0.2)
+  - AutoCoding (= 2.0.3)
   - Braintree (= 2.1.2)
   - Kiwi (= 2.0.6)
   - LUKeychainAccess (= 1.2.0)
@@ -18,11 +18,11 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
-  AutoCoding: 5ca26eac460ed177d07dbd4572a3e980238001dd
+  AutoCoding: 09843becf2a45985f444b43b555d73793c1e7a84
   Braintree: e65cee4227df4dfc6ec396c969a1caeac4a2b039
   Kiwi: 56082a80f942de4d10423d8d8a599ab30cf50228
   LUKeychainAccess: 87c5398528278a5f24956b61bb459ea97bd93b6a
   OHHTTPStubs: a840cb0fe0c2a4271018be540782cc97139dff53
   ZXingObjC: f31f6b5a7479d48a753531a0fab0e0bb5aa92ab4
 
-COCOAPODS: 0.27.1
+COCOAPODS: 0.28.0
