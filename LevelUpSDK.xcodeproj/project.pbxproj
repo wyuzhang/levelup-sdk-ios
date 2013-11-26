@@ -21,6 +21,13 @@
 		022B288C166E563400679E06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B026B166853EA006ACA24 /* UIKit.framework */; };
 		025B6DDE176A713C00713242 /* payment_token.json in Resources */ = {isa = PBXBuildFile; fileRef = 025B6DDD176A70D500713242 /* payment_token.json */; };
 		025B6DE1176B6B5000713242 /* LUAccessToken+FakeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 025B6DE0176B6B5000713242 /* LUAccessToken+FakeInstance.m */; };
+		02643917185BB6D300175425 /* LULocationCreditJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 02643915185BB6D300175425 /* LULocationCreditJSONFactory.h */; };
+		02643918185BB6D300175425 /* LULocationCreditJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02643916185BB6D300175425 /* LULocationCreditJSONFactory.m */; };
+		0264391B185BB6F000175425 /* LULocationCreditRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 02643919185BB6F000175425 /* LULocationCreditRequestFactory.h */; };
+		0264391C185BB6F000175425 /* LULocationCreditRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0264391A185BB6F000175425 /* LULocationCreditRequestFactory.m */; };
+		0264391E185BB71600175425 /* credit.json in Resources */ = {isa = PBXBuildFile; fileRef = 0264391D185BB71600175425 /* credit.json */; };
+		02643920185BB73900175425 /* LULocationCreditJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0264391F185BB73900175425 /* LULocationCreditJSONFactorySpec.m */; };
+		02643922185BB76200175425 /* LULocationCreditRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02643921185BB76200175425 /* LULocationCreditRequestFactorySpec.m */; };
 		02704A5F17B96496009AF443 /* facebook_connected_user.json in Resources */ = {isa = PBXBuildFile; fileRef = 02704A5E17B96496009AF443 /* facebook_connected_user.json */; };
 		0274B83C17739B7800FD5B43 /* LUAPIError.h in Headers */ = {isa = PBXBuildFile; fileRef = 0274B83A17739B7800FD5B43 /* LUAPIError.h */; };
 		0274B83D17739B7800FD5B43 /* LUAPIError.m in Sources */ = {isa = PBXBuildFile; fileRef = 0274B83B17739B7800FD5B43 /* LUAPIError.m */; };
@@ -347,6 +354,13 @@
 		025B6DDD176A70D500713242 /* payment_token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = payment_token.json; sourceTree = "<group>"; };
 		025B6DDF176B6B5000713242 /* LUAccessToken+FakeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUAccessToken+FakeInstance.h"; sourceTree = "<group>"; };
 		025B6DE0176B6B5000713242 /* LUAccessToken+FakeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUAccessToken+FakeInstance.m"; sourceTree = "<group>"; };
+		02643915185BB6D300175425 /* LULocationCreditJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationCreditJSONFactory.h; sourceTree = "<group>"; };
+		02643916185BB6D300175425 /* LULocationCreditJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationCreditJSONFactory.m; sourceTree = "<group>"; };
+		02643919185BB6F000175425 /* LULocationCreditRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationCreditRequestFactory.h; sourceTree = "<group>"; };
+		0264391A185BB6F000175425 /* LULocationCreditRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationCreditRequestFactory.m; sourceTree = "<group>"; };
+		0264391D185BB71600175425 /* credit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credit.json; sourceTree = "<group>"; };
+		0264391F185BB73900175425 /* LULocationCreditJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationCreditJSONFactorySpec.m; sourceTree = "<group>"; };
+		02643921185BB76200175425 /* LULocationCreditRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationCreditRequestFactorySpec.m; sourceTree = "<group>"; };
 		02704A5E17B96496009AF443 /* facebook_connected_user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = facebook_connected_user.json; sourceTree = "<group>"; };
 		0274B83A17739B7800FD5B43 /* LUAPIError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIError.h; sourceTree = "<group>"; };
 		0274B83B17739B7800FD5B43 /* LUAPIError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIError.m; sourceTree = "<group>"; };
@@ -782,7 +796,7 @@
 		02E29140175FCAB8002036B4 /* Stubbing */ = {
 			isa = PBXGroup;
 			children = (
-				02E29145175FCAB8002036B4 /* Network-Responses */,
+				02E29145175FCAB8002036B4 /* Network Responses */,
 				029131D91760DC8600F74663 /* LUAPIStub.h */,
 				029131DA1760DC8600F74663 /* LUAPIStub.m */,
 				02E29143175FCAB8002036B4 /* LUAPIStubbing.h */,
@@ -795,7 +809,7 @@
 			path = Stubbing;
 			sourceTree = "<group>";
 		};
-		02E29145175FCAB8002036B4 /* Network-Responses */ = {
+		02E29145175FCAB8002036B4 /* Network Responses */ = {
 			isa = PBXGroup;
 			children = (
 				029053C117BD4ACA00527576 /* app_locations.json */,
@@ -805,6 +819,7 @@
 				02E2914A175FCAB8002036B4 /* credit_card.json */,
 				02E2914C175FCAB8002036B4 /* credit_cards-1.json */,
 				02E2914B175FCAB8002036B4 /* credit_cards-2.json */,
+				0264391D185BB71600175425 /* credit.json */,
 				02E2914D175FCAB8002036B4 /* current_user.json */,
 				40140B53181EAD4B005A66BF /* current_user_minimal.json */,
 				02704A5E17B96496009AF443 /* facebook_connected_user.json */,
@@ -823,6 +838,7 @@
 				025B6DDD176A70D500713242 /* payment_token.json */,
 				02E29158175FCAB8002036B4 /* ticket.json */,
 			);
+			name = "Network Responses";
 			path = "Network-Responses";
 			sourceTree = "<group>";
 		};
@@ -1020,6 +1036,7 @@
 				C1CAF0B7173052A7003B3D01 /* LUClaimJSONFactorySpec.m */,
 				C1CAF0B9173052A7003B3D01 /* LUCreditCardJSONFactorySpec.m */,
 				02CD577117D9079C006205C6 /* LUInterstitialJSONFactorySpec.m */,
+				0264391F185BB73900175425 /* LULocationCreditJSONFactorySpec.m */,
 				02E8ACDE17594BB000A5B06F /* LULocationJSONFactorySpec.m */,
 				02BA9825174AD22200C9D647 /* LULocationSummaryJSONFactorySpec.m */,
 				F87364A8173AE5250024A3F5 /* LULoyaltyJSONFactorySpec.m */,
@@ -1051,6 +1068,7 @@
 				C1CAF0E4173052A7003B3D01 /* LUCategoryRequestFactorySpec.m */,
 				C1CAF0E6173052A7003B3D01 /* LUClaimRequestFactorySpec.m */,
 				C1CAF0E8173052A7003B3D01 /* LUCreditCardRequestFactorySpec.m */,
+				02643921185BB76200175425 /* LULocationCreditRequestFactorySpec.m */,
 				02D68DD91738497A005E1BA8 /* LULocationRequestFactorySpec.m */,
 				F8736499173AA1900024A3F5 /* LULoyaltyRequestFactorySpec.m */,
 				C1CAF0EB173052A7003B3D01 /* LUOrderRequestFactorySpec.m */,
@@ -1191,6 +1209,8 @@
 				C1CAF17017315414003B3D01 /* LUCreditCardJSONFactory.m */,
 				02CD575B17D9068C006205C6 /* LUInterstitialJSONFactory.h */,
 				02CD575C17D9068C006205C6 /* LUInterstitialJSONFactory.m */,
+				02643915185BB6D300175425 /* LULocationCreditJSONFactory.h */,
+				02643916185BB6D300175425 /* LULocationCreditJSONFactory.m */,
 				02E2913217594D15002036B4 /* LULocationJSONFactory.h */,
 				02E2913317594D15002036B4 /* LULocationJSONFactory.m */,
 				2523E31517374B2900FBDFEB /* LULocationSummaryJSONFactory.h */,
@@ -1238,6 +1258,8 @@
 				C1CAF1CB17315414003B3D01 /* LUCreditCardRequestFactory.m */,
 				02CD575F17D906B7006205C6 /* LUInterstitialRequestFactory.h */,
 				02CD576017D906B7006205C6 /* LUInterstitialRequestFactory.m */,
+				02643919185BB6F000175425 /* LULocationCreditRequestFactory.h */,
+				0264391A185BB6F000175425 /* LULocationCreditRequestFactory.m */,
 				2523E31917374B3F00FBDFEB /* LULocationRequestFactory.h */,
 				2523E31A17374B3F00FBDFEB /* LULocationRequestFactory.m */,
 				F87364A0173AA4AF0024A3F5 /* LULoyaltyRequestFactory.h */,
@@ -1413,6 +1435,7 @@
 				C1CAF27417315415003B3D01 /* NSNumber+Base36.h in Headers */,
 				C1CAF27617315415003B3D01 /* NSString+HTMLStripping.h in Headers */,
 				C1CAF27A17315415003B3D01 /* LUConstants.h in Headers */,
+				0264391B185BB6F000175425 /* LULocationCreditRequestFactory.h in Headers */,
 				C1CAF27D17315415003B3D01 /* LevelUpSDK.h in Headers */,
 				C1CAF27E17315415003B3D01 /* LUQRCodeDecoder.h in Headers */,
 				C1CAF28017315415003B3D01 /* LUPaymentQRCodeGenerator.h in Headers */,
@@ -1445,6 +1468,7 @@
 				029053BF17BD4AAB00527576 /* LUWebLinkParser.h in Headers */,
 				02CD575317D90673006205C6 /* LUInterstitial.h in Headers */,
 				02CD575517D90673006205C6 /* LUInterstitialClaimAction.h in Headers */,
+				02643917185BB6D300175425 /* LULocationCreditJSONFactory.h in Headers */,
 				02CD575717D90673006205C6 /* LUInterstitialShareAction.h in Headers */,
 				02CD575917D90673006205C6 /* LUInterstitialURLAction.h in Headers */,
 				02CD575D17D9068C006205C6 /* LUInterstitialJSONFactory.h in Headers */,
@@ -1537,6 +1561,7 @@
 				02E29165175FCAB8002036B4 /* loyalty_no_credit.json in Resources */,
 				02E29166175FCAB8002036B4 /* loyalty.json in Resources */,
 				02E29168175FCAB8002036B4 /* new_user.json in Resources */,
+				0264391E185BB71600175425 /* credit.json in Resources */,
 				02E29169175FCAB8002036B4 /* oauth_access_token.json in Resources */,
 				02E2916A175FCAB8002036B4 /* order.json in Resources */,
 				02E2916B175FCAB8002036B4 /* orders_page-1.json in Resources */,
@@ -1657,6 +1682,7 @@
 				C1CAF26D17315415003B3D01 /* NSArray+LUAdditions.m in Sources */,
 				C1CAF26F17315415003B3D01 /* NSData+HexString.m in Sources */,
 				C1CAF27117315415003B3D01 /* NSDate+StringFormats.m in Sources */,
+				02643918185BB6D300175425 /* LULocationCreditJSONFactory.m in Sources */,
 				C1CAF27317315415003B3D01 /* NSDictionary+ObjectClassAccess.m in Sources */,
 				C1CAF27517315415003B3D01 /* NSNumber+Base36.m in Sources */,
 				C1CAF27717315415003B3D01 /* NSString+HTMLStripping.m in Sources */,
@@ -1676,6 +1702,7 @@
 				02D68DC917381E0D005E1BA8 /* LUCreditCard+FakeInstance.m in Sources */,
 				02D68DCD17381F68005E1BA8 /* LUUser+FakeInstance.m in Sources */,
 				02D68DD11738370F005E1BA8 /* NSRegularExpression+LUAdditions.m in Sources */,
+				0264391C185BB6F000175425 /* LULocationCreditRequestFactory.m in Sources */,
 				F8BC8403173981BE007F7142 /* LUWebLocations.m in Sources */,
 				F8BC84071739884D007F7142 /* LUWebLocations+FakeInstance.m in Sources */,
 				F87364A3173AA4B00024A3F5 /* LULoyaltyRequestFactory.m in Sources */,
@@ -1760,9 +1787,11 @@
 				C1CAF145173052A7003B3D01 /* LUOrderRequestFactorySpec.m in Sources */,
 				C1CAF146173052A7003B3D01 /* LUTicketRequestFactorySpec.m in Sources */,
 				C1CAF147173052A7003B3D01 /* LUUserRequestFactorySpec.m in Sources */,
+				02643920185BB73900175425 /* LULocationCreditJSONFactorySpec.m in Sources */,
 				C1CAF148173052A7003B3D01 /* NSArrayLUAdditionsSpec.m in Sources */,
 				C1CAF149173052A7003B3D01 /* NSDataHexStringSpec.m in Sources */,
 				C1CAF14A173052A7003B3D01 /* NSDateStringFormatsSpec.m in Sources */,
+				02643922185BB76200175425 /* LULocationCreditRequestFactorySpec.m in Sources */,
 				C1CAF14B173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m in Sources */,
 				C1CAF14C173052A7003B3D01 /* NSNumberBase36Spec.m in Sources */,
 				C1CAF14D173052A7003B3D01 /* NSStringHTMLStrippingSpec.m in Sources */,

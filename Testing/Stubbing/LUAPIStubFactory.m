@@ -190,6 +190,14 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:[self responseDataFromFile:@"categories"]];
 }
 
++ (LUAPIStub *)stubToGetCreditAtLocationWithID:(NSNumber *)locationID {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:[NSString stringWithFormat:@"locations/%@/credit", [locationID stringValue]]
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"credit"]];
+}
+
 + (LUAPIStub *)stubToGetCreditCardsOneResult {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:@"credit_cards"

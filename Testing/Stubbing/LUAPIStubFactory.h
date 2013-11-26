@@ -24,6 +24,7 @@
 + (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithID:(NSNumber *)campaignID;
 + (LUAPIStub *)stubToGetCategories;
++ (LUAPIStub *)stubToGetCreditAtLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToGetCreditCardsOneResult;
 + (LUAPIStub *)stubToGetCreditCardsTwoResults;
 + (LUAPIStub *)stubToGetCurrentFacebookConnectedUser;
