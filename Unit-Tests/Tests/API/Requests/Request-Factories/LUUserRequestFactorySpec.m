@@ -172,16 +172,16 @@ describe(@"LUUserRequestFactory", ^{
       [[request.method should] equal:@"POST"];
     });
 
-    it(@"returns a request to the path 'users/forgot_password'", ^{
-      [[request.path should] equal:@"users/forgot_password"];
+    it(@"returns a request to the path 'passwords'", ^{
+      [[request.path should] equal:@"passwords"];
     });
 
-    it(@"returns a request to version 13 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion13];
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
     });
 
     it(@"returns a request with parameters for the user email", ^{
-      NSDictionary *expectedParams = @{@"user" : @{@"email" : email}};
+      NSDictionary *expectedParams = @{@"email" : email};
 
       [[request.parameters should] equal:expectedParams];
     });

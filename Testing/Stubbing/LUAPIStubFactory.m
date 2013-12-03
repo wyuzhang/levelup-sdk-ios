@@ -480,8 +480,8 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToResetPasswordRequest {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                 path:@"users/forgot_password"
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:@"passwords"
                            HTTPMethod:@"POST"
                         authenticated:NO
                          responseData:nil];

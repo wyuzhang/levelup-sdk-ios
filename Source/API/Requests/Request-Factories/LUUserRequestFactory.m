@@ -77,9 +77,9 @@
 
 + (LUAPIRequest *)requestToResetPasswordWithEmail:(NSString *)email {
   return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
-                                                    path:@"users/forgot_password"
-                                              apiVersion:LUAPIVersion13
-                                              parameters:@{@"user" : @{@"email" : email}}
+                                                    path:@"passwords"
+                                              apiVersion:LUAPIVersion14
+                                              parameters:@{@"email" : email}
                                             modelFactory:nil];
 }
 
