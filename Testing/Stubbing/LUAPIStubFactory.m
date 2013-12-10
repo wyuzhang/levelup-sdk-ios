@@ -183,7 +183,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToGetCategories {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion13
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:@"categories"
                            HTTPMethod:@"GET"
                         authenticated:NO

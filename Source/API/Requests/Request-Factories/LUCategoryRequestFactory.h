@@ -14,11 +14,4 @@
  */
 + (LUAPIRequest *)requestForAllCategories;
 
-/**
- Builds a request to return the list of all cause categories.
-
- On success, this request will return an array of `LUCauseCategory` instances.
- */
-+ (LUAPIRequest *)requestForAllCauseCategories;
-
 @end
