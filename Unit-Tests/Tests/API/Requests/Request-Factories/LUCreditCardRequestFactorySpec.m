@@ -3,7 +3,6 @@
 #import "BTEncryption.h"
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
-#import "LUAuthenticatedAPIRequest.h"
 #import "LUCreditCard.h"
 #import "LUCreditCardRequestFactory.h"
 
@@ -17,10 +16,6 @@ describe(@"LUCreditCardRequestFactory", ^{
   describe(@"requestForCreditCards", ^{
     beforeEach(^{
       request = [LUCreditCardRequestFactory requestForCreditCards];
-    });
-
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a GET request", ^{
@@ -90,10 +85,6 @@ describe(@"LUCreditCardRequestFactory", ^{
       request = [LUCreditCardRequestFactory requestToDeleteCreditCardWithID:@1];
     });
 
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
-    });
-
     it(@"returns a DELETE request", ^{
       [[request.method should] equal:@"DELETE"];
     });
@@ -110,10 +101,6 @@ describe(@"LUCreditCardRequestFactory", ^{
   describe(@"requestToPromoteCreditCardWithID:", ^{
     beforeEach(^{
       request = [LUCreditCardRequestFactory requestToPromoteCreditCardWithID:@1];
-    });
-
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a PUT request", ^{

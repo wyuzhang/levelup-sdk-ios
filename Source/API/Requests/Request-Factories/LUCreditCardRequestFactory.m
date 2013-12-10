@@ -2,7 +2,7 @@
 
 #import "BTEncryption.h"
 #import "LUAPIClient.h"
-#import "LUAuthenticatedAPIRequest.h"
+#import "LUAPIRequest.h"
 #import "LUConstants.h"
 #import "LUCreditCard.h"
 #import "LUCreditCardJSONFactory.h"
@@ -13,11 +13,11 @@
 #pragma mark - Public Methods
 
 + (LUAPIRequest *)requestForCreditCards {
-  return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"GET"
-                                                    path:@"credit_cards"
-                                              apiVersion:LUAPIVersion14
-                                              parameters:nil
-                                            modelFactory:[LUCreditCardJSONFactory factory]];
+  return [LUAPIRequest apiRequestWithMethod:@"GET"
+                                       path:@"credit_cards"
+                                 apiVersion:LUAPIVersion14
+                                 parameters:nil
+                               modelFactory:[LUCreditCardJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestToCreateCreditCard:(LUCreditCard *)creditCard {
@@ -37,31 +37,31 @@
     @"postal_code" : [braintree encryptString:creditCard.postalCode]
   };
 
-  return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
-                                                    path:@"credit_cards"
-                                              apiVersion:LUAPIVersion14
-                                              parameters:@{@"credit_card" : parameters}
-                                            modelFactory:[LUCreditCardJSONFactory factory]];
+  return [LUAPIRequest apiRequestWithMethod:@"POST"
+                                       path:@"credit_cards"
+                                 apiVersion:LUAPIVersion14
+                                 parameters:@{@"credit_card" : parameters}
+                               modelFactory:[LUCreditCardJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestToDeleteCreditCardWithID:(NSNumber *)creditCardID {
   NSString *path = [NSString stringWithFormat:@"credit_cards/%@", creditCardID];
 
-  return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"DELETE"
-                                                    path:path
-                                              apiVersion:LUAPIVersion14
-                                              parameters:nil
-                                            modelFactory:[LUCreditCardJSONFactory factory]];
+  return [LUAPIRequest apiRequestWithMethod:@"DELETE"
+                                       path:path
+                                 apiVersion:LUAPIVersion14
+                                 parameters:nil
+                               modelFactory:[LUCreditCardJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestToPromoteCreditCardWithID:(NSNumber *)creditCardID {
   NSString *path = [NSString stringWithFormat:@"credit_cards/%@", creditCardID];
 
-  return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"PUT"
-                                                    path:path
-                                              apiVersion:LUAPIVersion14
-                                              parameters:nil
-                                            modelFactory:[LUCreditCardJSONFactory factory]];
+  return [LUAPIRequest apiRequestWithMethod:@"PUT"
+                                       path:path
+                                 apiVersion:LUAPIVersion14
+                                 parameters:nil
+                               modelFactory:[LUCreditCardJSONFactory factory]];
 }
 
 @end

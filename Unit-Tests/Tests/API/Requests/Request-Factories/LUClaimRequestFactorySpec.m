@@ -1,7 +1,7 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
 #import "LUAPIClient.h"
-#import "LUAuthenticatedAPIRequest.h"
+#import "LUAPIRequest.h"
 #import "LUClaimRequestFactory.h"
 
 SPEC_BEGIN(LUClaimRequestFactorySpec)
@@ -16,10 +16,6 @@ describe(@"LUClaimRequestFactory", ^{
 
     beforeEach(^{
       request = [LUClaimRequestFactory requestToClaimCampaignWithCode:code];
-    });
-
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a POST request", ^{
@@ -43,10 +39,6 @@ describe(@"LUClaimRequestFactory", ^{
 
     beforeEach(^{
       request = [LUClaimRequestFactory requestToClaimLegacyLoyaltyWithID:legacyLoyaltyID campaignID:campaignID];
-    });
-
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a POST request", ^{

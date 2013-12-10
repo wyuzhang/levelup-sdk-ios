@@ -185,7 +185,6 @@
 		C1CAF133173052A7003B3D01 /* LUOrderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0D6173052A7003B3D01 /* LUOrderSpec.m */; };
 		C1CAF136173052A7003B3D01 /* LUUserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0D9173052A7003B3D01 /* LUUserSpec.m */; };
 		C1CAF137173052A7003B3D01 /* LUAPIRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0DB173052A7003B3D01 /* LUAPIRequestSpec.m */; };
-		C1CAF138173052A7003B3D01 /* LUAuthenticatedAPIRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0DC173052A7003B3D01 /* LUAuthenticatedAPIRequestSpec.m */; };
 		C1CAF139173052A7003B3D01 /* LUDeviceIdentifierSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0DF173052A7003B3D01 /* LUDeviceIdentifierSpec.m */; };
 		C1CAF13A173052A7003B3D01 /* LUUserParameterBuilderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0E0173052A7003B3D01 /* LUUserParameterBuilderSpec.m */; };
 		C1CAF13B173052A7003B3D01 /* LUAPNDeviceRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0E1173052A7003B3D01 /* LUAPNDeviceRequestFactorySpec.m */; };
@@ -250,8 +249,6 @@
 		C1CAF24717315415003B3D01 /* LUUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1AE17315414003B3D01 /* LUUser.m */; };
 		C1CAF24A17315415003B3D01 /* LUAPIRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1B217315414003B3D01 /* LUAPIRequest.h */; };
 		C1CAF24B17315415003B3D01 /* LUAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1B317315414003B3D01 /* LUAPIRequest.m */; };
-		C1CAF24C17315415003B3D01 /* LUAuthenticatedAPIRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1B417315414003B3D01 /* LUAuthenticatedAPIRequest.h */; };
-		C1CAF24D17315415003B3D01 /* LUAuthenticatedAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1B517315414003B3D01 /* LUAuthenticatedAPIRequest.m */; };
 		C1CAF24E17315415003B3D01 /* LUDeviceIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1B817315414003B3D01 /* LUDeviceIdentifier.h */; };
 		C1CAF24F17315415003B3D01 /* LUDeviceIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1B917315414003B3D01 /* LUDeviceIdentifier.m */; };
 		C1CAF25017315415003B3D01 /* LUUserParameterBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1BA17315414003B3D01 /* LUUserParameterBuilder.h */; };
@@ -526,7 +523,6 @@
 		C1CAF0D6173052A7003B3D01 /* LUOrderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderSpec.m; sourceTree = "<group>"; };
 		C1CAF0D9173052A7003B3D01 /* LUUserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserSpec.m; sourceTree = "<group>"; };
 		C1CAF0DB173052A7003B3D01 /* LUAPIRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIRequestSpec.m; sourceTree = "<group>"; };
-		C1CAF0DC173052A7003B3D01 /* LUAuthenticatedAPIRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAuthenticatedAPIRequestSpec.m; sourceTree = "<group>"; };
 		C1CAF0DF173052A7003B3D01 /* LUDeviceIdentifierSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDeviceIdentifierSpec.m; sourceTree = "<group>"; };
 		C1CAF0E0173052A7003B3D01 /* LUUserParameterBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserParameterBuilderSpec.m; sourceTree = "<group>"; };
 		C1CAF0E1173052A7003B3D01 /* LUAPNDeviceRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPNDeviceRequestFactorySpec.m; sourceTree = "<group>"; };
@@ -591,8 +587,6 @@
 		C1CAF1AE17315414003B3D01 /* LUUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUser.m; sourceTree = "<group>"; };
 		C1CAF1B217315414003B3D01 /* LUAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIRequest.h; sourceTree = "<group>"; };
 		C1CAF1B317315414003B3D01 /* LUAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIRequest.m; sourceTree = "<group>"; };
-		C1CAF1B417315414003B3D01 /* LUAuthenticatedAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAuthenticatedAPIRequest.h; sourceTree = "<group>"; };
-		C1CAF1B517315414003B3D01 /* LUAuthenticatedAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAuthenticatedAPIRequest.m; sourceTree = "<group>"; };
 		C1CAF1B817315414003B3D01 /* LUDeviceIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUDeviceIdentifier.h; sourceTree = "<group>"; };
 		C1CAF1B917315414003B3D01 /* LUDeviceIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDeviceIdentifier.m; sourceTree = "<group>"; };
 		C1CAF1BA17315414003B3D01 /* LUUserParameterBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUUserParameterBuilder.h; sourceTree = "<group>"; };
@@ -1043,7 +1037,6 @@
 			children = (
 				C1CAF0DD173052A7003B3D01 /* Request Factories */,
 				C1CAF0DB173052A7003B3D01 /* LUAPIRequestSpec.m */,
-				C1CAF0DC173052A7003B3D01 /* LUAuthenticatedAPIRequestSpec.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1223,8 +1216,6 @@
 				C1CAF1B617315414003B3D01 /* Request Factories */,
 				C1CAF1B217315414003B3D01 /* LUAPIRequest.h */,
 				C1CAF1B317315414003B3D01 /* LUAPIRequest.m */,
-				C1CAF1B417315414003B3D01 /* LUAuthenticatedAPIRequest.h */,
-				C1CAF1B517315414003B3D01 /* LUAuthenticatedAPIRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1404,7 +1395,6 @@
 				C1CAF24217315415003B3D01 /* LUOrder.h in Headers */,
 				C1CAF24617315415003B3D01 /* LUUser.h in Headers */,
 				C1CAF24A17315415003B3D01 /* LUAPIRequest.h in Headers */,
-				C1CAF24C17315415003B3D01 /* LUAuthenticatedAPIRequest.h in Headers */,
 				C1CAF24E17315415003B3D01 /* LUDeviceIdentifier.h in Headers */,
 				C1CAF25017315415003B3D01 /* LUUserParameterBuilder.h in Headers */,
 				C1CAF25217315415003B3D01 /* LUAPNDeviceRequestFactory.h in Headers */,
@@ -1653,7 +1643,6 @@
 				C1CAF24317315415003B3D01 /* LUOrder.m in Sources */,
 				C1CAF24717315415003B3D01 /* LUUser.m in Sources */,
 				C1CAF24B17315415003B3D01 /* LUAPIRequest.m in Sources */,
-				C1CAF24D17315415003B3D01 /* LUAuthenticatedAPIRequest.m in Sources */,
 				C1CAF24F17315415003B3D01 /* LUDeviceIdentifier.m in Sources */,
 				C1CAF25117315415003B3D01 /* LUUserParameterBuilder.m in Sources */,
 				C1CAF25317315415003B3D01 /* LUAPNDeviceRequestFactory.m in Sources */,
@@ -1760,7 +1749,6 @@
 				C1CAF133173052A7003B3D01 /* LUOrderSpec.m in Sources */,
 				C1CAF136173052A7003B3D01 /* LUUserSpec.m in Sources */,
 				C1CAF137173052A7003B3D01 /* LUAPIRequestSpec.m in Sources */,
-				C1CAF138173052A7003B3D01 /* LUAuthenticatedAPIRequestSpec.m in Sources */,
 				C1CAF139173052A7003B3D01 /* LUDeviceIdentifierSpec.m in Sources */,
 				C1CAF13A173052A7003B3D01 /* LUUserParameterBuilderSpec.m in Sources */,
 				C1CAF13B173052A7003B3D01 /* LUAPNDeviceRequestFactorySpec.m in Sources */,

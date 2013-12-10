@@ -39,8 +39,8 @@ extern NSString * const LUAPIVersion15;
 @property (nonatomic, copy) NSDictionary *parameters;
 
 /**
- Returns an `LUAPIRequest` with the specified method, path and parameters. The `includeAccessToken` parameter will
- default to YES.
+ Returns an `LUAPIRequest` with the specified method, path and parameters. An authentication token will automatically
+ be included in the request if one is set on the `LUAPIClient`.
 
  @param method An HTTP method: "GET", "POST", "PUT", or "DELETE".
  @param path The path of the API request, e.g. "/users".

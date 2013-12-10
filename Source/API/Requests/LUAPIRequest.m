@@ -45,8 +45,16 @@ NSString * const LUAPIVersion15 = @"v15";
 
 - (NSMutableURLRequest *)URLRequest {
   NSString *pathWithVersion = [NSString stringWithFormat:@"%@/%@", self.apiVersion, self.path];
+  NSMutableURLRequest *URLRequest = [[LUAPIClient sharedClient] requestWithMethod:self.method
+                                                                             path:pathWithVersion
+                                                                       parameters:self.parameters];
 
-  return [[LUAPIClient sharedClient] requestWithMethod:self.method path:pathWithVersion parameters:self.parameters];
+  if ([LUAPIClient sharedClient].accessToken) {
+    NSString *authorization = [NSString stringWithFormat:@"token %@", [LUAPIClient sharedClient].accessToken];
+    [URLRequest addValue:authorization forHTTPHeaderField:@"Authorization"];
+  }
+
+  return URLRequest;
 }
 
 #pragma mark - NSObject Methods

@@ -1,6 +1,6 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
-#import "LUAuthenticatedAPIRequest.h"
+#import "LUAPIRequest.h"
 #import "LUPaymentTokenRequestFactory.h"
 
 SPEC_BEGIN(LUPaymentTokenRequestFactorySpec)
@@ -13,10 +13,6 @@ describe(@"LUPaymentTokenRequestFactory", ^{
   describe(@"requestForPaymentToken", ^{
     beforeEach(^{
       request = [LUPaymentTokenRequestFactory requestForPaymentToken];
-    });
-
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a GET request", ^{

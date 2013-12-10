@@ -2,7 +2,6 @@
 
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
-#import "LUAuthenticatedAPIRequest.h"
 #import "LUUser.h"
 #import "LUUserParameterBuilder.h"
 #import "LUUserRequestFactory.h"
@@ -30,10 +29,6 @@ describe(@"LUUserRequestFactory", ^{
       request = [LUUserRequestFactory requestForUserWithID:@1];
     });
 
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
-    });
-
     it(@"returns a GET request", ^{
       [[request.method should] equal:@"GET"];
     });
@@ -52,10 +47,6 @@ describe(@"LUUserRequestFactory", ^{
 
     beforeEach(^{
       request = [LUUserRequestFactory requestToConnectToFacebookWithAccessToken:facebookAccessToken];
-    });
-
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a POST request", ^{
@@ -142,10 +133,6 @@ describe(@"LUUserRequestFactory", ^{
   describe(@"requestToDisconnectFromFacebook", ^{
     beforeEach(^{
       request = [LUUserRequestFactory requestToDisconnectFromFacebook];
-    });
-
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a DELETE request", ^{

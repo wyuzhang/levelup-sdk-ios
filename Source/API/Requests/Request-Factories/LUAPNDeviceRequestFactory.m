@@ -2,7 +2,6 @@
 
 #import "LUAPIRequest.h"
 #import "LUAPNDeviceRequestFactory.h"
-#import "LUAuthenticatedAPIRequest.h"
 #import "LUKeychainAccess.h"
 #import "NSData+HexString.h"
 
@@ -22,11 +21,11 @@ NSString * const LUDeviceTokenKey = @"LUDeviceToken";
     }
   };
 
-  return [LUAuthenticatedAPIRequest apiRequestWithMethod:@"POST"
-                                                    path:@"apn_devices"
-                                              apiVersion:LUAPIVersion14
-                                              parameters:parameters
-                                            modelFactory:nil];
+  return [LUAPIRequest apiRequestWithMethod:@"POST"
+                                       path:@"apn_devices"
+                                 apiVersion:LUAPIVersion14
+                                 parameters:parameters
+                               modelFactory:nil];
 }
 
 + (LUAPIRequest *)requestToUnregisterCurrentAPNDevice {

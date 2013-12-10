@@ -1,6 +1,6 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
-#import "LUAuthenticatedAPIRequest.h"
+#import "LUAPIRequest.h"
 #import "LUCampaignRequestFactory.h"
 
 SPEC_BEGIN(LUCampaignRequestFactorySpec)
@@ -40,10 +40,6 @@ describe(@"LUCampaignRequestFactory", ^{
       request = [LUCampaignRequestFactory requestForCampaignWithCode:code];
     });
 
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
-    });
-
     it(@"returns a GET request", ^{
       [[request.method should] equal:@"GET"];
     });
@@ -68,10 +64,6 @@ describe(@"LUCampaignRequestFactory", ^{
 
     beforeEach(^{
       request = [LUCampaignRequestFactory requestForCampaignWithID:@1];
-    });
-
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a GET request", ^{

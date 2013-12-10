@@ -2,7 +2,6 @@
 
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
-#import "LUAuthenticatedAPIRequest.h"
 #import "LUOrderRequestFactory.h"
 
 SPEC_BEGIN(LUOrderRequestFactorySpec)
@@ -17,10 +16,6 @@ describe(@"LUOrderRequestFactory", ^{
       [LUAPIClient setupWithAppID:@"1" APIKey:@"test" developmentMode:YES];
 
       request = [LUOrderRequestFactory requestForOrders];
-    });
-
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a GET request", ^{
@@ -43,10 +38,6 @@ describe(@"LUOrderRequestFactory", ^{
       request = [LUOrderRequestFactory requestForOrdersOnPage:pageURL];
     });
 
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
-    });
-
     it(@"returns a GET request", ^{
       [[request.method should] equal:@"GET"];
     });
@@ -65,10 +56,6 @@ describe(@"LUOrderRequestFactory", ^{
 
     beforeEach(^{
       request = [LUOrderRequestFactory requestForOrderWithUUID:UUID];
-    });
-
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a GET request", ^{

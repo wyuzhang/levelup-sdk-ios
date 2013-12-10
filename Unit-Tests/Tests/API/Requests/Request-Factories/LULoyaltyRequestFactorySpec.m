@@ -1,6 +1,6 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
-#import "LUAuthenticatedAPIRequest.h"
+#import "LUAPIRequest.h"
 #import "LULoyaltyJSONFactory.h"
 
 SPEC_BEGIN(LULoyaltyRequestFactorySpec)
@@ -11,10 +11,6 @@ describe(@"LULoyaltyRequestFactory", ^{
   describe(@"requestForLoyaltyForMerchantWithID:", ^{
     beforeEach(^{
       request = [LULoyaltyRequestFactory requestForLoyaltyForMerchantWithID:@1];
-    });
-
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a GET request", ^{

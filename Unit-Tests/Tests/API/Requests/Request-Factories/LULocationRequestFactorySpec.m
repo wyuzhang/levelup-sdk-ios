@@ -1,6 +1,6 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
-#import "LUAuthenticatedAPIRequest.h"
+#import "LUAPIRequest.h"
 #import "LULocationRequestFactory.h"
 #import "LULocationSummaryJSONFactory.h"
 #import "LULocationJSONFactory.h"

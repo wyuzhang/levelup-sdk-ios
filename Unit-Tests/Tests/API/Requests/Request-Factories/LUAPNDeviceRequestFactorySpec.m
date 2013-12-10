@@ -2,7 +2,6 @@
 
 #import "LUAPIRequest.h"
 #import "LUAPNDeviceRequestFactory.h"
-#import "LUAuthenticatedAPIRequest.h"
 #import "LUKeychainAccess.h"
 
 SPEC_BEGIN(LUAPNDeviceRequestFactorySpec)
@@ -29,10 +28,6 @@ describe(@"LUAPNDeviceRequestFactory", ^{
       [[[LUKeychainAccess standardKeychainAccess] should] receive:@selector(setString:forKey:) withArguments:@"A60F7DB9", LUDeviceTokenKey];
 
       [LUAPNDeviceRequestFactory requestToRegisterAPNDeviceWithToken:deviceToken sandbox:sandbox];
-    });
-
-    it(@"returns an authenticated request", ^{
-      [[request should] beKindOfClass:[LUAuthenticatedAPIRequest class]];
     });
 
     it(@"returns a POST request", ^{
