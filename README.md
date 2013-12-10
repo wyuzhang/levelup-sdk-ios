@@ -51,7 +51,6 @@ If the API request fails, an `NSError` instance will be passed to the `failure` 
 The SDK includes model classes for LevelUp domain objects, such as a user or a merchant. Instances of these objects may be returned from API calls, or may be referenced from other model objects.
 
 * **[LUAccessToken](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUAccessToken.html)**: An access token is created when a user successfully logs in, and is used to maintain an authentication session.
-* **[LUApnDevice](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUApnDevice.html)**: Represents an [Apple Push Notification](http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html) device.
 * **[LUCampaign](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUCampaign.html)**: Campaigns are promotions which can be claimed by users.
 * **[LUCategory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUCategory.html)**: A merchant category, such as "Italian" or "Bar".
 * **[LUClaim](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUClaim.html)**: Represents a user's claim on a campaign.
@@ -71,7 +70,7 @@ The SDK includes a set of request factories, which generate a particular `LUAPIR
 
 Below is the full list of request factories:
 
-* [LUApnDeviceRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUApnDeviceRequestFactory.html)
+* [LUAPNDeviceRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUAPNDeviceRequestFactory.html)
 * [LUAuthenticationRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUAuthenticationRequestFactory.html)
 * [LUCampaignRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUCampaignRequestFactory.html)
 * [LUCategoryRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUCategoryRequestFactory.html)

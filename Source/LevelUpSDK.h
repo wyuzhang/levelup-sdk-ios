@@ -7,7 +7,7 @@
 #import "LUAPIClient.h"
 #import "LUAPIConnection.h"
 #import "LUAPIRequest.h"
-#import "LUApnDeviceRequestFactory.h"
+#import "LUAPNDeviceRequestFactory.h"
 #import "LUAuthenticationRequestFactory.h"
 #import "LUCampaignRequestFactory.h"
 #import "LUCategoryRequestFactory.h"
@@ -22,7 +22,6 @@
 #import "LUUserRequestFactory.h"
 
 #import "LUAccessToken.h"
-#import "LUApnDevice.h"
 #import "LUCampaign.h"
 #import "LUCategory.h"
 #import "LUClaim.h"

@@ -173,7 +173,6 @@
 		C1CAF11E173052A7003B3D01 /* LUOrderJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0C1173052A7003B3D01 /* LUOrderJSONFactorySpec.m */; };
 		C1CAF121173052A7003B3D01 /* LUUserJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0C4173052A7003B3D01 /* LUUserJSONFactorySpec.m */; };
 		C1CAF122173052A7003B3D01 /* LUAPIModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0C5173052A7003B3D01 /* LUAPIModelSpec.m */; };
-		C1CAF123173052A7003B3D01 /* LUApnDeviceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0C6173052A7003B3D01 /* LUApnDeviceSpec.m */; };
 		C1CAF125173052A7003B3D01 /* LUCampaignSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0C8173052A7003B3D01 /* LUCampaignSpec.m */; };
 		C1CAF126173052A7003B3D01 /* LUCategorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0C9173052A7003B3D01 /* LUCategorySpec.m */; };
 		C1CAF129173052A7003B3D01 /* LUClaimSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0CC173052A7003B3D01 /* LUClaimSpec.m */; };
@@ -189,7 +188,7 @@
 		C1CAF138173052A7003B3D01 /* LUAuthenticatedAPIRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0DC173052A7003B3D01 /* LUAuthenticatedAPIRequestSpec.m */; };
 		C1CAF139173052A7003B3D01 /* LUDeviceIdentifierSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0DF173052A7003B3D01 /* LUDeviceIdentifierSpec.m */; };
 		C1CAF13A173052A7003B3D01 /* LUUserParameterBuilderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0E0173052A7003B3D01 /* LUUserParameterBuilderSpec.m */; };
-		C1CAF13B173052A7003B3D01 /* LUApnDeviceRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0E1173052A7003B3D01 /* LUApnDeviceRequestFactorySpec.m */; };
+		C1CAF13B173052A7003B3D01 /* LUAPNDeviceRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0E1173052A7003B3D01 /* LUAPNDeviceRequestFactorySpec.m */; };
 		C1CAF13D173052A7003B3D01 /* LUCampaignRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0E3173052A7003B3D01 /* LUCampaignRequestFactorySpec.m */; };
 		C1CAF13E173052A7003B3D01 /* LUCategoryRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0E4173052A7003B3D01 /* LUCategoryRequestFactorySpec.m */; };
 		C1CAF140173052A7003B3D01 /* LUClaimRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0E6173052A7003B3D01 /* LUClaimRequestFactorySpec.m */; };
@@ -229,8 +228,6 @@
 		C1CAF21F17315415003B3D01 /* LUUserJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF18617315414003B3D01 /* LUUserJSONFactory.m */; };
 		C1CAF22017315415003B3D01 /* LUAPIModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF18717315414003B3D01 /* LUAPIModel.h */; };
 		C1CAF22117315415003B3D01 /* LUAPIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF18817315414003B3D01 /* LUAPIModel.m */; };
-		C1CAF22217315415003B3D01 /* LUApnDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF18917315414003B3D01 /* LUApnDevice.h */; };
-		C1CAF22317315415003B3D01 /* LUApnDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF18A17315414003B3D01 /* LUApnDevice.m */; };
 		C1CAF22617315415003B3D01 /* LUCampaign.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF18D17315414003B3D01 /* LUCampaign.h */; };
 		C1CAF22717315415003B3D01 /* LUCampaign.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF18E17315414003B3D01 /* LUCampaign.m */; };
 		C1CAF22817315415003B3D01 /* LUCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF18F17315414003B3D01 /* LUCategory.h */; };
@@ -259,8 +256,8 @@
 		C1CAF24F17315415003B3D01 /* LUDeviceIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1B917315414003B3D01 /* LUDeviceIdentifier.m */; };
 		C1CAF25017315415003B3D01 /* LUUserParameterBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1BA17315414003B3D01 /* LUUserParameterBuilder.h */; };
 		C1CAF25117315415003B3D01 /* LUUserParameterBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1BB17315414003B3D01 /* LUUserParameterBuilder.m */; };
-		C1CAF25217315415003B3D01 /* LUApnDeviceRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1BC17315414003B3D01 /* LUApnDeviceRequestFactory.h */; };
-		C1CAF25317315415003B3D01 /* LUApnDeviceRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1BD17315414003B3D01 /* LUApnDeviceRequestFactory.m */; };
+		C1CAF25217315415003B3D01 /* LUAPNDeviceRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1BC17315414003B3D01 /* LUAPNDeviceRequestFactory.h */; };
+		C1CAF25317315415003B3D01 /* LUAPNDeviceRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1BD17315414003B3D01 /* LUAPNDeviceRequestFactory.m */; };
 		C1CAF25617315415003B3D01 /* LUCampaignRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1C017315414003B3D01 /* LUCampaignRequestFactory.h */; };
 		C1CAF25717315415003B3D01 /* LUCampaignRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF1C117315414003B3D01 /* LUCampaignRequestFactory.m */; };
 		C1CAF25817315415003B3D01 /* LUCategoryRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CAF1C217315414003B3D01 /* LUCategoryRequestFactory.h */; };
@@ -517,7 +514,6 @@
 		C1CAF0C1173052A7003B3D01 /* LUOrderJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderJSONFactorySpec.m; sourceTree = "<group>"; };
 		C1CAF0C4173052A7003B3D01 /* LUUserJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserJSONFactorySpec.m; sourceTree = "<group>"; };
 		C1CAF0C5173052A7003B3D01 /* LUAPIModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIModelSpec.m; sourceTree = "<group>"; };
-		C1CAF0C6173052A7003B3D01 /* LUApnDeviceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUApnDeviceSpec.m; sourceTree = "<group>"; };
 		C1CAF0C8173052A7003B3D01 /* LUCampaignSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCampaignSpec.m; sourceTree = "<group>"; };
 		C1CAF0C9173052A7003B3D01 /* LUCategorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCategorySpec.m; sourceTree = "<group>"; };
 		C1CAF0CC173052A7003B3D01 /* LUClaimSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUClaimSpec.m; sourceTree = "<group>"; };
@@ -533,7 +529,7 @@
 		C1CAF0DC173052A7003B3D01 /* LUAuthenticatedAPIRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAuthenticatedAPIRequestSpec.m; sourceTree = "<group>"; };
 		C1CAF0DF173052A7003B3D01 /* LUDeviceIdentifierSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDeviceIdentifierSpec.m; sourceTree = "<group>"; };
 		C1CAF0E0173052A7003B3D01 /* LUUserParameterBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserParameterBuilderSpec.m; sourceTree = "<group>"; };
-		C1CAF0E1173052A7003B3D01 /* LUApnDeviceRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUApnDeviceRequestFactorySpec.m; sourceTree = "<group>"; };
+		C1CAF0E1173052A7003B3D01 /* LUAPNDeviceRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPNDeviceRequestFactorySpec.m; sourceTree = "<group>"; };
 		C1CAF0E3173052A7003B3D01 /* LUCampaignRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCampaignRequestFactorySpec.m; sourceTree = "<group>"; };
 		C1CAF0E4173052A7003B3D01 /* LUCategoryRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCategoryRequestFactorySpec.m; sourceTree = "<group>"; };
 		C1CAF0E6173052A7003B3D01 /* LUClaimRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUClaimRequestFactorySpec.m; sourceTree = "<group>"; };
@@ -573,8 +569,6 @@
 		C1CAF18617315414003B3D01 /* LUUserJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserJSONFactory.m; sourceTree = "<group>"; };
 		C1CAF18717315414003B3D01 /* LUAPIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIModel.h; sourceTree = "<group>"; };
 		C1CAF18817315414003B3D01 /* LUAPIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIModel.m; sourceTree = "<group>"; };
-		C1CAF18917315414003B3D01 /* LUApnDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUApnDevice.h; sourceTree = "<group>"; };
-		C1CAF18A17315414003B3D01 /* LUApnDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUApnDevice.m; sourceTree = "<group>"; };
 		C1CAF18D17315414003B3D01 /* LUCampaign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCampaign.h; sourceTree = "<group>"; };
 		C1CAF18E17315414003B3D01 /* LUCampaign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCampaign.m; sourceTree = "<group>"; };
 		C1CAF18F17315414003B3D01 /* LUCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCategory.h; sourceTree = "<group>"; };
@@ -603,8 +597,8 @@
 		C1CAF1B917315414003B3D01 /* LUDeviceIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDeviceIdentifier.m; sourceTree = "<group>"; };
 		C1CAF1BA17315414003B3D01 /* LUUserParameterBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUUserParameterBuilder.h; sourceTree = "<group>"; };
 		C1CAF1BB17315414003B3D01 /* LUUserParameterBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUUserParameterBuilder.m; sourceTree = "<group>"; };
-		C1CAF1BC17315414003B3D01 /* LUApnDeviceRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUApnDeviceRequestFactory.h; sourceTree = "<group>"; };
-		C1CAF1BD17315414003B3D01 /* LUApnDeviceRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUApnDeviceRequestFactory.m; sourceTree = "<group>"; };
+		C1CAF1BC17315414003B3D01 /* LUAPNDeviceRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPNDeviceRequestFactory.h; sourceTree = "<group>"; };
+		C1CAF1BD17315414003B3D01 /* LUAPNDeviceRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPNDeviceRequestFactory.m; sourceTree = "<group>"; };
 		C1CAF1C017315414003B3D01 /* LUCampaignRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCampaignRequestFactory.h; sourceTree = "<group>"; };
 		C1CAF1C117315414003B3D01 /* LUCampaignRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCampaignRequestFactory.m; sourceTree = "<group>"; };
 		C1CAF1C217315414003B3D01 /* LUCategoryRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCategoryRequestFactory.h; sourceTree = "<group>"; };
@@ -1005,7 +999,6 @@
 				C1CAF0D5173052A7003B3D01 /* LUAccessTokenTokenSpec.m */,
 				C1CAF0C5173052A7003B3D01 /* LUAPIModelSpec.m */,
 				0274B84C1773A4D100FD5B43 /* LUAPIErrorSpec.m */,
-				C1CAF0C6173052A7003B3D01 /* LUApnDeviceSpec.m */,
 				C1CAF0C8173052A7003B3D01 /* LUCampaignSpec.m */,
 				C1CAF0C9173052A7003B3D01 /* LUCategorySpec.m */,
 				C1CAF0CC173052A7003B3D01 /* LUClaimSpec.m */,
@@ -1059,7 +1052,7 @@
 			isa = PBXGroup;
 			children = (
 				C1CAF0DE173052A7003B3D01 /* Helpers */,
-				C1CAF0E1173052A7003B3D01 /* LUApnDeviceRequestFactorySpec.m */,
+				C1CAF0E1173052A7003B3D01 /* LUAPNDeviceRequestFactorySpec.m */,
 				C1CAF0EA173052A7003B3D01 /* LUAuthenticationRequestFactorySpec.m */,
 				C1CAF0E3173052A7003B3D01 /* LUCampaignRequestFactorySpec.m */,
 				C1CAF0E4173052A7003B3D01 /* LUCategoryRequestFactorySpec.m */,
@@ -1160,8 +1153,6 @@
 				0274B83B17739B7800FD5B43 /* LUAPIError.m */,
 				C1CAF18717315414003B3D01 /* LUAPIModel.h */,
 				C1CAF18817315414003B3D01 /* LUAPIModel.m */,
-				C1CAF18917315414003B3D01 /* LUApnDevice.h */,
-				C1CAF18A17315414003B3D01 /* LUApnDevice.m */,
 				C1CAF18D17315414003B3D01 /* LUCampaign.h */,
 				C1CAF18E17315414003B3D01 /* LUCampaign.m */,
 				C1CAF18F17315414003B3D01 /* LUCategory.h */,
@@ -1242,8 +1233,8 @@
 			isa = PBXGroup;
 			children = (
 				C1CAF1B717315414003B3D01 /* Helpers */,
-				C1CAF1BC17315414003B3D01 /* LUApnDeviceRequestFactory.h */,
-				C1CAF1BD17315414003B3D01 /* LUApnDeviceRequestFactory.m */,
+				C1CAF1BC17315414003B3D01 /* LUAPNDeviceRequestFactory.h */,
+				C1CAF1BD17315414003B3D01 /* LUAPNDeviceRequestFactory.m */,
 				C1CAF1CE17315414003B3D01 /* LUAuthenticationRequestFactory.h */,
 				C1CAF1CF17315414003B3D01 /* LUAuthenticationRequestFactory.m */,
 				C1CAF1C017315414003B3D01 /* LUCampaignRequestFactory.h */,
@@ -1402,7 +1393,6 @@
 				C1CAF21817315415003B3D01 /* LUOrderJSONFactory.h in Headers */,
 				C1CAF21E17315415003B3D01 /* LUUserJSONFactory.h in Headers */,
 				C1CAF22017315415003B3D01 /* LUAPIModel.h in Headers */,
-				C1CAF22217315415003B3D01 /* LUApnDevice.h in Headers */,
 				C1CAF22617315415003B3D01 /* LUCampaign.h in Headers */,
 				C1CAF22817315415003B3D01 /* LUCategory.h in Headers */,
 				C1CAF22E17315415003B3D01 /* LUClaim.h in Headers */,
@@ -1417,7 +1407,7 @@
 				C1CAF24C17315415003B3D01 /* LUAuthenticatedAPIRequest.h in Headers */,
 				C1CAF24E17315415003B3D01 /* LUDeviceIdentifier.h in Headers */,
 				C1CAF25017315415003B3D01 /* LUUserParameterBuilder.h in Headers */,
-				C1CAF25217315415003B3D01 /* LUApnDeviceRequestFactory.h in Headers */,
+				C1CAF25217315415003B3D01 /* LUAPNDeviceRequestFactory.h in Headers */,
 				C1CAF25617315415003B3D01 /* LUCampaignRequestFactory.h in Headers */,
 				C1CAF25817315415003B3D01 /* LUCategoryRequestFactory.h in Headers */,
 				C1CAF25C17315415003B3D01 /* LUClaimRequestFactory.h in Headers */,
@@ -1652,7 +1642,6 @@
 				C1CAF21917315415003B3D01 /* LUOrderJSONFactory.m in Sources */,
 				C1CAF21F17315415003B3D01 /* LUUserJSONFactory.m in Sources */,
 				C1CAF22117315415003B3D01 /* LUAPIModel.m in Sources */,
-				C1CAF22317315415003B3D01 /* LUApnDevice.m in Sources */,
 				C1CAF22717315415003B3D01 /* LUCampaign.m in Sources */,
 				C1CAF22917315415003B3D01 /* LUCategory.m in Sources */,
 				C1CAF22F17315415003B3D01 /* LUClaim.m in Sources */,
@@ -1667,7 +1656,7 @@
 				C1CAF24D17315415003B3D01 /* LUAuthenticatedAPIRequest.m in Sources */,
 				C1CAF24F17315415003B3D01 /* LUDeviceIdentifier.m in Sources */,
 				C1CAF25117315415003B3D01 /* LUUserParameterBuilder.m in Sources */,
-				C1CAF25317315415003B3D01 /* LUApnDeviceRequestFactory.m in Sources */,
+				C1CAF25317315415003B3D01 /* LUAPNDeviceRequestFactory.m in Sources */,
 				C1CAF25717315415003B3D01 /* LUCampaignRequestFactory.m in Sources */,
 				C1CAF25917315415003B3D01 /* LUCategoryRequestFactory.m in Sources */,
 				C1CAF25D17315415003B3D01 /* LUClaimRequestFactory.m in Sources */,
@@ -1758,7 +1747,6 @@
 				C1CAF11E173052A7003B3D01 /* LUOrderJSONFactorySpec.m in Sources */,
 				C1CAF121173052A7003B3D01 /* LUUserJSONFactorySpec.m in Sources */,
 				C1CAF122173052A7003B3D01 /* LUAPIModelSpec.m in Sources */,
-				C1CAF123173052A7003B3D01 /* LUApnDeviceSpec.m in Sources */,
 				C1CAF125173052A7003B3D01 /* LUCampaignSpec.m in Sources */,
 				C1CAF126173052A7003B3D01 /* LUCategorySpec.m in Sources */,
 				C1CAF129173052A7003B3D01 /* LUClaimSpec.m in Sources */,
@@ -1775,7 +1763,7 @@
 				C1CAF138173052A7003B3D01 /* LUAuthenticatedAPIRequestSpec.m in Sources */,
 				C1CAF139173052A7003B3D01 /* LUDeviceIdentifierSpec.m in Sources */,
 				C1CAF13A173052A7003B3D01 /* LUUserParameterBuilderSpec.m in Sources */,
-				C1CAF13B173052A7003B3D01 /* LUApnDeviceRequestFactorySpec.m in Sources */,
+				C1CAF13B173052A7003B3D01 /* LUAPNDeviceRequestFactorySpec.m in Sources */,
 				C1CAF13D173052A7003B3D01 /* LUCampaignRequestFactorySpec.m in Sources */,
 				C1CAF13E173052A7003B3D01 /* LUCategoryRequestFactorySpec.m in Sources */,
 				C1CAF140173052A7003B3D01 /* LUClaimRequestFactorySpec.m in Sources */,
