@@ -351,14 +351,6 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:[self responseDataFromJSON:merchantIDs]];
 }
 
-+ (LUAPIStub *)stubToGetMerchantWithID:(NSNumber *)merchantID {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion13
-                                 path:[@"merchants/" stringByAppendingString:[merchantID stringValue]]
-                           HTTPMethod:@"GET"
-                        authenticated:NO
-                         responseData:[self responseDataFromFile:@"merchant"]];
-}
-
 + (LUAPIStub *)stubToGetNewUser {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:@"users/1"

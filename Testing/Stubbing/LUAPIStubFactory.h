@@ -41,7 +41,6 @@
 + (LUAPIStub *)stubToGetLoyaltyForMerchantWithID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetLoyaltyNoCreditForMerchantWithID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetMerchantIDs:(NSArray *)merchantIDs forCampaignWithID:(NSNumber *)campaignID;
-+ (LUAPIStub *)stubToGetMerchantWithID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetNewUser;
 + (LUAPIStub *)stubToGetOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToGetOrdersFirstPage;

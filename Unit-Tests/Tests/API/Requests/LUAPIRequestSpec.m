@@ -9,7 +9,7 @@ SPEC_BEGIN(LUAPIRequestSpec)
 describe(@"LUAPIRequest", ^{
   NSString *method = @"GET";
   NSString *path = @"example";
-  NSString *apiVersion = LUAPIVersion13;
+  NSString *apiVersion = LUAPIVersion14;
   NSDictionary *parameters = @{@"test" : @1};
   LUAbstractJSONModelFactory *modelFactory = [LUAbstractJSONModelFactory mock];
 

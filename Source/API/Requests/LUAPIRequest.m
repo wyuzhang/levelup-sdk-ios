@@ -6,6 +6,7 @@
 
 NSString * const LUAPIVersion13 = @"v13";
 NSString * const LUAPIVersion14 = @"v14";
+NSString * const LUAPIVersion15 = @"v15";
 
 @implementation LUAPIRequest
 

@@ -4,6 +4,7 @@
 
 extern NSString * const LUAPIVersion13;
 extern NSString * const LUAPIVersion14;
+extern NSString * const LUAPIVersion15;
 
 /**
  `LUAPIRequest` represents a request to the LevelUp API. To perform a request, an `LUAPIRequest` instance is passed

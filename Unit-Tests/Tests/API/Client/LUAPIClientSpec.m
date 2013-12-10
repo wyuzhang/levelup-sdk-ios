@@ -116,7 +116,7 @@ describe(@"LUAPIClient", ^{
       [LUAPIClient setupWithAppID:@"1" APIKey:@"test" developmentMode:YES];
       client = [LUAPIClient sharedClient];
 
-      apiRequest = [LUAPIRequest apiRequestWithMethod:@"GET" path:@"test" apiVersion:LUAPIVersion13 parameters:nil modelFactory:nil];
+      apiRequest = [LUAPIRequest apiRequestWithMethod:@"GET" path:@"test" apiVersion:LUAPIVersion14 parameters:nil modelFactory:nil];
     });
 
     it(@"creates an AFJSONRequestOperation operation for the request", ^{
