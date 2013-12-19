@@ -13,7 +13,14 @@ describe(@"LUInterstitialJSONFactory", ^{
 
   describe(@"createFromAttributes:", ^{
     it(@"parses a JSON dictionary with no action into an LUInterstitial", ^{
-      LUInterstitial *interstitial = [factory createFromAttributes:[LUInterstitial fullNoActionJSONObject]];
+      NSDictionary *JSON = @{
+        @"callout_text" : @"test callout",
+        @"description_html" : @"<p>interstitial description</p>",
+        @"image_url" : @"http://example.com/interstitial-image",
+        @"title" : @"Interstitial Title",
+        @"type" : @"no_action"
+      };
+      LUInterstitial *interstitial = [factory createFromAttributes:JSON];
 
       [interstitial.action shouldBeNil];
       [[theValue(interstitial.actionType) should] equal:theValue(LUInterstitialActionTypeNone)];
@@ -25,7 +32,17 @@ describe(@"LUInterstitialJSONFactory", ^{
     });
 
     it(@"parses a JSON dictionary with a claim action into an LUInterstitial", ^{
-      LUInterstitial *interstitial = [factory createFromAttributes:[LUInterstitial fullClaimActionJSONObject]];
+      NSDictionary *JSON = @{
+        @"action" : @{
+          @"code" : @"testcode",
+        },
+        @"callout_text" : @"test callout",
+        @"description_html" : @"<p>interstitial description</p>",
+        @"image_url" : @"http://example.com/interstitial-image",
+        @"title" : @"Interstitial Title",
+        @"type" : @"claim"
+      };
+      LUInterstitial *interstitial = [factory createFromAttributes:JSON];
 
       [[interstitial.action should] beKindOfClass:[LUInterstitialClaimAction class]];
       [[[interstitial.action campaignCode] should] equal:@"testcode"];
@@ -38,7 +55,23 @@ describe(@"LUInterstitialJSONFactory", ^{
     });
 
     it(@"parses a JSON dictionary with a share action into an LUInterstitial", ^{
-      LUInterstitial *interstitial = [factory createFromAttributes:[LUInterstitial fullShareActionJSONObject]];
+      NSDictionary *JSON = @{
+        @"action" : @{
+          @"message_for_email_subject" : @"email subject",
+          @"message_for_email_body" : @"email body",
+          @"message_for_facebook" : @"facebook message",
+          @"message_for_twitter" : @"twitter message",
+          @"share_url_email" : @"http://example.com/email",
+          @"share_url_facebook" : @"http://example.com/facebook",
+          @"share_url_twitter" : @"http://example.com/twitter",
+        },
+        @"callout_text" : @"test callout",
+        @"description_html" : @"<p>interstitial description</p>",
+        @"image_url" : @"http://example.com/interstitial-image",
+        @"title" : @"Interstitial Title",
+        @"type" : @"share"
+      };
+      LUInterstitial *interstitial = [factory createFromAttributes:JSON];
 
       [[interstitial.action should] beKindOfClass:[LUInterstitialShareAction class]];
       [[[interstitial.action messageForEmailBody] should] equal:@"email body"];
@@ -57,7 +90,17 @@ describe(@"LUInterstitialJSONFactory", ^{
     });
 
     it(@"parses a JSON dictionary with a URL action into an LUInterstitial", ^{
-      LUInterstitial *interstitial = [factory createFromAttributes:[LUInterstitial fullURLActionJSONObject]];
+      NSDictionary *JSON = @{
+        @"action" : @{
+          @"url" : @"http://example.com",
+        },
+        @"callout_text" : @"test callout",
+        @"description_html" : @"<p>interstitial description</p>",
+        @"image_url" : @"http://example.com/interstitial-image",
+        @"title" : @"Interstitial Title",
+        @"type" : @"url"
+      };
+      LUInterstitial *interstitial = [factory createFromAttributes:JSON];
 
       [[interstitial.action should] beKindOfClass:[LUInterstitialURLAction class]];
       [[[interstitial.action URL] should] equal:[NSURL URLWithString:@"http://example.com"]];

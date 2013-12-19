@@ -1,6 +1,7 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
 #import "LULocationJSONFactory.h"
+#import "NSDate+StringFormats.h"
 
 SPEC_BEGIN(LULocationJSONFactorySpec)
 
@@ -13,7 +14,32 @@ describe(@"LULocationJSONFactory", ^{
 
   describe(@"createFromAttributes:", ^{
     it(@"parses a JSON dictionary into an LULocation", ^{
-      LULocation *location = [factory createFromAttributes:[LULocation fullJSONObject]];
+      NSDictionary *JSON = @{
+        @"categories" : @[@1, @2, @3],
+        @"description_html" : @"pizza, pizza, pizza!",
+        @"extended_address" : @"Apt E",
+        @"facebook_url" : @"http://facebook.com/pizza",
+        @"hours" : @"M-F 9am-5pm",
+        @"id" : @1,
+        @"latitude" : @70,
+        @"locality" : @"Boston",
+        @"longitude" : @-45,
+        @"menu_url" : @"http://pizza.com/menu",
+        @"merchant_id" : @1,
+        @"merchant_name" : @"Dewey, Cheatem and Howe",
+        @"name" : @"Test Location",
+        @"newsletter_url" : @"http://pizza.com/newsletter",
+        @"opentable_url" : @"http://opentable.com/pizza",
+        @"phone" : @"617-123-1234",
+        @"postal_code" : @"01234",
+        @"region" : @"MA",
+        @"shown" : @1,
+        @"street_address" : @"1 Main St",
+        @"twitter_url" : @"http://twitter.com/pizza",
+        @"updated_at" : @"2012-12-04T18:10:45-05:00",
+        @"yelp_url" : @"http://yelp.com/pizza"
+      };
+      LULocation *location = [factory createFromAttributes:JSON];
 
       [[location.categoryIDs should] equal:@[@1, @2, @3]];
       [[location.descriptionHTML should] equal:@"pizza, pizza, pizza!"];
@@ -38,7 +64,7 @@ describe(@"LULocationJSONFactory", ^{
       [[[location.webLocations opentableURL] should] equal:[NSURL URLWithString:@"http://opentable.com/pizza"]];
       [[[location.webLocations twitterURL] should] equal:[NSURL URLWithString:@"http://twitter.com/pizza"]];
       [[[location.webLocations yelpURL] should] equal:[NSURL URLWithString:@"http://yelp.com/pizza"]];
-      [[location.updatedAtDate should] equal:[NSDate fixture]];
+      [[location.updatedAtDate should] equal:[NSDate lu_dateFromIso8601DateTimeString:@"2012-12-04T18:10:45-05:00"]];
     });
   });
 

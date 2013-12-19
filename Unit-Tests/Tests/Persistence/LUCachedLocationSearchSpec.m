@@ -3,6 +3,7 @@
 #import "LUCachedLocation.h"
 #import "LUCachedLocationSearch.h"
 #import "LUCoreDataStack.h"
+#import "NSManagedObjectContext+FakeContext.h"
 
 SPEC_BEGIN(LUCachedLocationSearchSpec)
 
@@ -15,7 +16,7 @@ describe(@"LUCachedLocationSearch", ^{
   __block LUCachedLocation *location1, *location2, *location3;
 
   beforeEach(^{
-    testManagedObjectContext = [NSManagedObjectContext testContext];
+    testManagedObjectContext = [NSManagedObjectContext fakeContext];
     [LUCoreDataStack stub:@selector(managedObjectContext) andReturn:testManagedObjectContext];
 
     location1 = [NSEntityDescription insertNewObjectForEntityForName:[LUCachedLocation entityName]

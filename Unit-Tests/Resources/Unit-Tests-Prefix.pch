@@ -11,6 +11,4 @@
 
   #import "LevelUpSDK.h"
   #import "LevelUpSDKTesting.h"
-  #import "LUFixtures.h"
-  #import "NSManagedObjectContext+TestContext.h"
 #endif

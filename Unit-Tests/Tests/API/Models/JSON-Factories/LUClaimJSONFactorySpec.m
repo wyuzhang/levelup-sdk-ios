@@ -13,7 +13,13 @@ describe(@"LUClaimJSONFactory", ^{
 
   describe(@"createFromAttributes:", ^{
     it(@"parses a JSON dictionary into an LUClaim", ^{
-      LUClaim *claim = [factory createFromAttributes:[LUClaim fullJSONObject]];
+      NSDictionary *JSON = @{
+        @"code" : @"test-code",
+        @"id" : @1,
+        @"value_amount" : @500,
+        @"value_remaining_amount" : @300
+      };
+      LUClaim *claim = [factory createFromAttributes:JSON];
 
       [[claim.code should] equal:@"test-code"];
       [[claim.claimID should] equal:@1];

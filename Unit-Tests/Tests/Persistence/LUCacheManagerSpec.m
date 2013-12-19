@@ -20,7 +20,7 @@ describe(@"LUCacheManager", ^{
   });
 
   describe(@"caching loyalty", ^{
-    LULoyalty *loyalty = [LULoyalty fakeInstance];
+    LULoyalty *loyalty = [LULoyalty fixture];
 
     context(@"when loyalty gets cached", ^{
       it(@"saves the loyalty into the keychain", ^{
@@ -58,7 +58,7 @@ describe(@"LUCacheManager", ^{
   });
 
   describe(@"caching a user", ^{
-    LUUser *user = [LUUser fakeInstance];
+    LUUser *user = [LUUser fixture];
 
     context(@"when a user gets cached", ^{
       it(@"saves the user into the keychain", ^{

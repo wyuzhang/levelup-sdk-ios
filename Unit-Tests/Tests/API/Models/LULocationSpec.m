@@ -40,7 +40,7 @@ describe(@"LULocation", ^{
 
   describe(@"fullStreetAddress", ^{
     context(@"when the location has a streetAddress and an extendedAddress", ^{
-      LULocation *location = [LULocation fakeInstance];
+      LULocation *location = [LULocation fixture];
 
       it(@"is the street address combined with the extended address", ^{
         NSString *expected = [NSString stringWithFormat:@"%@, %@", location.streetAddress,
@@ -50,7 +50,7 @@ describe(@"LULocation", ^{
     });
 
     context(@"when the location only has a streetAddress", ^{
-      LULocation *location = [LULocation fakeInstanceWithNoExtendedAddress];
+      LULocation *location = [LULocation fixtureWithNoExtendedAddress];
 
       it(@"is the street address", ^{
         [[[location fullStreetAddress] should] equal:location.streetAddress];
@@ -59,7 +59,7 @@ describe(@"LULocation", ^{
   });
 
   describe(@"imageURL", ^{
-    LULocation *location = [LULocation fakeInstanceWithLocationID:@1];
+    LULocation *location = [LULocation fixtureWithLocationID:@1];
     NSURL *URL = [NSURL URLWithString:@"http://example.com/path/to/image"];
 
     beforeEach(^{
@@ -73,7 +73,7 @@ describe(@"LULocation", ^{
 
   describe(@"location", ^{
     context(@"when the location has a latitude and a longitude", ^{
-      LULocation *location = [LULocation fakeInstanceWithLatitude:@-70.0f longitude:@45.0f];
+      LULocation *location = [LULocation fixtureWithLatitude:@-70.0f longitude:@45.0f];
 
       it(@"returns a CLLocation for the associated location", ^{
         id result = [location location];
@@ -87,17 +87,17 @@ describe(@"LULocation", ^{
 
     context(@"when the location doesn't have both a latitude and a longitude", ^{
       it(@"is nil", ^{
-        LULocation *location = [LULocation fakeInstanceWithLatitude:@-70.0f longitude:nil];
+        LULocation *location = [LULocation fixtureWithLatitude:@-70.0f longitude:nil];
         [[location location] shouldBeNil];
 
-        location = [LULocation fakeInstanceWithLatitude:nil longitude:@45.0f];
+        location = [LULocation fixtureWithLatitude:nil longitude:@45.0f];
         [[location location] shouldBeNil];
       });
     });
   });
 
   describe(@"singleLineAddress", ^{
-    LULocation *location = [LULocation fakeInstance];
+    LULocation *location = [LULocation fixture];
 
     it(@"is combination of all the address elements", ^{
       NSString *expected = [NSString stringWithFormat:@"%@, %@, %@, %@ %@",
@@ -113,7 +113,7 @@ describe(@"LULocation", ^{
   describe(@"coordinate", ^{
     context(@"when the location has a latitude and a longitude", ^{
       it(@"returns a CLLocationCoordinate2D for the associated location", ^{
-        LULocation *location = [LULocation fakeInstanceWithLatitude:@-70.0f longitude:@45.0f];
+        LULocation *location = [LULocation fixtureWithLatitude:@-70.0f longitude:@45.0f];
 
         CLLocationCoordinate2D result = [location coordinate];
         [[@(result.latitude) should] equal:location.latitude];
@@ -121,27 +121,27 @@ describe(@"LULocation", ^{
       });
 
       it(@"bounds the latitude to [-90, 90]", ^{
-        LULocation *location = [LULocation fakeInstanceWithLatitude:@-100.0f longitude:@45.0f];
+        LULocation *location = [LULocation fixtureWithLatitude:@-100.0f longitude:@45.0f];
         [[theValue([location coordinate].latitude) should] equal:theValue(-90)];
 
-        location = [LULocation fakeInstanceWithLatitude:@100.0f longitude:@45.0f];
+        location = [LULocation fixtureWithLatitude:@100.0f longitude:@45.0f];
         [[theValue([location coordinate].latitude) should] equal:theValue(90)];
       });
 
       it(@"bounds the longitude to [-180, 180]", ^{
-        LULocation *location = [LULocation fakeInstanceWithLatitude:@-70.0f longitude:@-200.0f];
+        LULocation *location = [LULocation fixtureWithLatitude:@-70.0f longitude:@-200.0f];
         [[theValue([location coordinate].longitude) should] equal:theValue(-180)];
 
-        location = [LULocation fakeInstanceWithLatitude:@-70.0f longitude:@200.0f];
+        location = [LULocation fixtureWithLatitude:@-70.0f longitude:@200.0f];
         [[theValue([location coordinate].longitude) should] equal:theValue(180)];
       });
 
       context(@"when the location doesn't have both a latitude and a longitude", ^{
         it(@"is kCLLocationCoordinate2DInvalid", ^{
-          LULocation *location = [LULocation fakeInstanceWithLatitude:@-70.0f longitude:nil];
+          LULocation *location = [LULocation fixtureWithLatitude:@-70.0f longitude:nil];
           [[theValue([location coordinate]) should] equal:theValue(kCLLocationCoordinate2DInvalid)];
 
-          location = [LULocation fakeInstanceWithLatitude:nil longitude:@45.0f];
+          location = [LULocation fixtureWithLatitude:nil longitude:@45.0f];
           [[theValue([location coordinate]) should] equal:theValue(kCLLocationCoordinate2DInvalid)];
         });
       });
@@ -150,7 +150,7 @@ describe(@"LULocation", ^{
 
   describe(@"subtitle", ^{
     it(@"is the name", ^{
-      LULocation *location = [LULocation fakeInstance];
+      LULocation *location = [LULocation fixture];
 
       [[[location subtitle] should] equal:location.name];
     });
@@ -158,7 +158,7 @@ describe(@"LULocation", ^{
 
   describe(@"title", ^{
     it(@"is the merchantName", ^{
-      LULocation *location = [LULocation fakeInstance];
+      LULocation *location = [LULocation fixture];
 
       [[[location title] should] equal:location.merchantName];
     });

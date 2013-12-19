@@ -1,15 +1,20 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
-#import "LUAccessToken+FakeInstance.h"
-#import "LUCampaign+FakeInstance.h"
-#import "LUClaim+FakeInstance.h"
-#import "LUCreditCard+FakeInstance.h"
-#import "LUInterstitial+FakeInstance.h"
-#import "LULocation+FakeInstance.h"
-#import "LULoyalty+FakeInstance.h"
-#import "LUOrder+FakeInstance.h"
-#import "LUUser+FakeInstance.h"
-#import "LUWebLocations+FakeInstance.h"
+// Fixtures
+
+#import "LUAccessToken+Fixtures.h"
+#import "LUCampaign+Fixtures.h"
+#import "LUClaim+Fixtures.h"
+#import "LUCreditCard+Fixtures.h"
+#import "LUInterstitial+Fixtures.h"
+#import "LULocation+Fixtures.h"
+#import "LULoyalty+Fixtures.h"
+#import "LUOrder+Fixtures.h"
+#import "LUPaymentToken+Fixtures.h"
+#import "LUUser+Fixtures.h"
+#import "LUWebLocations+Fixtures.h"
+
+// Network Stubbing
 
 #import "LUAPIStub.h"
 #import "LUAPIStubbing.h"

@@ -153,7 +153,20 @@ describe(@"LUAPIErrorBuilder", ^{
 
       context(@"when the JSON contains an array of v14 errors", ^{
         NSError *error = errorWithHTTPStatusCode(500);
-        NSArray *JSON = @[@{@"error" : [LUAPIError fullJSONObject]}, @{@"error" : [LUAPIError fullJSONObject2]}];
+
+        NSDictionary *fullJSONObject = @{
+          @"message" : @"error message",
+          @"object" : @"user",
+          @"property" : @"first_name"
+        };
+
+        NSDictionary *fullJSONObject2 = @{
+          @"message" : @"second message",
+          @"object" : @"location",
+          @"property" : @"name"
+        };
+
+        NSArray *JSON = @[@{@"error" : fullJSONObject}, @{@"error" : fullJSONObject2}];
 
         it(@"parses the errors and adds them to the userInfo", ^{
           NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:JSON];

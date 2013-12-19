@@ -3,6 +3,7 @@
 #import "LUCoreDataStack.h"
 #import "LUCoreDataStore.h"
 #import "NSArray+LUAdditions.h"
+#import "NSManagedObjectContext+FakeContext.h"
 
 SPEC_BEGIN(LUCoreDataStackSpec)
 
@@ -40,7 +41,7 @@ describe(@"LUCoreDataStack", ^{
     __block NSPersistentStore *persistentStore;
 
     beforeEach(^{
-      NSManagedObjectContext *testManagedObjectContext = [NSManagedObjectContext testContext];
+      NSManagedObjectContext *testManagedObjectContext = [NSManagedObjectContext fakeContext];
       [LUCoreDataStack stub:@selector(managedObjectContext) andReturn:testManagedObjectContext];
 
       persistentStore = [testManagedObjectContext.persistentStoreCoordinator.persistentStores lu_firstObject];

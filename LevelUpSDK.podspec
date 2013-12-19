@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     core.dependency 'LUKeychainAccess', '1.2.0'
     core.dependency 'ZXingObjC', '2.2.2'
 
-    core.source_files = 'Source/**/*.{h,m}', 'Frameworks/Braintree-Encryption/src'
+    core.source_files = 'Source/**/*.{h,m}'
     core.resources = 'Source/Resources/*'
   end
 

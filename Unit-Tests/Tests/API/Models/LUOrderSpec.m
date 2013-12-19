@@ -15,7 +15,7 @@ describe(@"LUOrder", ^{
 
   describe(@"closed", ^{
     context(@"when bundleClosedDate is nil", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithBundleOpen];
+      LUOrder *order = [LUOrder fixtureWithBundleOpen];
 
       it(@"is NO", ^{
         [[theValue([order closed]) should] beNo];
@@ -23,7 +23,7 @@ describe(@"LUOrder", ^{
     });
 
     context(@"when bundleClosedDate is non-nil", ^{
-      LUOrder *order = [LUOrder fakeInstance];
+      LUOrder *order = [LUOrder fixture];
 
       it(@"is YES", ^{
         [[theValue([order closed]) should] beYes];
@@ -33,7 +33,7 @@ describe(@"LUOrder", ^{
 
   describe(@"hasContribution", ^{
     context(@"when contribution is nil", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithoutContribution];
+      LUOrder *order = [LUOrder fixtureWithoutContribution];
 
       it(@"is NO", ^{
         [[theValue([order hasContribution]) should] beNo];
@@ -41,7 +41,7 @@ describe(@"LUOrder", ^{
     });
 
     context(@"when there is contribution with 0 value", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithContribution:[LUMonetaryValue monetaryValueWithUSD:@0.0f]];
+      LUOrder *order = [LUOrder fixtureWithContribution:[LUMonetaryValue monetaryValueWithUSD:@0.0f]];
 
       it(@"is NO", ^{
         [[theValue([order hasContribution]) should] beNo];
@@ -49,7 +49,7 @@ describe(@"LUOrder", ^{
     });
 
     context(@"when there is donaticontributionon with positive value", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithContribution:[LUMonetaryValue monetaryValueWithUSD:@2.0f]];
+      LUOrder *order = [LUOrder fixtureWithContribution:[LUMonetaryValue monetaryValueWithUSD:@2.0f]];
 
       it(@"is YES", ^{
         [[theValue([order hasContribution]) should] beYes];
@@ -59,7 +59,7 @@ describe(@"LUOrder", ^{
 
   describe(@"hasEarnedCredit", ^{
     context(@"when earn is nil", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithOnlySpend];
+      LUOrder *order = [LUOrder fixtureWithOnlySpend];
 
       it(@"is NO", ^{
         [[theValue([order hasEarnedCredit]) should] beNo];
@@ -67,7 +67,7 @@ describe(@"LUOrder", ^{
     });
 
     context(@"when earn is 0", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithEarn:[LUMonetaryValue monetaryValueWithUSD:@0.0f]];
+      LUOrder *order = [LUOrder fixtureWithEarn:[LUMonetaryValue monetaryValueWithUSD:@0.0f]];
 
       it(@"is NO", ^{
         [[theValue([order hasEarnedCredit]) should] beNo];
@@ -75,7 +75,7 @@ describe(@"LUOrder", ^{
     });
 
     context(@"when earn is positive", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithEarn:[LUMonetaryValue monetaryValueWithUSD:@2.0f]];
+      LUOrder *order = [LUOrder fixtureWithEarn:[LUMonetaryValue monetaryValueWithUSD:@2.0f]];
 
       it(@"is YES", ^{
         [[theValue([order hasEarnedCredit]) should] beYes];
@@ -85,7 +85,7 @@ describe(@"LUOrder", ^{
 
   describe(@"hasNonZeroBalance", ^{
     context(@"when balance is 0", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithZeroBalance];
+      LUOrder *order = [LUOrder fixtureWithZeroBalance];
 
       it(@"is NO", ^{
         [[theValue([order hasNonZeroBalance]) should] beNo];
@@ -93,7 +93,7 @@ describe(@"LUOrder", ^{
     });
 
     context(@"when balance is non-zero", ^{
-      LUOrder *order = [LUOrder fakeInstance];
+      LUOrder *order = [LUOrder fixture];
 
       it(@"is YES", ^{
         [[theValue([order hasNonZeroBalance]) should] beYes];
@@ -103,7 +103,7 @@ describe(@"LUOrder", ^{
 
   describe(@"hasTipApplied", ^{
     context(@"when tip is nil", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithoutTip];
+      LUOrder *order = [LUOrder fixtureWithoutTip];
 
       it(@"is NO", ^{
         [[theValue([order hasTipApplied]) should] beNo];
@@ -111,7 +111,7 @@ describe(@"LUOrder", ^{
     });
 
     context(@"when tip is 0", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithTip:[LUMonetaryValue monetaryValueWithUSD:@0.0f]];
+      LUOrder *order = [LUOrder fixtureWithTip:[LUMonetaryValue monetaryValueWithUSD:@0.0f]];
 
       it(@"is NO", ^{
         [[theValue([order hasTipApplied]) should] beNo];
@@ -119,7 +119,7 @@ describe(@"LUOrder", ^{
     });
 
     context(@"when tip is positive", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithTip:[LUMonetaryValue monetaryValueWithUSD:@2.0f]];
+      LUOrder *order = [LUOrder fixtureWithTip:[LUMonetaryValue monetaryValueWithUSD:@2.0f]];
 
       it(@"is YES", ^{
         [[theValue([order hasTipApplied]) should] beYes];
@@ -129,7 +129,7 @@ describe(@"LUOrder", ^{
 
   describe(@"hasUsedCredit", ^{
     context(@"when credit is nil", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithCredit:nil];
+      LUOrder *order = [LUOrder fixtureWithCredit:nil];
 
       it(@"is NO", ^{
         [[theValue([order hasUsedCredit]) should] beNo];
@@ -137,7 +137,7 @@ describe(@"LUOrder", ^{
     });
 
     context(@"when credit is 0", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithCredit:[LUMonetaryValue monetaryValueWithUSD:@0.0f]];
+      LUOrder *order = [LUOrder fixtureWithCredit:[LUMonetaryValue monetaryValueWithUSD:@0.0f]];
 
       it(@"is NO", ^{
         [[theValue([order hasUsedCredit]) should] beNo];
@@ -145,7 +145,7 @@ describe(@"LUOrder", ^{
     });
 
     context(@"when credit is positive", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithCredit:[LUMonetaryValue monetaryValueWithUSD:@2.0f]];
+      LUOrder *order = [LUOrder fixtureWithCredit:[LUMonetaryValue monetaryValueWithUSD:@2.0f]];
 
       it(@"is YES", ^{
         [[theValue([order hasUsedCredit]) should] beYes];
@@ -154,7 +154,7 @@ describe(@"LUOrder", ^{
   });
 
   describe(@"imageURL", ^{
-    LUOrder *order = [LUOrder fakeInstance];
+    LUOrder *order = [LUOrder fixture];
     NSURL *URL = [NSURL URLWithString:@"http://example.com/path/to/image"];
 
     beforeEach(^{
@@ -167,7 +167,7 @@ describe(@"LUOrder", ^{
   });
 
   describe(@"singleLineAddress", ^{
-    LUOrder *order = [LUOrder fakeInstance];
+    LUOrder *order = [LUOrder fixture];
 
     it(@"is combination of all the address elements", ^{
       NSString *expected = [NSString stringWithFormat:@"%@, %@, %@, %@ %@",
@@ -180,7 +180,7 @@ describe(@"LUOrder", ^{
 
   describe(@"wasRefunded", ^{
     context(@"when refundedDate is nil", ^{
-      LUOrder *order = [LUOrder fakeInstance];
+      LUOrder *order = [LUOrder fixture];
 
       it(@"is NO", ^{
         [[theValue([order wasRefunded]) should] beNo];
@@ -188,7 +188,7 @@ describe(@"LUOrder", ^{
     });
 
     context(@"when refundedDate is non-nil", ^{
-      LUOrder *order = [LUOrder fakeInstanceWithRefundedStatus];
+      LUOrder *order = [LUOrder fixtureWithRefundedStatus];
 
       it(@"is YES", ^{
         [[theValue([order wasRefunded]) should] beYes];

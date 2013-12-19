@@ -1,6 +1,7 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
 #import "LUCachedLocation.h"
+#import "NSManagedObjectContext+FakeContext.h"
 
 SPEC_BEGIN(LUCachedLocationSpec)
 
@@ -9,7 +10,7 @@ describe(@"LUCachedLocation", ^{
   __block LUCachedLocation *testLocation;
 
   beforeEach(^{
-    testManagedObjectContext = [NSManagedObjectContext testContext];
+    testManagedObjectContext = [NSManagedObjectContext fakeContext];
 
     testLocation = [NSEntityDescription insertNewObjectForEntityForName:[LUCachedLocation entityName] inManagedObjectContext:testManagedObjectContext];
     testLocation.categoryIDs = @"1|2|3|";
@@ -112,7 +113,7 @@ describe(@"LUCachedLocation", ^{
 
   describe(@"updatePropertiesFromLocation:", ^{
     it(@"updates the receiver's properties using the given LULocation", ^{
-      LULocation *location = [LULocation fakeInstance];
+      LULocation *location = [LULocation fixture];
       [testLocation updatePropertiesFromLocation:location];
 
       [[testLocation.categoryIDs should] equal:@"1|2|"];

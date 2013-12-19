@@ -1,6 +1,7 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
 #import "LULocationSummaryJSONFactory.h"
+#import "NSDate+StringFormats.h"
 
 SPEC_BEGIN(LULocationSummaryJSONFactorySpec)
 
@@ -13,7 +14,17 @@ describe(@"LULocationSummaryJSONFactory", ^{
 
   describe(@"createFromAttributes:", ^{
     it(@"parses a JSON dictionary into an LULocation", ^{
-      LULocation *location = [factory createFromAttributes:[LULocation summaryJSONObject]];
+      NSDictionary *JSON = @{
+        @"categories" : @[@1, @2, @3],
+        @"id" : @1,
+        @"latitude" : @70,
+        @"longitude" : @-45,
+        @"merchant_id" : @1,
+        @"merchant_name" : @"Dewey, Cheatem and Howe",
+        @"shown" : @1,
+        @"updated_at" : @"2012-12-04T18:10:45-05:00"
+      };
+      LULocation *location = [factory createFromAttributes:JSON];
 
       [[location.categoryIDs should] equal:@[@1, @2, @3]];
       [[location.latitude should] equal:@70];
@@ -23,7 +34,7 @@ describe(@"LULocationSummaryJSONFactory", ^{
       [[location.merchantName should] equal:@"Dewey, Cheatem and Howe"];
       [[theValue(location.shown) should] beYes];
       [[theValue(location.summary) should] beYes];
-      [[location.updatedAtDate should] equal:[NSDate fixture]];
+      [[location.updatedAtDate should] equal:[NSDate lu_dateFromIso8601DateTimeString:@"2012-12-04T18:10:45-05:00"]];
     });
   });
 

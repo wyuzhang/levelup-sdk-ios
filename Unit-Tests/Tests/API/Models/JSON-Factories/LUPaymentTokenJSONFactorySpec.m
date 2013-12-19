@@ -13,7 +13,11 @@ describe(@"LUPaymentTokenJSONFactory", ^{
 
   describe(@"createFromAttributes:", ^{
     it(@"parses a JSON dictionary into an LUPaymentToken", ^{
-      LUPaymentToken *paymentToken = [factory createFromAttributes:[LUPaymentToken fullJSONObject]];
+      NSDictionary *JSON = @{
+        @"data" : @"LU02000TESTTESTTEST01234",
+        @"id" : @1
+      };
+      LUPaymentToken *paymentToken = [factory createFromAttributes:JSON];
 
       [[paymentToken.data should] equal:@"LU02000TESTTESTTEST01234"];
       [[paymentToken.paymentTokenID should] equal:@1];

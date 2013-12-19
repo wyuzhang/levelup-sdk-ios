@@ -13,7 +13,8 @@ describe(@"LUCategoryJSONFactory", ^{
 
   describe(@"createFromAttributes:", ^{
     it(@"parses a JSON dictionary into an LUCategory", ^{
-      LUCategory *category = [factory createFromAttributes:[LUCategory fullJSONObject]];
+      NSDictionary *JSON = @{@"id" : @1, @"name" : @"Test Category"};
+      LUCategory *category = [factory createFromAttributes:JSON];
 
       [[category.categoryID should] equal:@1];
       [[category.name should] equal:@"Test Category"];

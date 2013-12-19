@@ -4,6 +4,7 @@
 #import "LUCoreDataStack.h"
 #import "LULocationCacheUpdater.h"
 #import "LULocationRequestFactory.h"
+#import "NSManagedObjectContext+FakeContext.h"
 
 SPEC_BEGIN(LULocationCacheUpdaterSpec)
 
@@ -13,7 +14,7 @@ describe(@"LULocationCacheUpdater", ^{
   __block NSManagedObjectContext *testManagedObjectContext;
 
   beforeEach(^{
-    testManagedObjectContext = [NSManagedObjectContext testContext];
+    testManagedObjectContext = [NSManagedObjectContext fakeContext];
     [LUCoreDataStack stub:@selector(managedObjectContext) andReturn:testManagedObjectContext];
 
     [LUAPIClient setupWithAppID:@"1" APIKey:@"test" developmentMode:YES];
@@ -29,11 +30,11 @@ describe(@"LULocationCacheUpdater", ^{
     NSURL *nextPage1 = [NSURL URLWithString:@"http://example.com/next1"];
     NSURL *nextPage2 = [NSURL URLWithString:@"http://example.com/next2"];
 
-    LULocation *location1 = [LULocation fakeInstanceWithLocationID:@1];
-    LULocation *location2 = [LULocation fakeInstanceWithLocationID:@2];
+    LULocation *location1 = [LULocation fixtureWithLocationID:@1];
+    LULocation *location2 = [LULocation fixtureWithLocationID:@2];
 
-    LULocation *location3 = [LULocation fakeInstanceWithLocationID:@3];
-    LULocation *location4 = [LULocation fakeInstanceWithLocationID:@4];
+    LULocation *location3 = [LULocation fixtureWithLocationID:@3];
+    LULocation *location4 = [LULocation fixtureWithLocationID:@4];
 
     __block LUAPIResponse *apiResponse1, *apiResponse2;
 

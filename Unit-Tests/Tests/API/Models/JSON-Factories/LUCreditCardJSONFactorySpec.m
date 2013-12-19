@@ -13,7 +13,16 @@ describe(@"LUCreditCardJSONFactory", ^{
 
   describe(@"createFromAttributes:", ^{
     it(@"parses a JSON dictionary into an LUCreditCard", ^{
-      LUCreditCard *creditCard = [factory createFromAttributes:[LUCreditCard fullJSONObject]];
+      NSDictionary *JSON = @{
+        @"description": @"description",
+        @"id" : @1,
+        @"expiration_month" : @11,
+        @"expiration_year" : @13,
+        @"last_4" : @"1234",
+        @"promoted" : @YES,
+        @"type" : @"visa"
+      };
+      LUCreditCard *creditCard = [factory createFromAttributes:JSON];
 
       [[creditCard.creditCardDescription should] equal:@"description"];
       [[creditCard.creditCardID should] equal:@1];

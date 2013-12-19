@@ -1,6 +1,7 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
 #import "LUOrderJSONFactory.h"
+#import "NSDate+StringFormats.h"
 
 SPEC_BEGIN(LUOrderJSONFactorySpec)
 
@@ -13,14 +14,38 @@ describe(@"LUOrderJSONFactory", ^{
 
   describe(@"createFromAttributes:", ^{
     it(@"parses a JSON dictionary into an LUOrder", ^{
-      LUOrder *order = [factory createFromAttributes:[LUOrder fullJSONObject]];
+      NSDictionary *JSON = @{
+        @"balance_amount" : @1000,
+        @"bundle_closed_at" : @"2012-12-04T18:10:45-05:00",
+        @"bundle_descriptor" : @"LevelUp",
+        @"contribution_amount" : @50,
+        @"contribution_target_name" : @"Test Charity",
+        @"created_at" : @"2012-12-05T18:10:45-05:00",
+        @"credit_applied_amount" : @100,
+        @"credit_earned_amount" : @250,
+        @"location_extended_address" : @"Apt E",
+        @"location_id" : @1,
+        @"location_locality" : @"Boston",
+        @"location_postal_code" : @"01234",
+        @"location_region" : @"MA",
+        @"location_street_address" : @"1 Main St",
+        @"merchant_id" : @1,
+        @"merchant_name" : @"Test Merchant",
+        @"refunded_at" : @"2012-12-06T18:10:45-05:00",
+        @"spend_amount" : @800,
+        @"tip_amount" : @200,
+        @"total_amount" : @1000,
+        @"transacted_at" : @"2012-12-07T18:10:45-05:00",
+        @"uuid" : @"abcd1234"
+      };
+      LUOrder *order = [factory createFromAttributes:JSON];
 
       [[order.balance should] equal:[LUMonetaryValue monetaryValueWithUSCents:@1000]];
-      [[order.bundleClosedDate should] equal:[NSDate fixture]];
+      [[order.bundleClosedDate should] equal:[NSDate lu_dateFromIso8601DateTimeString:@"2012-12-04T18:10:45-05:00"]];
       [[order.bundleDescriptor should] equal:@"LevelUp"];
       [[order.contribution should] equal:[LUMonetaryValue monetaryValueWithUSCents:@50]];
       [[order.contributionTargetName should] equal:@"Test Charity"];
-      [[order.createdDate should] equal:[NSDate fixture]];
+      [[order.createdDate should] equal:[NSDate lu_dateFromIso8601DateTimeString:@"2012-12-05T18:10:45-05:00"]];
       [[order.credit should] equal:[LUMonetaryValue monetaryValueWithUSCents:@100]];
       [[order.earn should] equal:[LUMonetaryValue monetaryValueWithUSCents:@250]];
       [[order.locationExtendedAddress should] equal:@"Apt E"];
@@ -31,11 +56,11 @@ describe(@"LUOrderJSONFactory", ^{
       [[order.locationStreetAddress should] equal:@"1 Main St"];
       [[order.merchantID should] equal:@1];
       [[order.merchantName should] equal:@"Test Merchant"];
-      [[order.refundedDate should] equal:[NSDate fixture]];
+      [[order.refundedDate should] equal:[NSDate lu_dateFromIso8601DateTimeString:@"2012-12-06T18:10:45-05:00"]];
       [[order.spend should] equal:[LUMonetaryValue monetaryValueWithUSCents:@800]];
       [[order.tip should] equal:[LUMonetaryValue monetaryValueWithUSCents:@200]];
       [[order.total should] equal:[LUMonetaryValue monetaryValueWithUSCents:@1000]];
-      [[order.transactedDate should] equal:[NSDate fixture]];
+      [[order.transactedDate should] equal:[NSDate lu_dateFromIso8601DateTimeString:@"2012-12-07T18:10:45-05:00"]];
       [[order.UUID should] equal:@"abcd1234"];
     });
   });

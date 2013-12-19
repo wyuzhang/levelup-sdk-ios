@@ -13,7 +13,13 @@ describe(@"LUMonetaryValueJSONFactory", ^{
 
   describe(@"createFromAttributes:", ^{
     it(@"parses a JSON dictionary into an LUMonetaryValue", ^{
-      LUMonetaryValue *monetaryValue = [factory createFromAttributes:[LUMonetaryValue fullJSONObject]];
+      NSDictionary *JSON = @{
+        @"amount" : @1000,
+        @"currency_code" : @"USD",
+        @"currency_symbol" : @"$",
+        @"formatted_amount" : @"10.00"
+      };
+      LUMonetaryValue *monetaryValue = [factory createFromAttributes:JSON];
 
       [[monetaryValue.amount should] equal:@1000];
       [[monetaryValue.currencyCode should] equal:@"USD"];
