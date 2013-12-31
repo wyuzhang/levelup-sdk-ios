@@ -1,0 +1,30 @@
+{
+  "location" : {
+    "id" : 1,
+    "merchant_id" : 1,
+    "phone" : "(123) 123-1234",
+    "hours" : "Mon - Sun 9am - 9pm",
+    "extended_address" : "1st Floor",
+    "latitude" : 38.897096,
+    "visible" : true,
+    "region" : "DC",
+    "postal_code" : "20500",
+    "longitude" : -77.036545,
+    "street_address" : "1600 Pennsylvania Ave",
+    "locality" : "Washington",
+    "name" : "White House",
+    "merchant_name" : "United States of America",
+    "menu_url" : "http://example.com/menu",
+    "twitter_url" : "http://example.com/twitter",
+    "shown" : true,
+    "yelp_url" : "http://example.com/yelp",
+    "merchant_description_html" : "Merchant Description",
+    "merchant_tip_preference" : "no preference",
+    "facebook_url" : "http://example.com/facebook",
+    "opentable_url" : "http://example.com/opentable",
+    "categories" : [
+      1
+    ],
+    "newsletter_url" : "http://example.com/newsletter"
+  }
+}

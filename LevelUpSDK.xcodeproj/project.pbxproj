@@ -450,6 +450,7 @@
 		05C538A8A6814C6E82461EB1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		1A39890392E641DAA8438DC9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.xcconfig"; path = "Pods/Pods-test.xcconfig"; sourceTree = SOURCE_ROOT; };
+		25128E4C18732E9100FA2B62 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
 		2523E31517374B2900FBDFEB /* LULocationSummaryJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationSummaryJSONFactory.h; sourceTree = "<group>"; };
 		2523E31617374B2900FBDFEB /* LULocationSummaryJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationSummaryJSONFactory.m; sourceTree = "<group>"; };
 		2523E31917374B3F00FBDFEB /* LULocationRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationRequestFactory.h; sourceTree = "<group>"; };
@@ -826,6 +827,7 @@
 				021EA6E617D92A11004F4DAF /* failed_claim.json */,
 				02CD576A17D9070C006205C6 /* interstitial.json */,
 				02E2914F175FCAB8002036B4 /* legacy_loyalty_claim.json */,
+				25128E4C18732E9100FA2B62 /* location.json */,
 				0229381617626B500057C381 /* location_summaries.json */,
 				02CD576C17D90717006205C6 /* loyalty_disabled.json */,
 				02E29150175FCAB8002036B4 /* loyalty_no_credit.json */,
