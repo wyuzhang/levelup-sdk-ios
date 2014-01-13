@@ -1,5 +1,6 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
+#import "LUMonetaryValue.h"
 #import "LUOrder+Fixtures.h"
 #import "NSDate+StringFormats.h"
 
