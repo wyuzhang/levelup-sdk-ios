@@ -5,6 +5,9 @@
 #import "LUCoreDataStack.h"
 #import "NSArray+LUAdditions.h"
 
+const CLLocationDistance LURadiusOfEarth = 6378100.0;
+const CLLocationDistance LULengthOfDegreeOfLatitude = 11132.954;
+
 @interface LUCachedLocationSearch ()
 
 @property (nonatomic, copy) NSNumber *categoryID;
@@ -36,7 +39,7 @@
     return [obj1 compare:obj2 relativeToLocation:self.center];
   }];
 
-  if (locations.count > self.limit) {
+  if ([locations count] > self.limit) {
     [locations setArray:[locations subarrayWithRange:NSMakeRange(0, self.limit)]];
   }
 
@@ -47,6 +50,15 @@
 
 #pragma mark - Private Methods (Nearby Locations)
 
+- (NSArray *)locationsWithinRadius:(CLLocationDistance)radius error:(NSError **)error {
+  NSFetchRequest *fetchRequest = [self fetchRequestForLocationsWithinRadius:radius];
+  NSMutableArray *locations = [[self.managedObjectContext executeFetchRequest:fetchRequest error:error] mutableCopy];
+
+  return [locations filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(LUCachedLocation *location, NSDictionary *bindings) {
+    return [[location toCLLocation] distanceFromLocation:self.center] <= radius;
+  }]];
+}
+
 - (NSArray *)nearbyLocations:(NSError **)error {
   NSFetchRequest *fetchRequestForAllLocations = [self fetchRequestForAllLocations];
   NSUInteger totalNumberOfLocations = [self.managedObjectContext countForFetchRequest:fetchRequestForAllLocations
@@ -54,24 +66,21 @@
 
   if (totalNumberOfLocations == 0) {
     return [NSArray array];
-  } else if (totalNumberOfLocations < self.limit) {
+  } else if (totalNumberOfLocations <= self.limit) {
     return [self.managedObjectContext executeFetchRequest:fetchRequestForAllLocations error:error];
   }
 
-  static double radiusSanityCheck = 360.0;
-
-  double radius = 0.01;
-  NSUInteger count = 0;
-  NSFetchRequest *fetchRequest;
+  CLLocationDistance radius = 100.0;
+  NSArray *locations;
 
   do {
-    fetchRequest = [self fetchRequestForLocationsWithinRadius:radius];
-    count = [self.managedObjectContext countForFetchRequest:fetchRequest error:error];
+    locations = [self locationsWithinRadius:radius error:error];
+    if (!locations) return nil;
 
     radius *= 2.0;
-  } while (count < self.limit && radius < radiusSanityCheck);
+  } while ([locations count] < self.limit && radius < LURadiusOfEarth * 2);
 
-  return [self.managedObjectContext executeFetchRequest:fetchRequest error:error];
+  return locations;
 }
 
 #pragma mark - Private Methods (Fetch Requests)
@@ -80,9 +89,8 @@
   return [self fetchRequestForLocationsWithinRadius:-1];
 }
 
-- (NSFetchRequest *)fetchRequestForLocationsWithinRadius:(double)radius {
+- (NSFetchRequest *)fetchRequestForLocationsWithinRadius:(CLLocationDistance)radius {
   NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[LUCachedLocation entityName]];
-  fetchRequest.fetchLimit = self.limit;
 
   NSMutableArray *subpredicates = [NSMutableArray arrayWithObject:[self predicateForShown]];
 
@@ -109,25 +117,33 @@
   return [NSPredicate predicateWithFormat:@"categoryIDs CONTAINS %@", [NSString stringWithFormat:@"%@|", self.categoryID]];
 }
 
-- (NSPredicate *)predicateForRadius:(double)radius {
-  double minLatitude = self.center.coordinate.latitude - radius;
-  double maxLatitude = self.center.coordinate.latitude + radius;
+- (NSPredicate *)predicateForRadius:(CLLocationDistance)radius {
+  CLLocationDegrees radiusInDegrees = radius / LULengthOfDegreeOfLatitude;
+
+  CLLocationDegrees minLatitude = self.center.coordinate.latitude - radiusInDegrees;
+  CLLocationDegrees maxLatitude = self.center.coordinate.latitude + radiusInDegrees;
 
   if (minLatitude > maxLatitude) {
-    double tmp = maxLatitude;
+    CLLocationDegrees tmp = maxLatitude;
     maxLatitude = minLatitude;
     minLatitude = tmp;
   }
 
-  double longitudeFudge = cos(self.center.coordinate.longitude * M_PI / 180) * radius;
-  double minLongitude = self.center.coordinate.longitude - longitudeFudge;
-  double maxLongitude = self.center.coordinate.longitude + longitudeFudge;
+  minLatitude = MAX(minLatitude, -90.0);
+  maxLatitude = MIN(maxLatitude, 90.0);
+
+  CLLocationDistance longitudeFudge = cos(self.center.coordinate.longitude * M_PI / 180);
+  CLLocationDegrees minLongitude = self.center.coordinate.longitude - radiusInDegrees * longitudeFudge;
+  CLLocationDegrees maxLongitude = self.center.coordinate.longitude + radiusInDegrees * longitudeFudge;
 
   if (minLongitude > maxLongitude) {
     double tmp = maxLongitude;
     maxLongitude = minLongitude;
     minLongitude = tmp;
   }
+
+  minLongitude = MAX(minLongitude, -180.0);
+  maxLongitude = MIN(maxLongitude, 180.0);
 
   return [NSPredicate predicateWithFormat:@"(latitude BETWEEN {%@, %@}) AND (longitude BETWEEN {%@, %@})", @(minLatitude), @(maxLatitude), @(minLongitude), @(maxLongitude)];
 }

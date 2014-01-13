@@ -23,8 +23,8 @@ describe(@"LUCachedLocationSearch", ^{
                                               inManagedObjectContext:testManagedObjectContext];
     location1.categoryIDs = @"1|2|";
     location1.locationID = @100;
-    location1.latitude = @100;
-    location1.longitude = @100;
+    location1.latitude = @50;
+    location1.longitude = @50;
     location1.shown = @YES;
 
     location2 = [NSEntityDescription insertNewObjectForEntityForName:[LUCachedLocation entityName]

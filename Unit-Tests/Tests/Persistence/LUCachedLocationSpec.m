@@ -96,6 +96,15 @@ describe(@"LUCachedLocation", ^{
     });
   });
 
+  describe(@"toCLLocation", ^{
+    it(@"returns a representation of the receiver as a CLLocation", ^{
+      CLLocation *result = [testLocation toCLLocation];
+      [[result should] beKindOfClass:[CLLocation class]];
+      [[theValue(result.coordinate.latitude) should] equal:theValue([testLocation.latitude doubleValue])];
+      [[theValue(result.coordinate.longitude) should] equal:theValue([testLocation.longitude doubleValue])];
+    });
+  });
+
   describe(@"toLocation", ^{
     it(@"returns a representation of the receiver as an LULocation", ^{
       LULocation *result = [testLocation toLocation];

@@ -41,13 +41,8 @@
 }
 
 - (NSComparisonResult)compare:(LUCachedLocation *)otherLocation relativeToLocation:(CLLocation *)center {
-  CLLocation *location1 = [[CLLocation alloc] initWithLatitude:[self.latitude floatValue]
-                                                     longitude:[self.longitude floatValue]];
-  CLLocationDistance distance1 = [center distanceFromLocation:location1];
-
-  CLLocation *location2 = [[CLLocation alloc] initWithLatitude:[otherLocation.latitude floatValue]
-                                                     longitude:[otherLocation.longitude floatValue]];
-  CLLocationDistance distance2 = [center distanceFromLocation:location2];
+  CLLocationDistance distance1 = [center distanceFromLocation:[self toCLLocation]];
+  CLLocationDistance distance2 = [center distanceFromLocation:[otherLocation toCLLocation]];
 
   if (distance1 < distance2) {
     return NSOrderedAscending;
@@ -56,6 +51,10 @@
   } else {
     return NSOrderedSame;
   }
+}
+
+- (CLLocation *)toCLLocation {
+  return [[CLLocation alloc] initWithLatitude:[self.latitude doubleValue] longitude:[self.longitude doubleValue]];
 }
 
 - (LULocation *)toLocation {

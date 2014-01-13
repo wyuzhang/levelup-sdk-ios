@@ -17,6 +17,7 @@
 + (LUCachedLocation *)findOrBuildWithLocationID:(NSNumber *)locationID
                            managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 - (NSComparisonResult)compare:(LUCachedLocation *)otherLocation relativeToLocation:(CLLocation *)center;
+- (CLLocation *)toCLLocation;
 - (LULocation *)toLocation;
 - (void)updatePropertiesFromLocation:(LULocation *)location;
 
