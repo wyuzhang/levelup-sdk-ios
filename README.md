@@ -135,6 +135,12 @@ LUAPIRequest *request = [LUUserRequestFactory requestForCurrentUser];
 [[LUAPIStubbing sharedInstance] clearStubs];
 ```
 
+# Developer Terms
+
+By enabling LevelUp integrations, including through this SDK, you agree
+to LevelUp's [developer
+terms](https://www.thelevelup.com/developer-terms).
+
 # Copyright
 
 Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
