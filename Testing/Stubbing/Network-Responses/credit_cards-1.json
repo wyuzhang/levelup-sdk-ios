@@ -3,6 +3,7 @@
     "credit_card": {
       "id": 2,
       "promoted": true,
+      "debit": false,
       "description": "Visa ending in 1111",
       "expiration_month": "8",
       "expiration_year": "2016",

@@ -29,6 +29,11 @@
 @property (nonatomic, copy) NSString *cvv;
 
 /**
+ Specifies if the card is a debit card.
+ */
+@property (nonatomic, assign, readonly) BOOL debit;
+
+/**
  The card's expiration month, as a number from 1 to 12.
  */
 @property (nonatomic, copy) NSNumber *expirationMonth;
@@ -66,7 +71,7 @@
 @property (nonatomic, copy, readonly) NSString *type;
 
 - (id)initWithBIN:(NSString *)BIN creditCardDescription:(NSString *)creditCardDescription creditCardID:(NSNumber *)creditCardID
-                                cvv:(NSString *)cvv expirationMonth:(NSNumber *)expirationMonth
+                                cvv:(NSString *)cvv debit:(BOOL)debit expirationMonth:(NSNumber *)expirationMonth
                      expirationYear:(NSNumber *)expirationYear last4Digits:(NSString *)last4Digits
                              number:(NSString *)number postalCode:(NSString *)postalCode promoted:(BOOL)promoted
                                type:(NSString *)type;

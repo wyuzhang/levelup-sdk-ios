@@ -2,6 +2,7 @@
   "credit_card": {
     "id": 1,
     "promoted": true,
+    "debit": false,
     "description": "MasterCard ending in 4444",
     "expiration_month": "11",
     "expiration_year": "2013",

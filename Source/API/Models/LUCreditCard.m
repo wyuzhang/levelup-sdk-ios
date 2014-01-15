@@ -7,7 +7,7 @@
 #pragma mark - Creation
 
 - (id)initWithBIN:(NSString *)BIN creditCardDescription:(NSString *)creditCardDescription creditCardID:(NSNumber *)creditCardID
-                                cvv:(NSString *)cvv expirationMonth:(NSNumber *)expirationMonth
+                                cvv:(NSString *)cvv debit:(BOOL)debit expirationMonth:(NSNumber *)expirationMonth
                      expirationYear:(NSNumber *)expirationYear last4Digits:(NSString *)last4Digits
                              number:(NSString *)number postalCode:(NSString *)postalCode promoted:(BOOL)promoted
                                type:(NSString *)type {
@@ -18,6 +18,7 @@
   _creditCardDescription = creditCardDescription;
   _creditCardID = creditCardID;
   _cvv = cvv;
+  _debit = debit;
   _expirationMonth = expirationMonth;
   _expirationYear = expirationYear;
   _last4Digits = last4Digits;
@@ -33,8 +34,8 @@
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUCreditCard [address=%p, creditCardDescription=%@, cvv=%@, expirationMonth=%@, expirationYear=%@, ID=%@, last4Digits=%@, number=%@, postalCode=%@, promoted=%@, type=%@]",
-          self, self.creditCardDescription, self.cvv, self.expirationMonth, self.expirationYear, self.creditCardID,
+          @"LUCreditCard [address=%p, creditCardDescription=%@, cvv=%@, debit=%@, expirationMonth=%@, expirationYear=%@, ID=%@, last4Digits=%@, number=%@, postalCode=%@, promoted=%@, type=%@]",
+          self, self.creditCardDescription, self.cvv, @(self.debit), self.expirationMonth, self.expirationYear, self.creditCardID,
           self.last4Digits, self.number, self.postalCode, @(self.promoted), self.type];
 }
 

@@ -5,6 +5,7 @@
 @interface LUCreditCard (Fixtures)
 
 + (LUCreditCard *)fixture;
++ (LUCreditCard *)fixtureForDebitCard;
 + (LUCreditCard *)fixtureForPromotedCard;
 + (LUCreditCard *)fixtureWithExpirationMonth:(NSNumber *)expirationMonth expirationYear:(NSNumber *)expirationYear;
 + (LUCreditCard *)fixtureWithID:(NSNumber *)creditCardID;

@@ -3,6 +3,7 @@
     "credit_card": {
       "id": 1,
       "promoted": true,
+      "debit": false,
       "description": "MasterCard ending in 4444",
       "expiration_month": "11",
       "expiration_year": "2013",
@@ -14,6 +15,7 @@
     "credit_card": {
       "id": 2,
       "promoted": false,
+      "debit": false,
       "description": "Visa ending in 1111",
       "expiration_month": "8",
       "expiration_year": "2016",
