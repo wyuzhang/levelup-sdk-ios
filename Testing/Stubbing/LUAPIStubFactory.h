@@ -15,10 +15,7 @@
 + (LUAPIStub *)stubToCreateTicket:(NSString *)body;
 + (LUAPIStub *)stubToCreateUser;
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user;
-+ (LUAPIStub *)stubToCreateUserWithFacebookAccessToken:(NSString *)facebookAccessToken;
 + (LUAPIStub *)stubToDeleteCreditCardWithID:(NSNumber *)creditCardID;
-+ (LUAPIStub *)stubToFacebookConnectWithFacebookAccessToken:(NSString *)facebookAccessToken;
-+ (LUAPIStub *)stubToFacebookDisconnect;
 + (LUAPIStub *)stubToFailToClaimCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignForMerchantWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code;
@@ -27,7 +24,6 @@
 + (LUAPIStub *)stubToGetCreditAtLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToGetCreditCardsOneResult;
 + (LUAPIStub *)stubToGetCreditCardsTwoResults;
-+ (LUAPIStub *)stubToGetCurrentFacebookConnectedUser;
 + (LUAPIStub *)stubToGetCurrentUser;
 + (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfo;
 + (LUAPIStub *)stubToGetIneligiblePaymentToken;
@@ -51,7 +47,6 @@
 + (LUAPIStub *)stubToGetURL:(NSString *)url withBody:(NSString *)body;
 + (LUAPIStub *)stubToLogIn;
 + (LUAPIStub *)stubToLogInWithEmail:(NSString *)email password:(NSString *)password;
-+ (LUAPIStub *)stubToLogInWithFacebookAccessToken:(NSString *)facebookAccessToken;
 + (LUAPIStub *)stubToPromoteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToResetPasswordRequest;
 + (LUAPIStub *)stubToUpdateUser;

@@ -35,7 +35,6 @@
 		0264391E185BB71600175425 /* credit.json in Resources */ = {isa = PBXBuildFile; fileRef = 0264391D185BB71600175425 /* credit.json */; };
 		02643920185BB73900175425 /* LULocationCreditJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0264391F185BB73900175425 /* LULocationCreditJSONFactorySpec.m */; };
 		02643922185BB76200175425 /* LULocationCreditRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02643921185BB76200175425 /* LULocationCreditRequestFactorySpec.m */; };
-		02704A5F17B96496009AF443 /* facebook_connected_user.json in Resources */ = {isa = PBXBuildFile; fileRef = 02704A5E17B96496009AF443 /* facebook_connected_user.json */; };
 		0274B83C17739B7800FD5B43 /* LUAPIError.h in Headers */ = {isa = PBXBuildFile; fileRef = 0274B83A17739B7800FD5B43 /* LUAPIError.h */; };
 		0274B83D17739B7800FD5B43 /* LUAPIError.m in Sources */ = {isa = PBXBuildFile; fileRef = 0274B83B17739B7800FD5B43 /* LUAPIError.m */; };
 		0274B84017739BAA00FD5B43 /* LUAPIErrorJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0274B83E17739BAA00FD5B43 /* LUAPIErrorJSONFactory.h */; };
@@ -359,7 +358,6 @@
 		0264391D185BB71600175425 /* credit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credit.json; sourceTree = "<group>"; };
 		0264391F185BB73900175425 /* LULocationCreditJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationCreditJSONFactorySpec.m; sourceTree = "<group>"; };
 		02643921185BB76200175425 /* LULocationCreditRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationCreditRequestFactorySpec.m; sourceTree = "<group>"; };
-		02704A5E17B96496009AF443 /* facebook_connected_user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = facebook_connected_user.json; sourceTree = "<group>"; };
 		0274B83A17739B7800FD5B43 /* LUAPIError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIError.h; sourceTree = "<group>"; };
 		0274B83B17739B7800FD5B43 /* LUAPIError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIError.m; sourceTree = "<group>"; };
 		0274B83E17739BAA00FD5B43 /* LUAPIErrorJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIErrorJSONFactory.h; sourceTree = "<group>"; };
@@ -782,7 +780,6 @@
 				0264391D185BB71600175425 /* credit.json */,
 				02E2914D175FCAB8002036B4 /* current_user.json */,
 				40140B53181EAD4B005A66BF /* current_user_minimal.json */,
-				02704A5E17B96496009AF443 /* facebook_connected_user.json */,
 				021EA6E617D92A11004F4DAF /* failed_claim.json */,
 				02CD576A17D9070C006205C6 /* interstitial.json */,
 				02E2914F175FCAB8002036B4 /* legacy_loyalty_claim.json */,
@@ -1493,7 +1490,6 @@
 				0229381717626B500057C381 /* location_summaries.json in Resources */,
 				025B6DDE176A713C00713242 /* payment_token.json in Resources */,
 				404504D817EB9648000A7211 /* campaign_nonglobal.json in Resources */,
-				02704A5F17B96496009AF443 /* facebook_connected_user.json in Resources */,
 				029053C217BD4ACF00527576 /* app_locations.json in Resources */,
 				02CD576B17D9070C006205C6 /* interstitial.json in Resources */,
 				02CD576D17D90717006205C6 /* loyalty_disabled.json in Resources */,

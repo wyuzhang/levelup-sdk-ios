@@ -34,7 +34,7 @@ describe(@"LUUserJSONFactory", ^{
 
       [[user.birthdate should] equal:[NSDate lu_dateFromIso8601DateTimeString:@"2012-12-04T18:10:45-05:00"]];
       [[user.causeID should] equal:@1];
-      [[theValue(user.connectedToFacebook) should] beYes];
+      [[[user valueForKey:@"connectedToFacebook"] should] beYes];
       [[user.customAttributes should] equal:@{@"key" : @"value"}];
       [[user.email should] equal:@"test@example.com"];
       [[user.firstName should] equal:@"Test"];

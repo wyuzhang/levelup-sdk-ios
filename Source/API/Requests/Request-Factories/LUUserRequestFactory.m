@@ -27,14 +27,6 @@
                                modelFactory:[LUUserJSONFactory factory]];
 }
 
-+ (LUAPIRequest *)requestToConnectToFacebookWithAccessToken:(NSString *)facebookAccessToken {
-  return [LUAPIRequest apiRequestWithMethod:@"POST"
-                                       path:@"facebook_connection"
-                                 apiVersion:LUAPIVersion14
-                                 parameters:@{@"user" : @{@"facebook_access_token" : facebookAccessToken}}
-                               modelFactory:nil];
-}
-
 + (LUAPIRequest *)requestToCreateUser:(LUUser *)user {
   NSMutableDictionary *params = [NSMutableDictionary dictionary];
   params[@"client_id"] = [LUAPIClient sharedClient].apiKey;
@@ -45,34 +37,6 @@
                                  apiVersion:LUAPIVersion14
                                  parameters:params
                                modelFactory:[LUUserJSONFactory factory]];
-}
-
-+ (LUAPIRequest *)requestToCreateUserWithFacebookAccessToken:(NSString *)facebookAccessToken {
-  if (facebookAccessToken.length == 0) return nil;
-
-  NSMutableDictionary *params = [NSMutableDictionary dictionary];
-  params[@"client_id"] = [LUAPIClient sharedClient].apiKey;
-  params[@"user"] = [NSMutableDictionary dictionary];
-
-  if ([LUDeviceIdentifier deviceIdentifier]) {
-    params[@"user"][@"device_identifier"] = [LUDeviceIdentifier deviceIdentifier];
-  }
-
-  params[@"user"][@"facebook_access_token"] = facebookAccessToken;
-
-  return [LUAPIRequest apiRequestWithMethod:@"POST"
-                                       path:@"users"
-                                 apiVersion:LUAPIVersion14
-                                 parameters:params
-                               modelFactory:[LUUserJSONFactory factory]];
-}
-
-+ (LUAPIRequest *)requestToDisconnectFromFacebook {
-  return [LUAPIRequest apiRequestWithMethod:@"DELETE"
-                                       path:@"facebook_connection"
-                                 apiVersion:LUAPIVersion14
-                                 parameters:nil
-                               modelFactory:nil];
 }
 
 + (LUAPIRequest *)requestToResetPasswordWithEmail:(NSString *)email {

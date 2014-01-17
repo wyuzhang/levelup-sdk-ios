@@ -42,30 +42,6 @@ describe(@"LUUserRequestFactory", ^{
     });
   });
 
-  describe(@"requestToConnectToFacebookWithAccessToken:", ^{
-    NSString *facebookAccessToken = @"facebook-access-token";
-
-    beforeEach(^{
-      request = [LUUserRequestFactory requestToConnectToFacebookWithAccessToken:facebookAccessToken];
-    });
-
-    it(@"returns a POST request", ^{
-      [[request.method should] equal:@"POST"];
-    });
-
-    it(@"returns a request to the path 'facebook_connection'", ^{
-      [[request.path should] equal:@"facebook_connection"];
-    });
-
-    it(@"returns a request to version 14 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion14];
-    });
-
-    it(@"returns a request with parameters for the facebook access token", ^{
-      [[request.parameters should] equal:@{@"user" : @{@"facebook_access_token" : facebookAccessToken}}];
-    });
-  });
-
   describe(@"requestToCreateUser:", ^{
     LUUser *user = [[LUUser alloc] init];
     NSString *apiKey = @"api-key";
@@ -96,55 +72,6 @@ describe(@"LUUserRequestFactory", ^{
 
     it(@"returns a request with parameters including the user", ^{
       [[request.parameters[@"user"] should] equal:userParams];
-    });
-  });
-
-  describe(@"requestToCreateUserWithFacebookAccessToken:", ^{
-    NSString *apiKey = @"api-key";
-    NSString *facebookAccessToken = @"facebook-access-token";
-
-    beforeEach(^{
-      [LUAPIClient setupWithAppID:@"1" APIKey:apiKey developmentMode:YES];
-
-      request = [LUUserRequestFactory requestToCreateUserWithFacebookAccessToken:facebookAccessToken];
-    });
-
-    it(@"returns a POST request", ^{
-      [[request.method should] equal:@"POST"];
-    });
-
-    it(@"returns a request to the path 'users'", ^{
-      [[request.path should] equal:@"users"];
-    });
-
-    it(@"returns a request to version 14 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion14];
-    });
-
-    it(@"returns a request with parameters including the API key as the client_id", ^{
-      [[request.parameters[@"client_id"] should] equal:apiKey];
-    });
-
-    it(@"returns a request with the Facebook access token nested under 'user'", ^{
-      [[request.parameters[@"user"][@"facebook_access_token"] should] equal:facebookAccessToken];
-    });
-  });
-
-  describe(@"requestToDisconnectFromFacebook", ^{
-    beforeEach(^{
-      request = [LUUserRequestFactory requestToDisconnectFromFacebook];
-    });
-
-    it(@"returns a DELETE request", ^{
-      [[request.method should] equal:@"DELETE"];
-    });
-
-    it(@"returns a request to the path 'facebook_connection'", ^{
-      [[request.path should] equal:@"facebook_connection"];
-    });
-
-    it(@"returns a request to version 14 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion14];
     });
   });
 

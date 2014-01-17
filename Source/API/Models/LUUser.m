@@ -3,6 +3,12 @@
 #import "LUUser.h"
 #import "LUUserGenderTransformer.h"
 
+@interface LUUser ()
+
+@property (nonatomic, assign, readonly) BOOL connectedToFacebook;
+
+@end
+
 @implementation LUUser
 
 + (void)load {
@@ -49,15 +55,15 @@
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUUser [address=%p, birthdate=%@, causeID=%@, connectedToFacebook=%@, customAttributes=%@, email=%@, firstName=%@, gender=%@, globalCredit=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, termsAccepted=%@, totalSavings=%@]",
-          self, self.birthdate, self.causeID, @(self.connectedToFacebook), self.customAttributes, self.email,
-          self.firstName, [[self class] genderStringForGender:self.gender], self.globalCredit, self.userID, self.lastName, self.merchantsVisitedCount,
-          self.ordersCount, @(self.termsAccepted), self.totalSavings];
+          @"LUUser [address=%p, birthdate=%@, causeID=%@, customAttributes=%@, email=%@, firstName=%@, gender=%@, globalCredit=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, termsAccepted=%@, totalSavings=%@]",
+          self, self.birthdate, self.causeID, self.customAttributes, self.email, self.firstName,
+          [[self class] genderStringForGender:self.gender], self.globalCredit, self.userID, self.lastName,
+          self.merchantsVisitedCount, self.ordersCount, @(self.termsAccepted), self.totalSavings];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUUser [address=%p, firstName=%@, ID=%@, lastName=%@]", self, self.firstName, self.userID,
-          self.lastName];
+  return [NSString stringWithFormat:@"LUUser [address=%p, firstName=%@, ID=%@, lastName=%@]", self, self.firstName,
+          self.userID, self.lastName];
 }
 
 #pragma mark - Gender transformations

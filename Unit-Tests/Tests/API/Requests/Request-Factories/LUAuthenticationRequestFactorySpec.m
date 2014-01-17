@@ -53,38 +53,6 @@ describe(@"LUAuthenticationRequestFactory", ^{
       [[request.parameters should] equal:expectedParams];
     });
   });
-
-  describe(@"requestToLoginWithFacebookAccessToken:", ^{
-    NSString *facebookAccessToken = @"facebook-access-token";
-
-    beforeEach(^{
-      request = [LUAuthenticationRequestFactory requestToLoginWithFacebookAccessToken:facebookAccessToken];
-    });
-
-    it(@"returns a POST request", ^{
-      [[request.method should] equal:@"POST"];
-    });
-
-    it(@"returns a request to the path 'access_tokens'", ^{
-      [[request.path should] equal:@"access_tokens"];
-    });
-
-    it(@"returns a request to version 14 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion14];
-    });
-
-    it(@"returns a request with the expected parameters", ^{
-      NSDictionary *expectedParams = @{
-        @"access_token" : @{
-          @"client_id" : apiKey,
-          @"device_identifier" : deviceIdentifier,
-          @"facebook_access_token" : facebookAccessToken
-        }
-      };
-
-      [[request.parameters should] equal:expectedParams];
-    });
-  });
 });
 
 SPEC_END

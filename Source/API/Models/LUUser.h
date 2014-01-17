@@ -26,11 +26,6 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, copy, readonly) NSNumber *causeID;
 
 /**
- Specifies if the user has connected to Facebook.
- */
-@property (nonatomic, assign, readonly) BOOL connectedToFacebook;
-
-/**
  An arbitrary `NSMutableDictionary` of custom attributes. This may be used to store app-specific user information.
  */
 @property (nonatomic, strong) NSMutableDictionary *customAttributes;
