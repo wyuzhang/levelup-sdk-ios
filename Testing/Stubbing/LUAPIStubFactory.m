@@ -48,21 +48,25 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                                 expirationMonth:(NSNumber *)expirationMonth
                                  expirationYear:(NSNumber *)expirationYear
                                      postalCode:(NSString *)postalCode {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                            path:@"credit_cards"
-                                      HTTPMethod:@"POST"
-                                   authenticated:YES
-                                    responseData:[self responseDataFromFile:@"credit_card"]];
-  stub.requestBodyJSON = @{
-    @"credit_card" : @{
-      @"encrypted_cvv" : cvv,
-      @"encrypted_expiration_month" : [expirationMonth stringValue],
-      @"encrypted_expiration_year" : [expirationYear stringValue],
-      @"encrypted_number" : number,
-      @"postal_code" : postalCode
-    }
-  };
-  return stub;
+  return [self stubToCreatePaymentCardWithNumber:number
+                                             cvv:cvv
+                                 expirationMonth:expirationMonth
+                                  expirationYear:expirationYear
+                                      postalCode:postalCode
+                            responseDataFileName:@"credit_card"];
+}
+
++ (LUAPIStub *)stubToCreateDebitCardWithNumber:(NSString *)number
+                                           cvv:(NSString *)cvv
+                               expirationMonth:(NSNumber *)expirationMonth
+                                expirationYear:(NSNumber *)expirationYear
+                                    postalCode:(NSString *)postalCode {
+  return [self stubToCreatePaymentCardWithNumber:number
+                                             cvv:cvv
+                                 expirationMonth:expirationMonth
+                                  expirationYear:expirationYear
+                                      postalCode:postalCode
+                            responseDataFileName:@"debit_card"];
 }
 
 + (LUAPIStub *)stubToCreateTicket:(NSString *)body {
@@ -458,6 +462,29 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
 + (void)setDeviceIdentifier {
   [[LUKeychainAccess standardKeychainAccess] setString:LUDeviceIdentifier forKey:@"LUDeviceIdentifier"];
+}
+
++ (LUAPIStub *)stubToCreatePaymentCardWithNumber:(NSString *)number
+                                             cvv:(NSString *)cvv
+                                 expirationMonth:(NSNumber *)expirationMonth
+                                  expirationYear:(NSNumber *)expirationYear
+                                      postalCode:(NSString *)postalCode
+                            responseDataFileName:(NSString *)responseDataFileName {
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                            path:@"credit_cards"
+                                      HTTPMethod:@"POST"
+                                   authenticated:YES
+                                    responseData:[self responseDataFromFile:responseDataFileName]];
+  stub.requestBodyJSON = @{
+    @"credit_card" : @{
+      @"encrypted_cvv" : cvv,
+      @"encrypted_expiration_month" : [expirationMonth stringValue],
+      @"encrypted_expiration_year" : [expirationYear stringValue],
+      @"encrypted_number" : number,
+      @"postal_code" : postalCode
+    }
+  };
+  return stub;
 }
 
 @end

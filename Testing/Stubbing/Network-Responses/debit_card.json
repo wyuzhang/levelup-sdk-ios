@@ -1,0 +1,12 @@
+{
+  "credit_card": {
+    "id": 3,
+    "promoted": true,
+    "debit": true,
+    "description": "Visa ending in 6666",
+    "expiration_month": "11",
+    "expiration_year": "2013",
+    "last_4": "6666",
+    "type": "Visa"
+  }
+}

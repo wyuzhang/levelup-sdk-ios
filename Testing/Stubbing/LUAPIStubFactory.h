@@ -12,6 +12,11 @@
                                 expirationMonth:(NSNumber *)expirationMonth
                                  expirationYear:(NSNumber *)expirationYear
                                      postalCode:(NSString *)postalCode;
++ (LUAPIStub *)stubToCreateDebitCardWithNumber:(NSString *)number
+                                           cvv:(NSString *)cvv
+                               expirationMonth:(NSNumber *)expirationMonth
+                                expirationYear:(NSNumber *)expirationYear
+                                    postalCode:(NSString *)postalCode;
 + (LUAPIStub *)stubToCreateTicket:(NSString *)body;
 + (LUAPIStub *)stubToCreateUser;
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user;
