@@ -11,6 +11,7 @@
 @dynamic longitude;
 @dynamic merchantID;
 @dynamic merchantName;
+@dynamic name;
 @dynamic shown;
 @dynamic updatedAtDate;
 
@@ -67,7 +68,7 @@
 
   return [[LULocation alloc] initWithCategoryIDs:categoryIDs latitude:self.latitude locationID:self.locationID
                                        longitude:self.longitude merchantID:self.merchantID
-                                    merchantName:self.merchantName shown:[self.shown boolValue]
+                                    merchantName:self.merchantName name:self.name shown:[self.shown boolValue]
                                    updatedAtDate:self.updatedAtDate];
 }
 
@@ -78,6 +79,7 @@
   self.longitude = location.longitude;
   self.merchantID = location.merchantID;
   self.merchantName = location.merchantName;
+  self.name = location.name;
   self.shown = @(location.shown);
   self.updatedAtDate = location.updatedAtDate;
 }

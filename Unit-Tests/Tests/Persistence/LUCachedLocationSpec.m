@@ -19,6 +19,7 @@ describe(@"LUCachedLocation", ^{
     testLocation.longitude = @-70;
     testLocation.merchantID = @2;
     testLocation.merchantName = @"Test Merchant";
+    testLocation.name = @"Test Name";
     testLocation.shown = @YES;
     testLocation.updatedAtDate = [NSDate date];
 
@@ -115,6 +116,7 @@ describe(@"LUCachedLocation", ^{
       [[result.longitude should] equal:testLocation.longitude];
       [[result.merchantID should] equal:testLocation.merchantID];
       [[result.merchantName should] equal:testLocation.merchantName];
+      [[result.name should] equal:testLocation.name];
       [[@(result.shown) should] equal:testLocation.shown];
       [[result.updatedAtDate should] equal:testLocation.updatedAtDate];
     });
@@ -131,6 +133,7 @@ describe(@"LUCachedLocation", ^{
       [[testLocation.longitude should] equal:location.longitude];
       [[testLocation.merchantID should] equal:location.merchantID];
       [[testLocation.merchantName should] equal:location.merchantName];
+      [[testLocation.name should] equal:location.name];
       [[testLocation.shown should] equal:@(location.shown)];
       [[testLocation.updatedAtDate should] equal:location.updatedAtDate];
     });

@@ -124,7 +124,7 @@
 
 - (id)initWithCategoryIDs:(NSArray *)categoryIDs latitude:(NSNumber *)latitude locationID:(NSNumber *)locationID
                 longitude:(NSNumber *)longitude merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName
-                    shown:(BOOL)shown updatedAtDate:(NSDate *)updatedAtDate;
+                     name:(NSString *)name shown:(BOOL)shown updatedAtDate:(NSDate *)updatedAtDate;
 
 /**
  If the location has both a `streetAddress` and an `extendedAddress`, this will return both values joined by a comma.

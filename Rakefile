@@ -63,9 +63,9 @@ def update_records_with_locations(db, locations)
   locations.each do |location|
     sql = <<-SQL
       INSERT INTO ZLOCATION
-        (Z_ENT, Z_OPT, ZLOCATIONID, ZMERCHANTID, ZSHOWN, ZLATITUDE, ZLONGITUDE, ZUPDATEDATDATE, ZCATEGORYIDS, ZMERCHANTNAME)
+        (Z_ENT, Z_OPT, ZLOCATIONID, ZMERCHANTID, ZSHOWN, ZLATITUDE, ZLONGITUDE, ZUPDATEDATDATE, ZCATEGORYIDS, ZMERCHANTNAME, ZNAME)
       VALUES (
-        1, 1, :id, :merchant_id, :shown, :latitude, :longitude, :updated_at, :categories, :merchant_name
+        1, 1, :id, :merchant_id, :shown, :latitude, :longitude, :updated_at, :categories, :merchant_name, :name
       );
     SQL
 

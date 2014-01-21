@@ -21,6 +21,7 @@ describe(@"LULocationSummaryJSONFactory", ^{
         @"longitude" : @-45,
         @"merchant_id" : @1,
         @"merchant_name" : @"Dewey, Cheatem and Howe",
+        @"name" : @"Boston Branch",
         @"shown" : @1,
         @"updated_at" : @"2012-12-04T18:10:45-05:00"
       };
@@ -32,6 +33,7 @@ describe(@"LULocationSummaryJSONFactory", ^{
       [[location.longitude should] equal:@-45];
       [[location.merchantID should] equal:@1];
       [[location.merchantName should] equal:@"Dewey, Cheatem and Howe"];
+      [[location.name should] equal:@"Boston Branch"];
       [[theValue(location.shown) should] beYes];
       [[theValue(location.summary) should] beYes];
       [[location.updatedAtDate should] equal:[NSDate lu_dateFromIso8601DateTimeString:@"2012-12-04T18:10:45-05:00"]];

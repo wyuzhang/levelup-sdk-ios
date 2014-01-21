@@ -44,7 +44,7 @@
 
 - (id)initWithCategoryIDs:(NSArray *)categoryIDs latitude:(NSNumber *)latitude locationID:(NSNumber *)locationID
                 longitude:(NSNumber *)longitude merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName
-                    shown:(BOOL)shown updatedAtDate:(NSDate *)updatedAtDate {
+                    name:(NSString *)name shown:(BOOL)shown updatedAtDate:(NSDate *)updatedAtDate {
   self = [super init];
   if (!self) return nil;
 
@@ -54,6 +54,7 @@
   _longitude = longitude;
   _merchantID = merchantID;
   _merchantName = merchantName;
+  _name = name;
   _shown = shown;
   _summary = YES;
   _updatedAtDate = updatedAtDate;
@@ -120,14 +121,14 @@
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
           @"LULocation [address=%p, categoryIDs=%@, descriptionHTML=%@, extendedAddress=%@, hours=%@, ID=%@, latitude=%@, locality=%@, longitude=%@, merchantID=%@, merchantName=%@, name=%@, phone=%@, postalCode=%@, region=%@, shown=%@, summary=%@, streetAddress=%@, updatedAtDate=%@, webLocations=%@]",
-          self, self.categoryIDs, self.descriptionHTML, self.extendedAddress, self.hours, self.locationID, self.latitude, self.locality,
-          self.longitude, self.merchantID, self.merchantName, self.name, self.phone, self.postalCode, self.region,
-          @(self.shown), @(self.summary), self.streetAddress, self.updatedAtDate, self.webLocations];
+          self, self.categoryIDs, self.descriptionHTML, self.extendedAddress, self.hours, self.locationID, self.latitude,
+          self.locality, self.longitude, self.merchantID, self.merchantName, self.name, self.phone, self.postalCode,
+          self.region, @(self.shown), @(self.summary), self.streetAddress, self.updatedAtDate, self.webLocations];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LULocation [address=%p, ID=%@, latitude=%@, longitude=%@, streetAddress=%@]", self, self.locationID,
-          self.latitude, self.longitude, self.streetAddress];
+  return [NSString stringWithFormat:@"LULocation [address=%p, ID=%@, latitude=%@, longitude=%@, merchantName=%@, name=%@, streetAddress=%@]",
+          self, self.locationID, self.latitude, self.longitude, self.merchantName, self.name, self.streetAddress];
 }
 
 @end

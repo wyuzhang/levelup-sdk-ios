@@ -30,7 +30,8 @@ describe(@"LULocation", ^{
   describe(@"summary initializer", ^{
     it(@"sets summary to YES", ^{
       LULocation *location = [[LULocation alloc] initWithCategoryIDs:nil latitude:nil locationID:nil longitude:nil
-                                                          merchantID:nil merchantName:nil shown:NO updatedAtDate:nil];
+                                                          merchantID:nil merchantName:nil name:nil shown:NO
+                                                       updatedAtDate:nil];
 
       [[theValue(location.summary) should] beYes];
     });

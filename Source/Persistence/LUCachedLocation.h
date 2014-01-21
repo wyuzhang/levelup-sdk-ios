@@ -10,6 +10,7 @@
 @property (nonatomic, copy) NSNumber *longitude;
 @property (nonatomic, copy) NSNumber *merchantID;
 @property (nonatomic, copy) NSString *merchantName;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSNumber *shown;
 @property (nonatomic, copy) NSDate *updatedAtDate;
 

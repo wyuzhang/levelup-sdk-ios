@@ -19,11 +19,12 @@
   NSNumber *longitude = [attributes lu_numberForKey:@"longitude"];
   NSNumber *merchantID = [attributes lu_numberForKey:@"merchant_id"];
   NSString *merchantName = [attributes lu_stringForKey:@"merchant_name"];
+  NSString *name = [attributes lu_stringForKey:@"name"];
   BOOL shown = [attributes lu_boolForKey:@"shown"];
   NSDate *updatedAtDate = [NSDate lu_dateFromIso8601DateTimeString:attributes[@"updated_at"]];
 
   return [[LULocation alloc] initWithCategoryIDs:categoryIDs latitude:latitude locationID:locationID longitude:longitude
-                                      merchantID:merchantID merchantName:merchantName shown:shown
+                                      merchantID:merchantID merchantName:merchantName name:name shown:shown
                                    updatedAtDate:updatedAtDate];
 }
 
