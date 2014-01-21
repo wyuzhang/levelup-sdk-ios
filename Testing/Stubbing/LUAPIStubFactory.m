@@ -164,6 +164,14 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:[self responseDataFromFile:@"credit"]];
 }
 
++ (LUAPIStub *)stubToGetCreditAndDebitCards {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:@"credit_cards"
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"credit_and_debit"]];
+}
+
 + (LUAPIStub *)stubToGetCreditCardsOneResult {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:@"credit_cards"
@@ -178,6 +186,14 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"credit_cards-2"]];
+}
+
++ (LUAPIStub *)stubToGetCreditCardsThreeResults {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:@"credit_cards"
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"credit_cards-3"]];
 }
 
 + (LUAPIStub *)stubToGetCurrentUser {

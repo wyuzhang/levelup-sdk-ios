@@ -27,8 +27,10 @@
 + (LUAPIStub *)stubToGetCampaignWithID:(NSNumber *)campaignID;
 + (LUAPIStub *)stubToGetCategories;
 + (LUAPIStub *)stubToGetCreditAtLocationWithID:(NSNumber *)locationID;
++ (LUAPIStub *)stubToGetCreditAndDebitCards;
 + (LUAPIStub *)stubToGetCreditCardsOneResult;
 + (LUAPIStub *)stubToGetCreditCardsTwoResults;
++ (LUAPIStub *)stubToGetCreditCardsThreeResults;
 + (LUAPIStub *)stubToGetCurrentUser;
 + (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfo;
 + (LUAPIStub *)stubToGetIneligiblePaymentToken;

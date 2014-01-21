@@ -150,6 +150,8 @@
 		25F643BA166832D600A05C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A7166832D600A05C0E /* Foundation.framework */; };
 		25F643BD166832D600A05C0E /* libLevelUpSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F643A4166832D600A05C0E /* libLevelUpSDK.a */; };
 		40140B54181EAD52005A66BF /* current_user_minimal.json in Resources */ = {isa = PBXBuildFile; fileRef = 40140B53181EAD4B005A66BF /* current_user_minimal.json */; };
+		40210177188EF16E0002E82F /* credit_and_debit.json in Resources */ = {isa = PBXBuildFile; fileRef = 40210176188EF16E0002E82F /* credit_and_debit.json */; };
+		40210179188EF48C0002E82F /* credit_cards-3.json in Resources */ = {isa = PBXBuildFile; fileRef = 40210178188EF48C0002E82F /* credit_cards-3.json */; };
 		404504D817EB9648000A7211 /* campaign_nonglobal.json in Resources */ = {isa = PBXBuildFile; fileRef = 404504D717EB9648000A7211 /* campaign_nonglobal.json */; };
 		40BE965A188DCFF600F318D6 /* debit_card.json in Resources */ = {isa = PBXBuildFile; fileRef = 40BE9659188DCFF600F318D6 /* debit_card.json */; };
 		45C90162129F4441AD00C796 /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35969BE4155A4B838F746A8C /* libPods-test.a */; };
@@ -472,6 +474,8 @@
 		25F643B5166832D600A05C0E /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35969BE4155A4B838F746A8C /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40140B53181EAD4B005A66BF /* current_user_minimal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = current_user_minimal.json; sourceTree = "<group>"; };
+		40210176188EF16E0002E82F /* credit_and_debit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credit_and_debit.json; sourceTree = "<group>"; };
+		40210178188EF48C0002E82F /* credit_cards-3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "credit_cards-3.json"; sourceTree = "<group>"; };
 		404504D717EB9648000A7211 /* campaign_nonglobal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = campaign_nonglobal.json; sourceTree = "<group>"; };
 		40BE9659188DCFF600F318D6 /* debit_card.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = debit_card.json; sourceTree = "<group>"; };
 		C1CAF0AD173052A7003B3D01 /* LUAPIClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIClientSpec.m; sourceTree = "<group>"; };
@@ -777,9 +781,11 @@
 				02E29146175FCAB8002036B4 /* campaign.json */,
 				404504D717EB9648000A7211 /* campaign_nonglobal.json */,
 				02293814176265DE0057C381 /* categories.json */,
+				40210176188EF16E0002E82F /* credit_and_debit.json */,
 				02E2914A175FCAB8002036B4 /* credit_card.json */,
 				02E2914C175FCAB8002036B4 /* credit_cards-1.json */,
 				02E2914B175FCAB8002036B4 /* credit_cards-2.json */,
+				40210178188EF48C0002E82F /* credit_cards-3.json */,
 				0264391D185BB71600175425 /* credit.json */,
 				02E2914D175FCAB8002036B4 /* current_user.json */,
 				40140B53181EAD4B005A66BF /* current_user_minimal.json */,
@@ -1479,10 +1485,12 @@
 				02E29160175FCAB8002036B4 /* credit_cards-2.json in Resources */,
 				02E29161175FCAB8002036B4 /* credit_cards-1.json in Resources */,
 				02E29162175FCAB8002036B4 /* current_user.json in Resources */,
+				40210179188EF48C0002E82F /* credit_cards-3.json in Resources */,
 				02E29164175FCAB8002036B4 /* legacy_loyalty_claim.json in Resources */,
 				02E29165175FCAB8002036B4 /* loyalty_no_credit.json in Resources */,
 				02E29166175FCAB8002036B4 /* loyalty.json in Resources */,
 				02E29168175FCAB8002036B4 /* new_user.json in Resources */,
+				40210177188EF16E0002E82F /* credit_and_debit.json in Resources */,
 				0264391E185BB71600175425 /* credit.json in Resources */,
 				02E29169175FCAB8002036B4 /* oauth_access_token.json in Resources */,
 				02E2916A175FCAB8002036B4 /* order.json in Resources */,
