@@ -5,6 +5,7 @@ SPEC_BEGIN(LUWebLocationsSpec)
 describe(@"LUWebLocation", ^{
   __block LUWebLocations *webLocations;
   NSString *facebookAddress = @"http://facebook.com/example";
+  NSString *foodlerAddress = @"http://foodler.com/example";
   NSString *menuAddress = @"http://menu.com/example";
   NSString *newsletterAddress = @"http://newsletter.com/example";
   NSString *opentableAddress = @"http://opentable.com/example";
@@ -12,12 +13,21 @@ describe(@"LUWebLocation", ^{
   NSString *yelpAddress = @"http://yelp.com/example";
 
   beforeAll(^{
-    webLocations = [[LUWebLocations alloc] initWithFacebookAddress:facebookAddress menuAddress:menuAddress newsletterAddress:newsletterAddress opentableAddress:opentableAddress twitterAddress:twitterAddress yelpAddress:yelpAddress];
+    webLocations = [[LUWebLocations alloc] initWithFacebookAddress:facebookAddress foodlerAddress:foodlerAddress
+                                                       menuAddress:menuAddress newsletterAddress:newsletterAddress
+                                                  opentableAddress:opentableAddress twitterAddress:twitterAddress
+                                                       yelpAddress:yelpAddress];
   });
 
   describe(@"facebookURL", ^{
     it(@"Returns an NSURL created with the supplied facebook addressURL", ^{
       [[[webLocations facebookURL] should] equal:[NSURL URLWithString:facebookAddress]];
+    });
+  });
+
+  describe(@"foodlerURL", ^{
+    it(@"Returns an NSURL created with the supplied foodler addressURL", ^{
+      [[[webLocations foodlerURL] should] equal:[NSURL URLWithString:foodlerAddress]];
     });
   });
 

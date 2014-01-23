@@ -19,6 +19,7 @@ describe(@"LULocationJSONFactory", ^{
         @"description_html" : @"pizza, pizza, pizza!",
         @"extended_address" : @"Apt E",
         @"facebook_url" : @"http://facebook.com/pizza",
+        @"foodler_url" : @"http://foodler.com/pizza",
         @"hours" : @"M-F 9am-5pm",
         @"id" : @1,
         @"latitude" : @70,
@@ -59,6 +60,7 @@ describe(@"LULocationJSONFactory", ^{
       [[location.streetAddress should] equal:@"1 Main St"];
       [[theValue(location.summary) should] beNo];
       [[[location.webLocations facebookURL] should] equal:[NSURL URLWithString:@"http://facebook.com/pizza"]];
+      [[[location.webLocations foodlerURL] should] equal:[NSURL URLWithString:@"http://foodler.com/pizza"]];
       [[[location.webLocations menuURL] should] equal:[NSURL URLWithString:@"http://pizza.com/menu"]];
       [[[location.webLocations newsletterURL] should] equal:[NSURL URLWithString:@"http://pizza.com/newsletter"]];
       [[[location.webLocations opentableURL] should] equal:[NSURL URLWithString:@"http://opentable.com/pizza"]];

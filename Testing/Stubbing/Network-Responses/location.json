@@ -25,6 +25,7 @@
     "categories" : [
       1
     ],
-    "newsletter_url" : "http://example.com/newsletter"
+    "newsletter_url" : "http://example.com/newsletter",
+    "foodler_url" : "http://example.com/foodler"
   }
 }

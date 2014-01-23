@@ -25,6 +25,7 @@
   BOOL shown = [attributes lu_boolForKey:@"shown"];
   NSString *streetAddress = [attributes lu_stringForKey:@"street_address"];
   LUWebLocations *webLocations = [[LUWebLocations alloc] initWithFacebookAddress:[attributes lu_stringForKey:@"facebook_url"]
+                                                                  foodlerAddress:[attributes lu_stringForKey:@"foodler_url"]
                                                                      menuAddress:[attributes lu_stringForKey:@"menu_url"]
                                                                newsletterAddress:[attributes lu_stringForKey:@"newsletter_url"]
                                                                 opentableAddress:[attributes lu_stringForKey:@"opentable_url"]

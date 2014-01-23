@@ -6,6 +6,7 @@
 
 + (LUWebLocations *)fixture {
   return [[LUWebLocations alloc] initWithFacebookAddress:@"http://facebook.com/pizza"
+                                          foodlerAddress:@"http://foodler.com/pizza"
                                              menuAddress:@"http://pizza.com/menu"
                                        newsletterAddress:@"http://pizza.com/newsletter"
                                         opentableAddress:@"http://opentable.com/pizza"

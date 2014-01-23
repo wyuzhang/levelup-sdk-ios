@@ -4,12 +4,13 @@
 
 @interface LUWebLocations ()
 
-@property (nonatomic, strong) NSString *facebookAddress;
-@property (nonatomic, strong) NSString *menuAddress;
-@property (nonatomic, strong) NSString *newsletterAddress;
-@property (nonatomic, strong) NSString *opentableAddress;
-@property (nonatomic, strong) NSString *twitterAddress;
-@property (nonatomic, strong) NSString *yelpAddress;
+@property (nonatomic, copy) NSString *facebookAddress;
+@property (nonatomic, copy) NSString *foodlerAddress;
+@property (nonatomic, copy) NSString *menuAddress;
+@property (nonatomic, copy) NSString *newsletterAddress;
+@property (nonatomic, copy) NSString *opentableAddress;
+@property (nonatomic, copy) NSString *twitterAddress;
+@property (nonatomic, copy) NSString *yelpAddress;
 
 @end
 
@@ -17,15 +18,13 @@
 
 #pragma mark - Creation Methods
 
-- (id)initWithFacebookAddress:(NSString *)facebook
-                  menuAddress:(NSString *)menu
-            newsletterAddress:(NSString *)newsletter
-             opentableAddress:(NSString *)opentable
-               twitterAddress:(NSString *)twitter
-                  yelpAddress:(NSString *)yelp {
+- (id)initWithFacebookAddress:(NSString *)facebook foodlerAddress:(NSString *)foodler menuAddress:(NSString *)menu
+            newsletterAddress:(NSString *)newsletter opentableAddress:(NSString *)opentable
+               twitterAddress:(NSString *)twitter yelpAddress:(NSString *)yelp {
   self = [super init];
 
   _facebookAddress = facebook;
+  _foodlerAddress = foodler;
   _menuAddress = menu;
   _newsletterAddress = newsletter;
   _opentableAddress = opentable;
@@ -39,6 +38,10 @@
 
 - (NSURL *)facebookURL {
   return [NSURL URLWithString:self.facebookAddress];
+}
+
+- (NSURL *)foodlerURL {
+  return [NSURL URLWithString:self.foodlerAddress];
 }
 
 - (NSURL *)menuURL {
@@ -64,7 +67,9 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUWebLocation [address=%p, facebookAddress=%@, menuAddress=%@, newsletterAddress=%@, opentableAddress=%@, twitterAddress=%@, yelpAddress=%@", self, self.facebookAddress, self.menuAddress, self.newsletterAddress, self.opentableAddress, self.twitterAddress, self.yelpAddress];
+  return [NSString stringWithFormat:@"LUWebLocation [address=%p, facebookAddress=%@, foodlerAddress=%@, menuAddress=%@, newsletterAddress=%@, opentableAddress=%@, twitterAddress=%@, yelpAddress=%@",
+          self, self.facebookAddress, self.foodlerAddress, self.menuAddress, self.newsletterAddress,
+          self.opentableAddress, self.twitterAddress, self.yelpAddress];
 }
 
 @end

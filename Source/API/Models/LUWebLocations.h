@@ -5,6 +5,7 @@
 @interface LUWebLocations : LUAPIModel
 
 - (id)initWithFacebookAddress:(NSString *)facebook
+               foodlerAddress:(NSString *)foodler
                   menuAddress:(NSString *)menu
             newsletterAddress:(NSString *)newsletter
              opentableAddress:(NSString *)opentable
@@ -12,6 +13,7 @@
                   yelpAddress:(NSString *)yelp;
 
 - (NSURL *)facebookURL;
+- (NSURL *)foodlerURL;
 - (NSURL *)menuURL;
 - (NSURL *)newsletterURL;
 - (NSURL *)opentableURL;
