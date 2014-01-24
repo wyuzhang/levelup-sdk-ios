@@ -17,32 +17,24 @@
 
 @implementation LUAPIClient
 
-__strong static id _sharedClient = nil;
+__strong static LUAPIClient *_sharedClient = nil;
 
 #pragma mark - Object Lifecycle Methods
 
 + (LUAPIClient *)sharedClient {
-  NSAssert(_sharedClient != nil, @"setupWithAppID:APIKey:developmentMode: must be called before sharedClient");
+  NSAssert(_sharedClient != nil, @"setupWithAppID:APIKey: must be called before sharedClient");
 
   return _sharedClient;
 }
 
-- (id)initWithAppID:(NSString *)appID APIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode {
+- (id)initWithAppID:(NSString *)appID APIKey:(NSString *)apiKey {
   NSAssert(appID.length > 0, @"An app ID is required");
   NSAssert(apiKey.length > 0, @"An API key is required");
 
-  NSURL *baseURL;
-  if (developmentMode) {
-    baseURL = [NSURL URLWithString:LevelUpAPIBaseURLDevelopment];
-  } else {
-    baseURL = [NSURL URLWithString:LevelUpAPIBaseURLProduction];
-  }
-
-  self = [super initWithBaseURL:baseURL];
+  self = [super initWithBaseURL:[NSURL URLWithString:LevelUpAPIBaseURLProduction]];
   if (self) {
     _appID = appID;
     _apiKey = apiKey;
-    _developmentMode = developmentMode;
 
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
@@ -56,8 +48,17 @@ __strong static id _sharedClient = nil;
 
 #pragma mark - Public Methods
 
++ (void)setupWithAppID:(NSString *)appID APIKey:(NSString *)apiKey {
+  _sharedClient = [[self alloc] initWithAppID:appID APIKey:apiKey];
+}
+
 + (void)setupWithAppID:(NSString *)appID APIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode {
-  _sharedClient = [[self alloc] initWithAppID:appID APIKey:apiKey developmentMode:developmentMode];
+  [self setupWithAppID:appID APIKey:apiKey];
+
+  if (developmentMode) {
+    _sharedClient.baseURL = [NSURL URLWithString:LevelUpAPIBaseURLDevelopment];
+    _sharedClient.developmentMode = YES;
+  }
 }
 
 - (LUAPIConnection *)performRequest:(LUAPIRequest *)apiRequest

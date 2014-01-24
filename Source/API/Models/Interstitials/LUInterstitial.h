@@ -2,6 +2,13 @@
 
 #import "LUAPIModel.h"
 
+typedef NS_ENUM(NSInteger, LUInterstitialActionType) {
+  LUInterstitialActionTypeNone,
+  LUInterstitialActionTypeClaim,
+  LUInterstitialActionTypeShare,
+  LUInterstitialActionTypeURL
+};
+
 /**
  An order may be associated with an `LUInterstital`, which represents an interstitial view that can be shown to the
  user. Interstitials can be used for things like showing additional information to the user, prompting them to share
@@ -18,14 +25,6 @@
  It may be `nil` (if the action type is "none"), or it may be an instance of `LUInterstitialClaimAction`,
  `LUInterstitialShareAction`, or `LUInterstitialURLAction`.
  */
-
-typedef NS_ENUM(NSInteger, LUInterstitialActionType) {
-  LUInterstitialActionTypeNone,
-  LUInterstitialActionTypeClaim,
-  LUInterstitialActionTypeShare,
-  LUInterstitialActionTypeURL
-};
-
 @interface LUInterstitial : LUAPIModel
 
 /**

@@ -2,9 +2,6 @@
 
 #import "LUAPIModel.h"
 
-/**
- `LUUser` is a representation of a user in the LevelUp system.
- */
 typedef NS_ENUM(NSInteger, LUGender) {
   LUGenderUnspecified,
   LUGenderMale,
@@ -13,6 +10,9 @@ typedef NS_ENUM(NSInteger, LUGender) {
 
 @class LUMonetaryValue;
 
+/**
+ `LUUser` is a representation of a user in the LevelUp system.
+ */
 @interface LUUser : LUAPIModel
 
 /**

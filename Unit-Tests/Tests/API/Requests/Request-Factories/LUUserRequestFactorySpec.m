@@ -48,7 +48,7 @@ describe(@"LUUserRequestFactory", ^{
     NSDictionary *userParams = @{@"params" : @"for user"};
 
     beforeEach(^{
-      [LUAPIClient setupWithAppID:@"1" APIKey:apiKey developmentMode:YES];
+      [LUAPIClient setupWithAppID:@"1" APIKey:apiKey];
       [[LUUserParameterBuilder stubAndReturn:userParams] parametersForUser:user];
 
       request = [LUUserRequestFactory requestToCreateUser:user];

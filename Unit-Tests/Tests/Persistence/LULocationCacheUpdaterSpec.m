@@ -17,7 +17,7 @@ describe(@"LULocationCacheUpdater", ^{
     testManagedObjectContext = [NSManagedObjectContext fakeContext];
     [LUCoreDataStack stub:@selector(managedObjectContext) andReturn:testManagedObjectContext];
 
-    [LUAPIClient setupWithAppID:@"1" APIKey:@"test" developmentMode:YES];
+    [LUAPIClient setupWithAppID:@"1" APIKey:@"test"];
     [[LUAPIClient sharedClient] stub:@selector(performRequest:success:failure:)];
 
     delegate = [KWMock nullMockForProtocol:@protocol(LULocationCacheUpdaterDelegate)];

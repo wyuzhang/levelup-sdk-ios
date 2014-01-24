@@ -10,7 +10,7 @@
 
  ## Setup
 
- Before using `LUAPIClient`, it must be set up with a valid API key. This is done with `setupWithAPIKey:developmentMode:`.
+ Before using `LUAPIClient`, it must be set up with a valid API key. This is done with `setupWithAppID:APIKey:`.
 
  ## Issuing Requests
 
@@ -90,7 +90,18 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 
  @param appID Your LevelUp App ID.
  @param apiKey Your LevelUp API key.
- @param developmentMode Specifies if requests should go to sandbox or production.
+ */
++ (void)setupWithAppID:(NSString *)appID APIKey:(NSString *)apiKey;
+
+/**
+ Sets up the LevelUp SDK with the option of turning on development mode (internal use only).
+
+ Using `setupWithAppID:APIKey:` is preferred, as development mode uses the LevelUp staging server which may
+ not be up to date with all API keys, as well as periodic downtime or possible bugs.
+
+ @param appID Your LevelUp App ID.
+ @param apiKey Your LevelUp API key.
+ @param developmentMode Specifies if requests should go to the development or production server.
  */
 + (void)setupWithAppID:(NSString *)appID APIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode;
 
@@ -106,7 +117,7 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 
 @property (copy, readonly) NSString *apiKey;
 @property (copy, readonly) NSString *appID;
-@property (readwrite, nonatomic, strong) NSURL *baseURL;
+@property (nonatomic, strong) NSURL *baseURL;
 @property (assign, readonly) BOOL developmentMode;
 
 ///-------------------------------
@@ -118,7 +129,7 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 
  @return The shared `LUAPIClient` instance.
 
- @exception NSInternalInconsistencyException If this method is called before `setupWithAppID:APIKey:developmentMode:`.
+ @exception NSInternalInconsistencyException If this method is called before `setupWithAppID:APIKey:`.
  */
 + (LUAPIClient *)sharedClient;
 

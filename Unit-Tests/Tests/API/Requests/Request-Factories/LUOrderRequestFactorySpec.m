@@ -13,7 +13,7 @@ describe(@"LUOrderRequestFactory", ^{
 
   describe(@"requestForOrders", ^{
     beforeEach(^{
-      [LUAPIClient setupWithAppID:@"1" APIKey:@"test" developmentMode:YES];
+      [LUAPIClient setupWithAppID:@"1" APIKey:@"test"];
 
       request = [LUOrderRequestFactory requestForOrders];
     });

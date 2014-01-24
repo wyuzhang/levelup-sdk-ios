@@ -14,7 +14,7 @@ describe(@"LULocationRequestFactory", ^{
     CLLocation *location = [[CLLocation alloc] initWithLatitude:41.0 longitude:-71.0];
 
     beforeEach(^{
-      [LUAPIClient setupWithAppID:@"1" APIKey:@"test" developmentMode:YES];
+      [LUAPIClient setupWithAppID:@"1" APIKey:@"test"];
       request = [LULocationRequestFactory requestForAppLocationsNearLocation:location];
     });
 
