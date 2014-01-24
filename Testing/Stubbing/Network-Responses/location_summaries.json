@@ -10,7 +10,8 @@
       "latitude": 42.3628,
       "longitude": 71.06,
       "merchant_id": 1,
-      "merchant_name": "Merchant 1"
+      "merchant_name": "Merchant 1",
+      "name": "Location 1"
     }
   },
   {
@@ -24,7 +25,8 @@
       "latitude": 42.3627,
       "longitude": 71.04,
       "merchant_id": 2,
-      "merchant_name": "Merchant 2"
+      "merchant_name": "Merchant 2",
+      "name": "Location 2"
     }
   },
   {
@@ -39,7 +41,8 @@
       "latitude": 42.37,
       "longitude": 71.1,
       "merchant_id": 3,
-      "merchant_name": "Merchant 3"
+      "merchant_name": "Merchant 3",
+      "name": null
     }
   },
   {
@@ -53,7 +56,8 @@
       "latitude": 42.38,
       "longitude": 71.2,
       "merchant_id": 4,
-      "merchant_name": "Merchant 4"
+      "merchant_name": "Merchant 4",
+      "name": null
     }
   }
 ]
