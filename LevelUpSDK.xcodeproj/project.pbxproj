@@ -353,7 +353,7 @@
 		022A6DD4187C61D500EE7C4B /* LUWebLocations+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUWebLocations+Fixtures.m"; sourceTree = "<group>"; };
 		022A6DE0187C621200EE7C4B /* NSManagedObjectContext+FakeContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+FakeContext.h"; sourceTree = "<group>"; };
 		022A6DE1187C621200EE7C4B /* NSManagedObjectContext+FakeContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+FakeContext.m"; sourceTree = "<group>"; };
-		023C960B188ED27E00113AF2 /* LUAPIObjectModel (with name).xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LUAPIObjectModel (with name).xcdatamodel"; sourceTree = "<group>"; };
+		023C960B188ED27E00113AF2 /* LUAPIObjectModel (with name).xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "LUAPIObjectModel (with name).xcdatamodel"; sourceTree = "<group>"; };
 		025B6DDD176A70D500713242 /* payment_token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = payment_token.json; sourceTree = "<group>"; };
 		02643915185BB6D300175425 /* LULocationCreditJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationCreditJSONFactory.h; sourceTree = "<group>"; };
 		02643916185BB6D300175425 /* LULocationCreditJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationCreditJSONFactory.m; sourceTree = "<group>"; };
@@ -1772,7 +1772,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_VERSION = 0.22.0;
+				FRAMEWORK_VERSION = 0.22.1;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
@@ -1839,7 +1839,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_VERSION = 0.22.0;
+				FRAMEWORK_VERSION = 0.22.1;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1879,7 +1879,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_VERSION = 0.22.0;
+				FRAMEWORK_VERSION = 0.22.1;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
