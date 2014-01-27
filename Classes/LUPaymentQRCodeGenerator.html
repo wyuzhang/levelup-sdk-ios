@@ -2,11 +2,11 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUCauseRequestFactory Class Reference</title>
+		<title>LUPaymentQRCodeGenerator Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.1 (build 858)" />
+		<meta name="generator" content="appledoc 2.2 (build 961)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUCauseRequestFactory Class Reference</h1>
+				<h1 class="hideInXcode">LUPaymentQRCodeGenerator Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -41,13 +41,11 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/requestForAllFeaturedCauses">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForAllFeaturedCauses</option>
+	<option value="//api/name/QRCodeFromPaymentToken:">&nbsp;&nbsp;&nbsp;&nbsp;+ QRCodeFromPaymentToken:</option>
 	
-	<option value="//api/name/requestForCausesInCategory:page:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForCausesInCategory:page:</option>
+	<option value="//api/name/QRCodeFromPaymentToken:withTipPercentage:">&nbsp;&nbsp;&nbsp;&nbsp;+ QRCodeFromPaymentToken:withTipPercentage:</option>
 	
-	<option value="//api/name/requestForCausesNearLocation:page:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForCausesNearLocation:page:</option>
-	
-	<option value="//api/name/requestForCausesOnPage:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForCausesOnPage:</option>
+	<option value="//api/name/QRCodeFromPaymentToken:withTipPercentage:glowColorID:">&nbsp;&nbsp;&nbsp;&nbsp;+ QRCodeFromPaymentToken:withTipPercentage:glowColorID:</option>
 	
 	
 	
@@ -77,13 +75,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForAllFeaturedCauses">requestForAllFeaturedCauses</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/QRCodeFromPaymentToken:">QRCodeFromPaymentToken:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForCausesInCategory:page:">requestForCausesInCategory:page:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/QRCodeFromPaymentToken:withTipPercentage:">QRCodeFromPaymentToken:withTipPercentage:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForCausesNearLocation:page:">requestForCausesNearLocation:page:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForCausesOnPage:">requestForCausesOnPage:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/QRCodeFromPaymentToken:withTipPercentage:glowColorID:">QRCodeFromPaymentToken:withTipPercentage:glowColorID:</a></span></li>
 	
 </ul></li>
 
@@ -94,7 +90,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUCauseRequestFactory Class Reference" name="top"></a>
+				<a title="LUPaymentQRCodeGenerator Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -103,7 +99,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUCauseRequestFactory Class Reference</h1>
+						<h1 class="title title-header">LUPaymentQRCodeGenerator Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -114,7 +110,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUCauseRequestFactory.h<br />LUCauseRequestFactory.m</td>
+	<td class="specification-value">LUPaymentQRCodeGenerator.h<br />LUPaymentQRCodeGenerator.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -124,7 +120,27 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUCauseRequestFactory</code> builds requests to retrieve causes.</p>
+						<p><code>LUPaymentQRCodeGenerator</code> is used to build QR codes for users' payment tokens. All LevelUp QR codes
+include a unique identifier for the current user, but may optionally include a tip percentage or
+the ID of a color that the user would like the LevelUp docks to glow.</p>
+
+<h2>Glow Colors</h2>
+
+<p>The current table of colors is:</p>
+
+<ul>
+<li>0: #00FF00 &ldquo;Soothing Green&rdquo;</li>
+<li>1: #BAFF48 &ldquo;Atomic Lime&rdquo;</li>
+<li>2: #FF0002 &ldquo;Tango Red&rdquo;</li>
+<li>3: #0030F8 &ldquo;Galactic Blue&rdquo;</li>
+<li>4: #7800F7 &ldquo;Purple Haze&rdquo;</li>
+<li>5: #FFFC48 &ldquo;Yellow Submarine&rdquo;</li>
+<li>6: #00E4FD &ldquo;Arctic Teal&rdquo;</li>
+<li>7: #FF00C6 &ldquo;Sick Flamingo&rdquo;</li>
+<li>8: #00FF84 &ldquo;Mint Julep&rdquo;</li>
+<li>9: #FF721C &ldquo;Ninja Orange&rdquo;</li>
+</ul>
+
 					</div>
 					
 					
@@ -142,25 +158,19 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForAllFeaturedCauses">+&nbsp;requestForAllFeaturedCauses</a></code>
+		<code><a href="#//api/name/QRCodeFromPaymentToken:">+&nbsp;QRCodeFromPaymentToken:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForCausesInCategory:page:">+&nbsp;requestForCausesInCategory:page:</a></code>
+		<code><a href="#//api/name/QRCodeFromPaymentToken:withTipPercentage:">+&nbsp;QRCodeFromPaymentToken:withTipPercentage:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForCausesNearLocation:page:">+&nbsp;requestForCausesNearLocation:page:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requestForCausesOnPage:">+&nbsp;requestForCausesOnPage:</a></code>
+		<code><a href="#//api/name/QRCodeFromPaymentToken:withTipPercentage:glowColorID:">+&nbsp;QRCodeFromPaymentToken:withTipPercentage:glowColorID:</a></code>
 	</span>
 	
 	
@@ -180,61 +190,18 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForAllFeaturedCauses" title="requestForAllFeaturedCauses"></a>
-	<h3 class="subsubtitle method-title">requestForAllFeaturedCauses</h3>
+	<a name="//api/name/QRCodeFromPaymentToken:" title="QRCodeFromPaymentToken:"></a>
+	<h3 class="subsubtitle method-title">QRCodeFromPaymentToken:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve all causes that have been marked as &ldquo;featured&rdquo;.</p>
+		<p>Generates a <code>UIImage</code> containing a QR code with a payment token.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForAllFeaturedCauses</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve all causes that have been marked as &ldquo;featured&rdquo;.</p>
-
-<p>On success, this request will return an array of <a href="../Classes/LUCause.html"><code>LUCause</code></a> instances.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCauseRequestFactory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/requestForCausesInCategory:page:" title="requestForCausesInCategory:page:"></a>
-	<h3 class="subsubtitle method-title">requestForCausesInCategory:page:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve a set of causes in a category on a specific page.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForCausesInCategory:(LUCauseCategory *)<em>causeCategory</em> page:(NSUInteger)<em>page</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIImage *)QRCodeFromPaymentToken:(NSString *)<em>paymentToken</em></code></div>
 
     
 	
@@ -242,18 +209,18 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>causeCategory</em></dt>
-			<dd><p>The <a href="../Classes/LUCauseCategory.html"><code>LUCauseCategory</code></a> of causes to retrieve.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>page</em></dt>
-			<dd><p>The page of causes to retrieve.</p></dd>
+			<dt><em>paymentToken</em></dt>
+			<dd><p>The payment token to use when generating the QR code.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <code>UIImage</code> containing the QR code.</p>
+	</div>
 	
 	
 	
@@ -261,9 +228,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve a set of causes in a category on a specific page.</p>
-
-<p>On success, this request will return an array of <a href="../Classes/LUCause.html"><code>LUCause</code></a> instances.</p>
+		<p>Generates a <code>UIImage</code> containing a QR code with a payment token.</p>
 	</div>
 	
 	
@@ -274,25 +239,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCauseRequestFactory.h</code><br />
+		<code class="declared-in-ref">LUPaymentQRCodeGenerator.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForCausesNearLocation:page:" title="requestForCausesNearLocation:page:"></a>
-	<h3 class="subsubtitle method-title">requestForCausesNearLocation:page:</h3>
+	<a name="//api/name/QRCodeFromPaymentToken:withTipPercentage:" title="QRCodeFromPaymentToken:withTipPercentage:"></a>
+	<h3 class="subsubtitle method-title">QRCodeFromPaymentToken:withTipPercentage:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve a page of causes near a location. The exact radius may change, but is currently 50 miles.</p>
+		<p>Generates a <code>UIImage</code> containing a QR code with a payment token and a tip percentage.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForCausesNearLocation:(CLLocation *)<em>location</em> page:(NSUInteger)<em>page</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIImage *)QRCodeFromPaymentToken:(NSString *)<em>paymentToken</em> withTipPercentage:(NSInteger)<em>tipPercentage</em></code></div>
 
     
 	
@@ -300,18 +265,23 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>location</em></dt>
-			<dd><p>A <code>CLLocation</code> to use as the center of the search circle.</p></dd>
+			<dt><em>paymentToken</em></dt>
+			<dd><p>The payment token to use when generating the QR code.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>page</em></dt>
-			<dd><p>The page of causes to retrieve.</p></dd>
+			<dt><em>tipPercentage</em></dt>
+			<dd><p>A tip percentage as a number from 0 to 100.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <code>UIImage</code> containing the QR code.</p>
+	</div>
 	
 	
 	
@@ -319,9 +289,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve a page of causes near a location. The exact radius may change, but is currently 50 miles.</p>
-
-<p>On success, this request will return an array of <a href="../Classes/LUCause.html"><code>LUCause</code></a> instances.</p>
+		<p>Generates a <code>UIImage</code> containing a QR code with a payment token and a tip percentage.</p>
 	</div>
 	
 	
@@ -332,25 +300,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCauseRequestFactory.h</code><br />
+		<code class="declared-in-ref">LUPaymentQRCodeGenerator.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForCausesOnPage:" title="requestForCausesOnPage:"></a>
-	<h3 class="subsubtitle method-title">requestForCausesOnPage:</h3>
+	<a name="//api/name/QRCodeFromPaymentToken:withTipPercentage:glowColorID:" title="QRCodeFromPaymentToken:withTipPercentage:glowColorID:"></a>
+	<h3 class="subsubtitle method-title">QRCodeFromPaymentToken:withTipPercentage:glowColorID:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve all causes on the given page.</p>
+		<p>Generates a <code>UIImage</code> containing a QR code with a payment token, tip percentage and glow color ID.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForCausesOnPage:(NSUInteger)<em>page</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (UIImage *)QRCodeFromPaymentToken:(NSString *)<em>paymentToken</em> withTipPercentage:(NSInteger)<em>tipPercentage</em> glowColorID:(NSInteger)<em>glowColorID</em></code></div>
 
     
 	
@@ -358,13 +326,28 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>page</em></dt>
-			<dd><p>The page of causes to retrieve.</p></dd>
+			<dt><em>paymentToken</em></dt>
+			<dd><p>The payment token to use when generating the QR code.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tipPercentage</em></dt>
+			<dd><p>A tip percentage as a number from 0 to 100.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>glowColorID</em></dt>
+			<dd><p>The ID of a color.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <code>UIImage</code> containing the QR code.</p>
+	</div>
 	
 	
 	
@@ -372,9 +355,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve all causes on the given page.</p>
-
-<p>On success, this request will return an array of <a href="../Classes/LUCause.html"><code>LUCause</code></a> instances.</p>
+		<p>Generates a <code>UIImage</code> containing a QR code with a payment token, tip percentage and glow color ID.</p>
 	</div>
 	
 	
@@ -385,7 +366,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCauseRequestFactory.h</code><br />
+		<code class="declared-in-ref">LUPaymentQRCodeGenerator.h</code><br />
 	</div>				
 	
 	
@@ -408,9 +389,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-09-06)</span><br />
+						<p><span class="copyright">&copy; 2014 LevelUp. All rights reserved. (Last updated: 2014-01-27)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						
 					</div>
 				</div>

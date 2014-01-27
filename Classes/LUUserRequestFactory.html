@@ -6,7 +6,7 @@
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.1 (build 858)" />
+		<meta name="generator" content="appledoc 2.2 (build 961)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -45,13 +45,7 @@
 	
 	<option value="//api/name/requestForUserWithID:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForUserWithID:</option>
 	
-	<option value="//api/name/requestToConnectToFacebookWithAccessToken:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToConnectToFacebookWithAccessToken:</option>
-	
 	<option value="//api/name/requestToCreateUser:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToCreateUser:</option>
-	
-	<option value="//api/name/requestToCreateUserWithFacebookAccessToken:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToCreateUserWithFacebookAccessToken:</option>
-	
-	<option value="//api/name/requestToDisconnectFromFacebook">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToDisconnectFromFacebook</option>
 	
 	<option value="//api/name/requestToResetPasswordWithEmail:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToResetPasswordWithEmail:</option>
 	
@@ -89,13 +83,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForUserWithID:">requestForUserWithID:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToConnectToFacebookWithAccessToken:">requestToConnectToFacebookWithAccessToken:</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToCreateUser:">requestToCreateUser:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToCreateUserWithFacebookAccessToken:">requestToCreateUserWithFacebookAccessToken:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToDisconnectFromFacebook">requestToDisconnectFromFacebook</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToResetPasswordWithEmail:">requestToResetPasswordWithEmail:</a></span></li>
 	
@@ -170,25 +158,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestToConnectToFacebookWithAccessToken:">+&nbsp;requestToConnectToFacebookWithAccessToken:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/requestToCreateUser:">+&nbsp;requestToCreateUser:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requestToCreateUserWithFacebookAccessToken:">+&nbsp;requestToCreateUserWithFacebookAccessToken:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requestToDisconnectFromFacebook">+&nbsp;requestToDisconnectFromFacebook</a></code>
 	</span>
 	
 	
@@ -316,59 +286,6 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestToConnectToFacebookWithAccessToken:" title="requestToConnectToFacebookWithAccessToken:"></a>
-	<h3 class="subsubtitle method-title">requestToConnectToFacebookWithAccessToken:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Builds a request to connect the current user to Facebook.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToConnectToFacebookWithAccessToken:(NSString *)<em>facebookAccessToken</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>facebookAccessToken</em></dt>
-			<dd><p>A Facebook access token.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to connect the current user to Facebook.</p>
-
-<p>On success, this request will return the connected <a href="../Classes/LUUser.html"><code>LUUser</code></a>.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUUserRequestFactory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/requestToCreateUser:" title="requestToCreateUser:"></a>
 	<h3 class="subsubtitle method-title">requestToCreateUser:</h3>
 	
@@ -405,104 +322,6 @@
 		<p>Builds a request to create a user.</p>
 
 <p>On success, this request will return the newly created <a href="../Classes/LUUser.html"><code>LUUser</code></a>.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUUserRequestFactory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/requestToCreateUserWithFacebookAccessToken:" title="requestToCreateUserWithFacebookAccessToken:"></a>
-	<h3 class="subsubtitle method-title">requestToCreateUserWithFacebookAccessToken:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Builds a request to create a user using a Facebook access token.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToCreateUserWithFacebookAccessToken:(NSString *)<em>facebookAccessToken</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>facebookAccessToken</em></dt>
-			<dd><p>The Facebook access token.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to create a user using a Facebook access token.</p>
-
-<p>On success, this request will return the newly created <a href="../Classes/LUUser.html"><code>LUUser</code></a>. This request will fail if a user already exists with
-the given access token. In that case, the <code>requestToLoginWithFacebookAccessToken:</code> method in
-<a href="../Classes/LUAuthenticationRequestFactory.html"><code>LUAuthenticationRequestFactory</code></a> should be used instead.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUUserRequestFactory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/requestToDisconnectFromFacebook" title="requestToDisconnectFromFacebook"></a>
-	<h3 class="subsubtitle method-title">requestToDisconnectFromFacebook</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Builds a request to disconnect the current user from Facebook.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToDisconnectFromFacebook</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to disconnect the current user from Facebook.</p>
-
-<p>On success, this request will return the disconnected <a href="../Classes/LUUser.html"><code>LUUser</code></a>.</p>
 	</div>
 	
 	
@@ -642,9 +461,9 @@ the given access token. In that case, the <code>requestToLoginWithFacebookAccess
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 LevelUp. All rights reserved. (Last updated: 2013-09-06)</span><br />
+						<p><span class="copyright">&copy; 2014 LevelUp. All rights reserved. (Last updated: 2014-01-27)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						
 					</div>
 				</div>
