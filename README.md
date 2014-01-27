@@ -6,7 +6,7 @@ The [LevelUp](https://www.thelevelup.com) SDK allows developers to build apps th
 
 # Overview
 
-The primary purpose of the SDK is to make it easy to issue requests to the LevelUp platform. It provides a layer on top of LevelUp's REST API. Requests may be things like signing up, logging or viewing nearby merchants. In addition, the SDK contains several utility classes to help with scanning and generating QR codes. Read below for additional information, or check out the [complete documentation](http://thelevelup.github.io/levelup-ios-sdk/) for a look at all the classes available with the SDK.
+The primary purpose of the SDK is to make it easy to issue requests to the LevelUp platform. It provides a layer on top of LevelUp's REST API. Requests may be things like signing up, logging or viewing nearby merchants. In addition, the SDK contains several utility classes to help with scanning and generating QR codes. Read below for additional information, or check out the [complete documentation](http://thelevelup.github.io/levelup-sdk-ios/) for a look at all the classes available with the SDK.
 
 The recommended way to access the LevelUp SDK is through [CocoaPods](http://cocoapods.org/).
 
@@ -14,7 +14,7 @@ The recommended way to access the LevelUp SDK is through [CocoaPods](http://coco
 
 ## Performing Requests
 
-Interactions with the LevelUp API occur through the [LUAPIClient](http://thelevelup.github.io/levelup-ios-sdk/Classes/LUAPIClient.html) class. This is a singleton class through which all requests are performed.
+Interactions with the LevelUp API occur through the [LUAPIClient](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUAPIClient.html) class. This is a singleton class through which all requests are performed.
 
 Before issuing any requests, you must register an App ID and API key. This is done using the `setupWithAppID:APIKey:` method:
 
@@ -22,7 +22,7 @@ Before issuing any requests, you must register an App ID and API key. This is do
 [[LUAPIClient sharedClient] setupWithAppID:APP_ID APIKey:API_KEY];
 ```
 
-An API request is an instance of [LUAPIRequest](http://thelevelup.github.io/levelup-ios-sdk/Classes/LUAPIRequest.html). The SDK includes a set of request factories in order to create these requests (see "Request Factories" below).
+An API request is an instance of [LUAPIRequest](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUAPIRequest.html). The SDK includes a set of request factories in order to create these requests (see "Request Factories" below).
 
 Requests are performed by calling `performRequest:success:failure:`:
 
@@ -91,13 +91,13 @@ A core feature of an app built on the LevelUp platform is the ability to display
 
 ## Generating Codes
 
-The [LUPaymentQRCodeGenerator](http://thelevelup.github.io/levelup-ios-sdk/Classes/LUPaymentQRCodeGenerator.html) class is used to generate a `UIImage` containing user's QR code, along with optional information such as a tip percentage.
+The [LUPaymentQRCodeGenerator](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUPaymentQRCodeGenerator.html) class is used to generate a `UIImage` containing user's QR code, along with optional information such as a tip percentage.
 
-To generate a QR code for an arbitrary `NSString`, use [LUGenericQRCodeGenerator](http://thelevelup.github.io/levelup-ios-sdk/Classes/LUGenericQRCodeGenerator.html).
+To generate a QR code for an arbitrary `NSString`, use [LUGenericQRCodeGenerator](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUGenericQRCodeGenerator.html).
 
 ## Scanning Codes
 
-[LUQRCodeScannerView](http://thelevelup.github.io/levelup-ios-sdk/Classes/LUQRCodeScannerView.html) is a `UIView` that handles scanning QR codes. It is provided with a delegate to be notified when a scan is successful.
+[LUQRCodeScannerView](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUQRCodeScannerView.html) is a `UIView` that handles scanning QR codes. It is provided with a delegate to be notified when a scan is successful.
 
 # Testing
 
