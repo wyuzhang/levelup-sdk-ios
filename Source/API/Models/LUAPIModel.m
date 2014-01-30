@@ -36,7 +36,10 @@
     id value = [self valueForKey:attribute];
     id otherValue = [otherModel valueForKey:attribute];
 
-    if ((value && !otherValue) || (!value && otherValue) || ([value hash] != [otherValue hash])) {
+    BOOL bothValuesNil = !value && !otherValue;
+    BOOL valuesEqual = [value isEqual:otherValue];
+
+    if (!bothValuesNil && !valuesEqual) {
       return NO;
     }
   }
