@@ -76,6 +76,9 @@
 		02BA982A174BE19500C9D647 /* LUCoreDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 02BA9828174BE19500C9D647 /* LUCoreDataStore.h */; };
 		02BA982B174BE19500C9D647 /* LUCoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA9829174BE19500C9D647 /* LUCoreDataStore.m */; };
 		02BA982E174BE37600C9D647 /* LUCoreDataStoreSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA982C174BE36800C9D647 /* LUCoreDataStoreSpec.m */; };
+		02CB685B18A94D5D00FDF630 /* LUPaymentStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CB685918A94D5D00FDF630 /* LUPaymentStringGenerator.h */; };
+		02CB685C18A94D5D00FDF630 /* LUPaymentStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CB685A18A94D5D00FDF630 /* LUPaymentStringGenerator.m */; };
+		02CB685F18A9519C00FDF630 /* LUPaymentStringGeneratorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CB685D18A9518B00FDF630 /* LUPaymentStringGeneratorSpec.m */; };
 		02CD575317D90673006205C6 /* LUInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CD574B17D90673006205C6 /* LUInterstitial.h */; };
 		02CD575417D90673006205C6 /* LUInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD574C17D90673006205C6 /* LUInterstitial.m */; };
 		02CD575517D90673006205C6 /* LUInterstitialClaimAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CD574D17D90673006205C6 /* LUInterstitialClaimAction.h */; };
@@ -394,6 +397,9 @@
 		02BA9828174BE19500C9D647 /* LUCoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCoreDataStore.h; sourceTree = "<group>"; };
 		02BA9829174BE19500C9D647 /* LUCoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCoreDataStore.m; sourceTree = "<group>"; };
 		02BA982C174BE36800C9D647 /* LUCoreDataStoreSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCoreDataStoreSpec.m; sourceTree = "<group>"; };
+		02CB685918A94D5D00FDF630 /* LUPaymentStringGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUPaymentStringGenerator.h; sourceTree = "<group>"; };
+		02CB685A18A94D5D00FDF630 /* LUPaymentStringGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentStringGenerator.m; sourceTree = "<group>"; };
+		02CB685D18A9518B00FDF630 /* LUPaymentStringGeneratorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentStringGeneratorSpec.m; sourceTree = "<group>"; };
 		02CD574B17D90673006205C6 /* LUInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitial.h; sourceTree = "<group>"; };
 		02CD574C17D90673006205C6 /* LUInterstitial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitial.m; sourceTree = "<group>"; };
 		02CD574D17D90673006205C6 /* LUInterstitialClaimAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialClaimAction.h; sourceTree = "<group>"; };
@@ -1040,6 +1046,7 @@
 			children = (
 				02AA94501835301400218730 /* LUGenericQRCodeGeneratorSpec.m */,
 				C1CAF0F6173052A7003B3D01 /* LUPaymentQRCodeGeneratorSpec.m */,
+				02CB685D18A9518B00FDF630 /* LUPaymentStringGeneratorSpec.m */,
 			);
 			name = "QRCode Management";
 			path = "QRCode-Management";
@@ -1256,13 +1263,15 @@
 		C1CAF1EA17315415003B3D01 /* QRCode Management */ = {
 			isa = PBXGroup;
 			children = (
+				C1CAF1EF17315415003B3D01 /* Views */,
 				02AA944C18352C4400218730 /* LUGenericQRCodeGenerator.h */,
 				02AA944D18352C4400218730 /* LUGenericQRCodeGenerator.m */,
 				C1CAF1ED17315415003B3D01 /* LUPaymentQRCodeGenerator.h */,
 				C1CAF1EE17315415003B3D01 /* LUPaymentQRCodeGenerator.m */,
+				02CB685918A94D5D00FDF630 /* LUPaymentStringGenerator.h */,
+				02CB685A18A94D5D00FDF630 /* LUPaymentStringGenerator.m */,
 				C1CAF1EB17315415003B3D01 /* LUQRCodeDecoder.h */,
 				C1CAF1EC17315415003B3D01 /* LUQRCodeDecoder.m */,
-				C1CAF1EF17315415003B3D01 /* Views */,
 			);
 			name = "QRCode Management";
 			path = "QRCode-Management";
@@ -1376,6 +1385,7 @@
 				2523E31B17374B3F00FBDFEB /* LULocationRequestFactory.h in Headers */,
 				2523E32D17374D8B00FBDFEB /* LUCachedLocation.h in Headers */,
 				2523E32F17374D8B00FBDFEB /* LUCachedLocationSearch.h in Headers */,
+				02CB685B18A94D5D00FDF630 /* LUPaymentStringGenerator.h in Headers */,
 				2523E33117374D8B00FBDFEB /* LUCoreDataStack.h in Headers */,
 				2523E33317374D8B00FBDFEB /* LULocationCacheUpdater.h in Headers */,
 				02D68DD01738370F005E1BA8 /* NSRegularExpression+LUAdditions.h in Headers */,
@@ -1600,6 +1610,7 @@
 				C1CAF24B17315415003B3D01 /* LUAPIRequest.m in Sources */,
 				C1CAF24F17315415003B3D01 /* LUDeviceIdentifier.m in Sources */,
 				C1CAF25117315415003B3D01 /* LUUserParameterBuilder.m in Sources */,
+				02CB685C18A94D5D00FDF630 /* LUPaymentStringGenerator.m in Sources */,
 				C1CAF25317315415003B3D01 /* LUAPNDeviceRequestFactory.m in Sources */,
 				C1CAF25717315415003B3D01 /* LUCampaignRequestFactory.m in Sources */,
 				C1CAF25917315415003B3D01 /* LUCategoryRequestFactory.m in Sources */,
@@ -1675,6 +1686,7 @@
 				C1CAF116173052A7003B3D01 /* LUCreditCardJSONFactorySpec.m in Sources */,
 				C1CAF11C173052A7003B3D01 /* LUMonetaryValueJSONFactorySpec.m in Sources */,
 				C1CAF11D173052A7003B3D01 /* LUAccessTokenJSONFactorySpec.m in Sources */,
+				02CB685F18A9519C00FDF630 /* LUPaymentStringGeneratorSpec.m in Sources */,
 				C1CAF11E173052A7003B3D01 /* LUOrderJSONFactorySpec.m in Sources */,
 				C1CAF121173052A7003B3D01 /* LUUserJSONFactorySpec.m in Sources */,
 				C1CAF122173052A7003B3D01 /* LUAPIModelSpec.m in Sources */,

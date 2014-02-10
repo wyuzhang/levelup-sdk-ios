@@ -105,7 +105,7 @@ describe(@"LUAPIModel", ^{
           [[anotherModel shouldNot] equal:aModel];
         });
       });
-      
+
       context(@"when comparing unequal properties with the same hash", ^{
         beforeEach(^{
           aModel.dictionary = @{@"1": @"a"};

@@ -38,7 +38,28 @@
  Generates a `UIImage` containing a QR code with a payment token and a tip percentage.
 
  @param paymentToken The payment token to use when generating the QR code.
- @param tipPercentage A tip percentage as a number from 0 to 100.
+ @param tipAmount A tip amount in US cents. The largest possible tip that can be encoded is $453.59.
+
+ @return A `UIImage` containing the QR code.
+ */
++ (UIImage *)QRCodeFromPaymentToken:(NSString *)paymentToken withTipAmountInUSCents:(NSInteger)tipAmount;
+
+/**
+ Generates a `UIImage` containing a QR code with a payment token and a tip percentage.
+
+ @param paymentToken The payment token to use when generating the QR code.
+ @param tipAmount A tip amount in US cents. The largest possible tip that can be encoded is $453.59.
+ @param glowColorID The ID of a color.
+
+ @return A `UIImage` containing the QR code.
+ */
++ (UIImage *)QRCodeFromPaymentToken:(NSString *)paymentToken withTipAmountInUSCents:(NSInteger)tipAmount glowColorID:(NSInteger)glowColorID;
+
+/**
+ Generates a `UIImage` containing a QR code with a payment token and a tip percentage.
+
+ @param paymentToken The payment token to use when generating the QR code.
+ @param tipPercentage A tip percentage. For example 100% is represented as 100. The largest possible percent that can be encoded is 1295%.
 
  @return A `UIImage` containing the QR code.
  */
@@ -48,7 +69,7 @@
  Generates a `UIImage` containing a QR code with a payment token, tip percentage and glow color ID.
 
  @param paymentToken The payment token to use when generating the QR code.
- @param tipPercentage A tip percentage as a number from 0 to 100.
+ @param tipPercentage A tip percentage. For example 100% is represented as 100. The largest possible percent that can be encoded is 1295%.
  @param glowColorID The ID of a color.
 
  @return A `UIImage` containing the QR code.
