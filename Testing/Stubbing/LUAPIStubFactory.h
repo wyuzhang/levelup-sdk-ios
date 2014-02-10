@@ -56,6 +56,7 @@
 + (LUAPIStub *)stubToLogInWithEmail:(NSString *)email password:(NSString *)password;
 + (LUAPIStub *)stubToPromoteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToResetPasswordRequest;
++ (LUAPIStub *)stubToSubmitFeedbackForOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToUpdateUser;
 + (LUAPIStub *)stubToUpdateUser:(LUUser *)user;
 

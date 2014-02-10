@@ -444,6 +444,14 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:nil];
 }
 
++ (LUAPIStub *)stubToSubmitFeedbackForOrderWithUUID:(NSString *)UUID {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:[NSString stringWithFormat:@"orders/%@/feedbacks", UUID]
+                           HTTPMethod:@"POST"
+                        authenticated:NO
+                         responseData:nil];
+}
+
 + (LUAPIStub *)stubToUpdateUser {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:@"users/1"

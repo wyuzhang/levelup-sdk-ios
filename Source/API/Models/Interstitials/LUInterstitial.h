@@ -5,6 +5,7 @@
 typedef NS_ENUM(NSInteger, LUInterstitialActionType) {
   LUInterstitialActionTypeNone,
   LUInterstitialActionTypeClaim,
+  LUInterstitialActionTypeFeedback,
   LUInterstitialActionTypeShare,
   LUInterstitialActionTypeURL
 };
@@ -18,12 +19,13 @@ typedef NS_ENUM(NSInteger, LUInterstitialActionType) {
 
  - None: There is no action for the user. In this case the interstitial can be used just for sharing information.
  - Claim: The user will be asked to claim a campaign.
+ - Feedback: The user will be asked to rate their experience and provide comments.
  - Share: The user can share information related to the order via email, Facebook or Twitter.
  - URL: The interstitial will include a URL that the user can view.
 
  The `action` property of `LUInterstitialAction` will contain additional properties relevant to the particular type.
  It may be `nil` (if the action type is "none"), or it may be an instance of `LUInterstitialClaimAction`,
- `LUInterstitialShareAction`, or `LUInterstitialURLAction`.
+ `LUInterstitialFeedbackAction`, `LUInterstitialShareAction`, or `LUInterstitialURLAction`.
  */
 @interface LUInterstitial : LUAPIModel
 
@@ -34,6 +36,7 @@ typedef NS_ENUM(NSInteger, LUInterstitialActionType) {
 
  - `LUInterstitialActionTypeNone`: This property will be `nil`.
  - `LUInterstitialActionTypeClaim`: This property will be an instance of `LUInterstitialClaimAction`.
+ - `LUInterstitialActionTypeFeedback`: This property will be an instance of `LUInterstitialFeedbackAction`.
  - `LUInterstitialActionTypeShare`: This property will be an instance of `LUInterstitialShareAction`.
  - `LUInterstitialActionTypeURL`: This property will be an instance of `LUInterstitialURLAction`.
  */
@@ -42,8 +45,8 @@ typedef NS_ENUM(NSInteger, LUInterstitialActionType) {
 /**
  The type of action this interstitial is requesting.
 
- Will be one of: `LUInterstitialActionTypeNone`, `LUInterstitialActionTypeClaim`, `LUInterstitialActionTypeShare`, or
- `LUInterstitialActionTypeURL`.
+ Will be one of: `LUInterstitialActionTypeNone`, `LUInterstitialActionTypeClaim`, `LUInterstitialActionTypeFeedback`,
+ `LUInterstitialActionTypeShare`, or `LUInterstitialActionTypeURL`.
  */
 @property (nonatomic, assign, readonly) LUInterstitialActionType actionType;
 

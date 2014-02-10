@@ -53,6 +53,9 @@
     case LUInterstitialActionTypeClaim:
       return @"claim";
 
+    case LUInterstitialActionTypeFeedback:
+      return @"feedback";
+
     case LUInterstitialActionTypeShare:
       return @"share";
 

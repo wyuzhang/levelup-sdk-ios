@@ -5,6 +5,7 @@
 @interface LUInterstitial (Fixtures)
 
 + (LUInterstitial *)fixtureWithClaimAction;
++ (LUInterstitial *)fixtureWithFeedbackAction;
 + (LUInterstitial *)fixtureWithNoAction;
 + (LUInterstitial *)fixtureWithShareAction;
 + (LUInterstitial *)fixtureWithURLAction;

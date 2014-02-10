@@ -2,6 +2,7 @@
 
 #import "LUInterstitial.h"
 #import "LUInterstitialClaimAction.h"
+#import "LUInterstitialFeedbackAction.h"
 #import "LUInterstitialJSONFactory.h"
 #import "LUInterstitialShareAction.h"
 #import "LUInterstitialURLAction.h"
@@ -35,6 +36,9 @@
     case LUInterstitialActionTypeClaim:
       return [self claimActionWithAttributes:attributes];
 
+    case LUInterstitialActionTypeFeedback:
+      return [self feedbackActionWithAttributes:attributes];
+
     case LUInterstitialActionTypeShare:
       return [self shareActionWithAttributes:attributes];
 
@@ -48,6 +52,8 @@
     return LUInterstitialActionTypeShare;
   } else if ([typeString isEqualToString:@"claim"]) {
     return LUInterstitialActionTypeClaim;
+  } else if ([typeString isEqualToString:@"feedback"]) {
+    return LUInterstitialActionTypeFeedback;
   } else if ([typeString isEqualToString:@"url"]) {
     return LUInterstitialActionTypeURL;
   } else {
@@ -58,6 +64,11 @@
 - (LUInterstitialClaimAction *)claimActionWithAttributes:(NSDictionary *)attributes {
   NSString *campaignCode = [attributes lu_stringForKey:@"code"];
   return [[LUInterstitialClaimAction alloc] initWithCampaignCode:campaignCode];
+}
+
+- (LUInterstitialFeedbackAction *)feedbackActionWithAttributes:(NSDictionary *)attributes {
+  NSString *questionText = [attributes lu_stringForKey:@"question_text"];
+  return [[LUInterstitialFeedbackAction alloc] initWithQuestionText:questionText];
 }
 
 - (LUInterstitialShareAction *)shareActionWithAttributes:(NSDictionary *)attributes {

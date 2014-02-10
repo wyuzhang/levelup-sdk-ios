@@ -2,6 +2,7 @@
 
 #import "LUInterstitial+Fixtures.h"
 #import "LUInterstitialClaimAction.h"
+#import "LUInterstitialFeedbackAction.h"
 #import "LUInterstitialShareAction.h"
 #import "LUInterstitialURLAction.h"
 
@@ -10,6 +11,11 @@
 + (LUInterstitial *)fixtureWithClaimAction {
   LUInterstitialClaimAction *action = [[LUInterstitialClaimAction alloc] initWithCampaignCode:@"code"];
   return [self fixtureWithAction:action actionType:LUInterstitialActionTypeClaim];
+}
+
++ (LUInterstitial *)fixtureWithFeedbackAction {
+  LUInterstitialFeedbackAction *action = [[LUInterstitialFeedbackAction alloc] initWithQuestionText:@"Question text"];
+  return [self fixtureWithAction:action actionType:LUInterstitialActionTypeFeedback];
 }
 
 + (LUInterstitial *)fixtureWithNoAction {

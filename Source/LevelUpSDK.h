@@ -29,6 +29,7 @@
 #import "LUCreditCard.h"
 #import "LUInterstitial.h"
 #import "LUInterstitialClaimAction.h"
+#import "LUInterstitialFeedbackAction.h"
 #import "LUInterstitialShareAction.h"
 #import "LUInterstitialURLAction.h"
 #import "LULocation.h"
