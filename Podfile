@@ -1,6 +1,6 @@
 platform :ios, '5.0'
 
-pod 'AFNetworking', '1.1.0'
+pod 'AFNetworking', '1.3.3'
 pod 'AutoCoding', '2.0.3'
 pod 'Braintree', '2.2.5'
 pod 'LUKeychainAccess', '1.2.0'
