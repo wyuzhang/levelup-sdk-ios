@@ -3,7 +3,7 @@
 #import "LUQROverlayView.h"
 
 static const CGFloat kXPadding = 0.0f;
-static const CGFloat kYPadding = 44.0f;
+static const CGFloat kYPadding = 0.0f;
 static const CGFloat kCropHeight = 240.0f;
 static const CGFloat kCropWidth = 240.0f;
 
