@@ -18,10 +18,11 @@
 #pragma mark - Creation
 
 - (id)initWithBirthdate:(NSDate *)birthdate causeID:(NSNumber *)causeID connectedToFacebook:(BOOL)connectedToFacebook
-       customAttributes:(NSDictionary *)customAttributes email:(NSString *)email firstName:(NSString *)firstName
-                 gender:(LUGender)gender globalCredit:(LUMonetaryValue *)globalCredit lastName:(NSString *)lastName
-  merchantsVisitedCount:(NSNumber *)merchangsVisitedCount ordersCount:(NSNumber *)ordersCount
-      termsAccepted:(BOOL)termsAccepted totalSavings:(LUMonetaryValue *)totalSavings userID:(NSNumber *)userID {
+       customAttributes:(NSDictionary *)customAttributes debitCardOnly:(BOOL)debitCardOnly email:(NSString *)email
+              firstName:(NSString *)firstName gender:(LUGender)gender globalCredit:(LUMonetaryValue *)globalCredit
+               lastName:(NSString *)lastName merchantsVisitedCount:(NSNumber *)merchantsVisitedCount
+            ordersCount:(NSNumber *)ordersCount termsAccepted:(BOOL)termsAccepted
+           totalSavings:(LUMonetaryValue *)totalSavings userID:(NSNumber *)userID {
   self = [super init];
   if (!self) return nil;
 
@@ -29,12 +30,13 @@
   _causeID = causeID;
   _connectedToFacebook = connectedToFacebook;
   _customAttributes = [customAttributes mutableCopy];
+  _debitCardOnly = debitCardOnly;
   _email = email;
   _firstName = firstName;
   _gender = gender;
   _globalCredit = globalCredit;
   _lastName = lastName;
-  _merchantsVisitedCount = merchangsVisitedCount;
+  _merchantsVisitedCount = merchantsVisitedCount;
   _ordersCount = ordersCount;
   _termsAccepted = termsAccepted;
   _totalSavings = totalSavings;
@@ -55,8 +57,8 @@
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUUser [address=%p, birthdate=%@, causeID=%@, customAttributes=%@, email=%@, firstName=%@, gender=%@, globalCredit=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, termsAccepted=%@, totalSavings=%@]",
-          self, self.birthdate, self.causeID, self.customAttributes, self.email, self.firstName,
+          @"LUUser [address=%p, birthdate=%@, causeID=%@, customAttributes=%@, debitCardOnly=%@, email=%@, firstName=%@, gender=%@, globalCredit=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, termsAccepted=%@, totalSavings=%@]",
+          self, self.birthdate, self.causeID, self.customAttributes, @(self.debitCardOnly), self.email, self.firstName,
           [[self class] genderStringForGender:self.gender], self.globalCredit, self.userID, self.lastName,
           self.merchantsVisitedCount, self.ordersCount, @(self.termsAccepted), self.totalSavings];
 }

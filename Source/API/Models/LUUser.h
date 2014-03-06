@@ -31,6 +31,11 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, strong) NSMutableDictionary *customAttributes;
 
 /**
+ Designates if the user is part of the debit_card_only AB Test (internal).
+ */
+@property (nonatomic, assign, readonly) BOOL debitCardOnly;
+
+/**
  The user's email address.
  */
 @property (nonatomic, copy) NSString *email;
@@ -98,9 +103,10 @@ typedef NS_ENUM(NSInteger, LUGender) {
 + (NSString *)genderStringForGender:(LUGender)gender;
 
 - (id)initWithBirthdate:(NSDate *)birthdate causeID:(NSNumber *)causeID connectedToFacebook:(BOOL)connectedToFacebook
-       customAttributes:(NSDictionary *)customAttributes email:(NSString *)email firstName:(NSString *)firstName
-                 gender:(LUGender)gender globalCredit:(LUMonetaryValue *)globalCredit lastName:(NSString *)lastName
-    merchantsVisitedCount:(NSNumber *)merchangsVisitedCount ordersCount:(NSNumber *)ordersCount
-          termsAccepted:(BOOL)termsAccepted totalSavings:(LUMonetaryValue *)totalSavings userID:(NSNumber *)userID;
+       customAttributes:(NSDictionary *)customAttributes debitCardOnly:(BOOL)debitCardOnly email:(NSString *)email
+              firstName:(NSString *)firstName gender:(LUGender)gender globalCredit:(LUMonetaryValue *)globalCredit
+               lastName:(NSString *)lastName merchantsVisitedCount:(NSNumber *)merchantsVisitedCount
+            ordersCount:(NSNumber *)ordersCount termsAccepted:(BOOL)termsAccepted
+           totalSavings:(LUMonetaryValue *)totalSavings userID:(NSNumber *)userID;
 
 @end

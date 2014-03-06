@@ -10,6 +10,25 @@
                                    causeID:@1
                        connectedToFacebook:YES
                           customAttributes:nil
+                             debitCardOnly:NO
+                                     email:@"test@example.com"
+                                 firstName:@"Joe"
+                                    gender:LUGenderMale
+                              globalCredit:[LUMonetaryValue monetaryValueWithUSD:@10]
+                                  lastName:@"Test"
+                     merchantsVisitedCount:@5
+                               ordersCount:@10
+                             termsAccepted:YES
+                              totalSavings:[LUMonetaryValue monetaryValueWithUSD:@1]
+                                    userID:@1];
+}
+
++ (LUUser *)fixtureWithDebitOnly {
+  return [[LUUser alloc] initWithBirthdate:[NSDate distantPast]
+                                   causeID:@1
+                       connectedToFacebook:YES
+                          customAttributes:nil
+                             debitCardOnly:YES
                                      email:@"test@example.com"
                                  firstName:@"Joe"
                                     gender:LUGenderMale

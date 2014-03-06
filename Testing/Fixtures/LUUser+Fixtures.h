@@ -5,5 +5,6 @@
 @interface LUUser (Fixtures)
 
 + (LUUser *)fixture;
++ (LUUser *)fixtureWithDebitOnly;
 
 @end

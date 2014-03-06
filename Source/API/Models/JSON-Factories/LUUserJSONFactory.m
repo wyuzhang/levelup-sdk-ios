@@ -14,6 +14,7 @@
   NSNumber *causeID = [attributes lu_numberForKey:@"cause_id"];
   BOOL connectedToFacebook = [attributes lu_boolForKey:@"connected_to_facebook"];
   NSDictionary *customAttributes = [attributes lu_dictionaryForKey:@"custom_attributes"];
+  BOOL debitCardOnly = [attributes lu_boolForKey:@"debit_card_only"];
   NSString *email = [attributes lu_stringForKey:@"email"];
   NSString *firstName = [attributes lu_stringForKey:@"first_name"];
   LUGender gender = [LUUser genderForGenderString:[attributes lu_stringForKey:@"gender"]];
@@ -26,10 +27,10 @@
   NSNumber *userID = [attributes lu_numberForKey:@"id"];
 
   return [[LUUser alloc] initWithBirthdate:birthdate causeID:causeID connectedToFacebook:connectedToFacebook
-                          customAttributes:customAttributes email:email firstName:firstName gender:gender
-                              globalCredit:globalCredit lastName:lastName merchantsVisitedCount:merchantsVisitedCount
-                               ordersCount:ordersCount termsAccepted:termsAccepted totalSavings:totalSavings
-                                    userID:userID];
+                          customAttributes:customAttributes debitCardOnly:debitCardOnly email:email firstName:firstName
+                                    gender:gender globalCredit:globalCredit lastName:lastName
+                     merchantsVisitedCount:merchantsVisitedCount ordersCount:ordersCount termsAccepted:termsAccepted
+                              totalSavings:totalSavings userID:userID];
 }
 
 - (NSString *)rootKey {

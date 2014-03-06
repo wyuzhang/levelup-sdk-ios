@@ -20,8 +20,10 @@
 + (LUAPIStub *)stubToCreateTicket:(NSString *)body;
 + (LUAPIStub *)stubToCreateUser;
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user;
++ (LUAPIStub *)stubToCreateUserDebitOnly:(LUUser *)user;
 + (LUAPIStub *)stubToDeleteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToFailToClaimCampaignWithCode:(NSString *)code;
++ (LUAPIStub *)stubToFailToCreateCreditCardWithDebitOnlyError;
 + (LUAPIStub *)stubToGetCampaignForMerchantWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithID:(NSNumber *)campaignID;
@@ -32,7 +34,9 @@
 + (LUAPIStub *)stubToGetCreditCardsTwoResults;
 + (LUAPIStub *)stubToGetCreditCardsThreeResults;
 + (LUAPIStub *)stubToGetCurrentUser;
++ (LUAPIStub *)stubToGetCurrentUserDebitOnly;
 + (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfo;
++ (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfoWithDebitOnly;
 + (LUAPIStub *)stubToGetIneligiblePaymentToken;
 + (LUAPIStub *)stubToGetInterstitialNotFoundForOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToGetInterstitialForOrderWithUUID:(NSString *)UUID;

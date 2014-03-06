@@ -19,6 +19,7 @@ describe(@"LUUserJSONFactory", ^{
         @"cause_id" : @1,
         @"connected_to_facebook" : @YES,
         @"custom_attributes" : @{@"key" : @"value"},
+        @"debit_card_only" : @YES,
         @"email" : @"test@example.com",
         @"first_name" : @"Test",
         @"gender" : @"male",
@@ -36,6 +37,7 @@ describe(@"LUUserJSONFactory", ^{
       [[user.causeID should] equal:@1];
       [[[user valueForKey:@"connectedToFacebook"] should] beYes];
       [[user.customAttributes should] equal:@{@"key" : @"value"}];
+      [[[user valueForKey:@"debitCardOnly"] should] beYes];
       [[user.email should] equal:@"test@example.com"];
       [[user.firstName should] equal:@"Test"];
       [[theValue(user.gender) should] equal:theValue(LUGenderMale)];

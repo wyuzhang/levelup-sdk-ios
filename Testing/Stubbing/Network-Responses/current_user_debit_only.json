@@ -4,7 +4,7 @@
     "cause_id" : 1,
     "connected_to_facebook": false,
     "custom_attributes" : null,
-    "debit_card_only" : false,
+    "debit_card_only" : true,
     "email": "john.doe@example.com",
     "first_name": "John",
     "gender": "male",

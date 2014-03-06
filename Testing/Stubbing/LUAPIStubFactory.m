@@ -92,15 +92,21 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
   [self setDeviceIdentifier];
 
-  NSDictionary *userJSON = [LUUserParameterBuilder parametersForUser:user];
-  stub.requestBodyJSON = @{ @"client_id" : [LUAPIClient sharedClient].apiKey, @"user" : userJSON };
+  stub.requestBodyJSON = [self requestBodyJSONForUser:user];
+  stub.responseData = [self responseDataFromJSON:[self responseJSONForUser:user]];
 
-  NSMutableDictionary *responseUserJSON = [userJSON mutableCopy];
-  if (user.termsAccepted) {
-    responseUserJSON[@"terms_accepted_at"] = [[NSDate date] lu_iso8601DateTimeString];
-  }
-  NSDictionary *responseJSON = @{ @"user" : responseUserJSON };
+  return stub;
+}
 
++ (LUAPIStub *)stubToCreateUserDebitOnly:(LUUser *)user {
+  LUAPIStub *stub = [self stubToCreateUser];
+
+  [self setDeviceIdentifier];
+
+  NSMutableDictionary *responseJSON = [[self responseJSONForUser:user] mutableCopy];
+  responseJSON[@"debit_card_only"] = @(YES);
+
+  stub.requestBodyJSON = [self requestBodyJSONForUser:user];
   stub.responseData = [self responseDataFromJSON:responseJSON];
 
   return stub;
@@ -121,6 +127,16 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                                    authenticated:YES
                                     responseData:[self responseDataFromFile:@"failed_claim"]];
   stub.responseCode = 404;
+  return stub;
+}
+
++ (LUAPIStub *)stubToFailToCreateCreditCardWithDebitOnlyError {
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                            path:@"credit_cards"
+                                      HTTPMethod:@"POST"
+                                   authenticated:YES
+                                    responseData:[self responseDataFromFile:@"failed_credit_card_create"]];
+  stub.responseCode = 504;
   return stub;
 }
 
@@ -204,12 +220,28 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:[self responseDataFromFile:@"current_user"]];
 }
 
++ (LUAPIStub *)stubToGetCurrentUserDebitOnly {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:@"users/1"
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"current_user_debit_only"]];
+}
+
 + (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfo {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:@"users/1"
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"current_user_minimal"]];
+}
+
++ (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfoWithDebitOnly {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:@"users/1"
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"current_user_minimal_debit_only"]];
 }
 
 + (LUAPIStub *)stubToGetIneligiblePaymentToken {
@@ -473,6 +505,11 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
 #pragma mark - Private Methods
 
++ (NSDictionary *)requestBodyJSONForUser:(LUUser *)user {
+  NSDictionary *userJSON = [LUUserParameterBuilder parametersForUser:user];
+  return @{ @"client_id" : [LUAPIClient sharedClient].apiKey, @"user" : userJSON };
+}
+
 + (NSData *)responseDataFromFile:(NSString *)file {
   NSString *responseFile = [[NSBundle bundleForClass:[self class]] pathForResource:file ofType:@"json"];
   return [NSData dataWithContentsOfFile:responseFile];
@@ -482,6 +519,15 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   if (!JSON) return nil;
 
   return [NSJSONSerialization dataWithJSONObject:JSON options:0 error:nil];
+}
+
++ (NSDictionary *)responseJSONForUser:(LUUser *)user {
+  NSMutableDictionary *responseUserJSON = [[LUUserParameterBuilder parametersForUser:user] mutableCopy];
+  if (user.termsAccepted) {
+    responseUserJSON[@"terms_accepted_at"] = [[NSDate date] lu_iso8601DateTimeString];
+  }
+
+  return @{ @"user" : responseUserJSON };
 }
 
 + (void)setDeviceIdentifier {
