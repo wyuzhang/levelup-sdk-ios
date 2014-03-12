@@ -15,7 +15,7 @@ describe(@"LUDeviceIdentifier", ^{
 
     context(@"when a device identifier has not been stored", ^{
       beforeEach(^{
-        [[[LUKeychainAccess standardKeychainAccess] stub] stringForKey:DeviceIdentifierKey];
+        [[LUKeychainAccess standardKeychainAccess] stub:@selector(stringForKey:) withArguments:DeviceIdentifierKey, nil];
       });
 
       it(@"returns a new UUID", ^{
@@ -30,7 +30,7 @@ describe(@"LUDeviceIdentifier", ^{
       NSString *UUID = @"c5d0d1fefaf12815bf60413f9f81c07c";
 
       beforeEach(^{
-        [[[LUKeychainAccess standardKeychainAccess] stubAndReturn:UUID] stringForKey:DeviceIdentifierKey];
+        [[LUKeychainAccess standardKeychainAccess] stub:@selector(stringForKey:) andReturn:UUID withArguments:DeviceIdentifierKey, nil];
       });
 
       it(@"returns the stored device identifier", ^{

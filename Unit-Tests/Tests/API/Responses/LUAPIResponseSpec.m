@@ -15,7 +15,7 @@ describe(@"LUAPIResponse", ^{
 
       LUWebLinkParser *webLinkParser = [LUWebLinkParser mock];
       [LUWebLinkParser stub:@selector(alloc) andReturn:webLinkParser];
-      [webLinkParser stub:@selector(initWithHeaderValue:) andReturn:webLinkParser withArguments:testLinkHeader];
+      [webLinkParser stub:@selector(initWithHeaderValue:) andReturn:webLinkParser withArguments:testLinkHeader, nil];
 
       NSURL *nextPageURL = [NSURL URLWithString:@"http://example.com"];
       [[webLinkParser should] receive:@selector(nextURL) andReturn:nextPageURL];

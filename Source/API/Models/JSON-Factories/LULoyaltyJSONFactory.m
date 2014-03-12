@@ -14,7 +14,7 @@
   LUMonetaryValue *shouldSpend = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"merchant_spend_amount"]];
   NSNumber *ordersCount = [attributes lu_numberForKey:@"orders_count"];
   LUMonetaryValue *potentialCredit = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"potential_credit_amount"]];
-  CGFloat progressPercent = [[attributes lu_numberForKey:@"progress_percentage"] floatValue] / 100;
+  float progressPercent = [[attributes lu_numberForKey:@"progress_percentage"] floatValue] / 100.0f;
   LUMonetaryValue *savings = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"savings_amount"]];
   LUMonetaryValue *spendRemaining = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"spend_remaining_amount"]];
   LUMonetaryValue *totalVolume = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"total_volume_amount"]];

@@ -28,7 +28,7 @@ describe(@"LUCampaign", ^{
     NSURL *URL = [NSURL URLWithString:@"http://example.com/path/to/image"];
 
     beforeEach(^{
-      [NSURL stub:@selector(lu_imageURLForCampaignWithID:) andReturn:URL withArguments:@1];
+      [NSURL stub:@selector(lu_imageURLForCampaignWithID:) andReturn:URL withArguments:@1, nil];
     });
 
     it(@"returns the URL of the location image request", ^{

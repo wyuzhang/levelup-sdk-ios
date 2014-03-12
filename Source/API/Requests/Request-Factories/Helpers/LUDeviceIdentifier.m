@@ -35,7 +35,7 @@ NSString * const DeviceIdentifierKey = @"LUDeviceIdentifier";
   // MD5 hash the UUID
   unsigned char digest[CC_MD5_DIGEST_LENGTH];
 
-  CC_MD5((__bridge const void *)([rawUUIDStr dataUsingEncoding:NSASCIIStringEncoding]), [rawUUIDStr length], digest);
+  CC_MD5((__bridge const void *)([rawUUIDStr dataUsingEncoding:NSASCIIStringEncoding]), (CC_LONG)[rawUUIDStr length], digest);
   NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
   for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
     [output appendFormat:@"%02x", digest[i]];

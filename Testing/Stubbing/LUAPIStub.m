@@ -76,7 +76,7 @@
   [headers addEntriesFromDictionary:self.responseHeaders];
 
   return [OHHTTPStubsResponse responseWithData:self.responseData
-                                    statusCode:self.responseCode
+                                    statusCode:(int)self.responseCode
                                   responseTime:0
                                        headers:headers];
 }

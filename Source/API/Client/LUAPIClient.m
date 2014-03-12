@@ -17,6 +17,8 @@
 
 @implementation LUAPIClient
 
+@synthesize baseURL;
+
 __strong static LUAPIClient *_sharedClient = nil;
 
 #pragma mark - Object Lifecycle Methods

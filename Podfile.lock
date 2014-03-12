@@ -1,34 +1,34 @@
 PODS:
   - AFNetworking (1.3.3)
   - AutoCoding (2.0.3)
-  - Braintree (2.2.5)
-  - Kiwi (2.2.3):
+  - Braintree (2.2.7)
+  - Kiwi (2.2.4):
     - Kiwi/SenTestingKit
-  - Kiwi/ARC (2.2.3)
-  - Kiwi/NonARC (2.2.3)
-  - Kiwi/SenTestingKit (2.2.3):
+  - Kiwi/ARC (2.2.4)
+  - Kiwi/NonARC (2.2.4)
+  - Kiwi/SenTestingKit (2.2.4):
     - Kiwi/ARC
     - Kiwi/NonARC
   - LUKeychainAccess (1.2.0)
   - OHHTTPStubs (1.1.2)
-  - ZXingObjC (2.2.2)
+  - ZXingObjC (2.2.6)
 
 DEPENDENCIES:
   - AFNetworking (= 1.3.3)
   - AutoCoding (= 2.0.3)
-  - Braintree (= 2.2.5)
-  - Kiwi (= 2.2.3)
+  - Braintree (= 2.2.7)
+  - Kiwi (= 2.2.4)
   - LUKeychainAccess (= 1.2.0)
   - OHHTTPStubs (= 1.1.2)
-  - ZXingObjC (= 2.2.2)
+  - ZXingObjC (= 2.2.6)
 
 SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
   AutoCoding: 09843becf2a45985f444b43b555d73793c1e7a84
-  Braintree: 4262014fe427d692730961431592708ca50a6ace
-  Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
+  Braintree: a7b8b6cdefe1a98c4a33b9b4185b0669d6bdb0bc
+  Kiwi: d60d7498b640a16f58b01925fc3c8d7c4d809f66
   LUKeychainAccess: 87c5398528278a5f24956b61bb459ea97bd93b6a
   OHHTTPStubs: a840cb0fe0c2a4271018be540782cc97139dff53
-  ZXingObjC: 17c28729634f4a57d0a96cfebb6bfe0f251ecd18
+  ZXingObjC: 92c9cb07811ab6fcffe44465d7ee8775b1eb7913
 
 COCOAPODS: 0.29.0

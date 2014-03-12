@@ -41,7 +41,7 @@ describe(@"LUCacheManager", ^{
     context(@"when loyalty is cached in the keychain but not in memory", ^{
       beforeEach(^{
         [LUCacheManager cacheLoyalty:nil];
-        [[keychainAccess stubAndReturn:loyalty] objectForKey:LUCachedLoyaltyKey];
+        [keychainAccess stub:@selector(objectForKey:) andReturn:loyalty withArguments:LUCachedLoyaltyKey, nil];
       });
 
       it(@"returns the cached loyalty", ^{
@@ -79,7 +79,7 @@ describe(@"LUCacheManager", ^{
     context(@"when a user is cached in the keychain but not in memory", ^{
       beforeEach(^{
         [LUCacheManager cacheUser:nil];
-        [[keychainAccess stubAndReturn:user] objectForKey:LUCachedUserKey];
+        [keychainAccess stub:@selector(objectForKey:) andReturn:user withArguments:LUCachedUserKey, nil];
       });
 
       it(@"returns the cached user", ^{

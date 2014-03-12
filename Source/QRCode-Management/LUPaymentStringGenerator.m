@@ -61,7 +61,7 @@ NSUInteger const LUMaximumTipNumber = 46655; // ZZZ in base 36
 }
 
 - (NSString *)glowColorIDBase36 {
-  return [[NSNumber numberWithInt:MIN(self.glowColorID, LUHighestGlowColorID)] lu_base36Value];
+  return [[NSNumber numberWithUnsignedInteger:MIN(self.glowColorID, LUHighestGlowColorID)] lu_base36Value];
 }
 
 - (NSString *)tipBase36 {

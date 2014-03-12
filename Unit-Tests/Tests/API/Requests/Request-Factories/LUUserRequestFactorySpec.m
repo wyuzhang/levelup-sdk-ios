@@ -49,7 +49,7 @@ describe(@"LUUserRequestFactory", ^{
 
     beforeEach(^{
       [LUAPIClient setupWithAppID:@"1" APIKey:apiKey];
-      [[LUUserParameterBuilder stubAndReturn:userParams] parametersForUser:user];
+      [LUUserParameterBuilder stub:@selector(parametersForUser:) andReturn:userParams withArguments:user, nil];
 
       request = [LUUserRequestFactory requestToCreateUser:user];
     });
@@ -107,7 +107,7 @@ describe(@"LUUserRequestFactory", ^{
 
     beforeEach(^{
       [[LUAPIClient sharedClient] stub:@selector(currentUserID) andReturn:@1];
-      [[LUUserParameterBuilder stubAndReturn:userParams] parametersForUser:user];
+      [LUUserParameterBuilder stub:@selector(parametersForUser:) andReturn:userParams withArguments:user, nil];
 
       request = [LUUserRequestFactory requestToUpdateUser:user];
     });

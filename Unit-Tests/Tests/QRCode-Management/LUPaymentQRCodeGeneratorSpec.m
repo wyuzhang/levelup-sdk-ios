@@ -15,7 +15,7 @@ describe(@"LUPaymentQRCodeGenerator", ^{
   NSInteger tipPercent = 10;
 
   beforeEach(^{
-    [[LUGenericQRCodeGenerator stubAndReturn:mockResult] QRCodeFromString:QRCodeData];
+    [LUGenericQRCodeGenerator stub:@selector(QRCodeFromString:) andReturn:mockResult withArguments:QRCodeData, nil];
   });
 
   describe(@"QRCodeFromPaymentToken:", ^{

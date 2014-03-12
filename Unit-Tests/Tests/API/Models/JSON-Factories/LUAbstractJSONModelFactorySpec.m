@@ -31,8 +31,8 @@ describe(@"LUAbstractJSONModelFactory", ^{
       id element1 = [KWMock mock];
       id element2 = [KWMock mock];
 
-      [[modelFactory stubAndReturn:element1] fromJSONObject:jsonArray[0]];
-      [[modelFactory stubAndReturn:element2] fromJSONObject:jsonArray[1]];
+      [modelFactory stub:@selector(fromJSONObject:) andReturn:element1 withArguments:jsonArray[0], nil];
+      [modelFactory stub:@selector(fromJSONObject:) andReturn:element2 withArguments:jsonArray[1], nil];
 
       [[[modelFactory fromArray:jsonArray] should] equal:@[element1, element2]];
     });
@@ -104,7 +104,7 @@ describe(@"LUAbstractJSONModelFactory", ^{
 
       it(@"parses as an array", ^{
         id parsedArray = [KWMock mock];
-        [[modelFactory stubAndReturn:parsedArray] fromArray:jsonArray];
+        [modelFactory stub:@selector(fromArray:) andReturn:parsedArray withArguments:jsonArray, nil];
 
         [[[modelFactory fromJSONObject:jsonArray] should] equal:parsedArray];
       });
@@ -113,7 +113,7 @@ describe(@"LUAbstractJSONModelFactory", ^{
     context(@"when given a dictionary", ^{
       it(@"parses as a dictionary", ^{
         id parsedDictionary = [KWMock mock];
-        [[modelFactory stubAndReturn:parsedDictionary] fromDictionary:jsonAttributes];
+        [modelFactory stub:@selector(fromDictionary:) andReturn:parsedDictionary withArguments:jsonAttributes, nil];
 
         [[[modelFactory fromJSONObject:jsonAttributes] should] equal:parsedDictionary];
       });

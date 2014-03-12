@@ -25,7 +25,7 @@ describe(@"LUAPNDeviceRequestFactory", ^{
     });
 
     it(@"stores the token string in the keychain", ^{
-      [[[LUKeychainAccess standardKeychainAccess] should] receive:@selector(setString:forKey:) withArguments:@"A60F7DB9", LUDeviceTokenKey];
+      [[[LUKeychainAccess standardKeychainAccess] should] receive:@selector(setString:forKey:) withArguments:@"A60F7DB9", LUDeviceTokenKey, nil];
 
       [LUAPNDeviceRequestFactory requestToRegisterAPNDeviceWithToken:deviceToken sandbox:sandbox];
     });

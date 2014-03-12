@@ -112,7 +112,7 @@ static NSInteger const kFramesPerCapture = 2;
     // Add the custom layer
     self.customLayer = [CALayer layer];
     self.customLayer.frame = self.bounds;
-    self.customLayer.transform = CATransform3DRotate(CATransform3DIdentity, M_PI/2.0, 0, 0, 1);
+    self.customLayer.transform = CATransform3DRotate(CATransform3DIdentity, (CGFloat)M_PI_2, 0, 0, 1);
     self.customLayer.contentsGravity = kCAGravityResizeAspectFill;
     [self.layer addSublayer:self.customLayer];
 

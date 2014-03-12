@@ -158,7 +158,7 @@ describe(@"LUOrder", ^{
     NSURL *URL = [NSURL URLWithString:@"http://example.com/path/to/image"];
 
     beforeEach(^{
-      [NSURL stub:@selector(lu_imageURLForLocationWithID:) andReturn:URL withArguments:order.locationID];
+      [NSURL stub:@selector(lu_imageURLForLocationWithID:) andReturn:URL withArguments:order.locationID, nil];
     });
 
     it(@"returns the URL of the location image request", ^{

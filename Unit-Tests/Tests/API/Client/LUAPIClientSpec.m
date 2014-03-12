@@ -156,7 +156,7 @@ describe(@"LUAPIClient", ^{
       it(@"creates a model object from the JSON and passes it to the success block", ^{
         id deserializedResponse = [KWMock mock];
         apiRequest.modelFactory = [LUAbstractJSONModelFactory mock];
-        [[apiRequest.modelFactory stubAndReturn:deserializedResponse] fromJSONObject:@{@"ok" : @YES}];
+        [apiRequest.modelFactory stub:@selector(fromJSONObject:) andReturn:deserializedResponse withArguments:@{@"ok" : @YES}, nil];
 
         __block id successResult;
         [client performRequest:apiRequest
@@ -194,7 +194,7 @@ describe(@"LUAPIClient", ^{
 
       it(@"builds an error and passes it to the failure block", ^{
         NSError *error = [NSError mock];
-        [[LUAPIErrorBuilder stubAndReturn:error] error:any() withMessagesFromJSON:@{@"ok" : @NO}];
+        [LUAPIErrorBuilder stub:@selector(error:withMessagesFromJSON:) andReturn:error withArguments:any(), @{@"ok" : @NO}, nil];
 
         __block NSError *failureError;
         [client performRequest:apiRequest success:nil failure:^(NSError *error) {
