@@ -7,11 +7,12 @@
 @implementation LUAPIErrorJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
+  NSString *code = [attributes lu_stringForKey:@"code"];
   NSString *message = [attributes lu_stringForKey:@"message"];
   NSString *object = [attributes lu_stringForKey:@"object"];
   NSString *property = [attributes lu_stringForKey:@"property"];
 
-  return [[LUAPIError alloc] initWithMessage:message object:object property:property];
+  return [[LUAPIError alloc] initWithCode:code message:message object:object property:property];
 }
 
 - (NSString *)rootKey {

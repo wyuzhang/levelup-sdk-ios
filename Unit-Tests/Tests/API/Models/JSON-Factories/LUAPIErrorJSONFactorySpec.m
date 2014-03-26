@@ -15,12 +15,14 @@ describe(@"LUAPIErrorJSONFactory", ^{
   describe(@"createFromAttributes:", ^{
     it(@"parses a JSON dictionary into an LUAPIError", ^{
       NSDictionary *JSON = @{
+        @"code" : @"code",
         @"message" : @"error message",
         @"object" : @"user",
         @"property" : @"first_name"
       };
       LUAPIError *error = [factory createFromAttributes:JSON];
 
+      [[error.code should] equal:@"code"];
       [[error.message should] equal:@"error message"];
       [[error.object should] equal:@"user"];
       [[error.property should] equal:@"first_name"];

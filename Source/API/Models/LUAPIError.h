@@ -13,6 +13,11 @@
 @interface LUAPIError : LUAPIModel
 
 /**
+ A machine-readable description of the error (can be `nil`).
+ */
+@property (nonatomic, copy, readonly) NSString *code;
+
+/**
  A human-readable description of the error.
  */
 @property (nonatomic, copy, readonly) NSString *message;
@@ -29,6 +34,6 @@
  */
 @property (nonatomic, copy, readonly) NSString *property;
 
-- (id)initWithMessage:(NSString *)message object:(NSString *)object property:(NSString *)property;
+- (id)initWithCode:(NSString *)code message:(NSString *)message object:(NSString *)object property:(NSString *)property;
 
 @end

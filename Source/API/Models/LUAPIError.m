@@ -2,22 +2,15 @@
 
 #import "LUAPIError.h"
 
-@interface LUAPIError ()
-
-@property (nonatomic, copy) NSString *message;
-@property (nonatomic, copy) NSString *object;
-@property (nonatomic, copy) NSString *property;
-
-@end
-
 @implementation LUAPIError
 
 #pragma mark - Creation
 
-- (id)initWithMessage:(NSString *)message object:(NSString *)object property:(NSString *)property {
+- (id)initWithCode:(NSString *)code message:(NSString *)message object:(NSString *)object property:(NSString *)property {
   self = [super init];
   if (!self) return nil;
 
+  _code = code;
   _message = message;
   _object = object;
   _property = property;
@@ -28,8 +21,8 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUAPIError [address=%p, message=%@, object=%@, property=%@]", self, self.message, self.object,
-          self.property];
+  return [NSString stringWithFormat:@"LUAPIError [address=%p, code=%@, message=%@, object=%@, property=%@]",
+          self, self.code, self.message, self.object, self.property];
 }
 
 @end

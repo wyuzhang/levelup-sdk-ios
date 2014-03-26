@@ -155,7 +155,8 @@ describe(@"LUAPIErrorBuilder", ^{
         NSError *error = errorWithHTTPStatusCode(500);
 
         NSDictionary *fullJSONObject = @{
-          @"message" : @"error message",
+          @"code" : @"blank",
+          @"message" : @"First name is blank",
           @"object" : @"user",
           @"property" : @"first_name"
         };
@@ -176,14 +177,18 @@ describe(@"LUAPIErrorBuilder", ^{
           [[errors should] haveCountOf:2];
 
           [[errors[0] should] beKindOfClass:[LUAPIError class]];
-          [[[errors[0] message] should] equal:JSON[0][@"error"][@"message"]];
-          [[[errors[0] object] should] equal:JSON[0][@"error"][@"object"]];
-          [[[errors[0] property] should] equal:JSON[0][@"error"][@"property"]];
+          LUAPIError *error = (LUAPIError *)errors[0];
+          [[error.code should] equal:JSON[0][@"error"][@"code"]];
+          [[error.message should] equal:JSON[0][@"error"][@"message"]];
+          [[error.object should] equal:JSON[0][@"error"][@"object"]];
+          [[error.property should] equal:JSON[0][@"error"][@"property"]];
 
           [[errors[1] should] beKindOfClass:[LUAPIError class]];
-          [[[errors[1] message] should] equal:JSON[1][@"error"][@"message"]];
-          [[[errors[1] object] should] equal:JSON[1][@"error"][@"object"]];
-          [[[errors[1] property] should] equal:JSON[1][@"error"][@"property"]];
+          error = (LUAPIError *)errors[1];
+          [[error.code should] beNil];
+          [[error.message should] equal:JSON[1][@"error"][@"message"]];
+          [[error.object should] equal:JSON[1][@"error"][@"object"]];
+          [[error.property should] equal:JSON[1][@"error"][@"property"]];
         });
 
         it(@"sets the first error's message in the userInfo", ^{
