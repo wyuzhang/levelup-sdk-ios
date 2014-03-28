@@ -3,7 +3,8 @@
     "error" : {
       "object" : "credit_card",
       "message" : "Credit card added but debit card required.",
-      "property" : "debit_card_only"
+      "property" : "base",
+      "code" : "debit_card_only"
     }
   }
 ]
