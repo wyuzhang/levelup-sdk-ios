@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'LevelUpSDK'
-  s.version      = '1.2.3'
+  s.version      = '1.2.4'
   s.summary      = 'An SDK for the LevelUp payment platform.'
   s.homepage     = 'http://www.thelevelup.com'
   s.license      = {
