@@ -21,14 +21,9 @@
 }
 
 + (LUAPIRequest *)requestToCreateCreditCard:(LUCreditCard *)creditCard {
-  NSString *braintreePublicKey;
-  if ([LUAPIClient sharedClient].developmentMode) {
-    braintreePublicKey = BraintreePublicKeyDevelopment;
-  } else {
-    braintreePublicKey = BraintreePublicKeyProduction;
-  }
-
+  NSString *braintreePublicKey = [LUAPIClient sharedClient].clientsideEncryptionKey;
   BTEncryption *braintree = [[BTEncryption alloc] initWithPublicKey:braintreePublicKey];
+
   NSDictionary *parameters = @{
     @"encrypted_cvv" : [braintree encryptString:creditCard.cvv],
     @"encrypted_expiration_month" : [braintree encryptString:[creditCard.expirationMonth stringValue]],

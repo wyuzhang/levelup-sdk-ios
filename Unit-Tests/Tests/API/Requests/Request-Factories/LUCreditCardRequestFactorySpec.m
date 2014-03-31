@@ -68,11 +68,11 @@ describe(@"LUCreditCardRequestFactory", ^{
     it(@"request a request with encrypted parameters for the credit card", ^{
       NSDictionary *expectedParams = @{
         @"credit_card" : @{
-            @"encrypted_cvv" : [braintree encryptString:creditCard.cvv],
-            @"encrypted_expiration_month" : [braintree encryptString:[creditCard.expirationMonth stringValue]],
-            @"encrypted_expiration_year" : [braintree encryptString:[creditCard.expirationYear stringValue]],
-            @"encrypted_number" : [braintree encryptString:creditCard.number],
-            @"postal_code" : [braintree encryptString:creditCard.postalCode]
+          @"encrypted_cvv" : [braintree encryptString:creditCard.cvv],
+          @"encrypted_expiration_month" : [braintree encryptString:[creditCard.expirationMonth stringValue]],
+          @"encrypted_expiration_year" : [braintree encryptString:[creditCard.expirationYear stringValue]],
+          @"encrypted_number" : [braintree encryptString:creditCard.number],
+          @"postal_code" : [braintree encryptString:creditCard.postalCode]
         }
       };
 

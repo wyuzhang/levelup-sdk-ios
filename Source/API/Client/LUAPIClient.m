@@ -29,21 +29,35 @@ __strong static LUAPIClient *_sharedClient = nil;
   return _sharedClient;
 }
 
-- (id)initWithAppID:(NSString *)appID APIKey:(NSString *)apiKey {
+- (id)initWithAppID:(NSString *)appID APIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode {
   NSAssert(appID.length > 0, @"An app ID is required");
   NSAssert(apiKey.length > 0, @"An API key is required");
 
-  self = [super initWithBaseURL:[NSURL URLWithString:LevelUpAPIBaseURLProduction]];
-  if (self) {
-    _appID = appID;
-    _apiKey = apiKey;
-
-    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-    [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
-    [self setDefaultHeader:@"Accept" value:@"application/json"];
-    [self setDefaultHeader:@"User-Agent" value:[self userAgent]];
-    [self setParameterEncoding:AFJSONParameterEncoding];
+  NSString *baseURLString;
+  if (developmentMode) {
+    baseURLString = LevelUpAPIBaseURLDevelopment;
+  } else {
+    baseURLString = LevelUpAPIBaseURLProduction;
   }
+
+  self = [super initWithBaseURL:[NSURL URLWithString:baseURLString]];
+  if (!self) return nil;
+
+  _appID = appID;
+  _apiKey = apiKey;
+  _developmentMode = developmentMode;
+
+  if (developmentMode) {
+    _clientsideEncryptionKey = BraintreePublicKeyDevelopment;
+  } else {
+    _clientsideEncryptionKey = BraintreePublicKeyProduction;
+  }
+
+  [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+  [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
+  [self setDefaultHeader:@"Accept" value:@"application/json"];
+  [self setDefaultHeader:@"User-Agent" value:[self userAgent]];
+  [self setParameterEncoding:AFJSONParameterEncoding];
 
   return self;
 }
@@ -51,16 +65,11 @@ __strong static LUAPIClient *_sharedClient = nil;
 #pragma mark - Public Methods
 
 + (void)setupWithAppID:(NSString *)appID APIKey:(NSString *)apiKey {
-  _sharedClient = [[self alloc] initWithAppID:appID APIKey:apiKey];
+  [self setupWithAppID:appID APIKey:apiKey developmentMode:NO];
 }
 
 + (void)setupWithAppID:(NSString *)appID APIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode {
-  [self setupWithAppID:appID APIKey:apiKey];
-
-  if (developmentMode) {
-    _sharedClient.baseURL = [NSURL URLWithString:LevelUpAPIBaseURLDevelopment];
-    _sharedClient.developmentMode = YES;
-  }
+  _sharedClient = [[self alloc] initWithAppID:appID APIKey:apiKey developmentMode:developmentMode];
 }
 
 - (LUAPIConnection *)performRequest:(LUAPIRequest *)apiRequest

@@ -118,6 +118,7 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 @property (copy, readonly) NSString *apiKey;
 @property (copy, readonly) NSString *appID;
 @property (nonatomic, strong) NSURL *baseURL;
+@property (nonatomic, copy) NSString *clientsideEncryptionKey;
 @property (assign, readonly) BOOL developmentMode;
 
 ///-------------------------------
