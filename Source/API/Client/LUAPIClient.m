@@ -45,6 +45,8 @@ __strong static LUAPIClient *_sharedClient = nil;
 
   _appID = appID;
   _apiKey = apiKey;
+  _deepLinkAuthBundleID = @"com.scvngr.LevelUp";
+  _deepLinkAuthURLScheme = @"thelevelup";
   _developmentMode = developmentMode;
 
   if (developmentMode) {

@@ -9,4 +9,5 @@
   #import <Foundation/Foundation.h>
   #import <MobileCoreServices/MobileCoreServices.h>
   #import <SystemConfiguration/SystemConfiguration.h>
+  #import <UIKit/UIKit.h>
 #endif

@@ -3,7 +3,7 @@
 #import "LUAPIRequest.h"
 #import "LUAPNDeviceRequestFactory.h"
 #import "LUKeychainAccess.h"
-#import "NSData+HexString.h"
+#import "NSData+LUAdditions.h"
 
 NSString * const LUDeviceTokenKey = @"LUDeviceToken";
 

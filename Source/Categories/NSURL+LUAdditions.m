@@ -32,6 +32,11 @@ NSString * const LUPatternLeadingSlashOptionalVersion = @"^/(v\\d+/)?";
   return [self imageURLForPath:path];
 }
 
++ (NSURL *)lu_URLWithScheme:(NSString *)scheme host:(NSString *)host path:(NSString *)path queryParameters:(NSDictionary *)queryParameters {
+  NSString *query = AFQueryStringFromParametersWithEncoding(queryParameters ?: @{}, NSUTF8StringEncoding);
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@://%@%@?%@", scheme, host, path, query]];
+}
+
 - (NSString *)lu_pathAndQueryWithoutAPIVersion {
   NSString *pathWithQuery = [self pathWithQuery];
 
@@ -39,6 +44,50 @@ NSString * const LUPatternLeadingSlashOptionalVersion = @"^/(v\\d+/)?";
                                                                          options:0
                                                                            error:NULL];
   return [regex lu_removeMatchesInString:pathWithQuery];
+}
+
+- (NSDictionary *)lu_queryDictionary {
+  NSMutableDictionary *result = [NSMutableDictionary dictionary];
+  NSArray *parts = [[self query] componentsSeparatedByString:@"&"];
+
+  for (NSString *part in parts) {
+    if ([part length] == 0) {
+      continue;
+    }
+
+    NSRange index = [part rangeOfString:@"="];
+    NSString *key;
+    NSString *value;
+
+    if (index.location == NSNotFound) {
+      key = part;
+      value = @"";
+    } else {
+      key = [part substringToIndex:index.location];
+      value = [part substringFromIndex:index.location + index.length];
+    }
+
+    key = [key stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    value = [value stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+    if ([key hasSuffix:@"[]"]) {
+      key = [key substringToIndex:key.length - 2];
+
+      NSMutableArray *valueArray;
+      if ([result[key] isKindOfClass:[NSMutableArray class]]) {
+        valueArray = result[key];
+      } else {
+        valueArray = [NSMutableArray array];
+        result[key] = valueArray;
+      }
+
+      [valueArray addObject:value];
+    } else {
+      result[key] = value;
+    }
+  }
+
+  return result;
 }
 
 #pragma mark - Private Methods

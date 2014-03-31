@@ -115,6 +115,16 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
  */
 @property (copy) NSNumber *currentUserID;
 
+/**
+ The bundle ID of the app to use for Deep Link Auth. Defaults to LevelUp's bundle ID.
+ */
+@property (copy) NSString *deepLinkAuthBundleID;
+
+/**
+ The URL scheme of the app to use for Deep Link Auth. Defaults to LevelUp's URL scheme.
+ */
+@property (copy) NSString *deepLinkAuthURLScheme;
+
 @property (copy, readonly) NSString *apiKey;
 @property (copy, readonly) NSString *appID;
 @property (nonatomic, strong) NSURL *baseURL;

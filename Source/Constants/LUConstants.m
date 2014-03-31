@@ -10,9 +10,28 @@ NSString * const BraintreePublicKeyProduction = @"MIIBCgKCAQEAsWqrT3RkCyH6yF7ir/
 NSString * const LevelUpAPIBaseURLDevelopment = @"https://api.staging-levelup.com/";
 NSString * const LevelUpAPIBaseURLProduction = @"https://api.thelevelup.com/";
 
+#pragma mark - Deep Link Auth URL Host & Params
+
+NSString * const LUDeepLinkAuthRequestHost = @"authorization";
+NSString * const LUDeepLinkAuthResponseHost = @"authorization_response";
+
+#pragma mark - Deep Link Auth Notifications
+
+NSString * const LUDeepLinkAuthErrorNotification = @"LUDeepLinkAuthErrorNotification";
+NSString * const LUDeepLinkAuthSuccessNotification = @"LUDeepLinkAuthSuccessNotification";
+
+NSString * const LUDeepLinkAuthNotificationAccessTokenKey = @"LUDeepLinkAuthNotificationAccessTokenKey";
+NSString * const LUDeepLinkAuthNotificationErrorKey = @"LUDeepLinkAuthNotificationErrorKey";
+
+#pragma mark - API Errors
+
 NSString * const LUAPIErrorDomain = @"LUAPIErrorDomain";
 NSString * const LUAPIErrorKeyAPIErrors = @"LUAPIErrorKeyAPIErrors";
 NSString * const LUAPIErrorKeyErrorMessage = @"LUAPIErrorKeyErrorMessage";
 NSString * const LUAPIErrorKeyJSONResponse = @"LUAPIErrorKeyJSONResponse";
 NSString * const LUAPIErrorKeyOriginalError = @"LUAPIErrorKeyOriginalError";
 NSString * const LUAPIErrorKeyURLResponse = @"LUAPIErrorKeyURLResponse";
+
+#pragma mark - Deep Link Auth Errors
+
+NSString * const LUDeepLinkAuthErrorDomain = @"LUDeepLinkAuthErrorDomain";

@@ -9,6 +9,8 @@ describe(@"NSURL", ^{
 
   beforeEach(^{
     [[UIScreen mainScreen] stub:@selector(scale) andReturn:theValue(2.0)];
+
+    [LUAPIClient setupWithAppID:@"1" APIKey:@"api-key"];
   });
 
   describe(@"lu_imageURLForCampaignWithID:", ^{
@@ -67,6 +69,32 @@ describe(@"NSURL", ^{
     });
   });
 
+  describe(@"lu_URLWithScheme:host:path:queryParameters:", ^{
+    NSString *scheme = @"example";
+    NSString *host = @"host";
+    NSString *path = @"/path";
+    NSDictionary *params = @{@"key1": @"value1", @"key2": @"value2"};
+
+    NSURL *url = [NSURL lu_URLWithScheme:scheme host:host path:path queryParameters:params];
+
+    it(@"returns a URL with the correct scheme", ^{
+      [[[url scheme] should] equal:scheme];
+    });
+
+    it(@"returns a URL with the correct host", ^{
+      [[[url host] should] equal:host];
+    });
+
+    it(@"returns a URL with the correct path", ^{
+      [[[url path] should] equal:path];
+    });
+
+    it(@"returns a URL with the correct query string", ^{
+      NSArray *queryParams = [[url query] componentsSeparatedByString:@"&"];
+      [[queryParams should] containObjects:@"key1=value1", @"key2=value2", nil];
+    });
+  });
+
   describe(@"lu_pathAndQueryWithoutAPIVersion", ^{
     it(@"returns the URL's path and query parameters", ^{
       NSString *path = @"path/to/resource?a=1&b=2";
@@ -91,6 +119,32 @@ describe(@"NSURL", ^{
 
         [[[URL lu_pathAndQueryWithoutAPIVersion] should] equal:path];
       });
+    });
+  });
+
+  describe(@"lu_queryDictionary", ^{
+    it(@"parses the query into a dictionary", ^{
+      NSURL *url = [NSURL URLWithString:@"http://example.com/path?field=value&a=1"];
+
+      [[[url lu_queryDictionary] should] equal:@{@"field": @"value", @"a": @"1"}];
+    });
+
+    it(@"uses a value of '' when a value is missing", ^{
+      NSURL *url = [NSURL URLWithString:@"http://example.com/path?field=value&a"];
+
+      [[[url lu_queryDictionary] should] equal:@{@"field": @"value", @"a": @""}];
+    });
+
+    it(@"converts fields ending in '[]' into arrays", ^{
+      NSURL *url = [NSURL URLWithString:@"http://example.com/path?field[]=1&field[]=2"];
+
+      [[[url lu_queryDictionary] should] equal:@{@"field": @[@"1", @"2"]}];
+    });
+
+    it(@"decodes fields and values", ^{
+      NSURL *url = [NSURL URLWithString:@"http://example.com/path?field%2B=value%3D"];
+
+      [[[url lu_queryDictionary] should] equal:@{@"field+": @"value="}];
     });
   });
 });

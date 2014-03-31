@@ -42,6 +42,8 @@
 
 #import "LUAPIResponse.h"
 
+#import "LUDeepLinkAuth.h"
+
 #import "LUConstants.h"
 
 #import "LUCachedLocationSearch.h"

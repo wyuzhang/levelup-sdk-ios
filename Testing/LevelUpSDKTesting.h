@@ -9,6 +9,7 @@
 #import "LUInterstitial+Fixtures.h"
 #import "LULocation+Fixtures.h"
 #import "LULoyalty+Fixtures.h"
+#import "LUOneTimePad+Fixtures.h"
 #import "LUOrder+Fixtures.h"
 #import "LUPaymentToken+Fixtures.h"
 #import "LUUser+Fixtures.h"

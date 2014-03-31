@@ -7,7 +7,7 @@ pod 'LUKeychainAccess', '1.2.0'
 pod 'ZXingObjC', '2.2.6'
 
 target :test, :exclusive => true do
-  link_with 'Unit Tests'
+  link_with 'Tests'
   pod 'Kiwi', '2.2.4'
   pod 'OHHTTPStubs', '1.1.2'
 end
