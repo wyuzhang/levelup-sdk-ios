@@ -21,7 +21,15 @@
   return [LUAPIRequest apiRequestWithMethod:@"POST"
                                        path:@"access_tokens"
                                  apiVersion:LUAPIVersion14
-                                 parameters:@{@"access_token" : parameters}
+                                 parameters:@{@"access_token": parameters}
+                               modelFactory:[LUAccessTokenJSONFactory factory]];
+}
+
++ (LUAPIRequest *)requestToCreateDowngradedAccessTokenWithPermissions:(NSArray *)permissions {
+  return [LUAPIRequest apiRequestWithMethod:@"POST"
+                                       path:@"access_tokens/downgrades"
+                                 apiVersion:LUAPIVersion15
+                                 parameters:@{@"access_token": @{@"permission_keynames": permissions}}
                                modelFactory:[LUAccessTokenJSONFactory factory]];
 }
 

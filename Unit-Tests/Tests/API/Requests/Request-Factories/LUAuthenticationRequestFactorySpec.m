@@ -53,6 +53,36 @@ describe(@"LUAuthenticationRequestFactory", ^{
       [[request.parameters should] equal:expectedParams];
     });
   });
+
+  describe(@"requestToCreateDowngradedAccessTokenWithPermissions:", ^{
+    NSArray *permissions = @[@"create_orders", @"read_user_basic_info"];
+
+    beforeEach(^{
+      request = [LUAuthenticationRequestFactory requestToCreateDowngradedAccessTokenWithPermissions:permissions];
+    });
+
+    it(@"returns a POST request", ^{
+      [[request.method should] equal:@"POST"];
+    });
+
+    it(@"returns a request to the path 'access_tokens/downgrades'", ^{
+      [[request.path should] equal:@"access_tokens/downgrades"];
+    });
+
+    it(@"returns a request to version 15 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion15];
+    });
+
+    it(@"returns a request with the expected parameters", ^{
+      NSDictionary *expectedParams = @{
+        @"access_token" : @{
+          @"permission_keynames" : permissions
+        }
+      };
+
+      [[request.parameters should] equal:expectedParams];
+    });
+  });
 });
 
 SPEC_END
