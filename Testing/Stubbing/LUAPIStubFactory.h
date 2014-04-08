@@ -37,9 +37,10 @@
 + (LUAPIStub *)stubToGetCurrentUserDebitOnly;
 + (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfo;
 + (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfoWithDebitOnly;
++ (LUAPIStub *)stubToGetFeedbackInterstitialForOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToGetIneligiblePaymentToken;
-+ (LUAPIStub *)stubToGetInterstitialNotFoundForOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToGetInterstitialForOrderWithUUID:(NSString *)UUID;
++ (LUAPIStub *)stubToGetInterstitialNotFoundForOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToGetLocationSummariesFirstPage;
 + (LUAPIStub *)stubToGetLocationSummariesLastPage;
 + (LUAPIStub *)stubToGetLocationsForAppFirstPageNearLocation:(CLLocation *)location;

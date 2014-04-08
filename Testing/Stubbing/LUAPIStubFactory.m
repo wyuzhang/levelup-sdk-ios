@@ -244,6 +244,10 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:[self responseDataFromFile:@"current_user_minimal_debit_only"]];
 }
 
++ (LUAPIStub *)stubToGetFeedbackInterstitialForOrderWithUUID:(NSString *)UUID {
+  return [LUAPIStubFactory stubToGetInterstitialForOrderWithUUID:UUID fromFile:@"interstitial_feedback"];
+}
+
 + (LUAPIStub *)stubToGetIneligiblePaymentToken {
   LUAPIStub *stub =  [LUAPIStub apiStubForVersion:LUAPIVersion14
                                              path:@"payment_token"
@@ -254,26 +258,14 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   return stub;
 }
 
-+ (LUAPIStub *)stubToGetInterstitialNotFoundForOrderWithUUID:(NSString *)UUID {
-  NSString *path = [NSString stringWithFormat:@"orders/%@/interstitial", UUID];
-
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                            path:path
-                                      HTTPMethod:@"GET"
-                                   authenticated:YES
-                                    responseData:nil];
-  stub.responseCode = 404;
-  return stub;
++ (LUAPIStub *)stubToGetInterstitialForOrderWithUUID:(NSString *)UUID {
+  return [LUAPIStubFactory stubToGetInterstitialForOrderWithUUID:UUID fromFile:@"interstitial"];
 }
 
-+ (LUAPIStub *)stubToGetInterstitialForOrderWithUUID:(NSString *)UUID {
-  NSString *path = [NSString stringWithFormat:@"orders/%@/interstitial", UUID];
-
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                 path:path
-                           HTTPMethod:@"GET"
-                        authenticated:YES
-                         responseData:[self responseDataFromFile:@"interstitial"]];
++ (LUAPIStub *)stubToGetInterstitialNotFoundForOrderWithUUID:(NSString *)UUID {
+  LUAPIStub *stub = [LUAPIStubFactory stubToGetInterstitialForOrderWithUUID:UUID fromFile:nil];
+  stub.responseCode = 404;
+  return stub;
 }
 
 + (LUAPIStub *)stubToGetLocationSummariesFirstPage {
@@ -555,6 +547,16 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
     }
   };
   return stub;
+}
+
++ (LUAPIStub *)stubToGetInterstitialForOrderWithUUID:(NSString *)UUID fromFile:(NSString *)file {
+  NSString *path = [NSString stringWithFormat:@"orders/%@/interstitial", UUID];
+
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:path
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:file]];
 }
 
 @end
