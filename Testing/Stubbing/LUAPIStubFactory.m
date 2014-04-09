@@ -470,7 +470,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
 + (LUAPIStub *)stubToSubmitFeedbackForOrderWithUUID:(NSString *)UUID {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                 path:[NSString stringWithFormat:@"orders/%@/feedbacks", UUID]
+                                 path:[NSString stringWithFormat:@"orders/%@/feedback", UUID]
                            HTTPMethod:@"POST"
                         authenticated:NO
                          responseData:nil];
