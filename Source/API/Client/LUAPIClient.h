@@ -122,6 +122,17 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 @property (assign, readonly) BOOL developmentMode;
 
 ///-------------------------------
+/// @name Getters
+///-------------------------------
+
+/**
+ Returns the `User-Agent` string containing the app name and version, device name and version and LevelUpSDK version.
+
+ @return An `NSString` containing the `User-Agent` data.
+ */
+- (NSString *)userAgent;
+
+///-------------------------------
 /// @name Performing Requests
 ///-------------------------------
 

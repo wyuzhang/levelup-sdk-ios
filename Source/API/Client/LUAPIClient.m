@@ -99,8 +99,6 @@ __strong static LUAPIClient *_sharedClient = nil;
   return [[LUAPIConnection alloc] initWithAFHTTPRequestOperation:requestOperation];
 }
 
-#pragma mark - Private Methods
-
 - (NSString *)userAgent {
   return [[self defaultValueForHeader:@"User-Agent"] stringByAppendingFormat:@" LevelUpSDK/%@", LevelUpSDKVersion];
 }
