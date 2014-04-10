@@ -54,7 +54,7 @@ describe(@"LUInterstitialJSONFactory", ^{
       [[interstitial.title should] equal:@"Interstitial Title"];
     });
 
-    it(@"parses a JSON dictionary with a feedback action into an LUInterstitial", ^{
+    context(@"feedback interstitials", ^{
       NSDictionary *JSON = @{
         @"action" : @{
           @"question_text" : @"test question",
@@ -65,16 +65,27 @@ describe(@"LUInterstitialJSONFactory", ^{
         @"title" : @"Interstitial Title",
         @"type" : @"feedback"
       };
-      LUInterstitial *interstitial = [factory createFromAttributes:JSON];
 
-      [[interstitial.action should] beKindOfClass:[LUInterstitialFeedbackAction class]];
-      [[[interstitial.action questionText] should] equal:@"test question"];
-      [[theValue(interstitial.actionType) should] equal:theValue(LUInterstitialActionTypeFeedback)];
+      it(@"parses a JSON dictionary with a feedback action into an LUInterstitial", ^{
+        LUInterstitial *interstitial = [factory createFromAttributes:JSON];
 
-      [[interstitial.calloutText should] equal:@"test callout"];
-      [[interstitial.descriptionHTML should] equal:@"<p>interstitial description</p>"];
-      [[[interstitial.imageURL absoluteString] should] match:hasPrefix(@"http://example.com/interstitial-image")];
-      [[interstitial.title should] equal:@"Interstitial Title"];
+        [[interstitial.action should] beKindOfClass:[LUInterstitialFeedbackAction class]];
+        [[[interstitial.action questionText] should] equal:@"test question"];
+        [[theValue(interstitial.actionType) should] equal:theValue(LUInterstitialActionTypeFeedback)];
+
+        [[interstitial.calloutText should] equal:@"test callout"];
+        [[interstitial.descriptionHTML should] equal:@"<p>interstitial description</p>"];
+        [[[interstitial.imageURL absoluteString] should] match:hasPrefix(@"http://example.com/interstitial-image")];
+        [[interstitial.title should] equal:@"Interstitial Title"];
+      });
+
+      it(@"accepts 'collect_feedback' as an interstitial type", ^{
+        NSMutableDictionary *alternateJSON = [JSON mutableCopy];
+        alternateJSON[@"type"] = @"collect_feedback";
+
+        LUInterstitial *interstitial = [factory createFromAttributes:alternateJSON];
+        [[theValue(interstitial.actionType) should] equal:theValue(LUInterstitialActionTypeFeedback)];
+      });
     });
 
     it(@"parses a JSON dictionary with a share action into an LUInterstitial", ^{

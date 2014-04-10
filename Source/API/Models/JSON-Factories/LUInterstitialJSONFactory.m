@@ -52,7 +52,7 @@
     return LUInterstitialActionTypeShare;
   } else if ([typeString isEqualToString:@"claim"]) {
     return LUInterstitialActionTypeClaim;
-  } else if ([typeString isEqualToString:@"feedback"]) {
+  } else if ([typeString isEqualToString:@"feedback"] || [typeString isEqualToString:@"collect_feedback"]) {
     return LUInterstitialActionTypeFeedback;
   } else if ([typeString isEqualToString:@"url"]) {
     return LUInterstitialActionTypeURL;
