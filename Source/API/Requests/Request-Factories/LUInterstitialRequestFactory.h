@@ -1,10 +1,10 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
-/**
- `LULocationRequestFactory` builds requests to retrieve interstitials.
- */
 @class LUAPIRequest;
 
+/**
+ `LUInterstitialRequestFactory` builds requests to retrieve interstitials.
+ */
 @interface LUInterstitialRequestFactory : NSObject
 
 /**
@@ -16,7 +16,6 @@
  */
 + (LUAPIRequest *)requestForInterstitialForOrderWithUUID:(NSString *)UUID;
 
-
 /**
  Builds a request to submit feedback from a feedback interstitial.
 
@@ -27,6 +26,9 @@
  @param rating The user's rating of the order.
  @param comment The user's comment on the order.
  */
-+ (LUAPIRequest *)requestToSubmitFeedbackForOrderWithUUID:(NSString *)UUID questionText:(NSString *)questionText rating:(int)rating comment:(NSString *)comment;
++ (LUAPIRequest *)requestToSubmitFeedbackForOrderWithUUID:(NSString *)UUID
+                                             questionText:(NSString *)questionText
+                                                   rating:(int)rating
+                                                  comment:(NSString *)comment;
 
 @end

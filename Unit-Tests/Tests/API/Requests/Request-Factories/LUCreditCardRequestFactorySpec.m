@@ -65,7 +65,7 @@ describe(@"LUCreditCardRequestFactory", ^{
       [[request.apiVersion should] equal:LUAPIVersion14];
     });
 
-    it(@"request a request with encrypted parameters for the credit card", ^{
+    it(@"returns a request with encrypted parameters for the credit card", ^{
       NSDictionary *expectedParams = @{
         @"credit_card" : @{
           @"encrypted_cvv" : [braintree encryptString:creditCard.cvv],

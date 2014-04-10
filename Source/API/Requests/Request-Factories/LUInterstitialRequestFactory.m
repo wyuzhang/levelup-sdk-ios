@@ -16,16 +16,23 @@
                                modelFactory:[LUInterstitialJSONFactory factory]];
 }
 
-+ (LUAPIRequest *)requestToSubmitFeedbackForOrderWithUUID:(NSString *)UUID questionText:(NSString *)questionText rating:(int)rating comment:(NSString *)comment {
++ (LUAPIRequest *)requestToSubmitFeedbackForOrderWithUUID:(NSString *)UUID
+                                             questionText:(NSString *)questionText
+                                                   rating:(int)rating
+                                                  comment:(NSString *)comment {
   NSString *path = [NSString stringWithFormat:@"orders/%@/feedback", UUID];
   NSString *ratingString = [NSString stringWithFormat:@"%d", rating];
 
-  NSDictionary *parameters = @{@"question_text" : questionText, @"rating" : ratingString, @"comment" : comment};
+  NSDictionary *parameters = @{
+    @"question_text": questionText,
+    @"rating": ratingString,
+    @"comment" : comment
+  };
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"
                                        path:path
                                  apiVersion:LUAPIVersion14
-                                 parameters:parameters
+                                 parameters:@{@"feedback": parameters}
                                modelFactory:[LUInterstitialJSONFactory factory]];
 }
 
