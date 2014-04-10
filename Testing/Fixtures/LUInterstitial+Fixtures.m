@@ -46,6 +46,10 @@
   return [self fixtureWithAction:action actionType:LUInterstitialActionTypeURL];
 }
 
++ (LUInterstitial *)fixtureWithUnknownAction {
+  return [self fixtureWithAction:nil actionType:LUInterstitialActionTypeUnknown];
+}
+
 #pragma mark - Private Methods
 
 + (LUInterstitial *)fixtureWithAction:(id)action actionType:(LUInterstitialActionType)actionType {

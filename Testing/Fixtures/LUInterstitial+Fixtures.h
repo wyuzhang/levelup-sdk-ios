@@ -9,5 +9,6 @@
 + (LUInterstitial *)fixtureWithNoAction;
 + (LUInterstitial *)fixtureWithShareAction;
 + (LUInterstitial *)fixtureWithURLAction;
++ (LUInterstitial *)fixtureWithUnknownAction;
 
 @end
