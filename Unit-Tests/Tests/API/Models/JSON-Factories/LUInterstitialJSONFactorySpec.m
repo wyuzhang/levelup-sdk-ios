@@ -145,6 +145,28 @@ describe(@"LUInterstitialJSONFactory", ^{
       [[[interstitial.imageURL absoluteString] should] match:hasPrefix(@"http://example.com/interstitial-image")];
       [[interstitial.title should] equal:@"Interstitial Title"];
     });
+
+    it(@"parses a JSON dictionary with an unknown type into an LUInterstitial", ^{
+      NSDictionary *JSON = @{
+        @"action" : @{
+          @"random" : @"example",
+        },
+        @"callout_text" : @"test callout",
+        @"description_html" : @"<p>interstitial description</p>",
+        @"image_url" : @"http://example.com/interstitial-image",
+        @"title" : @"Interstitial Title",
+        @"type" : @"unknown type"
+      };
+      LUInterstitial *interstitial = [factory createFromAttributes:JSON];
+
+      [[interstitial.action should] beNil];
+      [[theValue(interstitial.actionType) should] equal:theValue(LUInterstitialActionTypeUnknown)];
+
+      [[interstitial.calloutText should] equal:@"test callout"];
+      [[interstitial.descriptionHTML should] equal:@"<p>interstitial description</p>"];
+      [[[interstitial.imageURL absoluteString] should] match:hasPrefix(@"http://example.com/interstitial-image")];
+      [[interstitial.title should] equal:@"Interstitial Title"];
+    });
   });
 
   describe(@"rootKey", ^{

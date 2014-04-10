@@ -30,9 +30,6 @@
 
 - (id)actionForType:(LUInterstitialActionType)actionType withAttributes:(NSDictionary *)attributes {
   switch (actionType) {
-    case LUInterstitialActionTypeNone:
-      return nil;
-
     case LUInterstitialActionTypeClaim:
       return [self claimActionWithAttributes:attributes];
 
@@ -44,6 +41,9 @@
 
     case LUInterstitialActionTypeURL:
       return [self URLActionWithAttributes:attributes];
+
+    default:
+      return nil;
   }
 }
 
@@ -56,8 +56,10 @@
     return LUInterstitialActionTypeFeedback;
   } else if ([typeString isEqualToString:@"url"]) {
     return LUInterstitialActionTypeURL;
-  } else {
+  } else if ([typeString isEqualToString:@"no_action"]) {
     return LUInterstitialActionTypeNone;
+  } else {
+    return LUInterstitialActionTypeUnknown;
   }
 }
 

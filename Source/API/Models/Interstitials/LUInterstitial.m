@@ -47,6 +47,9 @@
 
 - (NSString *)actionTypeString {
   switch (self.actionType) {
+    case LUInterstitialActionTypeUnknown:
+      return @"unknown";
+
     case LUInterstitialActionTypeNone:
       return @"none";
 
