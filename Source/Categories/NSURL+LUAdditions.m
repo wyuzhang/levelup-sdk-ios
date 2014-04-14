@@ -1,9 +1,11 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
+#import "AFHTTPClient.h"
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
 #import "NSRegularExpression+LUAdditions.h"
 #import "NSURL+LUAdditions.h"
+#import <UIKit/UIKit.h>
 
 @implementation NSURL (LUAdditions)
 

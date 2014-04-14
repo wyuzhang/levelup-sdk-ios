@@ -6,6 +6,12 @@
 #import "LUAPIErrorBuilder.h"
 #import "LUConstants.h"
 
+@interface LUAPIClient (HTTPClient)
+
+- (AFHTTPClient *)httpClient;
+
+@end
+
 SPEC_BEGIN(LUAPIClientSpec)
 
 describe(@"LUAPIClient", ^{
@@ -85,15 +91,15 @@ describe(@"LUAPIClient", ^{
       });
 
       it(@"registers for JSON requests", ^{
-        [[[[LUAPIClient sharedClient] valueForKey:@"registeredHTTPOperationClassNames"] should] contain:@"AFJSONRequestOperation"];
+        [[[[[LUAPIClient sharedClient] httpClient] valueForKey:@"registeredHTTPOperationClassNames"] should] contain:NSStringFromClass([AFJSONRequestOperation class])];
       });
 
       it(@"sets the default Accept header to 'application/json'", ^{
-        [[[[LUAPIClient sharedClient] valueForKey:@"defaultHeaders"][@"Accept"] should] equal:@"application/json"];
+        [[[[[LUAPIClient sharedClient] httpClient] valueForKey:@"defaultHeaders"][@"Accept"] should] equal:@"application/json"];
       });
 
       it(@"encodes parameters as JSON", ^{
-        [[theValue([LUAPIClient sharedClient].parameterEncoding) should] equal:theValue(AFJSONParameterEncoding)];
+        [[theValue([[LUAPIClient sharedClient] httpClient].parameterEncoding) should] equal:theValue(AFJSONParameterEncoding)];
       });
     });
 
@@ -142,7 +148,7 @@ describe(@"LUAPIClient", ^{
     it(@"enqueues a new request operation for the request and returns an LUAPIConnection", ^{
       LUAPIConnection *connection = [client performRequest:apiRequest success:nil failure:nil];
 
-      [[[client.operationQueue operations] should] contain:connection.operation];
+      [[[[client httpClient].operationQueue operations] should] contain:connection.operation];
     });
 
     context(@"when the request succeeds", ^{

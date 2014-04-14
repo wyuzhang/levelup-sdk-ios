@@ -1,6 +1,8 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
+#import "AFNetworking.h"
 #import "LUAPIClient.h"
+#import "LUAPIError.h"
 #import "LUAPIErrorBuilder.h"
 #import "LUAPIErrorJSONFactory.h"
 #import "LUConstants.h"
@@ -49,7 +51,7 @@
 }
 
 - (LUAPIErrorCode)code {
-  if ([LUAPIClient sharedClient].networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable) {
+  if ([[LUAPIClient sharedClient] isNetworkUnreachable]) {
     return LUAPIErrorNetwork;
   }
 

@@ -1,5 +1,7 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
+#import "AFHTTPClient.h"
+#import "AFNetworking.h"
 #import "LUAbstractJSONModelFactory.h"
 #import "LUAPIClient.h"
 #import "LUAPIConnection.h"
@@ -10,14 +12,13 @@
 
 @interface LUAPIClient ()
 
+@property (strong) AFHTTPClient *httpClient;
 @property (copy, readwrite) NSString *apiKey;
 @property (assign, readwrite) BOOL developmentMode;
 
 @end
 
 @implementation LUAPIClient
-
-@synthesize baseURL;
 
 __strong static LUAPIClient *_sharedClient = nil;
 
@@ -33,14 +34,7 @@ __strong static LUAPIClient *_sharedClient = nil;
   NSAssert(appID.length > 0, @"An app ID is required");
   NSAssert(apiKey.length > 0, @"An API key is required");
 
-  NSString *baseURLString;
-  if (developmentMode) {
-    baseURLString = LevelUpAPIBaseURLDevelopment;
-  } else {
-    baseURLString = LevelUpAPIBaseURLProduction;
-  }
-
-  self = [super initWithBaseURL:[NSURL URLWithString:baseURLString]];
+  self = [super init];
   if (!self) return nil;
 
   _appID = appID;
@@ -56,10 +50,18 @@ __strong static LUAPIClient *_sharedClient = nil;
   }
 
   [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-  [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
-  [self setDefaultHeader:@"Accept" value:@"application/json"];
-  [self setDefaultHeader:@"User-Agent" value:[self userAgent]];
-  [self setParameterEncoding:AFJSONParameterEncoding];
+
+  if (developmentMode) {
+    _baseURL = [NSURL URLWithString:LevelUpAPIBaseURLDevelopment];
+  } else {
+    _baseURL = [NSURL URLWithString:LevelUpAPIBaseURLProduction];
+  }
+
+  _httpClient = [[AFHTTPClient alloc] initWithBaseURL:_baseURL];
+  [_httpClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+  [_httpClient setDefaultHeader:@"Accept" value:@"application/json"];
+  [_httpClient setDefaultHeader:@"User-Agent" value:[self userAgent]];
+  [_httpClient setParameterEncoding:AFJSONParameterEncoding];
 
   return self;
 }
@@ -72,6 +74,10 @@ __strong static LUAPIClient *_sharedClient = nil;
 
 + (void)setupWithAppID:(NSString *)appID APIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode {
   _sharedClient = [[self alloc] initWithAppID:appID APIKey:apiKey developmentMode:developmentMode];
+}
+
+- (BOOL)isNetworkUnreachable {
+  return self.httpClient.networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable;
 }
 
 - (LUAPIConnection *)performRequest:(LUAPIRequest *)apiRequest
@@ -96,13 +102,21 @@ __strong static LUAPIClient *_sharedClient = nil;
                                                       }
                                                     }];
 
-  [self enqueueHTTPRequestOperation:requestOperation];
+  [self.httpClient enqueueHTTPRequestOperation:requestOperation];
 
   return [[LUAPIConnection alloc] initWithAFHTTPRequestOperation:requestOperation];
 }
 
+- (NSMutableURLRequest *)requestWithMethod:(NSString *)method
+                                      path:(NSString *)path
+                                parameters:(NSDictionary *)parameters {
+  return [self.httpClient requestWithMethod:method path:path parameters:parameters];
+}
+
+#pragma mark - Private Methods
+
 - (NSString *)userAgent {
-  return [[self defaultValueForHeader:@"User-Agent"] stringByAppendingFormat:@" LevelUpSDK/%@", LevelUpSDKVersion];
+  return [[self.httpClient defaultValueForHeader:@"User-Agent"] stringByAppendingFormat:@" LevelUpSDK/%@", LevelUpSDKVersion];
 }
 
 @end

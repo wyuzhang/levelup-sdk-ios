@@ -28,8 +28,8 @@ describe(@"LUAPIErrorBuilder", ^{
       NSError *error = [NSError errorWithDomain:@"TestErrorDomain" code:0 userInfo:nil];
 
       beforeEach(^{
-        [[LUAPIClient sharedClient] stub:@selector(networkReachabilityStatus)
-                               andReturn:theValue(AFNetworkReachabilityStatusNotReachable)];
+        [[LUAPIClient sharedClient] stub:@selector(isNetworkUnreachable)
+                               andReturn:theValue(YES)];
       });
 
       it(@"returns an LUAPIErrorNetwork error", ^{

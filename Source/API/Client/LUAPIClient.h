@@ -2,8 +2,6 @@
 
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <SystemConfiguration/SystemConfiguration.h>
-#import "AFHTTPClient.h"
-#import "AFNetworking.h"
 
 @class LUAPIConnection;
 @class LUAPIRequest;
@@ -74,7 +72,8 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
                                          NSLog(@"Got an error: %@", error);
                                        }];
  */
-@interface LUAPIClient : AFHTTPClient
+
+@interface LUAPIClient : NSObject
 
 ///-------------------------------
 /// @name Configuration
@@ -128,9 +127,12 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 @property (nonatomic, copy) NSString *clientsideEncryptionKey;
 @property (assign, readonly) BOOL developmentMode;
 
-///-------------------------------
-/// @name Getters
-///-------------------------------
+/**
+ Checks if the network is unreachable.
+
+ @return `YES` if the network is unreachable, else `NO`.
+*/
+- (BOOL)isNetworkUnreachable;
 
 /**
  Returns the `User-Agent` string containing the app name and version, device name and version and
@@ -170,5 +172,9 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 - (LUAPIConnection *)performRequest:(LUAPIRequest *)apiRequest
                             success:(LUAPISuccessBlock)success
                             failure:(LUAPIFailureBlock)failure;
+
+- (NSMutableURLRequest *)requestWithMethod:(NSString *)method
+                                      path:(NSString *)path
+                                parameters:(NSDictionary *)parameters;
 
 @end
