@@ -29,7 +29,7 @@
 
 + (LUAPIRequest *)requestToCreateUser:(LUUser *)user {
   NSMutableDictionary *params = [NSMutableDictionary dictionary];
-  params[@"client_id"] = [LUAPIClient sharedClient].apiKey;
+  params[@"api_key"] = [LUAPIClient sharedClient].apiKey;
   params[@"user"] = [LUUserParameterBuilder parametersForUser:user];
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"

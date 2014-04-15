@@ -43,7 +43,7 @@ describe(@"LUAuthenticationRequestFactory", ^{
     it(@"returns a request with the expected parameters", ^{
       NSDictionary *expectedParams = @{
         @"access_token" : @{
-          @"client_id" : apiKey,
+          @"api_key" : apiKey,
           @"device_identifier" : deviceIdentifier,
           @"password" : password,
           @"username" : email

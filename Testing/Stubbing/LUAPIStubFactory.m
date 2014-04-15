@@ -442,7 +442,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   [self setDeviceIdentifier];
   stub.requestBodyJSON = @{
     @"access_token" : @{
-      @"client_id" : [LUAPIClient sharedClient].apiKey,
+      @"api_key" : [LUAPIClient sharedClient].apiKey,
       @"device_identifier" : LUDeviceIdentifier,
       @"password" : password,
       @"username" : email
@@ -499,7 +499,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
 + (NSDictionary *)requestBodyJSONForUser:(LUUser *)user {
   NSDictionary *userJSON = [LUUserParameterBuilder parametersForUser:user];
-  return @{ @"client_id" : [LUAPIClient sharedClient].apiKey, @"user" : userJSON };
+  return @{ @"api_key" : [LUAPIClient sharedClient].apiKey, @"user" : userJSON };
 }
 
 + (NSData *)responseDataFromFile:(NSString *)file {

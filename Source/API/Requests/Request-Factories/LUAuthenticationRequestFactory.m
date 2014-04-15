@@ -15,7 +15,7 @@
   NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
   [parameters lu_setSafeValue:email forKey:@"username"];
   [parameters lu_setSafeValue:password forKey:@"password"];
-  [parameters lu_setSafeValue:[LUAPIClient sharedClient].apiKey forKey:@"client_id"];
+  [parameters lu_setSafeValue:[LUAPIClient sharedClient].apiKey forKey:@"api_key"];
   [parameters lu_setSafeValue:[LUDeviceIdentifier deviceIdentifier] forKey:@"device_identifier"];
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"
