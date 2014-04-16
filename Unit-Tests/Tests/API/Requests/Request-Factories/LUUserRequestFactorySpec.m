@@ -15,12 +15,19 @@ describe(@"LUUserRequestFactory", ^{
 
   describe(@"requestForCurrentUser", ^{
     beforeEach(^{
-      [[LUAPIClient sharedClient] stub:@selector(currentUserID) andReturn:@1];
+      request = [LUUserRequestFactory requestForCurrentUser];
     });
 
-    it(@"forwards the message to +requestForUserWithID:", ^{
-      [[[LUUserRequestFactory should] receive] requestForUserWithID:@1];
-      request = [LUUserRequestFactory requestForCurrentUser];
+    it(@"returns a GET request", ^{
+      [[request.method should] equal:@"GET"];
+    });
+
+    it(@"returns a request to the path 'users'", ^{
+      [[request.path should] equal:@"users"];
+    });
+
+    it(@"returns a request to version 15 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion15];
     });
   });
 

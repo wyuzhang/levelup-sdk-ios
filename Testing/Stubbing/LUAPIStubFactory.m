@@ -213,8 +213,8 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToGetCurrentUser {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                 path:@"users/1"
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"users"
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"current_user"]];

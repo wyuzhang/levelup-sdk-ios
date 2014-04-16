@@ -14,7 +14,11 @@
 #pragma mark - Public Methods
 
 + (LUAPIRequest *)requestForCurrentUser {
-  return [self requestForUserWithID:[LUAPIClient sharedClient].currentUserID];
+  return [LUAPIRequest apiRequestWithMethod:@"GET"
+                                       path:@"users"
+                                 apiVersion:LUAPIVersion15
+                                 parameters:nil
+                               modelFactory:[LUUserJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestForUserWithID:(NSNumber *)userID {

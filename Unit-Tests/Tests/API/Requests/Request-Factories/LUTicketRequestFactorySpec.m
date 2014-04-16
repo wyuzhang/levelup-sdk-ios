@@ -13,8 +13,6 @@ describe(@"LUTicketRequestFactory", ^{
     NSString *body = @"ticket body";
 
     beforeEach(^{
-      [[LUAPIClient sharedClient] stub:@selector(currentUserID) andReturn:@1];
-
       request = [LUTicketRequestFactory requestToCreateTicketWithBody:body];
     });
 
