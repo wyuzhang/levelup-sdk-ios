@@ -1,5 +1,5 @@
 PODS:
-  - AFNetworking (1.3.3)
+  - AFNetworking (1.3.4)
   - AutoCoding (2.0.3)
   - Braintree (2.2.7)
   - Kiwi (2.2.4):
@@ -14,7 +14,7 @@ PODS:
   - ZXingObjC (2.2.6)
 
 DEPENDENCIES:
-  - AFNetworking (= 1.3.3)
+  - AFNetworking (= 1.3.4)
   - AutoCoding (= 2.0.3)
   - Braintree (= 2.2.7)
   - Kiwi (= 2.2.4)
@@ -23,7 +23,7 @@ DEPENDENCIES:
   - ZXingObjC (= 2.2.6)
 
 SPEC CHECKSUMS:
-  AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
+  AFNetworking: e403d4333a4e1956cb3fe42364c3c879f820c9a0
   AutoCoding: 1333ca8d012caec43045a896c2761fd93fb47990
   Braintree: a7b8b6cdefe1a98c4a33b9b4185b0669d6bdb0bc
   Kiwi: d60d7498b640a16f58b01925fc3c8d7c4d809f66
