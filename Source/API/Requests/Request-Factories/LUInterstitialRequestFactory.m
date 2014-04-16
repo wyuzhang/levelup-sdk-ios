@@ -21,7 +21,7 @@
                                                    rating:(int)rating
                                                   comment:(NSString *)comment {
   NSString *path = [NSString stringWithFormat:@"orders/%@/feedback", UUID];
-  NSString *ratingString = [NSString stringWithFormat:@"%d", rating];
+  NSString *ratingString = rating > 0 ? [NSString stringWithFormat:@"%d", rating] : @"";
 
   NSDictionary *parameters = @{
     @"question_text": questionText,
