@@ -79,6 +79,11 @@ typedef NS_ENUM(NSInteger, LUInterstitialActionType) {
      descriptionHTML:(NSString *)descriptionHTML imageURL:(NSURL *)imageURL title:(NSString *)title;
 
 /**
+ Returns an `NSString` for this interstitial's `actionType`.
+ */
+- (NSString *)actionTypeString;
+
+/**
  A helper method which returns the `descriptionHTML` stripped of HTML tags.
  */
 - (NSString *)descriptionText;

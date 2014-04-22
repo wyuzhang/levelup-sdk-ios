@@ -28,23 +28,6 @@
 
 #pragma mark - Public Methods
 
-- (NSString *)descriptionText {
-  return [self.descriptionHTML lu_stringByStrippingHTML];
-}
-
-- (NSURL *)imageURL {
-  return [NSURL lu_imageURLForImageWithBase:_imageURL];
-}
-
-#pragma mark - NSObject Methods
-
-- (NSString *)description {
-  return [NSString stringWithFormat:@"LUInterstitial [address=%p, action=%@, actionType=%@, calloutText=%@, descriptionHTML=%@, imageURL=%@, title=%@]",
-          self, self.action, [self actionTypeString], self.calloutText, self.descriptionHTML, self.imageURL, self.title];
-}
-
-#pragma mark - Private Methods
-
 - (NSString *)actionTypeString {
   switch (self.actionType) {
     case LUInterstitialActionTypeUnknown:
@@ -65,6 +48,21 @@
     case LUInterstitialActionTypeURL:
       return @"url";
   }
+}
+
+- (NSString *)descriptionText {
+  return [self.descriptionHTML lu_stringByStrippingHTML];
+}
+
+- (NSURL *)imageURL {
+  return [NSURL lu_imageURLForImageWithBase:_imageURL];
+}
+
+#pragma mark - NSObject Methods
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"LUInterstitial [address=%p, action=%@, actionType=%@, calloutText=%@, descriptionHTML=%@, imageURL=%@, title=%@]",
+          self, self.action, [self actionTypeString], self.calloutText, self.descriptionHTML, self.imageURL, self.title];
 }
 
 @end
