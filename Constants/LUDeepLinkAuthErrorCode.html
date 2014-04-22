@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUInterstitialActionType Constants Reference</title>
+		<title>LUDeepLinkAuthErrorCode Constants Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUInterstitialActionType Constants Reference</h1>
+				<h1 class="hideInXcode">LUDeepLinkAuthErrorCode Constants Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -45,7 +45,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUInterstitialActionType Constants Reference" name="top"></a>
+				<a title="LUDeepLinkAuthErrorCode Constants Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -54,7 +54,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUInterstitialActionType Constants Reference</h1>
+						<h1 class="title title-header">LUDeepLinkAuthErrorCode Constants Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -62,7 +62,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUInterstitial.h</td>
+	<td class="specification-value">LUConstants.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -74,25 +74,29 @@
 					
                     
                     
-                    <h3 class="subsubtitle method-title">LUInterstitialActionType</h3>
+                    <h3 class="subsubtitle method-title">LUDeepLinkAuthErrorCode</h3>
                     
                     <div class="section">
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, LUInterstitialActionType ) {<br/>
+                        <code>typedef NS_ENUM(NSInteger, LUDeepLinkAuthErrorCode ) {<br/>
                             
-                            &nbsp;&nbsp; <a href="">LUInterstitialActionTypeUnknown</a>,<br/>
+                            &nbsp;&nbsp; <a href="">LUDeepLinkAuthErrorPermissionsRequired</a> = 40000,<br/>
                             
-                            &nbsp;&nbsp; <a href="">LUInterstitialActionTypeNone</a>,<br/>
+                            &nbsp;&nbsp; <a href="">LUDeepLinkAuthErrorReturnURLSchemeRequired</a>,<br/>
                             
-                            &nbsp;&nbsp; <a href="">LUInterstitialActionTypeClaim</a>,<br/>
+                            &nbsp;&nbsp; <a href="">LUDeepLinkAuthErrorAppIDRequired</a>,<br/>
                             
-                            &nbsp;&nbsp; <a href="">LUInterstitialActionTypeFeedback</a>,<br/>
+                            &nbsp;&nbsp; <a href="">LUDeepLinkAuthErrorOneTimePadRequired</a>,<br/>
                             
-                            &nbsp;&nbsp; <a href="">LUInterstitialActionTypeShare</a>,<br/>
+                            &nbsp;&nbsp; <a href="">LUDeepLinkAuthErrorAppNotInstalled</a>,<br/>
                             
-                            &nbsp;&nbsp; <a href="">LUInterstitialActionTypeURL</a>,<br/>
+                            &nbsp;&nbsp; <a href="">LUDeepLinkAuthErrorMalformedResponse</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">LUDeepLinkAuthErrorRequestRejected</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">LUDeepLinkAuthErrorWrongSourceApplication</a>,<br/>
                             
                             };</code>
                     
@@ -102,62 +106,82 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="LUInterstitialActionTypeUnknown"></a><code>LUInterstitialActionTypeUnknown</code></dt>
+                            <dt><a name="" title="LUDeepLinkAuthErrorPermissionsRequired"></a><code>LUDeepLinkAuthErrorPermissionsRequired</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LUInterstitial.h</code>.
+		Declared In <code class="declared-in-ref">LUConstants.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="LUInterstitialActionTypeNone"></a><code>LUInterstitialActionTypeNone</code></dt>
+                            <dt><a name="" title="LUDeepLinkAuthErrorReturnURLSchemeRequired"></a><code>LUDeepLinkAuthErrorReturnURLSchemeRequired</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LUInterstitial.h</code>.
+		Declared In <code class="declared-in-ref">LUConstants.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="LUInterstitialActionTypeClaim"></a><code>LUInterstitialActionTypeClaim</code></dt>
+                            <dt><a name="" title="LUDeepLinkAuthErrorAppIDRequired"></a><code>LUDeepLinkAuthErrorAppIDRequired</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LUInterstitial.h</code>.
+		Declared In <code class="declared-in-ref">LUConstants.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="LUInterstitialActionTypeFeedback"></a><code>LUInterstitialActionTypeFeedback</code></dt>
+                            <dt><a name="" title="LUDeepLinkAuthErrorOneTimePadRequired"></a><code>LUDeepLinkAuthErrorOneTimePadRequired</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LUInterstitial.h</code>.
+		Declared In <code class="declared-in-ref">LUConstants.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="LUInterstitialActionTypeShare"></a><code>LUInterstitialActionTypeShare</code></dt>
+                            <dt><a name="" title="LUDeepLinkAuthErrorAppNotInstalled"></a><code>LUDeepLinkAuthErrorAppNotInstalled</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LUInterstitial.h</code>.
+		Declared In <code class="declared-in-ref">LUConstants.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="LUInterstitialActionTypeURL"></a><code>LUInterstitialActionTypeURL</code></dt>
+                            <dt><a name="" title="LUDeepLinkAuthErrorMalformedResponse"></a><code>LUDeepLinkAuthErrorMalformedResponse</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">LUInterstitial.h</code>.
+		Declared In <code class="declared-in-ref">LUConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="LUDeepLinkAuthErrorRequestRejected"></a><code>LUDeepLinkAuthErrorRequestRejected</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">LUConstants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="LUDeepLinkAuthErrorWrongSourceApplication"></a><code>LUDeepLinkAuthErrorWrongSourceApplication</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">LUConstants.h</code>.
 	</p>
 	
 </dd>

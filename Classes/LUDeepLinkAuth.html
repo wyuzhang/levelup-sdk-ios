@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUUserRequestFactory Class Reference</title>
+		<title>LUDeepLinkAuth Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUUserRequestFactory Class Reference</h1>
+				<h1 class="hideInXcode">LUDeepLinkAuth Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -41,15 +41,9 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/requestForCurrentUser">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForCurrentUser</option>
+	<option value="//api/name/authorizeWithPermissions:returnURLScheme:">&nbsp;&nbsp;&nbsp;&nbsp;+ authorizeWithPermissions:returnURLScheme:</option>
 	
-	<option value="//api/name/requestForUserWithID:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForUserWithID:</option>
-	
-	<option value="//api/name/requestToCreateUser:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToCreateUser:</option>
-	
-	<option value="//api/name/requestToResetPasswordWithEmail:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToResetPasswordWithEmail:</option>
-	
-	<option value="//api/name/requestToUpdateUser:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToUpdateUser:</option>
+	<option value="//api/name/handleOpenURL:sourceApplication:">&nbsp;&nbsp;&nbsp;&nbsp;+ handleOpenURL:sourceApplication:</option>
 	
 	
 	
@@ -79,15 +73,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForCurrentUser">requestForCurrentUser</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authorizeWithPermissions:returnURLScheme:">authorizeWithPermissions:returnURLScheme:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForUserWithID:">requestForUserWithID:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToCreateUser:">requestToCreateUser:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToResetPasswordWithEmail:">requestToResetPasswordWithEmail:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToUpdateUser:">requestToUpdateUser:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleOpenURL:sourceApplication:">handleOpenURL:sourceApplication:</a></span></li>
 	
 </ul></li>
 
@@ -98,7 +86,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUUserRequestFactory Class Reference" name="top"></a>
+				<a title="LUDeepLinkAuth Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -107,7 +95,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUUserRequestFactory Class Reference</h1>
+						<h1 class="title title-header">LUDeepLinkAuth Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -118,7 +106,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUUserRequestFactory.h<br />LUUserRequestFactory.m</td>
+	<td class="specification-value">LUDeepLinkAuth.h<br />LUDeepLinkAuth.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -128,7 +116,28 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><a href="../Classes/LUTicketRequestFactory.html"><code>LUTicketRequestFactory</code></a> is used to build requests related to users.</p>
+						<p>Deep Link Authorization allows you to request an access token from a LevelUp user using an
+app-switching model: the user will be deep linked into the LevelUp, where they will be presented
+with a dialog describing the request. Upon responding to this request, the user will be bounced
+back into the requesting app.</p>
+
+<p>A request includes a list of permissions, such as the ability to create orders or to access their
+transaction history. An up-to-date list of permissions is available here:
+<a href="http://developer.thelevelup.com/getting-started/permissions-list/">http://developer.thelevelup.com/getting-started/permissions-list/</a></p>
+
+<p>An authorization request is made using <a href="#//api/name/authorizeWithPermissions:returnURLScheme:"><code>authorizeWithPermissions:returnURLScheme:</code></a>. If there is
+a failure at any point in the request, a LUDeepLinkAuthErrorNotification notification
+will be sent. If this happens, the user info for the notification will contain an <code>NSError</code>
+instance under the key LUDeepLinkAuthNotificationErrorKey.</p>
+
+<p>In order for the SDK to handle the reponse back from the LevelUp app, a call to
+<a href="#//api/name/handleOpenURL:sourceApplication:"><code>handleOpenURL:sourceApplication:</code></a> must be made from your app delegate&rsquo;s
+<code>application:openURL:sourceApplication:annotation:</code> method.</p>
+
+<p>When a request succeeds, an LUDeepLinkAuthSuccessNotification will be sent. The user info
+for the notification will contain an access token string under the key
+LUDeepLinkAuthNotificationAccessTokenKey. Setting <code>accessToken</code> on <a href="../Classes/LUAPIClient.html#//api/name/sharedClient"><code>[LUAPIClient sharedClient]</code></a> to
+this token will allow the access token to be used on subsequent LevelUp API calls.</p>
 					</div>
 					
 					
@@ -146,31 +155,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForCurrentUser">+&nbsp;requestForCurrentUser</a></code>
+		<code><a href="#//api/name/authorizeWithPermissions:returnURLScheme:">+&nbsp;authorizeWithPermissions:returnURLScheme:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForUserWithID:">+&nbsp;requestForUserWithID:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requestToCreateUser:">+&nbsp;requestToCreateUser:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requestToResetPasswordWithEmail:">+&nbsp;requestToResetPasswordWithEmail:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requestToUpdateUser:">+&nbsp;requestToUpdateUser:</a></code>
+		<code><a href="#//api/name/handleOpenURL:sourceApplication:">+&nbsp;handleOpenURL:sourceApplication:</a></code>
 	</span>
 	
 	
@@ -190,61 +181,18 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForCurrentUser" title="requestForCurrentUser"></a>
-	<h3 class="subsubtitle method-title">requestForCurrentUser</h3>
+	<a name="//api/name/authorizeWithPermissions:returnURLScheme:" title="authorizeWithPermissions:returnURLScheme:"></a>
+	<h3 class="subsubtitle method-title">authorizeWithPermissions:returnURLScheme:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to return the current user. This is a convenience method to call <a href="#//api/name/requestForUserWithID:">requestForUserWithID:</a> with the userID of the cached user object.</p>
+		<p>Request the user to authorize using deep linking.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForCurrentUser</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to return the current user. This is a convenience method to call <a href="#//api/name/requestForUserWithID:">requestForUserWithID:</a> with the userID of the cached user object.</p>
-
-<p>On success, this request will return an <a href="../Classes/LUUser.html"><code>LUUser</code></a> instance.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUUserRequestFactory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/requestForUserWithID:" title="requestForUserWithID:"></a>
-	<h3 class="subsubtitle method-title">requestForUserWithID:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Builds a request to fetch the user with the given user ID.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForUserWithID:(NSNumber *)<em>userID</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)authorizeWithPermissions:(NSArray *)<em>permissions</em> returnURLScheme:(NSString *)<em>returnURLScheme</em></code></div>
 
     
 	
@@ -252,8 +200,17 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>userID</em></dt>
-			<dd><p>The ID for the user requested.</p></dd>
+			<dt><em>permissions</em></dt>
+			<dd><p>An array of strings, where each each string is the name of a requested
+permission. See <a href="http://developer.thelevelup.com/getting-started/permissions-list">http://developer.thelevelup.com/getting-started/permissions-list</a> for a list of
+possible permissions.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>returnURLScheme</em></dt>
+			<dd><p>The URL scheme to use in order to return the user to your app. This must be
+one of the custom URL schemes configured for your app. For more information, refer to Apple&rsquo;s
+documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html">https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html</a>#//apple_ref/doc/uid/TP40007072-CH7-SW50</p></dd>
 		</dl>
 		
 	</div>
@@ -266,9 +223,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to fetch the user with the given user ID.</p>
-
-<p>On success, this request will return an <a href="../Classes/LUUser.html"><code>LUUser</code></a> instance.</p>
+		<p>Request the user to authorize using deep linking.</p>
 	</div>
 	
 	
@@ -279,25 +234,27 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUUserRequestFactory.h</code><br />
+		<code class="declared-in-ref">LUDeepLinkAuth.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestToCreateUser:" title="requestToCreateUser:"></a>
-	<h3 class="subsubtitle method-title">requestToCreateUser:</h3>
+	<a name="//api/name/handleOpenURL:sourceApplication:" title="handleOpenURL:sourceApplication:"></a>
+	<h3 class="subsubtitle method-title">handleOpenURL:sourceApplication:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to create a user.</p>
+		<p>This method must be called from the <code>application:openURL:sourceApplication:annotation:</code>
+method of your app delegate. Doing so allows the response from an auth request to be validated and
+completed.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToCreateUser:(LUUser *)<em>user</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (BOOL)handleOpenURL:(NSURL *)<em>URL</em> sourceApplication:(NSString *)<em>sourceApplication</em></code></div>
 
     
 	
@@ -305,66 +262,23 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>user</em></dt>
-			<dd><p>The <a href="../Classes/LUUser.html"><code>LUUser</code></a> to create.</p></dd>
+			<dt><em>URL</em></dt>
+			<dd><p>The url passed to <code>application:openURL:sourceApplication:annotation:</code>.</p></dd>
 		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to create a user.</p>
-
-<p>On success, this request will return the newly created <a href="../Classes/LUUser.html"><code>LUUser</code></a>.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUUserRequestFactory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/requestToResetPasswordWithEmail:" title="requestToResetPasswordWithEmail:"></a>
-	<h3 class="subsubtitle method-title">requestToResetPasswordWithEmail:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Builds a request to reset the password of a user.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToResetPasswordWithEmail:(NSString *)<em>email</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>email</em></dt>
-			<dd><p>An email address.</p></dd>
+			<dt><em>sourceApplication</em></dt>
+			<dd><p>The sourceApplication passed to <code>application:openURL:sourceApplication:annotation:</code>.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES If this URL was handled by the LevelUp SDK, else NO.</p>
+	</div>
 	
 	
 	
@@ -372,9 +286,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to reset the password of a user.</p>
-
-<p>On success, this request will return <code>nil</code>.</p>
+		<p>This method must be called from the <code>application:openURL:sourceApplication:annotation:</code>
+method of your app delegate. Doing so allows the response from an auth request to be validated and
+completed.</p>
 	</div>
 	
 	
@@ -385,60 +299,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUUserRequestFactory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/requestToUpdateUser:" title="requestToUpdateUser:"></a>
-	<h3 class="subsubtitle method-title">requestToUpdateUser:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Builds a request to update a user.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToUpdateUser:(LUUser *)<em>user</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>user</em></dt>
-			<dd><p>The <a href="../Classes/LUUser.html"><code>LUUser</code></a> to update.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to update a user.</p>
-
-<p>On success, this request will return the updated <a href="../Classes/LUUser.html"><code>LUUser</code></a>.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUUserRequestFactory.h</code><br />
+		<code class="declared-in-ref">LUDeepLinkAuth.h</code><br />
 	</div>				
 	
 	
