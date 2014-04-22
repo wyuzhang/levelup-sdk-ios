@@ -3,16 +3,17 @@
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
 
+@protocol LUQRCodeScannerViewDelegate;
+
 /**
  `LUQRCodeScannerView` is a utility class to simplify the process of scanning QR codes.
 
  ## Usage
 
- Simply add an `LUQRCodeScannerView` to a view, and use the `clearSession`, `startScanning`, and `stopScanning` methods
- to control the scanner. Specify a `LUQRCodeScannerViewDelegate` to be notified when a QR code is successfully scanned.
+ Simply add an `LUQRCodeScannerView` to a view, and use the `clearSession`, `startScanning`, and
+ `stopScanning` methods to control the scanner. Specify a `LUQRCodeScannerViewDelegate` to be
+ notified when a QR code is successfully scanned.
  */
-@protocol LUQRCodeScannerViewDelegate;
-
 @interface LUQRCodeScannerView : UIView <AVCaptureVideoDataOutputSampleBufferDelegate>
 
 /**
@@ -43,8 +44,8 @@
 @end
 
 /**
- The `LUQRCodeScannerViewDelegate` protocol is used to be notified when an `LUQRCodeScannerView` successfully scans
- a QR code.
+ The `LUQRCodeScannerViewDelegate` protocol is used to be notified when an `LUQRCodeScannerView`
+ successfully scans a QR code.
  */
 @protocol LUQRCodeScannerViewDelegate
 

@@ -35,13 +35,14 @@
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
           @"LUCreditCard [address=%p, creditCardDescription=%@, cvv=%@, debit=%@, expirationMonth=%@, expirationYear=%@, ID=%@, last4Digits=%@, number=%@, postalCode=%@, promoted=%@, type=%@]",
-          self, self.creditCardDescription, self.cvv, @(self.debit), self.expirationMonth, self.expirationYear, self.creditCardID,
-          self.last4Digits, self.number, self.postalCode, @(self.promoted), self.type];
+          self, self.creditCardDescription, self.cvv, @(self.debit), self.expirationMonth,
+          self.expirationYear, self.creditCardID, self.last4Digits, self.number, self.postalCode,
+          @(self.promoted), self.type];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUCreditCard [address=%p, ID=%@, last4Digits=%@, type=%@]", self, self.creditCardID,
-          self.last4Digits, self.type];
+  return [NSString stringWithFormat:@"LUCreditCard [address=%p, ID=%@, last4Digits=%@, type=%@]",
+          self, self.creditCardID, self.last4Digits, self.type];
 }
 
 @end

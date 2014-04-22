@@ -29,7 +29,8 @@
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUClaim [address=%p, campaignID=%@, ID=%@]", self, self.code, self.claimID];
+  return [NSString stringWithFormat:@"LUClaim [address=%p, campaignID=%@, ID=%@]", self, self.code,
+          self.claimID];
 }
 
 @end

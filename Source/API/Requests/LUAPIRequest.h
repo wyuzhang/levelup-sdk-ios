@@ -7,9 +7,9 @@ extern NSString * const LUAPIVersion14;
 extern NSString * const LUAPIVersion15;
 
 /**
- `LUAPIRequest` represents a request to the LevelUp API. To perform a request, an `LUAPIRequest` instance is passed
- to the `performRequest:success:failure` method of `LUAPIClient`. `LUAPIRequest` instances should usually be created
- by request builders.
+ `LUAPIRequest` represents a request to the LevelUp API. To perform a request, an `LUAPIRequest`
+ instance is passed to the `performRequest:success:failure` method of `LUAPIClient`. `LUAPIRequest`
+ instances should usually be created by request builders.
  */
 @interface LUAPIRequest : NSObject
 
@@ -39,13 +39,14 @@ extern NSString * const LUAPIVersion15;
 @property (nonatomic, copy) NSDictionary *parameters;
 
 /**
- Returns an `LUAPIRequest` with the specified method, path and parameters. An authentication token will automatically
- be included in the request if one is set on the `LUAPIClient`.
+ Returns an `LUAPIRequest` with the specified method, path and parameters. An authentication token
+ will automatically be included in the request if one is set on the `LUAPIClient`.
 
  @param method An HTTP method: "GET", "POST", "PUT", or "DELETE".
  @param path The path of the API request, e.g. "/users".
  @param apiVersion The version of the API to use.
- @param parameters A dictionary of parameters to include with this request, or nil if the request has no parameters.
+ @param parameters A dictionary of parameters to include with this request, or nil if the request
+ has no parameters.
  @param modelFactory An instance of `LUAbstractJSONModelFactory` which will parse the response.
  */
 + (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
@@ -53,12 +54,6 @@ extern NSString * const LUAPIVersion15;
                             apiVersion:(NSString *)apiVersion
                             parameters:(NSDictionary *)parameters
                           modelFactory:(LUAbstractJSONModelFactory *)modelFactory;
-
-- (id)initWithMethod:(NSString *)method
-                path:(NSString *)path
-          apiVersion:(NSString *)apiVersion
-          parameters:(NSDictionary *)parameters
-        modelFactory:(LUAbstractJSONModelFactory *)modelFactory;
 
 /**
  Returns an `NSURL` instance for this API request.
@@ -69,5 +64,11 @@ extern NSString * const LUAPIVersion15;
  Returns an `NSMutableURLRequest` instance for this API request.
  */
 - (NSMutableURLRequest *)URLRequest;
+
+- (id)initWithMethod:(NSString *)method
+                path:(NSString *)path
+          apiVersion:(NSString *)apiVersion
+          parameters:(NSDictionary *)parameters
+        modelFactory:(LUAbstractJSONModelFactory *)modelFactory;
 
 @end

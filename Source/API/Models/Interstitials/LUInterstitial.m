@@ -62,7 +62,8 @@
 
 - (NSString *)description {
   return [NSString stringWithFormat:@"LUInterstitial [address=%p, action=%@, actionType=%@, calloutText=%@, descriptionHTML=%@, imageURL=%@, title=%@]",
-          self, self.action, [self actionTypeString], self.calloutText, self.descriptionHTML, self.imageURL, self.title];
+          self, self.action, [self actionTypeString], self.calloutText, self.descriptionHTML,
+          self.imageURL, self.title];
 }
 
 @end

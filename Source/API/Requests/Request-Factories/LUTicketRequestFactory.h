@@ -1,10 +1,10 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
+@class LUAPIRequest;
+
 /**
  `LUTicketRequestFactory` is used to build requests related to customer support tickets.
  */
-@class LUAPIRequest;
-
 @interface LUTicketRequestFactory : NSObject
 
 /**

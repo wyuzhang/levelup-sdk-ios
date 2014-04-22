@@ -20,7 +20,8 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUCategory [address=%p, ID=%@, name=%@]", self, self.categoryID, self.name];
+  return [NSString stringWithFormat:@"LUCategory [address=%p, ID=%@, name=%@]", self,
+          self.categoryID, self.name];
 }
 
 @end

@@ -30,8 +30,8 @@
 @property (nonatomic, strong, readonly) LUMonetaryValue *value;
 
 /**
- The value remaining on the claim. As the user spends money, this amount will go down, and will be zero once they've
- used up the full value of the claim.
+ The value remaining on the claim. As the user spends money, this amount will go down, and will be
+ zero once they've used up the full value of the claim.
  */
 @property (nonatomic, strong, readonly) LUMonetaryValue *valueRemaining;
 

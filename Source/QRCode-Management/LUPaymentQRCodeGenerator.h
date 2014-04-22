@@ -4,9 +4,9 @@
 #import "LUPaymentToken.h"
 
 /**
- `LUPaymentQRCodeGenerator` is used to build QR codes for users' payment tokens. All LevelUp QR codes
- include a unique identifier for the current user, but may optionally include a tip percentage or
- the ID of a color that the user would like the LevelUp docks to glow.
+ `LUPaymentQRCodeGenerator` is used to build QR codes for users' payment tokens. All LevelUp QR
+ codes include a unique identifier for the current user, but may optionally include a tip percentage
+ or the ID of a color that the user would like the LevelUp docks to glow.
 
  ## Glow Colors
 
@@ -59,7 +59,8 @@
  Generates a `UIImage` containing a QR code with a payment token and a tip percentage.
 
  @param paymentToken The payment token to use when generating the QR code.
- @param tipPercentage A tip percentage. For example 100% is represented as 100. The largest possible percent that can be encoded is 1295%.
+ @param tipPercentage A tip percentage. For example 100% is represented as 100. The largest possible
+ percent that can be encoded is 1295%.
 
  @return A `UIImage` containing the QR code.
  */
@@ -69,7 +70,8 @@
  Generates a `UIImage` containing a QR code with a payment token, tip percentage and glow color ID.
 
  @param paymentToken The payment token to use when generating the QR code.
- @param tipPercentage A tip percentage. For example 100% is represented as 100. The largest possible percent that can be encoded is 1295%.
+ @param tipPercentage A tip percentage. For example 100% is represented as 100. The largest possible
+ percent that can be encoded is 1295%.
  @param glowColorID The ID of a color.
 
  @return A `UIImage` containing the QR code.

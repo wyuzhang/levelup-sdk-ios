@@ -1,10 +1,10 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
+@class LUAPIRequest;
+
 /**
  `LUClaimRequestFactory` is used to build requests related to claims.
  */
-@class LUAPIRequest;
-
 @interface LUClaimRequestFactory : NSObject
 
 /**

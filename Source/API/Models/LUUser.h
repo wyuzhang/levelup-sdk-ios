@@ -2,9 +2,15 @@
 
 #import "LUAPIModel.h"
 
+/** A user's gender. */
 typedef NS_ENUM(NSInteger, LUGender) {
+  /** The gender is unspecified. */
   LUGenderUnspecified,
+
+  /** Male */
   LUGenderMale,
+
+  /** Female */
   LUGenderFemale
 };
 
@@ -26,7 +32,8 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, copy, readonly) NSNumber *causeID;
 
 /**
- An arbitrary `NSMutableDictionary` of custom attributes. This may be used to store app-specific user information.
+ An arbitrary `NSMutableDictionary` of custom attributes. This may be used to store app-specific
+ user information.
  */
 @property (nonatomic, strong) NSMutableDictionary *customAttributes;
 
@@ -71,7 +78,8 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, copy, readonly) NSNumber *ordersCount;
 
 /**
- The user's password. This is only used to set a password; it will always be nil when returned by the server.
+ The user's password. This is only used to set a password; it will always be nil when returned by
+ the server.
  */
 @property (nonatomic, copy) NSString *password;
 
@@ -97,7 +105,8 @@ typedef NS_ENUM(NSInteger, LUGender) {
 + (LUGender)genderForGenderString:(NSString *)genderString;
 
 /**
- Returns a string representation of the gender for display. The return string will be capitalized (Male, Female).
+ Returns a string representation of the gender for display. The return string will be capitalized
+ (Male, Female).
  @param gender The enumerated value for the gender.
  */
 + (NSString *)genderStringForGender:(LUGender)gender;

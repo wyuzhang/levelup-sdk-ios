@@ -3,7 +3,8 @@
 #import "LUAPIModel.h"
 
 /**
- `LUMonetaryValue` is used to represent an amount of money in a specific currency. Currently, only USD are supported.
+ `LUMonetaryValue` is used to represent an amount of money in a specific currency. Currently, only
+ USD are supported.
  */
 @interface LUMonetaryValue : LUAPIModel
 
@@ -23,7 +24,8 @@
 @property (nonatomic, copy, readonly) NSString *currencySymbol;
 
 /**
- Returns the amount formatted with a string (but no symbol). For example "1.23" represents 1 dollar and 23 cents.
+ Returns the amount formatted with a string (but no symbol). For example "1.23" represents 1 dollar
+ and 23 cents.
  */
 @property (nonatomic, copy) NSString *formattedAmount;
 
@@ -50,8 +52,8 @@
 - (NSString *)formattedAmountWithSymbol;
 
 /**
- Same as `formattedAmountWithSymbol`, with the exception that if the amount has only dollars and no cents, the cents
- are dropped. For example, "$1" or "$1.23".
+ Same as `formattedAmountWithSymbol`, with the exception that if the amount has only dollars and no
+ cents, the cents are dropped. For example, "$1" or "$1.23".
  */
 - (NSString *)shortFormatWithSymbol;
 

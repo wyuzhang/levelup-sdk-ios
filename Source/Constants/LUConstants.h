@@ -23,21 +23,36 @@ extern NSString * const LUDeepLinkAuthNotificationErrorKey;
 
 #pragma mark - API Errors
 
-// See LUAPIClient.h for documentation on these error keys and error codes.
 extern NSString * const LUAPIErrorDomain;
+
+// See LUAPIClient.h for documentation on these error keys.
 extern NSString * const LUAPIErrorKeyAPIErrors;
 extern NSString * const LUAPIErrorKeyErrorMessage;
 extern NSString * const LUAPIErrorKeyJSONResponse;
 extern NSString * const LUAPIErrorKeyOriginalError;
 extern NSString * const LUAPIErrorKeyURLResponse;
 
+/** A LevelUp API error. */
 typedef NS_ENUM(NSInteger, LUAPIErrorCode) {
+  /** The client must be logged in to complete the request. */
   LUAPIErrorLoginRequired,
+
+  /** The server is currently down for maintenance. */
   LUAPIErrorMaintenance,
+
+  /** Was unable to get to the server because the network is down. */
   LUAPIErrorNetwork,
+
+  /** The requested resource was not found. */
   LUAPIErrorNotFound,
+
+  /** The server responded with JSON that couldn't be parsed. */
   LUAPIErrorParsing,
+
+  /** The server responded with an error. */
   LUAPIErrorServer,
+
+  /** The SDK needs to be upgraded. */
   LUAPIErrorUpgrade
 };
 
@@ -45,13 +60,29 @@ typedef NS_ENUM(NSInteger, LUAPIErrorCode) {
 
 extern NSString * const LUDeepLinkAuthErrorDomain;
 
+/** A Deep Link Auth error. */
 typedef NS_ENUM(NSInteger, LUDeepLinkAuthErrorCode) {
+  /** The Deep Link Auth request did not include any permission keys. */
   LUDeepLinkAuthErrorPermissionsRequired = 40000,
+
+  /** The Deep Link Auth request did not include a return URL scheme. */
   LUDeepLinkAuthErrorReturnURLSchemeRequired,
+
+  /** The Deep Link Auth request did not include the requesting app's ID (internal error). */
   LUDeepLinkAuthErrorAppIDRequired,
+
+  /** The Deep Link Auth request did not include a one-time pad (internal error). */
   LUDeepLinkAuthErrorOneTimePadRequired,
+
+  /** The user does not have LevelUp installed. */
   LUDeepLinkAuthErrorAppNotInstalled,
+
+  /** The Deep Link Auth response was not properly formed. */
   LUDeepLinkAuthErrorMalformedResponse,
+
+  /** The user rejected the authorization request. */
   LUDeepLinkAuthErrorRequestRejected,
+
+  /** The Deep Link Auth response did not come from the LevelUp app. */
   LUDeepLinkAuthErrorWrongSourceApplication
 };

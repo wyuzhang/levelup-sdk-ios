@@ -1,10 +1,10 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
+@class LUAPIRequest;
+
 /**
  `LUCategoryRequestFactory` is used to build requests related to categories.
  */
-@class LUAPIRequest;
-
 @interface LUCategoryRequestFactory : NSObject
 
 /**

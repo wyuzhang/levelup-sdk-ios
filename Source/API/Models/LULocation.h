@@ -6,13 +6,14 @@
 @class LUWebLocations;
 
 /**
- A LevelUp merchant has one or more locations. Take the example of a chain restaurant with multiple franchises. This
- restaurant would have a single merchant associated with it, but each store would have its own `LULocation`.
+ A LevelUp merchant has one or more locations. Take the example of a chain restaurant with multiple
+ franchises. This restaurant would have a single merchant associated with it, but each store would
+ have its own `LULocation`.
 
  ## MapKit
 
- `LULocation` implements the `MKAnnotation` protocol. This provides annotation-related information to a map view. The
- title of the annotation is the result of `fullStreetAddress`.
+ `LULocation` implements the `MKAnnotation` protocol. This provides annotation-related information
+ to a map view. The title of the annotation is the result of `fullStreetAddress`.
  */
 @interface LULocation : LUAPIModel <MKAnnotation>
 
@@ -32,8 +33,8 @@
 @property (nonatomic, copy, readonly) NSString *extendedAddress;
 
 /**
- An optional string representing the hours during which this location is open. The format of this string is determined
- by the location.
+ An optional string representing the hours during which this location is open. The format of this
+ string is determined by the location.
  */
 @property (nonatomic, copy, readonly) NSString *hours;
 
@@ -93,14 +94,15 @@
 @property (nonatomic, assign) BOOL shown;
 
 /**
- Specifies if this instance of `LULocation` is only a summary. If it is, then only `categoryIDs`, `latitude`,
- `locationID`, `longitude`, `merchantName`, `merchantID`, `shown` and `updatedAtDate` will be set.
+ Specifies if this instance of `LULocation` is only a summary. If it is, then only `categoryIDs`,
+ `latitude`, `locationID`, `longitude`, `merchantName`, `merchantID`, `shown` and `updatedAtDate`
+ will be set.
  */
 @property (nonatomic, assign) BOOL summary;
 
 /**
- The location's address. If the location's address has a second line (such as an apartment number), this will be
- stored separately in the `extendedAddress` field.
+ The location's address. If the location's address has a second line (such as an apartment number),
+ this will be stored separately in the `extendedAddress` field.
  */
 @property (nonatomic, copy, readonly) NSString *streetAddress;
 
@@ -114,6 +116,31 @@
  */
 @property (nonatomic, copy, readonly) LUWebLocations *webLocations;
 
+/**
+ If the location has both a `streetAddress` and an `extendedAddress`, this will return both values
+ joined by a comma. For example, "123 Main Street, Apt 2A". When an `extendedAddress` is not present,
+ only the `streetAddress` will be returned.
+ */
+- (NSString *)fullStreetAddress;
+
+/**
+ An associated image for the location. Will automatically return a retina or non-retina scaled image
+ based on the screen scale of the device. The resolution is 320x212.
+ */
+- (NSURL *)imageURL;
+
+/**
+ A `CLLocation` instance associated with this location.
+ */
+- (CLLocation *)location;
+
+/**
+ A helper method which returns all the address fields in one line. The format is
+ "<full street address>, <locality>, <region> <postal code>". For example: "123 Main Street, Apt 2A,
+ Boston, MA 01234".
+ */
+- (NSString *)singleLineAddress;
+
 - (id)initWithCategoryIDs:(NSArray *)categoryIDs descriptionHTML:(NSString *)descriptionHTML
           extendedAddress:(NSString *)extendedAddress hours:(NSString *)hours latitude:(NSNumber *)latitude
                  locality:(NSString *)locality locationID:(NSNumber *)locationID longitude:(NSNumber *)longitude
@@ -125,29 +152,5 @@
 - (id)initWithCategoryIDs:(NSArray *)categoryIDs latitude:(NSNumber *)latitude locationID:(NSNumber *)locationID
                 longitude:(NSNumber *)longitude merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName
                      name:(NSString *)name shown:(BOOL)shown updatedAtDate:(NSDate *)updatedAtDate;
-
-/**
- If the location has both a `streetAddress` and an `extendedAddress`, this will return both values joined by a comma.
- For example, "123 Main Street, Apt 2A". When an `extendedAddress` is not present, only the `streetAddress` will be
- returned.
- */
-- (NSString *)fullStreetAddress;
-
-/**
- An associated image for the location. Will automatically return a retina or non-retina scaled image based on the
- screen scale of the device. The resolution is 320x212.
- */
-- (NSURL *)imageURL;
-
-/**
- A `CLLocation` instance associated with this location.
- */
-- (CLLocation *)location;
-
-/**
- A helper method which returns all the address fields in one line. The format is "<full street address>, <locality>,
- <region> <postal code>". For example: "123 Main Street, Apt 2A, Boston, MA 01234".
- */
-- (NSString *)singleLineAddress;
 
 @end

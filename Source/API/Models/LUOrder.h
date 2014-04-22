@@ -2,12 +2,11 @@
 
 #import "LUAPIModel.h"
 
+@class LUMonetaryValue;
+
 /**
  `LUOrder` represents an order made using LevelUp.
  */
-
-@class LUMonetaryValue;
-
 @interface LUOrder : LUAPIModel
 
 /**
@@ -51,7 +50,8 @@
 @property (nonatomic, strong, readonly) LUMonetaryValue *earn;
 
 /**
- An optional "extended" address for the location at which this order was made. An example would be an apartment number.
+ An optional "extended" address for the location at which this order was made. An example would be
+ an apartment number.
  */
 @property (nonatomic, copy, readonly) NSString *locationExtendedAddress;
 
@@ -91,8 +91,8 @@
 @property (nonatomic, copy, readonly) NSString *merchantName;
 
 /**
- If this order has been refunded, the date that this order was refunded. If the order hasn't been refunded, this will
- be `nil`.
+ If this order has been refunded, the date that this order was refunded. If the order hasn't been
+ refunded, this will be `nil`.
  */
 @property (nonatomic, copy, readonly) NSDate *refundedDate;
 
@@ -120,17 +120,6 @@
  The unique identifier for this order.
  */
 @property (nonatomic, copy, readonly) NSString *UUID;
-
-- (id)initWithBalance:(LUMonetaryValue *)balance bundleClosedDate:(NSDate *)bundleClosedDate
-     bundleDescriptor:(NSString *)bundleDescriptor contribution:(LUMonetaryValue *)contribution
-contributionTargetName:(NSString *)contributionTargetName createdDate:(NSDate *)createdDate
-               credit:(LUMonetaryValue *)credit earn:(LUMonetaryValue *)earn
-locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber *)locationID
-     locationLocality:(NSString *)locationLocality locationPostalCode:(NSString *)locationPostalCode
-       locationRegion:(NSString *)locationRegion locationStreetAddress:(NSString *)locationStreetAddress
-           merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName refundedDate:(NSDate *)refundedDate
-                spend:(LUMonetaryValue *)spend tip:(LUMonetaryValue *)tip total:(LUMonetaryValue *)total
-       transactedDate:(NSDate *)transactedDate UUID:(NSString *)UUID;
 
 /**
  Specifies if an order is closed.
@@ -163,14 +152,15 @@ locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber
 - (BOOL)hasUsedCredit;
 
 /**
- An associated image for the order's location. Will automatically return a retina or non-retina scaled image based on
- the screen scale of the device. The resolution is 320x212.
+ An associated image for the order's location. Will automatically return a retina or non-retina
+ scaled image based on the screen scale of the device. The resolution is 320x212.
  */
 - (NSURL *)imageURL;
 
 /**
- A helper method which returns all the address fields in one line. The format is "<full street address>, <locality>,
- <region> <postal code>". For example: "123 Main Street, Apt 2A, Boston, MA 01234".
+ A helper method which returns all the address fields in one line. The format is
+ "<full street address>, <locality>, <region> <postal code>". For example: "123 Main Street, Apt 2A,
+ Boston, MA 01234".
  */
 - (NSString *)singleLineAddress;
 
@@ -178,5 +168,16 @@ locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber
  Specifies if this order has been refunded.
  */
 - (BOOL)wasRefunded;
+
+- (id)initWithBalance:(LUMonetaryValue *)balance bundleClosedDate:(NSDate *)bundleClosedDate
+     bundleDescriptor:(NSString *)bundleDescriptor contribution:(LUMonetaryValue *)contribution
+contributionTargetName:(NSString *)contributionTargetName createdDate:(NSDate *)createdDate
+               credit:(LUMonetaryValue *)credit earn:(LUMonetaryValue *)earn
+locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber *)locationID
+     locationLocality:(NSString *)locationLocality locationPostalCode:(NSString *)locationPostalCode
+       locationRegion:(NSString *)locationRegion locationStreetAddress:(NSString *)locationStreetAddress
+           merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName refundedDate:(NSDate *)refundedDate
+                spend:(LUMonetaryValue *)spend tip:(LUMonetaryValue *)tip total:(LUMonetaryValue *)total
+       transactedDate:(NSDate *)transactedDate UUID:(NSString *)UUID;
 
 @end

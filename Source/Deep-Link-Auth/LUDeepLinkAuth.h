@@ -2,18 +2,20 @@
 
 /**
  Deep Link Authorization allows you to request an access token from a LevelUp user using an
- app-switching model: the user will be deep linked into the LevelUp, where they will be presented
- with a dialog describing the request. Upon responding to this request, the user will be bounced
- back into the requesting app.
+ app-switching model: the user will be deep linked into the LevelUp app, where they will be
+ presented with a dialog describing the request. Upon responding to this request, the user will be
+ bounced back into the requesting app.
 
  A request includes a list of permissions, such as the ability to create orders or to access their
- transaction history. An up-to-date list of permissions is available here:
- http://developer.thelevelup.com/getting-started/permissions-list/
+ transaction history. An up-to-date list of permissions is available on the
+ [LevelUp Developer Portal](http://developer.thelevelup.com/getting-started/permissions-list/).
 
  An authorization request is made using `authorizeWithPermissions:returnURLScheme:`. If there is
- a failure at any point in the request, a LUDeepLinkAuthErrorNotification notification
+ a failure at any point in the request, a `LUDeepLinkAuthErrorNotification` notification
  will be sent. If this happens, the user info for the notification will contain an `NSError`
- instance under the key LUDeepLinkAuthNotificationErrorKey.
+ instance under the key `LUDeepLinkAuthNotificationErrorKey`. This error will have
+ `LUDeepLinkAuthErrorDomain` as the domain, and an appropriate value of `LUDeepLinkAuthErrorCode`
+ as its code.
 
  In order for the SDK to handle the reponse back from the LevelUp app, a call to
  `handleOpenURL:sourceApplication:` must be made from your app delegate's
@@ -21,8 +23,8 @@
 
  When a request succeeds, an LUDeepLinkAuthSuccessNotification will be sent. The user info
  for the notification will contain an access token string under the key
- LUDeepLinkAuthNotificationAccessTokenKey. Setting `accessToken` on `[LUAPIClient sharedClient]` to
- this token will allow the access token to be used on subsequent LevelUp API calls.
+ `LUDeepLinkAuthNotificationAccessTokenKey`. Setting `accessToken` on `[LUAPIClient sharedClient]`
+ to this token will allow the access token to be used on subsequent LevelUp API calls.
  */
 @interface LUDeepLinkAuth : NSObject
 
@@ -34,7 +36,8 @@
  possible permissions.
  @param returnURLScheme The URL scheme to use in order to return the user to your app. This must be
  one of the custom URL schemes configured for your app. For more information, refer to Apple's
- documentation: https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html#//apple_ref/doc/uid/TP40007072-CH7-SW50
+ documentation:
+ https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html#//apple_ref/doc/uid/TP40007072-CH7-SW50
  */
 + (void)authorizeWithPermissions:(NSArray *)permissions returnURLScheme:(NSString *)returnURLScheme;
 
@@ -44,7 +47,8 @@
  completed.
 
  @param URL The url passed to `application:openURL:sourceApplication:annotation:`.
- @param sourceApplication The sourceApplication passed to `application:openURL:sourceApplication:annotation:`.
+ @param sourceApplication The sourceApplication passed to
+ `application:openURL:sourceApplication:annotation:`.
  @return YES If this URL was handled by the LevelUp SDK, else NO.
  */
 + (BOOL)handleOpenURL:(NSURL *)URL sourceApplication:(NSString *)sourceApplication;

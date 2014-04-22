@@ -10,7 +10,8 @@
 /**
  Builds a request for an interstitial for an order with the given UUID.
 
- If this order does not have an interestitial, this request will fail with the error code `LUAPIErrorNotFound`.
+ If this order does not have an interestitial, this request will fail with the error code
+ `LUAPIErrorNotFound`.
 
  @param UUID The UUID of an order.
  */
@@ -19,7 +20,8 @@
 /**
  Builds a request to submit feedback from a feedback interstitial.
 
- If this order does not have an interestitial, this request will fail with the error code `LUAPIErrorNotFound`.
+ If this order does not have an interestitial, this request will fail with the error code
+ `LUAPIErrorNotFound`.
 
  @param UUID The UUID of an order.
  @param questionText The text of the question given to the user.

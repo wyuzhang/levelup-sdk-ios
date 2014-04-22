@@ -1,15 +1,16 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
-/**
- `LUTicketRequestFactory` is used to build requests related to users.
- */
 @class LUAPIRequest;
 @class LUUser;
 
+/**
+ `LUTicketRequestFactory` is used to build requests related to users.
+ */
 @interface LUUserRequestFactory : NSObject
 
 /**
- Builds a request to return the current user. This is a convenience method to call +requestForUserWithID: with the userID of the cached user object.
+ Builds a request to return the current user. This is a convenience method to call
+ `requestForUserWithID:` with the userID of the cached user object.
 
  On success, this request will return an `LUUser` instance.
  */

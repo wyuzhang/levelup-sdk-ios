@@ -18,7 +18,8 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUInterstitialFeedbackAction [address=%p, questionText=%@]", self, self.questionText];
+  return [NSString stringWithFormat:@"LUInterstitialFeedbackAction [address=%p, questionText=%@]",
+          self, self.questionText];
 }
 
 @end
