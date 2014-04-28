@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.subspec 'Core' do |core|
     core.dependency 'AFNetworking', '1.3.4'
     core.dependency 'AutoCoding', '2.0.3'
-    core.dependency 'Braintree', '2.2.7'
+    core.dependency 'BTEncryption', '2.2.8'
     core.dependency 'LUKeychainAccess', '1.2.0'
     core.dependency 'ZXingObjC', '2.2.6'
 
@@ -33,6 +33,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Testing' do |testing|
+    testing.dependency 'LevelUpSDK/Core'
     testing.dependency 'OHHTTPStubs', '1.1.2'
 
     testing.source_files = 'Testing/LevelUpSDKTesting.h', 'Testing/**/*.{h,m}'

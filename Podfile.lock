@@ -1,7 +1,7 @@
 PODS:
   - AFNetworking (1.3.4)
   - AutoCoding (2.0.3)
-  - Braintree (2.2.7)
+  - BTEncryption (2.2.8)
   - Kiwi (2.2.4):
     - Kiwi/SenTestingKit
   - Kiwi/ARC (2.2.4)
@@ -16,7 +16,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (= 1.3.4)
   - AutoCoding (= 2.0.3)
-  - Braintree (= 2.2.7)
+  - BTEncryption (= 2.2.8)
   - Kiwi (= 2.2.4)
   - LUKeychainAccess (= 1.2.0)
   - OHHTTPStubs (= 1.1.2)
@@ -25,7 +25,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: e403d4333a4e1956cb3fe42364c3c879f820c9a0
   AutoCoding: 1333ca8d012caec43045a896c2761fd93fb47990
-  Braintree: a7b8b6cdefe1a98c4a33b9b4185b0669d6bdb0bc
+  BTEncryption: f7850cce4caa9455575137ef066e8e53528a2258
   Kiwi: d60d7498b640a16f58b01925fc3c8d7c4d809f66
   LUKeychainAccess: 87c5398528278a5f24956b61bb459ea97bd93b6a
   OHHTTPStubs: a651e8ec77534bcdc7fa897b9e667905e46b4fdb
