@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'LevelUpSDK'
-  s.version      = '1.3.1'
+  s.version      = '1.3.2'
   s.summary      = 'An SDK for the LevelUp payment platform.'
   s.homepage     = 'http://www.thelevelup.com'
   s.license      = {
@@ -33,7 +33,6 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Testing' do |testing|
-    testing.dependency 'LevelUpSDK/Core'
     testing.dependency 'OHHTTPStubs', '1.1.2'
 
     testing.source_files = 'Testing/LevelUpSDKTesting.h', 'Testing/**/*.{h,m}'
