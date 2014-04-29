@@ -21,7 +21,7 @@ describe(@"LUAPIConnection", ^{
 
       apiConnection.failureCallbackQueue = queue;
 
-      [[theValue(httpRequestOperation.failureCallbackQueue) should] equal:theValue(apiConnection.failureCallbackQueue)];
+      [[theValue(httpRequestOperation.completionQueue) should] equal:theValue(apiConnection.failureCallbackQueue)];
     });
   });
 
@@ -31,7 +31,7 @@ describe(@"LUAPIConnection", ^{
 
       apiConnection.successCallbackQueue = queue;
 
-      [[theValue(httpRequestOperation.successCallbackQueue) should] equal:theValue(apiConnection.successCallbackQueue)];
+      [[theValue(httpRequestOperation.completionQueue) should] equal:theValue(apiConnection.successCallbackQueue)];
     });
   });
 });

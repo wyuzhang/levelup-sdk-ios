@@ -1,6 +1,6 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
-#import "AFHTTPClient.h"
+#import "AFNetworking.h"
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
 #import "NSRegularExpression+LUAdditions.h"
@@ -35,8 +35,9 @@ NSString * const LUPatternLeadingSlashOptionalVersion = @"^/(v\\d+/)?";
 }
 
 + (NSURL *)lu_URLWithScheme:(NSString *)scheme host:(NSString *)host path:(NSString *)path queryParameters:(NSDictionary *)queryParameters {
-  NSString *query = AFQueryStringFromParametersWithEncoding(queryParameters ?: @{}, NSUTF8StringEncoding);
-  return [NSURL URLWithString:[NSString stringWithFormat:@"%@://%@%@?%@", scheme, host, path, query]];
+  NSString *URLString = [NSString stringWithFormat:@"%@://%@%@", scheme, host, path];
+
+  return [[[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:URLString parameters:queryParameters error:nil] URL];
 }
 
 - (NSString *)lu_pathAndQueryWithoutAPIVersion {
@@ -95,13 +96,7 @@ NSString * const LUPatternLeadingSlashOptionalVersion = @"^/(v\\d+/)?";
 #pragma mark - Private Methods
 
 + (NSString *)imageQueryString {
-  NSDictionary *parameters = @{
-    @"width" : @320,
-    @"height" : @212,
-    @"density" : @((int)[UIScreen mainScreen].scale)
-  };
-
-  return AFQueryStringFromParametersWithEncoding(parameters, NSUTF8StringEncoding);
+  return [NSString stringWithFormat:@"density=%d&height=%d&width=%d", (int)[UIScreen mainScreen].scale, 212, 320];
 }
 
 + (NSURL *)imageURLForPath:(NSString *)path {

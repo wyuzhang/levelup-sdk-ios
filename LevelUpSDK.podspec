@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Core'
 
   s.subspec 'Core' do |core|
-    core.dependency 'AFNetworking', '1.3.4'
+    core.dependency 'AFNetworking', '2.2.3'
     core.dependency 'AutoCoding', '2.0.3'
     core.dependency 'BTEncryption', '2.2.8'
     core.dependency 'LUKeychainAccess', '1.2.0'

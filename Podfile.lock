@@ -1,5 +1,23 @@
 PODS:
-  - AFNetworking (1.3.4)
+  - AFNetworking (2.2.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.2.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.2.3):
+    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (2.2.3)
+  - AFNetworking/Security (2.2.3)
+  - AFNetworking/Serialization (2.2.3)
+  - AFNetworking/UIKit (2.2.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - AutoCoding (2.0.3)
   - BTEncryption (2.2.8)
   - Kiwi (2.2.4):
@@ -14,7 +32,7 @@ PODS:
   - ZXingObjC (2.2.8)
 
 DEPENDENCIES:
-  - AFNetworking (= 1.3.4)
+  - AFNetworking (= 2.2.3)
   - AutoCoding (= 2.0.3)
   - BTEncryption (= 2.2.8)
   - Kiwi (= 2.2.4)
@@ -23,7 +41,7 @@ DEPENDENCIES:
   - ZXingObjC (= 2.2.8)
 
 SPEC CHECKSUMS:
-  AFNetworking: e403d4333a4e1956cb3fe42364c3c879f820c9a0
+  AFNetworking: ae513199cca79e9d7af2708ccabe2ed075550c42
   AutoCoding: 1333ca8d012caec43045a896c2761fd93fb47990
   BTEncryption: f7850cce4caa9455575137ef066e8e53528a2258
   Kiwi: d60d7498b640a16f58b01925fc3c8d7c4d809f66

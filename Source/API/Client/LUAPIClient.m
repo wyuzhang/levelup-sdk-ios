@@ -1,6 +1,6 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
-#import "AFHTTPClient.h"
+#import "AFNetworkActivityIndicatorManager.h"
 #import "AFNetworking.h"
 #import "LUAbstractJSONModelFactory.h"
 #import "LUAPIClient.h"
@@ -12,9 +12,9 @@
 
 @interface LUAPIClient ()
 
-@property (strong) AFHTTPClient *httpClient;
 @property (copy, readwrite) NSString *apiKey;
 @property (assign, readwrite) BOOL developmentMode;
+@property (strong) AFHTTPRequestOperationManager *httpOperationManager;
 
 @end
 
@@ -57,11 +57,15 @@ __strong static LUAPIClient *_sharedClient = nil;
     _baseURL = [NSURL URLWithString:LevelUpAPIBaseURLProduction];
   }
 
-  _httpClient = [[AFHTTPClient alloc] initWithBaseURL:_baseURL];
-  [_httpClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
-  [_httpClient setDefaultHeader:@"Accept" value:@"application/json"];
-  [_httpClient setDefaultHeader:@"User-Agent" value:[self userAgent]];
-  [_httpClient setParameterEncoding:AFJSONParameterEncoding];
+  AFJSONRequestSerializer *requestSerializer = [AFJSONRequestSerializer serializer];
+  [requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+  NSString *defaultUserAgent = requestSerializer.HTTPRequestHeaders[@"User-Agent"];
+  [requestSerializer setValue:[defaultUserAgent stringByAppendingFormat:@" LevelUpSDK/%@", LevelUpSDKVersion]
+           forHTTPHeaderField:@"User-Agent"];
+
+  _httpOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:_baseURL];
+  _httpOperationManager.requestSerializer = requestSerializer;
+  _httpOperationManager.responseSerializer = [AFJSONResponseSerializer serializer];
 
   return self;
 }
@@ -77,32 +81,30 @@ __strong static LUAPIClient *_sharedClient = nil;
 }
 
 - (BOOL)isNetworkUnreachable {
-  return self.httpClient.networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable;
+  return self.httpOperationManager.reachabilityManager.networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable;
 }
 
 - (LUAPIConnection *)performRequest:(LUAPIRequest *)apiRequest
                             success:(LUAPISuccessBlock)success
                             failure:(LUAPIFailureBlock)failure {
-  AFJSONRequestOperation *requestOperation =
-    [AFJSONRequestOperation JSONRequestOperationWithRequest:apiRequest.URLRequest
-                                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                                                      if (success) {
-                                                        LUAPIResponse *apiResponse = [[LUAPIResponse alloc] initWithHTTPURLResponse:response];
+  AFHTTPRequestOperation *requestOperation =
+    [self.httpOperationManager HTTPRequestOperationWithRequest:apiRequest.URLRequest
+                                                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                         if (success) {
+                                                           LUAPIResponse *apiResponse = [[LUAPIResponse alloc] initWithHTTPURLResponse:operation.response];
 
-                                                        if (apiRequest.modelFactory) {
-                                                          success([apiRequest.modelFactory fromJSONObject:JSON], apiResponse);
-                                                        } else {
-                                                          success(JSON, apiResponse);
-                                                        }
-                                                      }
-                                                    }
-                                                    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                                                      if (failure) {
-                                                        failure([LUAPIErrorBuilder error:error withMessagesFromJSON:JSON]);
-                                                      }
-                                                    }];
-
-  [self.httpClient enqueueHTTPRequestOperation:requestOperation];
+                                                           if (apiRequest.modelFactory) {
+                                                             success([apiRequest.modelFactory fromJSONObject:responseObject], apiResponse);
+                                                           } else {
+                                                             success(responseObject, apiResponse);
+                                                           }
+                                                         }
+                                                       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                         if (failure) {
+                                                           failure([LUAPIErrorBuilder error:error withMessagesFromJSON:operation.responseObject]);
+                                                         }
+                                                       }];
+  [self.httpOperationManager.operationQueue addOperation:requestOperation];
 
   return [[LUAPIConnection alloc] initWithAFHTTPRequestOperation:requestOperation];
 }
@@ -110,13 +112,12 @@ __strong static LUAPIClient *_sharedClient = nil;
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method
                                       path:(NSString *)path
                                 parameters:(NSDictionary *)parameters {
-  return [self.httpClient requestWithMethod:method path:path parameters:parameters];
+  NSString *URLString = [[NSURL URLWithString:path relativeToURL:self.httpOperationManager.baseURL] absoluteString];
+  return [self.httpOperationManager.requestSerializer requestWithMethod:method URLString:URLString parameters:parameters error:nil];
 }
 
-#pragma mark - Private Methods
-
 - (NSString *)userAgent {
-  return [[self.httpClient defaultValueForHeader:@"User-Agent"] stringByAppendingFormat:@" LevelUpSDK/%@", LevelUpSDKVersion];
+  return self.httpOperationManager.requestSerializer.HTTPRequestHeaders[@"User-Agent"];
 }
 
 @end

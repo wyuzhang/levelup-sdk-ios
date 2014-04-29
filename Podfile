@@ -1,6 +1,6 @@
 platform :ios, '6.0'
 
-pod 'AFNetworking', '1.3.4'
+pod 'AFNetworking', '2.2.3'
 pod 'AutoCoding', '2.0.3'
 pod 'BTEncryption', '2.2.8'
 pod 'LUKeychainAccess', '1.2.0'

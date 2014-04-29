@@ -1,14 +1,19 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
+#import "AFNetworkActivityIndicatorManager.h"
 #import "LUAbstractJSONModelFactory.h"
 #import "LUAPIClient.h"
-#import "LUAPIRequest.h"
+#import "LUAPIConnection.h"
 #import "LUAPIErrorBuilder.h"
+#import "LUAPIRequest.h"
+#import "LUAPIResponse.h"
+#import "LUAPIStub.h"
+#import "LUAPIStubbing.h"
 #import "LUConstants.h"
 
-@interface LUAPIClient (HTTPClient)
+@interface LUAPIClient (HTTPOperationManager)
 
-- (AFHTTPClient *)httpClient;
+- (AFHTTPRequestOperationManager *)httpOperationManager;
 
 @end
 
@@ -91,15 +96,11 @@ describe(@"LUAPIClient", ^{
       });
 
       it(@"registers for JSON requests", ^{
-        [[[[[LUAPIClient sharedClient] httpClient] valueForKey:@"registeredHTTPOperationClassNames"] should] contain:NSStringFromClass([AFJSONRequestOperation class])];
+        [[[[LUAPIClient sharedClient] httpOperationManager].requestSerializer should] beKindOfClass:[AFJSONRequestSerializer class]];
       });
 
       it(@"sets the default Accept header to 'application/json'", ^{
-        [[[[[LUAPIClient sharedClient] httpClient] valueForKey:@"defaultHeaders"][@"Accept"] should] equal:@"application/json"];
-      });
-
-      it(@"encodes parameters as JSON", ^{
-        [[theValue([[LUAPIClient sharedClient] httpClient].parameterEncoding) should] equal:theValue(AFJSONParameterEncoding)];
+        [[[[[LUAPIClient sharedClient] httpOperationManager].requestSerializer.HTTPRequestHeaders valueForKey:@"Accept"] should] equal:@"application/json"];
       });
     });
 
@@ -137,18 +138,18 @@ describe(@"LUAPIClient", ^{
       apiRequest = [LUAPIRequest apiRequestWithMethod:@"GET" path:@"test" apiVersion:LUAPIVersion14 parameters:nil modelFactory:nil];
     });
 
-    it(@"creates an AFJSONRequestOperation operation for the request", ^{
-      [AFJSONRequestOperation stub:@selector(JSONRequestOperationWithRequest:success:failure:)];
-      [[[AFJSONRequestOperation should] receive] JSONRequestOperationWithRequest:[apiRequest URLRequest]
-                                                                         success:any()
-                                                                         failure:any()];
+    it(@"creates an AFHTTPRequestOperation operation for the request", ^{
+      [[client httpOperationManager] stub:@selector(HTTPRequestOperationWithRequest:success:failure:)];
+      [[[[client httpOperationManager] should] receive] HTTPRequestOperationWithRequest:[apiRequest URLRequest]
+                                                                                success:any()
+                                                                                failure:any()];
       [client performRequest:apiRequest success:nil failure:nil];
     });
 
     it(@"enqueues a new request operation for the request and returns an LUAPIConnection", ^{
       LUAPIConnection *connection = [client performRequest:apiRequest success:nil failure:nil];
 
-      [[[[client httpClient].operationQueue operations] should] contain:connection.operation];
+      [[[[client httpOperationManager].operationQueue operations] should] contain:connection.operation];
     });
 
     context(@"when the request succeeds", ^{

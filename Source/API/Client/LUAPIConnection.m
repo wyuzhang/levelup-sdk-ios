@@ -25,19 +25,19 @@
 }
 
 - (dispatch_queue_t)failureCallbackQueue {
-  return self.httpRequestOperation.failureCallbackQueue;
+  return self.httpRequestOperation.completionQueue;
 }
 
 - (dispatch_queue_t)successCallbackQueue {
-  return self.httpRequestOperation.successCallbackQueue;
+  return self.httpRequestOperation.completionQueue;
 }
 
 - (void)setFailureCallbackQueue:(dispatch_queue_t)failureCallbackQueue {
-  self.httpRequestOperation.failureCallbackQueue = failureCallbackQueue;
+  self.httpRequestOperation.completionQueue = failureCallbackQueue;
 }
 
 - (void)setSuccessCallbackQueue:(dispatch_queue_t)successCallbackQueue {
-  self.httpRequestOperation.successCallbackQueue = successCallbackQueue;
+  self.httpRequestOperation.completionQueue = successCallbackQueue;
 }
 
 @end
