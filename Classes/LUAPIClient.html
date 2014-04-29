@@ -168,45 +168,38 @@
 
 <h2>Setup</h2>
 
-<p>Before using <code>LUAPIClient</code>, it must be set up with a valid API key. This is done with <a href="#//api/name/setupWithAppID:APIKey:"><code>setupWithAppID:APIKey:</code></a>.</p>
+<p>Before using <code>LUAPIClient</code>, it must be set up with a valid API key. This is done with
+<a href="#//api/name/setupWithAppID:APIKey:"><code>setupWithAppID:APIKey:</code></a>.</p>
 
 <h2>Issuing Requests</h2>
 
-<p>The method <a href="#//api/name/performRequest:success:failure:"><code>performRequest:success:failure:</code></a> is used to issue requests to the LevelUp&rsquo;s REST API. It uses
-<a href="https://github.com/AFNetworking/AFNetworking">AFNetworking</a> to perform these requests in the background, and then
-handle responses. If the request is successful, the <code>success</code> block is called, passing in the result of the API call.
-If an error occurs, the <code>failure</code> block is called with an appropriate <code>NSError</code>.</p>
+<p>The method <a href="#//api/name/performRequest:success:failure:"><code>performRequest:success:failure:</code></a> is used to issue requests to the LevelUp&rsquo;s REST API.
+It performs these requests in the background, and then handles the responses. If the request is
+successful, the <code>success</code> block is called, passing in the result of the API call. If an error
+occurs, the <code>failure</code> block is called with an appropriate <code>NSError</code>.</p>
 
-<p>A API request is an instance of <a href="../Classes/LUAPIRequest.html"><code>LUAPIRequest</code></a> which has been generated using a request builder class. See the
-documentation for the request builder for information on specific API calls.</p>
+<p>A API request is an instance of <a href="../Classes/LUAPIRequest.html"><code>LUAPIRequest</code></a> which has been generated using a request builder
+class. See the documentation for the request builder for information on specific API calls.</p>
 
 <h2>Authentication</h2>
 
-<p>When a user logs in, an access token is provided along with the user&rsquo;s ID. <code>LUAPIClient</code> needs to be given these values
-so that they can be included in API calls which require an authenticated user.</p>
+<p>When a user logs in, an access token is provided along with the user&rsquo;s ID. <code>LUAPIClient</code> needs to
+be given these values so that they can be included in API calls which require an authenticated
+user.</p>
 
-<p>The application is responsible for securely storing these values so that when the application launches, users will
-remain logged in. As part of launching your application, you may set these values using the <a href="#//api/name/accessToken"><code>accessToken</code></a> and
-<a href="#//api/name/currentUserID"><code>currentUserID</code></a> properties.</p>
+<p>The application is responsible for securely storing these values so that when the application
+launches, users will remain logged in. As part of launching your application, you may set these
+values using the <a href="#//api/name/accessToken"><code>accessToken</code></a> and <a href="#//api/name/currentUserID"><code>currentUserID</code></a> properties.</p>
 
 <h2>Errors</h2>
 
-<p>When an API call fails, the <code>failure</code> block passed to <a href="#//api/name/performRequest:success:failure:"><code>performRequest:success:failure:</code></a> will be called with an <code>NSError</code>
-object containing additional information about the error. This error will have the domain <code>LUAPIErrorDomain</code>.</p>
+<p>When an API call fails, the <code>failure</code> block passed to <a href="#//api/name/performRequest:success:failure:"><code>performRequest:success:failure:</code></a> will be
+called with an <code>NSError</code> object containing additional information about the error. This error will
+have the domain <code>LUAPIErrorDomain</code>.</p>
 
 <h3>Codes</h3>
 
-<p>The error may have one of the following codes:</p>
-
-<ul>
-<li><code>LUAPIErrorLoginRequired</code>: The client must be logged in to complete the request.</li>
-<li><code>LUAPIErrorMaintenance</code>: The server is currently down for maintenance.</li>
-<li><code>LUAPIErrorNetwork</code>: Was unable to get to the server because the network is down.</li>
-<li><code>LUAPIErrorParsing</code>: The server responded with JSON that couldn&rsquo;t be parsed.</li>
-<li><code>LUAPIErrorServer</code>: The server responded with an error.</li>
-<li><code>LUAPIErrorUpgrade</code>: The SDK needs to be upgraded.</li>
-</ul>
-
+<p>See <a href="../Constants/LUAPIErrorCode.html"><code>LUAPIErrorCode</code></a> in LUConstants.h for a list of possible error codes.</p>
 
 <h3>User Info</h3>
 
@@ -214,10 +207,12 @@ object containing additional information about the error. This error will have t
 
 <ul>
 <li><code>LUAPIErrorKeyAPIErrors</code>: An optional array of <a href="../Classes/LUAPIError.html"><code>LUAPIError</code></a> objects returned by the server.</li>
-<li><code>LUAPIErrorKeyErrorMessage</code>: An optional error message from the server. If multiple errors were returned, this will
-only contain the first message. <code>LUAPIErrorKeyAPIErrors</code> can be used to see all errors.</li>
+<li><code>LUAPIErrorKeyErrorMessage</code>: An optional error message from the server. If multiple errors were
+returned, this will only contain the first message. <code>LUAPIErrorKeyAPIErrors</code> can be used to see all
+errors.</li>
 <li><code>LUAPIErrorKeyJSONResponse</code>: An optional JSON response from the server.</li>
-<li><code>LUAPIErrorKeyOriginalError</code>: If this error was generated from another <code>NSError</code>, it is included under this key.</li>
+<li><code>LUAPIErrorKeyOriginalError</code>: If this error was generated from another <code>NSError</code>, it is included
+under this key.</li>
 <li><code>LUAPIErrorKeyURLResponse</code>: An <code>NSURLResponse</code> containing the response.</li>
 </ul>
 
@@ -607,8 +602,8 @@ only contain the first message. <code>LUAPIErrorKeyAPIErrors</code> can be used 
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Sets up the LevelUp SDK with the option of turning on development mode (internal use only).</p>
 
-<p>Using <a href="#//api/name/setupWithAppID:APIKey:"><code>setupWithAppID:APIKey:</code></a> is preferred, as development mode uses the LevelUp staging server which may
-not be up to date with all API keys, as well as periodic downtime or possible bugs.</p>
+<p>Using <a href="#//api/name/setupWithAppID:APIKey:"><code>setupWithAppID:APIKey:</code></a> is preferred, as development mode uses the LevelUp staging server
+which may not be up to date with all API keys, as well as periodic downtime or possible bugs.</p>
 	</div>
 	
 	
@@ -664,7 +659,8 @@ not be up to date with all API keys, as well as periodic downtime or possible bu
 		
 		<dl class="argument-def exception-def">
 			<dt><em>NSInternalInconsistencyException</em></dt>
-			<dd><p>If this method is called before <a href="#//api/name/setupWithAppID:APIKey:"><code>setupWithAppID:APIKey:</code></a>.</p></dd>
+			<dd><p>If this method is called before
+<a href="#//api/name/setupWithAppID:APIKey:"><code>setupWithAppID:APIKey:</code></a>.</p></dd>
 		</dl>
 		
 	</div>
@@ -710,19 +706,21 @@ not be up to date with all API keys, as well as periodic downtime or possible bu
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>apiRequest</em></dt>
-			<dd><p>The API request to perform. Request builders can be used to generate these objects.</p></dd>
+			<dd><p>The API request to perform. Request builders can be used to generate these
+objects.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>success</em></dt>
-			<dd><p>A block to be called upon successful completion of the API request. This block takes a single argument,
-which is the result of the API call. The type of the object depends on the specific API request.</p></dd>
+			<dd><p>A block to be called upon successful completion of the API request. This block takes
+a single argument, which is the result of the API call. The type of the object depends on the
+specific API request.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>failure</em></dt>
-			<dd><p>A block to be called if the API call fails. This block takes a single argument, which is an <code>NSError</code>
-containing additional information about the error.</p></dd>
+			<dd><p>A block to be called if the API call fails. This block takes a single argument,
+which is an <code>NSError</code> containing additional information about the error.</p></dd>
 		</dl>
 		
 	</div>
@@ -764,7 +762,8 @@ containing additional information about the error.</p></dd>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the <code>User-Agent</code> string containing the app name and version, device name and version and LevelUpSDK version.</p>
+		<p>Returns the <code>User-Agent</code> string containing the app name and version, device name and version and
+LevelUpSDK version.</p>
 	</div>		
 	
     
@@ -786,7 +785,8 @@ containing additional information about the error.</p></dd>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns the <code>User-Agent</code> string containing the app name and version, device name and version and LevelUpSDK version.</p>
+		<p>Returns the <code>User-Agent</code> string containing the app name and version, device name and version and
+LevelUpSDK version.</p>
 	</div>
 	
 	
@@ -818,7 +818,7 @@ containing additional information about the error.</p></dd>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 LevelUp. All rights reserved. (Last updated: 2014-04-22)</span><br />
+						<p><span class="copyright">&copy; 2014 LevelUp. All rights reserved. (Last updated: 2014-04-29)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
