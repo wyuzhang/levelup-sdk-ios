@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
   s.author       = { 'Costa Walcott' => 'costa@thelevelup.com' }
   s.source       = { :git => 'git@github.com:TheLevelUp/levelup-sdk-ios.git', :tag => "#{s.version}" }
-  s.platform     = :ios, '5.0'
+  s.platform     = :ios, '6.0'
   s.frameworks   = 'AVFoundation', 'CoreData', 'CoreGraphics', 'CoreLocation', 'CoreMedia', 'CoreVideo', 'ImageIO', 'MobileCoreServices', 'QuartzCore', 'Security', 'SystemConfiguration'
   s.requires_arc = true
   s.prefix_header_file = 'Source/Resources/LevelUpSDK-Prefix.pch'

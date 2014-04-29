@@ -17,7 +17,7 @@ NSString * const LUNextPageURLKey = @"LULocationCacheUpdaterNextPageURLKey";
 @property (nonatomic, weak) id<LULocationCacheUpdaterDelegate> delegate;
 @property (nonatomic, assign) BOOL isUpdating;
 @property (nonatomic, assign) BOOL locationsChanged;
-@property (nonatomic, assign) dispatch_queue_t locationUpdaterQueue;
+@property (nonatomic, strong) dispatch_queue_t locationUpdaterQueue;
 
 @end
 
@@ -33,10 +33,6 @@ NSString * const LUNextPageURLKey = @"LULocationCacheUpdaterNextPageURLKey";
   _locationUpdaterQueue = dispatch_queue_create("LULocationUpdaterQueue", DISPATCH_QUEUE_SERIAL);
 
   return self;
-}
-
-- (void)dealloc {
-  dispatch_release(_locationUpdaterQueue);
 }
 
 #pragma mark - Public Methods

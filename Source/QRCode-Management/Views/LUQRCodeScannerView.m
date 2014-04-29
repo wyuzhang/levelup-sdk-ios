@@ -98,7 +98,6 @@ static NSInteger const kFramesPerCapture = 2;
     videoOutput.alwaysDiscardsLateVideoFrames = YES;
     dispatch_queue_t queue = dispatch_queue_create("cameraQueue", NULL);
     [videoOutput setSampleBufferDelegate:self queue:queue];
-    dispatch_release(queue);
 
     // Specify the pixel format
     videoOutput.videoSettings = @{(id)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_32BGRA)};
