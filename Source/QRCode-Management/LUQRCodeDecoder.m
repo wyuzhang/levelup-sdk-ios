@@ -1,6 +1,6 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
-#import <ZXingObjC/ZXingObjC.h>
+#import <ZXingObjC/ZXingObjCQRCode.h>
 #import "LUQRCodeDecoder.h"
 
 static NSInteger const kMaxConcurrentCaptureOperations = 2;

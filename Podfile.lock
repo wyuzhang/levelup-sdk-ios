@@ -29,7 +29,9 @@ PODS:
     - Kiwi/NonARC
   - LUKeychainAccess (1.2.0)
   - OHHTTPStubs (1.1.2)
-  - ZXingObjC (2.2.8)
+  - ZXingObjC/Core (3.0.0)
+  - ZXingObjC/QRCode (3.0.0):
+    - ZXingObjC/Core
 
 DEPENDENCIES:
   - AFNetworking (= 2.2.3)
@@ -38,7 +40,7 @@ DEPENDENCIES:
   - Kiwi (= 2.2.4)
   - LUKeychainAccess (= 1.2.0)
   - OHHTTPStubs (= 1.1.2)
-  - ZXingObjC (= 2.2.8)
+  - ZXingObjC/QRCode (= 3.0.0)
 
 SPEC CHECKSUMS:
   AFNetworking: ae513199cca79e9d7af2708ccabe2ed075550c42
@@ -47,6 +49,6 @@ SPEC CHECKSUMS:
   Kiwi: d60d7498b640a16f58b01925fc3c8d7c4d809f66
   LUKeychainAccess: 87c5398528278a5f24956b61bb459ea97bd93b6a
   OHHTTPStubs: a651e8ec77534bcdc7fa897b9e667905e46b4fdb
-  ZXingObjC: 40419925a94b120a17c76ae91e31cf21673d52c6
+  ZXingObjC: 2b0e32eabbd503f010c22a7f1b6c850f02e11f7f
 
 COCOAPODS: 0.32.1

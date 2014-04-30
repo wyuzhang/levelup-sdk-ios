@@ -4,7 +4,7 @@ pod 'AFNetworking', '2.2.3'
 pod 'AutoCoding', '2.0.3'
 pod 'BTEncryption', '2.2.8'
 pod 'LUKeychainAccess', '1.2.0'
-pod 'ZXingObjC', '2.2.8'
+pod 'ZXingObjC/QRCode', '3.0.0'
 
 target :test, :exclusive => true do
   link_with 'Tests'
