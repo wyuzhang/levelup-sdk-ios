@@ -1,7 +1,7 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
 #import "LUGenericQRCodeGenerator.h"
-#import <ZXingObjC/ZXingObjC.h>
+#import <ZXingObjC/ZXingObjCQRCode.h>
 
 SPEC_BEGIN(LUGenericQRCodeGeneratorSpec)
 

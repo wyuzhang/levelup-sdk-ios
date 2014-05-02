@@ -6,7 +6,7 @@
 
 #ifdef __OBJC__
   #import "Kiwi.h"
-  #import <ZXingObjC/ZXingObjC.h>
+  #import <ZXingObjC/ZXingObjCQRCode.h>
 
   #import "LevelUpSDK.h"
   #import "LevelUpSDKTesting.h"
