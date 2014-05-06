@@ -46,6 +46,7 @@
 		022B288C166E563400679E06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B026B166853EA006ACA24 /* UIKit.framework */; };
 		0230512118F714A4008AE1A6 /* LUInterstitialRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0230512018F714A4008AE1A6 /* LUInterstitialRequestFactorySpec.m */; };
 		025B6DDE176A713C00713242 /* payment_token.json in Resources */ = {isa = PBXBuildFile; fileRef = 025B6DDD176A70D500713242 /* payment_token.json */; };
+		026064ED19192B1E00F93FDF /* LUAPIIntegrationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 026064EC19192B1E00F93FDF /* LUAPIIntegrationSpec.m */; };
 		02643917185BB6D300175425 /* LULocationCreditJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 02643915185BB6D300175425 /* LULocationCreditJSONFactory.h */; };
 		02643918185BB6D300175425 /* LULocationCreditJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02643916185BB6D300175425 /* LULocationCreditJSONFactory.m */; };
 		0264391B185BB6F000175425 /* LULocationCreditRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 02643919185BB6F000175425 /* LULocationCreditRequestFactory.h */; };
@@ -404,6 +405,7 @@
 		0230512018F714A4008AE1A6 /* LUInterstitialRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialRequestFactorySpec.m; sourceTree = "<group>"; };
 		023C960B188ED27E00113AF2 /* LUAPIObjectModel (with name).xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "LUAPIObjectModel (with name).xcdatamodel"; sourceTree = "<group>"; };
 		025B6DDD176A70D500713242 /* payment_token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = payment_token.json; sourceTree = "<group>"; };
+		026064EC19192B1E00F93FDF /* LUAPIIntegrationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIIntegrationSpec.m; sourceTree = "<group>"; };
 		02643915185BB6D300175425 /* LULocationCreditJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationCreditJSONFactory.h; sourceTree = "<group>"; };
 		02643916185BB6D300175425 /* LULocationCreditJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationCreditJSONFactory.m; sourceTree = "<group>"; };
 		02643919185BB6F000175425 /* LULocationCreditRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationCreditRequestFactory.h; sourceTree = "<group>"; };
@@ -812,6 +814,14 @@
 			path = Fixtures;
 			sourceTree = "<group>";
 		};
+		026064EB19192B1000F93FDF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				026064EC19192B1E00F93FDF /* LUAPIIntegrationSpec.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		029053B817BD4AAB00527576 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
@@ -869,6 +879,7 @@
 		02D47C7318F4929C007CF0BC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				026064EB19192B1000F93FDF /* API */,
 				25FF1CDE18FAE5CF007EDCEA /* Deep Link Auth */,
 			);
 			path = Tests;
@@ -2019,6 +2030,7 @@
 				25D43F72176A1DC80051ED2F /* LUPaymentTokenSpec.m in Sources */,
 				25D43F74176A1DE80051ED2F /* LUPaymentTokenJSONFactorySpec.m in Sources */,
 				022A6DD5187C61D500EE7C4B /* LUAccessToken+Fixtures.m in Sources */,
+				026064ED19192B1E00F93FDF /* LUAPIIntegrationSpec.m in Sources */,
 				25D43F79176A1FD40051ED2F /* LUPaymentTokenRequestFactorySpec.m in Sources */,
 				0274B8441773A21600FD5B43 /* LUAPIErrorJSONFactorySpec.m in Sources */,
 				0274B84D1773A4D200FD5B43 /* LUAPIErrorSpec.m in Sources */,
