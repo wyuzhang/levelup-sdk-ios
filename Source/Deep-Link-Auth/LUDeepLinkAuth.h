@@ -53,4 +53,9 @@
  */
 + (BOOL)handleOpenURL:(NSURL *)URL sourceApplication:(NSString *)sourceApplication;
 
+/**
+ Check if the Deep Link Auth app (LevelUp by default) is installed on the device.
+ */
++ (BOOL)isDeepLinkAuthAppInstalled;
+
 @end

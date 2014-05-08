@@ -24,6 +24,9 @@
 		020231711779E0B100B057D1 /* LUAPIConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0202316F1779E0B100B057D1 /* LUAPIConnection.h */; };
 		020231721779E0B100B057D1 /* LUAPIConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 020231701779E0B100B057D1 /* LUAPIConnection.m */; };
 		020231751779E2CD00B057D1 /* LUAPIConnectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 020231731779E2B900B057D1 /* LUAPIConnectionSpec.m */; };
+		020BAB6E191BDBDC00198CDF /* LUDeepLinkAuthInstallAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 020BAB6C191BDBDC00198CDF /* LUDeepLinkAuthInstallAlert.h */; };
+		020BAB6F191BDBDC00198CDF /* LUDeepLinkAuthInstallAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 020BAB6D191BDBDC00198CDF /* LUDeepLinkAuthInstallAlert.m */; };
+		020BAB71191BF5C200198CDF /* LUDeepLinkAuthInstallAlertSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 020BAB70191BF5C200198CDF /* LUDeepLinkAuthInstallAlertSpec.m */; };
 		02130DA818E9DA4400A419EB /* NSData+LUAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 02130DA618E9DA4400A419EB /* NSData+LUAdditions.h */; };
 		02130DA918E9DA4400A419EB /* NSData+LUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02130DA718E9DA4400A419EB /* NSData+LUAdditions.m */; };
 		02130DAB18E9DA5000A419EB /* NSDataLUAdditionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02130DAA18E9DA5000A419EB /* NSDataLUAdditionsSpec.m */; };
@@ -370,6 +373,9 @@
 		0202316F1779E0B100B057D1 /* LUAPIConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIConnection.h; sourceTree = "<group>"; };
 		020231701779E0B100B057D1 /* LUAPIConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIConnection.m; sourceTree = "<group>"; };
 		020231731779E2B900B057D1 /* LUAPIConnectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIConnectionSpec.m; sourceTree = "<group>"; };
+		020BAB6C191BDBDC00198CDF /* LUDeepLinkAuthInstallAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUDeepLinkAuthInstallAlert.h; sourceTree = "<group>"; };
+		020BAB6D191BDBDC00198CDF /* LUDeepLinkAuthInstallAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDeepLinkAuthInstallAlert.m; sourceTree = "<group>"; };
+		020BAB70191BF5C200198CDF /* LUDeepLinkAuthInstallAlertSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDeepLinkAuthInstallAlertSpec.m; sourceTree = "<group>"; };
 		02130DA618E9DA4400A419EB /* NSData+LUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+LUAdditions.h"; sourceTree = "<group>"; };
 		02130DA718E9DA4400A419EB /* NSData+LUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+LUAdditions.m"; sourceTree = "<group>"; };
 		02130DAA18E9DA5000A419EB /* NSDataLUAdditionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataLUAdditionsSpec.m; sourceTree = "<group>"; };
@@ -1042,6 +1048,8 @@
 			children = (
 				25FF1CC518FAE48D007EDCEA /* LUDeepLinkAuth.h */,
 				25FF1CC618FAE48D007EDCEA /* LUDeepLinkAuth.m */,
+				020BAB6C191BDBDC00198CDF /* LUDeepLinkAuthInstallAlert.h */,
+				020BAB6D191BDBDC00198CDF /* LUDeepLinkAuthInstallAlert.m */,
 				25FF1CC718FAE48D007EDCEA /* LUDeepLinkAuthRequest.h */,
 				25FF1CC818FAE48D007EDCEA /* LUDeepLinkAuthRequest.m */,
 				25FF1CC918FAE48D007EDCEA /* LUDeepLinkAuthResponse.h */,
@@ -1056,6 +1064,7 @@
 		25FF1CD518FAE54D007EDCEA /* Deep Link Auth */ = {
 			isa = PBXGroup;
 			children = (
+				020BAB70191BF5C200198CDF /* LUDeepLinkAuthInstallAlertSpec.m */,
 				25FF1CD618FAE54D007EDCEA /* LUDeepLinkAuthRequestSpec.m */,
 				25FF1CD718FAE54D007EDCEA /* LUDeepLinkAuthResponseSpec.m */,
 				25FF1CD818FAE54D007EDCEA /* LUDeepLinkAuthSpec.m */,
@@ -1553,6 +1562,7 @@
 				02CC555818F2F88D00BF6776 /* NSError+LUAdditions.h in Headers */,
 				C1CAF26417315415003B3D01 /* LUAuthenticationRequestFactory.h in Headers */,
 				C1CAF26617315415003B3D01 /* LUOrderRequestFactory.h in Headers */,
+				020BAB6E191BDBDC00198CDF /* LUDeepLinkAuthInstallAlert.h in Headers */,
 				C1CAF26817315415003B3D01 /* LUTicketRequestFactory.h in Headers */,
 				25FF1CD118FAE48D007EDCEA /* LUDeepLinkAuthResponse.h in Headers */,
 				C1CAF26A17315415003B3D01 /* LUUserRequestFactory.h in Headers */,
@@ -1875,6 +1885,7 @@
 				C1CAF24117315415003B3D01 /* LUAccessToken.m in Sources */,
 				C1CAF24317315415003B3D01 /* LUOrder.m in Sources */,
 				C1CAF24717315415003B3D01 /* LUUser.m in Sources */,
+				020BAB6F191BDBDC00198CDF /* LUDeepLinkAuthInstallAlert.m in Sources */,
 				C1CAF24B17315415003B3D01 /* LUAPIRequest.m in Sources */,
 				C1CAF24F17315415003B3D01 /* LUDeviceIdentifier.m in Sources */,
 				C1CAF25117315415003B3D01 /* LUUserParameterBuilder.m in Sources */,
@@ -1953,6 +1964,7 @@
 				C1CAF10D173052A7003B3D01 /* LUAPIErrorBuilderSpec.m in Sources */,
 				022A6DDC187C61D500EE7C4B /* LUOrder+Fixtures.m in Sources */,
 				C1CAF10E173052A7003B3D01 /* LUAbstractJSONModelFactorySpec.m in Sources */,
+				020BAB71191BF5C200198CDF /* LUDeepLinkAuthInstallAlertSpec.m in Sources */,
 				C1CAF110173052A7003B3D01 /* LUCampaignJSONFactorySpec.m in Sources */,
 				C1CAF111173052A7003B3D01 /* LUCategoryJSONFactorySpec.m in Sources */,
 				C1CAF114173052A7003B3D01 /* LUClaimJSONFactorySpec.m in Sources */,

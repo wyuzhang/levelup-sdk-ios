@@ -11,6 +11,7 @@ describe(@"Deep Link Auth requests", ^{
   beforeEach(^{
     [LUAPIClient setupWithAppID:@"1" APIKey:@"api-key"];
     [UIApplication stub:@selector(sharedApplication) andReturn:[UIApplication mock]];
+    [LUDeepLinkAuth stub:@selector(isDeepLinkAuthAppInstalled) andReturn:theValue(YES)];
   });
 
   context(@"a successful request", ^{

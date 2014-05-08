@@ -2,6 +2,7 @@
 
 #import "LUAPIClient.h"
 #import "LUConstants.h"
+#import "LUDeepLinkAuth.h"
 #import "LUDeepLinkAuthRequest.h"
 #import "LUOneTimePad.h"
 #import "NSData+LUAdditions.h"
@@ -81,17 +82,12 @@ NSString * const LUDeepLinkAuthReturnURLSchemeURLParam = @"return_url_scheme";
 }
 
 - (NSError *)validateURL {
-  NSError *propertyError = [self validateProperties];
-  if (propertyError) {
-    return propertyError;
-  }
-
-  if (![[UIApplication sharedApplication] canOpenURL:[self URL]]) {
+  if (![LUDeepLinkAuth isDeepLinkAuthAppInstalled]) {
     return [NSError lu_deepLinkAuthErrorWithCode:LUDeepLinkAuthErrorAppNotInstalled
-                                     description:[NSString stringWithFormat:@"Unable to open URL with scheme %@", [[self URL] scheme]]];
+                                     description:@"Unable to open Deep Link Auth app"];
   }
 
-  return nil;
+  return [self validateProperties];
 }
 
 #pragma mark - Private Methods

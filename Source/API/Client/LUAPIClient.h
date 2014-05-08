@@ -111,21 +111,69 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
  */
 @property (copy) NSNumber *currentUserID;
 
+@property (copy, readonly) NSString *apiKey;
+@property (copy, readonly) NSString *appID;
+@property (nonatomic, strong) NSURL *baseURL;
+@property (nonatomic, copy) NSString *clientsideEncryptionKey;
+@property (assign, readonly) BOOL developmentMode;
+
+///-------------------------------
+/// @name Deep Link Auth Configuration
+///-------------------------------
+
 /**
  The bundle ID of the app to use for Deep Link Auth. Defaults to LevelUp's bundle ID.
  */
 @property (copy) NSString *deepLinkAuthBundleID;
 
 /**
+ The URL of the App Store link used to direct the user to the App Store if LevelUp isn't installed.
+ This URL can be generated at https://linkmaker.itunes.apple.com.
+
+ The default value of this property is the URL to LevelUp on the App Store.
+ */
+@property (copy) NSURL *deepLinkAuthInstallAppStoreURL;
+
+/**
+ Used to override the default message of the alert shown when a user doesn't have LevelUp installed.
+ */
+@property (copy) NSString *deepLinkAuthInstallMessage;
+
+/**
+ Used to override the title of the negative button of the alert shown when a user doesn't have
+ LevelUp installed. Tapping this button dismisses the alert.
+ */
+@property (copy) NSString *deepLinkAuthInstallNegativeButtonTitle;
+
+/**
+ Used to override the title of the positive button of the alert shown when a user doesn't have
+ LevelUp installed. Tapping this button brings the user to the App Store.
+ */
+@property (copy) NSString *deepLinkAuthInstallPositiveButtonTitle;
+
+/**
+ Used to override the title of the alert shown when a user doesn't have LevelUp installed.
+ */
+@property (copy) NSString *deepLinkAuthInstallTitle;
+
+/**
+ When a Deep Link Auth request is made and the user doesn't have the LevelUp app installed, show
+ an alert that directs the user to the App Store to download it. If set to `YES`, an alert view will
+ automatically be shown, and an error notification will not be thrown. If set to `NO`, no alert is
+ shown, and instead an error notification is sent with code `LUDeepLinkAuthErrorAppNotInstalled`.
+
+ The default value of this property is `YES`.
+ */
+@property (assign) BOOL deepLinkAuthShowInstallAlert;
+
+/**
  The URL scheme of the app to use for Deep Link Auth. Defaults to LevelUp's URL scheme.
  */
 @property (copy) NSString *deepLinkAuthURLScheme;
 
-@property (copy, readonly) NSString *apiKey;
-@property (copy, readonly) NSString *appID;
-@property (nonatomic, strong) NSURL *baseURL;
-@property (nonatomic, copy) NSString *clientsideEncryptionKey;
-@property (assign, readonly) BOOL developmentMode;
+///-------------------------------
+/// @name Network Methods
+///-------------------------------
 
 /**
  Checks if the network is unreachable.

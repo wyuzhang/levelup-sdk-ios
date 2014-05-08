@@ -40,6 +40,12 @@ __strong static LUAPIClient *_sharedClient = nil;
   _appID = appID;
   _apiKey = apiKey;
   _deepLinkAuthBundleID = @"com.scvngr.LevelUp";
+  _deepLinkAuthInstallAppStoreURL = [NSURL URLWithString:@"https://itunes.apple.com/us/app/levelup-.-pay-with-your-phone/id424121785"];
+  _deepLinkAuthInstallMessage = @"It looks like you don’t have the LevelUp app installed, but that’s an easy fix! It’s easy to set up and free.";
+  _deepLinkAuthInstallNegativeButtonTitle = @"No Thanks";
+  _deepLinkAuthInstallPositiveButtonTitle = @"Get LevelUp";
+  _deepLinkAuthInstallTitle = @"Get LevelUp";
+  _deepLinkAuthShowInstallAlert = YES;
   _deepLinkAuthURLScheme = @"thelevelup";
   _developmentMode = developmentMode;
 

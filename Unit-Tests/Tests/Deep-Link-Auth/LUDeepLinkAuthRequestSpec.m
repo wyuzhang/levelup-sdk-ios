@@ -181,50 +181,45 @@ describe(@"LUDeepLinkAuthRequest", ^{
 
   describe(@"validateURL", ^{
     beforeEach(^{
-      [UIApplication stub:@selector(sharedApplication) andReturn:[UIApplication nullMock]];
       request = [[LUDeepLinkAuthRequest alloc] initWithAppID:appID oneTimePad:oneTimePad
                                                  permissions:permissions returnURLScheme:returnURLScheme];
     });
 
-    context(@"when there is an error with the properties", ^{
-      __block NSError *error;
-
+    context(@"when the Deep Link Auth app is not installed", ^{
       beforeEach(^{
-        error  = [NSError lu_deepLinkAuthErrorWithCode:LUDeepLinkAuthErrorAppIDRequired description:@"error"];
-        [request stub:@selector(validateProperties) andReturn:error];
+        [LUDeepLinkAuth stub:@selector(isDeepLinkAuthAppInstalled) andReturn:theValue(NO)];
       });
 
-      it(@"returns the property error", ^{
-        [[[request validateURL] should] equal:error];
+      it(@"returns an LUDeepLinkAuthErrorAppNotInstalled error", ^{
+        [[theValue([[request validateURL] code]) should] equal:theValue(LUDeepLinkAuthErrorAppNotInstalled)];
       });
     });
 
-    context(@"when there is no error with the properties", ^{
+    context(@"when the Deep Link Auth app is installed", ^{
       beforeEach(^{
-        [request stub:@selector(validateProperties) andReturn:nil];
+        [LUDeepLinkAuth stub:@selector(isDeepLinkAuthAppInstalled) andReturn:theValue(YES)];
       });
 
-      context(@"and the application can open the request's URL", ^{
+      context(@"and there is an error with the properties", ^{
+        __block NSError *error;
+
         beforeEach(^{
-          [[UIApplication sharedApplication] stub:@selector(canOpenURL:)
-                                        andReturn:theValue(YES)
-                                    withArguments:[request URL]];
+          error  = [NSError lu_deepLinkAuthErrorWithCode:LUDeepLinkAuthErrorAppIDRequired description:@"error"];
+          [request stub:@selector(validateProperties) andReturn:error];
+        });
+
+        it(@"returns the property error", ^{
+          [[[request validateURL] should] equal:error];
+        });
+      });
+
+      context(@"and there is no error with the properties", ^{
+        beforeEach(^{
+          [request stub:@selector(validateProperties) andReturn:nil];
         });
 
         it(@"returns nil", ^{
           [[[request validateURL] should] beNil];
-        });
-      });
-
-      context(@"and the application can't open the request's URL", ^{
-        beforeEach(^{
-          [[UIApplication sharedApplication] stub:@selector(canOpenURL:)
-                                        andReturn:theValue(NO)
-                                    withArguments:[request URL]];
-        });
-
-        it(@"returns an LUDeepLinkAuthErrorAppNotInstalled error", ^{
-          [[theValue([[request validateURL] code]) should] equal:theValue(LUDeepLinkAuthErrorAppNotInstalled)];
         });
       });
     });

@@ -1,6 +1,7 @@
 // Copyright 2014 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
 #import "LUDeepLinkAuth.h"
+#import "LUDeepLinkAuthInstallAlert.h"
 #import "LUDeepLinkAuthRequest.h"
 #import "LUDeepLinkAuthResponse.h"
 #import "NSError+LUAdditions.h"
@@ -41,20 +42,51 @@ describe(@"LUDeepLinkAuth", ^{
 
     context(@"when the request is invalid", ^{
       beforeEach(^{
+        [LUDeepLinkAuthInstallAlert stub:@selector(showAlert)];
         [request stub:@selector(validateURL) andReturn:error];
       });
 
-      it(@"posts a LUDeepLinkAuthErrorNotification with the error", ^{
-        [[[NSNotificationCenter defaultCenter] should] receive:@selector(postNotificationName:object:userInfo:)
-                                                 withArguments:LUDeepLinkAuthErrorNotification, any(), @{LUDeepLinkAuthNotificationErrorKey: error}];
+      context(@"when an install alert should be shown", ^{
+        beforeEach(^{
+          [LUDeepLinkAuthInstallAlert stub:@selector(shouldShowForError:) andReturn:theValue(YES) withArguments:error];
+        });
 
-        [LUDeepLinkAuth authorizeWithPermissions:permissions returnURLScheme:returnURLScheme];
+        it(@"shows the install alert", ^{
+          [[LUDeepLinkAuthInstallAlert should] receive:@selector(showAlert)];
+
+          [LUDeepLinkAuth authorizeWithPermissions:permissions returnURLScheme:returnURLScheme];
+        });
+
+        it(@"doesn't post a notification", ^{
+          [[[NSNotificationCenter defaultCenter] shouldNot] receive:@selector(postNotificationName:object:userInfo:)];
+
+          [LUDeepLinkAuth authorizeWithPermissions:permissions returnURLScheme:returnURLScheme];
+        });
       });
 
-      it(@"doesn't open a URL", ^{
-        [[[UIApplication sharedApplication] shouldNot] receive:@selector(openURL:)];
+      context(@"when an install alert shouldn't be shown", ^{
+        beforeEach(^{
+          [LUDeepLinkAuthInstallAlert stub:@selector(shouldShowForError:) andReturn:theValue(NO) withArguments:error];
+        });
 
-        [LUDeepLinkAuth authorizeWithPermissions:permissions returnURLScheme:returnURLScheme];
+        it(@"doesn't show the install alert", ^{
+          [[LUDeepLinkAuthInstallAlert shouldNot] receive:@selector(showAlert)];
+
+          [LUDeepLinkAuth authorizeWithPermissions:permissions returnURLScheme:returnURLScheme];
+        });
+
+        it(@"posts a LUDeepLinkAuthErrorNotification with the error", ^{
+          [[[NSNotificationCenter defaultCenter] should] receive:@selector(postNotificationName:object:userInfo:)
+                                                   withArguments:LUDeepLinkAuthErrorNotification, any(), @{LUDeepLinkAuthNotificationErrorKey: error}];
+
+          [LUDeepLinkAuth authorizeWithPermissions:permissions returnURLScheme:returnURLScheme];
+        });
+
+        it(@"doesn't open a URL", ^{
+          [[[UIApplication sharedApplication] shouldNot] receive:@selector(openURL:)];
+
+          [LUDeepLinkAuth authorizeWithPermissions:permissions returnURLScheme:returnURLScheme];
+        });
       });
     });
 
@@ -178,6 +210,20 @@ describe(@"LUDeepLinkAuth", ^{
           [[theValue([LUDeepLinkAuth handleOpenURL:URL sourceApplication:sourceApplication]) should] beYes];
         });
       });
+    });
+  });
+
+  describe(@"isDeepLinkAuthAppInstalled", ^{
+    it(@"is YES if a Deep Link Auth URL can be opened", ^{
+      [[UIApplication sharedApplication] stub:@selector(canOpenURL:) andReturn:theValue(YES)];
+
+      [[theValue([LUDeepLinkAuth isDeepLinkAuthAppInstalled]) should] beYes];
+    });
+
+    it(@"is YES if a Deep Link Auth URL cannot be opened", ^{
+      [[UIApplication sharedApplication] stub:@selector(canOpenURL:) andReturn:theValue(NO)];
+
+      [[theValue([LUDeepLinkAuth isDeepLinkAuthAppInstalled]) should] beNo];
     });
   });
 });
