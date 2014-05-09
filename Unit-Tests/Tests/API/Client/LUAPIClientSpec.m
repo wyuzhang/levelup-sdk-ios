@@ -55,6 +55,8 @@ describe(@"LUAPIClient", ^{
     });
   });
 
+  // Public Methods
+
   describe(@"setupWithAppID:APIKey:", ^{
     it(@"calls setupWithAppID:APIKey:developmentMode: with developmentMode set to NO", ^{
       [[[LUAPIClient should] receive] setupWithAppID:@"1" APIKey:@"api-key" developmentMode:NO];
@@ -127,91 +129,113 @@ describe(@"LUAPIClient", ^{
     });
   });
 
-  describe(@"performRequest:success:failure:", ^{
-    __block LUAPIRequest *apiRequest;
+  context(@"A setup API client", ^{
     __block LUAPIClient *client;
 
     beforeEach(^{
       [LUAPIClient setupWithAppID:@"1" APIKey:@"test" developmentMode:YES];
       client = [LUAPIClient sharedClient];
-
-      apiRequest = [LUAPIRequest apiRequestWithMethod:@"GET" path:@"test" apiVersion:LUAPIVersion14 parameters:nil modelFactory:nil];
     });
 
-    it(@"creates an AFHTTPRequestOperation operation for the request", ^{
-      [[client httpOperationManager] stub:@selector(HTTPRequestOperationWithRequest:success:failure:)];
-      [[[[client httpOperationManager] should] receive] HTTPRequestOperationWithRequest:[apiRequest URLRequest]
-                                                                                success:any()
-                                                                                failure:any()];
-      [client performRequest:apiRequest success:nil failure:nil];
-    });
+    describe(@"performRequest:success:failure:", ^{
+      __block LUAPIRequest *apiRequest;
 
-    it(@"enqueues a new request operation for the request and returns an LUAPIConnection", ^{
-      LUAPIConnection *connection = [client performRequest:apiRequest success:nil failure:nil];
-
-      [[[[client httpOperationManager].operationQueue operations] should] contain:connection.operation];
-    });
-
-    context(@"when the request succeeds", ^{
-      __block LUAPIStub *stub;
       beforeEach(^{
-        stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                       path:@"test"
-                                 HTTPMethod:@"GET"
-                              authenticated:NO
-                               responseData:[@"{\"ok\":true}" dataUsingEncoding:NSUTF8StringEncoding]];
-        [[LUAPIStubbing sharedInstance] addStub:stub];
+        apiRequest = [LUAPIRequest apiRequestWithMethod:@"GET" path:@"test" apiVersion:LUAPIVersion14 parameters:nil modelFactory:nil];
       });
 
-      it(@"creates a model object from the JSON and passes it to the success block", ^{
-        id deserializedResponse = [KWMock mock];
-        apiRequest.modelFactory = [LUAbstractJSONModelFactory mock];
-        [apiRequest.modelFactory stub:@selector(fromJSONObject:) andReturn:deserializedResponse withArguments:@{@"ok" : @YES}, nil];
-
-        __block id successResult;
-        [client performRequest:apiRequest
-                       success:^(id result, LUAPIResponse *response) {
-                         successResult = result;
-                       }
-                       failure:nil];
-
-        [[successResult shouldEventually] equal:deserializedResponse];
+      it(@"creates an AFHTTPRequestOperation operation for the request", ^{
+        [[client httpOperationManager] stub:@selector(HTTPRequestOperationWithRequest:success:failure:)];
+        [[[[client httpOperationManager] should] receive] HTTPRequestOperationWithRequest:[apiRequest URLRequest]
+                                                                                  success:any()
+                                                                                  failure:any()];
+        [client performRequest:apiRequest success:nil failure:nil];
       });
 
-      it(@"creates an LUAPIResponse and passes it to the success block", ^{
-        __block LUAPIResponse *successResponse;
-        [client performRequest:apiRequest
-                       success:^(id result, LUAPIResponse *response) {
-                         successResponse = response;
-                       }
-                       failure:nil];
+      it(@"enqueues a new request operation for the request and returns an LUAPIConnection", ^{
+        LUAPIConnection *connection = [client performRequest:apiRequest success:nil failure:nil];
 
-        [[successResponse shouldEventually] beNonNil];
-        [[successResponse.HTTPURLResponse.allHeaderFields shouldEventually] equal:stub.responseHeaders];
+        [[[[client httpOperationManager].operationQueue operations] should] contain:connection.operation];
+      });
+
+      context(@"when the request succeeds", ^{
+        __block LUAPIStub *stub;
+        beforeEach(^{
+          stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                         path:@"test"
+                                   HTTPMethod:@"GET"
+                                authenticated:NO
+                                 responseData:[@"{\"ok\":true}" dataUsingEncoding:NSUTF8StringEncoding]];
+          [[LUAPIStubbing sharedInstance] addStub:stub];
+        });
+
+        it(@"creates a model object from the JSON and passes it to the success block", ^{
+          id deserializedResponse = [KWMock mock];
+          apiRequest.modelFactory = [LUAbstractJSONModelFactory mock];
+          [apiRequest.modelFactory stub:@selector(fromJSONObject:) andReturn:deserializedResponse withArguments:@{@"ok" : @YES}, nil];
+
+          __block id successResult;
+          [client performRequest:apiRequest
+                         success:^(id result, LUAPIResponse *response) {
+                           successResult = result;
+                         }
+                         failure:nil];
+
+          [[successResult shouldEventually] equal:deserializedResponse];
+        });
+
+        it(@"creates an LUAPIResponse and passes it to the success block", ^{
+          __block LUAPIResponse *successResponse;
+          [client performRequest:apiRequest
+                         success:^(id result, LUAPIResponse *response) {
+                           successResponse = response;
+                         }
+                         failure:nil];
+
+          [[successResponse shouldEventually] beNonNil];
+          [[successResponse.HTTPURLResponse.allHeaderFields shouldEventually] equal:stub.responseHeaders];
+        });
+      });
+
+      context(@"when the request fails", ^{
+        beforeEach(^{
+          LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                                    path:@"test"
+                                              HTTPMethod:@"GET"
+                                           authenticated:NO
+                                            responseData:[@"{\"ok\":true}" dataUsingEncoding:NSUTF8StringEncoding]];
+          stub.responseCode = 500;
+          [[LUAPIStubbing sharedInstance] addStub:stub];
+        });
+
+        it(@"builds an error and passes it to the failure block", ^{
+          NSError *error = [NSError mock];
+          [LUAPIErrorBuilder stub:@selector(error:withMessagesFromJSON:) andReturn:error withArguments:any(), @{@"ok" : @NO}, nil];
+
+          __block NSError *failureError;
+          [client performRequest:apiRequest success:nil failure:^(NSError *error) {
+            failureError = error;
+          }];
+
+          [[failureError shouldEventually] equal:error];
+        });
       });
     });
 
-    context(@"when the request fails", ^{
-      beforeEach(^{
-        LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                                  path:@"test"
-                                            HTTPMethod:@"GET"
-                                         authenticated:NO
-                                          responseData:[@"{\"ok\":true}" dataUsingEncoding:NSUTF8StringEncoding]];
-        stub.responseCode = 500;
-        [[LUAPIStubbing sharedInstance] addStub:stub];
+    // Property Methods
+
+    describe(@"baseURL", ^{
+      it(@"returns the baseURL from the HTTP operation manager", ^{
+        [[client.baseURL should] equal:[LUAPIClient sharedClient].httpOperationManager.baseURL];
       });
+    });
 
-      it(@"builds an error and passes it to the failure block", ^{
-        NSError *error = [NSError mock];
-        [LUAPIErrorBuilder stub:@selector(error:withMessagesFromJSON:) andReturn:error withArguments:any(), @{@"ok" : @NO}, nil];
+    describe(@"setBaseURL:", ^{
+      it(@"sets the HTTP operation manager's baseURL", ^{
+        NSURL *URL = [NSURL URLWithString:@"http://example.com"];
+        client.baseURL = URL;
 
-        __block NSError *failureError;
-        [client performRequest:apiRequest success:nil failure:^(NSError *error) {
-          failureError = error;
-        }];
-
-        [[failureError shouldEventually] equal:error];
+        [[client.httpOperationManager.baseURL should] equal:URL];
       });
     });
   });

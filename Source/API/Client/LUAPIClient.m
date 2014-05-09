@@ -51,10 +51,11 @@ __strong static LUAPIClient *_sharedClient = nil;
 
   [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 
+  NSURL *baseURL;
   if (developmentMode) {
-    _baseURL = [NSURL URLWithString:LevelUpAPIBaseURLDevelopment];
+    baseURL = [NSURL URLWithString:LevelUpAPIBaseURLDevelopment];
   } else {
-    _baseURL = [NSURL URLWithString:LevelUpAPIBaseURLProduction];
+    baseURL = [NSURL URLWithString:LevelUpAPIBaseURLProduction];
   }
 
   AFJSONRequestSerializer *requestSerializer = [AFJSONRequestSerializer serializer];
@@ -63,7 +64,7 @@ __strong static LUAPIClient *_sharedClient = nil;
   [requestSerializer setValue:[defaultUserAgent stringByAppendingFormat:@" LevelUpSDK/%@", LevelUpSDKVersion]
            forHTTPHeaderField:@"User-Agent"];
 
-  _httpOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:_baseURL];
+  _httpOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
   _httpOperationManager.requestSerializer = requestSerializer;
   _httpOperationManager.responseSerializer = [AFJSONResponseSerializer serializer];
 
@@ -118,6 +119,16 @@ __strong static LUAPIClient *_sharedClient = nil;
 
 - (NSString *)userAgent {
   return self.httpOperationManager.requestSerializer.HTTPRequestHeaders[@"User-Agent"];
+}
+
+#pragma mark - Property Methods
+
+- (NSURL *)baseURL {
+  return self.httpOperationManager.baseURL;
+}
+
+- (void)setBaseURL:(NSURL *)baseURL {
+  [self.httpOperationManager setValue:baseURL forKeyPath:@"baseURL"];
 }
 
 @end
