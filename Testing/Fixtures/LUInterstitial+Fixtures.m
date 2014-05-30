@@ -53,12 +53,35 @@
 #pragma mark - Private Methods
 
 + (LUInterstitial *)fixtureWithAction:(id)action actionType:(LUInterstitialActionType)actionType {
+  NSString *calloutText;
+  NSString *title;
+
+  switch (actionType) {
+    case LUInterstitialActionTypeNone:
+    case LUInterstitialActionTypeClaim:
+    case LUInterstitialActionTypeURL:
+      calloutText = @"Get $1";
+      title = @"$1 at Test Merchant";
+      break;
+    case LUInterstitialActionTypeFeedback:
+      calloutText = @"Rate your experience";
+      title = @"Rate your experience";
+      break;
+    case LUInterstitialActionTypeShare:
+      calloutText = @"Give $1 to Friends";
+      title = @"$1 at Test Merchant";
+      break;
+    case LUInterstitialActionTypeUnknown:
+    default:
+      break;
+  }
+
   return [[LUInterstitial alloc] initWithAction:action
                                      actionType:actionType
-                                    calloutText:@"Get $1"
+                                    calloutText:calloutText
                                 descriptionHTML:@"<p>Grab $1.00 to spend on anything at Test Merchant. Enjoy!</p>"
                                        imageURL:[NSURL URLWithString:@"https://www.staging-levelup.com/v14/campaigns/1/image"]
-                                          title:@"$1 at Test Merchant"];
+                                          title:title];
 }
 
 @end
