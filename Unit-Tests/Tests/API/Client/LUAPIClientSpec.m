@@ -10,6 +10,7 @@
 #import "LUAPIStub.h"
 #import "LUAPIStubbing.h"
 #import "LUConstants.h"
+#import "LUKeychainAccess+StubbingAdditions.h"
 
 @interface LUAPIClient (HTTPOperationManager)
 
@@ -22,6 +23,7 @@ SPEC_BEGIN(LUAPIClientSpec)
 describe(@"LUAPIClient", ^{
   beforeEach(^{
     [[LUAPIStubbing sharedInstance] disableNetConnect];
+    [LUKeychainAccess stub:@selector(standardKeychainAccess) andReturn:[LUKeychainAccess nullMock]];
   });
 
   afterEach(^{
@@ -224,9 +226,35 @@ describe(@"LUAPIClient", ^{
 
     // Property Methods
 
+    describe(@"accessToken", ^{
+      it(@"returns the accessToken stored in the keychain", ^{
+        [[[LUKeychainAccess standardKeychainAccess] should] receive:@selector(stringForKey:)];
+
+        [client accessToken];
+      });
+    });
+
     describe(@"baseURL", ^{
       it(@"returns the baseURL from the HTTP operation manager", ^{
         [[client.baseURL should] equal:[LUAPIClient sharedClient].httpOperationManager.baseURL];
+      });
+    });
+
+    describe(@"currentUserID", ^{
+      it(@"returns the currentUserID stored in the keychain", ^{
+        [[[LUKeychainAccess standardKeychainAccess] should] receive:@selector(objectForKey:)];
+
+        [client currentUserID];
+      });
+    });
+    
+    describe(@"setAccessToken:", ^{
+      it(@"stores the accessToken in the keychain", ^{
+        NSString *accessToken = @"access-token";
+
+        [[[LUKeychainAccess standardKeychainAccess] should] receive:@selector(setString:forKey:) withArguments:accessToken, any()];
+
+        client.accessToken = accessToken;
       });
     });
 
@@ -236,6 +264,16 @@ describe(@"LUAPIClient", ^{
         client.baseURL = URL;
 
         [[client.httpOperationManager.baseURL should] equal:URL];
+      });
+    });
+
+    describe(@"setCurrentUserID:", ^{
+      it(@"stores the currentUserID in the keychain", ^{
+        NSNumber *currentUserID = @123;
+
+        [[[LUKeychainAccess standardKeychainAccess] should] receive:@selector(setObject:forKey:) withArguments:currentUserID, any()];
+
+        client.currentUserID = currentUserID;
       });
     });
   });

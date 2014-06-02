@@ -9,6 +9,10 @@
 #import "LUAPIRequest.h"
 #import "LUAPIResponse.h"
 #import "LUConstants.h"
+#import "LUKeychainAccess.h"
+
+NSString * const LUAccessTokenKey = @"LUAccessToken";
+NSString * const LUCurrentUserIDKey = @"LUCurrentUserID";
 
 @interface LUAPIClient ()
 
@@ -18,7 +22,10 @@
 
 @end
 
-@implementation LUAPIClient
+@implementation LUAPIClient {
+  NSString *_accessToken;
+  NSNumber *_currentUserID;
+}
 
 __strong static LUAPIClient *_sharedClient = nil;
 
@@ -37,8 +44,8 @@ __strong static LUAPIClient *_sharedClient = nil;
   self = [super init];
   if (!self) return nil;
 
-  _appID = appID;
   _apiKey = apiKey;
+  _appID = appID;
   _deepLinkAuthBundleID = @"com.scvngr.LevelUp";
   _deepLinkAuthInstallAppStoreURL = [NSURL URLWithString:@"https://itunes.apple.com/us/app/levelup-.-pay-with-your-phone/id424121785"];
   _deepLinkAuthInstallMessage = @"It looks like you don’t have the LevelUp app installed, but that’s an easy fix! It’s easy to set up and free.";
@@ -129,12 +136,38 @@ __strong static LUAPIClient *_sharedClient = nil;
 
 #pragma mark - Property Methods
 
+- (NSString *)accessToken {
+  if (!_accessToken) {
+    _accessToken = [[LUKeychainAccess standardKeychainAccess] stringForKey:LUAccessTokenKey];
+  }
+
+  return _accessToken;
+}
+
 - (NSURL *)baseURL {
   return self.httpOperationManager.baseURL;
 }
 
+- (NSNumber *)currentUserID {
+  if (!_currentUserID) {
+    _currentUserID = [[LUKeychainAccess standardKeychainAccess] objectForKey:LUCurrentUserIDKey];
+  }
+
+  return _currentUserID;
+}
+
+- (void)setAccessToken:(NSString *)accessToken {
+  _accessToken = accessToken;
+  [[LUKeychainAccess standardKeychainAccess] setString:accessToken forKey:LUAccessTokenKey];
+}
+
 - (void)setBaseURL:(NSURL *)baseURL {
   [self.httpOperationManager setValue:baseURL forKeyPath:@"baseURL"];
+}
+
+- (void)setCurrentUserID:(NSNumber *)currentUserID {
+  _currentUserID = currentUserID;
+  [[LUKeychainAccess standardKeychainAccess] setObject:currentUserID forKey:LUCurrentUserIDKey];
 }
 
 @end

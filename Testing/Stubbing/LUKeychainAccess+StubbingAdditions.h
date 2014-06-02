@@ -4,7 +4,8 @@
 
 @interface LUKeychainAccess (StubbingAdditions)
 
-+ (void)stubKeychainAccess;
 + (void)clearKeychainData;
++ (NSDictionary *)keychainData;
++ (void)stubKeychainAccess;
 
 @end

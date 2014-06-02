@@ -32,11 +32,8 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 
  When a user logs in, an access token is provided along with the user's ID. `LUAPIClient` needs to
  be given these values so that they can be included in API calls which require an authenticated
- user.
-
- The application is responsible for securely storing these values so that when the application
- launches, users will remain logged in. As part of launching your application, you may set these
- values using the `accessToken` and `currentUserID` properties.
+ user. Once stored, these values will be securely stored so that they will persist between
+ application launches.
 
  ## Errors
 
