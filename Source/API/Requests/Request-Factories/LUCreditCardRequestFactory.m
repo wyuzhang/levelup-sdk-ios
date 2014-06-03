@@ -34,7 +34,7 @@
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"
                                        path:@"credit_cards"
-                                 apiVersion:LUAPIVersion14
+                                 apiVersion:LUAPIVersion15
                                  parameters:@{@"credit_card" : parameters}
                                modelFactory:[LUCreditCardJSONFactory factory]];
 }
