@@ -64,11 +64,11 @@
       title = @"$1 at Test Merchant";
       break;
     case LUInterstitialActionTypeFeedback:
-      calloutText = @"Rate your experience";
-      title = @"Rate your experience";
+      calloutText = @"Give us Feedback";
+      title = @"Give us Feedback";
       break;
     case LUInterstitialActionTypeShare:
-      calloutText = @"Give $1 to Friends";
+      calloutText = @"Give Money to Friends";
       title = @"$1 at Test Merchant";
       break;
     case LUInterstitialActionTypeUnknown:
