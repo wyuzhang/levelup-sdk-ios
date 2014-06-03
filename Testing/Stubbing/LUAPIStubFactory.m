@@ -98,6 +98,20 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   return stub;
 }
 
++ (LUAPIStub *)stubToCreateUser:(LUUser *)user withPermissions:(NSArray *)permissions {
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                            path:@"apps/users"
+                                      HTTPMethod:@"POST"
+                                   authenticated:NO
+                                    responseData:[self responseDataFromFile:@"user_with_access_token"]];
+
+  NSMutableDictionary *requestBodyJSON = [[self requestBodyJSONForUser:user] mutableCopy];
+  requestBodyJSON[@"permission_keynames"] = permissions;
+  stub.requestBodyJSON = requestBodyJSON;
+
+  return stub;
+}
+
 + (LUAPIStub *)stubToCreateUserDebitOnly:(LUUser *)user {
   LUAPIStub *stub = [self stubToCreateUser];
 

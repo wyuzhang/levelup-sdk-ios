@@ -82,6 +82,43 @@ describe(@"LUUserRequestFactory", ^{
     });
   });
 
+  describe(@"requestToCreateUser:withPermissions:", ^{
+    LUUser *user = [LUUser fixture];
+    NSString *apiKey = @"api-key";
+    NSArray *permissions = @[@"create_orders", @"read_qr_code"];
+    NSDictionary *userParams = @{@"email": user.email, @"first_name": user.firstName, @"last_name": user.lastName};
+
+    beforeEach(^{
+      [LUAPIClient setupWithAppID:@"1" APIKey:apiKey];
+
+      request = [LUUserRequestFactory requestToCreateUser:user withPermissions:permissions];
+    });
+
+    it(@"returns a POST request", ^{
+      [[request.method should] equal:@"POST"];
+    });
+
+    it(@"returns a request to the path 'apps/users'", ^{
+      [[request.path should] equal:@"apps/users"];
+    });
+
+    it(@"returns a request to version 15 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion15];
+    });
+
+    it(@"returns a request with parameters including the API key", ^{
+      [[request.parameters[@"api_key"] should] equal:apiKey];
+    });
+
+    it(@"returns a request with parameters including the permissions", ^{
+      [[request.parameters[@"permission_keynames"] should] equal:permissions];
+    });
+
+    it(@"returns a request with parameters including the user", ^{
+      [[request.parameters[@"user"] should] equal:userParams];
+    });
+  });
+
   describe(@"requestToResetPasswordWithEmail:", ^{
     NSString *email = @"test@example.com";
 

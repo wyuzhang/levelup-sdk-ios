@@ -20,6 +20,7 @@
 + (LUAPIStub *)stubToCreateTicket:(NSString *)body;
 + (LUAPIStub *)stubToCreateUser;
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user;
++ (LUAPIStub *)stubToCreateUser:(LUUser *)user withPermissions:(NSArray *)permissions;
 + (LUAPIStub *)stubToCreateUserDebitOnly:(LUUser *)user;
 + (LUAPIStub *)stubToDeleteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToFailToClaimCampaignWithCode:(NSString *)code;

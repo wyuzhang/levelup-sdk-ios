@@ -8,6 +8,8 @@
 #import "LUUserJSONFactory.h"
 #import "LUUserParameterBuilder.h"
 #import "LUUserRequestFactory.h"
+#import "LUUserWithAccessTokenJSONFactory.h"
+#import "NSDictionary+SafetyAdditions.h"
 
 @implementation LUUserRequestFactory
 
@@ -41,6 +43,23 @@
                                  apiVersion:LUAPIVersion14
                                  parameters:params
                                modelFactory:[LUUserJSONFactory factory]];
+}
+
++ (LUAPIRequest *)requestToCreateUser:(LUUser *)user withPermissions:(NSArray *)permissions {
+  NSMutableDictionary *params = [NSMutableDictionary dictionary];
+  params[@"api_key"] = [LUAPIClient sharedClient].apiKey;
+  params[@"permission_keynames"] = permissions;
+
+  params[@"user"] = [NSMutableDictionary dictionary];
+  [params[@"user"] lu_setSafeValue:user.email forKey:@"email"];
+  [params[@"user"] lu_setSafeValue:user.firstName forKey:@"first_name"];
+  [params[@"user"] lu_setSafeValue:user.lastName forKey:@"last_name"];
+
+  return [LUAPIRequest apiRequestWithMethod:@"POST"
+                                       path:@"apps/users"
+                                 apiVersion:LUAPIVersion15
+                                 parameters:params
+                               modelFactory:[LUUserWithAccessTokenJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestToResetPasswordWithEmail:(NSString *)email {

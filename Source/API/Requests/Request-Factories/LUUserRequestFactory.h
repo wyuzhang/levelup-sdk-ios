@@ -30,12 +30,27 @@
 /**
  Builds a request to create a user.
 
+ Note that usually you will want to use `requestToCreateUser:withPermissions:` so that you
+ can include a list of permissions along with the user information.
+
  On success, this request will return the newly created `LUUser`.
 
  @warning Use of this request requires an Enterprise SDK license.
  @param user The `LUUser` to create.
  */
 + (LUAPIRequest *)requestToCreateUser:(LUUser *)user;
+
+/**
+ Builds a request to create a user along with an array of permissions.
+
+ On success, this request will return an `LUUserWithAccessToken` containing the newly created
+ `LUUser` and the `LUAccessToken`.
+
+ @param user The `LUUser` to create.
+ @param permissions An array of permission names. For a full list of possible permissions, see
+ http://developer.thelevelup.com/getting-started/permissions-list/
+ */
++ (LUAPIRequest *)requestToCreateUser:(LUUser *)user withPermissions:(NSArray *)permissions;
 
 /**
  Builds a request to reset the password of a user.

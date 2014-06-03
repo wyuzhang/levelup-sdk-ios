@@ -40,6 +40,7 @@
 #import "LUPaymentToken.h"
 #import "LURegistration.h"
 #import "LUUser.h"
+#import "LUUserWithAccessToken.h"
 #import "LUWebLocations.h"
 
 #import "LUAPIResponse.h"
