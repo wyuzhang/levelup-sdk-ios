@@ -247,7 +247,7 @@ describe(@"LUAPIClient", ^{
         [client currentUserID];
       });
     });
-    
+
     describe(@"setAccessToken:", ^{
       it(@"stores the accessToken in the keychain", ^{
         NSString *accessToken = @"access-token";
