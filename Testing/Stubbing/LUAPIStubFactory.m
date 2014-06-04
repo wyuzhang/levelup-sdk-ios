@@ -140,6 +140,25 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   return stub;
 }
 
++ (LUAPIStub *)stubToFailToFindRegistrationForEmail:(NSString *)email {
+  LUAPIStub *stub = [self stubToFindRegistrationForEmail:email];
+  stub.responseCode = 404;
+  stub.responseData = [self responseDataFromFile:@"failed_registration"];
+  return stub;
+}
+
++ (LUAPIStub *)stubToFindRegistrationForEmail:(NSString *)email {
+  NSString *path = [NSString stringWithFormat:@"registration?api_key=%@&email=%@",
+                    [LUAPIClient sharedClient].apiKey,
+                    [email stringByReplacingOccurrencesOfString:@"@" withString:@"%40"]];
+
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:path
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"registration"]];
+}
+
 + (LUAPIStub *)stubToGetCampaignForMerchantWithCode:(NSString *)code {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:[NSString stringWithFormat:@"codes/%@/campaign", code]

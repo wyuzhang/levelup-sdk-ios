@@ -1,0 +1,7 @@
+{
+  "registration": {
+    "app_name": "LevelUp",
+    "description": "This app is powered by LevelUp. You can log in with your LevelUp username and password.",
+    "facebook": true
+  }
+}

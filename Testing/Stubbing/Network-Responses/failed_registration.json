@@ -1,0 +1,9 @@
+[
+  {
+    "error" : {
+      "object" : "registration",
+      "message" : "Email not found.",
+      "property" : "email"
+    }
+  }
+]

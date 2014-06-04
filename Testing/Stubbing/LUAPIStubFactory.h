@@ -24,6 +24,8 @@
 + (LUAPIStub *)stubToDeleteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToFailToClaimCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToFailToCreateCreditCardWithDebitOnlyError;
++ (LUAPIStub *)stubToFailToFindRegistrationForEmail:(NSString *)email;
++ (LUAPIStub *)stubToFindRegistrationForEmail:(NSString *)email;
 + (LUAPIStub *)stubToGetCampaignForMerchantWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithID:(NSNumber *)campaignID;

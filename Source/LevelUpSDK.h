@@ -19,6 +19,7 @@
 #import "LULoyaltyRequestFactory.h"
 #import "LUOrderRequestFactory.h"
 #import "LUPaymentTokenRequestFactory.h"
+#import "LURegistrationRequestFactory.h"
 #import "LUTicketRequestFactory.h"
 #import "LUUserRequestFactory.h"
 
@@ -37,6 +38,7 @@
 #import "LUMonetaryValue.h"
 #import "LUOrder.h"
 #import "LUPaymentToken.h"
+#import "LURegistration.h"
 #import "LUUser.h"
 #import "LUWebLocations.h"
 
