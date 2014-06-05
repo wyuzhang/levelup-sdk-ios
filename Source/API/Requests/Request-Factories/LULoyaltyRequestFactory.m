@@ -9,7 +9,7 @@
 + (LUAPIRequest *)requestForLoyaltyForMerchantWithID:(NSNumber *)merchantID {
   return [LUAPIRequest apiRequestWithMethod:@"GET"
                                        path:[NSString stringWithFormat:@"merchants/%@/loyalty", [merchantID stringValue]]
-                                 apiVersion:LUAPIVersion14
+                                 apiVersion:LUAPIVersion15
                                  parameters:nil
                                modelFactory:[LULoyaltyJSONFactory factory]];
 }

@@ -13,8 +13,6 @@ describe(@"LUOrderRequestFactory", ^{
 
   describe(@"requestForOrders", ^{
     beforeEach(^{
-      [LUAPIClient setupWithAppID:@"1" APIKey:@"test"];
-
       request = [LUOrderRequestFactory requestForOrders];
     });
 
@@ -22,12 +20,12 @@ describe(@"LUOrderRequestFactory", ^{
       [[request.method should] equal:@"GET"];
     });
 
-    it(@"returns a request to the path 'apps/:id/orders'", ^{
-      [[request.path should] equal:@"apps/1/orders"];
+    it(@"returns a request to the path 'users/orders'", ^{
+      [[request.path should] equal:@"users/orders"];
     });
 
-    it(@"returns a request to version 14 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion14];
+    it(@"returns a request to version 15 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion15];
     });
   });
 
@@ -46,8 +44,8 @@ describe(@"LUOrderRequestFactory", ^{
       [[request.path should] equal:@"next_page?key=value"];
     });
 
-    it(@"returns a request to version 14 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion14];
+    it(@"returns a request to version 15 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion15];
     });
   });
 
