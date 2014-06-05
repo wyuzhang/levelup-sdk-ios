@@ -15,6 +15,7 @@
 
  On success, this request will return an `LUMonetaryValue` containing the available credit amount.
 
+ @warning If an access token is present, it must have the `manage_campaigns` permission.
  @param locationID The ID of the location.
  */
 + (LUAPIRequest *)requestForCreditAtLocationID:(NSNumber *)locationID;

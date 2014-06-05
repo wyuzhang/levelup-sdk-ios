@@ -32,6 +32,8 @@ extern NSString * const LUDeviceTokenKey;
 
  This method will also securely store the device token, so that it can be unregistered later.
 
+ @warning This request requires an access token with either the `create_orders` or `read_qr_code`
+ permission.
  @param deviceToken An APN device token to register.
  @param sandbox Specifies whether notifications should be sent to this device in sandbox mode (which
  uses Apple's sandbox notification server) or production (which uses Apple's production notification

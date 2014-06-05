@@ -12,6 +12,8 @@
  Builds a request to return all credit cards added by the current user.
 
  On success, this request will return an array of `LUCreditCard` instances.
+
+ @warning Use of this request requires an Enterprise SDK license.
  */
 + (LUAPIRequest *)requestForCreditCards;
 
@@ -20,6 +22,8 @@
 
  On success, this request will return the newly created `LUCreditCard`.
 
+ @warning Non-Enterprise SDK clients can only create a user's first card, and require an access token
+ with the `manage_campaigns` permission.
  @param creditCard The `LUCreditCard` to create.
  */
 + (LUAPIRequest *)requestToCreateCreditCard:(LUCreditCard *)creditCard;
@@ -29,6 +33,7 @@
 
  On success, this request will return the deleted `LUCreditCard`.
 
+ @warning Use of this request requires an Enterprise SDK license.
  @param creditCardID The ID of a credit card to delete.
  */
 + (LUAPIRequest *)requestToDeleteCreditCardWithID:(NSNumber *)creditCardID;
@@ -41,6 +46,7 @@
 
  On success, this request will return the `LUCreditCard` that was promoted.
 
+ @warning Use of this request requires an Enterprise SDK license.
  @param creditCardID The ID of a credit card to promote.
  */
 + (LUAPIRequest *)requestToPromoteCreditCardWithID:(NSNumber *)creditCardID;

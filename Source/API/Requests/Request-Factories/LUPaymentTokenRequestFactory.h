@@ -13,6 +13,8 @@
  The user may not be payment eligible. This could happen if they haven't added any credit cards, or
  if their credit card has expired. When that happens, this request will fail with the error code
  `LUAPIErrorNotFound`.
+
+ @warning This request requires an access token with the `read_qr_code` permission.
  */
 + (LUAPIRequest *)requestForPaymentToken;
 

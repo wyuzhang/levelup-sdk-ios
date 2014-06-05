@@ -12,6 +12,7 @@
 
  On success, this request will return an `LUAccessToken` instance.
 
+ @warning Use of this request requires an Enterprise SDK license.
  @param email The email address to use for the login.
  @param password The password to use for the login.
  */
@@ -25,6 +26,7 @@
  If the access token used for the request doesn't have access to any of the permissions, the request
  will fail with an `LUAPIErrorLoginRequired` error.
 
+ @warning This request requires an access token with all the downgraded permissions.
  @param permissions An array of permission names. For a full list of possible permissions, see
  http://developer.thelevelup.com/getting-started/permissions-list/
  */

@@ -13,6 +13,7 @@
  `requestForUserWithID:` with the userID of the cached user object.
 
  On success, this request will return an `LUUser` instance.
+ @warning This request requires an access token with the `read_user_basic_info` permission.
  */
 + (LUAPIRequest *)requestForCurrentUser;
 
@@ -22,14 +23,16 @@
  On success, this request will return an `LUUser` instance.
 
  @param userID The ID for the user requested.
+ @deprecated This method has been deprecated. Use `requestForCurrentUser` instead.
  */
-+ (LUAPIRequest *)requestForUserWithID:(NSNumber *)userID;
++ (LUAPIRequest *)requestForUserWithID:(NSNumber *)userID __deprecated;
 
 /**
  Builds a request to create a user.
 
  On success, this request will return the newly created `LUUser`.
 
+ @warning Use of this request requires an Enterprise SDK license.
  @param user The `LUUser` to create.
  */
 + (LUAPIRequest *)requestToCreateUser:(LUUser *)user;
@@ -39,6 +42,7 @@
 
  On success, this request will return `nil`.
 
+ @warning Use of this request requires an Enterprise SDK license.
  @param email An email address.
  */
 + (LUAPIRequest *)requestToResetPasswordWithEmail:(NSString *)email;
@@ -48,6 +52,7 @@
 
  On success, this request will return the updated `LUUser`.
 
+ @warning Use of this request requires an Enterprise SDK license.
  @param user The `LUUser` to update.
  */
 + (LUAPIRequest *)requestToUpdateUser:(LUUser *)user;

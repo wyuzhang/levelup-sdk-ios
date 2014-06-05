@@ -14,6 +14,8 @@
  On success, this request will return an array of `LUOrder` instances. The response will include a
  URL for the next page of results. This URL can be used with `requestForOrdersOnPage:` to retrieve
  the next page of orders.
+
+ @warning This request requires an access token with the `read_user_orders` permission.
  */
 + (LUAPIRequest *)requestForOrders;
 
@@ -23,6 +25,7 @@
  On success, this request will return an array of `LUOrder` instances. If this page doesn't include
  any orders, the response will be empty with a status code of 204 (No Content).
 
+ @warning This request requires an access token with the `read_user_orders` permission.
  @param pageURL The next page of orders to request.
  */
 + (LUAPIRequest *)requestForOrdersOnPage:(NSURL *)pageURL;
@@ -32,6 +35,7 @@
 
  On success, this request will return an `LUOrder` instance.
 
+ @warning This request requires an access token with the `read_user_orders` permission.
  @param UUID The UUID of the order to retrieve.
  */
 + (LUAPIRequest *)requestForOrderWithUUID:(NSString *)UUID;

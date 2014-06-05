@@ -12,6 +12,7 @@
 
  On success, this request will return an instance of `LUClaim`.
 
+ @warning This request requires an access token with the `manage_campaigns` permission.
  @param code The code of the campaign to claim.
  */
 + (LUAPIRequest *)requestToClaimCampaignWithCode:(NSString *)code;
@@ -21,6 +22,7 @@
 
  On success, this request will return an `LUClaim`.
 
+ @warning This request requires an access token with the `manage_campaigns` permission.
  @param legacyID An identifying string. For example, a user's loyalty card number.
  @param campaignID The ID of the campaign to claim.
  */
