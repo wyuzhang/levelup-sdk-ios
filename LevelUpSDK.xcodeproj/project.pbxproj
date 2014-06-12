@@ -134,6 +134,8 @@
 		02CD577217D9079C006205C6 /* LUInterstitialJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD577117D9079C006205C6 /* LUInterstitialJSONFactorySpec.m */; };
 		02CD577417D907B6006205C6 /* NSURLLUAdditionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD577317D907B6006205C6 /* NSURLLUAdditionsSpec.m */; };
 		02D47C7118F47433007CF0BC /* LUOneTimePad+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D47C7018F47433007CF0BC /* LUOneTimePad+Fixtures.m */; };
+		02D53B9E194A332200507397 /* payment_ineligible_error.json in Resources */ = {isa = PBXBuildFile; fileRef = 02D53B9D194A332200507397 /* payment_ineligible_error.json */; };
+		02D53BA2194A4DB600507397 /* payment_ineligible_error_excessive_chargebacks.json in Resources */ = {isa = PBXBuildFile; fileRef = 02D53BA1194A4DB600507397 /* payment_ineligible_error_excessive_chargebacks.json */; };
 		02D68DD01738370F005E1BA8 /* NSRegularExpression+LUAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 02D68DCE1738370F005E1BA8 /* NSRegularExpression+LUAdditions.h */; };
 		02D68DD11738370F005E1BA8 /* NSRegularExpression+LUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DCF1738370F005E1BA8 /* NSRegularExpression+LUAdditions.m */; };
 		02D68DDA1738497A005E1BA8 /* LULocationRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D68DD91738497A005E1BA8 /* LULocationRequestFactorySpec.m */; };
@@ -503,6 +505,8 @@
 		02CD577317D907B6006205C6 /* NSURLLUAdditionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLLUAdditionsSpec.m; sourceTree = "<group>"; };
 		02D47C6F18F47433007CF0BC /* LUOneTimePad+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUOneTimePad+Fixtures.h"; sourceTree = "<group>"; };
 		02D47C7018F47433007CF0BC /* LUOneTimePad+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUOneTimePad+Fixtures.m"; sourceTree = "<group>"; };
+		02D53B9D194A332200507397 /* payment_ineligible_error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = payment_ineligible_error.json; sourceTree = "<group>"; };
+		02D53BA1194A4DB600507397 /* payment_ineligible_error_excessive_chargebacks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = payment_ineligible_error_excessive_chargebacks.json; sourceTree = "<group>"; };
 		02D68DCE1738370F005E1BA8 /* NSRegularExpression+LUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRegularExpression+LUAdditions.h"; sourceTree = "<group>"; };
 		02D68DCF1738370F005E1BA8 /* NSRegularExpression+LUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRegularExpression+LUAdditions.m"; sourceTree = "<group>"; };
 		02D68DD91738497A005E1BA8 /* LULocationRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationRequestFactorySpec.m; sourceTree = "<group>"; };
@@ -715,7 +719,7 @@
 		C1CAF1E217315415003B3D01 /* NSString+HTMLStripping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTMLStripping.m"; sourceTree = "<group>"; };
 		C1CAF1E617315415003B3D01 /* LUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUConstants.h; sourceTree = "<group>"; };
 		C1CAF1E717315415003B3D01 /* LUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUConstants.m; sourceTree = "<group>"; };
-		C1CAF1E917315415003B3D01 /* LevelUpSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelUpSDK.h; sourceTree = "<group>"; };
+		C1CAF1E917315415003B3D01 /* LevelUpSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelUpSDK.h; path = Source/LevelUpSDK.h; sourceTree = "<group>"; };
 		C1CAF1EB17315415003B3D01 /* LUQRCodeDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUQRCodeDecoder.h; sourceTree = "<group>"; };
 		C1CAF1EC17315415003B3D01 /* LUQRCodeDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUQRCodeDecoder.m; sourceTree = "<group>"; };
 		C1CAF1ED17315415003B3D01 /* LUPaymentQRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUPaymentQRCodeGenerator.h; sourceTree = "<group>"; };
@@ -968,6 +972,8 @@
 				02E29155175FCAB8002036B4 /* order.json */,
 				02E29156175FCAB8002036B4 /* orders_page-1.json */,
 				02E29157175FCAB8002036B4 /* orders_page-2.json */,
+				02D53BA1194A4DB600507397 /* payment_ineligible_error_excessive_chargebacks.json */,
+				02D53B9D194A332200507397 /* payment_ineligible_error.json */,
 				025B6DDD176A70D500713242 /* payment_token.json */,
 				021B7484193FAD0800BBC315 /* registration.json */,
 				02E29158175FCAB8002036B4 /* ticket.json */,
@@ -1022,6 +1028,7 @@
 			isa = PBXGroup;
 			children = (
 				C1CAF15617315413003B3D01 /* Source */,
+				C1CAF1E917315415003B3D01 /* LevelUpSDK.h */,
 				020CF263172F020700D20672 /* Testing */,
 				C1CAF07C173052A6003B3D01 /* Unit Tests */,
 				02D47C7218F4929C007CF0BC /* Integration Tests */,
@@ -1284,7 +1291,6 @@
 				2523E32417374D8B00FBDFEB /* Persistence */,
 				C1CAF1EA17315415003B3D01 /* QRCode Management */,
 				C1CAF2861731556B003B3D01 /* Resources */,
-				C1CAF1E917315415003B3D01 /* LevelUpSDK.h */,
 				F88A3DAC17E8E576008D5254 /* Transformers */,
 				C1CAF1E917315415003B3D01 /* LevelUpSDK.h */,
 			);
@@ -1786,6 +1792,7 @@
 				0264391E185BB71600175425 /* credit.json in Resources */,
 				021B7485193FAD0800BBC315 /* registration.json in Resources */,
 				02E29169175FCAB8002036B4 /* oauth_access_token.json in Resources */,
+				02D53BA2194A4DB600507397 /* payment_ineligible_error_excessive_chargebacks.json in Resources */,
 				02E2916A175FCAB8002036B4 /* order.json in Resources */,
 				02E2916B175FCAB8002036B4 /* orders_page-1.json in Resources */,
 				02E2916C175FCAB8002036B4 /* orders_page-2.json in Resources */,
@@ -1796,6 +1803,7 @@
 				40742A2718D0BD8100939A36 /* current_user_minimal_debit_only.json in Resources */,
 				02293815176265DE0057C381 /* categories.json in Resources */,
 				0229381717626B500057C381 /* location_summaries.json in Resources */,
+				02D53B9E194A332200507397 /* payment_ineligible_error.json in Resources */,
 				40A1451418D0F24B00BC2E87 /* failed_credit_card_create.json in Resources */,
 				025B6DDE176A713C00713242 /* payment_token.json in Resources */,
 				404504D817EB9648000A7211 /* campaign_nonglobal.json in Resources */,

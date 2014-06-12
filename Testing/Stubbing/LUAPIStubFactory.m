@@ -272,7 +272,17 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                                              path:@"payment_token"
                                        HTTPMethod:@"GET"
                                     authenticated:YES
-                                     responseData:nil];
+                                     responseData:[self responseDataFromFile:@"payment_ineligible_error"]];
+  stub.responseCode = 404;
+  return stub;
+}
+
++ (LUAPIStub *)stubToGetIneligiblePaymentTokenExcessiveChargebacks {
+  LUAPIStub *stub =  [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                             path:@"payment_token"
+                                       HTTPMethod:@"GET"
+                                    authenticated:YES
+                                     responseData:[self responseDataFromFile:@"payment_ineligible_error_excessive_chargebacks"]];
   stub.responseCode = 404;
   return stub;
 }

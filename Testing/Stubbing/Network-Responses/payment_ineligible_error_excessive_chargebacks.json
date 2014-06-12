@@ -1,0 +1,10 @@
+[
+  {
+    "error": {
+      "code": "excessive_chargebacks",
+      "message": "Your account has too many chargebacks associated with it. Please email support@thelevelup.com to resolve this.",
+      "object": "payment_token",
+      "property": "base"
+    }
+  }
+]

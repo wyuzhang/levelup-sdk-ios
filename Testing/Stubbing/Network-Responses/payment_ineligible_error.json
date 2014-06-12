@@ -1,0 +1,10 @@
+[
+  {
+    "error": {
+      "code": "no_credit_card",
+      "message": "You have no cards on file. Please add a valid card to pay.",
+      "object": "payment_token",
+      "property": "base"
+    }
+  }
+]
