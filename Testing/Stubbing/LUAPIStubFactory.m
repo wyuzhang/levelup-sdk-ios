@@ -28,7 +28,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
     }
   };
 
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
                                  path:[NSString stringWithFormat:@"codes/%@/claims", code]
                            HTTPMethod:@"POST"
                         authenticated:YES
@@ -121,7 +121,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToFailToClaimCampaignWithCode:(NSString *)code {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
                                             path:[NSString stringWithFormat:@"codes/%@/claims", code]
                                       HTTPMethod:@"POST"
                                    authenticated:YES
@@ -131,7 +131,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToFailToCreateCreditCardWithDebitOnlyError {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
                                             path:@"credit_cards"
                                       HTTPMethod:@"POST"
                                    authenticated:YES
@@ -240,24 +240,24 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToGetCurrentUserDebitOnly {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                 path:@"users/1"
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"users"
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"current_user_debit_only"]];
 }
 
 + (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfo {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                 path:@"users/1"
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"users"
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"current_user_minimal"]];
 }
 
 + (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfoWithDebitOnly {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                 path:@"users/1"
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"users"
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"current_user_minimal_debit_only"]];
@@ -363,7 +363,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToGetLoyaltyForMerchantWithID:(NSNumber *)merchantID {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
                                  path:[NSString stringWithFormat:@"merchants/%@/loyalty", [merchantID stringValue]]
                            HTTPMethod:@"GET"
                         authenticated:YES
@@ -371,7 +371,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToGetLoyaltyNoCreditForMerchantWithID:(NSNumber *)merchantID {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
                                  path:[NSString stringWithFormat:@"merchants/%@/loyalty", [merchantID stringValue]]
                            HTTPMethod:@"GET"
                         authenticated:YES
@@ -561,7 +561,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                                   expirationYear:(NSNumber *)expirationYear
                                       postalCode:(NSString *)postalCode
                             responseDataFileName:(NSString *)responseDataFileName {
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
                                             path:@"credit_cards"
                                       HTTPMethod:@"POST"
                                    authenticated:YES
