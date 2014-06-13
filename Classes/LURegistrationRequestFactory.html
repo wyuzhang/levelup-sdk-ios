@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUOrderRequestFactory Class Reference</title>
+		<title>LURegistrationRequestFactory Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUOrderRequestFactory Class Reference</h1>
+				<h1 class="hideInXcode">LURegistrationRequestFactory Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -41,11 +41,7 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/requestForOrderWithUUID:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrderWithUUID:</option>
-	
-	<option value="//api/name/requestForOrders">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrders</option>
-	
-	<option value="//api/name/requestForOrdersOnPage:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForOrdersOnPage:</option>
+	<option value="//api/name/requestForRegistrationWithEmail:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForRegistrationWithEmail:</option>
 	
 	
 	
@@ -75,11 +71,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrderWithUUID:">requestForOrderWithUUID:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrders">requestForOrders</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForOrdersOnPage:">requestForOrdersOnPage:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForRegistrationWithEmail:">requestForRegistrationWithEmail:</a></span></li>
 	
 </ul></li>
 
@@ -90,7 +82,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUOrderRequestFactory Class Reference" name="top"></a>
+				<a title="LURegistrationRequestFactory Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -99,7 +91,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUOrderRequestFactory Class Reference</h1>
+						<h1 class="title title-header">LURegistrationRequestFactory Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -110,7 +102,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUOrderRequestFactory.h<br />LUOrderRequestFactory.m</td>
+	<td class="specification-value">LURegistrationRequestFactory.h<br />LURegistrationRequestFactory.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -120,7 +112,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUOrderRequestFactory</code> is used to build requests related to retrieving orders.</p>
+						<p><code>LURegistrationRequestFactory</code> is used to build the request to check on a user&rsquo;s registration status.</p>
 					</div>
 					
 					
@@ -138,19 +130,7 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForOrders">+&nbsp;requestForOrders</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requestForOrdersOnPage:">+&nbsp;requestForOrdersOnPage:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requestForOrderWithUUID:">+&nbsp;requestForOrderWithUUID:</a></code>
+		<code><a href="#//api/name/requestForRegistrationWithEmail:">+&nbsp;requestForRegistrationWithEmail:</a></code>
 	</span>
 	
 	
@@ -170,18 +150,18 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestForOrderWithUUID:" title="requestForOrderWithUUID:"></a>
-	<h3 class="subsubtitle method-title">requestForOrderWithUUID:</h3>
+	<a name="//api/name/requestForRegistrationWithEmail:" title="requestForRegistrationWithEmail:"></a>
+	<h3 class="subsubtitle method-title">requestForRegistrationWithEmail:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve an order.</p>
+		<p>Builds a request which given an email address, checks if a corresponding LevelUp user exists.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrderWithUUID:(NSString *)<em>UUID</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForRegistrationWithEmail:(NSString *)<em>email</em></code></div>
 
     
 	
@@ -189,8 +169,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>UUID</em></dt>
-			<dd><p>The UUID of the order to retrieve.</p></dd>
+			<dt><em>email</em></dt>
+			<dd><p>The email address to check.</p></dd>
 		</dl>
 		
 	</div>
@@ -203,9 +183,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve an order.</p>
+		<p>Builds a request which given an email address, checks if a corresponding LevelUp user exists.</p>
 
-<p>On success, this request will return an <a href="../Classes/LUOrder.html"><code>LUOrder</code></a> instance.</p><div class="warning"><p><strong>Warning:</strong> This request requires an access token with the <code>read_user_orders</code> permission.</p></div>
+<p>On success, this request will return an <code>LURegistration</code> instance.</p>
 	</div>
 	
 	
@@ -216,108 +196,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderRequestFactory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/requestForOrders" title="requestForOrders"></a>
-	<h3 class="subsubtitle method-title">requestForOrders</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve orders that the current user has made at merchants associated with the
-app.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrders</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve orders that the current user has made at merchants associated with the
-app.</p>
-
-<p>On success, this request will return an array of <a href="../Classes/LUOrder.html"><code>LUOrder</code></a> instances. The response will include a
-URL for the next page of results. This URL can be used with <a href="#//api/name/requestForOrdersOnPage:"><code>requestForOrdersOnPage:</code></a> to retrieve
-the next page of orders.</p><div class="warning"><p><strong>Warning:</strong> This request requires an access token with the <code>read_user_orders</code> permission.</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderRequestFactory.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/requestForOrdersOnPage:" title="requestForOrdersOnPage:"></a>
-	<h3 class="subsubtitle method-title">requestForOrdersOnPage:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Builds a request to retrieve the given page of orders.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForOrdersOnPage:(NSURL *)<em>pageURL</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>pageURL</em></dt>
-			<dd><p>The next page of orders to request.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to retrieve the given page of orders.</p>
-
-<p>On success, this request will return an array of <a href="../Classes/LUOrder.html"><code>LUOrder</code></a> instances. If this page doesn&rsquo;t include
-any orders, the response will be empty with a status code of 204 (No Content).</p><div class="warning"><p><strong>Warning:</strong> This request requires an access token with the <code>read_user_orders</code> permission.</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderRequestFactory.h</code><br />
+		<code class="declared-in-ref">LURegistrationRequestFactory.h</code><br />
 	</div>				
 	
 	
