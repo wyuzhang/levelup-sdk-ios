@@ -11,9 +11,11 @@
 #pragma mark - Public Methods
 
 + (LUAPIRequest *)requestForOrders {
+  NSString *path = [NSString stringWithFormat:@"apps/%@/orders", [LUAPIClient sharedClient].appID];
+
   return [LUAPIRequest apiRequestWithMethod:@"GET"
-                                       path:@"users/orders"
-                                 apiVersion:LUAPIVersion15
+                                       path:path
+                                 apiVersion:LUAPIVersion14
                                  parameters:nil
                                modelFactory:[LUOrderJSONFactory factory]];
 }
@@ -23,7 +25,7 @@
 
   return [LUAPIRequest apiRequestWithMethod:@"GET"
                                        path:[pageURL lu_pathAndQueryWithoutAPIVersion]
-                                 apiVersion:LUAPIVersion15
+                                 apiVersion:LUAPIVersion14
                                  parameters:nil
                                modelFactory:[LUOrderJSONFactory factory]];
 }
