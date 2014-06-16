@@ -5,6 +5,7 @@
 #import "LULocationRequestFactory.h"
 #import "LULocationSummaryJSONFactory.h"
 #import "LULocationJSONFactory.h"
+#import "LUWebLinkJSONFactory.h"
 #import "NSURL+LUAdditions.h"
 
 @implementation LULocationRequestFactory
@@ -55,6 +56,15 @@
                                  apiVersion:LUAPIVersion14
                                  parameters:nil
                                modelFactory:[LULocationJSONFactory factory]];
+}
+
++ (LUAPIRequest *)requestForWebLinksAtLocationWithID:(NSNumber *)locationID {
+  NSString *requestPath = [NSString stringWithFormat:@"locations/%@/web_links", [locationID stringValue]];
+  return [LUAPIRequest apiRequestWithMethod:@"GET"
+                                       path:requestPath
+                                 apiVersion:LUAPIVersion15
+                                 parameters:nil
+                               modelFactory:[LUWebLinkJSONFactory factory]];
 }
 
 @end

@@ -112,9 +112,12 @@
 @property (nonatomic, copy) NSDate *updatedAtDate;
 
 /**
- An instance of LUWebLocations, which holds the associated web locations for this physical location
+ An instance of LUWebLocations, which holds the associated web locations for this physical location.
+
+ @deprecated This method has been deprecated. Request web links at a location using
+ `[LULocationRequestFactory requestForWebLinksAtLocationWithID:]`.
  */
-@property (nonatomic, copy, readonly) LUWebLocations *webLocations;
+@property (nonatomic, copy, readonly) LUWebLocations *webLocations DEPRECATED_ATTRIBUTE;
 
 /**
  If the location has both a `streetAddress` and an `extendedAddress`, this will return both values

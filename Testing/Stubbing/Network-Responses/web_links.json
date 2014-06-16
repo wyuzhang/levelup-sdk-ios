@@ -1,0 +1,26 @@
+[
+  {
+    "web_link": {
+      "ios_deeplink_url": "facebook:///",
+      "title": "Facebook",
+      "web_link_type_id": 1,
+      "web_url": "http://www.facebook.com/example"
+    }
+  },
+  {
+    "web_link": {
+      "ios_deeplink_url": null,
+      "title": "Website",
+      "web_link_type_id": 7,
+      "web_url": "http://example.com"
+    }
+  },
+  {
+    "web_link": {
+      "ios_deeplink_url": null,
+      "title": "Yelp",
+      "web_link_type_id": 8,
+      "web_url": "http://www.yelp.com/example"
+    }
+  }
+]

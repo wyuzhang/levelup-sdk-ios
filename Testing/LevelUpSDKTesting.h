@@ -14,6 +14,7 @@
 #import "LUPaymentToken+Fixtures.h"
 #import "LURegistration+Fixtures.h"
 #import "LUUser+Fixtures.h"
+#import "LUWebLink+Fixtures.h"
 #import "LUWebLocations+Fixtures.h"
 
 // Network Stubbing

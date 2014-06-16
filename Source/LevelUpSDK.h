@@ -41,6 +41,7 @@
 #import "LURegistration.h"
 #import "LUUser.h"
 #import "LUUserWithAccessToken.h"
+#import "LUWebLink.h"
 #import "LUWebLocations.h"
 
 #import "LUAPIResponse.h"

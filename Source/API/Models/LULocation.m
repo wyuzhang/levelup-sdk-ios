@@ -120,10 +120,10 @@
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LULocation [address=%p, categoryIDs=%@, descriptionHTML=%@, extendedAddress=%@, hours=%@, ID=%@, latitude=%@, locality=%@, longitude=%@, merchantID=%@, merchantName=%@, name=%@, phone=%@, postalCode=%@, region=%@, shown=%@, summary=%@, streetAddress=%@, updatedAtDate=%@, webLocations=%@]",
+          @"LULocation [address=%p, categoryIDs=%@, descriptionHTML=%@, extendedAddress=%@, hours=%@, ID=%@, latitude=%@, locality=%@, longitude=%@, merchantID=%@, merchantName=%@, name=%@, phone=%@, postalCode=%@, region=%@, shown=%@, summary=%@, streetAddress=%@, updatedAtDate=%@]",
           self, self.categoryIDs, self.descriptionHTML, self.extendedAddress, self.hours, self.locationID, self.latitude,
           self.locality, self.longitude, self.merchantID, self.merchantName, self.name, self.phone, self.postalCode,
-          self.region, @(self.shown), @(self.summary), self.streetAddress, self.updatedAtDate, self.webLocations];
+          self.region, @(self.shown), @(self.summary), self.streetAddress, self.updatedAtDate];
 }
 
 - (NSString *)description {

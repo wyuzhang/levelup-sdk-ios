@@ -471,6 +471,17 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          withBody:body];
 }
 
++ (LUAPIStub *)stubToGetWebLinksAtLocationWithID:(NSNumber *)locationID {
+  NSString *path = [NSString stringWithFormat:@"locations/%@/web_links", [locationID stringValue]];
+
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                            path:path
+                                      HTTPMethod:@"GET"
+                                   authenticated:NO
+                                    responseData:[self responseDataFromFile:@"web_links"]];
+
+}
+
 + (LUAPIStub *)stubToLogIn {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:@"access_tokens"

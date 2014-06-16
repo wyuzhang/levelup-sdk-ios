@@ -67,4 +67,13 @@
  */
 + (LUAPIRequest *)requestForLocationWithID:(NSNumber *)locationID;
 
+/**
+ Builds a request to return the web links associated with a specific location.
+
+ On success, this request will return an array of `LUWebLink` instances.
+
+ @param locationID The location ID to request.
+ */
++ (LUAPIRequest *)requestForWebLinksAtLocationWithID:(NSNumber *)locationID;
+
 @end

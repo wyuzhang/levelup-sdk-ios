@@ -61,6 +61,7 @@
 + (LUAPIStub *)stubToGetOrdersSecondPage;
 + (LUAPIStub *)stubToGetPaymentToken;
 + (LUAPIStub *)stubToGetURL:(NSString *)url withBody:(NSString *)body;
++ (LUAPIStub *)stubToGetWebLinksAtLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToLogIn;
 + (LUAPIStub *)stubToLogInWithEmail:(NSString *)email password:(NSString *)password;
 + (LUAPIStub *)stubToPromoteCreditCardWithID:(NSNumber *)creditCardID;

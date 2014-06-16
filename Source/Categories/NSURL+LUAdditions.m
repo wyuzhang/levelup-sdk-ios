@@ -17,7 +17,7 @@ NSString * const LUPatternLeadingSlashOptionalVersion = @"^/(v\\d+/)?";
   if (!campaignID) return nil;
 
   NSString *path = [NSString stringWithFormat:@"campaigns/%@/image", [campaignID stringValue]];
-  return [self imageURLForPath:path];
+  return [self imageURLForPath:path version:LUAPIVersion14];
 }
 
 + (NSURL *)lu_imageURLForImageWithBase:(NSURL *)baseURL {
@@ -31,7 +31,14 @@ NSString * const LUPatternLeadingSlashOptionalVersion = @"^/(v\\d+/)?";
   if (!locationID) return nil;
 
   NSString *path = [NSString stringWithFormat:@"locations/%@/image", [locationID stringValue]];
-  return [self imageURLForPath:path];
+  return [self imageURLForPath:path version:LUAPIVersion14];
+}
+
++ (NSURL *)lu_imageURLForWebLinkTypeWithID:(NSNumber *)webLinkTypeID {
+  if (!webLinkTypeID) return nil;
+
+  NSString *path = [NSString stringWithFormat:@"web_link_types/%@/image", [webLinkTypeID stringValue]];
+  return [self imageURLForPath:path version:LUAPIVersion15];
 }
 
 + (NSURL *)lu_URLWithScheme:(NSString *)scheme host:(NSString *)host path:(NSString *)path queryParameters:(NSDictionary *)queryParameters {
@@ -99,8 +106,8 @@ NSString * const LUPatternLeadingSlashOptionalVersion = @"^/(v\\d+/)?";
   return [NSString stringWithFormat:@"density=%d&height=%d&width=%d", (int)[UIScreen mainScreen].scale, 212, 320];
 }
 
-+ (NSURL *)imageURLForPath:(NSString *)path {
-  NSString *fullPath = [NSString stringWithFormat:@"%@/%@?%@", LUAPIVersion14, path, [self imageQueryString]];
++ (NSURL *)imageURLForPath:(NSString *)path version:(NSString *)version {
+  NSString *fullPath = [NSString stringWithFormat:@"%@/%@?%@", version, path, [self imageQueryString]];
 
   return [NSURL URLWithString:fullPath relativeToURL:[LUAPIClient sharedClient].baseURL];
 }

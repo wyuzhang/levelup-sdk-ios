@@ -25,7 +25,7 @@
  @param userID The ID for the user requested.
  @deprecated This method has been deprecated. Use `requestForCurrentUser` instead.
  */
-+ (LUAPIRequest *)requestForUserWithID:(NSNumber *)userID __deprecated;
++ (LUAPIRequest *)requestForUserWithID:(NSNumber *)userID DEPRECATED_ATTRIBUTE;
 
 /**
  Builds a request to create a user.

@@ -28,7 +28,6 @@
   return self;
 }
 
-
 #pragma mark - NSObject Methods
 
 - (NSString *)debugDescription {
