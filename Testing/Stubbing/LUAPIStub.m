@@ -68,6 +68,7 @@
 
 - (OHHTTPStubsResponse *)response {
   NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+  headers[@"Server"] = @"LevelUp";
 
   if (self.responseType) {
     headers[@"Content-Type"] = self.responseType;

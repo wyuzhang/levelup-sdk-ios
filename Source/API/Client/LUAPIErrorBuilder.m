@@ -60,7 +60,12 @@
   }
 
   NSHTTPURLResponse *response = [self response];
-  if (!response) return LUAPIErrorServer;
+
+  if (!response) {
+    return LUAPIErrorServer;
+  } else if (![self fromLevelUpPlatform]) {
+    return response.statusCode == 503 ? LUAPIErrorMaintenance : LUAPIErrorServer;
+  }
 
   switch (response.statusCode) {
     case 401:
@@ -96,6 +101,10 @@
   }
 
   return nil;
+}
+
+- (BOOL)fromLevelUpPlatform {
+  return [[self response].allHeaderFields[@"Server"] isEqualToString:@"LevelUp"];
 }
 
 - (NSString *)localizedDescription {
