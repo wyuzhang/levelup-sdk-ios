@@ -76,6 +76,7 @@ __strong static LUAPIClient *_sharedClient = nil;
   NSString *defaultUserAgent = requestSerializer.HTTPRequestHeaders[@"User-Agent"];
   [requestSerializer setValue:[defaultUserAgent stringByAppendingFormat:@" LevelUpSDK/%@", LevelUpSDKVersion]
            forHTTPHeaderField:@"User-Agent"];
+  [requestSerializer setValue:apiKey forHTTPHeaderField:@"X-LevelUp-API-Key"];
 
   _httpOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
   _httpOperationManager.requestSerializer = requestSerializer;
