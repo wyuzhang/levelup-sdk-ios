@@ -37,6 +37,7 @@
 #import "LULoyalty.h"
 #import "LUMonetaryValue.h"
 #import "LUOrder.h"
+#import "LUOrderItem.h"
 #import "LUPaymentToken.h"
 #import "LURegistration.h"
 #import "LUUser.h"

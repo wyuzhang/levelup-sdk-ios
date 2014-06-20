@@ -2,6 +2,7 @@
 
 #import "LUMonetaryValue.h"
 #import "LUOrder.h"
+#import "LUOrderItemJSONFactory.h"
 #import "LUOrderJSONFactory.h"
 #import "NSDictionary+ObjectClassAccess.h"
 
@@ -18,6 +19,13 @@
   NSDate *createdDate = [attributes lu_dateForKey:@"created_at"];
   LUMonetaryValue *credit = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"credit_applied_amount"]];
   LUMonetaryValue *earn = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"credit_earned_amount"]];
+
+  NSArray *items;
+  NSArray *itemsJSON = [attributes lu_arrayForKey:@"items"];
+  if (itemsJSON) {
+    items = [[LUOrderItemJSONFactory factory] fromArray:itemsJSON];
+  }
+
   NSString *locationExtendedAddress = [attributes lu_stringForKey:@"location_extended_address"];
   NSNumber *locationID = [attributes lu_numberForKey:@"location_id"];
   NSString *locationLocality = [attributes lu_stringForKey:@"location_locality"];
@@ -35,7 +43,7 @@
 
   return [[LUOrder alloc] initWithBalance:balance bundleClosedDate:bundleClosedDate bundleDescriptor:bundleDescriptor
                              contribution:contribution contributionTargetName:contributionTargetName
-                              createdDate:createdDate credit:credit earn:earn
+                              createdDate:createdDate credit:credit earn:earn items:items
                   locationExtendedAddress:locationExtendedAddress locationID:locationID
                          locationLocality:locationLocality locationPostalCode:locationPostalCode
                            locationRegion:locationRegion locationStreetAddress:locationStreetAddress

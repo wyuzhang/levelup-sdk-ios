@@ -13,7 +13,7 @@
 - (id)initWithBalance:(LUMonetaryValue *)balance bundleClosedDate:(NSDate *)bundleClosedDate
      bundleDescriptor:(NSString *)bundleDescriptor contribution:(LUMonetaryValue *)contribution
 contributionTargetName:(NSString *)contributionTargetName createdDate:(NSDate *)createdDate
-               credit:(LUMonetaryValue *)credit earn:(LUMonetaryValue *)earn
+               credit:(LUMonetaryValue *)credit earn:(LUMonetaryValue *)earn items:(NSArray *)items
 locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber *)locationID
      locationLocality:(NSString *)locationLocality locationPostalCode:(NSString *)locationPostalCode
        locationRegion:(NSString *)locationRegion locationStreetAddress:(NSString *)locationStreetAddress
@@ -31,6 +31,7 @@ locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber
   _createdDate = createdDate;
   _credit = credit;
   _earn = earn;
+  _items = items;
   _locationExtendedAddress = locationExtendedAddress;
   _locationID = locationID;
   _locationLocality = locationLocality;
@@ -100,9 +101,9 @@ locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUOrder [address=%p, balance=%@, bundleClosedDate=%@, bundleDescriptor=%@, contribution=%@, contributionTargetName=%@, createdDate=%@, credit=%@, earn=%@, locationExtendedAddress=%@, locationID=%@, locationLocality=%@, locationPostalCode=%@, locationRegion=%@, locationStreetAddress=%@, merchantID=%@, merchantName=%@, refundedDate=%@, spend=%@, tip=%@, total=%@, transactedDate=%@, UUID=%@]",
+          @"LUOrder [address=%p, balance=%@, bundleClosedDate=%@, bundleDescriptor=%@, contribution=%@, contributionTargetName=%@, createdDate=%@, credit=%@, earn=%@, items=%@, locationExtendedAddress=%@, locationID=%@, locationLocality=%@, locationPostalCode=%@, locationRegion=%@, locationStreetAddress=%@, merchantID=%@, merchantName=%@, refundedDate=%@, spend=%@, tip=%@, total=%@, transactedDate=%@, UUID=%@]",
           self, self.balance, self.bundleClosedDate, self.bundleDescriptor, self.contribution, self.contributionTargetName,
-          self.createdDate, self.credit, self.earn, self.locationExtendedAddress, self.locationID, self.locationLocality,
+          self.createdDate, self.credit, self.earn, self.items, self.locationExtendedAddress, self.locationID, self.locationLocality,
           self.locationPostalCode, self.locationRegion, self.locationStreetAddress, self.merchantID, self.merchantName,
           self.refundedDate, self.spend, self.tip, self.total, self.transactedDate, self.UUID];
 }

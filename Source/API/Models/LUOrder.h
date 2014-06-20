@@ -50,6 +50,11 @@
 @property (nonatomic, strong, readonly) LUMonetaryValue *earn;
 
 /**
+ An optional array of `LUOrderItem` instances.
+ */
+@property (nonatomic, strong, readonly) NSArray *items;
+
+/**
  An optional "extended" address for the location at which this order was made. An example would be
  an apartment number.
  */
@@ -172,7 +177,7 @@
 - (id)initWithBalance:(LUMonetaryValue *)balance bundleClosedDate:(NSDate *)bundleClosedDate
      bundleDescriptor:(NSString *)bundleDescriptor contribution:(LUMonetaryValue *)contribution
 contributionTargetName:(NSString *)contributionTargetName createdDate:(NSDate *)createdDate
-               credit:(LUMonetaryValue *)credit earn:(LUMonetaryValue *)earn
+               credit:(LUMonetaryValue *)credit earn:(LUMonetaryValue *)earn items:(NSArray *)items
 locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber *)locationID
      locationLocality:(NSString *)locationLocality locationPostalCode:(NSString *)locationPostalCode
        locationRegion:(NSString *)locationRegion locationStreetAddress:(NSString *)locationStreetAddress

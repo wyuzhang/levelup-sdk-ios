@@ -23,6 +23,7 @@ describe(@"LUOrderJSONFactory", ^{
         @"created_at" : @"2012-12-05T18:10:45-05:00",
         @"credit_applied_amount" : @100,
         @"credit_earned_amount" : @250,
+        @"items": @[],
         @"location_extended_address" : @"Apt E",
         @"location_id" : @1,
         @"location_locality" : @"Boston",
@@ -48,6 +49,7 @@ describe(@"LUOrderJSONFactory", ^{
       [[order.createdDate should] equal:[NSDate lu_dateFromIso8601DateTimeString:@"2012-12-05T18:10:45-05:00"]];
       [[order.credit should] equal:[LUMonetaryValue monetaryValueWithUSCents:@100]];
       [[order.earn should] equal:[LUMonetaryValue monetaryValueWithUSCents:@250]];
+      [[order.items should] equal:@[]];
       [[order.locationExtendedAddress should] equal:@"Apt E"];
       [[order.locationID should] equal:@1];
       [[order.locationLocality should] equal:@"Boston"];

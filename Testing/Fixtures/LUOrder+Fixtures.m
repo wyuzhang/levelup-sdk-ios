@@ -2,6 +2,7 @@
 
 #import "LUMonetaryValue.h"
 #import "LUOrder+Fixtures.h"
+#import "LUOrderItem+Fixtures.h"
 #import "NSDate+StringFormats.h"
 
 @implementation LUOrder (Fixtures)
@@ -15,6 +16,7 @@
                               createdDate:[NSDate lu_dateFromIso8601DateTimeString:@"2012-12-24T16:58:23-05:00"]
                                    credit:[LUMonetaryValue monetaryValueWithUSD:@1.0f]
                                      earn:[LUMonetaryValue monetaryValueWithUSD:@2.0f]
+                                    items:nil
                   locationExtendedAddress:@"Apt E"
                                locationID:@1
                          locationLocality:@"Boston"
@@ -120,6 +122,12 @@
 + (LUOrder *)fixtureWithRefundedStatus {
   LUOrder *order = [self fixture];
   [order setValue:[NSDate date] forKey:@"refundedDate"];
+  return order;
+}
+
++ (LUOrder *)fixtureWithItems {
+  LUOrder *order = [self fixture];
+  [order setValue:@[[LUOrderItem fixture]] forKey:@"items"];
   return order;
 }
 

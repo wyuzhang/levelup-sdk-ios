@@ -23,6 +23,7 @@
 + (LUOrder *)fixtureWithMultipleMissingAttributes;
 
 + (LUOrder *)fixtureWithBundleOpen;
++ (LUOrder *)fixtureWithItems;
 + (LUOrder *)fixtureWithRefundedStatus;
 
 @end

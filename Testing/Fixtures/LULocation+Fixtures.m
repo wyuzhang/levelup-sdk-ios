@@ -1,6 +1,7 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
 #import "LULocation+Fixtures.h"
+#import "LUMonetaryValue.h"
 #import "LUWebLocations.h"
 #import "LUWebLocations+Fixtures.h"
 
