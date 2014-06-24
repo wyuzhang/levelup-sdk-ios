@@ -3,6 +3,7 @@
 #import "LUAPIRequest.h"
 #import "LUInterstitialJSONFactory.h"
 #import "LUInterstitialRequestFactory.h"
+#import "NSDictionary+SafetyAdditions.h"
 
 @implementation LUInterstitialRequestFactory
 
@@ -23,11 +24,10 @@
   NSString *path = [NSString stringWithFormat:@"orders/%@/feedback", UUID];
   NSString *ratingString = rating > 0 ? [NSString stringWithFormat:@"%d", rating] : @"";
 
-  NSDictionary *parameters = @{
-    @"question_text": questionText,
-    @"rating": ratingString,
-    @"comment" : comment
-  };
+  NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+  [parameters lu_setSafeValue:questionText forKey:@"question_text"];
+  [parameters lu_setSafeValue:ratingString forKey:@"rating"];
+  [parameters lu_setSafeValue:comment forKey:@"comment"];
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"
                                        path:path
