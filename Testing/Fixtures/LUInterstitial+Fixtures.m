@@ -14,7 +14,7 @@
 }
 
 + (LUInterstitial *)fixtureWithFeedbackAction {
-  LUInterstitialFeedbackAction *action = [[LUInterstitialFeedbackAction alloc] initWithQuestionText:@"Question text"];
+  LUInterstitialFeedbackAction *action = [[LUInterstitialFeedbackAction alloc] initWithQuestionText:@"How was your experience at this merchant?"];
   return [self fixtureWithAction:action actionType:LUInterstitialActionTypeFeedback];
 }
 
