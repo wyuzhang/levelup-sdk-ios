@@ -27,7 +27,7 @@ PODS:
   - Kiwi/SenTestingKit (2.2.4):
     - Kiwi/ARC
     - Kiwi/NonARC
-  - LUKeychainAccess (1.2.0)
+  - LUKeychainAccess (1.2.1)
   - OHHTTPStubs (1.1.2)
   - ZXingObjC/Core (3.0.0)
   - ZXingObjC/QRCode (3.0.0):
@@ -38,7 +38,7 @@ DEPENDENCIES:
   - AutoCoding (= 2.0.3)
   - BTEncryption (= 2.2.8)
   - Kiwi (= 2.2.4)
-  - LUKeychainAccess (= 1.2.0)
+  - LUKeychainAccess (= 1.2.1)
   - OHHTTPStubs (= 1.1.2)
   - ZXingObjC/QRCode (= 3.0.0)
 
@@ -47,7 +47,7 @@ SPEC CHECKSUMS:
   AutoCoding: a40014b5ce6608fdde428fca11fc1b9449e3a617
   BTEncryption: 81f6480c8ab39db6c523ce4dc2fdb8a1c5d4a538
   Kiwi: c73667f2b84cbf36f1a3830267c5a4ae8dcbd8ba
-  LUKeychainAccess: 3559d5939dee13858809c2405164db901330d343
+  LUKeychainAccess: 5c9e48f5ffd050b163e2e92322473a0bb8359a6d
   OHHTTPStubs: 0b2656edcf5e700709b5da50155f41eed8c6b9ad
   ZXingObjC: b21c74a5247f3809e179fc6129ec5e8b956886cf
 
