@@ -277,6 +277,16 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
                          responseData:[self responseDataFromFile:@"current_user_minimal_debit_only"]];
 }
 
++ (LUAPIStub *)stubToGetDowngradedAccessTokenWithPermissions:(NSArray *)accessTokenPermissions {
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                            path:@"access_tokens/downgrades"
+                                      HTTPMethod:@"POST"
+                                   authenticated:NO
+                                    responseData:[self responseDataFromFile:@"downgraded_token"]];
+  stub.requestBodyJSON = @{@"access_token": @{@"permission_keynames": accessTokenPermissions}};
+  return stub;
+}
+
 + (LUAPIStub *)stubToGetFeedbackInterstitialForOrderWithUUID:(NSString *)UUID {
   return [LUAPIStubFactory stubToGetInterstitialForOrderWithUUID:UUID fromFile:@"interstitial_feedback"];
 }

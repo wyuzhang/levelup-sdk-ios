@@ -40,6 +40,7 @@
 + (LUAPIStub *)stubToGetCurrentUserDebitOnly;
 + (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfo;
 + (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfoWithDebitOnly;
++ (LUAPIStub *)stubToGetDowngradedAccessTokenWithPermissions:(NSArray *)accessTokenPermissions;
 + (LUAPIStub *)stubToGetFeedbackInterstitialForOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToGetIneligiblePaymentToken;
 + (LUAPIStub *)stubToGetIneligiblePaymentTokenExcessiveChargebacks;
