@@ -12,7 +12,7 @@
 
  When successful, an `LULoyalty` instance will be returned.
 
- @warning This request requires an access token with the `manage_campaigns` permission.
+ @warning This request requires an access token with the `manage_user_campaigns` permission.
  @param merchantID The ID of the merchant whose loyalty will be requested.
  */
 + (LUAPIRequest *)requestForLoyaltyForMerchantWithID:(NSNumber *)merchantID;

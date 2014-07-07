@@ -1,5 +1,6 @@
 // Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
 
+#import "LUAPIClient.h"
 #import "LUAPIRequest.h"
 #import "LUAPNDeviceRequestFactory.h"
 #import "LUKeychainAccess.h"
@@ -23,7 +24,7 @@ NSString * const LUDeviceTokenKey = @"LUDeviceToken";
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"
                                        path:@"apn_devices"
-                                 apiVersion:LUAPIVersion14
+                                 apiVersion:LUAPIVersion15
                                  parameters:parameters
                                modelFactory:nil];
 }
@@ -36,8 +37,8 @@ NSString * const LUDeviceTokenKey = @"LUDeviceToken";
 
   return [LUAPIRequest apiRequestWithMethod:@"DELETE"
                                        path:path
-                                 apiVersion:LUAPIVersion14
-                                 parameters:nil
+                                 apiVersion:LUAPIVersion15
+                                 parameters:@{@"api_key": [LUAPIClient sharedClient].apiKey}
                                modelFactory:nil];
 }
 

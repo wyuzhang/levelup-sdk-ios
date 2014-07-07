@@ -23,8 +23,8 @@ describe(@"LUPaymentTokenRequestFactory", ^{
       [[request.path should] equal:@"payment_token"];
     });
 
-    it(@"returns a request to version 14 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion14];
+    it(@"returns a request to version 15 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion15];
     });
 
     it(@"returns a GET request", ^{

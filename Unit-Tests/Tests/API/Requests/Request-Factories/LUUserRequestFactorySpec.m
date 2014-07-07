@@ -150,7 +150,6 @@ describe(@"LUUserRequestFactory", ^{
     NSDictionary *userParams = @{@"params" : @"for user"};
 
     beforeEach(^{
-      [[LUAPIClient sharedClient] stub:@selector(currentUserID) andReturn:@1];
       [LUUserParameterBuilder stub:@selector(parametersForUser:) andReturn:userParams withArguments:user, nil];
 
       request = [LUUserRequestFactory requestToUpdateUser:user];
@@ -160,12 +159,12 @@ describe(@"LUUserRequestFactory", ^{
       [[request.method should] equal:@"PUT"];
     });
 
-    it(@"returns a request to the path 'users/<userid>'", ^{
-      [[request.path should] equal:@"users/1"];
+    it(@"returns a request to the path 'users'", ^{
+      [[request.path should] equal:@"users"];
     });
 
-    it(@"returns a request to version 14 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion14];
+    it(@"returns a request to version 15 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion15];
     });
 
     it(@"returns a request with parameters for the user", ^{

@@ -71,11 +71,9 @@
 }
 
 + (LUAPIRequest *)requestToUpdateUser:(LUUser *)user {
-  NSString *path = [NSString stringWithFormat:@"users/%@", [LUAPIClient sharedClient].currentUserID];
-
   return [LUAPIRequest apiRequestWithMethod:@"PUT"
-                                       path:path
-                                 apiVersion:LUAPIVersion14
+                                       path:@"users"
+                                 apiVersion:LUAPIVersion15
                                  parameters:@{@"user" : [LUUserParameterBuilder parametersForUser:user]}
                                modelFactory:[LUUserJSONFactory factory]];
 }

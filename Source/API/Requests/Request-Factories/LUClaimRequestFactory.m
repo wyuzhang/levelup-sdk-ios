@@ -28,7 +28,7 @@
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"
                                        path:path
-                                 apiVersion:LUAPIVersion14
+                                 apiVersion:LUAPIVersion15
                                  parameters:parameters
                                modelFactory:[LUClaimJSONFactory factory]];
 }

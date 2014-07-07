@@ -36,7 +36,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToClaimLegacyLoyaltyWithID:(NSString *)loyaltyID campaignID:(NSNumber *)campaignID {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
                                  path:[NSString stringWithFormat:@"loyalties/legacy/%@/claims", [campaignID stringValue]]
                            HTTPMethod:@"POST"
                         authenticated:NO
@@ -292,7 +292,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToGetIneligiblePaymentToken {
-  LUAPIStub *stub =  [LUAPIStub apiStubForVersion:LUAPIVersion14
+  LUAPIStub *stub =  [LUAPIStub apiStubForVersion:LUAPIVersion15
                                              path:@"payment_token"
                                        HTTPMethod:@"GET"
                                     authenticated:YES
@@ -302,7 +302,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToGetIneligiblePaymentTokenExcessiveChargebacks {
-  LUAPIStub *stub =  [LUAPIStub apiStubForVersion:LUAPIVersion14
+  LUAPIStub *stub =  [LUAPIStub apiStubForVersion:LUAPIVersion15
                                              path:@"payment_token"
                                        HTTPMethod:@"GET"
                                     authenticated:YES
@@ -413,15 +413,15 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToGetNewUser {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                 path:@"users/1"
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"users"
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"new_user"]];
 }
 
 + (LUAPIStub *)stubToGetOrderWithUUID:(NSString *)UUID {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
                                  path:[@"orders/" stringByAppendingString:UUID]
                            HTTPMethod:@"GET"
                         authenticated:YES
@@ -429,10 +429,8 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToGetOrdersFirstPage {
-  NSString *path = [NSString stringWithFormat:@"apps/%@/orders", [LUAPIClient sharedClient].appID];
-
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                            path:path
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                            path:@"apps/orders"
                                       HTTPMethod:@"GET"
                                    authenticated:NO
                                     responseData:[self responseDataFromFile:@"orders_page-1"]];
@@ -444,20 +442,16 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToGetOrdersLastPage {
-  NSString *path = [NSString stringWithFormat:@"apps/%@/orders?last", [LUAPIClient sharedClient].appID];
-
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                 path:path
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"apps/orders?last"
                            HTTPMethod:@"GET"
                         authenticated:NO
                          responseData:nil];
 }
 
 + (LUAPIStub *)stubToGetOrdersSecondPage {
-  NSString *path = [NSString stringWithFormat:@"apps/%@/orders?page=2", [LUAPIClient sharedClient].appID];
-
-  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                            path:path
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                            path:@"apps/orders?page=2"
                                       HTTPMethod:@"GET"
                                    authenticated:NO
                                     responseData:[self responseDataFromFile:@"orders_page-2"]];
@@ -469,7 +463,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToGetPaymentToken {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
                                  path:@"payment_token"
                            HTTPMethod:@"GET"
                         authenticated:YES
@@ -533,7 +527,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToSubmitFeedbackForOrderWithUUID:(NSString *)UUID {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
                                  path:[NSString stringWithFormat:@"orders/%@/feedback", UUID]
                            HTTPMethod:@"POST"
                         authenticated:NO
@@ -541,8 +535,8 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 }
 
 + (LUAPIStub *)stubToUpdateUser {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                 path:@"users/1"
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"users"
                            HTTPMethod:@"PUT"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"current_user"]];
@@ -616,7 +610,7 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 + (LUAPIStub *)stubToGetInterstitialForOrderWithUUID:(NSString *)UUID fromFile:(NSString *)file {
   NSString *path = [NSString stringWithFormat:@"orders/%@/interstitial", UUID];
 
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
                                  path:path
                            HTTPMethod:@"GET"
                         authenticated:YES

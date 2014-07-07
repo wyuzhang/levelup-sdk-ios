@@ -9,7 +9,7 @@
 + (LUAPIRequest *)requestForPaymentToken {
   return [LUAPIRequest apiRequestWithMethod:@"GET"
                                        path:@"payment_token"
-                                 apiVersion:LUAPIVersion14
+                                 apiVersion:LUAPIVersion15
                                  parameters:nil
                                modelFactory:[LUPaymentTokenJSONFactory factory]];
 }

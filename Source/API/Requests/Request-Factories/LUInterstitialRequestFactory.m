@@ -12,7 +12,7 @@
 
   return [LUAPIRequest apiRequestWithMethod:@"GET"
                                        path:path
-                                 apiVersion:LUAPIVersion14
+                                 apiVersion:LUAPIVersion15
                                  parameters:nil
                                modelFactory:[LUInterstitialJSONFactory factory]];
 }
@@ -31,7 +31,7 @@
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"
                                        path:path
-                                 apiVersion:LUAPIVersion14
+                                 apiVersion:LUAPIVersion15
                                  parameters:@{@"feedback": parameters}
                                modelFactory:[LUInterstitialJSONFactory factory]];
 }
