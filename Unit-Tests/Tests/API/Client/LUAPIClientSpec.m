@@ -240,14 +240,6 @@ describe(@"LUAPIClient", ^{
       });
     });
 
-    describe(@"currentUserID", ^{
-      it(@"returns the currentUserID stored in the keychain", ^{
-        [[[LUKeychainAccess standardKeychainAccess] should] receive:@selector(objectForKey:)];
-
-        [client currentUserID];
-      });
-    });
-
     describe(@"setAccessToken:", ^{
       it(@"stores the accessToken in the keychain", ^{
         NSString *accessToken = @"access-token";
@@ -264,16 +256,6 @@ describe(@"LUAPIClient", ^{
         client.baseURL = URL;
 
         [[client.httpOperationManager.baseURL should] equal:URL];
-      });
-    });
-
-    describe(@"setCurrentUserID:", ^{
-      it(@"stores the currentUserID in the keychain", ^{
-        NSNumber *currentUserID = @123;
-
-        [[[LUKeychainAccess standardKeychainAccess] should] receive:@selector(setObject:forKey:) withArguments:currentUserID, any()];
-
-        client.currentUserID = currentUserID;
       });
     });
   });

@@ -12,7 +12,6 @@
 #import "LUKeychainAccess.h"
 
 NSString * const LUAccessTokenKey = @"LUAccessToken";
-NSString * const LUCurrentUserIDKey = @"LUCurrentUserID";
 
 @interface LUAPIClient ()
 
@@ -24,7 +23,6 @@ NSString * const LUCurrentUserIDKey = @"LUCurrentUserID";
 
 @implementation LUAPIClient {
   NSString *_accessToken;
-  NSNumber *_currentUserID;
 }
 
 __strong static LUAPIClient *_sharedClient = nil;
@@ -149,14 +147,6 @@ __strong static LUAPIClient *_sharedClient = nil;
   return self.httpOperationManager.baseURL;
 }
 
-- (NSNumber *)currentUserID {
-  if (!_currentUserID) {
-    _currentUserID = [[LUKeychainAccess standardKeychainAccess] objectForKey:LUCurrentUserIDKey];
-  }
-
-  return _currentUserID;
-}
-
 - (void)setAccessToken:(NSString *)accessToken {
   _accessToken = accessToken;
   [[LUKeychainAccess standardKeychainAccess] setString:accessToken forKey:LUAccessTokenKey];
@@ -164,11 +154,6 @@ __strong static LUAPIClient *_sharedClient = nil;
 
 - (void)setBaseURL:(NSURL *)baseURL {
   [self.httpOperationManager setValue:baseURL forKeyPath:@"baseURL"];
-}
-
-- (void)setCurrentUserID:(NSNumber *)currentUserID {
-  _currentUserID = currentUserID;
-  [[LUKeychainAccess standardKeychainAccess] setObject:currentUserID forKey:LUCurrentUserIDKey];
 }
 
 @end

@@ -105,8 +105,10 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 
 /**
  The user ID of the authenticated user.
+
+ @deprecated This attribute has been deprecated. User IDs are no longer required for any requests.
  */
-@property (copy) NSNumber *currentUserID;
+@property (copy) NSNumber *currentUserID DEPRECATED_ATTRIBUTE;
 
 @property (copy, readonly) NSString *apiKey;
 @property (copy, readonly) NSString *appID;
