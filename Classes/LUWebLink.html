@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUInterstitialClaimAction Class Reference</title>
+		<title>LUWebLink Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUInterstitialClaimAction Class Reference</h1>
+				<h1 class="hideInXcode">LUWebLink Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,11 +39,22 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/campaignCode">&nbsp;&nbsp;&nbsp;&nbsp;campaignCode</option>
+	<option value="//api/name/deepLinkURL">&nbsp;&nbsp;&nbsp;&nbsp;deepLinkURL</option>
+	
+	<option value="//api/name/title">&nbsp;&nbsp;&nbsp;&nbsp;title</option>
+	
+	<option value="//api/name/webLinkTypeID">&nbsp;&nbsp;&nbsp;&nbsp;webLinkTypeID</option>
+	
+	<option value="//api/name/webURL">&nbsp;&nbsp;&nbsp;&nbsp;webURL</option>
 	
 	
 	
 	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/imageURL">&nbsp;&nbsp;&nbsp;&nbsp;- imageURL</option>
 	
 	
 	
@@ -69,7 +80,13 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/campaignCode">campaignCode</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deepLinkURL">deepLinkURL</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/title">title</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/webLinkTypeID">webLinkTypeID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/webURL">webURL</a></span></li>
 	
 </ul></li>
 
@@ -77,12 +94,18 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageURL">imageURL</a></span></li>
+	
+</ul></li>
+
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUInterstitialClaimAction Class Reference" name="top"></a>
+				<a title="LUWebLink Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -91,7 +114,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUInterstitialClaimAction Class Reference</h1>
+						<h1 class="title title-header">LUWebLink Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -102,7 +125,7 @@
 	<td class="specification-value">LUAPIModel : NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUInterstitialClaimAction.h<br />LUInterstitialClaimAction.m</td>
+	<td class="specification-value">LUWebLink.h<br />LUWebLink.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -112,7 +135,12 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This action is used for interstitials that request the user claim a campaign.</p>
+						<p>A <code>LUWebLink</code> represents a link associated with a particular location or merchant. A web link will
+always have a web URL (suitable to open in a web view or in Safari), but may also have a deep link
+URL, which links directly into another application.</p>
+
+<p>When <a href="#//api/name/deepLinkURL"><code>deepLinkURL</code></a> is present, you should first check if the device can open the URL using
+<code>[NSURL canOpenURL:]</code>, falling back to <a href="#//api/name/webURL"><code>webURL</code></a> if the URL cannot be opened.</p>
 					</div>
 					
 					
@@ -130,9 +158,33 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/campaignCode">&nbsp;&nbsp;campaignCode</a></code>
+		<code><a href="#//api/name/deepLinkURL">&nbsp;&nbsp;deepLinkURL</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/title">&nbsp;&nbsp;title</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/webLinkTypeID">&nbsp;&nbsp;webLinkTypeID</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/webURL">&nbsp;&nbsp;webURL</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/imageURL">&ndash;&nbsp;imageURL</a></code>
+	</span>
+	
 	
 </li>
 						</ul>
@@ -148,18 +200,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/campaignCode" title="campaignCode"></a>
-	<h3 class="subsubtitle method-title">campaignCode</h3>
+	<a name="//api/name/deepLinkURL" title="deepLinkURL"></a>
+	<h3 class="subsubtitle method-title">deepLinkURL</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A campaign code that the user will have the option of claiming.</p>
+		<p>An optional deep link URL.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *campaignCode</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSURL *deepLinkURL</code></div>
 
     
 	
@@ -171,7 +223,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>A campaign code that the user will have the option of claiming.</p>
+		<p>An optional deep link URL.</p>
 	</div>
 	
 	
@@ -182,7 +234,130 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUInterstitialClaimAction.h</code><br />
+		<code class="declared-in-ref">LUWebLink.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/title" title="title"></a>
+	<h3 class="subsubtitle method-title">title</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The title of this link. For example, &ldquo;Twitter&rdquo; or &ldquo;Facebook&rdquo;.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *title</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The title of this link. For example, &ldquo;Twitter&rdquo; or &ldquo;Facebook&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUWebLink.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/webLinkTypeID" title="webLinkTypeID"></a>
+	<h3 class="subsubtitle method-title">webLinkTypeID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The ID representing the web link type (internal)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *webLinkTypeID</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The ID representing the web link type (internal)</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUWebLink.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/webURL" title="webURL"></a>
+	<h3 class="subsubtitle method-title">webURL</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The URL of this link.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSURL *webURL</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The URL of this link.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUWebLink.h</code><br />
 	</div>				
 	
 	
@@ -193,6 +368,55 @@
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/imageURL" title="imageURL"></a>
+	<h3 class="subsubtitle method-title">imageURL</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An associated image for the link, suitable as an icon. Will automatically return a retina or
+non-retina scaled image based on the screen scale of the device. The resolution is 25x25.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSURL *)imageURL</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>An associated image for the link, suitable as an icon. Will automatically return a retina or
+non-retina scaled image based on the screen scale of the device. The resolution is 25x25.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUWebLink.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
                     

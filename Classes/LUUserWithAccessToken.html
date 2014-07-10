@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUInterstitialClaimAction Class Reference</title>
+		<title>LUUserWithAccessToken Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUInterstitialClaimAction Class Reference</h1>
+				<h1 class="hideInXcode">LUUserWithAccessToken Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,7 +39,9 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/campaignCode">&nbsp;&nbsp;&nbsp;&nbsp;campaignCode</option>
+	<option value="//api/name/accessToken">&nbsp;&nbsp;&nbsp;&nbsp;accessToken</option>
+	
+	<option value="//api/name/user">&nbsp;&nbsp;&nbsp;&nbsp;user</option>
 	
 	
 	
@@ -69,7 +71,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/campaignCode">campaignCode</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/accessToken">accessToken</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/user">user</a></span></li>
 	
 </ul></li>
 
@@ -82,7 +86,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUInterstitialClaimAction Class Reference" name="top"></a>
+				<a title="LUUserWithAccessToken Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -91,7 +95,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUInterstitialClaimAction Class Reference</h1>
+						<h1 class="title title-header">LUUserWithAccessToken Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -102,7 +106,7 @@
 	<td class="specification-value">LUAPIModel : NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUInterstitialClaimAction.h<br />LUInterstitialClaimAction.m</td>
+	<td class="specification-value">LUUserWithAccessToken.h<br />LUUserWithAccessToken.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -112,7 +116,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This action is used for interstitials that request the user claim a campaign.</p>
+						<p><code>LUUserWithAccessToken</code> is used to store an <a href="../Classes/LUAccessToken.html"><code>LUAccessToken</code></a> and an <a href="../Classes/LUUser.html"><code>LUUser</code></a>.</p>
 					</div>
 					
 					
@@ -130,7 +134,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/campaignCode">&nbsp;&nbsp;campaignCode</a></code>
+		<code><a href="#//api/name/accessToken">&nbsp;&nbsp;accessToken</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/user">&nbsp;&nbsp;user</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -148,18 +158,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/campaignCode" title="campaignCode"></a>
-	<h3 class="subsubtitle method-title">campaignCode</h3>
+	<a name="//api/name/accessToken" title="accessToken"></a>
+	<h3 class="subsubtitle method-title">accessToken</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A campaign code that the user will have the option of claiming.</p>
+		<p>The access token.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *campaignCode</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUAccessToken *accessToken</code></div>
 
     
 	
@@ -171,7 +181,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>A campaign code that the user will have the option of claiming.</p>
+		<p>The access token.</p>
 	</div>
 	
 	
@@ -182,7 +192,48 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUInterstitialClaimAction.h</code><br />
+		<code class="declared-in-ref">LUUserWithAccessToken.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/user" title="user"></a>
+	<h3 class="subsubtitle method-title">user</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUUser *user</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The user.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUUserWithAccessToken.h</code><br />
 	</div>				
 	
 	
