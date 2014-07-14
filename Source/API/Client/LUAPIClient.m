@@ -30,13 +30,13 @@ NSString * const LUAccessTokenKey = @"LUAccessToken";
 @interface LUAPIClient ()
 
 @property (copy, readwrite) NSString *apiKey;
-@property (assign, readwrite) BOOL developmentMode;
 @property (strong) AFHTTPRequestOperationManager *httpOperationManager;
 
 @end
 
 @implementation LUAPIClient {
   NSString *_accessToken;
+  BOOL _developmentMode;
 }
 
 __strong static LUAPIClient *_sharedClient = nil;
@@ -49,7 +49,7 @@ __strong static LUAPIClient *_sharedClient = nil;
   return _sharedClient;
 }
 
-- (id)initWithAppID:(NSString *)appID APIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode {
+- (id)initWithAppID:(NSString *)appID APIKey:(NSString *)apiKey {
   NSAssert(appID.length > 0, @"An app ID is required");
   NSAssert(apiKey.length > 0, @"An API key is required");
 
@@ -58,6 +58,7 @@ __strong static LUAPIClient *_sharedClient = nil;
 
   _apiKey = apiKey;
   _appID = appID;
+  _clientsideEncryptionKey = BraintreePublicKeyProduction;
   _deepLinkAuthBundleID = @"com.scvngr.LevelUp";
   _deepLinkAuthInstallAppStoreURL = [NSURL URLWithString:@"https://itunes.apple.com/us/app/levelup-.-pay-with-your-phone/id424121785"];
   _deepLinkAuthInstallMessage = @"It looks like you don’t have the LevelUp app installed, but that’s an easy fix! It’s easy to set up and free.";
@@ -66,22 +67,9 @@ __strong static LUAPIClient *_sharedClient = nil;
   _deepLinkAuthInstallTitle = @"Get LevelUp";
   _deepLinkAuthShowInstallAlert = YES;
   _deepLinkAuthURLScheme = @"thelevelup";
-  _developmentMode = developmentMode;
-
-  if (developmentMode) {
-    _clientsideEncryptionKey = BraintreePublicKeyDevelopment;
-  } else {
-    _clientsideEncryptionKey = BraintreePublicKeyProduction;
-  }
+  _developmentMode = NO;
 
   [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-
-  NSURL *baseURL;
-  if (developmentMode) {
-    baseURL = [NSURL URLWithString:LevelUpAPIBaseURLDevelopment];
-  } else {
-    baseURL = [NSURL URLWithString:LevelUpAPIBaseURLProduction];
-  }
 
   AFJSONRequestSerializer *requestSerializer = [AFJSONRequestSerializer serializer];
   [requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
@@ -90,7 +78,7 @@ __strong static LUAPIClient *_sharedClient = nil;
            forHTTPHeaderField:@"User-Agent"];
   [requestSerializer setValue:apiKey forHTTPHeaderField:@"X-LevelUp-API-Key"];
 
-  _httpOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
+  _httpOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:LevelUpAPIBaseURLProduction]];
   _httpOperationManager.requestSerializer = requestSerializer;
   _httpOperationManager.responseSerializer = [AFJSONResponseSerializer serializer];
 
@@ -100,11 +88,12 @@ __strong static LUAPIClient *_sharedClient = nil;
 #pragma mark - Public Methods
 
 + (void)setupWithAppID:(NSString *)appID APIKey:(NSString *)apiKey {
-  [self setupWithAppID:appID APIKey:apiKey developmentMode:NO];
+  _sharedClient = [[self alloc] initWithAppID:appID APIKey:apiKey];
 }
 
 + (void)setupWithAppID:(NSString *)appID APIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode {
-  _sharedClient = [[self alloc] initWithAppID:appID APIKey:apiKey developmentMode:developmentMode];
+  [self setupWithAppID:appID APIKey:apiKey];
+  [self sharedClient].developmentMode = developmentMode;
 }
 
 - (BOOL)isNetworkUnreachable {
@@ -161,6 +150,10 @@ __strong static LUAPIClient *_sharedClient = nil;
   return self.httpOperationManager.baseURL;
 }
 
+- (BOOL)developmentMode {
+  return _developmentMode;
+}
+
 - (void)setAccessToken:(NSString *)accessToken {
   _accessToken = accessToken;
   [[LUKeychainAccess standardKeychainAccess] setString:accessToken forKey:LUAccessTokenKey];
@@ -168,6 +161,18 @@ __strong static LUAPIClient *_sharedClient = nil;
 
 - (void)setBaseURL:(NSURL *)baseURL {
   [self.httpOperationManager setValue:baseURL forKeyPath:@"baseURL"];
+}
+
+- (void)setDevelopmentMode:(BOOL)developmentMode {
+  _developmentMode = developmentMode;
+
+  if (developmentMode) {
+    self.baseURL = [NSURL URLWithString:LevelUpAPIBaseURLDevelopment];
+    self.clientsideEncryptionKey = BraintreePublicKeyDevelopment;
+  } else {
+    self.baseURL = [NSURL URLWithString:LevelUpAPIBaseURLProduction];
+    self.clientsideEncryptionKey = BraintreePublicKeyProduction;
+  }
 }
 
 @end

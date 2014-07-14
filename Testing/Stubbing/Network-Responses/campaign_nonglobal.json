@@ -4,7 +4,7 @@
     "offer_html" : "LevelUp is a free app that enables you to pay with your phone all over town. Grab $5 from LevelUp and give it a try! ",
     "message_for_facebook" : "Leave your wallet at home & pay with your phone. Grab the LevelUp app + $5 free to spend anywhere! ",
     "message_for_email_body" : "Hey there,\r\n\r\nQuick question for you.\r\nHave you heard of LevelUp?\r\n\r\nIt’s an app that lets you pay with your phone and save all over town.\r\n\r\nI think you’d really like it.\r\nJoin LevelUp with my code here https://www.thelevelup.com/c/EM-TEST and you’ll get $5 to spend on anywhere on LevelUp instantly!",
-    "share_url_email" : "https://www.staging-levelup.com/c/EM-TEST",
+    "share_url_email" : "https://www.thelevelup.com/c/EM-TEST",
     "sponsor" : "LevelUp",
     "message_for_email_subject" : "Let's Grab a Free Lunch/Coffee on LevelUp",
     "type" : "refer_a_friend",
@@ -12,9 +12,9 @@
     "confirmation_html" : "You just loaded $5 to your account. Visit the nearest store and pay with the app to use it.",
     "shareable" : true,
     "message_for_twitter" : "Leave your wallet at home & pay with your phone. Grab the LevelUp app + $5 free to spend anywhere! ",
-    "share_url_twitter" : "https://www.staging-levelup.com/c/TW-TEST",
+    "share_url_twitter" : "https://www.thelevelup.com/c/TW-TEST",
     "applies_to_all_merchants" : false,
-    "share_url_facebook" : "https://www.staging-levelup.com/c/FB-TEST",
+    "share_url_facebook" : "https://www.thelevelup.com/c/FB-TEST",
     "name" : "$5 on LevelUp",
     "message_for_facebook" : "facebook message"
   }

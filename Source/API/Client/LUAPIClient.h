@@ -49,6 +49,15 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
  user. Once stored, these values will be securely stored so that they will persist between
  application launches.
 
+ ## Development Mode
+
+ You can configure the SDK to run in "Development Mode" by configuring the SDK using
+ `setupWithAppID:APIKey:developmentMode:` or by setting `developmentMode` to `YES`. When in
+ Development Mode, all API requests will go to the LevelUp Sandbox server rather than the production
+ API server. The Sandbox server allows you to test the API without charging any money. When in
+ Development Mode, make sure your App ID and API Key are associated with a Sandbox App, configured at
+ https://www.thelevelup.com/developer/sandbox/apps.
+
  ## Errors
 
  When an API call fails, the `failure` block passed to `performRequest:success:failure:` will be
@@ -101,14 +110,11 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 + (void)setupWithAppID:(NSString *)appID APIKey:(NSString *)apiKey;
 
 /**
- Sets up the LevelUp SDK with the option of turning on development mode (internal use only).
-
- Using `setupWithAppID:APIKey:` is preferred, as development mode uses the LevelUp staging server
- which may not be up to date with all API keys, as well as periodic downtime or possible bugs.
+ Sets up the LevelUp SDK with the option of turning on development mode.
 
  @param appID Your LevelUp App ID.
  @param apiKey Your LevelUp API key.
- @param developmentMode Specifies if requests should go to the development or production server.
+ @param developmentMode Specifies if requests should go to the sandbox or production server.
  */
 + (void)setupWithAppID:(NSString *)appID APIKey:(NSString *)apiKey developmentMode:(BOOL)developmentMode;
 
@@ -128,7 +134,11 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 @property (copy, readonly) NSString *appID;
 @property (nonatomic, strong) NSURL *baseURL;
 @property (nonatomic, copy) NSString *clientsideEncryptionKey;
-@property (assign, readonly) BOOL developmentMode;
+
+/**
+ Set to `YES` to enable Development Mode (default is `NO`).
+ */
+@property (assign) BOOL developmentMode;
 
 ///-------------------------------
 /// @name Deep Link Auth Configuration

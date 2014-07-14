@@ -4,7 +4,7 @@
       "question_text" : "How would you rate this app?"
     },
     "callout_text" : "Give us Feedback",
-    "image_url" : "https://www.staging-levelup.com/v14/campaigns/1/image",
+    "image_url" : "https://api.thelevelup.com/v14/campaigns/1/image",
     "title" : "Give us Feedback",
     "type" : "feedback",
     "description_html" : "<p>Do you like the app? Please let us know!</p>"

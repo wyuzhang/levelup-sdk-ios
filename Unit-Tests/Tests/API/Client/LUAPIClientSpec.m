@@ -74,39 +74,30 @@ describe(@"LUAPIClient", ^{
   // Public Methods
 
   describe(@"setupWithAppID:APIKey:", ^{
-    it(@"calls setupWithAppID:APIKey:developmentMode: with developmentMode set to NO", ^{
-      [[[LUAPIClient should] receive] setupWithAppID:@"1" APIKey:@"api-key" developmentMode:NO];
-
-      [LUAPIClient setupWithAppID:@"1" APIKey:@"api-key"];
-    });
-  });
-
-  describe(@"setupWithAppID:APIKey:developmentMode:", ^{
     NSString *appID = @"1";
     NSString *APIKey = @"anAPIKey";
-    BOOL developmentMode = NO;
 
     context(@"with a missing app ID", ^{
       it(@"throws an exception", ^{
-        [[theBlock(^{ [LUAPIClient setupWithAppID:nil APIKey:APIKey developmentMode:developmentMode]; }) should] raise];
+        [[theBlock(^{ [LUAPIClient setupWithAppID:nil APIKey:APIKey]; }) should] raise];
       });
     });
 
     context(@"with a missing API key", ^{
       it(@"throws an exception", ^{
-        [[theBlock(^{ [LUAPIClient setupWithAppID:appID APIKey:nil developmentMode:developmentMode]; }) should] raise];
+        [[theBlock(^{ [LUAPIClient setupWithAppID:appID APIKey:nil]; }) should] raise];
       });
     });
 
     context(@"with an empty API key", ^{
       it(@"throws an exception", ^{
-        [[theBlock(^{ [LUAPIClient setupWithAppID:appID APIKey:@"" developmentMode:developmentMode]; }) should] raise];
+        [[theBlock(^{ [LUAPIClient setupWithAppID:appID APIKey:@""]; }) should] raise];
       });
     });
 
     context(@"with an app ID and API key", ^{
       beforeEach(^{
-        [LUAPIClient setupWithAppID:appID APIKey:APIKey developmentMode:developmentMode];
+        [LUAPIClient setupWithAppID:appID APIKey:APIKey];
       });
 
       it(@"enables the network activity manager", ^{
@@ -121,27 +112,15 @@ describe(@"LUAPIClient", ^{
         [[[[[LUAPIClient sharedClient] httpOperationManager].requestSerializer.HTTPRequestHeaders valueForKey:@"Accept"] should] equal:@"application/json"];
       });
     });
+  });
 
-    context(@"when developmentMode is YES", ^{
-      beforeEach(^{
-        [LUAPIClient setupWithAppID:appID APIKey:APIKey developmentMode:YES];
-      });
+  describe(@"setupWithAppID:APIKey:developmentMode:", ^{
+    it(@"calls setupWithAppID:APIKey: and then sets developmentMode", ^{
+      [[[LUAPIClient should] receive] setupWithAppID:@"1" APIKey:@"api-key"];
 
-      it(@"sets baseURL to the development URL", ^{
-        NSURL *expected = [NSURL URLWithString:LevelUpAPIBaseURLDevelopment];
-        [[[LUAPIClient sharedClient].baseURL should] equal:expected];
-      });
-    });
+      [LUAPIClient setupWithAppID:@"1" APIKey:@"api-key" developmentMode:YES];
 
-    context(@"when developmentMode is NO", ^{
-      beforeEach(^{
-        [LUAPIClient setupWithAppID:appID APIKey:APIKey developmentMode:NO];
-      });
-
-      it(@"sets baseURL to the production URL", ^{
-        NSURL *expected = [NSURL URLWithString:LevelUpAPIBaseURLProduction];
-        [[[LUAPIClient sharedClient].baseURL should] equal:expected];
-      });
+      [[theValue([LUAPIClient sharedClient].developmentMode) should] beYes];
     });
   });
 
@@ -270,6 +249,30 @@ describe(@"LUAPIClient", ^{
         client.baseURL = URL;
 
         [[client.httpOperationManager.baseURL should] equal:URL];
+      });
+    });
+
+    describe(@"setDevelopmentMode:", ^{
+      context(@"when developmentMode is YES", ^{
+        beforeEach(^{
+          client.developmentMode = YES;
+        });
+
+        it(@"sets baseURL to the development URL", ^{
+          NSURL *expected = [NSURL URLWithString:LevelUpAPIBaseURLDevelopment];
+          [[[LUAPIClient sharedClient].baseURL should] equal:expected];
+        });
+      });
+
+      context(@"when developmentMode is NO", ^{
+        beforeEach(^{
+          client.developmentMode = NO;
+        });
+
+        it(@"sets baseURL to the production URL", ^{
+          NSURL *expected = [NSURL URLWithString:LevelUpAPIBaseURLProduction];
+          [[[LUAPIClient sharedClient].baseURL should] equal:expected];
+        });
       });
     });
   });

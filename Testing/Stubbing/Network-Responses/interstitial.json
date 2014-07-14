@@ -3,13 +3,13 @@
     "action" : {
       "message_for_email_subject" : "Email subject",
       "message_for_twitter" : "Twitter message",
-      "share_url_email" : "https://www.staging-levelup.com/c/EM-TEST",
-      "share_url_twitter" : "https://www.staging-levelup.com/c/TW-TEST",
+      "share_url_email" : "https://www.thelevelup.com/c/EM-TEST",
+      "share_url_twitter" : "https://www.thelevelup.com/c/TW-TEST",
       "message_for_email_body" : "Email body",
-      "share_url_facebook" : "https://www.staging-levelup.com/c/FB-TEST"
+      "share_url_facebook" : "https://www.thelevelup.com/c/FB-TEST"
     },
     "callout_text" : "Give Money to Friends",
-    "image_url" : "https://www.staging-levelup.com/v14/campaigns/1/image",
+    "image_url" : "https://api.thelevelup.com/v14/campaigns/1/image",
     "title" : "$1 at Test Merchant",
     "type" : "share",
     "description_html" : "<p>Grab $1.00 to spend on anything at Test Merchant. Enjoy!</p>"
