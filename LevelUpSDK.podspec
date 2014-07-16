@@ -3,16 +3,8 @@ Pod::Spec.new do |s|
   s.version      = '1.5.0'
   s.summary      = 'An SDK for the LevelUp payment platform.'
   s.homepage     = 'http://www.thelevelup.com'
-  s.license      = {
-    :type => 'Custom',
-    :text => <<-LICENSE
-              Copyright (C) 2012-2013 SCVNGR, Inc.
-
-              All rights reserved.
-    LICENSE
-  }
-
-  s.author       = { 'Costa Walcott' => 'costa@thelevelup.com' }
+  s.license      = 'Apache License, Version 2.0'
+  s.author       = { 'LevelUp' => 'support@thelevelup.com' }
   s.source       = { :git => 'git@github.com:TheLevelUp/levelup-sdk-ios.git', :tag => "#{s.version}" }
   s.platform     = :ios, '6.0'
   s.frameworks   = 'AVFoundation', 'CoreData', 'CoreGraphics', 'CoreLocation', 'CoreMedia', 'CoreVideo', 'ImageIO', 'MobileCoreServices', 'QuartzCore', 'Security', 'SystemConfiguration'
