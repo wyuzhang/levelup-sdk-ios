@@ -143,4 +143,6 @@ terms](https://www.thelevelup.com/developer-terms).
 
 # Copyright
 
-Copyright 2013 SCVNGR, Inc., D.B.A. LevelUp. All rights reserved.
+Copyright (C) 2014 SCVNGR, Inc. d/b/a LevelUp
+
+The LevelUp SDK is available under the Apache 2.0 license. See the LICENSE file for more information.
