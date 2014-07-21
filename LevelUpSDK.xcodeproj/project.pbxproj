@@ -389,8 +389,6 @@
 		F8D4DB9D17569CA90000DB66 /* NSDictionary+SafetyAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D4DB9B17569CA90000DB66 /* NSDictionary+SafetyAdditions.h */; };
 		F8D4DB9E17569CA90000DB66 /* NSDictionary+SafetyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D4DB9C17569CA90000DB66 /* NSDictionary+SafetyAdditions.m */; };
 		F8EAF0E817BA817F00197388 /* LUCacheManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EAF0E617BA817800197388 /* LUCacheManagerSpec.m */; };
-		F8EAF0EB17BA827B00197388 /* LUKeychainAccess+StubbingAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8EAF0E917BA827B00197388 /* LUKeychainAccess+StubbingAdditions.h */; };
-		F8EAF0EC17BA827B00197388 /* LUKeychainAccess+StubbingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EAF0EA17BA827B00197388 /* LUKeychainAccess+StubbingAdditions.m */; };
 		F8EAF0EF17BA865900197388 /* LUCacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F8EAF0ED17BA865900197388 /* LUCacheManager.h */; };
 		F8EAF0F017BA865900197388 /* LUCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EAF0EE17BA865900197388 /* LUCacheManager.m */; };
 /* End PBXBuildFile section */
@@ -794,8 +792,6 @@
 		F8D4DB9B17569CA90000DB66 /* NSDictionary+SafetyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafetyAdditions.h"; sourceTree = "<group>"; };
 		F8D4DB9C17569CA90000DB66 /* NSDictionary+SafetyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafetyAdditions.m"; sourceTree = "<group>"; };
 		F8EAF0E617BA817800197388 /* LUCacheManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCacheManagerSpec.m; sourceTree = "<group>"; };
-		F8EAF0E917BA827B00197388 /* LUKeychainAccess+StubbingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUKeychainAccess+StubbingAdditions.h"; sourceTree = "<group>"; };
-		F8EAF0EA17BA827B00197388 /* LUKeychainAccess+StubbingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUKeychainAccess+StubbingAdditions.m"; sourceTree = "<group>"; };
 		F8EAF0ED17BA865900197388 /* LUCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCacheManager.h; sourceTree = "<group>"; };
 		F8EAF0EE17BA865900197388 /* LUCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCacheManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -983,8 +979,6 @@
 				02E29144175FCAB8002036B4 /* LUAPIStubbing.m */,
 				02293818176280B00057C381 /* LUAPIStubFactory.h */,
 				02293819176280B00057C381 /* LUAPIStubFactory.m */,
-				F8EAF0E917BA827B00197388 /* LUKeychainAccess+StubbingAdditions.h */,
-				F8EAF0EA17BA827B00197388 /* LUKeychainAccess+StubbingAdditions.m */,
 			);
 			path = Stubbing;
 			sourceTree = "<group>";
@@ -1721,7 +1715,6 @@
 				0274B83C17739B7800FD5B43 /* LUAPIError.h in Headers */,
 				0274B84017739BAA00FD5B43 /* LUAPIErrorJSONFactory.h in Headers */,
 				021B7475193FAB8900BBC315 /* LURegistration.h in Headers */,
-				F8EAF0EB17BA827B00197388 /* LUKeychainAccess+StubbingAdditions.h in Headers */,
 				F8EAF0EF17BA865900197388 /* LUCacheManager.h in Headers */,
 				029053BD17BD4AAB00527576 /* LUAPIResponse.h in Headers */,
 				029053BF17BD4AAB00527576 /* LUWebLinkParser.h in Headers */,
@@ -2076,7 +2069,6 @@
 				0274B83D17739B7800FD5B43 /* LUAPIError.m in Sources */,
 				0274B84117739BAA00FD5B43 /* LUAPIErrorJSONFactory.m in Sources */,
 				02CC555918F2F88D00BF6776 /* NSError+LUAdditions.m in Sources */,
-				F8EAF0EC17BA827B00197388 /* LUKeychainAccess+StubbingAdditions.m in Sources */,
 				F8EAF0F017BA865900197388 /* LUCacheManager.m in Sources */,
 				029053BE17BD4AAB00527576 /* LUAPIResponse.m in Sources */,
 				029053C017BD4AAB00527576 /* LUWebLinkParser.m in Sources */,

@@ -25,10 +25,9 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Testing' do |testing|
-    testing.dependency 'LevelUpSDK/Core'
     testing.dependency 'OHHTTPStubs', '1.1.2'
 
-    testing.source_files = 'Testing/LevelUpSDKTesting.h', 'Testing/**/*.{h,m}'
+    testing.source_files = 'Source/*.h', 'Source/**/*.h', 'Testing/LevelUpSDKTesting.h', 'Testing/**/*.{h,m}'
     testing.resources = 'Testing/Stubbing/Network-Responses/*.json'
   end
 end

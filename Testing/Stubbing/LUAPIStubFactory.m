@@ -19,13 +19,11 @@
 #import "LUAPIStub.h"
 #import "LUAPIStubFactory.h"
 #import "LUCoreDataStack.h"
-#import "LUKeychainAccess.h"
+#import "LUDeviceIdentifier.h"
 #import "LULocationCacheUpdater.h"
 #import "LUUser.h"
 #import "LUUserParameterBuilder.h"
 #import "NSDate+StringFormats.h"
-
-NSString * const LUDeviceIdentifier = @"abcdefg";
 
 @implementation LUAPIStubFactory
 
@@ -104,8 +102,6 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user {
   LUAPIStub *stub = [self stubToCreateUser];
 
-  [self setDeviceIdentifier];
-
   stub.requestBodyJSON = [self requestBodyJSONForUser:user];
   stub.responseData = [self responseDataFromJSON:[self responseJSONForUser:user]];
 
@@ -128,8 +124,6 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
 + (LUAPIStub *)stubToCreateUserDebitOnly:(LUUser *)user {
   LUAPIStub *stub = [self stubToCreateUser];
-
-  [self setDeviceIdentifier];
 
   NSMutableDictionary *responseJSON = [[self responseJSONForUser:user] mutableCopy];
   responseJSON[@"debit_card_only"] = @(YES);
@@ -511,11 +505,10 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 + (LUAPIStub *)stubToLogInWithEmail:(NSString *)email password:(NSString *)password {
   LUAPIStub *stub = [self stubToLogIn];
 
-  [self setDeviceIdentifier];
   stub.requestBodyJSON = @{
     @"access_token" : @{
       @"api_key" : [LUAPIClient sharedClient].apiKey,
-      @"device_identifier" : LUDeviceIdentifier,
+      @"device_identifier" : [LUDeviceIdentifier deviceIdentifier],
       @"password" : password,
       @"username" : email
     }
@@ -558,7 +551,6 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
 
 + (LUAPIStub *)stubToUpdateUser:(LUUser *)user {
   LUAPIStub *stub = [self stubToUpdateUser];
-  [self setDeviceIdentifier];
 
   NSDictionary *userJSON = @{@"user" : [LUUserParameterBuilder parametersForUser:user] };
   stub.responseData = [self responseDataFromJSON:userJSON];
@@ -592,10 +584,6 @@ NSString * const LUDeviceIdentifier = @"abcdefg";
   }
 
   return @{ @"user" : responseUserJSON };
-}
-
-+ (void)setDeviceIdentifier {
-  [[LUKeychainAccess standardKeychainAccess] setString:LUDeviceIdentifier forKey:@"LUDeviceIdentifier"];
 }
 
 + (LUAPIStub *)stubToCreatePaymentCardWithNumber:(NSString *)number
