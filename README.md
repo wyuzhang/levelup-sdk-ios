@@ -19,7 +19,7 @@ Interactions with the LevelUp API occur through the [LUAPIClient](http://theleve
 Before issuing any requests, you must register an App ID and API key. This is done using the `setupWithAppID:APIKey:` method:
 
 ```objective-c
-[[LUAPIClient sharedClient] setupWithAppID:APP_ID APIKey:API_KEY];
+[LUAPIClient setupWithAppID:APP_ID APIKey:API_KEY];
 ```
 
 An API request is an instance of [LUAPIRequest](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUAPIRequest.html). The SDK includes a set of request factories in order to create these requests (see "Request Factories" below).
