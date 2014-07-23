@@ -24,7 +24,6 @@
 #import "LUAPIStub.h"
 #import "LUAPIStubbing.h"
 #import "LUConstants.h"
-#import "LUKeychainAccess+StubbingAdditions.h"
 
 @interface LUAPIClient (HTTPOperationManager)
 

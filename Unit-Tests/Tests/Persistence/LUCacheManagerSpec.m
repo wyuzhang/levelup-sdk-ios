@@ -15,7 +15,6 @@
  */
 
 #import "LUCacheManager.h"
-#import "LUKeychainAccess+StubbingAdditions.h"
 
 SPEC_BEGIN(LUCacheManagerSpec)
 
@@ -23,14 +22,8 @@ describe(@"LUCacheManager", ^{
   __block LUKeychainAccess *keychainAccess;
 
   beforeAll(^{
-    [LUKeychainAccess stubKeychainAccess];
-
     keychainAccess = [LUKeychainAccess nullMock];
     [LUKeychainAccess stub:@selector(standardKeychainAccess) andReturn:keychainAccess];
-  });
-
-  beforeEach(^{
-    [LUKeychainAccess clearKeychainData];
   });
 
   describe(@"caching loyalty", ^{

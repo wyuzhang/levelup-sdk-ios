@@ -27,4 +27,5 @@
   #import "LevelUpSDK.h"
   #import "LevelUpSDKTesting.h"
   #import "AFNetworking.h"
+  #import "LUKeychainAccess.h"
 #endif

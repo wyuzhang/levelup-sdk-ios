@@ -17,7 +17,6 @@
 #import "LUAbstractJSONModelFactory.h"
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
-#import "LUKeychainAccess+StubbingAdditions.h"
 
 SPEC_BEGIN(LUAPIRequestSpec)
 
@@ -32,7 +31,8 @@ describe(@"LUAPIRequest", ^{
 
   beforeEach(^{
     [LUAPIClient setupWithAppID:@"1" APIKey:@"anApiKey"];
-    [LUKeychainAccess stubKeychainAccess];
+    LUKeychainAccess *keychainAccess = [LUKeychainAccess nullMock];
+    [LUKeychainAccess stub:@selector(standardKeychainAccess) andReturn:keychainAccess];
   });
 
   // Object Lifecycle Methods

@@ -23,11 +23,10 @@
 
 + (LUAPIRequest *)requestForCreditAtLocationID:(NSNumber *)locationID {
   NSString *path = [NSString stringWithFormat:@"locations/%@/credit", [locationID stringValue]];
-  NSString *apiVersion = [LUAPIClient sharedClient].accessToken ? LUAPIVersion15 : LUAPIVersion14;
 
   return [LUAPIRequest apiRequestWithMethod:@"GET"
                                        path:path
-                                 apiVersion:apiVersion
+                                 apiVersion:LUAPIVersion15
                                  parameters:nil
                                modelFactory:[LULocationCreditJSONFactory factory]];
 }
