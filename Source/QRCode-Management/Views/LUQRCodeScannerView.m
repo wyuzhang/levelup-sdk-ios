@@ -37,10 +37,22 @@ static NSInteger const kFramesPerCapture = 2;
 
 #pragma mark - Creation/Removal Methods
 
-- (void)awakeFromNib {
-  [super awakeFromNib];
+- (id)initWithCoder:(NSCoder *)aDecoder {
+  self = [super initWithCoder:aDecoder];
+  if (!self) return nil;
 
   _decoder = [[LUQRCodeDecoder alloc] init];
+
+  return self;
+}
+
+- (id)initWithFrame:(CGRect)frame {
+  self = [super initWithFrame:frame];
+  if (!self) return nil;
+
+  _decoder = [[LUQRCodeDecoder alloc] init];
+
+  return self;
 }
 
 #pragma mark - UIView methods
