@@ -33,7 +33,9 @@ static NSInteger const kFramesPerCapture = 2;
 
 @end
 
-@implementation LUQRCodeScannerView
+@implementation LUQRCodeScannerView {
+  UIColor *_crossHairsColor;
+}
 
 #pragma mark - Creation/Removal Methods
 
@@ -95,11 +97,15 @@ static NSInteger const kFramesPerCapture = 2;
 #pragma mark - Properties
 
 - (UIColor *)crossHairsColor {
-  return self.overlayView.crossHairsColor;
+  return _crossHairsColor;
 }
 
 - (void)setCrossHairsColor:(UIColor *)crossHairsColor {
-  self.overlayView.crossHairsColor = crossHairsColor;
+  _crossHairsColor = crossHairsColor;
+
+  if (self.overlayView) {
+    self.overlayView.crossHairsColor = crossHairsColor;
+  }
 }
 
 #pragma mark - Private Methods
@@ -149,6 +155,10 @@ static NSInteger const kFramesPerCapture = 2;
 
     self.overlayView = [[LUQROverlayView alloc] initWithFrame:self.frame];
     self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+
+    if (self.crossHairsColor) {
+      self.overlayView.crossHairsColor = self.crossHairsColor;
+    }
 
     [self addSubview:self.overlayView];
 

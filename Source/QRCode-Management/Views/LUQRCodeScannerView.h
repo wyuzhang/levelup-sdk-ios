@@ -33,7 +33,7 @@
 /**
  The color of the cross hairs on the view. Default is #1EBBF3.
  */
-@property (assign) UIColor *crossHairsColor;
+@property (strong) UIColor *crossHairsColor;
 
 /**
  A `LUQRCodeScannerViewDelegate` delegate.
