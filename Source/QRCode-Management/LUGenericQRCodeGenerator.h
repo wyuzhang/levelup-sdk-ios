@@ -23,6 +23,28 @@
 @interface LUGenericQRCodeGenerator : NSObject
 
 /**
+ When enabled, QR codes will be colorized to match the LevelUp logo. Defaults to `YES`.
+ */
+@property (nonatomic, assign) BOOL colorizeCodes;
+
+/**
+ The desired output height for QR codes in pixels. Default is 500.
+ */
+@property (nonatomic, assign) int outputHeight;
+
+/**
+ The desired output width for QR codes in pixels. Default is 500.
+ */
+@property (nonatomic, assign) int outputWidth;
+
+/**
+ Returns the `LUGenericQRCodeGenerator` singleton.
+
+ @return The shared `LUGenericQRCodeGenerator` instance.
+ */
++ (instancetype)sharedGenerator;
+
+/**
  Generates a `UIImage` containing a QR code.
 
  @param string A string to be encoded as a QR code.
