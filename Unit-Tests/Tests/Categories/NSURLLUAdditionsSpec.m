@@ -84,6 +84,27 @@ describe(@"NSURL", ^{
     });
   });
 
+  describe(@"lu_imageURLForWebLinkTypeWithID:", ^{
+    NSString *webLinkImageQueryParameters = @"density=2&height=25&width=25";
+
+    context(@"when the webLinkTypeID is nil", ^{
+      specify(^{
+        [[NSURL lu_imageURLForWebLinkTypeWithID:nil] shouldBeNil];
+      });
+    });
+
+    context(@"when the webLinkTypeID is not nil", ^{
+      NSNumber *locationID = @1;
+
+      it(@"returns a URL with to the web link type's image with image parameters added", ^{
+        NSURL *expectedURL = [NSURL URLWithString:[@"v15/web_link_types/1/image?" stringByAppendingString:webLinkImageQueryParameters]
+                                    relativeToURL:[LUAPIClient sharedClient].baseURL];
+
+        [[[NSURL lu_imageURLForWebLinkTypeWithID:locationID] should] equal:expectedURL];
+      });
+    });
+  });
+
   describe(@"lu_URLWithScheme:host:path:queryParameters:", ^{
     NSString *scheme = @"example";
     NSString *host = @"host";

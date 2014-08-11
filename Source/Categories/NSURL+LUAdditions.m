@@ -51,8 +51,9 @@ NSString * const LUPatternLeadingSlashOptionalVersion = @"^/(v\\d+/)?";
 + (NSURL *)lu_imageURLForWebLinkTypeWithID:(NSNumber *)webLinkTypeID {
   if (!webLinkTypeID) return nil;
 
-  NSString *path = [NSString stringWithFormat:@"web_link_types/%@/image", [webLinkTypeID stringValue]];
-  return [self imageURLForPath:path version:LUAPIVersion15];
+  NSString *path = [NSString stringWithFormat:@"%@/web_link_types/%@/image?density=%d&height=%d&width=%d",
+                    LUAPIVersion15, [webLinkTypeID stringValue], (int)[UIScreen mainScreen].scale, 25, 25];
+  return [NSURL URLWithString:path relativeToURL:[LUAPIClient sharedClient].baseURL];
 }
 
 + (NSURL *)lu_URLWithScheme:(NSString *)scheme host:(NSString *)host path:(NSString *)path queryParameters:(NSDictionary *)queryParameters {
