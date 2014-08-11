@@ -37,7 +37,7 @@
  On success, this request will return the newly created `LUCreditCard`.
 
  @warning Non-Enterprise SDK clients can only create a user's first card, and require an access token
- with the `create_first_credit_card` permission.
+ with the `LUPermissionCreateFirstCreditCard` permission.
  @param creditCard The `LUCreditCard` to create.
  */
 + (LUAPIRequest *)requestToCreateCreditCard:(LUCreditCard *)creditCard;

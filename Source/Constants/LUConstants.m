@@ -37,6 +37,15 @@ NSString * const LUDeepLinkAuthSuccessNotification = @"LUDeepLinkAuthSuccessNoti
 NSString * const LUDeepLinkAuthNotificationAccessTokenKey = @"LUDeepLinkAuthNotificationAccessTokenKey";
 NSString * const LUDeepLinkAuthNotificationErrorKey = @"LUDeepLinkAuthNotificationErrorKey";
 
+#pragma mark - Permissions
+
+NSString * const LUPermissionCreateFirstCreditCard = @"create_first_credit_card";
+NSString * const LUPermissionCreateOrders = @"create_orders";
+NSString * const LUPermissionManageUserCampaigns = @"manage_user_campaigns";
+NSString * const LUPermissionReadQRCode = @"read_qr_code";
+NSString * const LUPermissionReadUserBasicInfo = @"read_user_basic_info";
+NSString * const LUPermissionReadUserOrders = @"read_user_orders";
+
 #pragma mark - API Errors
 
 NSString * const LUAPIErrorDomain = @"LUAPIErrorDomain";

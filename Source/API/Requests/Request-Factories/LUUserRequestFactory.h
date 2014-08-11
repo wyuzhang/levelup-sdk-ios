@@ -27,7 +27,7 @@
  `requestForUserWithID:` with the userID of the cached user object.
 
  On success, this request will return an `LUUser` instance.
- @warning This request requires an access token with the `read_user_basic_info` permission.
+ @warning This request requires an access token with the `LUPermissionReadUserBasicInfo` permission.
  */
 + (LUAPIRequest *)requestForCurrentUser;
 

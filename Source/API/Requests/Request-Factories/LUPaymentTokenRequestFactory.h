@@ -28,7 +28,7 @@
  if their credit card has expired. When that happens, this request will fail with the error code
  `LUAPIErrorNotFound`.
 
- @warning This request requires an access token with the `read_qr_code` permission.
+ @warning This request requires an access token with the `LUPermissionReadQRCode` permission.
  */
 + (LUAPIRequest *)requestForPaymentToken;
 

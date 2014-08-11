@@ -35,6 +35,29 @@ extern NSString * const LUDeepLinkAuthSuccessNotification;
 extern NSString * const LUDeepLinkAuthNotificationAccessTokenKey;
 extern NSString * const LUDeepLinkAuthNotificationErrorKey;
 
+#pragma mark - Permissions
+
+/** Create a user's first credit card. */
+extern NSString * const LUPermissionCreateFirstCreditCard;
+
+/** Charge a user on behalf of a merchant. */
+extern NSString * const LUPermissionCreateOrders;
+
+/** Read a user's addresses and add new ones. */
+extern NSString * const LUPermissionManageUserAddresses;
+
+/** View credit for a user and claim campaigns. */
+extern NSString * const LUPermissionManageUserCampaigns;
+
+/** Read a user's QR code. */
+extern NSString * const LUPermissionReadQRCode;
+
+/** Read a user's name, email, birthday and gender. */
+extern NSString * const LUPermissionReadUserBasicInfo;
+
+/** Read a users transaction history, with item level detail. */
+extern NSString * const LUPermissionReadUserOrders;
+
 #pragma mark - API Errors
 
 extern NSString * const LUAPIErrorDomain;

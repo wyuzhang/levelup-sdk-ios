@@ -27,8 +27,8 @@
  If this order does not have an interestitial, this request will fail with the error code
  `LUAPIErrorNotFound`.
 
- @warning This request requires an access token with either the `create_orders` or `read_qr_code`
- permission.
+ @warning This request requires an access token with either the `LUPermissionCreateOrders` or
+ `LUPermissionReadQRCode` permission.
  @param UUID The UUID of an order.
  */
 + (LUAPIRequest *)requestForInterstitialForOrderWithUUID:(NSString *)UUID;
@@ -39,8 +39,8 @@
  If this order does not have an interestitial, this request will fail with the error code
  `LUAPIErrorNotFound`.
 
- @warning This request requires an access token with either the `create_orders` or `read_qr_code`
- permission.
+ @warning This request requires an access token with either the `LUPermissionCreateOrders` or
+ `LUPermissionReadQRCode` permission.
  @param UUID The UUID of an order.
  @param questionText The text of the question given to the user.
  @param rating The user's rating of the order.
