@@ -85,6 +85,11 @@
 @property (nonatomic, copy, readonly) NSString *locationLocality;
 
 /**
+ The name of the location at which this order was made.
+*/
+@property (nonatomic, copy, readonly) NSString *locationName;
+
+/**
  The postal code of the location at which this order was made.
  */
 @property (nonatomic, copy, readonly) NSString *locationPostalCode;
@@ -193,10 +198,12 @@
 contributionTargetName:(NSString *)contributionTargetName createdDate:(NSDate *)createdDate
                credit:(LUMonetaryValue *)credit earn:(LUMonetaryValue *)earn items:(NSArray *)items
 locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber *)locationID
-     locationLocality:(NSString *)locationLocality locationPostalCode:(NSString *)locationPostalCode
-       locationRegion:(NSString *)locationRegion locationStreetAddress:(NSString *)locationStreetAddress
-           merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName refundedDate:(NSDate *)refundedDate
-                spend:(LUMonetaryValue *)spend tip:(LUMonetaryValue *)tip total:(LUMonetaryValue *)total
-       transactedDate:(NSDate *)transactedDate UUID:(NSString *)UUID;
+     locationLocality:(NSString *)locationLocality locationName:(NSString *)locationName
+   locationPostalCode:(NSString *)locationPostalCode locationRegion:(NSString *)locationRegion
+locationStreetAddress:(NSString *)locationStreetAddress merchantID:(NSNumber *)merchantID
+         merchantName:(NSString *)merchantName refundedDate:(NSDate *)refundedDate
+                spend:(LUMonetaryValue *)spend tip:(LUMonetaryValue *)tip
+                total:(LUMonetaryValue *)total transactedDate:(NSDate *)transactedDate
+                 UUID:(NSString *)UUID;
 
 @end

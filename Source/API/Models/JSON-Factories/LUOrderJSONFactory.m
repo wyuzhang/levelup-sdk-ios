@@ -43,6 +43,7 @@
   NSString *locationExtendedAddress = [attributes lu_stringForKey:@"location_extended_address"];
   NSNumber *locationID = [attributes lu_numberForKey:@"location_id"];
   NSString *locationLocality = [attributes lu_stringForKey:@"location_locality"];
+  NSString *locationName = [attributes lu_stringForKey:@"location_name"];
   NSString *locationPostalCode = [attributes lu_stringForKey:@"location_postal_code"];
   NSString *locationRegion = [attributes lu_stringForKey:@"location_region"];
   NSString *locationStreetAddress = [attributes lu_stringForKey:@"location_street_address"];
@@ -55,13 +56,15 @@
   NSDate *transactedDate = [attributes lu_dateForKey:@"transacted_at"];
   NSString *UUID = [attributes lu_stringForKey:@"uuid"];
 
-  return [[LUOrder alloc] initWithBalance:balance bundleClosedDate:bundleClosedDate bundleDescriptor:bundleDescriptor
-                             contribution:contribution contributionTargetName:contributionTargetName
-                              createdDate:createdDate credit:credit earn:earn items:items
+  return [[LUOrder alloc] initWithBalance:balance bundleClosedDate:bundleClosedDate
+                         bundleDescriptor:bundleDescriptor contribution:contribution
+                   contributionTargetName:contributionTargetName createdDate:createdDate
+                                   credit:credit earn:earn items:items
                   locationExtendedAddress:locationExtendedAddress locationID:locationID
-                         locationLocality:locationLocality locationPostalCode:locationPostalCode
-                           locationRegion:locationRegion locationStreetAddress:locationStreetAddress
-                               merchantID:merchantID merchantName:merchantName refundedDate:refundedDate spend:spend
+                         locationLocality:locationLocality locationName:locationName
+                       locationPostalCode:locationPostalCode locationRegion:locationRegion
+                    locationStreetAddress:locationStreetAddress merchantID:merchantID
+                             merchantName:merchantName refundedDate:refundedDate spend:spend
                                       tip:tip total:total transactedDate:transactedDate UUID:UUID];
 }
 

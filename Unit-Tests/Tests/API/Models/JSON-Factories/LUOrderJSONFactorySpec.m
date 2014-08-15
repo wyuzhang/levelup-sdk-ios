@@ -41,6 +41,7 @@ describe(@"LUOrderJSONFactory", ^{
         @"location_extended_address" : @"Apt E",
         @"location_id" : @1,
         @"location_locality" : @"Boston",
+        @"location_name": @"Test Location",
         @"location_postal_code" : @"01234",
         @"location_region" : @"MA",
         @"location_street_address" : @"1 Main St",
@@ -67,6 +68,7 @@ describe(@"LUOrderJSONFactory", ^{
       [[order.locationExtendedAddress should] equal:@"Apt E"];
       [[order.locationID should] equal:@1];
       [[order.locationLocality should] equal:@"Boston"];
+      [[order.locationName should] equal:@"Test Location"];
       [[order.locationPostalCode should] equal:@"01234"];
       [[order.locationRegion should] equal:@"MA"];
       [[order.locationStreetAddress should] equal:@"1 Main St"];

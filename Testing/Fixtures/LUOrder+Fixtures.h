@@ -20,24 +20,21 @@
 @interface LUOrder (Fixtures)
 
 + (LUOrder *)fixture;
-
++ (LUOrder *)fixtureWithBundleOpen;
++ (LUOrder *)fixtureWithContribution:(LUMonetaryValue *)contribution;
++ (LUOrder *)fixtureWithCredit:(LUMonetaryValue *)credit;
++ (LUOrder *)fixtureWithEarn:(LUMonetaryValue *)earn;
++ (LUOrder *)fixtureWithItems;
++ (LUOrder *)fixtureWithLocationName:(NSString *)locationName;
++ (LUOrder *)fixtureWithMultipleMissingAttributes;
 + (LUOrder *)fixtureWithOnlySpend;
 + (LUOrder *)fixtureWithOnlySpendAndContribution;
-
-+ (LUOrder *)fixtureWithCredit:(LUMonetaryValue *)credit;
-+ (LUOrder *)fixtureWithContribution:(LUMonetaryValue *)contribution;
-+ (LUOrder *)fixtureWithEarn:(LUMonetaryValue *)earn;
++ (LUOrder *)fixtureWithRefundedStatus;
 + (LUOrder *)fixtureWithTip:(LUMonetaryValue *)tip;
-
-+ (LUOrder *)fixtureWithoutTip;
-+ (LUOrder *)fixtureWithoutContribution;
 + (LUOrder *)fixtureWithZeroBalance;
++ (LUOrder *)fixtureWithoutContribution;
 + (LUOrder *)fixtureWithoutCreditApplied;
 + (LUOrder *)fixtureWithoutCreditEarned;
-+ (LUOrder *)fixtureWithMultipleMissingAttributes;
-
-+ (LUOrder *)fixtureWithBundleOpen;
-+ (LUOrder *)fixtureWithItems;
-+ (LUOrder *)fixtureWithRefundedStatus;
++ (LUOrder *)fixtureWithoutTip;
 
 @end

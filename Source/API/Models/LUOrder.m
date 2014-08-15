@@ -29,11 +29,13 @@
 contributionTargetName:(NSString *)contributionTargetName createdDate:(NSDate *)createdDate
                credit:(LUMonetaryValue *)credit earn:(LUMonetaryValue *)earn items:(NSArray *)items
 locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber *)locationID
-     locationLocality:(NSString *)locationLocality locationPostalCode:(NSString *)locationPostalCode
-       locationRegion:(NSString *)locationRegion locationStreetAddress:(NSString *)locationStreetAddress
-           merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName refundedDate:(NSDate *)refundedDate
-                spend:(LUMonetaryValue *)spend tip:(LUMonetaryValue *)tip total:(LUMonetaryValue *)total
-       transactedDate:(NSDate *)transactedDate UUID:(NSString *)UUID {
+     locationLocality:(NSString *)locationLocality locationName:(NSString *)locationName
+   locationPostalCode:(NSString *)locationPostalCode locationRegion:(NSString *)locationRegion
+locationStreetAddress:(NSString *)locationStreetAddress merchantID:(NSNumber *)merchantID
+         merchantName:(NSString *)merchantName refundedDate:(NSDate *)refundedDate
+                spend:(LUMonetaryValue *)spend tip:(LUMonetaryValue *)tip
+                total:(LUMonetaryValue *)total transactedDate:(NSDate *)transactedDate
+                 UUID:(NSString *)UUID {
   self = [super init];
   if (!self) return nil;
 
@@ -49,6 +51,7 @@ locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber
   _locationExtendedAddress = locationExtendedAddress;
   _locationID = locationID;
   _locationLocality = locationLocality;
+  _locationName = locationName;
   _locationPostalCode = locationPostalCode;
   _locationRegion = locationRegion;
   _locationStreetAddress = locationStreetAddress;
@@ -115,16 +118,18 @@ locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUOrder [address=%p, balance=%@, bundleClosedDate=%@, bundleDescriptor=%@, contribution=%@, contributionTargetName=%@, createdDate=%@, credit=%@, earn=%@, items=%@, locationExtendedAddress=%@, locationID=%@, locationLocality=%@, locationPostalCode=%@, locationRegion=%@, locationStreetAddress=%@, merchantID=%@, merchantName=%@, refundedDate=%@, spend=%@, tip=%@, total=%@, transactedDate=%@, UUID=%@]",
-          self, self.balance, self.bundleClosedDate, self.bundleDescriptor, self.contribution, self.contributionTargetName,
-          self.createdDate, self.credit, self.earn, self.items, self.locationExtendedAddress, self.locationID, self.locationLocality,
-          self.locationPostalCode, self.locationRegion, self.locationStreetAddress, self.merchantID, self.merchantName,
-          self.refundedDate, self.spend, self.tip, self.total, self.transactedDate, self.UUID];
+          @"LUOrder [address=%p, balance=%@, bundleClosedDate=%@, bundleDescriptor=%@, contribution=%@, contributionTargetName=%@, createdDate=%@, credit=%@, earn=%@, items=%@, locationExtendedAddress=%@, locationID=%@, locationLocality=%@, locationName=%@, locationPostalCode=%@, locationRegion=%@, locationStreetAddress=%@, merchantID=%@, merchantName=%@, refundedDate=%@, spend=%@, tip=%@, total=%@, transactedDate=%@, UUID=%@]",
+          self, self.balance, self.bundleClosedDate, self.bundleDescriptor, self.contribution,
+          self.contributionTargetName, self.createdDate, self.credit, self.earn, self.items,
+          self.locationExtendedAddress, self.locationID, self.locationLocality, self.locationName,
+          self.locationPostalCode, self.locationRegion, self.locationStreetAddress, self.merchantID,
+          self.merchantName, self.refundedDate, self.spend, self.tip, self.total,
+          self.transactedDate, self.UUID];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUOrder [address=%p, merchantName=%@, total=%@, UUID=%@]", self, self.merchantName, self.total,
-          self.UUID];
+  return [NSString stringWithFormat:@"LUOrder [address=%p, merchantName=%@, total=%@, UUID=%@]",
+          self, self.merchantName, self.total, self.UUID];
 }
 
 @end
