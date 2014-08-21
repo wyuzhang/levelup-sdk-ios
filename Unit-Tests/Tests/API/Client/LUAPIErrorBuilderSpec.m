@@ -26,7 +26,7 @@ NSError *errorWithHTTPStatusCode(NSInteger statusCode, BOOL fromLevelUp) {
                                                            HTTPVersion:@"HTTP/1.1"
                                                           headerFields:@{@"Server": server}];
 
-  return [NSError errorWithDomain:AFNetworkingErrorDomain
+  return [NSError errorWithDomain:AFURLRequestSerializationErrorDomain
                              code:NSURLErrorBadServerResponse
                          userInfo:@{AFNetworkingOperationFailingURLResponseErrorKey : response}];
 }
