@@ -118,52 +118,53 @@ static NSInteger const kFramesPerCapture = 2;
   NSError *error = nil;
   AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:self.captureDevice error:&error];
 
-  if (nil == input) {
+  if (!input) {
     [[[UIAlertView alloc] initWithTitle:@"Not a supported device"
                                 message:@"You need a camera to run this app"
                                delegate:nil
                       cancelButtonTitle:@"Darn"
                       otherButtonTitles:nil] show];
-  } else {
-    // Configure output
-    AVCaptureVideoDataOutput *videoOutput = [[AVCaptureVideoDataOutput alloc] init];
-    videoOutput.alwaysDiscardsLateVideoFrames = YES;
-    dispatch_queue_t queue = dispatch_queue_create("cameraQueue", NULL);
-    [videoOutput setSampleBufferDelegate:self queue:queue];
-
-    // Specify the pixel format
-    videoOutput.videoSettings = @{(id)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_32BGRA)};
-
-    // Start the session running to start the flow of data
-    self.captureSession = [[AVCaptureSession alloc] init];
-    self.captureSession.sessionPreset = AVCaptureSessionPresetMedium;
-    [self.captureSession addInput:input];
-    [self.captureSession addOutput:videoOutput];
-
-    // Add the custom layer
-    self.customLayer = [CALayer layer];
-    self.customLayer.frame = self.bounds;
-    self.customLayer.transform = CATransform3DRotate(CATransform3DIdentity, (CGFloat)M_PI_2, 0, 0, 1);
-    self.customLayer.contentsGravity = kCAGravityResizeAspectFill;
-    [self.layer addSublayer:self.customLayer];
-
-    // Add the preview layer
-    self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];
-    self.previewLayer.frame = self.customLayer.bounds;
-    self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    [self.layer addSublayer:self.previewLayer];
-
-    self.overlayView = [[LUQROverlayView alloc] initWithFrame:self.frame];
-    self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-
-    if (self.crossHairsColor) {
-      self.overlayView.crossHairsColor = self.crossHairsColor;
-    }
-
-    [self addSubview:self.overlayView];
-
-    self.captureCount = 0;
+    return;
   }
+
+  // Configure output
+  AVCaptureVideoDataOutput *videoOutput = [[AVCaptureVideoDataOutput alloc] init];
+  videoOutput.alwaysDiscardsLateVideoFrames = YES;
+  dispatch_queue_t queue = dispatch_queue_create("cameraQueue", NULL);
+  [videoOutput setSampleBufferDelegate:self queue:queue];
+
+  // Specify the pixel format
+  videoOutput.videoSettings = @{(id)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_32BGRA)};
+
+  // Start the session running to start the flow of data
+  self.captureSession = [[AVCaptureSession alloc] init];
+  self.captureSession.sessionPreset = AVCaptureSessionPresetMedium;
+  [self.captureSession addInput:input];
+  [self.captureSession addOutput:videoOutput];
+
+  // Add the custom layer
+  self.customLayer = [CALayer layer];
+  self.customLayer.frame = self.bounds;
+  self.customLayer.transform = CATransform3DRotate(CATransform3DIdentity, (CGFloat)M_PI_2, 0, 0, 1);
+  self.customLayer.contentsGravity = kCAGravityResizeAspectFill;
+  [self.layer addSublayer:self.customLayer];
+
+  // Add the preview layer
+  self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];
+  self.previewLayer.frame = self.customLayer.bounds;
+  self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+  [self.layer addSublayer:self.previewLayer];
+
+  self.overlayView = [[LUQROverlayView alloc] initWithFrame:self.frame];
+  self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+
+  if (self.crossHairsColor) {
+    self.overlayView.crossHairsColor = self.crossHairsColor;
+  }
+
+  [self addSubview:self.overlayView];
+
+  self.captureCount = 0;
 }
 
 #pragma mark - NSObject (AVCaptureVideoDataOutputSampleBufferDelegate) Methods

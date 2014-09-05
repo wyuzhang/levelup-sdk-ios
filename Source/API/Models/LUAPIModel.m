@@ -40,7 +40,7 @@
 }
 
 - (BOOL)isEqual:(id)otherObject {
-  if(!otherObject || [otherObject class] != [self class]) {
+  if (!otherObject || [otherObject class] != [self class]) {
     return NO;
   }
 
@@ -101,12 +101,15 @@
 
   unsigned int outCount, i;
   objc_property_t *properties = class_copyPropertyList(cls, &outCount);
-  for(i = 0; i < outCount; i++) {
+  for (i = 0; i < outCount; i++) {
     objc_property_t property = properties[i];
     const char *propName = property_getName(property);
 
     NSString *attribute = [NSString stringWithCString:propName encoding:NSUTF8StringEncoding];
-    [classProperties addObject:attribute];
+
+    if (![@[@"class", @"hash", @"description", @"debugDescription"] containsObject:attribute]) {
+      [classProperties addObject:attribute];
+    }
   }
   free(properties);
 

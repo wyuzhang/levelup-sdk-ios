@@ -93,7 +93,7 @@ NSString * const LUAPIVersion15 = @"v15";
 }
 
 - (BOOL)isEqual:(id)otherObject {
-  if(otherObject && [otherObject isKindOfClass:[LUAPIRequest class]]) {
+  if (otherObject && [otherObject isKindOfClass:[LUAPIRequest class]]) {
     LUAPIRequest *otherApiRequest = (LUAPIRequest *)otherObject;
 
     BOOL methodEqual = ((!otherApiRequest.method && !self.method) ||

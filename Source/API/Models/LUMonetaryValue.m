@@ -53,7 +53,7 @@
 - (NSString *)shortFormatWithSymbol {
   NSString *formattedAmountWithSymbol = [self formattedAmountWithSymbol];
 
-  if([formattedAmountWithSymbol hasSuffix:@".00"]) {
+  if ([formattedAmountWithSymbol hasSuffix:@".00"]) {
     return [formattedAmountWithSymbol substringToIndex:[formattedAmountWithSymbol length] - 3];
   } else {
     return formattedAmountWithSymbol;

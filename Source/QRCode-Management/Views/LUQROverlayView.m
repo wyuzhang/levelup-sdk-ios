@@ -34,11 +34,10 @@ static const CGFloat kCropWidth = 240.0f;
 
 - (id)initWithFrame:(CGRect)frame {
   self = [super initWithFrame:frame];
+  if (!self) return nil;
 
-  if (nil != self) {
-    self.backgroundColor = [UIColor clearColor];
-    self.crossHairsColor = [UIColor colorWithRed:30.0f/255.0f green:187.0f/255.0f blue:243.0f/255.0f alpha:1.0f];
-  }
+  self.backgroundColor = [UIColor clearColor];
+  self.crossHairsColor = [UIColor colorWithRed:30.0f/255.0f green:187.0f/255.0f blue:243.0f/255.0f alpha:1.0f];
 
   return self;
 }
@@ -64,7 +63,7 @@ static const CGFloat kCropWidth = 240.0f;
 }
 
 - (void)setImage:(UIImage *)image {
-  if(self.imageView) {
+  if (self.imageView) {
     self.imageView = [[UIImageView alloc] initWithImage:image];
     self.imageView.alpha = 0.5;
   } else {
@@ -85,10 +84,10 @@ static const CGFloat kCropWidth = 240.0f;
 - (void)setPoints:(NSArray *)points {
   _points = points;
 
-  if (nil == self.points) {
-    self.backgroundColor = [UIColor clearColor];
-  } else {
+  if (self.points) {
     self.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.25];
+  } else {
+    self.backgroundColor = [UIColor clearColor];
   }
 
   [self setNeedsDisplay];
@@ -124,7 +123,7 @@ static const CGFloat kCropWidth = 240.0f;
   CGContextRef c = UIGraphicsGetCurrentContext();
   CGRect cropRect = [self cropRect];
 
-  if (nil != self.points) {
+  if (self.points) {
     [self.imageView.image drawAtPoint:cropRect.origin];
   }
 
@@ -141,8 +140,8 @@ static const CGFloat kCropWidth = 240.0f;
   CGContextSetLineWidth(c, 2);
   CGRect smallSquare = CGRectMake(0, 0, 10, 10);
 
-  if (nil != self.points) {
-    for(NSValue *value in self.points) {
+  if (self.points) {
+    for (NSValue *value in self.points) {
       CGPoint point = [value CGPointValue];
       smallSquare.origin = CGPointMake(cropRect.origin.x + point.x - self.frame.origin.x - 10 - smallSquare.size.width / 2,
                                        cropRect.origin.y + point.y - self.frame.origin.y - 65 - (smallSquare.size.height / 2));
