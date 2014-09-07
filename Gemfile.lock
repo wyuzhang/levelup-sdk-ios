@@ -4,6 +4,7 @@ GEM
     CFPropertyList (2.1.2)
     rake (10.0.4)
     sqlite3 (1.3.7)
+    xcpretty (0.1.6)
 
 PLATFORMS
   ruby
@@ -12,3 +13,4 @@ DEPENDENCIES
   CFPropertyList (~> 2.1.1)
   rake
   sqlite3
+  xcpretty
