@@ -119,11 +119,14 @@ static NSInteger const kFramesPerCapture = 2;
   AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:self.captureDevice error:&error];
 
   if (!input) {
+#ifndef TARGET_IPHONE_SIMULATOR
     [[[UIAlertView alloc] initWithTitle:@"Not a supported device"
                                 message:@"You need a camera to run this app"
                                delegate:nil
                       cancelButtonTitle:@"Darn"
                       otherButtonTitles:nil] show];
+#endif
+
     return;
   }
 
