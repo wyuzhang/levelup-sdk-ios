@@ -61,9 +61,11 @@
 
 #import "LUAPIResponse.h"
 
+#import "LUConstants.h"
+
 #import "LUDeepLinkAuth.h"
 
-#import "LUConstants.h"
+#import "LUPassRetriever.h"
 
 #import "LUCachedLocationSearch.h"
 #import "LUCacheManager.h"

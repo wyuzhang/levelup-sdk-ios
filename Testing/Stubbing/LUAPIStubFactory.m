@@ -142,6 +142,21 @@
                          responseData:[self responseDataFromFile:@"credit_card"]];
 }
 
++ (LUAPIStub *)stubToDownloadPass {
+  NSDictionary *passJSON = [NSJSONSerialization JSONObjectWithData:[self responseDataFromFile:@"pass"]
+                                                           options:0 error:nil];
+  LUAPIStub *stub = [[LUAPIStub alloc] init];
+  stub.URL = [NSURL URLWithString:passJSON[@"url"]];
+  stub.HTTPMethod = @"GET";
+
+  NSString *responseFile = [[NSBundle bundleForClass:[self class]] pathForResource:@"pass" ofType:@"pkpass"];
+  stub.responseData = [NSData dataWithContentsOfFile:responseFile];
+
+  stub.responseHeaders = @{@"Authorization": [@"ApplePass " stringByAppendingString:passJSON[@"authentication_token"]]};
+
+  return stub;
+}
+
 + (LUAPIStub *)stubToFailToClaimCampaignWithCode:(NSString *)code {
   LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
                                             path:[NSString stringWithFormat:@"codes/%@/claims", code]
@@ -166,6 +181,13 @@
   LUAPIStub *stub = [self stubToFindRegistrationForEmail:email];
   stub.responseCode = 404;
   stub.responseData = [self responseDataFromFile:@"failed_registration"];
+  return stub;
+}
+
++ (LUAPIStub *)stubToFailToGetPassWithMerchantID:(NSNumber *)merchantID {
+  LUAPIStub *stub = [self stubToGetPassWithMerchantID:merchantID];
+  stub.responseCode = 404;
+  stub.responseData = nil;
   return stub;
 }
 
@@ -478,12 +500,32 @@
   return stub;
 }
 
++ (LUAPIStub *)stubToGetPassWithMerchantID:(NSNumber *)merchantID {
+  NSString *path = @"pass";
+  if (merchantID) {
+    path = [path stringByAppendingFormat:@"?merchant_id=%@", merchantID];
+  }
+
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:path
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"pass"]];
+}
+
 + (LUAPIStub *)stubToGetPaymentToken {
   return [LUAPIStub apiStubForVersion:LUAPIVersion15
                                  path:@"payment_token"
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"payment_token"]];
+}
+
++ (LUAPIStub *)stubToGetPendingPassWithMerchantID:(NSNumber *)merchantID {
+  LUAPIStub *stub = [self stubToGetPassWithMerchantID:merchantID];
+  stub.responseCode = 202;
+  stub.responseData = nil;
+  return stub;
 }
 
 + (LUAPIStub *)stubToGetURL:(NSString *)url withBody:(NSString *)body {

@@ -37,9 +37,11 @@
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user withPermissions:(NSArray *)permissions;
 + (LUAPIStub *)stubToCreateUserDebitOnly:(LUUser *)user;
 + (LUAPIStub *)stubToDeleteCreditCardWithID:(NSNumber *)creditCardID;
++ (LUAPIStub *)stubToDownloadPass;
 + (LUAPIStub *)stubToFailToClaimCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToFailToCreateCreditCardWithDebitOnlyError;
 + (LUAPIStub *)stubToFailToFindRegistrationForEmail:(NSString *)email;
++ (LUAPIStub *)stubToFailToGetPassWithMerchantID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToFindRegistrationForEmail:(NSString *)email;
 + (LUAPIStub *)stubToGetCampaignForMerchantWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code;
@@ -75,7 +77,9 @@
 + (LUAPIStub *)stubToGetOrdersFirstPage;
 + (LUAPIStub *)stubToGetOrdersLastPage;
 + (LUAPIStub *)stubToGetOrdersSecondPage;
++ (LUAPIStub *)stubToGetPassWithMerchantID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetPaymentToken;
++ (LUAPIStub *)stubToGetPendingPassWithMerchantID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetURL:(NSString *)url withBody:(NSString *)body;
 + (LUAPIStub *)stubToGetWebLinksAtLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToLogIn;
