@@ -4,20 +4,20 @@
 
 # Build the Pods, then namespace all its symbols into a header
 function setup_namespaces {
-  header=$SRCROOT/Pods/NamespacedDependencies.h
+  header="${PROJECT_DIR}/Pods/Target Support Files/Pods/NamespacedDependencies.h"
 
   # Clear header
-  cat /dev/null > $header
+  cat /dev/null > "$header"
 
   # Build Pods
   xcrun xcodebuild -project "${PROJECT_DIR}/Pods/Pods.xcodeproj" -target "Pods" -sdk "${SDK_NAME}" -configuration "${CONFIGURATION}" BUILD_DIR="${BUILD_DIR}" OBJROOT="${OBJROOT}" BUILD_ROOT="${BUILD_ROOT}" SYMROOT="${SYMROOT}" clean $ACTION
 
   # Make header file with all symbols namespaced
-  LIB_PATH="${BUILT_PRODUCTS_DIR}/libPods.a"
+  LIB_PATH="${BUILT_PRODUCTS_DIR}/libPods*.a"
 
   echo "Generating $header from $LIB_PATH..."
 
-cat << 'EOF' > $header
+cat << 'EOF' > "$header"
 /*
  * Copyright (C) 2014 SCVNGR, Inc. d/b/a LevelUp
  *
@@ -43,19 +43,19 @@ cat << 'EOF' > $header
 #define LUNS(symbol) LUNS_impl(LEVELUP_EXTERNAL_PREFIX, symbol)
 EOF
 
-  echo "// Classes" >> $header
+  echo "// Classes" >> "$header"
 
-  nm $LIB_PATH -j | sort | uniq | grep "_OBJC_CLASS_\$_" | grep -v "\$_AGSGT" | grep -v "\$_AV" | grep -v "\$_CA" | grep -v "\$_CL" | grep -v "\$_NS" | grep -v "\$_UI" | sed -e 's/_OBJC_CLASS_\$_\(.*\)/#ifndef \1\'$'\n''#define \1 LUNS(\1)\'$'\n''#endif\'$'\n''/g' >> $header
+  nm $LIB_PATH -j | sort | uniq | grep "_OBJC_CLASS_\$_" | grep -v "\$_AGSGT" | grep -v "\$_AV" | grep -v "\$_CA" | grep -v "\$_CL" | grep -v "\$_NS" | grep -v "\$_UI" | sed -e 's/_OBJC_CLASS_\$_\(.*\)/#ifndef \1\'$'\n''#define \1 LUNS(\1)\'$'\n''#endif\'$'\n''/g' >> "$header"
 
-  echo "// Functions" >> $header
+  echo "// Functions" >> "$header"
 
-  nm $LIB_PATH | sort | uniq | grep " T " | cut -d' ' -f3 | grep -v "\$_NS" | grep -v "\$_UI" | sed -e 's/_\(.*\)/#ifndef \1\'$'\n''#define \1 LUNS(\1)\'$'\n''#endif\'$'\n''/g' >> $header
+  nm $LIB_PATH | sort | uniq | grep " T " | cut -d' ' -f3 | grep -v "\$_NS" | grep -v "\$_UI" | sed -e 's/_\(.*\)/#ifndef \1\'$'\n''#define \1 LUNS(\1)\'$'\n''#endif\'$'\n''/g' >> "$header"
 
-  echo "// Externs" >> $header
+  echo "// Externs" >> "$header"
 
-  nm $LIB_PATH | sort | uniq | grep " D " | cut -d' ' -f3 | grep -v "\$_NS" | grep -v "\$_UI" | sed -e 's/_\(.*\)/#ifndef \1\'$'\n''#define \1 LUNS(\1)\'$'\n''#endif\'$'\n''/g' >> $header
+  nm $LIB_PATH | sort | uniq | grep " D " | cut -d' ' -f3 | grep -v "\$_NS" | grep -v "\$_UI" | sed -e 's/_\(.*\)/#ifndef \1\'$'\n''#define \1 LUNS(\1)\'$'\n''#endif\'$'\n''/g' >> "$header"
 
-  nm $LIB_PATH | sort | uniq | grep " S " | cut -d' ' -f3 | grep -v "\$_NS" | grep -v ".eh" | grep -v "\$_UI" | grep -v "OBJC_" | sed -e 's/_\(.*\)/#ifndef \1\'$'\n''#define \1 LUNS(\1)\'$'\n''#endif\'$'\n''/g' >> $header
+  nm $LIB_PATH | sort | uniq | grep " S " | cut -d' ' -f3 | grep -v "\$_NS" | grep -v ".eh" | grep -v "\$_UI" | grep -v "OBJC_" | sed -e 's/_\(.*\)/#ifndef \1\'$'\n''#define \1 LUNS(\1)\'$'\n''#endif\'$'\n''/g' >> "$header"
 }
 
 # Build the library for both the simulator and iOS

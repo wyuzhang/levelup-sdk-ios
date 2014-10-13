@@ -1,3 +1,5 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '6.0'
 
 pod 'AFNetworking', '2.4.1'
@@ -13,13 +15,13 @@ target :test, :exclusive => true do
 end
 
 post_install do |installer|
-  environment_header = installer.config.project_pods_root + 'Pods-environment.h'
+  environment_header = installer.config.sandbox.target_support_files_root + 'Pods/Pods-environment.h'
   text = "#import \"NamespacedDependencies.h\"\n\n" + environment_header.read
   environment_header.open('w') { |file| file.write(text) }
 
-  dummy_class = installer.config.project_pods_root + 'Pods-dummy.m'
+  dummy_class = installer.config.sandbox.target_support_files_root + 'Pods/Pods-dummy.m'
   text = "#import \"NamespacedDependencies.h\"\n\n" + dummy_class.read
   dummy_class.open('w') { |file| file.write(text) }
 
-  File.write(installer.config.project_pods_root + 'NamespacedDependencies.h', '')
+  File.write(installer.config.sandbox.target_support_files_root + 'Pods/NamespacedDependencies.h', '')
 end

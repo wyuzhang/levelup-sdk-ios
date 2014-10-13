@@ -499,7 +499,7 @@
 		02941E7C16B73B5700EDAF6E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		0294D075190AB02200BBACCB /* build_framework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_framework.sh; sourceTree = "<group>"; };
-		0294D07B190AB67B00BBACCB /* NamespacedDependencies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NamespacedDependencies.h; path = Pods/NamespacedDependencies.h; sourceTree = "<group>"; };
+		0294D07B190AB67B00BBACCB /* NamespacedDependencies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NamespacedDependencies.h; path = "Pods/Target Support Files/Pods/NamespacedDependencies.h"; sourceTree = "<group>"; };
 		02AA944C18352C4400218730 /* LUGenericQRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUGenericQRCodeGenerator.h; sourceTree = "<group>"; };
 		02AA944D18352C4400218730 /* LUGenericQRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUGenericQRCodeGenerator.m; sourceTree = "<group>"; };
 		02AA94501835301400218730 /* LUGenericQRCodeGeneratorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUGenericQRCodeGeneratorSpec.m; sourceTree = "<group>"; };
@@ -574,9 +574,11 @@
 		02E29158175FCAB8002036B4 /* ticket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ticket.json; sourceTree = "<group>"; };
 		02E2916E175FD3FB002036B4 /* LevelUpSDKTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelUpSDKTesting.h; sourceTree = "<group>"; };
 		02E8ACDE17594BB000A5B06F /* LULocationJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationJSONFactorySpec.m; sourceTree = "<group>"; };
-		05C538A8A6814C6E82461EB1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		06A40E6C26ED2F5CE405C989 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		0D9D1A2D4983C77483DD88A5 /* Pods.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.distribution.xcconfig; path = "Pods/Target Support Files/Pods/Pods.distribution.xcconfig"; sourceTree = "<group>"; };
+		19230B96D1B70CC1BAA59413 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
 		1A39890392E641DAA8438DC9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.xcconfig"; path = "Pods/Pods-test.xcconfig"; sourceTree = SOURCE_ROOT; };
+		1B23BC3F1BEA083A96C531E6 /* Pods-test.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.distribution.xcconfig"; sourceTree = "<group>"; };
 		25128E4C18732E9100FA2B62 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
 		2523E31517374B2900FBDFEB /* LULocationSummaryJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationSummaryJSONFactory.h; sourceTree = "<group>"; };
 		2523E31617374B2900FBDFEB /* LULocationSummaryJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationSummaryJSONFactory.m; sourceTree = "<group>"; };
@@ -641,6 +643,7 @@
 		40BE9659188DCFF600F318D6 /* debit_card.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = debit_card.json; sourceTree = "<group>"; };
 		40EC258718A582B3000D5390 /* LUInterstitialFeedbackAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialFeedbackAction.h; sourceTree = "<group>"; };
 		40EC258818A582B3000D5390 /* LUInterstitialFeedbackAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialFeedbackAction.m; sourceTree = "<group>"; };
+		4984E89BA908B73B0354F494 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6A165D0F18F4767200DF535F /* interstitial_feedback.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = interstitial_feedback.json; sourceTree = "<group>"; };
 		6A5EA77B196448EE002FDCFF /* downgraded_token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = downgraded_token.json; sourceTree = "<group>"; };
 		C1CAF0AD173052A7003B3D01 /* LUAPIClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIClientSpec.m; sourceTree = "<group>"; };
@@ -789,6 +792,7 @@
 		F8BC8400173981BE007F7142 /* LUWebLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUWebLocations.h; sourceTree = "<group>"; };
 		F8BC8401173981BE007F7142 /* LUWebLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUWebLocations.m; sourceTree = "<group>"; };
 		F8BC84081739974B007F7142 /* LUWebLocationsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUWebLocationsSpec.m; sourceTree = "<group>"; };
+		F8D49D635ABDFB43CCEB5B0D /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
 		F8D4DB9B17569CA90000DB66 /* NSDictionary+SafetyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafetyAdditions.h"; sourceTree = "<group>"; };
 		F8D4DB9C17569CA90000DB66 /* NSDictionary+SafetyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafetyAdditions.m"; sourceTree = "<group>"; };
 		F8EAF0E617BA817800197388 /* LUCacheManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCacheManagerSpec.m; sourceTree = "<group>"; };
@@ -932,6 +936,19 @@
 				0294D075190AB02200BBACCB /* build_framework.sh */,
 			);
 			path = Scripts;
+			sourceTree = "<group>";
+		};
+		02A7E2669A4B38563167EC46 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4984E89BA908B73B0354F494 /* Pods.debug.xcconfig */,
+				06A40E6C26ED2F5CE405C989 /* Pods.release.xcconfig */,
+				0D9D1A2D4983C77483DD88A5 /* Pods.distribution.xcconfig */,
+				F8D49D635ABDFB43CCEB5B0D /* Pods-test.debug.xcconfig */,
+				19230B96D1B70CC1BAA59413 /* Pods-test.release.xcconfig */,
+				1B23BC3F1BEA083A96C531E6 /* Pods-test.distribution.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		02CD574A17D90673006205C6 /* Interstitials */ = {
@@ -1082,8 +1099,7 @@
 				0294D073190AB02200BBACCB /* Scripts */,
 				25F643A6166832D600A05C0E /* Frameworks */,
 				25F643A5166832D600A05C0E /* Products */,
-				05C538A8A6814C6E82461EB1 /* Pods.xcconfig */,
-				1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */,
+				02A7E2669A4B38563167EC46 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -1915,7 +1931,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 		};
 		2536CDE3190B3BC200426651 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1955,7 +1971,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-test-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-test/Pods-test-resources.sh\"\n";
 		};
 		DEFD3328554B4894B5C435BC /* Warn for TODO and FIXME comments */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2272,13 +2288,14 @@
 		};
 		02AF33F416725146003B9255 /* Distribution */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05C538A8A6814C6E82461EB1 /* Pods.xcconfig */;
+			baseConfigurationReference = 0D9D1A2D4983C77483DD88A5 /* Pods.distribution.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/LevelUpSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/Resources/LevelUpSDK-Prefix.pch";
+				OTHER_LIBTOOLFLAGS = "$(OTHER_LDFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
@@ -2287,12 +2304,8 @@
 		};
 		02AF33F516725146003B9255 /* Distribution */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */;
+			baseConfigurationReference = 1B23BC3F1BEA083A96C531E6 /* Pods-test.distribution.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Unit-Tests/Resources/Unit-Tests-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
@@ -2462,13 +2475,14 @@
 		};
 		25F643CA166832D600A05C0E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05C538A8A6814C6E82461EB1 /* Pods.xcconfig */;
+			baseConfigurationReference = 4984E89BA908B73B0354F494 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/LevelUpSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/Resources/LevelUpSDK-Prefix.pch";
+				OTHER_LIBTOOLFLAGS = "$(OTHER_LDFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
@@ -2477,7 +2491,7 @@
 		};
 		25F643CB166832D600A05C0E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05C538A8A6814C6E82461EB1 /* Pods.xcconfig */;
+			baseConfigurationReference = 06A40E6C26ED2F5CE405C989 /* Pods.release.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
@@ -2485,6 +2499,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/Resources/LevelUpSDK-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				OTHER_LIBTOOLFLAGS = "$(OTHER_LDFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
@@ -2493,12 +2508,8 @@
 		};
 		25F643CD166832D600A05C0E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */;
+			baseConfigurationReference = F8D49D635ABDFB43CCEB5B0D /* Pods-test.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Unit-Tests/Resources/Unit-Tests-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
@@ -2511,12 +2522,8 @@
 		};
 		25F643CE166832D600A05C0E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A87B155A51E46E5AA3C0B28 /* Pods-test.xcconfig */;
+			baseConfigurationReference = 19230B96D1B70CC1BAA59413 /* Pods-test.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Unit-Tests/Resources/Unit-Tests-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
