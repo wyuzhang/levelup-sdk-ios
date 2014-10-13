@@ -64,6 +64,11 @@
 @property (nonatomic, strong, readonly) LUMonetaryValue *earn;
 
 /**
+ An optional identifier from the merchant at which the order was placed.
+*/
+@property (nonatomic, copy, readonly) NSString *identifierFromMerchant;
+
+/**
  An optional array of `LUOrderItem` instances.
  */
 @property (nonatomic, strong, readonly) NSArray *items;
@@ -196,7 +201,8 @@
 - (id)initWithBalance:(LUMonetaryValue *)balance bundleClosedDate:(NSDate *)bundleClosedDate
      bundleDescriptor:(NSString *)bundleDescriptor contribution:(LUMonetaryValue *)contribution
 contributionTargetName:(NSString *)contributionTargetName createdDate:(NSDate *)createdDate
-               credit:(LUMonetaryValue *)credit earn:(LUMonetaryValue *)earn items:(NSArray *)items
+               credit:(LUMonetaryValue *)credit earn:(LUMonetaryValue *)earn
+identifierFromMerchant:(NSString *)identifierFromMerchant items:(NSArray *)items
 locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber *)locationID
      locationLocality:(NSString *)locationLocality locationName:(NSString *)locationName
    locationPostalCode:(NSString *)locationPostalCode locationRegion:(NSString *)locationRegion

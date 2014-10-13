@@ -27,7 +27,8 @@
 - (id)initWithBalance:(LUMonetaryValue *)balance bundleClosedDate:(NSDate *)bundleClosedDate
      bundleDescriptor:(NSString *)bundleDescriptor contribution:(LUMonetaryValue *)contribution
 contributionTargetName:(NSString *)contributionTargetName createdDate:(NSDate *)createdDate
-               credit:(LUMonetaryValue *)credit earn:(LUMonetaryValue *)earn items:(NSArray *)items
+               credit:(LUMonetaryValue *)credit earn:(LUMonetaryValue *)earn
+identifierFromMerchant:(NSString *)identifierFromMerchant items:(NSArray *)items
 locationExtendedAddress:(NSString *)locationExtendedAddress locationID:(NSNumber *)locationID
      locationLocality:(NSString *)locationLocality locationName:(NSString *)locationName
    locationPostalCode:(NSString *)locationPostalCode locationRegion:(NSString *)locationRegion
@@ -47,6 +48,7 @@ locationStreetAddress:(NSString *)locationStreetAddress merchantID:(NSNumber *)m
   _createdDate = createdDate;
   _credit = credit;
   _earn = earn;
+  _identifierFromMerchant = identifierFromMerchant;
   _items = items;
   _locationExtendedAddress = locationExtendedAddress;
   _locationID = locationID;
@@ -118,13 +120,13 @@ locationStreetAddress:(NSString *)locationStreetAddress merchantID:(NSNumber *)m
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUOrder [address=%p, balance=%@, bundleClosedDate=%@, bundleDescriptor=%@, contribution=%@, contributionTargetName=%@, createdDate=%@, credit=%@, earn=%@, items=%@, locationExtendedAddress=%@, locationID=%@, locationLocality=%@, locationName=%@, locationPostalCode=%@, locationRegion=%@, locationStreetAddress=%@, merchantID=%@, merchantName=%@, refundedDate=%@, spend=%@, tip=%@, total=%@, transactedDate=%@, UUID=%@]",
+          @"LUOrder [address=%p, balance=%@, bundleClosedDate=%@, bundleDescriptor=%@, contribution=%@, contributionTargetName=%@, createdDate=%@, credit=%@, earn=%@, identifierFromMerchant=%@, items=%@, locationExtendedAddress=%@, locationID=%@, locationLocality=%@, locationName=%@, locationPostalCode=%@, locationRegion=%@, locationStreetAddress=%@, merchantID=%@, merchantName=%@, refundedDate=%@, spend=%@, tip=%@, total=%@, transactedDate=%@, UUID=%@]",
           self, self.balance, self.bundleClosedDate, self.bundleDescriptor, self.contribution,
-          self.contributionTargetName, self.createdDate, self.credit, self.earn, self.items,
-          self.locationExtendedAddress, self.locationID, self.locationLocality, self.locationName,
-          self.locationPostalCode, self.locationRegion, self.locationStreetAddress, self.merchantID,
-          self.merchantName, self.refundedDate, self.spend, self.tip, self.total,
-          self.transactedDate, self.UUID];
+          self.contributionTargetName, self.createdDate, self.credit, self.earn,
+          self.identifierFromMerchant, self.items, self.locationExtendedAddress, self.locationID,
+          self.locationLocality, self.locationName, self.locationPostalCode, self.locationRegion,
+          self.locationStreetAddress, self.merchantID, self.merchantName, self.refundedDate,
+          self.spend, self.tip, self.total, self.transactedDate, self.UUID];
 }
 
 - (NSString *)description {

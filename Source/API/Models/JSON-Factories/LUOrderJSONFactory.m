@@ -33,6 +33,7 @@
   NSDate *createdDate = [attributes lu_dateForKey:@"created_at"];
   LUMonetaryValue *credit = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"credit_applied_amount"]];
   LUMonetaryValue *earn = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"credit_earned_amount"]];
+  NSString *identifierFromMerchant = [attributes lu_stringForKey:@"identifier_from_merchant"];
 
   NSArray *items;
   NSArray *itemsJSON = [attributes lu_arrayForKey:@"items"];
@@ -59,7 +60,8 @@
   return [[LUOrder alloc] initWithBalance:balance bundleClosedDate:bundleClosedDate
                          bundleDescriptor:bundleDescriptor contribution:contribution
                    contributionTargetName:contributionTargetName createdDate:createdDate
-                                   credit:credit earn:earn items:items
+                                   credit:credit earn:earn
+                   identifierFromMerchant:identifierFromMerchant items:items
                   locationExtendedAddress:locationExtendedAddress locationID:locationID
                          locationLocality:locationLocality locationName:locationName
                        locationPostalCode:locationPostalCode locationRegion:locationRegion
