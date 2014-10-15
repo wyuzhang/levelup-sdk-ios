@@ -118,7 +118,8 @@ NSString * const LUPatternLeadingSlashOptionalVersion = @"^/(v\\d+/)?";
 #pragma mark - Private Methods
 
 + (NSString *)imageQueryString {
-  return [NSString stringWithFormat:@"density=%d&height=%d&width=%d", (int)[UIScreen mainScreen].scale, 212, 320];
+  int scale = [UIScreen mainScreen].scale > 1.0f ? 2 : 1;
+  return [NSString stringWithFormat:@"density=%d&height=%d&width=%d", scale, 212, 320];
 }
 
 + (NSURL *)imageURLForPath:(NSString *)path version:(NSString *)version {
