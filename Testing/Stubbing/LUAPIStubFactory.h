@@ -71,6 +71,7 @@
 + (LUAPIStub *)stubToGetMerchantIDs:(NSArray *)merchantIDs forCampaignWithID:(NSNumber *)campaignID;
 + (LUAPIStub *)stubToGetNewUser;
 + (LUAPIStub *)stubToGetOrderWithUUID:(NSString *)UUID;
++ (LUAPIStub *)stubToGetOrdersEmpty;
 + (LUAPIStub *)stubToGetOrdersFirstPage;
 + (LUAPIStub *)stubToGetOrdersLastPage;
 + (LUAPIStub *)stubToGetOrdersSecondPage;

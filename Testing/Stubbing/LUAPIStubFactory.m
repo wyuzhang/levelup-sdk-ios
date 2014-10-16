@@ -436,6 +436,14 @@
                          responseData:[self responseDataFromFile:@"order"]];
 }
 
++ (LUAPIStub *)stubToGetOrdersEmpty {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"apps/orders"
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:nil];
+}
+
 + (LUAPIStub *)stubToGetOrdersFirstPage {
   LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
                                             path:@"apps/orders"
