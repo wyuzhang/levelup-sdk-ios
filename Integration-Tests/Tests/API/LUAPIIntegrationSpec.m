@@ -20,6 +20,8 @@ describe(@"API", ^{
   beforeEach(^{
     [LUAPIClient setupWithAppID:@"1" APIKey:@"api-key"];
     [LUAPIClient sharedClient].accessToken = @"access-token";
+
+    [[LUAPIStubbing sharedInstance] disableNetConnect];
   });
 
   afterEach(^{
@@ -40,9 +42,9 @@ describe(@"API", ^{
                                          }
                                          failure:nil];
 
-      [[expectFutureValue(responseObject) shouldNotEventually] beNil];
-      [[responseObject should] beKindOfClass:[LUPaymentToken class]];
-      [[[(LUPaymentToken *)responseObject data] should] equal:@"LU02000TESTTESTTEST01234"];
+      [[expectFutureValue(responseObject) shouldEventually] beNonNil];
+      [[expectFutureValue(responseObject) shouldEventually] beKindOfClass:[LUPaymentToken class]];
+      [[expectFutureValue([(LUPaymentToken *)responseObject data]) shouldEventually] equal:@"LU02000TESTTESTTEST01234"];
     });
   });
 
@@ -60,9 +62,9 @@ describe(@"API", ^{
                                            error = errorResponse;
                                          }];
 
-      [[expectFutureValue(error) shouldNotEventually] beNil];
-      [[error.domain should] equal:LUAPIErrorDomain];
-      [[theValue(error.code) should] equal:theValue(LUAPIErrorNotFound)];
+      [[expectFutureValue(error) shouldEventually] beNonNil];
+      [[expectFutureValue(error.domain) shouldEventually] equal:LUAPIErrorDomain];
+      [[expectFutureValue(theValue(error.code)) shouldEventually] equal:theValue(LUAPIErrorNotFound)];
     });
   });
 });
