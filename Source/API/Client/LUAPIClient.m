@@ -82,6 +82,8 @@ __strong static LUAPIClient *_sharedClient = nil;
   _httpOperationManager.requestSerializer = requestSerializer;
   _httpOperationManager.responseSerializer = [AFJSONResponseSerializer serializer];
 
+  [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+
   return self;
 }
 
