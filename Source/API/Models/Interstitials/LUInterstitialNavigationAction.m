@@ -14,23 +14,27 @@
  * limitations under the License.
  */
 
-#import "LUAPIModel.h"
+#import "LUInterstitialNavigationAction.h"
 
-/**
- This action is for interstitials that request the user click a link.
- */
-@interface LUInterstitialURLAction : LUAPIModel
+@implementation LUInterstitialNavigationAction
 
-/**
- The text to display on the button that opens the URL.
- */
-@property (nonatomic, copy, readonly) NSString *buttonText;
+#pragma mark - Creation
 
-/**
- The URL that the user will be presented with.
- */
-@property (nonatomic, copy, readonly) NSURL *URL;
+- (id)initWithButtonText:(NSString *)buttonText URL:(NSURL *)URL {
+  self = [super init];
+  if (!self) return nil;
 
-- (id)initWithButtonText:(NSString *)buttonText URL:(NSURL *)URL;
+  _buttonText = buttonText;
+  _URL = URL;
+
+  return self;
+}
+
+#pragma mark - NSObject Methods
+
+- (NSString *)description {
+  return [NSString stringWithFormat:@"LUInterstitialNavigationAction [address=%p, buttonText=%@, URL=%@]",
+          self, self.buttonText, self.URL];
+}
 
 @end

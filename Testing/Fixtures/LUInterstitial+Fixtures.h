@@ -20,6 +20,7 @@
 
 + (LUInterstitial *)fixtureWithClaimAction;
 + (LUInterstitial *)fixtureWithFeedbackAction;
++ (LUInterstitial *)fixtureWithNavigationAction;
 + (LUInterstitial *)fixtureWithNoAction;
 + (LUInterstitial *)fixtureWithShareAction;
 + (LUInterstitial *)fixtureWithURLAction;

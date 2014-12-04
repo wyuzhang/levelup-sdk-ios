@@ -17,17 +17,20 @@
 #import "LUAPIModel.h"
 
 /**
- This action is for interstitials that request the user click a link.
+ This action is for interstitials that request the user navigate to another screen in the app.
  */
-@interface LUInterstitialURLAction : LUAPIModel
+@interface LUInterstitialNavigationAction : LUAPIModel
 
 /**
- The text to display on the button that opens the URL.
+ The text to display on the button that opens the page.
  */
 @property (nonatomic, copy, readonly) NSString *buttonText;
 
 /**
- The URL that the user will be presented with.
+ A relative URL representing an in-app screen to which the user can navigate.
+
+ Possible paths at the moment are "pay", "invite_friends" or "order_gift_card". For
+ "order_gift_card", will also include query parameters "merchant_id" and "merchant_name".
  */
 @property (nonatomic, copy, readonly) NSURL *URL;
 

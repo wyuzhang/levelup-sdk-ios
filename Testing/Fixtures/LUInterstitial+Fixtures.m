@@ -17,6 +17,7 @@
 #import "LUInterstitial+Fixtures.h"
 #import "LUInterstitialClaimAction.h"
 #import "LUInterstitialFeedbackAction.h"
+#import "LUInterstitialNavigationAction.h"
 #import "LUInterstitialShareAction.h"
 #import "LUInterstitialURLAction.h"
 
@@ -30,6 +31,12 @@
 + (LUInterstitial *)fixtureWithFeedbackAction {
   LUInterstitialFeedbackAction *action = [[LUInterstitialFeedbackAction alloc] initWithQuestionText:@"How was your experience at this merchant?"];
   return [self fixtureWithAction:action actionType:LUInterstitialActionTypeFeedback];
+}
+
++ (LUInterstitial *)fixtureWithNavigationAction {
+  NSURL *URL = [NSURL URLWithString:@"order_gift_card?merchant_id=1&merchant_name=Test+Merchant"];
+  LUInterstitialNavigationAction *action = [[LUInterstitialNavigationAction alloc] initWithButtonText:@"Send Gift Card" URL:URL];
+  return [self fixtureWithAction:action actionType:LUInterstitialActionTypeNavigation];
 }
 
 + (LUInterstitial *)fixtureWithNoAction {
@@ -56,7 +63,8 @@
 }
 
 + (LUInterstitial *)fixtureWithURLAction {
-  LUInterstitialURLAction *action = [[LUInterstitialURLAction alloc] initWithURL:[NSURL URLWithString:@"http://example.com"]];
+  LUInterstitialURLAction *action = [[LUInterstitialURLAction alloc] initWithButtonText:@"Open"
+                                                                                    URL:[NSURL URLWithString:@"http://example.com"]];
   return [self fixtureWithAction:action actionType:LUInterstitialActionTypeURL];
 }
 
@@ -68,6 +76,7 @@
 
 + (LUInterstitial *)fixtureWithAction:(id)action actionType:(LUInterstitialActionType)actionType {
   NSString *calloutText;
+  NSString *descriptionHTML = @"<p>Grab $1.00 to spend on anything at Test Merchant. Enjoy!</p>";
   NSString *title;
 
   switch (actionType) {
@@ -81,6 +90,11 @@
       calloutText = @"Give us Feedback";
       title = @"Give us Feedback";
       break;
+    case LUInterstitialActionTypeNavigation:
+      calloutText = @"Send a Gift Card";
+      descriptionHTML = @"<p>Send a digital gift card for any merchant on LevelUp!</p>";
+      title = @"Send a Gift Card";
+      break;
     case LUInterstitialActionTypeShare:
       calloutText = @"Give Money to Friends";
       title = @"$1 at Test Merchant";
@@ -93,7 +107,7 @@
   return [[LUInterstitial alloc] initWithAction:action
                                      actionType:actionType
                                     calloutText:calloutText
-                                descriptionHTML:@"<p>Grab $1.00 to spend on anything at Test Merchant. Enjoy!</p>"
+                                descriptionHTML:descriptionHTML
                                        imageURL:[NSURL URLWithString:@"https://api.thelevelup.com/v14/campaigns/1/image"]
                                           title:title];
 }

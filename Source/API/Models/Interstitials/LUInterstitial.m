@@ -61,6 +61,9 @@
 
     case LUInterstitialActionTypeURL:
       return @"url";
+
+    case LUInterstitialActionTypeNavigation:
+      return @"navigation";
   }
 }
 

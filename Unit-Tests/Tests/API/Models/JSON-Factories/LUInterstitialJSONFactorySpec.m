@@ -102,6 +102,31 @@ describe(@"LUInterstitialJSONFactory", ^{
       });
     });
 
+    it(@"parses a JSON dictionary with a navigation action into an LUInterstitial", ^{
+      NSDictionary *JSON = @{
+        @"action" : @{
+          @"button_text" : @"Open",
+          @"url" : @"pay"
+        },
+        @"callout_text" : @"test callout",
+        @"description_html" : @"<p>interstitial description</p>",
+        @"image_url" : @"http://example.com/interstitial-image",
+        @"title" : @"Interstitial Title",
+        @"type" : @"navigation"
+      };
+      LUInterstitial *interstitial = [factory createFromAttributes:JSON];
+
+      [[interstitial.action should] beKindOfClass:[LUInterstitialNavigationAction class]];
+      [[[interstitial.action buttonText] should] equal:@"Open"];
+      [[[interstitial.action URL] should] equal:[NSURL URLWithString:@"pay"]];
+      [[theValue(interstitial.actionType) should] equal:theValue(LUInterstitialActionTypeNavigation)];
+
+      [[interstitial.calloutText should] equal:@"test callout"];
+      [[interstitial.descriptionHTML should] equal:@"<p>interstitial description</p>"];
+      [[[interstitial.imageURL absoluteString] should] match:hasPrefix(@"http://example.com/interstitial-image")];
+      [[interstitial.title should] equal:@"Interstitial Title"];
+    });
+
     it(@"parses a JSON dictionary with a share action into an LUInterstitial", ^{
       NSDictionary *JSON = @{
         @"action" : @{
@@ -140,7 +165,8 @@ describe(@"LUInterstitialJSONFactory", ^{
     it(@"parses a JSON dictionary with a URL action into an LUInterstitial", ^{
       NSDictionary *JSON = @{
         @"action" : @{
-          @"url" : @"http://example.com",
+          @"button_text" : @"Open",
+          @"url" : @"http://example.com"
         },
         @"callout_text" : @"test callout",
         @"description_html" : @"<p>interstitial description</p>",
@@ -151,6 +177,7 @@ describe(@"LUInterstitialJSONFactory", ^{
       LUInterstitial *interstitial = [factory createFromAttributes:JSON];
 
       [[interstitial.action should] beKindOfClass:[LUInterstitialURLAction class]];
+      [[[interstitial.action buttonText] should] equal:@"Open"];
       [[[interstitial.action URL] should] equal:[NSURL URLWithString:@"http://example.com"]];
       [[theValue(interstitial.actionType) should] equal:theValue(LUInterstitialActionTypeURL)];
 

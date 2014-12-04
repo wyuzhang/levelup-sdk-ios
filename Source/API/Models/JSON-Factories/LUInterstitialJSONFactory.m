@@ -18,6 +18,7 @@
 #import "LUInterstitialClaimAction.h"
 #import "LUInterstitialFeedbackAction.h"
 #import "LUInterstitialJSONFactory.h"
+#import "LUInterstitialNavigationAction.h"
 #import "LUInterstitialShareAction.h"
 #import "LUInterstitialURLAction.h"
 #import "NSDictionary+ObjectClassAccess.h"
@@ -56,6 +57,9 @@
     case LUInterstitialActionTypeURL:
       return [self URLActionWithAttributes:attributes];
 
+    case LUInterstitialActionTypeNavigation:
+      return [self navigationActionWithAttributes:attributes];
+
     default:
       return nil;
   }
@@ -72,6 +76,8 @@
     return LUInterstitialActionTypeURL;
   } else if ([typeString isEqualToString:@"no_action"]) {
     return LUInterstitialActionTypeNone;
+  } else if ([typeString isEqualToString:@"navigation"]) {
+    return LUInterstitialActionTypeNavigation;
   } else {
     return LUInterstitialActionTypeUnknown;
   }
@@ -85,6 +91,12 @@
 - (LUInterstitialFeedbackAction *)feedbackActionWithAttributes:(NSDictionary *)attributes {
   NSString *questionText = [attributes lu_stringForKey:@"question_text"];
   return [[LUInterstitialFeedbackAction alloc] initWithQuestionText:questionText];
+}
+
+- (LUInterstitialNavigationAction *)navigationActionWithAttributes:(NSDictionary *)attributes {
+  NSString *buttonText = [attributes lu_stringForKey:@"button_text"];
+  NSURL *URL = [attributes lu_URLForKey:@"url"];
+  return [[LUInterstitialNavigationAction alloc] initWithButtonText:buttonText URL:URL];
 }
 
 - (LUInterstitialShareAction *)shareActionWithAttributes:(NSDictionary *)attributes {
@@ -105,8 +117,9 @@
 }
 
 - (LUInterstitialURLAction *)URLActionWithAttributes:(NSDictionary *)attributes {
+  NSString *buttonText = [attributes lu_stringForKey:@"button_text"];
   NSURL *URL = [attributes lu_URLForKey:@"url"];
-  return [[LUInterstitialURLAction alloc] initWithURL:URL];
+  return [[LUInterstitialURLAction alloc] initWithButtonText:buttonText URL:URL];
 }
 
 @end

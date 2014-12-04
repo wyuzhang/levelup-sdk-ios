@@ -20,10 +20,11 @@
 
 #pragma mark - Creation
 
-- (id)initWithURL:(NSURL *)URL {
+- (id)initWithButtonText:(NSString *)buttonText URL:(NSURL *)URL {
   self = [super init];
   if (!self) return nil;
 
+  _buttonText = buttonText;
   _URL = URL;
 
   return self;
@@ -32,7 +33,8 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUInterstitialURLAction [address=%p, URL=%@]", self, self.URL];
+  return [NSString stringWithFormat:@"LUInterstitialURLAction [address=%p, buttonText=%@, URL=%@]",
+          self, self.buttonText, self.URL];
 }
 
 @end

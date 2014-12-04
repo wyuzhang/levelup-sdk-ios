@@ -45,6 +45,7 @@
 #import "LUInterstitial.h"
 #import "LUInterstitialClaimAction.h"
 #import "LUInterstitialFeedbackAction.h"
+#import "LUInterstitialNavigationAction.h"
 #import "LUInterstitialShareAction.h"
 #import "LUInterstitialURLAction.h"
 #import "LULocation.h"

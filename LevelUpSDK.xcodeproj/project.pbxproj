@@ -100,6 +100,8 @@
 		029053C617BD4AFF00527576 /* LUAPIResponseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 029053C417BD4AFF00527576 /* LUAPIResponseSpec.m */; };
 		029053C717BD4AFF00527576 /* LUWebLinkParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 029053C517BD4AFF00527576 /* LUWebLinkParserSpec.m */; };
 		029131DB1760DC8600F74663 /* LUAPIStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 029131DA1760DC8600F74663 /* LUAPIStub.m */; };
+		0291C3101A30E15A003A1D87 /* LUInterstitialNavigationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 0291C30E1A30E15A003A1D87 /* LUInterstitialNavigationAction.h */; };
+		0291C3111A30E15A003A1D87 /* LUInterstitialNavigationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0291C30F1A30E15A003A1D87 /* LUInterstitialNavigationAction.m */; };
 		02941E6516B738AE00EDAF6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6416B738AE00EDAF6E /* AVFoundation.framework */; };
 		02941E6616B738F300EDAF6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6416B738AE00EDAF6E /* AVFoundation.framework */; };
 		02941E6816B7391700EDAF6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6716B7391700EDAF6E /* QuartzCore.framework */; };
@@ -507,6 +509,8 @@
 		029053C517BD4AFF00527576 /* LUWebLinkParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUWebLinkParserSpec.m; sourceTree = "<group>"; };
 		029131D91760DC8600F74663 /* LUAPIStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIStub.h; sourceTree = "<group>"; };
 		029131DA1760DC8600F74663 /* LUAPIStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIStub.m; sourceTree = "<group>"; };
+		0291C30E1A30E15A003A1D87 /* LUInterstitialNavigationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialNavigationAction.h; sourceTree = "<group>"; };
+		0291C30F1A30E15A003A1D87 /* LUInterstitialNavigationAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialNavigationAction.m; sourceTree = "<group>"; };
 		02941E6416B738AE00EDAF6E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		02941E6716B7391700EDAF6E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		02941E6A16B739FE00EDAF6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -996,12 +1000,14 @@
 				02CD574C17D90673006205C6 /* LUInterstitial.m */,
 				02CD574D17D90673006205C6 /* LUInterstitialClaimAction.h */,
 				02CD574E17D90673006205C6 /* LUInterstitialClaimAction.m */,
+				40EC258718A582B3000D5390 /* LUInterstitialFeedbackAction.h */,
+				40EC258818A582B3000D5390 /* LUInterstitialFeedbackAction.m */,
+				0291C30E1A30E15A003A1D87 /* LUInterstitialNavigationAction.h */,
+				0291C30F1A30E15A003A1D87 /* LUInterstitialNavigationAction.m */,
 				02CD574F17D90673006205C6 /* LUInterstitialShareAction.h */,
 				02CD575017D90673006205C6 /* LUInterstitialShareAction.m */,
 				02CD575117D90673006205C6 /* LUInterstitialURLAction.h */,
 				02CD575217D90673006205C6 /* LUInterstitialURLAction.m */,
-				40EC258718A582B3000D5390 /* LUInterstitialFeedbackAction.h */,
-				40EC258818A582B3000D5390 /* LUInterstitialFeedbackAction.m */,
 			);
 			path = Interstitials;
 			sourceTree = "<group>";
@@ -1700,6 +1706,7 @@
 			files = (
 				25FF1CCD18FAE48D007EDCEA /* LUDeepLinkAuth.h in Headers */,
 				C1CAF1F417315415003B3D01 /* LUAPIClient.h in Headers */,
+				0291C3101A30E15A003A1D87 /* LUInterstitialNavigationAction.h in Headers */,
 				C1CAF1F617315415003B3D01 /* LUAPIErrorBuilder.h in Headers */,
 				C1CAF1F817315415003B3D01 /* LUAbstractJSONModelFactory.h in Headers */,
 				C1CAF1FC17315415003B3D01 /* LUCampaignJSONFactory.h in Headers */,
@@ -2060,6 +2067,7 @@
 				C1CAF20517315415003B3D01 /* LUClaimJSONFactory.m in Sources */,
 				C1CAF20917315415003B3D01 /* LUCreditCardJSONFactory.m in Sources */,
 				25FF1CCE18FAE48D007EDCEA /* LUDeepLinkAuth.m in Sources */,
+				0291C3111A30E15A003A1D87 /* LUInterstitialNavigationAction.m in Sources */,
 				C1CAF21517315415003B3D01 /* LUMonetaryValueJSONFactory.m in Sources */,
 				C1CAF21717315415003B3D01 /* LUAccessTokenJSONFactory.m in Sources */,
 				0205E1DA1951FDD2001904D9 /* LUUserWithAccessTokenJSONFactory.m in Sources */,

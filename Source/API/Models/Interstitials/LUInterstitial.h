@@ -34,7 +34,10 @@ typedef NS_ENUM(NSInteger, LUInterstitialActionType) {
   LUInterstitialActionTypeShare,
 
   /** The interstitial will include a URL that the user can view. */
-  LUInterstitialActionTypeURL
+  LUInterstitialActionTypeURL,
+
+  /** The interstitial will include a URL representing an in-app screen to which the user can navigate. */
+  LUInterstitialActionTypeNavigation
 };
 
 /**
@@ -64,6 +67,7 @@ typedef NS_ENUM(NSInteger, LUInterstitialActionType) {
  `LUInterstitialFeedbackAction`.
  - `LUInterstitialActionTypeShare`: This property will be an instance of `LUInterstitialShareAction`.
  - `LUInterstitialActionTypeURL`: This property will be an instance of `LUInterstitialURLAction`.
+ - `LUInterstitialActionTypeNavigation`: This property will be an instance of `LUInterstitialNavigationAction`.
  */
 @property (nonatomic, strong, readonly) id action;
 
@@ -72,7 +76,7 @@ typedef NS_ENUM(NSInteger, LUInterstitialActionType) {
 
  Will be one of: `LUInterstitialActionTypeUnknown`, `LUInterstitialActionTypeNone`,
  `LUInterstitialActionTypeClaim`, `LUInterstitialActionTypeFeedback`,
- `LUInterstitialActionTypeShare`, or `LUInterstitialActionTypeURL`.
+ `LUInterstitialActionTypeShare`, `LUInterstitialActionTypeURL`, `LUInterstitialActionTypeNavigation`.
  */
 @property (nonatomic, assign, readonly) LUInterstitialActionType actionType;
 
