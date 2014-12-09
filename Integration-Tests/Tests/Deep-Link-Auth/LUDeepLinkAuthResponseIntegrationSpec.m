@@ -16,6 +16,7 @@
 
 #import "LUDeepLinkAuthRequest.h"
 #import "LUDeepLinkAuthResponse.h"
+#import "LUMockKeychainAccess.h"
 #import "LUOneTimePad.h"
 #import "NSURL+LUAdditions.h"
 
@@ -28,8 +29,9 @@ describe(@"Deep Link Auth responses", ^{
   beforeEach(^{
     [LUAPIClient setupWithAppID:@"1" APIKey:@"api-key"];
     [UIApplication stub:@selector(sharedApplication) andReturn:[UIApplication mock]];
+    [LUKeychainAccess stub:@selector(standardKeychainAccess) andReturn:[[LUMockKeychainAccess alloc] init]];
 
-    LUOneTimePad *oneTimePad = [LUOneTimePad loadOneTimePad];
+    LUOneTimePad *oneTimePad = [LUOneTimePad saveNewOneTimePad];
 
     responseURL = [NSURL lu_URLWithScheme:@"testapp"
                                      host:LUDeepLinkAuthResponseHost

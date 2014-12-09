@@ -76,6 +76,7 @@
 		0251CC2A1A3B4CEF0056D82C /* LUIBeaconCheckInRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0251CC281A3B4CEF0056D82C /* LUIBeaconCheckInRequestFactory.h */; };
 		0251CC2B1A3B4CEF0056D82C /* LUIBeaconCheckInRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0251CC291A3B4CEF0056D82C /* LUIBeaconCheckInRequestFactory.m */; };
 		0251CC381A3B78B80056D82C /* LUIBeaconCheckInRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0251CC371A3B78B80056D82C /* LUIBeaconCheckInRequestFactorySpec.m */; };
+		0251CC181A378B4B0056D82C /* LUMockKeychainAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 0251CC171A378B4B0056D82C /* LUMockKeychainAccess.m */; };
 		025B6DDE176A713C00713242 /* payment_token.json in Resources */ = {isa = PBXBuildFile; fileRef = 025B6DDD176A70D500713242 /* payment_token.json */; };
 		026064ED19192B1E00F93FDF /* LUAPIIntegrationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 026064EC19192B1E00F93FDF /* LUAPIIntegrationSpec.m */; };
 		0261005C19F7F6AB006BF5F7 /* LUPassRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0261005B19F7F6AB006BF5F7 /* LUPassRequestFactorySpec.m */; };
@@ -469,6 +470,8 @@
 		0251CC281A3B4CEF0056D82C /* LUIBeaconCheckInRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUIBeaconCheckInRequestFactory.h; sourceTree = "<group>"; };
 		0251CC291A3B4CEF0056D82C /* LUIBeaconCheckInRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUIBeaconCheckInRequestFactory.m; sourceTree = "<group>"; };
 		0251CC371A3B78B80056D82C /* LUIBeaconCheckInRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUIBeaconCheckInRequestFactorySpec.m; sourceTree = "<group>"; };
+		0251CC161A378B4B0056D82C /* LUMockKeychainAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUMockKeychainAccess.h; sourceTree = "<group>"; };
+		0251CC171A378B4B0056D82C /* LUMockKeychainAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUMockKeychainAccess.m; sourceTree = "<group>"; };
 		025B6DDD176A70D500713242 /* payment_token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = payment_token.json; sourceTree = "<group>"; };
 		026064EC19192B1E00F93FDF /* LUAPIIntegrationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIIntegrationSpec.m; sourceTree = "<group>"; };
 		0261005B19F7F6AB006BF5F7 /* LUPassRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPassRequestFactorySpec.m; sourceTree = "<group>"; };
@@ -1147,6 +1150,8 @@
 			children = (
 				25FF1CDF18FAE5CF007EDCEA /* LUDeepLinkAuthRequestIntegrationSpec.m */,
 				25FF1CE018FAE5CF007EDCEA /* LUDeepLinkAuthResponseIntegrationSpec.m */,
+				0251CC161A378B4B0056D82C /* LUMockKeychainAccess.h */,
+				0251CC171A378B4B0056D82C /* LUMockKeychainAccess.m */,
 			);
 			name = "Deep Link Auth";
 			path = "Deep-Link-Auth";
@@ -2211,6 +2216,7 @@
 				0274B8441773A21600FD5B43 /* LUAPIErrorJSONFactorySpec.m in Sources */,
 				0274B84D1773A4D200FD5B43 /* LUAPIErrorSpec.m in Sources */,
 				F8EAF0E817BA817F00197388 /* LUCacheManagerSpec.m in Sources */,
+				0251CC181A378B4B0056D82C /* LUMockKeychainAccess.m in Sources */,
 				029053C617BD4AFF00527576 /* LUAPIResponseSpec.m in Sources */,
 				029053C717BD4AFF00527576 /* LUWebLinkParserSpec.m in Sources */,
 				02CD577217D9079C006205C6 /* LUInterstitialJSONFactorySpec.m in Sources */,

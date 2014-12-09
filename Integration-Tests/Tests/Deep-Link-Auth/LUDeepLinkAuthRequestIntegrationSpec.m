@@ -16,6 +16,7 @@
 
 #import "LUDeepLinkAuthRequest.h"
 #import "LUDeepLinkAuthResponse.h"
+#import "LUMockKeychainAccess.h"
 #import "LUOneTimePad.h"
 #import "NSURL+LUAdditions.h"
 
@@ -28,6 +29,7 @@ describe(@"Deep Link Auth requests", ^{
     [LUAPIClient setupWithAppID:@"1" APIKey:@"api-key"];
     [UIApplication stub:@selector(sharedApplication) andReturn:[UIApplication mock]];
     [LUDeepLinkAuth stub:@selector(isDeepLinkAuthAppInstalled) andReturn:theValue(YES)];
+    [LUKeychainAccess stub:@selector(standardKeychainAccess) andReturn:[[LUMockKeychainAccess alloc] init]];
   });
 
   context(@"a successful request", ^{

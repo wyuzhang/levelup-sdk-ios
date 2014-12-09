@@ -25,6 +25,7 @@ describe(@"LUPassRetriever", ^{
 
   beforeEach(^{
     [LUAPIClient setupWithAppID:@"1" APIKey:@"api-key"];
+    [LUAPIClient sharedClient].accessToken = @"access-token";
   });
 
   afterEach(^{
@@ -81,6 +82,10 @@ describe(@"LUPassRetriever", ^{
     NSNumber *merchantID = @1;
 
     beforeEach(^{
+      PKPass *mockPass = [PKPass nullMock];
+      [PKPass stub:@selector(alloc) andReturn:mockPass];
+      [mockPass stub:@selector(initWithData:error:) andReturn:mockPass];
+
       retriever = [[LUPassRetriever alloc] initWithCompletionHandler:completionHandler merchantID:merchantID];
     });
 
