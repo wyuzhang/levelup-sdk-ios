@@ -82,6 +82,31 @@
 + (LUAPIRequest *)requestForLocationWithID:(NSNumber *)locationID;
 
 /**
+ Builds a request to return the first page of merchant locations for multi-merchants associated with the app.
+
+ On success, this request will return `LULocation` instances for each location, sorted relative to the
+ distance from the given location. The response will include a URL for the next page of results.
+ This URL is retrieved by calling `nextPageURL` on the `LUAPIResponse` instance that is returned
+ along with the results. This URL can be used with `requestForMerchantLocationsOnPage:` to retrieve the next
+ page of locations.
+
+ @param location The location to use for sorting.
+ @param merchantID The merchant id.
+ */
++ (LUAPIRequest *)requestForMerchantLocationsNearLocation:(CLLocation *)location forMerchantID:(NSNumber *)merchantID;
+
+/**
+ Builds a request to return the given page of merchant locations for multi-merchants associated with the app.
+
+ On success, this request will return `LULocation` instances for each location. If this page doesn't
+ include any locations, the response will be an empty array. When there are additional pages of
+ results, the `LUAPIResponse` will also include the URL for the next page of results.
+
+ @param pageURL The next page of locations to request.
+ */
++ (LUAPIRequest *)requestForMerchantLocationsOnPage:(NSURL *)pageURL;
+
+/**
  Builds a request to return the web links associated with a specific location.
 
  On success, this request will return an array of `LUWebLink` instances.

@@ -72,6 +72,27 @@
                                modelFactory:[LULocationJSONFactory factory]];
 }
 
++ (LUAPIRequest *)requestForMerchantLocationsNearLocation:(CLLocation *)location forMerchantID:(NSNumber *)merchantID {
+  NSString *requestPath = [NSString stringWithFormat:@"merchants/%@/locations", merchantID];
+  NSDictionary *params = @{@"lat" : @(location.coordinate.latitude), @"lng" : @(location.coordinate.longitude)};
+
+  return [LUAPIRequest apiRequestWithMethod:@"GET"
+                                       path:requestPath
+                                 apiVersion:LUAPIVersion15
+                                 parameters:params
+                               modelFactory:[LULocationJSONFactory factory]];
+}
+
++ (LUAPIRequest *)requestForMerchantLocationsOnPage:(NSURL *)pageURL {
+  NSAssert(pageURL != nil, @"A non-nil pageURL is required.");
+
+  return [LUAPIRequest apiRequestWithMethod:@"GET"
+                                       path:[pageURL lu_pathAndQueryWithoutAPIVersion]
+                                 apiVersion:LUAPIVersion15
+                                 parameters:nil
+                               modelFactory:[LULocationJSONFactory factory]];
+}
+
 + (LUAPIRequest *)requestForWebLinksAtLocationWithID:(NSNumber *)locationID {
   NSString *requestPath = [NSString stringWithFormat:@"locations/%@/web_links", [locationID stringValue]];
   return [LUAPIRequest apiRequestWithMethod:@"GET"

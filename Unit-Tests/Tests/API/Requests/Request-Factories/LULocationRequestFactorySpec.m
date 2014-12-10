@@ -146,6 +146,61 @@ describe(@"LULocationRequestFactory", ^{
       [[request.modelFactory should] beKindOfClass:[LULocationJSONFactory class]];
     });
   });
+
+  describe(@"requestForMerchantLocationsNearLocation:forMerchantID:", ^{
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:41.0 longitude:-71.0];
+
+    beforeEach(^{
+      [LUAPIClient setupWithAppID:@"1" APIKey:@"test"];
+      request = [LULocationRequestFactory requestForMerchantLocationsNearLocation:location forMerchantID:@1];
+    });
+
+    it(@"returns a GET request", ^{
+      [[request.method should] equal:@"GET"];
+    });
+
+    it(@"returns a request to the path 'merchants/:id/locations", ^{
+      [[request.path should] equal:@"merchants/1/locations"];
+    });
+
+    it(@"returns a request to version v15 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion15];
+    });
+
+    it(@"returns a request set up to pass the response to an instance of LULocationJSONFactory", ^{
+      [[request.modelFactory should] beKindOfClass:[LULocationJSONFactory class]];
+    });
+
+    it(@"returns a request with the parameters for the given location", ^{
+      NSDictionary *expectedParams = @{@"lat" : @(location.coordinate.latitude), @"lng" : @(location.coordinate.longitude)};
+
+      [[request.parameters should] equal:expectedParams];
+    });
+  });
+
+  describe(@"requestForMerchantLocationsOnPage:", ^{
+    NSURL *pageURL = [NSURL URLWithString:@"http://example.com/next_page?key=value"];
+
+    beforeEach(^{
+      request = [LULocationRequestFactory requestForMerchantLocationsOnPage:pageURL];
+    });
+
+    it(@"returns a GET request", ^{
+      [[request.method should] equal:@"GET"];
+    });
+
+    it(@"returns a request to the path provided by the page URL", ^{
+      [[request.path should] equal:@"next_page?key=value"];
+    });
+
+    it(@"returns a request to version v15 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion15];
+    });
+
+    it(@"returns a request set up to pass the response to an instance of LULocationJSONFactory", ^{
+      [[request.modelFactory should] beKindOfClass:[LULocationJSONFactory class]];
+    });
+  });
 });
 
 SPEC_END

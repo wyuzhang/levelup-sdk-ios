@@ -257,6 +257,7 @@
 		6A5EA77C196448EE002FDCFF /* downgraded_token.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A5EA77B196448EE002FDCFF /* downgraded_token.json */; };
 		6A5EA77D196448F5002FDCFF /* debit_card.json in Resources */ = {isa = PBXBuildFile; fileRef = 40BE9659188DCFF600F318D6 /* debit_card.json */; };
 		6F444D2F83D549768CF26F9C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A39890392E641DAA8438DC9 /* libPods.a */; };
+		C17DB74F1A40D1C6004AA124 /* merchant_locations.json in Resources */ = {isa = PBXBuildFile; fileRef = C17DB74D1A40D1BB004AA124 /* merchant_locations.json */; };
 		C1CAF10C173052A7003B3D01 /* LUAPIClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0AD173052A7003B3D01 /* LUAPIClientSpec.m */; };
 		C1CAF10D173052A7003B3D01 /* LUAPIErrorBuilderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0AE173052A7003B3D01 /* LUAPIErrorBuilderSpec.m */; };
 		C1CAF10E173052A7003B3D01 /* LUAbstractJSONModelFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0B1173052A7003B3D01 /* LUAbstractJSONModelFactorySpec.m */; };
@@ -669,6 +670,7 @@
 		4984E89BA908B73B0354F494 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6A165D0F18F4767200DF535F /* interstitial_feedback.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = interstitial_feedback.json; sourceTree = "<group>"; };
 		6A5EA77B196448EE002FDCFF /* downgraded_token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = downgraded_token.json; sourceTree = "<group>"; };
+		C17DB74D1A40D1BB004AA124 /* merchant_locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = merchant_locations.json; sourceTree = "<group>"; };
 		C1CAF0AD173052A7003B3D01 /* LUAPIClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIClientSpec.m; sourceTree = "<group>"; };
 		C1CAF0AE173052A7003B3D01 /* LUAPIErrorBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIErrorBuilderSpec.m; sourceTree = "<group>"; };
 		C1CAF0B1173052A7003B3D01 /* LUAbstractJSONModelFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAbstractJSONModelFactorySpec.m; sourceTree = "<group>"; };
@@ -1047,6 +1049,7 @@
 		02E29145175FCAB8002036B4 /* Network Responses */ = {
 			isa = PBXGroup;
 			children = (
+				C17DB74D1A40D1BB004AA124 /* merchant_locations.json */,
 				029053C117BD4ACA00527576 /* app_locations.json */,
 				02E29146175FCAB8002036B4 /* campaign.json */,
 				404504D717EB9648000A7211 /* campaign_nonglobal.json */,
@@ -1930,6 +1933,7 @@
 				6A165D1018F4768200DF535F /* interstitial_feedback.json in Resources */,
 				02E29166175FCAB8002036B4 /* loyalty.json in Resources */,
 				02E29168175FCAB8002036B4 /* new_user.json in Resources */,
+				C17DB74F1A40D1C6004AA124 /* merchant_locations.json in Resources */,
 				40210177188EF16E0002E82F /* credit_and_debit.json in Resources */,
 				0264391E185BB71600175425 /* credit.json in Resources */,
 				021B7485193FAD0800BBC315 /* registration.json in Resources */,

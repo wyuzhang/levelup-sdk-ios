@@ -66,6 +66,8 @@
 + (LUAPIStub *)stubToGetLocationSummariesLastPage;
 + (LUAPIStub *)stubToGetLocationsForAppFirstPageNearLocation:(CLLocation *)location;
 + (LUAPIStub *)stubToGetLocationsForAppLastPage;
++ (LUAPIStub *)stubToGetLocationsForMerchantFirstPageNearLocation:(CLLocation *)location forMerchantID:(NSNumber *)merchantID;
++ (LUAPIStub *)stubToGetLocationsForMerchantLastPageForMerchantID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToGetLoyaltyDisabledForMerchantWithID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetLoyaltyForMerchantWithID:(NSNumber *)merchantID;
