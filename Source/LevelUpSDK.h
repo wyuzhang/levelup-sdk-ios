@@ -28,6 +28,7 @@
 #import "LUClaimRequestFactory.h"
 #import "LUCreditCardRequestFactory.h"
 #import "LUGiftCardOrderRequestFactory.h"
+#import "LUIBeaconCheckInRequestFactory.h"
 #import "LUInterstitialRequestFactory.h"
 #import "LULocationCreditRequestFactory.h"
 #import "LULocationRequestFactory.h"
