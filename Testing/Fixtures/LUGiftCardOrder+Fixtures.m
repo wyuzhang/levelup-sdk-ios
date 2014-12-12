@@ -14,27 +14,17 @@
  * limitations under the License.
  */
 
-// Fixtures
-
-#import "LUAccessToken+Fixtures.h"
-#import "LUCampaign+Fixtures.h"
-#import "LUClaim+Fixtures.h"
-#import "LUCreditCard+Fixtures.h"
 #import "LUGiftCardOrder+Fixtures.h"
-#import "LUInterstitial+Fixtures.h"
-#import "LULocation+Fixtures.h"
-#import "LULoyalty+Fixtures.h"
-#import "LUOneTimePad+Fixtures.h"
-#import "LUOrder+Fixtures.h"
-#import "LUOrderItem+Fixtures.h"
-#import "LUPaymentToken+Fixtures.h"
-#import "LURegistration+Fixtures.h"
-#import "LUUser+Fixtures.h"
-#import "LUWebLink+Fixtures.h"
-#import "LUWebLocations+Fixtures.h"
+#import "LUMonetaryValue.h"
 
-// Network Stubbing
+@implementation LUGiftCardOrder (Fixtures)
 
-#import "LUAPIStub.h"
-#import "LUAPIStubbing.h"
-#import "LUAPIStubFactory.h"
++ (LUGiftCardOrder *)fixture {
+  return [[LUGiftCardOrder alloc] initWithMerchantID:@1
+                                      recipientEmail:@"test@example.com"
+                                    recipientMessage:@"Test Message"
+                                       recipientName:@"John"
+                                               value:[LUMonetaryValue monetaryValueWithUSD:@5]];
+}
+
+@end

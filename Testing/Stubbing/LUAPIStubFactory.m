@@ -20,7 +20,9 @@
 #import "LUAPIStubFactory.h"
 #import "LUCoreDataStack.h"
 #import "LUDeviceIdentifier.h"
+#import "LUGiftCardOrder.h"
 #import "LULocationCacheUpdater.h"
+#import "LUMonetaryValue.h"
 #import "LUUser.h"
 #import "LUUserParameterBuilder.h"
 #import "NSDate+StringFormats.h"
@@ -79,6 +81,31 @@
                                   expirationYear:expirationYear
                                       postalCode:postalCode
                             responseDataFileName:@"debit_card"];
+}
+
++ (LUAPIStub *)stubToCreateGiftCardOrder:(LUGiftCardOrder *)giftCardOrder {
+  NSData *responseData = [self responseDataFromJSON:@{@"gift_card_value_order": @{@"added_value_amount": giftCardOrder.value.amount} }];
+
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                            path:@"users/gift_card_value_orders"
+                                      HTTPMethod:@"POST"
+                                   authenticated:YES
+                                    responseData:responseData];
+
+  NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:@{
+    @"recipient_email": giftCardOrder.recipientEmail,
+    @"recipient_message": giftCardOrder.recipientMessage,
+    @"recipient_name": giftCardOrder.recipientName,
+    @"value_amount": giftCardOrder.value.amount
+  }];
+
+  if (giftCardOrder.merchantID) {
+    parameters[@"merchant_id"] = giftCardOrder.merchantID;
+  }
+
+  stub.requestBodyJSON = @{@"gift_card_value_order": parameters};
+
+  return stub;
 }
 
 + (LUAPIStub *)stubToCreateTicket:(NSString *)body {

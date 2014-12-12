@@ -15,6 +15,7 @@
  */
 
 @class LUAPIStub;
+@class LUGiftCardOrder;
 @class LUUser;
 
 @interface LUAPIStubFactory : NSObject
@@ -31,6 +32,7 @@
                                expirationMonth:(NSNumber *)expirationMonth
                                 expirationYear:(NSNumber *)expirationYear
                                     postalCode:(NSString *)postalCode;
++ (LUAPIStub *)stubToCreateGiftCardOrder:(LUGiftCardOrder *)giftCardOrder;
 + (LUAPIStub *)stubToCreateTicket:(NSString *)body;
 + (LUAPIStub *)stubToCreateUser;
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user;
