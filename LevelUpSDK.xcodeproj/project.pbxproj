@@ -102,26 +102,6 @@
 		029131DB1760DC8600F74663 /* LUAPIStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 029131DA1760DC8600F74663 /* LUAPIStub.m */; };
 		0291C3101A30E15A003A1D87 /* LUInterstitialNavigationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 0291C30E1A30E15A003A1D87 /* LUInterstitialNavigationAction.h */; };
 		0291C3111A30E15A003A1D87 /* LUInterstitialNavigationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0291C30F1A30E15A003A1D87 /* LUInterstitialNavigationAction.m */; };
-		02941E6516B738AE00EDAF6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6416B738AE00EDAF6E /* AVFoundation.framework */; };
-		02941E6616B738F300EDAF6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6416B738AE00EDAF6E /* AVFoundation.framework */; };
-		02941E6816B7391700EDAF6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6716B7391700EDAF6E /* QuartzCore.framework */; };
-		02941E6916B7392300EDAF6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6716B7391700EDAF6E /* QuartzCore.framework */; };
-		02941E6B16B739FE00EDAF6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6A16B739FE00EDAF6E /* CoreGraphics.framework */; };
-		02941E6C16B73A0D00EDAF6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6A16B739FE00EDAF6E /* CoreGraphics.framework */; };
-		02941E6E16B73A2500EDAF6E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6D16B73A2500EDAF6E /* CoreLocation.framework */; };
-		02941E6F16B73A2E00EDAF6E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E6D16B73A2500EDAF6E /* CoreLocation.framework */; };
-		02941E7116B73A5F00EDAF6E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7016B73A5F00EDAF6E /* Security.framework */; };
-		02941E7216B73A6B00EDAF6E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7016B73A5F00EDAF6E /* Security.framework */; };
-		02941E7416B73A9B00EDAF6E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7316B73A9B00EDAF6E /* CoreVideo.framework */; };
-		02941E7516B73AA200EDAF6E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7316B73A9B00EDAF6E /* CoreVideo.framework */; };
-		02941E7716B73ADB00EDAF6E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7616B73ADB00EDAF6E /* SystemConfiguration.framework */; };
-		02941E7816B73AF600EDAF6E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7616B73ADB00EDAF6E /* SystemConfiguration.framework */; };
-		02941E7A16B73B1D00EDAF6E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7916B73B1D00EDAF6E /* MobileCoreServices.framework */; };
-		02941E7B16B73B3200EDAF6E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7916B73B1D00EDAF6E /* MobileCoreServices.framework */; };
-		02941E7D16B73B5700EDAF6E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7C16B73B5700EDAF6E /* ImageIO.framework */; };
-		02941E7E16B73B5F00EDAF6E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7C16B73B5700EDAF6E /* ImageIO.framework */; };
-		02941E8016B73B7B00EDAF6E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */; };
-		02941E8116B73B8B00EDAF6E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */; };
 		02AA944E18352C4400218730 /* LUGenericQRCodeGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 02AA944C18352C4400218730 /* LUGenericQRCodeGenerator.h */; };
 		02AA944F18352C4400218730 /* LUGenericQRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AA944D18352C4400218730 /* LUGenericQRCodeGenerator.m */; };
 		02AA94521835306F00218730 /* LUGenericQRCodeGeneratorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AA94501835301400218730 /* LUGenericQRCodeGeneratorSpec.m */; };
@@ -512,16 +492,6 @@
 		029131DA1760DC8600F74663 /* LUAPIStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIStub.m; sourceTree = "<group>"; };
 		0291C30E1A30E15A003A1D87 /* LUInterstitialNavigationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialNavigationAction.h; sourceTree = "<group>"; };
 		0291C30F1A30E15A003A1D87 /* LUInterstitialNavigationAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialNavigationAction.m; sourceTree = "<group>"; };
-		02941E6416B738AE00EDAF6E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		02941E6716B7391700EDAF6E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		02941E6A16B739FE00EDAF6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		02941E6D16B73A2500EDAF6E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		02941E7016B73A5F00EDAF6E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		02941E7316B73A9B00EDAF6E /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		02941E7616B73ADB00EDAF6E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		02941E7916B73B1D00EDAF6E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		02941E7C16B73B5700EDAF6E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		02941E7F16B73B7B00EDAF6E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		0294D075190AB02200BBACCB /* build_framework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_framework.sh; sourceTree = "<group>"; };
 		0294D07B190AB67B00BBACCB /* NamespacedDependencies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NamespacedDependencies.h; path = "Pods/Target Support Files/Pods/NamespacedDependencies.h"; sourceTree = "<group>"; };
 		02AA944C18352C4400218730 /* LUGenericQRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUGenericQRCodeGenerator.h; sourceTree = "<group>"; };
@@ -2324,7 +2294,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_VERSION = 1.6.3;
+				FRAMEWORK_VERSION = 1.6.4;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
@@ -2469,7 +2439,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_VERSION = 1.6.3;
+				FRAMEWORK_VERSION = 1.6.4;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2510,7 +2480,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_VERSION = 1.6.3;
+				FRAMEWORK_VERSION = 1.6.4;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
