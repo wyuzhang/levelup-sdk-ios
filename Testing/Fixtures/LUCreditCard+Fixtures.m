@@ -19,8 +19,10 @@
 @implementation LUCreditCard (Fixtures)
 
 + (LUCreditCard *)fixture {
+  NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:[NSDate date]];
+  NSNumber *expirationYear = [NSNumber numberWithInteger:components.year + 2];
   return [[LUCreditCard alloc] initWithBIN:@"1234" creditCardDescription:@"Visa ending in 1234" creditCardID:@1 cvv:nil debit:NO
-                           expirationMonth:@11 expirationYear:@2013 last4Digits:@"1234" number:nil postalCode:@"01234"
+                           expirationMonth:@11 expirationYear:expirationYear last4Digits:@"1234" number:nil postalCode:@"01234"
                                   promoted:NO type:@"Visa"];
 }
 
