@@ -61,12 +61,8 @@
 
   [[LUAPIClient sharedClient] performRequest:request
                                      success:^(NSDictionary *result, LUAPIResponse *response) {
-                                       if (response.HTTPURLResponse.statusCode == 202) {
-                                         [self performSelector:@selector(retrievePass) withObject:nil afterDelay:0.5f];
-                                       } else {
-                                         [self downloadPassWithURL:[NSURL URLWithString:result[@"url"]]
-                                               authenticationToken:result[@"authentication_token"]];
-                                       }
+                                       [self downloadPassWithURL:[NSURL URLWithString:result[@"url"]]
+                                             authenticationToken:result[@"authentication_token"]];
                                      }
                                      failure:^(NSError *error) {
                                        self.completionHandler(nil, error);

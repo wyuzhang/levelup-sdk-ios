@@ -111,19 +111,6 @@ describe(@"LUPassRetriever", ^{
       });
     });
 
-    context(@"when the pass request returns 202", ^{
-      beforeEach(^{
-        [[LUAPIStubbing sharedInstance] addStub:[LUAPIStubFactory stubToGetPendingPassWithMerchantID:merchantID]];
-      });
-
-      it(@"tries to retrieve the pass again after a delay", ^{
-        [[expectFutureValue(retriever) shouldEventually] receive:@selector(performSelector:withObject:afterDelay:)
-                      withArguments:theValue(@selector(retrievePass)), any(), any()];
-
-        [retriever retrievePass];
-      });
-    });
-
     context(@"when the pass request returns 200", ^{
       beforeEach(^{
         [[LUAPIStubbing sharedInstance] addStub:[LUAPIStubFactory stubToGetPassWithMerchantID:merchantID]];

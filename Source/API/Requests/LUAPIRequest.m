@@ -31,7 +31,20 @@ NSString * const LUAPIVersion15 = @"v15";
                             apiVersion:(NSString *)apiVersion
                             parameters:(NSDictionary *)parameters
                           modelFactory:(LUAbstractJSONModelFactory *)modelFactory {
-  return [[self alloc] initWithMethod:method path:path apiVersion:apiVersion parameters:parameters modelFactory:modelFactory];
+  return [[self alloc] initWithMethod:method path:path apiVersion:apiVersion parameters:parameters
+                         modelFactory:modelFactory];
+}
+
++ (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
+                                  path:(NSString *)path
+                            apiVersion:(NSString *)apiVersion
+                            parameters:(NSDictionary *)parameters
+                          modelFactory:(LUAbstractJSONModelFactory *)modelFactory
+                    retryResponseCodes:(NSArray *)retryResponseCodes
+                     retryTimeInterval:(NSTimeInterval)retryTimeInterval {
+  return [[self alloc] initWithMethod:method path:path apiVersion:apiVersion parameters:parameters
+                         modelFactory:modelFactory retryResponseCodes:retryResponseCodes
+                    retryTimeInterval:retryTimeInterval];
 }
 
 - (id)initWithMethod:(NSString *)method
@@ -39,6 +52,17 @@ NSString * const LUAPIVersion15 = @"v15";
           apiVersion:(NSString *)apiVersion
           parameters:(NSDictionary *)parameters
         modelFactory:(LUAbstractJSONModelFactory *)modelFactory {
+  return [self initWithMethod:method path:path apiVersion:apiVersion parameters:parameters modelFactory:modelFactory
+           retryResponseCodes:nil retryTimeInterval:0];
+}
+
+- (id)initWithMethod:(NSString *)method
+                path:(NSString *)path
+          apiVersion:(NSString *)apiVersion
+          parameters:(NSDictionary *)parameters
+        modelFactory:(LUAbstractJSONModelFactory *)modelFactory
+  retryResponseCodes:(NSArray *)retryResponseCodes
+   retryTimeInterval:(NSTimeInterval)retryTimeInterval {
   self = [super init];
   if (self) {
     _apiVersion = apiVersion;
@@ -46,6 +70,8 @@ NSString * const LUAPIVersion15 = @"v15";
     _method = method;
     _path = path;
     _parameters = parameters;
+    _retryResponseCodes = retryResponseCodes;
+    _retryTimeInterval = retryTimeInterval;
   }
 
   return self;

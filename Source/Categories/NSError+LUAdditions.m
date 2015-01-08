@@ -18,8 +18,18 @@
 
 @implementation NSError (LUAdditions)
 
++ (NSError *)lu_carrierAccountErrorWithCode:(LUCarrierAccountErrorCode)code description:(NSString *)description {
+  return [self lu_errorWithDomain:LUCarrierAccountErrorDomain errorCode:code description:description];
+}
+
 + (NSError *)lu_deepLinkAuthErrorWithCode:(LUDeepLinkAuthErrorCode)code description:(NSString *)description {
-  return [NSError errorWithDomain:LUDeepLinkAuthErrorDomain
+  return [self lu_errorWithDomain:LUDeepLinkAuthErrorDomain errorCode:code description:description];
+}
+
+#pragma mark - Private Methods
+
++ (NSError *)lu_errorWithDomain:(NSString *)domain errorCode:(NSInteger)code description:(NSString *)description {
+  return [NSError errorWithDomain:domain
                              code:code
                          userInfo:@{NSLocalizedDescriptionKey: description}];
 }

@@ -33,7 +33,7 @@
                    authenticated:(BOOL)authenticated
                     responseData:(NSData *)responseData;
 + (LUAPIStub *)stubForWebURL:(NSURL *)URL withBody:(NSString *)body;
-
++ (LUAPIStub *)stubForWebURL:(NSURL *)URL withPlainTextResponseString:(NSString *)responseString;
 - (BOOL)matchesRequest:(NSURLRequest *)request;
 - (OHHTTPStubsResponse *)response;
 - (id)responseJSON;

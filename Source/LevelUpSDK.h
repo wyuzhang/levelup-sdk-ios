@@ -24,6 +24,8 @@
 #import "LUAPNDeviceRequestFactory.h"
 #import "LUAuthenticationRequestFactory.h"
 #import "LUCampaignRequestFactory.h"
+#import "LUCarrierAccountRetriever.h"
+#import "LUCarrierNetworkDetector.h"
 #import "LUCategoryRequestFactory.h"
 #import "LUClaimRequestFactory.h"
 #import "LUCreditCardRequestFactory.h"
@@ -41,6 +43,7 @@
 
 #import "LUAccessToken.h"
 #import "LUCampaign.h"
+#import "LUCarrierAccount.h"
 #import "LUCategory.h"
 #import "LUClaim.h"
 #import "LUCreditCard.h"

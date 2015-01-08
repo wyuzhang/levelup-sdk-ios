@@ -26,6 +26,8 @@ describe(@"LUAPIRequest", ^{
   NSString *apiVersion = LUAPIVersion14;
   NSDictionary *parameters = @{@"test" : @1};
   LUAbstractJSONModelFactory *modelFactory = [LUAbstractJSONModelFactory mock];
+  NSArray *retryResponseCodes = @[@202];
+  NSTimeInterval retryTimeInterval = 0.5;
 
   __block LUAPIRequest *apiRequest;
 
@@ -47,6 +49,23 @@ describe(@"LUAPIRequest", ^{
       [[result.apiVersion should] equal:apiVersion];
       [[result.parameters should] equal:parameters];
       [[result.modelFactory should] equal:modelFactory];
+    });
+  });
+
+  describe(@"apiRequestWithMethod:path:apiVersion:parameters:modelFactory:retryResponseCodes:retryTimeInterval", ^{
+    it(@"returns a new LUAPIRequest with the given arguments", ^{
+      LUAPIRequest *result = [LUAPIRequest apiRequestWithMethod:method path:path apiVersion:apiVersion parameters:parameters modelFactory:modelFactory retryResponseCodes:retryResponseCodes retryTimeInterval:retryTimeInterval];
+
+      [LUAPIRequest apiRequestWithMethod:method path:path apiVersion:apiVersion parameters:parameters modelFactory:modelFactory retryResponseCodes:retryResponseCodes retryTimeInterval:retryTimeInterval];
+
+      [[result should] beKindOfClass:[LUAPIRequest class]];
+      [[result.method should] equal:method];
+      [[result.path should] equal:path];
+      [[result.apiVersion should] equal:apiVersion];
+      [[result.parameters should] equal:parameters];
+      [[result.modelFactory should] equal:modelFactory];
+      [[result.retryResponseCodes should] equal:retryResponseCodes];
+      [[theValue(result.retryTimeInterval) should] equal:theValue(retryTimeInterval)];
     });
   });
 

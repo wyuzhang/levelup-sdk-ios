@@ -21,6 +21,7 @@
 + (LUCreditCard *)fixture {
   NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:[NSDate date]];
   NSNumber *expirationYear = [NSNumber numberWithInteger:components.year + 2];
+
   return [[LUCreditCard alloc] initWithBIN:@"1234" creditCardDescription:@"Visa ending in 1234" creditCardID:@1 cvv:nil debit:NO
                            expirationMonth:@11 expirationYear:expirationYear last4Digits:@"1234" number:nil postalCode:@"01234"
                                   promoted:NO type:@"Visa"];
@@ -38,6 +39,16 @@
   return creditCard;
 }
 
++ (LUCreditCard *)fixtureForSprintCarrierCard {
+  LUCreditCard *creditCard = [self fixture];
+  [creditCard setValue:@"Phone ending in 4922" forKey:@"creditCardDescription"];
+  [creditCard setValue:@11 forKey:@"expirationMonth"];
+  [creditCard setValue:@2115 forKey:@"expirationYear"];
+  [creditCard setValue:@"4922" forKey:@"last4Digits"];
+  [creditCard setValue:@"Sprint" forKey:@"type"];
+  return creditCard;
+}
+
 + (LUCreditCard *)fixtureWithExpirationMonth:(NSNumber *)expirationMonth expirationYear:(NSNumber *)expirationYear {
   LUCreditCard *creditCard = [self fixture];
   [creditCard setValue:expirationMonth forKey:@"expirationMonth"];
@@ -50,5 +61,7 @@
   [creditCard setValue:creditCardID forKey:@"creditCardID"];
   return creditCard;
 }
+
+
 
 @end

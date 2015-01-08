@@ -18,6 +18,7 @@
 
 #import "LUAccessToken+Fixtures.h"
 #import "LUCampaign+Fixtures.h"
+#import "LUCarrierAccount+Fixtures.h"
 #import "LUClaim+Fixtures.h"
 #import "LUCreditCard+Fixtures.h"
 #import "LUGiftCardOrder+Fixtures.h"

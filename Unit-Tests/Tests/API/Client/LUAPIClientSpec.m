@@ -72,6 +72,36 @@ describe(@"LUAPIClient", ^{
 
   // Public Methods
 
+  describe(@"isNetworkReachableOnCellularData", ^{
+    beforeEach(^{
+      [[LUAPIClient sharedClient].httpOperationManager.reachabilityManager stub:@selector(networkReachabilityStatus) andReturn:theValue(AFNetworkReachabilityStatusReachableViaWWAN)];
+    });
+
+    it(@"returns YES if the network is reachable via cellular data", ^{
+      [[theValue([[LUAPIClient sharedClient] isNetworkReachableOnCellularData]) should] beYes];
+    });
+  });
+
+  describe(@"isNetworkReachableOnWifi", ^{
+    beforeEach(^{
+      [[LUAPIClient sharedClient].httpOperationManager.reachabilityManager stub:@selector(networkReachabilityStatus) andReturn:theValue(AFNetworkReachabilityStatusReachableViaWiFi)];
+    });
+
+    it(@"returns YES if the network is reachable via WiFi", ^{
+      [[theValue([[LUAPIClient sharedClient] isNetworkReachableOnWifi]) should] beYes];
+    });
+  });
+
+  describe(@"isNetworkUnreachable", ^{
+    beforeEach(^{
+      [[LUAPIClient sharedClient].httpOperationManager.reachabilityManager stub:@selector(networkReachabilityStatus) andReturn:theValue(AFNetworkReachabilityStatusNotReachable)];
+    });
+
+    it(@"returns YES if the network is unreachable", ^{
+      [[theValue([[LUAPIClient sharedClient] isNetworkUnreachable]) should] beYes];
+    });
+  });
+
   describe(@"setupWithAppID:APIKey:", ^{
     NSString *appID = @"1";
     NSString *APIKey = @"anAPIKey";
@@ -212,6 +242,45 @@ describe(@"LUAPIClient", ^{
           }];
 
           [[failureError shouldEventually] equal:error];
+        });
+      });
+
+      context(@"when the request is repeatable with a 202 Processing status code and returns a 202", ^{
+        __block LUAPIResponse *successResponse;
+        __block LUAPIStub *stub;
+        __block LUAPIRequest *repeatableRequest;
+
+        beforeEach(^{
+          repeatableRequest = [LUAPIRequest apiRequestWithMethod:@"GET" path:@"test" apiVersion:LUAPIVersion14 parameters:nil modelFactory:nil retryResponseCodes:@[@202] retryTimeInterval:0.5];
+
+          stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                                    path:@"test"
+                                              HTTPMethod:@"GET"
+                                           authenticated:NO
+                                            responseData:nil];
+          stub.responseCode = 202;
+          [[LUAPIStubbing sharedInstance] addStub:stub];
+
+          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [[LUAPIStubbing sharedInstance] clearStubs];
+
+            stub.responseCode = 200;
+            [[LUAPIStubbing sharedInstance] addStub:stub];
+          });
+        });
+
+        it(@"tries the request again after a delay", ^{
+          [client performRequest:repeatableRequest success:^(id result, LUAPIResponse *response){} failure:nil];
+
+          [[client shouldEventually] receive:@selector(performRequest:success:failure:)];
+        });
+
+        it(@"calls the success block once the request returns a 2xx response", ^{
+          [client performRequest:repeatableRequest success:^(id result, LUAPIResponse *response) {
+            successResponse = response;
+          } failure:nil];
+
+          [[successResponse shouldEventually] beNonNil];
         });
       });
     });

@@ -98,6 +98,14 @@ __strong static LUAPIClient *_sharedClient = nil;
   [self sharedClient].developmentMode = developmentMode;
 }
 
+- (BOOL)isNetworkReachableOnCellularData {
+  return self.httpOperationManager.reachabilityManager.networkReachabilityStatus == AFNetworkReachabilityStatusReachableViaWWAN;
+}
+
+- (BOOL)isNetworkReachableOnWifi {
+  return self.httpOperationManager.reachabilityManager.networkReachabilityStatus == AFNetworkReachabilityStatusReachableViaWiFi;
+}
+
 - (BOOL)isNetworkUnreachable {
   return self.httpOperationManager.reachabilityManager.networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable;
 }
@@ -111,10 +119,20 @@ __strong static LUAPIClient *_sharedClient = nil;
                                                          if (success) {
                                                            LUAPIResponse *apiResponse = [[LUAPIResponse alloc] initWithHTTPURLResponse:operation.response];
 
-                                                           if (apiRequest.modelFactory) {
-                                                             success([apiRequest.modelFactory fromJSONObject:responseObject], apiResponse);
+                                                           NSNumber *responseCode = @(apiResponse.HTTPURLResponse.statusCode);
+
+                                                           if (apiRequest.retryResponseCodes != nil &&
+                                                               [apiRequest.retryResponseCodes containsObject:responseCode]) {
+                                                             dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * (int64_t)apiRequest.retryTimeInterval);
+                                                             dispatch_after(delay, dispatch_get_main_queue(), ^{
+                                                               [self performRequest:apiRequest success:success failure:failure];
+                                                             });
                                                            } else {
-                                                             success(responseObject, apiResponse);
+                                                             if (apiRequest.modelFactory) {
+                                                               success([apiRequest.modelFactory fromJSONObject:responseObject], apiResponse);
+                                                             } else {
+                                                               success(responseObject, apiResponse);
+                                                             }
                                                            }
                                                          }
                                                        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

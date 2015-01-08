@@ -1,0 +1,8 @@
+{
+  "carrier_account": {
+    "id": 123,
+    "credit_card_id": 4,
+    "ev_url": null,
+    "state": "pending"
+  }
+}

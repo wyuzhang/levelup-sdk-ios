@@ -43,17 +43,20 @@
 + (LUAPIStub *)stubToFailToClaimCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToFailToCreateCreditCardWithDebitOnlyError;
 + (LUAPIStub *)stubToFailToFindRegistrationForEmail:(NSString *)email;
++ (LUAPIStub *)stubToFailToGetCarrierAccountEVURL;
 + (LUAPIStub *)stubToFailToGetPassWithMerchantID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToFindRegistrationForEmail:(NSString *)email;
 + (LUAPIStub *)stubToGetCampaignForMerchantWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithID:(NSNumber *)campaignID;
++ (LUAPIStub *)stubToGetCarrierAccountEVURL;
 + (LUAPIStub *)stubToGetCategories;
 + (LUAPIStub *)stubToGetCreditAtLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToGetCreditAndDebitCards;
 + (LUAPIStub *)stubToGetCreditCardsOneResult;
 + (LUAPIStub *)stubToGetCreditCardsTwoResults;
 + (LUAPIStub *)stubToGetCreditCardsThreeResults;
++ (LUAPIStub *)stubToGetCreditCardsThreeResultsIncludingCarrier;
 + (LUAPIStub *)stubToGetCurrentUser;
 + (LUAPIStub *)stubToGetCurrentUserDebitOnly;
 + (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfo;
@@ -84,13 +87,19 @@
 + (LUAPIStub *)stubToGetPassWithMerchantID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetPaymentToken;
 + (LUAPIStub *)stubToGetPendingPassWithMerchantID:(NSNumber *)merchantID;
++ (LUAPIStub *)stubToGetPendingUpdatedCarrierAccountWithID:(NSNumber *)carrierAccountID;
++ (LUAPIStub *)stubToGetUpdatedCarrierAccountWithID:(NSNumber *)carrierAccountID;
 + (LUAPIStub *)stubToGetURL:(NSString *)url withBody:(NSString *)body;
 + (LUAPIStub *)stubToGetWebLinksAtLocationWithID:(NSNumber *)locationID;
++ (LUAPIStub *)stubToIdentifyCarrierAccount;
 + (LUAPIStub *)stubToLogIn;
 + (LUAPIStub *)stubToLogInWithEmail:(NSString *)email password:(NSString *)password;
 + (LUAPIStub *)stubToPromoteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToResetPasswordRequest;
 + (LUAPIStub *)stubToSubmitFeedbackForOrderWithUUID:(NSString *)UUID;
++ (LUAPIStub *)stubToUpdateCarrierAccountWithID:(NSNumber *)carrierAccountID
+                             mobileDeviceNumber:(NSString *)mobileDeviceNumber
+                                    carrierName:(NSString *)carrierName;
 + (LUAPIStub *)stubToUpdateUser;
 + (LUAPIStub *)stubToUpdateUser:(LUUser *)user;
 

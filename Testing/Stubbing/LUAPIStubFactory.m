@@ -211,6 +211,11 @@
   return stub;
 }
 
++ (LUAPIStub *)stubToFailToGetCarrierAccountEVURL {
+  return [LUAPIStub stubForWebURL:[self carrierAccountEVURLFromJSON]
+      withPlainTextResponseString:@"Status=Fail"];
+}
+
 + (LUAPIStub *)stubToFailToGetPassWithMerchantID:(NSNumber *)merchantID {
   LUAPIStub *stub = [self stubToGetPassWithMerchantID:merchantID];
   stub.responseCode = 404;
@@ -252,6 +257,11 @@
                            HTTPMethod:@"GET"
                         authenticated:NO
                          responseData:[self responseDataFromFile:@"campaign"]];
+}
+
++ (LUAPIStub *)stubToGetCarrierAccountEVURL {
+  return [LUAPIStub stubForWebURL:[self carrierAccountEVURLFromJSON]
+      withPlainTextResponseString:@"Status=Success&MDN=1111111111&Carrier=SPR"];
 }
 
 + (LUAPIStub *)stubToGetCategories {
@@ -300,6 +310,14 @@
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"credit_cards-3"]];
+}
+
++ (LUAPIStub *)stubToGetCreditCardsThreeResultsIncludingCarrier {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+                                 path:@"credit_cards"
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"credit_cards_with_carrier-3"]];
 }
 
 + (LUAPIStub *)stubToGetCurrentUser {
@@ -582,6 +600,20 @@
   return stub;
 }
 
++ (LUAPIStub *)stubToGetPendingUpdatedCarrierAccountWithID:(NSNumber *)carrierAccountID {
+  return [self stubToGetUpdatedCarrierAccountWithID:carrierAccountID withStatus:202];
+}
+
++ (LUAPIStub *)stubToGetUpdatedCarrierAccountWithID:(NSNumber *)carrierAccountID withStatus:(NSInteger)status {
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                            path:[NSString stringWithFormat:@"carrier_accounts/%@", [carrierAccountID stringValue]]
+                                      HTTPMethod:@"GET"
+                                   authenticated:YES
+                                    responseData:[self responseDataFromFile:@"carrier_account_active"]];
+  stub.responseCode = status;
+  return stub;
+}
+
 + (LUAPIStub *)stubToGetURL:(NSString *)url withBody:(NSString *)body {
   return [LUAPIStub stubForWebURL:[NSURL URLWithString:url]
                          withBody:body];
@@ -595,7 +627,14 @@
                                       HTTPMethod:@"GET"
                                    authenticated:NO
                                     responseData:[self responseDataFromFile:@"web_links"]];
+}
 
++ (LUAPIStub *)stubToIdentifyCarrierAccount {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"carrier_accounts"
+                           HTTPMethod:@"POST"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"carrier_accounts_identify"]];
 }
 
 + (LUAPIStub *)stubToLogIn {
@@ -643,6 +682,22 @@
                            HTTPMethod:@"POST"
                         authenticated:NO
                          responseData:nil];
+}
+
++ (LUAPIStub *)stubToUpdateCarrierAccountWithID:(NSNumber *)carrierAccountID
+                             mobileDeviceNumber:(NSString *)mobileDeviceNumber
+                                    carrierName:(NSString *)carrierName {
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                            path:[NSString stringWithFormat:@"carrier_accounts/%@", [carrierAccountID stringValue]]
+                                      HTTPMethod:@"PUT"
+                                   authenticated:YES
+                                    responseData:[self responseDataFromFile:@"carrier_account_active"]];
+  stub.requestBodyJSON = @{@"carrier_account" : @{
+                               @"mobile_device_number" : mobileDeviceNumber,
+                               @"carrier" : carrierName
+                               }
+                           };
+  return stub;
 }
 
 + (LUAPIStub *)stubToUpdateUser {
@@ -721,6 +776,19 @@
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:file]];
+}
+
++ (LUAPIStub *)stubToGetUpdatedCarrierAccountWithID:(NSNumber *)carrierAccountID {
+  return [self stubToGetUpdatedCarrierAccountWithID:carrierAccountID withStatus:200];
+}
+
+#pragma mark - Private Methods
+
++ (NSURL *)carrierAccountEVURLFromJSON {
+  NSDictionary *carrierAccountJSON =
+  [NSJSONSerialization JSONObjectWithData:[self responseDataFromFile:@"carrier_account_with_evurl"]
+                                  options:0 error:nil];
+   return [NSURL URLWithString:[carrierAccountJSON[@"carrier_account"] objectForKey:@"ev_url"]];
 }
 
 @end

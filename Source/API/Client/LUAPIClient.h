@@ -199,6 +199,20 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 ///-------------------------------
 
 /**
+ Checks if the network is reachable on cellular data.
+
+ @return `YES` if the network is reachable and on cellular data, else `NO`.
+ */
+- (BOOL)isNetworkReachableOnCellularData;
+
+/**
+ Checks if the network is reachable on WiFi.
+
+ @return `YES` if the network is reachable and on WiFi, else `NO`.
+ */
+- (BOOL)isNetworkReachableOnWifi;
+
+/**
  Checks if the network is unreachable.
 
  @return `YES` if the network is unreachable, else `NO`.

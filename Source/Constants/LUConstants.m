@@ -55,6 +55,10 @@ NSString * const LUAPIErrorKeyJSONResponse = @"LUAPIErrorKeyJSONResponse";
 NSString * const LUAPIErrorKeyOriginalError = @"LUAPIErrorKeyOriginalError";
 NSString * const LUAPIErrorKeyURLResponse = @"LUAPIErrorKeyURLResponse";
 
+#pragma mark - Carrier Account Errors
+
+NSString * const LUCarrierAccountErrorDomain = @"LUCarrierAccountErrorDomain";
+
 #pragma mark - Deep Link Auth Errors
 
 NSString * const LUDeepLinkAuthErrorDomain = @"LUDeepLinkAuthErrorDomain";

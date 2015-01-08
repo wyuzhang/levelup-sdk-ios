@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 SCVNGR, Inc. d/b/a LevelUp
+ * Copyright (C) 2015 SCVNGR, Inc. d/b/a LevelUp
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-#import "LUCreditCard.h"
+#import "LUCarrierAccount.h"
 
-@interface LUCreditCard (Fixtures)
+SPEC_BEGIN(LUCarrierAccountSpec)
 
-+ (LUCreditCard *)fixture;
-+ (LUCreditCard *)fixtureForDebitCard;
-+ (LUCreditCard *)fixtureForPromotedCard;
-+ (LUCreditCard *)fixtureForSprintCarrierCard;
-+ (LUCreditCard *)fixtureWithExpirationMonth:(NSNumber *)expirationMonth expirationYear:(NSNumber *)expirationYear;
-+ (LUCreditCard *)fixtureWithID:(NSNumber *)creditCardID;
+describe(@"LUCarrierAccount", ^{
+  it(@"is an LUAPIModel", ^{
+    [[[LUCarrierAccount class] should] beSubclassOfClass:[LUAPIModel class]];
+  });
+});
 
-@end
+SPEC_END

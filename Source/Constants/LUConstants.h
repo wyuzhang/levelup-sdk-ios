@@ -93,6 +93,18 @@ typedef NS_ENUM(NSInteger, LUAPIErrorCode) {
   LUAPIErrorUpgrade
 };
 
+#pragma mark - Carrier Account Errors
+
+extern NSString * const LUCarrierAccountErrorDomain;
+
+/** A Carrier Account error. */
+typedef NS_ENUM(NSInteger, LUCarrierAccountErrorCode) {
+  /** The device was not connected to the carrier's cellular data network. **/
+  LUCarrierAccountErrorDataConnectionRequired,
+  /** The server was not able to identify the carrier based on its EVURL **/
+  LUCarrierAccountErrorProblemIdentifyingNetwork
+};
+
 #pragma mark - Deep Link Auth Errors
 
 extern NSString * const LUDeepLinkAuthErrorDomain;

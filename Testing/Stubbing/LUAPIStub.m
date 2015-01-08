@@ -54,6 +54,15 @@
   return stub;
 }
 
++ (LUAPIStub *)stubForWebURL:(NSURL *)URL withPlainTextResponseString:(NSString *)responseString {
+  LUAPIStub *stub = [[LUAPIStub alloc] init];
+  stub.URL = URL;
+  stub.HTTPMethod = @"GET";
+  stub.responseData = [responseString dataUsingEncoding:NSUTF8StringEncoding];
+  stub.responseType = @"text/plain";
+  return stub;
+}
+
 #pragma mark - Public Methods
 
 - (BOOL)matchesRequest:(NSURLRequest *)request {

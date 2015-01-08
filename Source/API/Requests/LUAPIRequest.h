@@ -53,6 +53,18 @@ extern NSString * const LUAPIVersion15;
 @property (nonatomic, copy) NSDictionary *parameters;
 
 /**
+ An `NSArray` of `NSNumber` response codes which, if received, will cause the request
+ to be repeated by the `LUAPIClient` every retryTimeInterval, until a successful response is received.
+ The response codes must be defined as acceptable by http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+ */
+@property (nonatomic, copy) NSArray *retryResponseCodes;
+
+/**
+ Duration in seconds until a request is repeated.
+ */
+@property (nonatomic, assign) NSTimeInterval retryTimeInterval;
+
+/**
  Returns an `LUAPIRequest` with the specified method, path and parameters. An authentication token
  will automatically be included in the request if one is set on the `LUAPIClient`.
 
@@ -70,6 +82,27 @@ extern NSString * const LUAPIVersion15;
                           modelFactory:(LUAbstractJSONModelFactory *)modelFactory;
 
 /**
+ Returns an `LUAPIRequest` with the specified method, path and parameters. An authentication token
+ will automatically be included in the request if one is set on the `LUAPIClient`.
+
+ @param method An HTTP method: "GET", "POST", "PUT", or "DELETE".
+ @param path The path of the API request, e.g. "/users".
+ @param apiVersion The version of the API to use.
+ @param parameters A dictionary of parameters to include with this request, or nil if the request
+ has no parameters.
+ @param modelFactory An instance of `LUAbstractJSONModelFactory` which will parse the response.
+ @param retryResponseCodes An `NSArray` of response codes which, if received, will cause the request
+ to be repeated by the `LUAPIClient` every retryTimeInterval, until a successful response is received.
+ @param retryTimeInterval Duration in seconds until a request is repeated.
+ */
++ (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
+                                  path:(NSString *)path
+                            apiVersion:(NSString *)apiVersion
+                            parameters:(NSDictionary *)parameters
+                          modelFactory:(LUAbstractJSONModelFactory *)modelFactory
+                    retryResponseCodes:(NSArray *)retryResponseCodes
+                     retryTimeInterval:(NSTimeInterval)retryTimeInterval;
+/**
  Returns an `NSURL` instance for this API request.
  */
 - (NSURL *)URL;
@@ -84,5 +117,13 @@ extern NSString * const LUAPIVersion15;
           apiVersion:(NSString *)apiVersion
           parameters:(NSDictionary *)parameters
         modelFactory:(LUAbstractJSONModelFactory *)modelFactory;
+
+- (id)initWithMethod:(NSString *)method
+                path:(NSString *)path
+          apiVersion:(NSString *)apiVersion
+          parameters:(NSDictionary *)parameters
+        modelFactory:(LUAbstractJSONModelFactory *)modelFactory
+  retryResponseCodes:(NSArray *)retryResponseCodes
+   retryTimeInterval:(NSTimeInterval)retryTimeInterval;
 
 @end

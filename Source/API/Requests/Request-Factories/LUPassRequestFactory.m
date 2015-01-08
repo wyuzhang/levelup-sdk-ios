@@ -41,7 +41,9 @@
                                        path:@"pass"
                                  apiVersion:LUAPIVersion15
                                  parameters:parameters
-                               modelFactory:nil];
+                               modelFactory:nil
+                         retryResponseCodes:@[@202]
+                          retryTimeInterval:0.5];
 }
 
 @end

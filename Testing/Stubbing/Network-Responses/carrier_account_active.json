@@ -1,0 +1,10 @@
+{
+  "carrier_account": {
+    "id": 123,
+    "carrier": "SPR",
+    "credit_card_id": 4,
+    "ev_url": "http://mi.billtomobile.com/m/evurl?SKEY=secret_key",
+    "mobile_device_number": "1111111111",
+    "state": "active"
+  }
+}

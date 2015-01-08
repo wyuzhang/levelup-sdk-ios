@@ -18,6 +18,7 @@
 
 @interface NSError (LUAdditions)
 
++ (NSError *)lu_carrierAccountErrorWithCode:(LUCarrierAccountErrorCode)code description:(NSString *)description;
 + (NSError *)lu_deepLinkAuthErrorWithCode:(LUDeepLinkAuthErrorCode)code description:(NSString *)description;
 
 @end
