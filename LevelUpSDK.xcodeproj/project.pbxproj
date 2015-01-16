@@ -66,6 +66,7 @@
 		022A6DDF187C61D500EE7C4B /* LUWebLocations+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 022A6DD4187C61D500EE7C4B /* LUWebLocations+Fixtures.m */; };
 		022A6DE2187C621200EE7C4B /* NSManagedObjectContext+FakeContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 022A6DE1187C621200EE7C4B /* NSManagedObjectContext+FakeContext.m */; };
 		0230512118F714A4008AE1A6 /* LUInterstitialRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0230512018F714A4008AE1A6 /* LUInterstitialRequestFactorySpec.m */; };
+		0251CC181A378B4B0056D82C /* LUMockKeychainAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 0251CC171A378B4B0056D82C /* LUMockKeychainAccess.m */; };
 		0251CC1B1A3B44860056D82C /* LUGiftCardOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 0251CC191A3B44860056D82C /* LUGiftCardOrder.h */; };
 		0251CC1C1A3B44860056D82C /* LUGiftCardOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0251CC1A1A3B44860056D82C /* LUGiftCardOrder.m */; };
 		0251CC1F1A3B44A30056D82C /* LUGiftCardOrderRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0251CC1D1A3B44A30056D82C /* LUGiftCardOrderRequestFactory.h */; };
@@ -76,7 +77,6 @@
 		0251CC2A1A3B4CEF0056D82C /* LUIBeaconCheckInRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0251CC281A3B4CEF0056D82C /* LUIBeaconCheckInRequestFactory.h */; };
 		0251CC2B1A3B4CEF0056D82C /* LUIBeaconCheckInRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0251CC291A3B4CEF0056D82C /* LUIBeaconCheckInRequestFactory.m */; };
 		0251CC381A3B78B80056D82C /* LUIBeaconCheckInRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0251CC371A3B78B80056D82C /* LUIBeaconCheckInRequestFactorySpec.m */; };
-		0251CC181A378B4B0056D82C /* LUMockKeychainAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 0251CC171A378B4B0056D82C /* LUMockKeychainAccess.m */; };
 		025B6DDE176A713C00713242 /* payment_token.json in Resources */ = {isa = PBXBuildFile; fileRef = 025B6DDD176A70D500713242 /* payment_token.json */; };
 		026064ED19192B1E00F93FDF /* LUAPIIntegrationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 026064EC19192B1E00F93FDF /* LUAPIIntegrationSpec.m */; };
 		0261005C19F7F6AB006BF5F7 /* LUPassRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0261005B19F7F6AB006BF5F7 /* LUPassRequestFactorySpec.m */; };
@@ -459,6 +459,8 @@
 		022A6DE1187C621200EE7C4B /* NSManagedObjectContext+FakeContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+FakeContext.m"; sourceTree = "<group>"; };
 		0230512018F714A4008AE1A6 /* LUInterstitialRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialRequestFactorySpec.m; sourceTree = "<group>"; };
 		023C960B188ED27E00113AF2 /* LUAPIObjectModel (with name).xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "LUAPIObjectModel (with name).xcdatamodel"; sourceTree = "<group>"; };
+		0251CC161A378B4B0056D82C /* LUMockKeychainAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUMockKeychainAccess.h; sourceTree = "<group>"; };
+		0251CC171A378B4B0056D82C /* LUMockKeychainAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUMockKeychainAccess.m; sourceTree = "<group>"; };
 		0251CC191A3B44860056D82C /* LUGiftCardOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUGiftCardOrder.h; sourceTree = "<group>"; };
 		0251CC1A1A3B44860056D82C /* LUGiftCardOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUGiftCardOrder.m; sourceTree = "<group>"; };
 		0251CC1D1A3B44A30056D82C /* LUGiftCardOrderRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUGiftCardOrderRequestFactory.h; sourceTree = "<group>"; };
@@ -470,8 +472,6 @@
 		0251CC281A3B4CEF0056D82C /* LUIBeaconCheckInRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUIBeaconCheckInRequestFactory.h; sourceTree = "<group>"; };
 		0251CC291A3B4CEF0056D82C /* LUIBeaconCheckInRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUIBeaconCheckInRequestFactory.m; sourceTree = "<group>"; };
 		0251CC371A3B78B80056D82C /* LUIBeaconCheckInRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUIBeaconCheckInRequestFactorySpec.m; sourceTree = "<group>"; };
-		0251CC161A378B4B0056D82C /* LUMockKeychainAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUMockKeychainAccess.h; sourceTree = "<group>"; };
-		0251CC171A378B4B0056D82C /* LUMockKeychainAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUMockKeychainAccess.m; sourceTree = "<group>"; };
 		025B6DDD176A70D500713242 /* payment_token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = payment_token.json; sourceTree = "<group>"; };
 		026064EC19192B1E00F93FDF /* LUAPIIntegrationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIIntegrationSpec.m; sourceTree = "<group>"; };
 		0261005B19F7F6AB006BF5F7 /* LUPassRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPassRequestFactorySpec.m; sourceTree = "<group>"; };
@@ -2269,7 +2269,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_VERSION = 1.6.5;
+				FRAMEWORK_VERSION = 1.6.6;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
@@ -2415,7 +2415,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_VERSION = 1.6.5;
+				FRAMEWORK_VERSION = 1.6.6;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2457,7 +2457,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_VERSION = 1.6.5;
+				FRAMEWORK_VERSION = 1.6.6;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
