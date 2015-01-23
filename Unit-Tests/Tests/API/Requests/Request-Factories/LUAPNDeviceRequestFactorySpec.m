@@ -16,30 +16,36 @@
 
 #import "LUAPIRequest.h"
 #import "LUAPNDeviceRequestFactory.h"
+#import "LUDeviceIdentifier.h"
 #import "LUKeychainAccess.h"
 
 SPEC_BEGIN(LUAPNDeviceRequestFactorySpec)
 
 describe(@"LUAPNDeviceRequestFactory", ^{
-  // Public Methods
+  NSString *apiKey = @"api-key";
+  __block LUAPIRequest *request;
 
   beforeEach(^{
+    [LUAPIClient setupWithAppID:@"1" APIKey:apiKey];
     [LUKeychainAccess stub:@selector(standardKeychainAccess) andReturn:[LUKeychainAccess nullMock]];
   });
 
+  // Public Methods
+
   describe(@"requestToRegisterApnDevice:", ^{
     const unsigned char bytes[4] = { 0xA6, 0x0F, 0x7D, 0xB9 };
+    NSString *deviceIdentifier = @"device-identifier";
     NSData *deviceToken = [NSData dataWithBytes:bytes length:4];
     BOOL sandbox = YES;
 
-    __block LUAPIRequest *request;
-
     beforeEach(^{
+      [LUDeviceIdentifier stub:@selector(deviceIdentifier) andReturn:deviceIdentifier];
       request = [LUAPNDeviceRequestFactory requestToRegisterAPNDeviceWithToken:deviceToken sandbox:sandbox];
     });
 
     it(@"stores the token string in the keychain", ^{
-      [[[LUKeychainAccess standardKeychainAccess] should] receive:@selector(setString:forKey:) withArguments:@"A60F7DB9", LUDeviceTokenKey, nil];
+      [[[LUKeychainAccess standardKeychainAccess] should] receive:@selector(setString:forKey:)
+                                                    withArguments:@"A60F7DB9", LUDeviceTokenKey, nil];
 
       [LUAPNDeviceRequestFactory requestToRegisterAPNDeviceWithToken:deviceToken sandbox:sandbox];
     });
@@ -57,7 +63,14 @@ describe(@"LUAPNDeviceRequestFactory", ^{
     });
 
     it(@"returns a request with the expected parameters", ^{
-      NSDictionary *expectedParams = @{@"apn_device" : @{ @"sandbox" : @YES, @"token" : @"A60F7DB9" } };
+      NSDictionary *expectedParams = @{
+        @"api_key": apiKey,
+        @"apn_device": @{
+          @"device_identifier": deviceIdentifier,
+          @"sandbox": @YES,
+          @"token": @"A60F7DB9"
+        }
+      };
 
       [[request.parameters should] equal:expectedParams];
     });
@@ -65,11 +78,7 @@ describe(@"LUAPNDeviceRequestFactory", ^{
 
   describe(@"requestToUnregisterCurrentAPNDevice", ^{
     context(@"when a device has been previously registered", ^{
-      NSString *apiKey = @"api-key";
-      __block LUAPIRequest *request;
-
       beforeEach(^{
-        [LUAPIClient setupWithAppID:@"1" APIKey:apiKey];
         [[[[LUKeychainAccess standardKeychainAccess] should] receiveAndReturn:@"ABCDEF"] stringForKey:LUDeviceTokenKey];
 
         request = [LUAPNDeviceRequestFactory requestToUnregisterCurrentAPNDevice];

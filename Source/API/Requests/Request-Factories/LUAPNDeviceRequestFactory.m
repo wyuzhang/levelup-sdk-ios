@@ -17,8 +17,10 @@
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
 #import "LUAPNDeviceRequestFactory.h"
+#import "LUDeviceIdentifier.h"
 #import "LUKeychainAccess.h"
 #import "NSData+LUAdditions.h"
+#import "NSDictionary+SafetyAdditions.h"
 
 NSString * const LUDeviceTokenKey = @"LUDeviceToken";
 
@@ -29,11 +31,14 @@ NSString * const LUDeviceTokenKey = @"LUDeviceToken";
 + (LUAPIRequest *)requestToRegisterAPNDeviceWithToken:(NSData *)deviceToken sandbox:(BOOL)sandbox {
   [[LUKeychainAccess standardKeychainAccess] setString:[deviceToken lu_hexString] forKey:LUDeviceTokenKey];
 
+  NSMutableDictionary *apnParams = [NSMutableDictionary dictionary];
+  [apnParams lu_setSafeValue:[LUDeviceIdentifier deviceIdentifier] forKey:@"device_identifier"];
+  [apnParams lu_setSafeValue:@(sandbox) forKey:@"sandbox"];
+  [apnParams lu_setSafeValue:[deviceToken lu_hexString] forKey:@"token"];
+
   NSDictionary *parameters = @{
-    @"apn_device": @{
-      @"sandbox": @(sandbox),
-      @"token": [deviceToken lu_hexString]
-    }
+    @"api_key": [LUAPIClient sharedClient].apiKey,
+    @"apn_device": apnParams
   };
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"

@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-#import <CommonCrypto/CommonDigest.h>
 #import "LUDeviceIdentifier.h"
 #import "LUKeychainAccess.h"
 
@@ -25,37 +24,51 @@ NSString * const DeviceIdentifierKey = @"LUDeviceIdentifier";
 #pragma mark - Public Methods
 
 + (NSString *)deviceIdentifier {
+  NSString *advertisingID = [self advertisingID];
+  if (advertisingID) {
+    return advertisingID;
+  } else {
+    return [self randomlyGeneratedID];
+  }
+}
+
++ (BOOL)doesAppIncludeAdSupport {
+  return [self ASIdentifierManagerClass] != nil;
+}
+
+#pragma mark - Private Methods
+
++ (Class)ASIdentifierManagerClass {
+  return NSClassFromString(@"ASIdentifierManager");
+}
+
++ (NSString *)advertisingID {
+  if (![self doesAppIncludeAdSupport]) return nil;
+
+  id advertisingManager = [self performSelectorWithName:@"sharedManager"
+                                               onObject:[self ASIdentifierManagerClass]];
+  NSUUID *advertisingUUID = [self performSelectorWithName:@"advertisingIdentifier"
+                                                 onObject:advertisingManager];
+  return [advertisingUUID UUIDString];
+}
+
++ (id)performSelectorWithName:(NSString *)selectorName onObject:(id)anObject {
+  SEL selector = NSSelectorFromString(selectorName);
+  IMP imp = [anObject methodForSelector:selector];
+  id (*func)(id, SEL) = (void *)imp;
+  return func(anObject, selector);
+}
+
++ (NSString *)randomlyGeneratedID {
   NSString *deviceIdentifier = [[LUKeychainAccess standardKeychainAccess] stringForKey:DeviceIdentifierKey];
 
   if (deviceIdentifier == nil) {
-    deviceIdentifier = [self generateUUID];
+    deviceIdentifier = [[NSUUID UUID] UUIDString];
 
     [[LUKeychainAccess standardKeychainAccess] setString:deviceIdentifier forKey:DeviceIdentifierKey];
   }
 
   return deviceIdentifier;
-}
-
-#pragma mark - Private Methods
-
-+ (NSString *)generateUUID {
-  CFUUIDRef uuid = CFUUIDCreate(NULL);
-  CFStringRef uuidString = CFUUIDCreateString(NULL, uuid);
-  CFRelease(uuid);
-
-  NSString *rawUUIDStr = [NSString stringWithString:(__bridge NSString *)uuidString];
-  CFRelease(uuidString);
-
-  // MD5 hash the UUID
-  unsigned char digest[CC_MD5_DIGEST_LENGTH];
-
-  CC_MD5((__bridge const void *)([rawUUIDStr dataUsingEncoding:NSASCIIStringEncoding]), (CC_LONG)[rawUUIDStr length], digest);
-  NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
-  for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
-    [output appendFormat:@"%02x", digest[i]];
-  }
-
-  return [NSString stringWithString:output];
 }
 
 @end
