@@ -37,6 +37,9 @@ extern NSString * const LUDeepLinkAuthNotificationErrorKey;
 
 #pragma mark - Permissions
 
+/** Notify LevelUp when a user gets in range of a LevelUp beacon. */
+extern NSString * const LUPermissionBeaconCheckins;
+
 /** Create a user's first credit card. */
 extern NSString * const LUPermissionCreateFirstCreditCard;
 

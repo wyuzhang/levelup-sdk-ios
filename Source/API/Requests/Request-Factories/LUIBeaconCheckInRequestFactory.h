@@ -35,6 +35,7 @@
 /**
  Builds a request to check-in with the given iBeacon major and minor IDs.
 
+ @warning This request requires an access token with the `LUPermissionBeaconCheckins` permission.
  @param major The string value of the major value of a `CLBeacon`.
  @param minor The string value of the minor value of a `CLBeacon`.
  */

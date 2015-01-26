@@ -28,7 +28,7 @@
  This request will charge the current user the amount in `giftCardOrder`, and emails the gift card
  to the recipient in `giftCardOrder`.
 
- @warning Use of this request requires an Enterprise SDK license.
+ @warning This request requires an access token with the `LUPermissionCreateOrders` permission.
  @param giftCardOrder See `LUGiftCardOrder`.
  */
 + (LUAPIRequest *)requestToCreateGiftCardOrder:(LUGiftCardOrder *)giftCardOrder;
