@@ -1,5 +1,5 @@
-[  
-  {  
+[
+  {
     "credit_card": {
       "id": 4,
       "promoted": true,
@@ -11,7 +11,7 @@
       "type": "Sprint"
     }
   },
-  {  
+  {
     "credit_card": {
       "id": 1,
       "promoted": false,
@@ -23,7 +23,7 @@
       "type": "MasterCard"
     }
   },
-  {  
+  {
     "credit_card": {
       "id": 3,
       "promoted": false,

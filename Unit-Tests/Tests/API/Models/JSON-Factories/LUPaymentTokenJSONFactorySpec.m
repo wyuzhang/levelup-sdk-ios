@@ -28,12 +28,16 @@ describe(@"LUPaymentTokenJSONFactory", ^{
   describe(@"createFromAttributes:", ^{
     it(@"parses a JSON dictionary into an LUPaymentToken", ^{
       NSDictionary *JSON = @{
-        @"data" : @"LU02000TESTTESTTEST01234",
-        @"id" : @1
+        @"action": @"add_payment_method",
+        @"data": @"LU02000TESTTESTTEST01234",
+        @"id": @1,
+        @"message": @"Add a Payment Method for one-touch payments & loyalty"
       };
       LUPaymentToken *paymentToken = [factory createFromAttributes:JSON];
 
+      [[paymentToken.action should] equal:@"add_payment_method"];
       [[paymentToken.data should] equal:@"LU02000TESTTESTTEST01234"];
+      [[paymentToken.message should] equal:@"Add a Payment Method for one-touch payments & loyalty"];
       [[paymentToken.paymentTokenID should] equal:@1];
     });
   });

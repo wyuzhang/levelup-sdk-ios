@@ -21,10 +21,12 @@
 @implementation LUPaymentTokenJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
+  NSString *action = [attributes lu_stringForKey:@"action"];
   NSString *data = [attributes lu_stringForKey:@"data"];
+  NSString *message = [attributes lu_stringForKey:@"message"];
   NSNumber *paymentTokenID = [attributes lu_numberForKey:@"id"];
 
-  return [[LUPaymentToken alloc] initWithData:data paymentTokenID:paymentTokenID];
+  return [[LUPaymentToken alloc] initWithAction:action data:data message:message paymentTokenID:paymentTokenID];
 }
 
 - (NSString *)rootKey {

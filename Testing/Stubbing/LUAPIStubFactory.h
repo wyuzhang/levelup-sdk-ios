@@ -86,6 +86,8 @@
 + (LUAPIStub *)stubToGetOrdersSecondPage;
 + (LUAPIStub *)stubToGetPassWithMerchantID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetPaymentToken;
++ (LUAPIStub *)stubToGetPaymentTokenWithActionAndMessage;
++ (LUAPIStub *)stubToGetPaymentTokenWithMessage;
 + (LUAPIStub *)stubToGetPendingPassWithMerchantID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetPendingUpdatedCarrierAccountWithID:(NSNumber *)carrierAccountID;
 + (LUAPIStub *)stubToGetUpdatedCarrierAccountWithID:(NSNumber *)carrierAccountID;

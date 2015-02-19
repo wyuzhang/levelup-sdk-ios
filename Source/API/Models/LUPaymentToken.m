@@ -20,11 +20,14 @@
 
 #pragma mark - Creation
 
-- (id)initWithData:(NSString *)data paymentTokenID:(NSNumber *)paymentTokenID {
+- (id)initWithAction:(NSString *)action data:(NSString *)data message:(NSString *)message
+      paymentTokenID:(NSNumber *)paymentTokenID {
   self = [super init];
   if (!self) return nil;
 
+  _action = action;
   _data = data;
+  _message = message;
   _paymentTokenID = paymentTokenID;
 
   return self;
@@ -33,7 +36,8 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUPaymentToken [address=%p, data=%@, paymentTokenID=%@]", self, self.data, self.paymentTokenID];
+  return [NSString stringWithFormat:@"LUPaymentToken [address=%p, action=%@, data=%@, message=%@, paymentTokenID=%@]",
+          self, self.action, self.data, self.message, self.paymentTokenID];
 }
 
 @end

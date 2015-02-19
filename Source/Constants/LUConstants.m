@@ -37,6 +37,10 @@ NSString * const LUDeepLinkAuthSuccessNotification = @"LUDeepLinkAuthSuccessNoti
 NSString * const LUDeepLinkAuthNotificationAccessTokenKey = @"LUDeepLinkAuthNotificationAccessTokenKey";
 NSString * const LUDeepLinkAuthNotificationErrorKey = @"LUDeepLinkAuthNotificationErrorKey";
 
+#pragma mark - Payment Token Actions
+
+NSString * const LUPaymentTokenActionAddPaymentMethod = @"add_payment_method";
+
 #pragma mark - Permissions
 
 NSString * const LUPermissionBeaconCheckins = @"beacon_checkins";

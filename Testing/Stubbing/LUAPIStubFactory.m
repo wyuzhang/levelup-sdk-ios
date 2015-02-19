@@ -593,6 +593,18 @@
                          responseData:[self responseDataFromFile:@"payment_token"]];
 }
 
++ (LUAPIStub *)stubToGetPaymentTokenWithActionAndMessage {
+  LUAPIStub *stub = [self stubToGetPaymentToken];
+  stub.responseData = [self responseDataFromFile:@"payment_token_with_action_and_message"];
+  return stub;
+}
+
++ (LUAPIStub *)stubToGetPaymentTokenWithMessage {
+  LUAPIStub *stub = [self stubToGetPaymentToken];
+  stub.responseData = [self responseDataFromFile:@"payment_token_with_message"];
+  return stub;
+}
+
 + (LUAPIStub *)stubToGetPendingPassWithMerchantID:(NSNumber *)merchantID {
   LUAPIStub *stub = [self stubToGetPassWithMerchantID:merchantID];
   stub.responseCode = 202;
@@ -692,11 +704,12 @@
                                       HTTPMethod:@"PUT"
                                    authenticated:YES
                                     responseData:[self responseDataFromFile:@"carrier_account_active"]];
-  stub.requestBodyJSON = @{@"carrier_account" : @{
-                               @"mobile_device_number" : mobileDeviceNumber,
-                               @"carrier" : carrierName
-                               }
-                           };
+  stub.requestBodyJSON = @{
+    @"carrier_account": @{
+      @"mobile_device_number": mobileDeviceNumber,
+      @"carrier": carrierName
+    }
+  };
   return stub;
 }
 

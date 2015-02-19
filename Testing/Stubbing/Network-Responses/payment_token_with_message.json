@@ -3,6 +3,6 @@
     "action" : null,
     "data" : "LU02000TESTTESTTEST01234",
     "id" : 1,
-    "message" : null
+    "message" : "Your credit card is expiring soon!"
   }
 }

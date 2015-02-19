@@ -35,6 +35,11 @@ extern NSString * const LUDeepLinkAuthSuccessNotification;
 extern NSString * const LUDeepLinkAuthNotificationAccessTokenKey;
 extern NSString * const LUDeepLinkAuthNotificationErrorKey;
 
+#pragma mark - Payment Token Actions
+
+/** Add a Payment Method */
+extern NSString * const LUPaymentTokenActionAddPaymentMethod;
+
 #pragma mark - Permissions
 
 /** Notify LevelUp when a user gets in range of a LevelUp beacon. */

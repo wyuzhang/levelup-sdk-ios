@@ -19,7 +19,23 @@
 @implementation LUPaymentToken (Fixtures)
 
 + (LUPaymentToken *)fixture {
-  return [[LUPaymentToken alloc] initWithData:@"LU02000TESTTESTTEST01234" paymentTokenID:@1];
+  return [[LUPaymentToken alloc] initWithAction:nil
+                                           data:@"LU02000TESTTESTTEST01234"
+                                        message:nil
+                                 paymentTokenID:@1];
+}
+
++ (LUPaymentToken *)fixtureWithActionAndMessage {
+  LUPaymentToken *paymentToken = [self fixture];
+  [paymentToken setValue:@"add_payment_method" forKey:@"action"];
+  [paymentToken setValue:@"Add a Payment Method for one-touch payments & loyalty" forKey:@"message"];
+  return paymentToken;
+}
+
++ (LUPaymentToken *)fixtureWithMessage {
+  LUPaymentToken *paymentToken = [self fixture];
+  [paymentToken setValue:@"Your card is expiring soon!" forKey:@"message"];
+  return paymentToken;
 }
 
 @end

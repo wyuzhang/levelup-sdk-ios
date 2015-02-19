@@ -19,5 +19,7 @@
 @interface LUPaymentToken (Fixtures)
 
 + (LUPaymentToken *)fixture;
++ (LUPaymentToken *)fixtureWithActionAndMessage;
++ (LUPaymentToken *)fixtureWithMessage;
 
 @end

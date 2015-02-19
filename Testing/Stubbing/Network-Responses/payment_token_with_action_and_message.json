@@ -1,0 +1,8 @@
+{
+  "payment_token" : {
+    "action" : "add_payment_method",
+    "data" : "LU02000TESTTESTTEST01234",
+    "id" : 1,
+    "message" : "Add a Payment Method for one-touch payments & loyalty"
+  }
+}

@@ -50,6 +50,8 @@
 		021B7489193FAD8700BBC315 /* LURegistrationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 021B7488193FAD8700BBC315 /* LURegistrationSpec.m */; };
 		021B748B193FAD9E00BBC315 /* LURegistrationRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 021B748A193FAD9E00BBC315 /* LURegistrationRequestFactorySpec.m */; };
 		021EA6E717D92A11004F4DAF /* failed_claim.json in Resources */ = {isa = PBXBuildFile; fileRef = 021EA6E617D92A11004F4DAF /* failed_claim.json */; };
+		0228EA711A97905F00FEEF90 /* LUCarrierAccountRetrieverSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0228EA6F1A97905F00FEEF90 /* LUCarrierAccountRetrieverSpec.m */; };
+		0228EA721A97905F00FEEF90 /* LUCarrierNetworkDetectorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0228EA701A97905F00FEEF90 /* LUCarrierNetworkDetectorSpec.m */; };
 		02293815176265DE0057C381 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 02293814176265DE0057C381 /* categories.json */; };
 		0229381717626B500057C381 /* location_summaries.json in Resources */ = {isa = PBXBuildFile; fileRef = 0229381617626B500057C381 /* location_summaries.json */; };
 		0229381A176280B10057C381 /* LUAPIStubFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02293819176280B00057C381 /* LUAPIStubFactory.m */; };
@@ -178,6 +180,8 @@
 		02E2916C175FCAB8002036B4 /* orders_page-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29157175FCAB8002036B4 /* orders_page-2.json */; };
 		02E2916D175FCAB8002036B4 /* ticket.json in Resources */ = {isa = PBXBuildFile; fileRef = 02E29158175FCAB8002036B4 /* ticket.json */; };
 		02E8ACDF17594BB000A5B06F /* LULocationJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E8ACDE17594BB000A5B06F /* LULocationJSONFactorySpec.m */; };
+		02EA61C51A92452D0079645F /* payment_token_with_action_and_message.json in Resources */ = {isa = PBXBuildFile; fileRef = 02EA61C31A9245250079645F /* payment_token_with_action_and_message.json */; };
+		02EA61C61A92452D0079645F /* payment_token_with_message.json in Resources */ = {isa = PBXBuildFile; fileRef = 02EA61C41A9245250079645F /* payment_token_with_message.json */; };
 		2504194E174AEAE300254161 /* LUPersistedObjectsInitial.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 2523E33717374D9C00FBDFEB /* LUPersistedObjectsInitial.sqlite */; };
 		2523E31717374B2900FBDFEB /* LULocationSummaryJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 2523E31517374B2900FBDFEB /* LULocationSummaryJSONFactory.h */; };
 		2523E31817374B2900FBDFEB /* LULocationSummaryJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523E31617374B2900FBDFEB /* LULocationSummaryJSONFactory.m */; };
@@ -238,13 +242,11 @@
 		6A165D1018F4768200DF535F /* interstitial_feedback.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A165D0F18F4767200DF535F /* interstitial_feedback.json */; };
 		6A1A79051A6CB8C90043A5F9 /* LUCarrierAccountStateTransformerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A79041A6CB8C90043A5F9 /* LUCarrierAccountStateTransformerSpec.m */; };
 		6A2169191A6C8801002FF477 /* LUCarrierAccount+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2169161A6C87F4002FF477 /* LUCarrierAccount+Fixtures.m */; };
-		6A21691B1A6CB1B1002FF477 /* LUCarrierNetworkDetectorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A21691A1A6CB1B1002FF477 /* LUCarrierNetworkDetectorSpec.m */; };
 		6A2D6AFB1A4877BB00BE1D09 /* LUCarrierNetworkDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A2D6AF91A4877BB00BE1D09 /* LUCarrierNetworkDetector.h */; };
 		6A2D6AFC1A4877BB00BE1D09 /* LUCarrierNetworkDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D6AFA1A4877BB00BE1D09 /* LUCarrierNetworkDetector.m */; };
 		6A54B4E51A6857CD0094F745 /* LUCarrierAccountJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A54B4E31A6857C80094F745 /* LUCarrierAccountJSONFactorySpec.m */; };
 		6A54B4E71A685F2B0094F745 /* LUCarrierAccountSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A54B4E61A685F2B0094F745 /* LUCarrierAccountSpec.m */; };
 		6A54B4E91A6860080094F745 /* LUCarrierAccountRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A54B4E81A6860080094F745 /* LUCarrierAccountRequestFactorySpec.m */; };
-		6A54B4EC1A686CF60094F745 /* LUCarrierAccountRetrieverSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A54B4EB1A686CF60094F745 /* LUCarrierAccountRetrieverSpec.m */; };
 		6A5EA77C196448EE002FDCFF /* downgraded_token.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A5EA77B196448EE002FDCFF /* downgraded_token.json */; };
 		6A5EA77D196448F5002FDCFF /* debit_card.json in Resources */ = {isa = PBXBuildFile; fileRef = 40BE9659188DCFF600F318D6 /* debit_card.json */; };
 		6A7344541A5AEF2F0077DEF7 /* carrier_account_evurl_response.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6A7344531A5AEF2F0077DEF7 /* carrier_account_evurl_response.txt */; };
@@ -453,6 +455,8 @@
 		021B7488193FAD8700BBC315 /* LURegistrationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LURegistrationSpec.m; sourceTree = "<group>"; };
 		021B748A193FAD9E00BBC315 /* LURegistrationRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LURegistrationRequestFactorySpec.m; sourceTree = "<group>"; };
 		021EA6E617D92A11004F4DAF /* failed_claim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failed_claim.json; sourceTree = "<group>"; };
+		0228EA6F1A97905F00FEEF90 /* LUCarrierAccountRetrieverSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCarrierAccountRetrieverSpec.m; sourceTree = "<group>"; };
+		0228EA701A97905F00FEEF90 /* LUCarrierNetworkDetectorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCarrierNetworkDetectorSpec.m; sourceTree = "<group>"; };
 		02293814176265DE0057C381 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		0229381617626B500057C381 /* location_summaries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location_summaries.json; sourceTree = "<group>"; };
 		02293818176280B00057C381 /* LUAPIStubFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIStubFactory.h; sourceTree = "<group>"; };
@@ -606,6 +610,8 @@
 		02E29158175FCAB8002036B4 /* ticket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ticket.json; sourceTree = "<group>"; };
 		02E2916E175FD3FB002036B4 /* LevelUpSDKTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelUpSDKTesting.h; sourceTree = "<group>"; };
 		02E8ACDE17594BB000A5B06F /* LULocationJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationJSONFactorySpec.m; sourceTree = "<group>"; };
+		02EA61C31A9245250079645F /* payment_token_with_action_and_message.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = payment_token_with_action_and_message.json; sourceTree = "<group>"; };
+		02EA61C41A9245250079645F /* payment_token_with_message.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = payment_token_with_message.json; sourceTree = "<group>"; };
 		06A40E6C26ED2F5CE405C989 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		0D9D1A2D4983C77483DD88A5 /* Pods.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.distribution.xcconfig; path = "Pods/Target Support Files/Pods/Pods.distribution.xcconfig"; sourceTree = "<group>"; };
 		19230B96D1B70CC1BAA59413 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
@@ -672,7 +678,6 @@
 		6A1A79041A6CB8C90043A5F9 /* LUCarrierAccountStateTransformerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCarrierAccountStateTransformerSpec.m; sourceTree = "<group>"; };
 		6A2169151A6C87F4002FF477 /* LUCarrierAccount+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUCarrierAccount+Fixtures.h"; sourceTree = "<group>"; };
 		6A2169161A6C87F4002FF477 /* LUCarrierAccount+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUCarrierAccount+Fixtures.m"; sourceTree = "<group>"; };
-		6A21691A1A6CB1B1002FF477 /* LUCarrierNetworkDetectorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCarrierNetworkDetectorSpec.m; sourceTree = "<group>"; };
 		6A2D6AF91A4877BB00BE1D09 /* LUCarrierNetworkDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCarrierNetworkDetector.h; sourceTree = "<group>"; };
 		6A2D6AFA1A4877BB00BE1D09 /* LUCarrierNetworkDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCarrierNetworkDetector.m; sourceTree = "<group>"; };
 		6A37A3001A5EF56D00EF7EC1 /* carrier_account_active.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = carrier_account_active.json; sourceTree = "<group>"; };
@@ -680,7 +685,6 @@
 		6A54B4E31A6857C80094F745 /* LUCarrierAccountJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCarrierAccountJSONFactorySpec.m; sourceTree = "<group>"; };
 		6A54B4E61A685F2B0094F745 /* LUCarrierAccountSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCarrierAccountSpec.m; sourceTree = "<group>"; };
 		6A54B4E81A6860080094F745 /* LUCarrierAccountRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCarrierAccountRequestFactorySpec.m; sourceTree = "<group>"; };
-		6A54B4EB1A686CF60094F745 /* LUCarrierAccountRetrieverSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCarrierAccountRetrieverSpec.m; sourceTree = "<group>"; };
 		6A5EA77B196448EE002FDCFF /* downgraded_token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = downgraded_token.json; sourceTree = "<group>"; };
 		6A73444D1A5AE1F60077DEF7 /* carrier_accounts_identify.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = carrier_accounts_identify.json; sourceTree = "<group>"; };
 		6A7344511A5AEB560077DEF7 /* carrier_account_with_evurl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = carrier_account_with_evurl.json; sourceTree = "<group>"; };
@@ -888,6 +892,16 @@
 			path = Testing;
 			sourceTree = "<group>";
 		};
+		0228EA6E1A97905F00FEEF90 /* Carrier Billing */ = {
+			isa = PBXGroup;
+			children = (
+				0228EA6F1A97905F00FEEF90 /* LUCarrierAccountRetrieverSpec.m */,
+				0228EA701A97905F00FEEF90 /* LUCarrierNetworkDetectorSpec.m */,
+			);
+			name = "Carrier Billing";
+			path = "Carrier-Billing";
+			sourceTree = "<group>";
+		};
 		022A6DBE187C61D500EE7C4B /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
@@ -1091,6 +1105,8 @@
 				0261006319F8027E006BF5F7 /* pass.pkpass */,
 				02D53BA1194A4DB600507397 /* payment_ineligible_error_excessive_chargebacks.json */,
 				02D53B9D194A332200507397 /* payment_ineligible_error.json */,
+				02EA61C31A9245250079645F /* payment_token_with_action_and_message.json */,
+				02EA61C41A9245250079645F /* payment_token_with_message.json */,
 				025B6DDD176A70D500713242 /* payment_token.json */,
 				021B7484193FAD0800BBC315 /* registration.json */,
 				02E29158175FCAB8002036B4 /* ticket.json */,
@@ -1213,7 +1229,7 @@
 			path = "Deep-Link-Auth";
 			sourceTree = "<group>";
 		};
-		6A2D6AF81A48779000BE1D09 /* Carrier-Billing */ = {
+		6A2D6AF81A48779000BE1D09 /* Carrier Billing */ = {
 			isa = PBXGroup;
 			children = (
 				6A8B54801A51D7110037E81D /* LUCarrierAccountRetriever.h */,
@@ -1221,16 +1237,8 @@
 				6A2D6AF91A4877BB00BE1D09 /* LUCarrierNetworkDetector.h */,
 				6A2D6AFA1A4877BB00BE1D09 /* LUCarrierNetworkDetector.m */,
 			);
+			name = "Carrier Billing";
 			path = "Carrier-Billing";
-			sourceTree = "<group>";
-		};
-		6A54B4EA1A686CDA0094F745 /* CarrierBilling */ = {
-			isa = PBXGroup;
-			children = (
-				6A54B4EB1A686CF60094F745 /* LUCarrierAccountRetrieverSpec.m */,
-				6A21691A1A6CB1B1002FF477 /* LUCarrierNetworkDetectorSpec.m */,
-			);
-			path = CarrierBilling;
 			sourceTree = "<group>";
 		};
 		C1CAF07C173052A6003B3D01 /* Unit Tests */ = {
@@ -1247,7 +1255,7 @@
 			isa = PBXGroup;
 			children = (
 				C1CAF0AB173052A7003B3D01 /* API */,
-				6A54B4EA1A686CDA0094F745 /* CarrierBilling */,
+				0228EA6E1A97905F00FEEF90 /* Carrier Billing */,
 				C1CAF0EE173052A7003B3D01 /* Categories */,
 				25FF1CD518FAE54D007EDCEA /* Deep Link Auth */,
 				0261005E19F7F814006BF5F7 /* Passbook */,
@@ -1413,7 +1421,7 @@
 			isa = PBXGroup;
 			children = (
 				C1CAF15717315414003B3D01 /* API */,
-				6A2D6AF81A48779000BE1D09 /* Carrier-Billing */,
+				6A2D6AF81A48779000BE1D09 /* Carrier Billing */,
 				C1CAF1D617315415003B3D01 /* Categories */,
 				C1CAF1E317315415003B3D01 /* Constants */,
 				25FF1CC418FAE48D007EDCEA /* Deep Link Auth */,
@@ -1954,6 +1962,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02EA61C51A92452D0079645F /* payment_token_with_action_and_message.json in Resources */,
 				2504194E174AEAE300254161 /* LUPersistedObjectsInitial.sqlite in Resources */,
 				02E2915B175FCAB8002036B4 /* campaign.json in Resources */,
 				02E2915F175FCAB8002036B4 /* credit_card.json in Resources */,
@@ -1981,6 +1990,7 @@
 				02E2916D175FCAB8002036B4 /* ticket.json in Resources */,
 				40742A2518D0BD4200939A36 /* current_user_debit_only.json in Resources */,
 				40742A2718D0BD8100939A36 /* current_user_minimal_debit_only.json in Resources */,
+				02EA61C61A92452D0079645F /* payment_token_with_message.json in Resources */,
 				02293815176265DE0057C381 /* categories.json in Resources */,
 				0229381717626B500057C381 /* location_summaries.json in Resources */,
 				02D53B9E194A332200507397 /* payment_ineligible_error.json in Resources */,
@@ -2223,7 +2233,6 @@
 				02D4922D194F551B00C9C385 /* LUWebLinkSpec.m in Sources */,
 				022A6DDC187C61D500EE7C4B /* LUOrder+Fixtures.m in Sources */,
 				C1CAF10E173052A7003B3D01 /* LUAbstractJSONModelFactorySpec.m in Sources */,
-				6A54B4EC1A686CF60094F745 /* LUCarrierAccountRetrieverSpec.m in Sources */,
 				020BAB71191BF5C200198CDF /* LUDeepLinkAuthInstallAlertSpec.m in Sources */,
 				C1CAF110173052A7003B3D01 /* LUCampaignJSONFactorySpec.m in Sources */,
 				C1CAF111173052A7003B3D01 /* LUCategoryJSONFactorySpec.m in Sources */,
@@ -2246,6 +2255,7 @@
 				0251CC221A3B44E20056D82C /* LUGiftCardOrderSpec.m in Sources */,
 				C1CAF12B173052A7003B3D01 /* LUCreditCardSpec.m in Sources */,
 				022A6DE2187C621200EE7C4B /* NSManagedObjectContext+FakeContext.m in Sources */,
+				0228EA721A97905F00FEEF90 /* LUCarrierNetworkDetectorSpec.m in Sources */,
 				0261006019F7F822006BF5F7 /* LUPassRetrieverSpec.m in Sources */,
 				022A6DD7187C61D500EE7C4B /* LUClaim+Fixtures.m in Sources */,
 				6A54B4E51A6857CD0094F745 /* LUCarrierAccountJSONFactorySpec.m in Sources */,
@@ -2263,7 +2273,6 @@
 				02D47C7118F47433007CF0BC /* LUOneTimePad+Fixtures.m in Sources */,
 				C1CAF133173052A7003B3D01 /* LUOrderSpec.m in Sources */,
 				C1CAF136173052A7003B3D01 /* LUUserSpec.m in Sources */,
-				6A21691B1A6CB1B1002FF477 /* LUCarrierNetworkDetectorSpec.m in Sources */,
 				C1CAF137173052A7003B3D01 /* LUAPIRequestSpec.m in Sources */,
 				C1CAF139173052A7003B3D01 /* LUDeviceIdentifierSpec.m in Sources */,
 				C1CAF13A173052A7003B3D01 /* LUUserParameterBuilderSpec.m in Sources */,
@@ -2321,6 +2330,7 @@
 				25D43F74176A1DE80051ED2F /* LUPaymentTokenJSONFactorySpec.m in Sources */,
 				02D4922B194F545800C9C385 /* LUWebLinkJSONFactorySpec.m in Sources */,
 				6A2169191A6C8801002FF477 /* LUCarrierAccount+Fixtures.m in Sources */,
+				0228EA711A97905F00FEEF90 /* LUCarrierAccountRetrieverSpec.m in Sources */,
 				022A6DD5187C61D500EE7C4B /* LUAccessToken+Fixtures.m in Sources */,
 				021B7489193FAD8700BBC315 /* LURegistrationSpec.m in Sources */,
 				026064ED19192B1E00F93FDF /* LUAPIIntegrationSpec.m in Sources */,
