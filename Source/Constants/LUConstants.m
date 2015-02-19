@@ -40,9 +40,10 @@ NSString * const LUDeepLinkAuthNotificationErrorKey = @"LUDeepLinkAuthNotificati
 #pragma mark - Permissions
 
 NSString * const LUPermissionBeaconCheckins = @"beacon_checkins";
-NSString * const LUPermissionCreateFirstCreditCard = @"create_first_credit_card";
 NSString * const LUPermissionCreateOrders = @"create_orders";
+NSString * const LUPermissionManageUserAddresses = @"manage_user_addresses";
 NSString * const LUPermissionManageUserCampaigns = @"manage_user_campaigns";
+NSString * const LUPermissionManageUserPaymentMethods = @"manage_user_payment_methods";
 NSString * const LUPermissionReadQRCode = @"read_qr_code";
 NSString * const LUPermissionReadUserBasicInfo = @"read_user_basic_info";
 NSString * const LUPermissionReadUserOrders = @"read_user_orders";

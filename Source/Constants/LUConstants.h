@@ -40,9 +40,6 @@ extern NSString * const LUDeepLinkAuthNotificationErrorKey;
 /** Notify LevelUp when a user gets in range of a LevelUp beacon. */
 extern NSString * const LUPermissionBeaconCheckins;
 
-/** Create a user's first credit card. */
-extern NSString * const LUPermissionCreateFirstCreditCard;
-
 /** Charge a user on behalf of a merchant. */
 extern NSString * const LUPermissionCreateOrders;
 
@@ -51,6 +48,9 @@ extern NSString * const LUPermissionManageUserAddresses;
 
 /** View credit for a user and claim campaigns. */
 extern NSString * const LUPermissionManageUserCampaigns;
+
+/** Add new credit cards for a user. */
+extern NSString * const LUPermissionManageUserPaymentMethods;
 
 /** Read a user's QR code. */
 extern NSString * const LUPermissionReadQRCode;
