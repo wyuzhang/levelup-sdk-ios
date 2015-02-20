@@ -10,7 +10,7 @@ pod 'ZXingObjC/QRCode', '3.0.3'
 
 target :test, :exclusive => true do
   link_with 'Tests'
-  pod 'Kiwi', '2.3.0'
+  pod 'Kiwi', '2.3.1'
   pod 'OHHTTPStubs', '1.1.2'
 end
 

@@ -205,7 +205,7 @@ describe(@"LUAPIClient", ^{
                          }
                          failure:nil];
 
-          [[successResult shouldEventually] equal:deserializedResponse];
+          [[expectFutureValue(successResult) shouldEventually] equal:deserializedResponse];
         });
 
         it(@"creates an LUAPIResponse and passes it to the success block", ^{
@@ -216,8 +216,7 @@ describe(@"LUAPIClient", ^{
                          }
                          failure:nil];
 
-          [[successResponse shouldEventually] beNonNil];
-          [[successResponse.HTTPURLResponse.allHeaderFields shouldEventually] equal:stub.responseHeaders];
+          [[expectFutureValue(successResponse) shouldEventually] beNonNil];
         });
       });
 
@@ -234,14 +233,16 @@ describe(@"LUAPIClient", ^{
 
         it(@"builds an error and passes it to the failure block", ^{
           NSError *error = [NSError mock];
-          [LUAPIErrorBuilder stub:@selector(error:withMessagesFromJSON:) andReturn:error withArguments:any(), @{@"ok" : @NO}, nil];
+          [LUAPIErrorBuilder stub:@selector(error:withMessagesFromJSON:)
+                        andReturn:error
+                    withArguments:any(), @{@"ok" : @YES}, nil];
 
           __block NSError *failureError;
           [client performRequest:apiRequest success:nil failure:^(NSError *error) {
             failureError = error;
           }];
 
-          [[failureError shouldEventually] equal:error];
+          [[expectFutureValue(failureError) shouldEventually] equal:error];
         });
       });
 
@@ -251,28 +252,31 @@ describe(@"LUAPIClient", ^{
         __block LUAPIRequest *repeatableRequest;
 
         beforeEach(^{
-          repeatableRequest = [LUAPIRequest apiRequestWithMethod:@"GET" path:@"test" apiVersion:LUAPIVersion14 parameters:nil modelFactory:nil retryResponseCodes:@[@202] retryTimeInterval:0.5];
+          repeatableRequest = [LUAPIRequest apiRequestWithMethod:@"GET"
+                                                            path:@"test"
+                                                      apiVersion:LUAPIVersion14
+                                                      parameters:nil
+                                                    modelFactory:nil
+                                              retryResponseCodes:@[@202]
+                                               retryTimeInterval:0.5];
 
           stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                                    path:@"test"
-                                              HTTPMethod:@"GET"
-                                           authenticated:NO
-                                            responseData:nil];
+                                         path:@"test"
+                                   HTTPMethod:@"GET"
+                                authenticated:NO
+                                 responseData:[NSData data]];
           stub.responseCode = 202;
           [[LUAPIStubbing sharedInstance] addStub:stub];
 
           dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            [[LUAPIStubbing sharedInstance] clearStubs];
-
             stub.responseCode = 200;
-            [[LUAPIStubbing sharedInstance] addStub:stub];
           });
         });
 
         it(@"tries the request again after a delay", ^{
           [client performRequest:repeatableRequest success:^(id result, LUAPIResponse *response){} failure:nil];
 
-          [[client shouldEventually] receive:@selector(performRequest:success:failure:)];
+          [[client shouldEventuallyBeforeTimingOutAfter(2.0)] receive:@selector(performRequest:success:failure:)];
         });
 
         it(@"calls the success block once the request returns a 2xx response", ^{
@@ -280,7 +284,7 @@ describe(@"LUAPIClient", ^{
             successResponse = response;
           } failure:nil];
 
-          [[successResponse shouldEventually] beNonNil];
+          [[successResponse shouldEventuallyBeforeTimingOutAfter(2.0)] beNonNil];
         });
       });
     });
