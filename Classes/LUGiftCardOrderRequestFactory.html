@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUCachedLocationSearch Class Reference</title>
+		<title>LUGiftCardOrderRequestFactory Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUCachedLocationSearch Class Reference</h1>
+				<h1 class="hideInXcode">LUGiftCardOrderRequestFactory Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,13 +39,11 @@
 	
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/requestToCreateGiftCardOrder:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToCreateGiftCardOrder:</option>
 	
 	
-	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/executeSearch:">&nbsp;&nbsp;&nbsp;&nbsp;- executeSearch:</option>
-	
-	<option value="//api/name/initWithCenter:limit:categoryID:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithCenter:limit:categoryID:</option>
 	
 	
 	
@@ -71,22 +69,20 @@
 
 
 
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/executeSearch:">executeSearch:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithCenter:limit:categoryID:">initWithCenter:limit:categoryID:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToCreateGiftCardOrder:">requestToCreateGiftCardOrder:</a></span></li>
 	
 </ul></li>
+
+
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUCachedLocationSearch Class Reference" name="top"></a>
+				<a title="LUGiftCardOrderRequestFactory Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -95,7 +91,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUCachedLocationSearch Class Reference</h1>
+						<h1 class="title title-header">LUGiftCardOrderRequestFactory Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -106,7 +102,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUCachedLocationSearch.h<br />LUCachedLocationSearch.m</td>
+	<td class="specification-value">LUGiftCardOrderRequestFactory.h<br />LUGiftCardOrderRequestFactory.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -116,15 +112,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUCachedLocationSearch</code> is used to query a locally cached database of information on all LevelUp
-locations.</p>
-
-<p>This database is a local SQLite file managed via Core Data. The SDK will contain an initial seed of
-the database, and then the <a href="../Classes/LULocationCacheUpdater.html"><code>LULocationCacheUpdater</code></a> class can be used to keep the location cache
-up-to-date.</p>
-
-<p>To use <code>LUCachedLocationSearch</code>, create an instance along with a <code>CLLocation</code> around which to order
-the locations, a maximum number of results, and an optional category ID upon which to filter.</p>
+						<p><code>LUGiftCardOrderRequestFactory</code> is used to create LevelUp gift cards.</p>
 					</div>
 					
 					
@@ -142,13 +130,7 @@ the locations, a maximum number of results, and an optional category ID upon whi
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithCenter:limit:categoryID:">&ndash;&nbsp;initWithCenter:limit:categoryID:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/executeSearch:">&ndash;&nbsp;executeSearch:</a></code>
+		<code><a href="#//api/name/requestToCreateGiftCardOrder:">+&nbsp;requestToCreateGiftCardOrder:</a></code>
 	</span>
 	
 	
@@ -163,25 +145,23 @@ the locations, a maximum number of results, and an optional category ID upon whi
 					
 					
 					
-					
-					
 					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/executeSearch:" title="executeSearch:"></a>
-	<h3 class="subsubtitle method-title">executeSearch:</h3>
+	<a name="//api/name/requestToCreateGiftCardOrder:" title="requestToCreateGiftCardOrder:"></a>
+	<h3 class="subsubtitle method-title">requestToCreateGiftCardOrder:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Performs the search.</p>
+		<p>Create and deliver the gift card represented in <code>giftCardOrder</code>.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSArray *)executeSearch:(NSError **)<em>error</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToCreateGiftCardOrder:(LUGiftCardOrder *)<em>giftCardOrder</em></code></div>
 
     
 	
@@ -189,9 +169,8 @@ the locations, a maximum number of results, and an optional category ID upon whi
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>error</em></dt>
-			<dd><p>If an error occurs during the search, <code>error</code> will be updated to point to an instance
-of <code>NSError</code> with error info.</p></dd>
+			<dt><em>giftCardOrder</em></dt>
+			<dd><p>See <a href="../Classes/LUGiftCardOrder.html"><code>LUGiftCardOrder</code></a>.</p></dd>
 		</dl>
 		
 	</div>
@@ -204,7 +183,10 @@ of <code>NSError</code> with error info.</p></dd>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Performs the search.</p>
+		<p>Create and deliver the gift card represented in <code>giftCardOrder</code>.</p>
+
+<p>This request will charge the current user the amount in <code>giftCardOrder</code>, and emails the gift card
+to the recipient in <code>giftCardOrder</code>.</p><div class="warning"><p><strong>Warning:</strong> This request requires an access token with the <code>LUPermissionCreateOrders</code> permission.</p></div>
 	</div>
 	
 	
@@ -215,75 +197,15 @@ of <code>NSError</code> with error info.</p></dd>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCachedLocationSearch.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/initWithCenter:limit:categoryID:" title="initWithCenter:limit:categoryID:"></a>
-	<h3 class="subsubtitle method-title">initWithCenter:limit:categoryID:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Creates an instance of <code>LUCachedLocationSearch</code> with the specified search criteria.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (id)initWithCenter:(CLLocation *)<em>center</em> limit:(NSUInteger)<em>limit</em> categoryID:(NSNumber *)<em>categoryID</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>center</em></dt>
-			<dd><p>The <a href="#//api/name/center">center</a> point of the search. Searches with progressively higher radii will be
-performed until at least <a href="#//api/name/limit"><code>limit</code></a> results are found.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>limit</em></dt>
-			<dd><p>The desired number of results.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>categoryID</em></dt>
-			<dd><p>An optional category ID to filter on. May be <code>nil</code>.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Creates an instance of <code>LUCachedLocationSearch</code> with the specified search criteria.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCachedLocationSearch.h</code><br />
+		<code class="declared-in-ref">LUGiftCardOrderRequestFactory.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 					</div>
+					
+					
 					
 					
                     

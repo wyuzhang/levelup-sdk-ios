@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUAPIError Class Reference</title>
+		<title>LUInterstitialNavigationAction Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUAPIError Class Reference</h1>
+				<h1 class="hideInXcode">LUInterstitialNavigationAction Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,13 +39,9 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/code">&nbsp;&nbsp;&nbsp;&nbsp;code</option>
+	<option value="//api/name/URL">&nbsp;&nbsp;&nbsp;&nbsp;URL</option>
 	
-	<option value="//api/name/message">&nbsp;&nbsp;&nbsp;&nbsp;message</option>
-	
-	<option value="//api/name/object">&nbsp;&nbsp;&nbsp;&nbsp;object</option>
-	
-	<option value="//api/name/property">&nbsp;&nbsp;&nbsp;&nbsp;property</option>
+	<option value="//api/name/buttonText">&nbsp;&nbsp;&nbsp;&nbsp;buttonText</option>
 	
 	
 	
@@ -75,13 +71,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/code">code</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/URL">URL</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/message">message</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/object">object</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/property">property</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/buttonText">buttonText</a></span></li>
 	
 </ul></li>
 
@@ -94,7 +86,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUAPIError Class Reference" name="top"></a>
+				<a title="LUInterstitialNavigationAction Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -103,7 +95,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUAPIError Class Reference</h1>
+						<h1 class="title title-header">LUInterstitialNavigationAction Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -114,7 +106,7 @@
 	<td class="specification-value">LUAPIModel : NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUAPIError.h<br />LUAPIError.m</td>
+	<td class="specification-value">LUInterstitialNavigationAction.h<br />LUInterstitialNavigationAction.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -124,12 +116,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>If an API request returns an error, the response may include one or more <code>LUAPIError</code> objects.
-These will be included within the <code>userInfo</code> of the <code>NSError</code> returned by a network request.</p>
-
-<p>An error will have a <a href="#//api/name/message"><code>message</code></a>, and may have an <a href="#//api/name/object"><code>object</code></a> and <a href="#//api/name/property"><code>property</code></a>. These latter two
-properties are useful for validation errors. For example, if a user attempts to register without
-providing an email address, the <a href="#//api/name/object">object</a> would be &ldquo;user&rdquo; and the <a href="#//api/name/property">property</a> would be &ldquo;email&rdquo;.</p>
+						<p>This action is for interstitials that request the user navigate to another screen in the app.</p>
 					</div>
 					
 					
@@ -147,25 +134,13 @@ providing an email address, the <a href="#//api/name/object">object</a> would be
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/code">&nbsp;&nbsp;code</a></code>
+		<code><a href="#//api/name/buttonText">&nbsp;&nbsp;buttonText</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/message">&nbsp;&nbsp;message</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/object">&nbsp;&nbsp;object</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/property">&nbsp;&nbsp;property</a></code>
+		<code><a href="#//api/name/URL">&nbsp;&nbsp;URL</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -183,18 +158,18 @@ providing an email address, the <a href="#//api/name/object">object</a> would be
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/code" title="code"></a>
-	<h3 class="subsubtitle method-title">code</h3>
+	<a name="//api/name/URL" title="URL"></a>
+	<h3 class="subsubtitle method-title">URL</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A machine-readable <a href="#//api/name/description">description</a> of the error (can be <code>nil</code>).</p>
+		<p>A relative URL representing an in-app screen to which the user can navigate.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *code</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSURL *URL</code></div>
 
     
 	
@@ -206,7 +181,10 @@ providing an email address, the <a href="#//api/name/object">object</a> would be
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>A machine-readable <a href="#//api/name/description">description</a> of the error (can be <code>nil</code>).</p>
+		<p>A relative URL representing an in-app screen to which the user can navigate.</p>
+
+<p>Possible paths at the moment are &ldquo;pay&rdquo;, &ldquo;invite_friends&rdquo; or &ldquo;order_gift_card&rdquo;. For
+&ldquo;order_gift_card&rdquo;, will also include query parameters &ldquo;merchant_id&rdquo; and &ldquo;merchant_name&rdquo;.</p>
 	</div>
 	
 	
@@ -217,25 +195,25 @@ providing an email address, the <a href="#//api/name/object">object</a> would be
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUAPIError.h</code><br />
+		<code class="declared-in-ref">LUInterstitialNavigationAction.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/message" title="message"></a>
-	<h3 class="subsubtitle method-title">message</h3>
+	<a name="//api/name/buttonText" title="buttonText"></a>
+	<h3 class="subsubtitle method-title">buttonText</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A human-readable <a href="#//api/name/description">description</a> of the error.</p>
+		<p>The text to display on the button that opens the page.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *message</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *buttonText</code></div>
 
     
 	
@@ -247,7 +225,7 @@ providing an email address, the <a href="#//api/name/object">object</a> would be
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>A human-readable <a href="#//api/name/description">description</a> of the error.</p>
+		<p>The text to display on the button that opens the page.</p>
 	</div>
 	
 	
@@ -258,95 +236,7 @@ providing an email address, the <a href="#//api/name/object">object</a> would be
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUAPIError.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/object" title="object"></a>
-	<h3 class="subsubtitle method-title">object</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>A <a href="#//api/name/description">description</a> of the object to which the error refers, such as &ldquo;user&rdquo; or &ldquo;location&rdquo;. This can be
-useful to distinguish validation errors within nested objects.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *object</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>A <a href="#//api/name/description">description</a> of the object to which the error refers, such as &ldquo;user&rdquo; or &ldquo;location&rdquo;. This can be
-useful to distinguish validation errors within nested objects.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUAPIError.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/property" title="property"></a>
-	<h3 class="subsubtitle method-title">property</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The property to which the error refers. This is typically used for validation errors. For example,
-if a user attempts to register without providing an email address, the <a href="#//api/name/object">object</a> would be &ldquo;user&rdquo; and
-the property would be &ldquo;email&rdquo;.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *property</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The property to which the error refers. This is typically used for validation errors. For example,
-if a user attempts to register without providing an email address, the <a href="#//api/name/object">object</a> would be &ldquo;user&rdquo; and
-the property would be &ldquo;email&rdquo;.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUAPIError.h</code><br />
+		<code class="declared-in-ref">LUInterstitialNavigationAction.h</code><br />
 	</div>				
 	
 	
