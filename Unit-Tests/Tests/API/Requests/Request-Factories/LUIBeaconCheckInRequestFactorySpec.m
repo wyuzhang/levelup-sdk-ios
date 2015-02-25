@@ -16,6 +16,7 @@
 
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
+#import "LUDeviceIdentifier.h"
 #import "LUIBeaconCheckInRequestFactory.h"
 
 SPEC_BEGIN(LUIBeaconCheckInRequestFactorySpec)
@@ -23,34 +24,82 @@ SPEC_BEGIN(LUIBeaconCheckInRequestFactorySpec)
 describe(@"LUIBeaconCheckInRequestFactory", ^{
   // Public Methods
 
-  __block LUAPIRequest *request;
-
   describe(@"requestToCheckInIBeaconWithMajor:minor:", ^{
+    NSString *apiKey = @"api-key";
+    NSString *deviceIdentifier = @"device-identifier";
     NSString *major = @"1";
     NSString *minor = @"2";
 
     beforeEach(^{
-      request = [LUIBeaconCheckInRequestFactory requestToCheckInIBeaconWithMajor:major minor:minor];
+      [LUAPIClient setupWithAppID:@"1" APIKey:apiKey];
+      [LUDeviceIdentifier stub:@selector(deviceIdentifier) andReturn:deviceIdentifier];
     });
 
-    it(@"returns a POST request", ^{
-      [[request.method should] equal:@"POST"];
+    context(@"when an access token has been set", ^{
+      __block LUAPIRequest *request;
+
+      beforeEach(^{
+        [LUAPIClient sharedClient].accessToken = @"access-token";
+        request = [LUIBeaconCheckInRequestFactory requestToCheckInIBeaconWithMajor:major minor:minor];
+      });
+
+      it(@"returns a POST request", ^{
+        [[request.method should] equal:@"POST"];
+      });
+
+      it(@"returns a request to the path 'beacon_checkins", ^{
+        NSString *expectedPath = @"beacon_checkins";
+
+        [[request.path should] equal:expectedPath];
+      });
+
+      it(@"returns a request to version 15 of the API", ^{
+        [[request.apiVersion should] equal:LUAPIVersion15];
+      });
+
+      it(@"returns a request with the API key in the paramters", ^{
+        [[request.parameters[@"api_key"] should] equal:apiKey];
+      });
+
+      it(@"returns a request with the device identifier in the paramters", ^{
+        [[request.parameters[@"device_identifier"] should] equal:deviceIdentifier];
+      });
+
+      it(@"returns a request with paramters including the major and minor ids", ^{
+        NSDictionary *expectedBeaconParameters = @{@"major_id": major, @"minor_id": minor};
+
+        [[request.parameters[@"beacon"] should] equal:expectedBeaconParameters];
+      });
     });
 
-    it(@"returns a request to the path 'beacon_checkins", ^{
-      NSString *expectedPath = @"beacon_checkins";
+    context(@"when an access token hasn't been set", ^{
+      beforeEach(^{
+        [LUAPIClient sharedClient].accessToken = nil;
+      });
 
-      [[request.path should] equal:expectedPath];
-    });
+      context(@"and the app doesn't include AdSupport", ^{
+        beforeEach(^{
+          [LUDeviceIdentifier stub:@selector(doesAppIncludeAdSupport) andReturn:theValue(NO)];
+        });
 
-    it(@"returns a request to version 15 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion15];
-    });
+        it(@"throws an exception", ^{
+          [[theBlock(^{
+            [LUIBeaconCheckInRequestFactory requestToCheckInIBeaconWithMajor:major minor:minor];
+          }) should] raise];
+        });
+      });
 
-    it(@"returns a request with paramters including the major and minor ids", ^{
-      NSDictionary *expectedParameters = @{@"beacon" : @{@"major_id": @"1", @"minor_id": @"2"}};
+      context(@"and the app includes AdSupport", ^{
+        beforeEach(^{
+          [LUDeviceIdentifier stub:@selector(doesAppIncludeAdSupport) andReturn:theValue(YES)];
+        });
 
-      [[request.parameters should] equal:expectedParameters];
+        it(@"doesn't throw an exception", ^{
+          [[theBlock(^{
+            [LUIBeaconCheckInRequestFactory requestToCheckInIBeaconWithMajor:major minor:minor];
+          }) shouldNot] raise];
+        });
+      });
     });
   });
 });

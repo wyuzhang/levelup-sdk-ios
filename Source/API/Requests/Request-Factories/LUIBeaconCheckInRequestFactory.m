@@ -14,18 +14,33 @@
  * limitations under the License.
  */
 
+#import "LUAPIClient.h"
 #import "LUAPIRequest.h"
+#import "LUDeviceIdentifier.h"
 #import "LUIBeaconCheckInRequestFactory.h"
+#import "NSDictionary+SafetyAdditions.h"
 
 @implementation LUIBeaconCheckInRequestFactory
 
 + (LUAPIRequest *)requestToCheckInIBeaconWithMajor:(NSString *)major minor:(NSString *)minor {
-  NSDictionary *parameters = @{ @"major_id" : major, @"minor_id" : minor };
+  if ([LUAPIClient sharedClient].accessToken.length == 0 && ![LUDeviceIdentifier doesAppIncludeAdSupport]) {
+    NSAssert(NO, @"Apps making unauthenticated requests must include AdSupport.");
+    return nil;
+  }
+
+  NSMutableDictionary *beaconParameters = [NSMutableDictionary dictionary];
+  [beaconParameters lu_setSafeValue:major forKey:@"major_id"];
+  [beaconParameters lu_setSafeValue:minor forKey:@"minor_id"];
+
+  NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+  [parameters lu_setSafeValue:[LUAPIClient sharedClient].apiKey forKey:@"api_key"];
+  [parameters lu_setSafeValue:beaconParameters forKey:@"beacon"];
+  [parameters lu_setSafeValue:[LUDeviceIdentifier deviceIdentifier] forKey:@"device_identifier"];
 
   return [LUAPIRequest apiRequestWithMethod:@"POST"
                                        path:@"beacon_checkins"
                                  apiVersion:LUAPIVersion15
-                                 parameters:@{@"beacon" : parameters}
+                                 parameters:parameters
                                modelFactory:nil];
 }
 
