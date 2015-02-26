@@ -68,6 +68,20 @@
 		022A6DDF187C61D500EE7C4B /* LUWebLocations+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 022A6DD4187C61D500EE7C4B /* LUWebLocations+Fixtures.m */; };
 		022A6DE2187C621200EE7C4B /* NSManagedObjectContext+FakeContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 022A6DE1187C621200EE7C4B /* NSManagedObjectContext+FakeContext.m */; };
 		0230512118F714A4008AE1A6 /* LUInterstitialRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0230512018F714A4008AE1A6 /* LUInterstitialRequestFactorySpec.m */; };
+		024AF4A51A9F703D007131DD /* BTAES.h in Headers */ = {isa = PBXBuildFile; fileRef = 024AF4961A9F703D007131DD /* BTAES.h */; };
+		024AF4A61A9F703D007131DD /* BTAES.m in Sources */ = {isa = PBXBuildFile; fileRef = 024AF4971A9F703D007131DD /* BTAES.m */; };
+		024AF4A71A9F703D007131DD /* BTEncryption.h in Headers */ = {isa = PBXBuildFile; fileRef = 024AF4981A9F703D007131DD /* BTEncryption.h */; };
+		024AF4A81A9F703D007131DD /* BTEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 024AF4991A9F703D007131DD /* BTEncryption.m */; };
+		024AF4A91A9F703D007131DD /* BTHmac.h in Headers */ = {isa = PBXBuildFile; fileRef = 024AF49A1A9F703D007131DD /* BTHmac.h */; };
+		024AF4AA1A9F703D007131DD /* BTHmac.m in Sources */ = {isa = PBXBuildFile; fileRef = 024AF49B1A9F703D007131DD /* BTHmac.m */; };
+		024AF4AB1A9F703D007131DD /* BTRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 024AF49C1A9F703D007131DD /* BTRandom.h */; };
+		024AF4AC1A9F703D007131DD /* BTRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 024AF49D1A9F703D007131DD /* BTRandom.m */; };
+		024AF4AD1A9F703D007131DD /* BTRSA.h in Headers */ = {isa = PBXBuildFile; fileRef = 024AF49E1A9F703D007131DD /* BTRSA.h */; };
+		024AF4AE1A9F703D007131DD /* BTRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 024AF49F1A9F703D007131DD /* BTRSA.m */; };
+		024AF4AF1A9F703D007131DD /* BTSecKeyWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 024AF4A01A9F703D007131DD /* BTSecKeyWrapper.h */; };
+		024AF4B01A9F703D007131DD /* BTSecKeyWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 024AF4A11A9F703D007131DD /* BTSecKeyWrapper.m */; };
+		024AF4B11A9F703D007131DD /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 024AF4A21A9F703D007131DD /* NSData+Base64.h */; };
+		024AF4B21A9F703D007131DD /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 024AF4A31A9F703D007131DD /* NSData+Base64.m */; };
 		0251CC181A378B4B0056D82C /* LUMockKeychainAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 0251CC171A378B4B0056D82C /* LUMockKeychainAccess.m */; };
 		0251CC1B1A3B44860056D82C /* LUGiftCardOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 0251CC191A3B44860056D82C /* LUGiftCardOrder.h */; };
 		0251CC1C1A3B44860056D82C /* LUGiftCardOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0251CC1A1A3B44860056D82C /* LUGiftCardOrder.m */; };
@@ -487,6 +501,20 @@
 		022A6DE1187C621200EE7C4B /* NSManagedObjectContext+FakeContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+FakeContext.m"; sourceTree = "<group>"; };
 		0230512018F714A4008AE1A6 /* LUInterstitialRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialRequestFactorySpec.m; sourceTree = "<group>"; };
 		023C960B188ED27E00113AF2 /* LUAPIObjectModel (with name).xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "LUAPIObjectModel (with name).xcdatamodel"; sourceTree = "<group>"; };
+		024AF4961A9F703D007131DD /* BTAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAES.h; sourceTree = "<group>"; };
+		024AF4971A9F703D007131DD /* BTAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAES.m; sourceTree = "<group>"; };
+		024AF4981A9F703D007131DD /* BTEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTEncryption.h; sourceTree = "<group>"; };
+		024AF4991A9F703D007131DD /* BTEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTEncryption.m; sourceTree = "<group>"; };
+		024AF49A1A9F703D007131DD /* BTHmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTHmac.h; sourceTree = "<group>"; };
+		024AF49B1A9F703D007131DD /* BTHmac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTHmac.m; sourceTree = "<group>"; };
+		024AF49C1A9F703D007131DD /* BTRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRandom.h; sourceTree = "<group>"; };
+		024AF49D1A9F703D007131DD /* BTRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRandom.m; sourceTree = "<group>"; };
+		024AF49E1A9F703D007131DD /* BTRSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRSA.h; sourceTree = "<group>"; };
+		024AF49F1A9F703D007131DD /* BTRSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRSA.m; sourceTree = "<group>"; };
+		024AF4A01A9F703D007131DD /* BTSecKeyWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSecKeyWrapper.h; sourceTree = "<group>"; };
+		024AF4A11A9F703D007131DD /* BTSecKeyWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSecKeyWrapper.m; sourceTree = "<group>"; };
+		024AF4A21A9F703D007131DD /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		024AF4A31A9F703D007131DD /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		0251CC161A378B4B0056D82C /* LUMockKeychainAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUMockKeychainAccess.h; sourceTree = "<group>"; };
 		0251CC171A378B4B0056D82C /* LUMockKeychainAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUMockKeychainAccess.m; sourceTree = "<group>"; };
 		0251CC191A3B44860056D82C /* LUGiftCardOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUGiftCardOrder.h; sourceTree = "<group>"; };
@@ -941,6 +969,27 @@
 				022A6DD4187C61D500EE7C4B /* LUWebLocations+Fixtures.m */,
 			);
 			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		024AF4951A9F703D007131DD /* BTEncryption */ = {
+			isa = PBXGroup;
+			children = (
+				024AF4961A9F703D007131DD /* BTAES.h */,
+				024AF4971A9F703D007131DD /* BTAES.m */,
+				024AF4981A9F703D007131DD /* BTEncryption.h */,
+				024AF4991A9F703D007131DD /* BTEncryption.m */,
+				024AF49A1A9F703D007131DD /* BTHmac.h */,
+				024AF49B1A9F703D007131DD /* BTHmac.m */,
+				024AF49C1A9F703D007131DD /* BTRandom.h */,
+				024AF49D1A9F703D007131DD /* BTRandom.m */,
+				024AF49E1A9F703D007131DD /* BTRSA.h */,
+				024AF49F1A9F703D007131DD /* BTRSA.m */,
+				024AF4A01A9F703D007131DD /* BTSecKeyWrapper.h */,
+				024AF4A11A9F703D007131DD /* BTSecKeyWrapper.m */,
+				024AF4A21A9F703D007131DD /* NSData+Base64.h */,
+				024AF4A31A9F703D007131DD /* NSData+Base64.m */,
+			);
+			path = BTEncryption;
 			sourceTree = "<group>";
 		};
 		026064EB19192B1000F93FDF /* API */ = {
@@ -1421,6 +1470,7 @@
 			isa = PBXGroup;
 			children = (
 				C1CAF15717315414003B3D01 /* API */,
+				024AF4951A9F703D007131DD /* BTEncryption */,
 				6A2D6AF81A48779000BE1D09 /* Carrier Billing */,
 				C1CAF1D617315415003B3D01 /* Categories */,
 				C1CAF1E317315415003B3D01 /* Constants */,
@@ -1738,6 +1788,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				024AF4B11A9F703D007131DD /* NSData+Base64.h in Headers */,
 				6AC1EC9F1A5197FD006756C5 /* LUCarrierAccountStateTransformer.h in Headers */,
 				25FF1CCD18FAE48D007EDCEA /* LUDeepLinkAuth.h in Headers */,
 				C1CAF1F417315415003B3D01 /* LUAPIClient.h in Headers */,
@@ -1755,9 +1806,11 @@
 				25FF1CD318FAE48D007EDCEA /* LUOneTimePad.h in Headers */,
 				02AA944E18352C4400218730 /* LUGenericQRCodeGenerator.h in Headers */,
 				C1CAF21817315415003B3D01 /* LUOrderJSONFactory.h in Headers */,
+				024AF4A71A9F703D007131DD /* BTEncryption.h in Headers */,
 				6AC1EC9B1A5194A6006756C5 /* LUCarrierAccount.h in Headers */,
 				C1CAF21E17315415003B3D01 /* LUUserJSONFactory.h in Headers */,
 				C1CAF22017315415003B3D01 /* LUAPIModel.h in Headers */,
+				024AF4AF1A9F703D007131DD /* BTSecKeyWrapper.h in Headers */,
 				C1CAF22617315415003B3D01 /* LUCampaign.h in Headers */,
 				C1CAF22817315415003B3D01 /* LUCategory.h in Headers */,
 				C1CAF22E17315415003B3D01 /* LUClaim.h in Headers */,
@@ -1773,6 +1826,7 @@
 				021B747D193FABF700BBC315 /* LURegistrationRequestFactory.h in Headers */,
 				C1CAF24A17315415003B3D01 /* LUAPIRequest.h in Headers */,
 				02D49225194F3FEB00C9C385 /* LUWebLinkJSONFactory.h in Headers */,
+				024AF4AB1A9F703D007131DD /* BTRandom.h in Headers */,
 				C1CAF24E17315415003B3D01 /* LUDeviceIdentifier.h in Headers */,
 				6A8B54821A51D7110037E81D /* LUCarrierAccountRetriever.h in Headers */,
 				C1CAF25017315415003B3D01 /* LUUserParameterBuilder.h in Headers */,
@@ -1786,6 +1840,7 @@
 				C1CAF26417315415003B3D01 /* LUAuthenticationRequestFactory.h in Headers */,
 				C1CAF26617315415003B3D01 /* LUOrderRequestFactory.h in Headers */,
 				020BAB6E191BDBDC00198CDF /* LUDeepLinkAuthInstallAlert.h in Headers */,
+				024AF4A51A9F703D007131DD /* BTAES.h in Headers */,
 				0205E1D91951FDD2001904D9 /* LUUserWithAccessTokenJSONFactory.h in Headers */,
 				C1CAF26817315415003B3D01 /* LUTicketRequestFactory.h in Headers */,
 				02DB590A19547B3600955711 /* LUOrderItemJSONFactory.h in Headers */,
@@ -1825,6 +1880,8 @@
 				25CA82DE176A173C0073383C /* LUPaymentToken.h in Headers */,
 				25CA82E2176A188A0073383C /* LUPaymentTokenJSONFactory.h in Headers */,
 				25CA82E6176A18EE0073383C /* LUPaymentTokenRequestFactory.h in Headers */,
+				024AF4A91A9F703D007131DD /* BTHmac.h in Headers */,
+				024AF4AD1A9F703D007131DD /* BTRSA.h in Headers */,
 				0274B83C17739B7800FD5B43 /* LUAPIError.h in Headers */,
 				0274B84017739BAA00FD5B43 /* LUAPIErrorJSONFactory.h in Headers */,
 				021B7475193FAB8900BBC315 /* LURegistration.h in Headers */,
@@ -2118,6 +2175,7 @@
 				C1CAF1FF17315415003B3D01 /* LUCategoryJSONFactory.m in Sources */,
 				0251CC2B1A3B4CEF0056D82C /* LUIBeaconCheckInRequestFactory.m in Sources */,
 				C1CAF20517315415003B3D01 /* LUClaimJSONFactory.m in Sources */,
+				024AF4A61A9F703D007131DD /* BTAES.m in Sources */,
 				6A8B54831A51D7110037E81D /* LUCarrierAccountRetriever.m in Sources */,
 				C1CAF20917315415003B3D01 /* LUCreditCardJSONFactory.m in Sources */,
 				25FF1CCE18FAE48D007EDCEA /* LUDeepLinkAuth.m in Sources */,
@@ -2152,6 +2210,7 @@
 				25FF1CD418FAE48D007EDCEA /* LUOneTimePad.m in Sources */,
 				C1CAF25717315415003B3D01 /* LUCampaignRequestFactory.m in Sources */,
 				C1CAF25917315415003B3D01 /* LUCategoryRequestFactory.m in Sources */,
+				024AF4AE1A9F703D007131DD /* BTRSA.m in Sources */,
 				C1CAF25D17315415003B3D01 /* LUClaimRequestFactory.m in Sources */,
 				021B747A193FABB700BBC315 /* LURegistrationJSONFactory.m in Sources */,
 				C1CAF26117315415003B3D01 /* LUCreditCardRequestFactory.m in Sources */,
@@ -2168,8 +2227,11 @@
 				021B747E193FABF700BBC315 /* LURegistrationRequestFactory.m in Sources */,
 				02643918185BB6D300175425 /* LULocationCreditJSONFactory.m in Sources */,
 				C1CAF27317315415003B3D01 /* NSDictionary+ObjectClassAccess.m in Sources */,
+				024AF4AC1A9F703D007131DD /* BTRandom.m in Sources */,
+				024AF4A81A9F703D007131DD /* BTEncryption.m in Sources */,
 				C1CAF27517315415003B3D01 /* NSNumber+Base36.m in Sources */,
 				C1CAF27717315415003B3D01 /* NSString+HTMLStripping.m in Sources */,
+				024AF4AA1A9F703D007131DD /* BTHmac.m in Sources */,
 				C1CAF27B17315415003B3D01 /* LUConstants.m in Sources */,
 				C1CAF27F17315415003B3D01 /* LUQRCodeDecoder.m in Sources */,
 				C1CAF28117315415003B3D01 /* LUPaymentQRCodeGenerator.m in Sources */,
@@ -2191,6 +2253,8 @@
 				F8BC8403173981BE007F7142 /* LUWebLocations.m in Sources */,
 				0251CC201A3B44A30056D82C /* LUGiftCardOrderRequestFactory.m in Sources */,
 				25FF1CD018FAE48D007EDCEA /* LUDeepLinkAuthRequest.m in Sources */,
+				024AF4B21A9F703D007131DD /* NSData+Base64.m in Sources */,
+				024AF4B01A9F703D007131DD /* BTSecKeyWrapper.m in Sources */,
 				F87364A3173AA4B00024A3F5 /* LULoyaltyRequestFactory.m in Sources */,
 				F87364A7173AE3E10024A3F5 /* LULoyaltyJSONFactory.m in Sources */,
 				027C5C4319D33BB3006C8E23 /* LUPassRequestFactory.m in Sources */,

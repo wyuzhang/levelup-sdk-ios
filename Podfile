@@ -4,7 +4,6 @@ platform :ios, '6.0'
 
 pod 'AFNetworking', '2.4.1'
 pod 'AutoCoding', '2.0.3'
-pod 'BTEncryption', '2.2.8'
 pod 'LUKeychainAccess', '1.2.3'
 pod 'ZXingObjC/QRCode', '3.0.3'
 

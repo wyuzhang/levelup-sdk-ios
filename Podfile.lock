@@ -21,7 +21,6 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - AutoCoding (2.0.3)
-  - BTEncryption (2.2.8)
   - Kiwi (2.3.1)
   - LUKeychainAccess (1.2.3)
   - OHHTTPStubs (1.1.2)
@@ -32,7 +31,6 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (= 2.4.1)
   - AutoCoding (= 2.0.3)
-  - BTEncryption (= 2.2.8)
   - Kiwi (= 2.3.1)
   - LUKeychainAccess (= 1.2.3)
   - OHHTTPStubs (= 1.1.2)
@@ -41,7 +39,6 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   AutoCoding: a40014b5ce6608fdde428fca11fc1b9449e3a617
-  BTEncryption: 81f6480c8ab39db6c523ce4dc2fdb8a1c5d4a538
   Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
   LUKeychainAccess: 8d45b6c894c0d808786b1740c057b5e776313d88
   OHHTTPStubs: 0b2656edcf5e700709b5da50155f41eed8c6b9ad

@@ -17,7 +17,6 @@ Pod::Spec.new do |s|
   s.subspec 'Core' do |core|
     core.dependency 'AFNetworking', '2.4.1'
     core.dependency 'AutoCoding', '2.0.3'
-    core.dependency 'BTEncryption', '2.2.8'
     core.dependency 'LUKeychainAccess', '1.2.3'
     core.dependency 'ZXingObjC/QRCode', '3.0.3'
 
