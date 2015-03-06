@@ -22,23 +22,47 @@ SPEC_BEGIN(LUCampaignRequestFactorySpec)
 describe(@"LUCampaignRequestFactory", ^{
   // Public Methods
 
-  describe(@"requestForMerchantsForCampaignWithID:", ^{
+  describe(@"requestForCampaignMetadataForLocationWithID:", ^{
     __block LUAPIRequest *request;
 
     beforeEach(^{
-      request = [LUCampaignRequestFactory requestForMerchantsForCampaignWithID:@1];
+      request = [LUCampaignRequestFactory requestForCampaignMetadataForLocationWithID:@1];
     });
 
     it(@"returns a GET request", ^{
       [[request.method should] equal:@"GET"];
     });
 
-    it(@"returns a request to the path 'campaigns/<id>/merchants'", ^{
-      [[request.path should] equal:@"campaigns/1/merchants"];
+    it(@"returns a request to the path 'locations/<id>/campaigns'", ^{
+      [[request.path should] equal:@"locations/1/campaigns"];
     });
 
-    it(@"returns a request to version 14 of the API", ^{
-      [[request.apiVersion should] equal:LUAPIVersion14];
+    it(@"returns a request to version 15 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion15];
+    });
+
+    it(@"returns a request with no parameters", ^{
+      [request.parameters shouldBeNil];
+    });
+  });
+
+  describe(@"requestForCampaignMetadataForMerchantWithID:", ^{
+    __block LUAPIRequest *request;
+
+    beforeEach(^{
+      request = [LUCampaignRequestFactory requestForCampaignMetadataForMerchantWithID:@1];
+    });
+
+    it(@"returns a GET request", ^{
+      [[request.method should] equal:@"GET"];
+    });
+
+    it(@"returns a request to the path 'merchants/<id>/campaigns'", ^{
+      [[request.path should] equal:@"merchants/1/campaigns"];
+    });
+
+    it(@"returns a request to version 15 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion15];
     });
 
     it(@"returns a request with no parameters", ^{
@@ -86,6 +110,69 @@ describe(@"LUCampaignRequestFactory", ^{
 
     it(@"returns a request to the path 'campaigns/<id>'", ^{
       [[request.path should] equal:@"campaigns/1"];
+    });
+
+    it(@"returns a request to version 14 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion14];
+    });
+
+    it(@"returns a request with no parameters", ^{
+      [request.parameters shouldBeNil];
+    });
+  });
+
+  describe(@"requestForCampaignWithMetadata:representationType:", ^{
+    context(@"when the campaign metadata contains the representation type", ^{
+      LUCampaignMetadata *campaignMetadata = [LUCampaignMetadata fixtureWithBasicRepresentation];
+      __block LUAPIRequest *request;
+
+      beforeEach(^{
+        request = [LUCampaignRequestFactory requestForCampaignWithMetadata:campaignMetadata
+                                                        representationType:LUCampaignRepresentationTypeBasicV1];
+      });
+
+      it(@"returns a GET request", ^{
+        [[request.method should] equal:@"GET"];
+      });
+
+      it(@"returns a request to the path 'campaigns/<id>/<representation type string>'", ^{
+        [[request.path should] equal:@"campaigns/1/basic_v1"];
+      });
+
+      it(@"returns a request to version 15 of the API", ^{
+        [[request.apiVersion should] equal:LUAPIVersion15];
+      });
+
+      it(@"returns a request with no parameters", ^{
+        [request.parameters shouldBeNil];
+      });
+    });
+
+    context(@"when the campaign metadata does not contain the representation type", ^{
+      LUCampaignMetadata *campaignMetadata = [[LUCampaignMetadata alloc] initWithCampaignID:@1 representationTypes:nil];
+
+      it(@"raises an exception", ^{
+        [[theBlock(^{
+          [LUCampaignRequestFactory requestForCampaignWithMetadata:campaignMetadata
+                                                representationType:LUCampaignRepresentationTypeBasicV1];
+        }) should] raise];
+      });
+    });
+  });
+
+  describe(@"requestForMerchantsForCampaignWithID:", ^{
+    __block LUAPIRequest *request;
+
+    beforeEach(^{
+      request = [LUCampaignRequestFactory requestForMerchantsForCampaignWithID:@1];
+    });
+
+    it(@"returns a GET request", ^{
+      [[request.method should] equal:@"GET"];
+    });
+
+    it(@"returns a request to the path 'campaigns/<id>/merchants'", ^{
+      [[request.path should] equal:@"campaigns/1/merchants"];
     });
 
     it(@"returns a request to version 14 of the API", ^{

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 SCVNGR, Inc. d/b/a LevelUp
+ * Copyright (C) 2015 SCVNGR, Inc. d/b/a LevelUp
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,8 @@
 
 #import "LUAbstactEnumToStringTransformer.h"
 
-extern NSString * const LUUserGenderTransformerName;
+extern NSString * const LUCampaignRepresentationTypeTransformerName;
 
-@interface LUUserGenderTransformer : LUAbstactEnumToStringTransformer
+@interface LUCampaignRepresentationTypeTransformer : LUAbstactEnumToStringTransformer
 
 @end

@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
+#import "LUAbstactEnumToStringTransformer.h"
+
 extern NSString * const LUCarrierAccountStateTransformerName;
 
-@interface LUCarrierAccountStateTransformer : NSValueTransformer
+@interface LUCarrierAccountStateTransformer : LUAbstactEnumToStringTransformer
 
 @end

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 SCVNGR, Inc. d/b/a LevelUp
+ * Copyright (C) 2015 SCVNGR, Inc. d/b/a LevelUp
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,14 @@
  * limitations under the License.
  */
 
-#import "LUAbstactEnumToStringTransformer.h"
+#import "LUCampaignRepresentationBasicV1+Fixtures.h"
 
-extern NSString * const LUUserGenderTransformerName;
+@implementation LUCampaignRepresentationBasicV1 (Fixtures)
 
-@interface LUUserGenderTransformer : LUAbstactEnumToStringTransformer
++ (LUCampaignRepresentationBasicV1 *)fixture {
+  return [[LUCampaignRepresentationBasicV1 alloc] initWithCampaignDescription:@"Get $2 off on your first visit!"
+                                                                   campaignID:@1
+                                                                        title:@"First Visit"];
+}
 
 @end

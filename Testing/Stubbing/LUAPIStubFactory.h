@@ -47,6 +47,9 @@
 + (LUAPIStub *)stubToFailToGetPassWithMerchantID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToFindRegistrationForEmail:(NSString *)email;
 + (LUAPIStub *)stubToGetCampaignForMerchantWithCode:(NSString *)code;
++ (LUAPIStub *)stubToGetCampaignMetadataForLocationWithID:(NSNumber *)locationID;
++ (LUAPIStub *)stubToGetCampaignMetadataForMerchantWithID:(NSNumber *)merchantID;
++ (LUAPIStub *)stubToGetCampaignRepresentationBasicV1WithID:(NSNumber *)campaignID;
 + (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithID:(NSNumber *)campaignID;
 + (LUAPIStub *)stubToGetCarrierAccountEVURL;

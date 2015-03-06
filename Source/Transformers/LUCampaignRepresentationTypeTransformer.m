@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 SCVNGR, Inc. d/b/a LevelUp
+ * Copyright (C) 2015 SCVNGR, Inc. d/b/a LevelUp
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,19 @@
  * limitations under the License.
  */
 
-#import "LUAbstactEnumToStringTransformer.h"
+#import "LUCampaignMetadata.h"
+#import "LUCampaignRepresentationTypeTransformer.h"
 
-extern NSString * const LUUserGenderTransformerName;
+NSString * const LUCampaignRepresentationTypeTransformerName = @"LUCampaignRepresentationTypeTransformerName";
 
-@interface LUUserGenderTransformer : LUAbstactEnumToStringTransformer
+@implementation LUCampaignRepresentationTypeTransformer
+
+#pragma mark - Object Creation
+
+- (id)init {
+  return [super initWithMapping:@{
+    @(LUCampaignRepresentationTypeBasicV1): @"basic_v1"
+  }];
+}
 
 @end

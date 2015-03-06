@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#import "LUCampaignMetadata.h"
+
 @class LUAPIRequest;
 
 /**
@@ -22,13 +24,28 @@
 @interface LUCampaignRequestFactory : NSObject
 
 /**
- Builds a request to retrieve the merchants associated with the campaign. Only the merchant IDs are
- returned; they are represented as an `NSArray` of `NSNumber` instances. If the campaign is global
- (it applies to all merchants), then this request will return `nil`.
+ Builds a request to return metadata on campaigns for locations with the given `locationID`.
 
- @param campaignID The ID of the campaign whose merchants will be retrieved.
+ On success, this request will return an `NSArray` of `LUCampaignMetadata` instances. Each
+ `LUCampaignMetadata` contains a `campaignID` and an `NSArray` of available representations.
+ Retrieve the campaign with that representation using
+ `requestForCampaignWithMetadata:representationType:`.
+
+ @param locationID The ID of the location whose campaigns will be retrieved.
  */
-+ (LUAPIRequest *)requestForMerchantsForCampaignWithID:(NSNumber *)campaignID;
++ (LUAPIRequest *)requestForCampaignMetadataForLocationWithID:(NSNumber *)locationID;
+
+/**
+ Builds a request to return metadata on campaigns for locations with the given `merchantID`.
+
+ On success, this request will return an `NSArray` of `LUCampaignMetadata` instances. Each
+ `LUCampaignMetadata` contains a `campaignID` and an `NSArray` of available representations.
+ Retrieve the campaign with that representation using
+ `requestForCampaignWithMetadata:representationType:`.
+
+ @param merchantID The ID of the merchant whose campaigns will be retrieved.
+ */
++ (LUAPIRequest *)requestForCampaignMetadataForMerchantWithID:(NSNumber *)merchantID;
 
 /**
  Builds a request to retrieve a campaign by its code. This is most commonly used when a user has
@@ -49,5 +66,25 @@
  @param campaignID The ID of the campaign to retrieve.
  */
 + (LUAPIRequest *)requestForCampaignWithID:(NSNumber *)campaignID;
+
+/**
+ Builds a request to retrieve a representation of the campaign with the given metadata. The campaign
+ metadata must include the given `representationType` as one of its own `representationTypes`.
+
+ On success, this request will return an instance of the campaign representation. For example,
+ if the representation type is `LUCampaignRepresentationTypeBasicV1`, the request will return an
+ instance of `LUCampaignRepresentationBasicV1`.
+ */
++ (LUAPIRequest *)requestForCampaignWithMetadata:(LUCampaignMetadata *)campaignMetadata
+                              representationType:(LUCampaignRepresentationType)representationType;
+
+/**
+ Builds a request to retrieve the merchants associated with the campaign. Only the merchant IDs are
+ returned; they are represented as an `NSArray` of `NSNumber` instances. If the campaign is global
+ (it applies to all merchants), then this request will return `nil`.
+
+ @param campaignID The ID of the campaign whose merchants will be retrieved.
+ */
++ (LUAPIRequest *)requestForMerchantsForCampaignWithID:(NSNumber *)campaignID;
 
 @end

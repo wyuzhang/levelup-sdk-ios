@@ -1,0 +1,18 @@
+[
+  {
+    "campaign" : {
+      "id" : 1,
+      "representation_types" : [
+        "basic_v1"
+      ]
+    }
+  },
+  {
+    "campaign" : {
+      "id" : 2,
+      "representation_types" : [
+        "basic_v1"
+      ]
+    }
+  },
+]

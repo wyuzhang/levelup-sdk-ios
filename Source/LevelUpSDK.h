@@ -43,6 +43,8 @@
 
 #import "LUAccessToken.h"
 #import "LUCampaign.h"
+#import "LUCampaignMetadata.h"
+#import "LUCampaignRepresentationBasicV1.h"
 #import "LUCarrierAccount.h"
 #import "LUCategory.h"
 #import "LUClaim.h"

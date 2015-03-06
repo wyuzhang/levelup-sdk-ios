@@ -243,6 +243,30 @@
                          responseData:[self responseDataFromFile:@"campaign_nonglobal"]];
 }
 
++ (LUAPIStub *)stubToGetCampaignMetadataForLocationWithID:(NSNumber *)locationID {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:[NSString stringWithFormat:@"locations/%@/campaigns", [locationID stringValue]]
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"location_campaign_metadata"]];
+}
+
++ (LUAPIStub *)stubToGetCampaignMetadataForMerchantWithID:(NSNumber *)merchantID {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:[NSString stringWithFormat:@"merchants/%@/campaigns", [merchantID stringValue]]
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"merchant_campaign_metadata"]];
+}
+
++ (LUAPIStub *)stubToGetCampaignRepresentationBasicV1WithID:(NSNumber *)campaignID {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:[NSString stringWithFormat:@"campaigns/%@/basic_v1", [campaignID stringValue]]
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"campaign_representation_basic_v1"]];
+}
+
 + (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:[NSString stringWithFormat:@"codes/%@/campaign", code]

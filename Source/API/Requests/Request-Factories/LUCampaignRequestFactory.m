@@ -16,20 +16,32 @@
 
 #import "LUAPIRequest.h"
 #import "LUCampaignJSONFactory.h"
+#import "LUCampaignMetadataJSONFactory.h"
+#import "LUCampaignRepresentationBasicV1JSONFactory.h"
 #import "LUCampaignRequestFactory.h"
 
 @implementation LUCampaignRequestFactory
 
 #pragma mark - Public Methods
 
-+ (LUAPIRequest *)requestForMerchantsForCampaignWithID:(NSNumber *)campaignID {
-  NSString *path = [NSString stringWithFormat:@"campaigns/%@/merchants", [campaignID stringValue]];
++ (LUAPIRequest *)requestForCampaignMetadataForLocationWithID:(NSNumber *)locationID {
+  NSString *path = [NSString stringWithFormat:@"locations/%@/campaigns", [locationID stringValue]];
 
   return [LUAPIRequest apiRequestWithMethod:@"GET"
                                        path:path
-                                 apiVersion:LUAPIVersion14
+                                 apiVersion:LUAPIVersion15
                                  parameters:nil
-                               modelFactory:nil];
+                               modelFactory:[LUCampaignMetadataJSONFactory factory]];
+}
+
++ (LUAPIRequest *)requestForCampaignMetadataForMerchantWithID:(NSNumber *)merchantID {
+  NSString *path = [NSString stringWithFormat:@"merchants/%@/campaigns", [merchantID stringValue]];
+
+  return [LUAPIRequest apiRequestWithMethod:@"GET"
+                                       path:path
+                                 apiVersion:LUAPIVersion15
+                                 parameters:nil
+                               modelFactory:[LUCampaignMetadataJSONFactory factory]];
 }
 
 + (LUAPIRequest *)requestForCampaignWithCode:(NSString *)code {
@@ -50,6 +62,48 @@
                                  apiVersion:LUAPIVersion14
                                  parameters:nil
                                modelFactory:[LUCampaignJSONFactory factory]];
+}
+
++ (LUAPIRequest *)requestForCampaignWithMetadata:(LUCampaignMetadata *)campaignMetadata
+                              representationType:(LUCampaignRepresentationType)representationType {
+  BOOL representationTypeInMetadata = NO;
+  for (id representationTypeObj in campaignMetadata.representationTypes) {
+    if (representationType == [representationTypeObj integerValue]) {
+      representationTypeInMetadata = YES;
+      break;
+    }
+  }
+
+  NSAssert(representationTypeInMetadata, @"Representation type is not in campaign metadata.");
+  if (!representationTypeInMetadata) {
+    return nil;
+  }
+
+  NSString *path = [NSString stringWithFormat:@"campaigns/%@/%@", campaignMetadata.campaignID,
+                    [LUCampaignMetadata stringForCampaignRepresentationType:representationType]];
+
+  LUAbstractJSONModelFactory *modelFactory;
+  switch (representationType) {
+    case LUCampaignRepresentationTypeBasicV1:
+      modelFactory = [LUCampaignRepresentationBasicV1JSONFactory factoryWithCampaignID:campaignMetadata.campaignID];
+      break;
+  }
+
+  return [LUAPIRequest apiRequestWithMethod:@"GET"
+                                       path:path
+                                 apiVersion:LUAPIVersion15
+                                 parameters:nil
+                               modelFactory:modelFactory];
+}
+
++ (LUAPIRequest *)requestForMerchantsForCampaignWithID:(NSNumber *)campaignID {
+  NSString *path = [NSString stringWithFormat:@"campaigns/%@/merchants", [campaignID stringValue]];
+
+  return [LUAPIRequest apiRequestWithMethod:@"GET"
+                                       path:path
+                                 apiVersion:LUAPIVersion14
+                                 parameters:nil
+                               modelFactory:nil];
 }
 
 @end

@@ -17,48 +17,20 @@
 #import "LUCarrierAccount.h"
 #import "LUCarrierAccountStateTransformer.h"
 
-@interface LUCarrierAccountStateTransformer ()
-
-@property (nonatomic, strong) NSDictionary *reverseStateMap;
-@property (nonatomic, strong) NSMapTable *stateMap;
-
-@end
-
 NSString * const LUCarrierAccountStateTransformerName = @"LUCarrierAccountStateTransformerName";
 
 @implementation LUCarrierAccountStateTransformer
 
-+ (Class)transformedValueClass {
-  return [NSString class];
-}
+#pragma mark - Object Creation
 
-- (id)reverseTransformedValue:(id)value {
-  return [self.reverseStateMap objectForKey:[value lowercaseString]];
-}
-
-- (id)transformedValue:(id)value {
-  return [[self.stateMap objectForKey:value] lowercaseString];
-}
-
-#pragma mark - Getters
-
-- (NSDictionary *)reverseStateMap {
-  if (_reverseStateMap) return _reverseStateMap;
-  NSArray *keys = [[self.stateMap dictionaryRepresentation] allValues];
-  NSArray *values = [[self.stateMap dictionaryRepresentation] allKeys];
-  _reverseStateMap = [NSDictionary dictionaryWithObjects:values forKeys:keys];
-  return _reverseStateMap;
-}
-
-- (NSMapTable *)stateMap {
-  if (_stateMap) return _stateMap;
-  _stateMap = [[NSMapTable alloc] init];
-  [_stateMap setObject:@"identifying" forKey:@(LUCarrierAccountStateIdentifying)];
-  [_stateMap setObject:@"identified" forKey:@(LUCarrierAccountStateIdentified)];
-  [_stateMap setObject:@"checking_eligibility" forKey:@(LUCarrierAccountStateCheckingEligibility)];
-  [_stateMap setObject:@"active" forKey:@(LUCarrierAccountStateActive)];
-  [_stateMap setObject:@"inactive" forKey:@(LUCarrierAccountStateInactive)];
-  return _stateMap;
+- (id)init {
+  return [super initWithMapping:@{
+    @(LUCarrierAccountStateActive): @"active",
+    @(LUCarrierAccountStateCheckingEligibility): @"checking_eligibility",
+    @(LUCarrierAccountStateIdentified): @"identified",
+    @(LUCarrierAccountStateIdentifying): @"identifying",
+    @(LUCarrierAccountStateInactive): @"inactive",
+  }];
 }
 
 @end
