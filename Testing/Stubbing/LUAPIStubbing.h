@@ -18,6 +18,8 @@
 
 @interface LUAPIStubbing : NSObject
 
+@property (nonatomic, copy, readonly) NSArray *stubs;
+
 + (instancetype)sharedInstance;
 
 - (void)addStub:(LUAPIStub *)stub;

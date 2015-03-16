@@ -115,4 +115,19 @@
   return [NSString stringWithFormat:@"LUAPIStub [URL=%@, HTTPMethod=%@]", self.URL, self.HTTPMethod];
 }
 
+- (BOOL)isEqual:(id)otherObject {
+  if (otherObject && [otherObject isKindOfClass:[LUAPIStub class]]) {
+    LUAPIStub *otherApiStub = (LUAPIStub *)otherObject;
+
+    BOOL urlRequestEqual = [self.URL isEqual:otherApiStub.URL];
+    BOOL authenticatedEqual = self.authenticated == otherApiStub.authenticated;
+    BOOL httpMethodEqual = [self.HTTPMethod isEqualToString:otherApiStub.HTTPMethod];
+    BOOL requestBodyJSONEqual = (!self.requestBodyJSON && !otherApiStub.requestBodyJSON) ||
+                                 [self.requestBodyJSON isEqual:otherApiStub.requestBodyJSON];
+    return urlRequestEqual && authenticatedEqual && httpMethodEqual && requestBodyJSONEqual;
+  }
+
+  return NO;
+}
+
 @end

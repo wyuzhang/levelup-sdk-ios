@@ -21,8 +21,8 @@
 
 @interface LUAPIStubbing ()
 
+@property (nonatomic, strong) NSMutableArray *mutableStubs;
 @property (nonatomic, assign) BOOL raiseOnUnexpectedRequest;
-@property (nonatomic, strong) NSMutableArray *stubs;
 
 @end
 
@@ -45,26 +45,26 @@
   self = [super init];
   if (!self) return nil;
 
-  _stubs = [NSMutableArray array];
+  _mutableStubs = [NSMutableArray array];
 
   return self;
 }
 
 - (void)clearStubs {
-  [self.stubs removeAllObjects];
+  [self.mutableStubs removeAllObjects];
 
   [OHHTTPStubs removeAllRequestHandlers];
   [OHHTTPStubs setEnabled:NO];
 }
 
 - (void)addStub:(LUAPIStub *)stub {
-  [self.stubs addObject:stub];
+  [self addOrReplaceStub:stub];
 
   [OHHTTPStubs setEnabled:YES];
   [OHHTTPStubs removeAllRequestHandlers];
 
   [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-    for (LUAPIStub *stub in [self.stubs reverseObjectEnumerator]) {
+    for (LUAPIStub *stub in [self.mutableStubs reverseObjectEnumerator]) {
       if ([stub matchesRequest:request]) {
         if (onlyCheck) {
           return OHHTTPStubsResponseUseStub;
@@ -95,6 +95,22 @@
 
 - (void)raiseOnUnexpectedRequest:(BOOL)raiseOnUnexpectedRequest {
   self.raiseOnUnexpectedRequest = raiseOnUnexpectedRequest;
+}
+
+- (NSArray *)stubs {
+  return [[NSArray alloc] initWithArray:self.mutableStubs copyItems:YES];
+}
+
+#pragma mark - Private Methods
+
+- (void)addOrReplaceStub:(LUAPIStub *)stub {
+  for (int i = 0; i < self.mutableStubs.count; i++) {
+    if ([self.mutableStubs[i] isEqual:stub]) {
+      self.mutableStubs[i] = stub;
+      return;
+    }
+  }
+  [self.mutableStubs addObject:stub];
 }
 
 @end

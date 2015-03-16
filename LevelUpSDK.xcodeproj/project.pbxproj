@@ -314,6 +314,8 @@
 		6AC1ECA41A519B94006756C5 /* LUCarrierAccountJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1ECA21A519B94006756C5 /* LUCarrierAccountJSONFactory.m */; };
 		6AD8C61B1A4934FE000F6F27 /* LUCarrierAccountRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD8C6191A4934FE000F6F27 /* LUCarrierAccountRequestFactory.h */; };
 		6AD8C61C1A4934FE000F6F27 /* LUCarrierAccountRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD8C61A1A4934FE000F6F27 /* LUCarrierAccountRequestFactory.m */; };
+		6AE052631AB75C4E00A18ABF /* LUAPIStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE052611AB75C4E00A18ABF /* LUAPIStubbingSpec.m */; };
+		6AE052641AB75C4E00A18ABF /* LUAPIStubSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE052621AB75C4E00A18ABF /* LUAPIStubSpec.m */; };
 		6F444D2F83D549768CF26F9C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A39890392E641DAA8438DC9 /* libPods.a */; };
 		C17DB74F1A40D1C6004AA124 /* merchant_locations.json in Resources */ = {isa = PBXBuildFile; fileRef = C17DB74D1A40D1BB004AA124 /* merchant_locations.json */; };
 		C1CAF10C173052A7003B3D01 /* LUAPIClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0AD173052A7003B3D01 /* LUAPIClientSpec.m */; };
@@ -809,6 +811,8 @@
 		6AC1ECA21A519B94006756C5 /* LUCarrierAccountJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCarrierAccountJSONFactory.m; sourceTree = "<group>"; };
 		6AD8C6191A4934FE000F6F27 /* LUCarrierAccountRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCarrierAccountRequestFactory.h; sourceTree = "<group>"; };
 		6AD8C61A1A4934FE000F6F27 /* LUCarrierAccountRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCarrierAccountRequestFactory.m; sourceTree = "<group>"; };
+		6AE052611AB75C4E00A18ABF /* LUAPIStubbingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIStubbingSpec.m; sourceTree = "<group>"; };
+		6AE052621AB75C4E00A18ABF /* LUAPIStubSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIStubSpec.m; sourceTree = "<group>"; };
 		C17DB74D1A40D1BB004AA124 /* merchant_locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = merchant_locations.json; sourceTree = "<group>"; };
 		C1CAF0AD173052A7003B3D01 /* LUAPIClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIClientSpec.m; sourceTree = "<group>"; };
 		C1CAF0AE173052A7003B3D01 /* LUAPIErrorBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIErrorBuilderSpec.m; sourceTree = "<group>"; };
@@ -1475,6 +1479,15 @@
 			path = "Carrier-Billing";
 			sourceTree = "<group>";
 		};
+		6AE052601AB75C4E00A18ABF /* Stubbing */ = {
+			isa = PBXGroup;
+			children = (
+				6AE052611AB75C4E00A18ABF /* LUAPIStubbingSpec.m */,
+				6AE052621AB75C4E00A18ABF /* LUAPIStubSpec.m */,
+			);
+			path = Stubbing;
+			sourceTree = "<group>";
+		};
 		C1CAF07C173052A6003B3D01 /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1498,6 +1511,7 @@
 				0261005E19F7F814006BF5F7 /* Passbook */,
 				2523E33A17374DCC00FBDFEB /* Persistence */,
 				C1CAF0F5173052A7003B3D01 /* QRCode Management */,
+				6AE052601AB75C4E00A18ABF /* Stubbing */,
 				F88A3DB117E8E590008D5254 /* Transformers */,
 			);
 			path = Tests;
@@ -2617,6 +2631,7 @@
 				02D47C7118F47433007CF0BC /* LUOneTimePad+Fixtures.m in Sources */,
 				C1CAF133173052A7003B3D01 /* LUOrderSpec.m in Sources */,
 				C1CAF136173052A7003B3D01 /* LUUserSpec.m in Sources */,
+				6AE052631AB75C4E00A18ABF /* LUAPIStubbingSpec.m in Sources */,
 				C1CAF137173052A7003B3D01 /* LUAPIRequestSpec.m in Sources */,
 				C1CAF139173052A7003B3D01 /* LUDeviceIdentifierSpec.m in Sources */,
 				C1CAF13A173052A7003B3D01 /* LUUserParameterBuilderSpec.m in Sources */,
@@ -2643,6 +2658,7 @@
 				C1CAF148173052A7003B3D01 /* NSArrayLUAdditionsSpec.m in Sources */,
 				C1CAF14A173052A7003B3D01 /* NSDateStringFormatsSpec.m in Sources */,
 				6A54B4E71A685F2B0094F745 /* LUCarrierAccountSpec.m in Sources */,
+				6AE052641AB75C4E00A18ABF /* LUAPIStubSpec.m in Sources */,
 				02643922185BB76200175425 /* LULocationCreditRequestFactorySpec.m in Sources */,
 				C1CAF14B173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m in Sources */,
 				C1CAF14C173052A7003B3D01 /* NSNumberBase36Spec.m in Sources */,
