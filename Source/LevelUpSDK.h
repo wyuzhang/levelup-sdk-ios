@@ -72,6 +72,8 @@
 
 #import "LUConstants.h"
 
+#import "LUOAuth2ViewController.h"
+
 #import "LUDeepLinkAuth.h"
 
 #import "LUPassRetriever.h"

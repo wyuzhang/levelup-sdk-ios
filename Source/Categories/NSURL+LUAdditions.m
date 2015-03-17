@@ -27,6 +27,10 @@ NSString * const LUPatternLeadingSlashOptionalVersion = @"^/(v\\d+/)?";
 
 #pragma mark - Public Methods
 
+- (NSDictionary *)lu_fragmentDictionary {
+  return [self queryDictionaryFromString:self.fragment];
+}
+
 + (NSURL *)lu_imageURLForCampaignWithID:(NSNumber *)campaignID {
   if (!campaignID) return nil;
 
@@ -72,8 +76,33 @@ NSString * const LUPatternLeadingSlashOptionalVersion = @"^/(v\\d+/)?";
 }
 
 - (NSDictionary *)lu_queryDictionary {
+  return [self queryDictionaryFromString:self.query];
+}
+
+#pragma mark - Private Methods
+
++ (NSString *)imageQueryString {
+  int scale = [UIScreen mainScreen].scale > 1.0f ? 2 : 1;
+  return [NSString stringWithFormat:@"density=%d&height=%d&width=%d", scale, 212, 320];
+}
+
++ (NSURL *)imageURLForPath:(NSString *)path version:(NSString *)version {
+  NSString *fullPath = [NSString stringWithFormat:@"%@/%@?%@", version, path, [self imageQueryString]];
+
+  return [NSURL URLWithString:fullPath relativeToURL:[LUAPIClient sharedClient].baseURL];
+}
+
+- (NSString *)pathWithQuery {
+  if ([self query].length > 0) {
+    return [NSString stringWithFormat:@"%@?%@", [self path], [self query]];
+  } else {
+    return [self path];
+  }
+}
+
+- (NSDictionary *)queryDictionaryFromString:(NSString *)string {
   NSMutableDictionary *result = [NSMutableDictionary dictionary];
-  NSArray *parts = [[self query] componentsSeparatedByString:@"&"];
+  NSArray *parts = [string componentsSeparatedByString:@"&"];
 
   for (NSString *part in parts) {
     if ([part length] == 0) {
@@ -113,27 +142,6 @@ NSString * const LUPatternLeadingSlashOptionalVersion = @"^/(v\\d+/)?";
   }
 
   return result;
-}
-
-#pragma mark - Private Methods
-
-+ (NSString *)imageQueryString {
-  int scale = [UIScreen mainScreen].scale > 1.0f ? 2 : 1;
-  return [NSString stringWithFormat:@"density=%d&height=%d&width=%d", scale, 212, 320];
-}
-
-+ (NSURL *)imageURLForPath:(NSString *)path version:(NSString *)version {
-  NSString *fullPath = [NSString stringWithFormat:@"%@/%@?%@", version, path, [self imageQueryString]];
-
-  return [NSURL URLWithString:fullPath relativeToURL:[LUAPIClient sharedClient].baseURL];
-}
-
-- (NSString *)pathWithQuery {
-  if ([self query].length > 0) {
-    return [NSString stringWithFormat:@"%@?%@", [self path], [self query]];
-  } else {
-    return [self path];
-  }
 }
 
 @end

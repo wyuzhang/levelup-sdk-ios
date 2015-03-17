@@ -106,6 +106,8 @@
 		0264391E185BB71600175425 /* credit.json in Resources */ = {isa = PBXBuildFile; fileRef = 0264391D185BB71600175425 /* credit.json */; };
 		02643920185BB73900175425 /* LULocationCreditJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0264391F185BB73900175425 /* LULocationCreditJSONFactorySpec.m */; };
 		02643922185BB76200175425 /* LULocationCreditRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02643921185BB76200175425 /* LULocationCreditRequestFactorySpec.m */; };
+		026FB5231AB2323E00163671 /* LUOAuth2ViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 026FB5211AB2323E00163671 /* LUOAuth2ViewController.h */; };
+		026FB5241AB2323E00163671 /* LUOAuth2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 026FB5221AB2323E00163671 /* LUOAuth2ViewController.m */; };
 		0274B83C17739B7800FD5B43 /* LUAPIError.h in Headers */ = {isa = PBXBuildFile; fileRef = 0274B83A17739B7800FD5B43 /* LUAPIError.h */; };
 		0274B83D17739B7800FD5B43 /* LUAPIError.m in Sources */ = {isa = PBXBuildFile; fileRef = 0274B83B17739B7800FD5B43 /* LUAPIError.m */; };
 		0274B84017739BAA00FD5B43 /* LUAPIErrorJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0274B83E17739BAA00FD5B43 /* LUAPIErrorJSONFactory.h */; };
@@ -163,6 +165,10 @@
 		02BDB2381AB770E9005830A7 /* LUCampaignMetadataJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB2371AB770E9005830A7 /* LUCampaignMetadataJSONFactorySpec.m */; };
 		02BDB23A1AB770FD005830A7 /* LUCampaignMetadataSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB2391AB770FD005830A7 /* LUCampaignMetadataSpec.m */; };
 		02BDB23C1AB7710F005830A7 /* LUCampaignRepresentationTypeTransformerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB23B1AB7710F005830A7 /* LUCampaignRepresentationTypeTransformerSpec.m */; };
+		02BDB23F1AB86D0F005830A7 /* LUOAuth2ViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB23E1AB86D0F005830A7 /* LUOAuth2ViewControllerSpec.m */; };
+		02BDB2AC1AB8A658005830A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB2A81AB8A658005830A7 /* AppDelegate.m */; };
+		02BDB2AD1AB8A658005830A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02BDB2A91AB8A658005830A7 /* Images.xcassets */; };
+		02BDB2AF1AB8A658005830A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB2AB1AB8A658005830A7 /* main.m */; };
 		02CB685B18A94D5D00FDF630 /* LUPaymentStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CB685918A94D5D00FDF630 /* LUPaymentStringGenerator.h */; };
 		02CB685C18A94D5D00FDF630 /* LUPaymentStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CB685A18A94D5D00FDF630 /* LUPaymentStringGenerator.m */; };
 		02CB685F18A9519C00FDF630 /* LUPaymentStringGeneratorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CB685D18A9518B00FDF630 /* LUPaymentStringGeneratorSpec.m */; };
@@ -466,6 +472,13 @@
 			remoteGlobalIDString = 25F643A3166832D600A05C0E;
 			remoteInfo = LevelUpSDK;
 		};
+		02BDB2B01AB8A668005830A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25F6439B166832D600A05C0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02BDB27D1AB8A645005830A7;
+			remoteInfo = "Testing App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -571,6 +584,8 @@
 		0264391D185BB71600175425 /* credit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credit.json; sourceTree = "<group>"; };
 		0264391F185BB73900175425 /* LULocationCreditJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationCreditJSONFactorySpec.m; sourceTree = "<group>"; };
 		02643921185BB76200175425 /* LULocationCreditRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationCreditRequestFactorySpec.m; sourceTree = "<group>"; };
+		026FB5211AB2323E00163671 /* LUOAuth2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOAuth2ViewController.h; sourceTree = "<group>"; };
+		026FB5221AB2323E00163671 /* LUOAuth2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOAuth2ViewController.m; sourceTree = "<group>"; };
 		0274B83A17739B7800FD5B43 /* LUAPIError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIError.h; sourceTree = "<group>"; };
 		0274B83B17739B7800FD5B43 /* LUAPIError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIError.m; sourceTree = "<group>"; };
 		0274B83E17739BAA00FD5B43 /* LUAPIErrorJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAPIErrorJSONFactory.h; sourceTree = "<group>"; };
@@ -631,6 +646,13 @@
 		02BDB2371AB770E9005830A7 /* LUCampaignMetadataJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCampaignMetadataJSONFactorySpec.m; sourceTree = "<group>"; };
 		02BDB2391AB770FD005830A7 /* LUCampaignMetadataSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCampaignMetadataSpec.m; sourceTree = "<group>"; };
 		02BDB23B1AB7710F005830A7 /* LUCampaignRepresentationTypeTransformerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCampaignRepresentationTypeTransformerSpec.m; sourceTree = "<group>"; };
+		02BDB23E1AB86D0F005830A7 /* LUOAuth2ViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOAuth2ViewControllerSpec.m; sourceTree = "<group>"; };
+		02BDB27E1AB8A645005830A7 /* Testing App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Testing App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		02BDB2A71AB8A658005830A7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		02BDB2A81AB8A658005830A7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		02BDB2A91AB8A658005830A7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		02BDB2AA1AB8A658005830A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02BDB2AB1AB8A658005830A7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		02CB685918A94D5D00FDF630 /* LUPaymentStringGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUPaymentStringGenerator.h; sourceTree = "<group>"; };
 		02CB685A18A94D5D00FDF630 /* LUPaymentStringGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentStringGenerator.m; sourceTree = "<group>"; };
 		02CB685D18A9518B00FDF630 /* LUPaymentStringGeneratorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentStringGeneratorSpec.m; sourceTree = "<group>"; };
@@ -943,6 +965,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		02BDB27B1AB8A645005830A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2536CDCB190B2C7300426651 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1072,6 +1101,15 @@
 			path = Passbook;
 			sourceTree = "<group>";
 		};
+		026FB5201AB2323E00163671 /* OAuth2 */ = {
+			isa = PBXGroup;
+			children = (
+				026FB5211AB2323E00163671 /* LUOAuth2ViewController.h */,
+				026FB5221AB2323E00163671 /* LUOAuth2ViewController.m */,
+			);
+			path = OAuth2;
+			sourceTree = "<group>";
+		};
 		027C5C4419D33C12006C8E23 /* Passbook */ = {
 			isa = PBXGroup;
 			children = (
@@ -1178,6 +1216,27 @@
 			);
 			name = "Campaign Representations";
 			path = "Campaign-Representations";
+			sourceTree = "<group>";
+		};
+		02BDB23D1AB86CE8005830A7 /* OAuth2 */ = {
+			isa = PBXGroup;
+			children = (
+				02BDB23E1AB86D0F005830A7 /* LUOAuth2ViewControllerSpec.m */,
+			);
+			path = OAuth2;
+			sourceTree = "<group>";
+		};
+		02BDB2A61AB8A658005830A7 /* Testing App */ = {
+			isa = PBXGroup;
+			children = (
+				02BDB2A71AB8A658005830A7 /* AppDelegate.h */,
+				02BDB2A81AB8A658005830A7 /* AppDelegate.m */,
+				02BDB2A91AB8A658005830A7 /* Images.xcassets */,
+				02BDB2AA1AB8A658005830A7 /* Info.plist */,
+				02BDB2AB1AB8A658005830A7 /* main.m */,
+			);
+			name = "Testing App";
+			path = "Testing-App";
 			sourceTree = "<group>";
 		};
 		02CD574A17D90673006205C6 /* Interstitials */ = {
@@ -1346,6 +1405,7 @@
 				25F643A4166832D600A05C0E /* libLevelUpSDK.a */,
 				25F643B5166832D600A05C0E /* Tests.xctest */,
 				2536CDCE190B2C7300426651 /* LevelUpSDK.bundle */,
+				02BDB27E1AB8A645005830A7 /* Testing App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1419,6 +1479,7 @@
 			isa = PBXGroup;
 			children = (
 				C1CAF2881731560E003B3D01 /* Resources */,
+				02BDB2A61AB8A658005830A7 /* Testing App */,
 				C1CAF0AA173052A7003B3D01 /* Tests */,
 			);
 			name = "Unit Tests";
@@ -2028,6 +2089,7 @@
 				020231711779E0B100B057D1 /* LUAPIConnection.h in Headers */,
 				02BC594D1AB9F3850053D6A7 /* LUIBeaconListener.h in Headers */,
 				02BDB2131AB77022005830A7 /* LUCampaignMetadataJSONFactory.h in Headers */,
+				026FB5231AB2323E00163671 /* LUOAuth2ViewController.h in Headers */,
 				25CA82DE176A173C0073383C /* LUPaymentToken.h in Headers */,
 				25CA82E2176A188A0073383C /* LUPaymentTokenJSONFactory.h in Headers */,
 				25CA82E6176A18EE0073383C /* LUPaymentTokenRequestFactory.h in Headers */,
@@ -2060,6 +2122,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		02BDB27D1AB8A645005830A7 /* Testing App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02BDB2A41AB8A645005830A7 /* Build configuration list for PBXNativeTarget "Testing App" */;
+			buildPhases = (
+				02BDB27A1AB8A645005830A7 /* Sources */,
+				02BDB27B1AB8A645005830A7 /* Frameworks */,
+				02BDB27C1AB8A645005830A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Testing App";
+			productName = "Testing App";
+			productReference = 02BDB27E1AB8A645005830A7 /* Testing App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		2536CDCD190B2C7300426651 /* LevelUpSDKBundle */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2536CDDC190B2C7300426651 /* Build configuration list for PBXNativeTarget "LevelUpSDKBundle" */;
@@ -2112,6 +2191,7 @@
 			);
 			dependencies = (
 				02941E6316B734C300EDAF6E /* PBXTargetDependency */,
+				02BDB2B11AB8A668005830A7 /* PBXTargetDependency */,
 			);
 			name = Tests;
 			productName = LevelUpSDKTests;
@@ -2126,6 +2206,14 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = SCVNGR;
+				TargetAttributes = {
+					02BDB27D1AB8A645005830A7 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					25F643B4166832D600A05C0E = {
+						TestTargetID = 02BDB27D1AB8A645005830A7;
+					};
+				};
 			};
 			buildConfigurationList = 25F6439E166832D600A05C0E /* Build configuration list for PBXProject "LevelUpSDK" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2133,6 +2221,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 25F64399166832D600A05C0E;
 			productRefGroup = 25F643A5166832D600A05C0E /* Products */;
@@ -2143,11 +2232,20 @@
 				25F643B4166832D600A05C0E /* Tests */,
 				2536CDCD190B2C7300426651 /* LevelUpSDKBundle */,
 				0294D06D190AAFF400BBACCB /* Framework */,
+				02BDB27D1AB8A645005830A7 /* Testing App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		02BDB27C1AB8A645005830A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02BDB2AD1AB8A658005830A7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2536CDC5190B27CE00426651 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2312,6 +2410,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		02BDB27A1AB8A645005830A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02BDB2AF1AB8A658005830A7 /* main.m in Sources */,
+				02BDB2AC1AB8A658005830A7 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2536CDCA190B2C7300426651 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2420,6 +2527,7 @@
 				024AF4B01A9F703D007131DD /* BTSecKeyWrapper.m in Sources */,
 				F87364A3173AA4B00024A3F5 /* LULoyaltyRequestFactory.m in Sources */,
 				F87364A7173AE3E10024A3F5 /* LULoyaltyJSONFactory.m in Sources */,
+				026FB5241AB2323E00163671 /* LUOAuth2ViewController.m in Sources */,
 				027C5C4319D33BB3006C8E23 /* LUPassRequestFactory.m in Sources */,
 				021B7476193FAB8900BBC315 /* LURegistration.m in Sources */,
 				02BA982B174BE19500C9D647 /* LUCoreDataStore.m in Sources */,
@@ -2472,6 +2580,7 @@
 				C1CAF11C173052A7003B3D01 /* LUMonetaryValueJSONFactorySpec.m in Sources */,
 				C1CAF11D173052A7003B3D01 /* LUAccessTokenJSONFactorySpec.m in Sources */,
 				02BDB2351AB770DE005830A7 /* LUBaseCampaignRepresentationJSONFactorySpec.m in Sources */,
+				02BDB23F1AB86D0F005830A7 /* LUOAuth2ViewControllerSpec.m in Sources */,
 				02CB685F18A9519C00FDF630 /* LUPaymentStringGeneratorSpec.m in Sources */,
 				0205E1E219520193001904D9 /* LUUserWithAccessTokenSpec.m in Sources */,
 				C1CAF11E173052A7003B3D01 /* LUOrderJSONFactorySpec.m in Sources */,
@@ -2595,6 +2704,11 @@
 			target = 25F643A3166832D600A05C0E /* LevelUpSDK */;
 			targetProxy = 02941E6216B734C300EDAF6E /* PBXContainerItemProxy */;
 		};
+		02BDB2B11AB8A668005830A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02BDB27D1AB8A645005830A7 /* Testing App */;
+			targetProxy = 02BDB2B01AB8A668005830A7 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -2681,9 +2795,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Unit-Tests/Resources/Unit-Tests-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
 				INFOPLIST_FILE = "Unit-Tests/Resources/Unit-Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Testing App.app/Testing App";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Distribution;
@@ -2709,6 +2825,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Unit-Tests/Testing-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2734,6 +2851,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Unit-Tests/Testing-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2759,6 +2877,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "Unit-Tests/Testing-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2962,9 +3081,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Unit-Tests/Resources/Unit-Tests-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
 				INFOPLIST_FILE = "Unit-Tests/Resources/Unit-Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Testing App.app/Testing App";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -2976,9 +3097,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Unit-Tests/Resources/Unit-Tests-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
 				INFOPLIST_FILE = "Unit-Tests/Resources/Unit-Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Testing App.app/Testing App";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -2992,6 +3115,16 @@
 				0294D06E190AAFF400BBACCB /* Debug */,
 				0294D06F190AAFF400BBACCB /* Release */,
 				0294D070190AAFF400BBACCB /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02BDB2A41AB8A645005830A7 /* Build configuration list for PBXNativeTarget "Testing App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02BDB29E1AB8A645005830A7 /* Debug */,
+				02BDB29F1AB8A645005830A7 /* Release */,
+				02BDB2A01AB8A645005830A7 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
