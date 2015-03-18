@@ -24,7 +24,6 @@
 
 + (LUAPIRequest *)requestToCheckInIBeaconWithMajor:(NSString *)major minor:(NSString *)minor {
   if ([LUAPIClient sharedClient].accessToken.length == 0 && ![LUDeviceIdentifier doesAppIncludeAdSupport]) {
-    NSAssert(NO, @"Apps making unauthenticated requests must include AdSupport.");
     return nil;
   }
 

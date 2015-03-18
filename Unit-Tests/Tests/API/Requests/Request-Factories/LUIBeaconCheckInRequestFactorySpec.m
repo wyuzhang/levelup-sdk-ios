@@ -82,10 +82,8 @@ describe(@"LUIBeaconCheckInRequestFactory", ^{
           [LUDeviceIdentifier stub:@selector(doesAppIncludeAdSupport) andReturn:theValue(NO)];
         });
 
-        it(@"throws an exception", ^{
-          [[theBlock(^{
-            [LUIBeaconCheckInRequestFactory requestToCheckInIBeaconWithMajor:major minor:minor];
-          }) should] raise];
+        it(@"returns nil", ^{
+          [[[LUIBeaconCheckInRequestFactory requestToCheckInIBeaconWithMajor:major minor:minor] should] beNil];
         });
       });
 
@@ -94,10 +92,8 @@ describe(@"LUIBeaconCheckInRequestFactory", ^{
           [LUDeviceIdentifier stub:@selector(doesAppIncludeAdSupport) andReturn:theValue(YES)];
         });
 
-        it(@"doesn't throw an exception", ^{
-          [[theBlock(^{
-            [LUIBeaconCheckInRequestFactory requestToCheckInIBeaconWithMajor:major minor:minor];
-          }) shouldNot] raise];
+        it(@"doesn't return nil", ^{
+          [[[LUIBeaconCheckInRequestFactory requestToCheckInIBeaconWithMajor:major minor:minor] should] beNonNil];
         });
       });
     });

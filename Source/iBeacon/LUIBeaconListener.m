@@ -1,0 +1,135 @@
+/*
+ * Copyright (C) 2015 SCVNGR, Inc. d/b/a LevelUp
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#import "LUAPIClient.h"
+#import "LUIBeaconCheckInRequestFactory.h"
+#import "LUIBeaconListener.h"
+
+NSString * const LUIBeaconIdentifier = @"71E77F";
+NSTimeInterval const LUIBeaconNotificationMinimumInterval = 60;
+NSString * const LUIBeaconUUID = @"56DB0365-A001-4062-9E4D-499D3B8ECCF3";
+
+@interface LUIBeaconListener ()
+
+@property (nonatomic, strong) CBCentralManager *bluetoothManager;
+@property (nonatomic, assign) BOOL isMonitoringForBeacons;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) NSDate *lastNotificationShownTime;
+
+@end
+
+@implementation LUIBeaconListener
+
+#pragma mark - Lifecycle Methods
+
+- (id)init {
+  self = [super init];
+  if (!self) return nil;
+
+  _lastNotificationShownTime = [NSDate distantPast];
+  _locationManager = [[CLLocationManager alloc] init];
+  _locationManager.delegate = self;
+
+  return self;
+}
+
+- (void)dealloc {
+  _bluetoothManager.delegate = nil;
+  _locationManager.delegate = nil;
+}
+
+#pragma mark - Public Methods
+
+- (void)startMonitoring {
+  self.bluetoothManager = [[CBCentralManager alloc] initWithDelegate:self
+                                                               queue:nil
+                                                             options:@{CBCentralManagerOptionShowPowerAlertKey: @NO}];
+}
+
+- (void)stopMonitoring {
+  self.bluetoothManager.delegate = nil;
+  self.bluetoothManager = nil;
+
+  [self.locationManager stopMonitoringForRegion:[self iBeaconRegion]];
+  [self.locationManager stopRangingBeaconsInRegion:[self iBeaconRegion]];
+}
+
+#pragma mark - CBCentralManagerDelegate Methods
+
+- (void)centralManagerDidUpdateState:(CBCentralManager *)central {
+  if (central.state != CBCentralManagerStatePoweredOn) return;
+
+  CLBeaconRegion *iBeaconRegion = [self iBeaconRegion];
+  if (!iBeaconRegion) return;
+
+  iBeaconRegion.notifyOnEntry = YES;
+  iBeaconRegion.notifyOnExit = YES;
+  iBeaconRegion.notifyEntryStateOnDisplay = YES;
+
+  [self.locationManager startMonitoringForRegion:iBeaconRegion];
+}
+
+#pragma mark - CLLocationManagerDelegate Methods
+
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
+  if ([region isKindOfClass:[CLBeaconRegion class]]) {
+    CLBeaconRegion *iBeaconRegion = (CLBeaconRegion *)region;
+    [self.locationManager startRangingBeaconsInRegion:iBeaconRegion];
+  }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
+  if ([region isKindOfClass:[CLBeaconRegion class]]) {
+    CLBeaconRegion *iBeaconRegion = (CLBeaconRegion *)region;
+    [self.locationManager stopRangingBeaconsInRegion:iBeaconRegion];
+  }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
+  for (CLBeacon *iBeacon in beacons) {
+    [self didFindIBeacon:iBeacon];
+  }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
+  self.isMonitoringForBeacons = YES;
+  [self.locationManager startRangingBeaconsInRegion:[self iBeaconRegion]];
+}
+
+#pragma mark - Private Methods
+
+- (void)didFindIBeacon:(CLBeacon *)iBeacon {
+  if (![self shouldRespondToRangedIBeacon]) return;
+
+  self.lastNotificationShownTime = [NSDate date];
+
+  LUAPIRequest *request = [LUIBeaconCheckInRequestFactory requestToCheckInIBeaconWithMajor:[iBeacon.major stringValue]
+                                                                                     minor:[iBeacon.minor stringValue]];
+  if (request) {
+    [[LUAPIClient sharedClient] performRequest:request success:nil failure:nil];
+  }
+}
+
+- (CLBeaconRegion *)iBeaconRegion {
+  NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:LUIBeaconUUID];
+  return [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:LUIBeaconIdentifier];
+}
+
+- (BOOL)shouldRespondToRangedIBeacon {
+  return [[NSDate date] timeIntervalSinceDate:self.lastNotificationShownTime] > LUIBeaconNotificationMinimumInterval;
+}
+
+@end

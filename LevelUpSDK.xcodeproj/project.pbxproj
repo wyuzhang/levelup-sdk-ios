@@ -133,6 +133,9 @@
 		02BA982A174BE19500C9D647 /* LUCoreDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 02BA9828174BE19500C9D647 /* LUCoreDataStore.h */; };
 		02BA982B174BE19500C9D647 /* LUCoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA9829174BE19500C9D647 /* LUCoreDataStore.m */; };
 		02BA982E174BE37600C9D647 /* LUCoreDataStoreSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA982C174BE36800C9D647 /* LUCoreDataStoreSpec.m */; };
+		02BC594D1AB9F3850053D6A7 /* LUIBeaconListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 02BC594B1AB9F3850053D6A7 /* LUIBeaconListener.h */; };
+		02BC594E1AB9F3850053D6A7 /* LUIBeaconListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BC594C1AB9F3850053D6A7 /* LUIBeaconListener.m */; };
+		02BC59511AB9F4BD0053D6A7 /* LUIBeaconListenerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BC59501AB9F4BD0053D6A7 /* LUIBeaconListenerSpec.m */; };
 		02BDB2061AB76FFB005830A7 /* LUCampaignRepresentationBasicV1.h in Headers */ = {isa = PBXBuildFile; fileRef = 02BDB2041AB76FFB005830A7 /* LUCampaignRepresentationBasicV1.h */; };
 		02BDB2071AB76FFB005830A7 /* LUCampaignRepresentationBasicV1.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB2051AB76FFB005830A7 /* LUCampaignRepresentationBasicV1.m */; };
 		02BDB20D1AB7700E005830A7 /* LUBaseCampaignRepresentationJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 02BDB2091AB7700E005830A7 /* LUBaseCampaignRepresentationJSONFactory.h */; };
@@ -598,6 +601,9 @@
 		02BA9828174BE19500C9D647 /* LUCoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCoreDataStore.h; sourceTree = "<group>"; };
 		02BA9829174BE19500C9D647 /* LUCoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCoreDataStore.m; sourceTree = "<group>"; };
 		02BA982C174BE36800C9D647 /* LUCoreDataStoreSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCoreDataStoreSpec.m; sourceTree = "<group>"; };
+		02BC594B1AB9F3850053D6A7 /* LUIBeaconListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUIBeaconListener.h; sourceTree = "<group>"; };
+		02BC594C1AB9F3850053D6A7 /* LUIBeaconListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUIBeaconListener.m; sourceTree = "<group>"; };
+		02BC59501AB9F4BD0053D6A7 /* LUIBeaconListenerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUIBeaconListenerSpec.m; sourceTree = "<group>"; };
 		02BDB2041AB76FFB005830A7 /* LUCampaignRepresentationBasicV1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUCampaignRepresentationBasicV1.h; sourceTree = "<group>"; };
 		02BDB2051AB76FFB005830A7 /* LUCampaignRepresentationBasicV1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCampaignRepresentationBasicV1.m; sourceTree = "<group>"; };
 		02BDB2091AB7700E005830A7 /* LUBaseCampaignRepresentationJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUBaseCampaignRepresentationJSONFactory.h; sourceTree = "<group>"; };
@@ -1116,6 +1122,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		02BC594A1AB9F3680053D6A7 /* iBeacon */ = {
+			isa = PBXGroup;
+			children = (
+				02BC594B1AB9F3850053D6A7 /* LUIBeaconListener.h */,
+				02BC594C1AB9F3850053D6A7 /* LUIBeaconListener.m */,
+			);
+			path = iBeacon;
+			sourceTree = "<group>";
+		};
+		02BC594F1AB9F4AC0053D6A7 /* iBeacon */ = {
+			isa = PBXGroup;
+			children = (
+				02BC59501AB9F4BD0053D6A7 /* LUIBeaconListenerSpec.m */,
+			);
+			path = iBeacon;
+			sourceTree = "<group>";
+		};
 		02BDB2031AB76FFB005830A7 /* Campaign Representations */ = {
 			isa = PBXGroup;
 			children = (
@@ -1409,6 +1432,8 @@
 				0228EA6E1A97905F00FEEF90 /* Carrier Billing */,
 				C1CAF0EE173052A7003B3D01 /* Categories */,
 				25FF1CD518FAE54D007EDCEA /* Deep Link Auth */,
+				02BC594F1AB9F4AC0053D6A7 /* iBeacon */,
+				02BDB23D1AB86CE8005830A7 /* OAuth2 */,
 				0261005E19F7F814006BF5F7 /* Passbook */,
 				2523E33A17374DCC00FBDFEB /* Persistence */,
 				C1CAF0F5173052A7003B3D01 /* QRCode Management */,
@@ -1581,6 +1606,8 @@
 				C1CAF1D617315415003B3D01 /* Categories */,
 				C1CAF1E317315415003B3D01 /* Constants */,
 				25FF1CC418FAE48D007EDCEA /* Deep Link Auth */,
+				02BC594A1AB9F3680053D6A7 /* iBeacon */,
+				026FB5201AB2323E00163671 /* OAuth2 */,
 				027C5C4419D33C12006C8E23 /* Passbook */,
 				2523E32417374D8B00FBDFEB /* Persistence */,
 				C1CAF1EA17315415003B3D01 /* QRCode Management */,
@@ -1999,6 +2026,7 @@
 				02BA982A174BE19500C9D647 /* LUCoreDataStore.h in Headers */,
 				F8D4DB9D17569CA90000DB66 /* NSDictionary+SafetyAdditions.h in Headers */,
 				020231711779E0B100B057D1 /* LUAPIConnection.h in Headers */,
+				02BC594D1AB9F3850053D6A7 /* LUIBeaconListener.h in Headers */,
 				02BDB2131AB77022005830A7 /* LUCampaignMetadataJSONFactory.h in Headers */,
 				25CA82DE176A173C0073383C /* LUPaymentToken.h in Headers */,
 				25CA82E2176A188A0073383C /* LUPaymentTokenJSONFactory.h in Headers */,
@@ -2406,6 +2434,7 @@
 				0274B84117739BAA00FD5B43 /* LUAPIErrorJSONFactory.m in Sources */,
 				02CC555918F2F88D00BF6776 /* NSError+LUAdditions.m in Sources */,
 				F8EAF0F017BA865900197388 /* LUCacheManager.m in Sources */,
+				02BC594E1AB9F3850053D6A7 /* LUIBeaconListener.m in Sources */,
 				029053BE17BD4AAB00527576 /* LUAPIResponse.m in Sources */,
 				029053C017BD4AAB00527576 /* LUWebLinkParser.m in Sources */,
 				02CD575417D90673006205C6 /* LUInterstitial.m in Sources */,
@@ -2532,6 +2561,7 @@
 				02E2915A175FCAB8002036B4 /* LUAPIStubbing.m in Sources */,
 				029131DB1760DC8600F74663 /* LUAPIStub.m in Sources */,
 				0229381A176280B10057C381 /* LUAPIStubFactory.m in Sources */,
+				02BC59511AB9F4BD0053D6A7 /* LUIBeaconListenerSpec.m in Sources */,
 				020231751779E2CD00B057D1 /* LUAPIConnectionSpec.m in Sources */,
 				25D43F72176A1DC80051ED2F /* LUPaymentTokenSpec.m in Sources */,
 				0251CC381A3B78B80056D82C /* LUIBeaconCheckInRequestFactorySpec.m in Sources */,
@@ -2621,7 +2651,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PUBLIC_HEADERS_FOLDER_PATH = LevelUpSDKHeaders;
 				SDKROOT = iphoneos;
@@ -2655,6 +2685,83 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				WRAPPER_EXTENSION = xctest;
+			};
+			name = Distribution;
+		};
+		02BDB29E1AB8A645005830A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Unit-Tests/Testing-App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		02BDB29F1AB8A645005830A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Unit-Tests/Testing-App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		02BDB2A01AB8A645005830A7 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Unit-Tests/Testing-App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Distribution;
 		};
@@ -2770,7 +2877,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PUBLIC_HEADERS_FOLDER_PATH = LevelUpSDKHeaders;
 				SDKROOT = iphoneos;
@@ -2809,7 +2916,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PUBLIC_HEADERS_FOLDER_PATH = LevelUpSDKHeaders;
 				SDKROOT = iphoneos;

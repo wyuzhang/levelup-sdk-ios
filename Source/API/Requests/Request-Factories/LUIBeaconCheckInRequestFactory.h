@@ -17,7 +17,8 @@
 @class LUAPIRequest;
 
 /**
- `LUCategoryRequestFactory` is used to check-in when in an app gets in range of a LevelUp iBeacon.
+ `LUIBeaconCheckInRequestFactory` is used to check-in when in an app gets in range of a LevelUp
+ iBeacon.
 
  If your app sends push tokens to LevelUp (see also `LUAPNDeviceRequestFactory`), then users
  may receive a push notification shortly after the beacon check-in, alerting them that they can
