@@ -235,6 +235,10 @@
                          responseData:[self responseDataFromFile:@"registration"]];
 }
 
++ (LUAPIStub *)stubToGetApplePayCardPaymentMethod {
+  return [self stubToGetPaymentMethodWithResponseDataFromFile:@"apple_pay_card_payment_method"];
+}
+
 + (LUAPIStub *)stubToGetCampaignForMerchantWithCode:(NSString *)code {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:[NSString stringWithFormat:@"codes/%@/campaign", code]
@@ -288,6 +292,10 @@
       withPlainTextResponseString:@"Status=Success&MDN=1111111111&Carrier=SPR"];
 }
 
++ (LUAPIStub *)stubToGetCarrierAccountPaymentMethod {
+  return [self stubToGetPaymentMethodWithResponseDataFromFile:@"carrier_account_payment_method"];
+}
+
 + (LUAPIStub *)stubToGetCategories {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:@"categories"
@@ -310,6 +318,10 @@
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"credit_and_debit"]];
+}
+
++ (LUAPIStub *)stubToGetCreditCardPaymentMethod {
+  return [self stubToGetPaymentMethodWithResponseDataFromFile:@"credit_card_payment_method"];
 }
 
 + (LUAPIStub *)stubToGetCreditCardsOneResult {
@@ -384,6 +396,10 @@
                                     responseData:[self responseDataFromFile:@"downgraded_token"]];
   stub.requestBodyJSON = @{@"access_token": @{@"permission_keynames": accessTokenPermissions}};
   return stub;
+}
+
++ (LUAPIStub *)stubToGetDebitCardPaymentMethod {
+  return [self stubToGetPaymentMethodWithResponseDataFromFile:@"debit_card_payment_method"];
 }
 
 + (LUAPIStub *)stubToGetFeedbackInterstitialForOrderWithUUID:(NSString *)UUID {
@@ -810,6 +826,14 @@
 
   return [LUAPIStub apiStubForVersion:LUAPIVersion15
                                  path:path
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:file]];
+}
+
++ (LUAPIStub *)stubToGetPaymentMethodWithResponseDataFromFile:(NSString *)file {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"payment_method"
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:file]];

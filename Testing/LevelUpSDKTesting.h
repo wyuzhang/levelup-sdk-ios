@@ -17,12 +17,15 @@
 // Fixtures
 
 #import "LUAccessToken+Fixtures.h"
+#import "LUApplePayCardPaymentMethod+Fixtures.h"
 #import "LUCampaign+Fixtures.h"
 #import "LUCampaignMetadata+Fixtures.h"
 #import "LUCampaignRepresentationBasicV1+Fixtures.h"
 #import "LUCarrierAccount+Fixtures.h"
+#import "LUCarrierAccountPaymentMethod+Fixtures.h"
 #import "LUClaim+Fixtures.h"
 #import "LUCreditCard+Fixtures.h"
+#import "LUCreditCardPaymentMethod+Fixtures.h"
 #import "LUGiftCardOrder+Fixtures.h"
 #import "LUInterstitial+Fixtures.h"
 #import "LULocation+Fixtures.h"

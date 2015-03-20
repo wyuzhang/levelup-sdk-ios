@@ -46,6 +46,7 @@
 + (LUAPIStub *)stubToFailToGetCarrierAccountEVURL;
 + (LUAPIStub *)stubToFailToGetPassWithMerchantID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToFindRegistrationForEmail:(NSString *)email;
++ (LUAPIStub *)stubToGetApplePayCardPaymentMethod;
 + (LUAPIStub *)stubToGetCampaignForMerchantWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignMetadataForLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToGetCampaignMetadataForMerchantWithID:(NSNumber *)merchantID;
@@ -53,9 +54,11 @@
 + (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithID:(NSNumber *)campaignID;
 + (LUAPIStub *)stubToGetCarrierAccountEVURL;
++ (LUAPIStub *)stubToGetCarrierAccountPaymentMethod;
 + (LUAPIStub *)stubToGetCategories;
 + (LUAPIStub *)stubToGetCreditAtLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToGetCreditAndDebitCards;
++ (LUAPIStub *)stubToGetCreditCardPaymentMethod;
 + (LUAPIStub *)stubToGetCreditCardsOneResult;
 + (LUAPIStub *)stubToGetCreditCardsTwoResults;
 + (LUAPIStub *)stubToGetCreditCardsThreeResults;
@@ -64,6 +67,7 @@
 + (LUAPIStub *)stubToGetCurrentUserDebitOnly;
 + (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfo;
 + (LUAPIStub *)stubToGetCurrentUserWithoutOptionalInfoWithDebitOnly;
++ (LUAPIStub *)stubToGetDebitCardPaymentMethod;
 + (LUAPIStub *)stubToGetDowngradedAccessTokenWithPermissions:(NSArray *)accessTokenPermissions;
 + (LUAPIStub *)stubToGetFeedbackInterstitialForOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToGetIneligiblePaymentToken;

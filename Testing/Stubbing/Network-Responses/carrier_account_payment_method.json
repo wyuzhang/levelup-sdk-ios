@@ -1,0 +1,12 @@
+{
+  "payment_method": {
+    "description": "Sprint *1234",
+    "metadata": {
+      "carrier": "Sprint",
+      "last_4": "1234"
+    },
+    "monthly_billing_day": 15,
+    "monthly_transaction_limit_amount": 15000,
+    "type": "carrier"
+  }
+}

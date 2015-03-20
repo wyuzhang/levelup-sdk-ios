@@ -1,0 +1,11 @@
+{
+  "payment_method": {
+    "description": "Apple Pay",
+    "metadata": {
+      "issuer": "Visa"
+    },
+    "monthly_billing_day": 15,
+    "monthly_transaction_limit_amount": 15000,
+    "type": "apple_pay_card"
+  }
+}
