@@ -20,10 +20,11 @@
 
 #pragma mark - Creation
 
-- (id)initWithToken:(NSString *)token userID:(NSNumber *)userID {
+- (id)initWithMerchantID:(NSNumber *)merchantID token:(NSString *)token userID:(NSNumber *)userID {
   self = [super init];
   if (!self) return nil;
 
+  _merchantID = merchantID;
   _token = token;
   _userID = userID;
 
@@ -33,7 +34,8 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUAccessToken [address=%p, token=%@, userID=%@]", self, self.token, self.userID];
+  return [NSString stringWithFormat:@"LUAccessToken [address=%p, merchantID=%@, token=%@, userID=%@]",
+          self, self.merchantID, self.token, self.userID];
 }
 
 @end

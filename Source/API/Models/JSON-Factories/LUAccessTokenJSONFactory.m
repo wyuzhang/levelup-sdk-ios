@@ -21,10 +21,11 @@
 @implementation LUAccessTokenJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
+  NSNumber *merchantID = [attributes lu_numberForKey:@"merchant_id"];
   NSString *token = [attributes lu_stringForKey:@"token"];
   NSNumber *userID = [attributes lu_numberForKey:@"user_id"];
 
-  return [[LUAccessToken alloc] initWithToken:token userID:userID];
+  return [[LUAccessToken alloc] initWithMerchantID:merchantID token:token userID:userID];
 }
 
 - (NSString *)rootKey {

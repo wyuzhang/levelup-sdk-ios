@@ -23,6 +23,11 @@
 @interface LUAccessToken : LUAPIModel
 
 /**
+ LevelUp merchant ID if the user is associated with a particular merchant.
+ */
+@property (nonatomic, copy, readonly) NSNumber *merchantID;
+
+/**
  A unique access token returned by the server after authentication succeeds. In order for users to
  remain authenticated between application launches, this value should be securely stored. See
  `LUAPIClient` for more information.
@@ -34,6 +39,6 @@
  */
 @property (nonatomic, copy, readonly) NSNumber *userID;
 
-- (id)initWithToken:(NSString *)token userID:(NSNumber *)userID;
+- (id)initWithMerchantID:(NSNumber *)merchantID token:(NSString *)token userID:(NSNumber *)userID;
 
 @end

@@ -27,11 +27,16 @@ describe(@"LUAccessTokenJSONFactory", ^{
 
   describe(@"createFromAttributes:", ^{
     it(@"parses a JSON dictionary into an LUAccessToken", ^{
-      NSDictionary *JSON = @{ @"token" : @"access-token", @"user_id" : @1 };
+      NSDictionary *JSON = @{
+        @"merchant_id": @1,
+        @"token": @"access-token",
+        @"user_id": @2
+      };
       LUAccessToken *accessToken = [factory createFromAttributes:JSON];
 
+      [[accessToken.merchantID should] equal:@1];
       [[accessToken.token should] equal:@"access-token"];
-      [[accessToken.userID should] equal:@1];
+      [[accessToken.userID should] equal:@2];
     });
   });
 

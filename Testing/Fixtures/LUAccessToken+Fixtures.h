@@ -19,5 +19,6 @@
 @interface LUAccessToken (Fixtures)
 
 + (LUAccessToken *)fixture;
++ (LUAccessToken *)fixtureWithMerchantID:(NSNumber *)merchantID;
 
 @end

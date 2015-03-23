@@ -19,7 +19,11 @@
 @implementation LUAccessToken (Fixtures)
 
 + (LUAccessToken *)fixture {
-  return [[LUAccessToken alloc] initWithToken:@"token" userID:@1];
+  return [self fixtureWithMerchantID:nil];
+}
+
++ (LUAccessToken *)fixtureWithMerchantID:(NSNumber *)merchantID {
+  return [[LUAccessToken alloc] initWithMerchantID:merchantID token:@"token" userID:@1];
 }
 
 @end
