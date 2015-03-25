@@ -85,7 +85,7 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
  navigationType:(UIWebViewNavigationType)navigationType {
-  if (![request.URL.host isEqualToString:@"www.thelevelup.com"] && ![request.URL.host isEqualToString:@"sandbox.thelevelup.com"]) {
+  if (![request.URL.host isEqualToString:[LUAPIClient sharedClient].baseURL.host]) {
     return YES;
   }
 
@@ -127,20 +127,15 @@
 #pragma mark - Private Methods
 
 - (NSURLRequest *)startURLRequest {
-  NSURL *baseURL;
-  if ([LUAPIClient sharedClient].developmentMode) {
-    baseURL = [NSURL URLWithString:@"https://sandbox.thelevelup.com"];
-  } else {
-    baseURL = [NSURL URLWithString:@"https://www.thelevelup.com"];
-  }
-
+  NSURL *baseURL = [LUAPIClient sharedClient].baseURL;
   NSString *URLString = [[NSURL URLWithString:@"oauth2/authorizations/new" relativeToURL:baseURL] absoluteString];
+
   NSDictionary *parameters = @{
     @"client_id": [LUAPIClient sharedClient].apiKey,
     @"embedded": @"true",
     @"login_hint": self.email,
     @"response_type": @"token",
-    @"scope": [self.permissions componentsJoinedByString:@"%20"],
+    @"scope": [self.permissions componentsJoinedByString:@" "],
     @"state": @(self.csrfToken)
   };
 

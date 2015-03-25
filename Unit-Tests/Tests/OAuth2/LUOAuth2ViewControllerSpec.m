@@ -47,28 +47,11 @@ describe(@"LUOAuth2ViewController", ^{
       }];
     });
 
-    context(@"when developmentMode is off", ^{
-      beforeEach(^{
-        [LUAPIClient sharedClient].developmentMode = NO;
-      });
+    it(@"loads a request to the base URL on the web view", ^{
+      [controller viewDidLoad];
 
-      it(@"loads a production request on the web view", ^{
-        [controller viewDidLoad];
-
-        [[webViewURL.host should] equal:@"www.thelevelup.com"];
-      });
-    });
-
-    context(@"when developmentMode is on", ^{
-      beforeEach(^{
-        [LUAPIClient sharedClient].developmentMode = YES;
-      });
-
-      it(@"loads a sandbox request on the web view", ^{
-        [controller viewDidLoad];
-
-        [[webViewURL.host should] equal:@"sandbox.thelevelup.com"];
-      });
+      [[webViewURL.scheme should] equal:[LUAPIClient sharedClient].baseURL.scheme];
+      [[webViewURL.host should] equal:[LUAPIClient sharedClient].baseURL.host];
     });
 
     it(@"loads a new OAuth2 authorization on the web view", ^{
@@ -85,7 +68,7 @@ describe(@"LUOAuth2ViewController", ^{
       [[params[@"embedded"] should] equal:@"true"];
       [[params[@"login_hint"] should] equal:email];
       [[params[@"response_type"] should] equal:@"token"];
-      [[params[@"scope"] should] equal:[NSString stringWithFormat:@"%@%%20%@", permissions[0], permissions[1]]];
+      [[params[@"scope"] should] equal:[NSString stringWithFormat:@"%@ %@", permissions[0], permissions[1]]];
       [[params[@"state"] should] equal:[@(controller.csrfToken) stringValue]];
     });
   });
@@ -130,21 +113,25 @@ describe(@"LUOAuth2ViewController", ^{
   // UIWebViewDelegate Methods
 
   describe(@"webView:shouldStartLoadWithRequest:navigationType:", ^{
-    NSString *baseURLString = @"https://www.thelevelup.com/oauth2/fake_target";
-    __block NSURL *URL;
+    __block NSURL *baseURL, *URL;
 
     BOOL (^loadURL)(NSURL *) = ^(NSURL *URL) {
       return [controller webView:controller.webView shouldStartLoadWithRequest:[NSURLRequest requestWithURL:URL]
                   navigationType:UIWebViewNavigationTypeReload];
     };
 
+    beforeEach(^{
+      baseURL = [NSURL URLWithString:@"oauth2/fake_target" relativeToURL:[LUAPIClient sharedClient].baseURL];
+    });
+
     context(@"when the request contains an access token in the fragment", ^{
       NSString *accessToken = @"access-token";
 
       context(@"when the request contains a state that matches the CSRF token", ^{
         beforeEach(^{
-          URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@#access_token=%@&state=%@",
-                                      baseURLString, accessToken, [@(controller.csrfToken) stringValue]]];
+          URL = [NSURL URLWithString:[NSString stringWithFormat:@"#access_token=%@&state=%@",
+                                      accessToken, [@(controller.csrfToken) stringValue]]
+                       relativeToURL:baseURL];
         });
 
         it(@"notifies the delegate", ^{
@@ -161,8 +148,9 @@ describe(@"LUOAuth2ViewController", ^{
 
       context(@"when the request contains a state that doesn't match the CSRF token", ^{
         beforeEach(^{
-          URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@#access_token=%@&state=%@",
-                                      baseURLString, accessToken, [@(controller.csrfToken + 1) stringValue]]];
+          URL = [NSURL URLWithString:[NSString stringWithFormat:@"#access_token=%@&state=%@",
+                                      accessToken, [@(controller.csrfToken + 1) stringValue]]
+                       relativeToURL:baseURL];
         });
 
         it(@"doesn't notify the delegate of success", ^{
@@ -188,8 +176,9 @@ describe(@"LUOAuth2ViewController", ^{
       NSString *errorDescription = @"Scope is invalid";
 
       beforeEach(^{
-        URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@#error=%@&error_description=%@",
-                                    baseURLString, errorCode, [errorDescription stringByReplacingOccurrencesOfString:@" " withString:@"+"]]];
+        URL = [NSURL URLWithString:[NSString stringWithFormat:@"#error=%@&error_description=%@",
+                                    errorCode, [errorDescription stringByReplacingOccurrencesOfString:@" " withString:@"+"]]
+                     relativeToURL:baseURL];
       });
 
       it(@"notifies the delegate", ^{
@@ -206,7 +195,7 @@ describe(@"LUOAuth2ViewController", ^{
 
     context(@"when the request doesn't contain an access token or an error", ^{
       it(@"returns YES", ^{
-        [[theValue(loadURL([NSURL URLWithString:baseURLString])) should] beYes];
+        [[theValue(loadURL(baseURL)) should] beYes];
       });
     });
   });
