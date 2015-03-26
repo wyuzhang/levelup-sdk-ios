@@ -23,6 +23,8 @@ NSString * const BraintreePublicKeyProduction = @"MIIBCgKCAQEAsWqrT3RkCyH6yF7ir/
 
 NSString * const LevelUpAPIBaseURLDevelopment = @"https://sandbox.thelevelup.com/";
 NSString * const LevelUpAPIBaseURLProduction = @"https://api.thelevelup.com/";
+NSString * const LevelUpOAuth2BaseURLDevelopment = @"https://sandbox.thelevelup.com/";
+NSString * const LevelUpOAuth2BaseURLProduction = @"https://www.thelevelup.com/";
 
 #pragma mark - Deep Link Auth URL Host & Params
 

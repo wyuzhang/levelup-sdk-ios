@@ -16,6 +16,7 @@
 
 #import <AFNetworking/AFNetworking.h>
 #import "LUAPIClient.h"
+#import "LUConstants.h"
 #import "LUOAuth2ViewController.h"
 #import "NSURL+LUAdditions.h"
 
@@ -85,10 +86,6 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
  navigationType:(UIWebViewNavigationType)navigationType {
-  if (![request.URL.host isEqualToString:[LUAPIClient sharedClient].baseURL.host]) {
-    return YES;
-  }
-
   NSDictionary *fragmentParameters = [request.URL lu_fragmentDictionary];
 
   if (fragmentParameters[@"access_token"]) {
@@ -127,7 +124,13 @@
 #pragma mark - Private Methods
 
 - (NSURLRequest *)startURLRequest {
-  NSURL *baseURL = [LUAPIClient sharedClient].baseURL;
+  NSURL *baseURL;
+  if ([LUAPIClient sharedClient].developmentMode) {
+    baseURL = [NSURL URLWithString:LevelUpOAuth2BaseURLDevelopment];
+  } else {
+    baseURL = [NSURL URLWithString:LevelUpOAuth2BaseURLProduction];
+  }
+
   NSString *URLString = [[NSURL URLWithString:@"oauth2/authorizations/new" relativeToURL:baseURL] absoluteString];
 
   NSDictionary *parameters = @{

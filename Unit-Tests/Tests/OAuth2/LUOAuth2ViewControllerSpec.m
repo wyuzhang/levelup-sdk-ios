@@ -47,11 +47,28 @@ describe(@"LUOAuth2ViewController", ^{
       }];
     });
 
-    it(@"loads a request to the base URL on the web view", ^{
-      [controller viewDidLoad];
+    context(@"when developmentMode is off", ^{
+      beforeEach(^{
+        [LUAPIClient sharedClient].developmentMode = NO;
+      });
 
-      [[webViewURL.scheme should] equal:[LUAPIClient sharedClient].baseURL.scheme];
-      [[webViewURL.host should] equal:[LUAPIClient sharedClient].baseURL.host];
+      it(@"loads a production request on the web view", ^{
+        [controller viewDidLoad];
+
+        [[webViewURL.host should] equal:[NSURL URLWithString:LevelUpOAuth2BaseURLProduction].host];
+      });
+    });
+
+    context(@"when developmentMode is on", ^{
+      beforeEach(^{
+        [LUAPIClient sharedClient].developmentMode = YES;
+      });
+
+      it(@"loads a sandbox request on the web view", ^{
+        [controller viewDidLoad];
+
+        [[webViewURL.host should] equal:[NSURL URLWithString:LevelUpOAuth2BaseURLDevelopment].host];
+      });
     });
 
     it(@"loads a new OAuth2 authorization on the web view", ^{

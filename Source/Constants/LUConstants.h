@@ -21,6 +21,8 @@ extern NSString * const BraintreePublicKeyProduction;
 
 extern NSString * const LevelUpAPIBaseURLDevelopment;
 extern NSString * const LevelUpAPIBaseURLProduction;
+extern NSString * const LevelUpOAuth2BaseURLDevelopment;
+extern NSString * const LevelUpOAuth2BaseURLProduction;
 
 #pragma mark - Deep Link Auth URL Hosts & Params
 
