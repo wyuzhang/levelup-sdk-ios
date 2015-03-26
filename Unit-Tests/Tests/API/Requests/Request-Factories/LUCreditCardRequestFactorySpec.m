@@ -86,7 +86,7 @@ describe(@"LUCreditCardRequestFactory", ^{
           @"encrypted_expiration_month" : [braintree encryptString:[creditCard.expirationMonth stringValue]],
           @"encrypted_expiration_year" : [braintree encryptString:[creditCard.expirationYear stringValue]],
           @"encrypted_number" : [braintree encryptString:creditCard.number],
-          @"postal_code" : [braintree encryptString:creditCard.postalCode]
+          @"postal_code" : creditCard.postalCode
         }
       };
 
