@@ -80,6 +80,8 @@
 
 #import "LUDeepLinkAuth.h"
 
+#import "LUIBeaconListener.h"
+
 #import "LUPassRetriever.h"
 
 #import "LUCachedLocationSearch.h"
