@@ -54,9 +54,9 @@
 @property (nonatomic, strong, readonly) LUMonetaryValue *potentialCredit;
 
 /**
- The user's progress towards receiving more loyalty credit, as a number between 0.0 and 100.0. For
- example, if a merchant provides $5 in credit for every $50 spent, and the user has spent $10, this
- number would be 20.0.
+ The user's progress towards receiving more loyalty credit, as a number between 0.0 and 1.0. For
+ example, if a merchant provides credit for every $50 spent, and the user has spent $10, this number
+ would be 0.2.
  */
 @property (nonatomic, assign, readonly) float progressPercent;
 
