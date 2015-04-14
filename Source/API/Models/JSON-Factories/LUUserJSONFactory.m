@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-#import "LUMonetaryValue.h"
 #import "LUUser.h"
 #import "LUUserJSONFactory.h"
 #import "NSDictionary+ObjectClassAccess.h"
@@ -32,12 +31,12 @@
   NSString *email = [attributes lu_stringForKey:@"email"];
   NSString *firstName = [attributes lu_stringForKey:@"first_name"];
   LUGender gender = [LUUser genderForGenderString:[attributes lu_stringForKey:@"gender"]];
-  LUMonetaryValue *globalCredit = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"global_credit_amount"]];
+  LUMonetaryValue *globalCredit = [attributes lu_monetaryValueForKey:@"global_credit_amount"];
   NSString *lastName = [attributes lu_stringForKey:@"last_name"];
   NSNumber *merchantsVisitedCount = [attributes lu_numberForKey:@"merchants_visited_count"];
   NSNumber *ordersCount = [attributes lu_numberForKey:@"orders_count"];
   BOOL termsAccepted = [attributes lu_dateForKey:@"terms_accepted_at"] != nil;
-  LUMonetaryValue *totalSavings = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"total_savings_amount"]];
+  LUMonetaryValue *totalSavings = [attributes lu_monetaryValueForKey:@"total_savings_amount"];
   NSNumber *userID = [attributes lu_numberForKey:@"id"];
 
   return [[LUUser alloc] initWithBirthdate:birthdate causeID:causeID connectedToFacebook:connectedToFacebook

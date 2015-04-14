@@ -17,7 +17,6 @@
 #import "LUApplePayCardPaymentMethod.h"
 #import "LUCarrierAccountPaymentMethod.h"
 #import "LUCreditCardPaymentMethod.h"
-#import "LUMonetaryValue.h"
 #import "LUPaymentMethodJSONFactory.h"
 #import "NSDictionary+ObjectClassAccess.h"
 
@@ -25,17 +24,11 @@
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
   NSNumber *monthlyBillingDay = [attributes lu_numberForKey:@"monthly_billing_day"];
-
-  LUMonetaryValue *monthlyTransactionLimit;
-  NSNumber *monthlyTransactionLimitAmount = [attributes lu_numberForKey:@"monthly_transaction_limit_amount"];
-  if (monthlyTransactionLimitAmount) {
-    monthlyTransactionLimit = [LUMonetaryValue monetaryValueWithUSCents:monthlyTransactionLimitAmount];
-  }
-
+  LUMonetaryValue *monthlyTransactionLimit = [attributes lu_monetaryValueForKey:@"monthly_transaction_limit_amount"];
   NSString *paymentMethodDescription = [attributes lu_stringForKey:@"description"];
-
   NSDictionary *metadata = [attributes lu_dictionaryForKey:@"metadata"];
   NSString *type = [attributes lu_stringForKey:@"type"];
+
   if ([type isEqualToString:@"apple_pay_card"]) {
     NSString *issuer = [metadata lu_stringForKey:@"issuer"];
 

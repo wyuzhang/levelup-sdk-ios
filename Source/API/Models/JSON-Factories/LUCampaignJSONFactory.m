@@ -16,7 +16,6 @@
 
 #import "LUCampaign.h"
 #import "LUCampaignJSONFactory.h"
-#import "LUMonetaryValue.h"
 #import "NSDictionary+ObjectClassAccess.h"
 
 @implementation LUCampaignJSONFactory
@@ -36,7 +35,7 @@
   NSURL *shareURLFacebook = [attributes lu_URLForKey:@"share_url_facebook"];
   NSURL *shareURLTwitter = [attributes lu_URLForKey:@"share_url_twitter"];
   NSString *sponsor = [attributes lu_stringForKey:@"sponsor"];
-  LUMonetaryValue *value = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"value_amount"]];
+  LUMonetaryValue *value = [attributes lu_monetaryValueForKey:@"value_amount"];
 
   return [[LUCampaign alloc] initWithCampaignID:campaignID confirmationHTML:confirmationHTML global:global
                             messageForEmailBody:messageForEmailBody messageForEmailSubject:messageForEmailSubject

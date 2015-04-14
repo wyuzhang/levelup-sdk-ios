@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-#import "LUMonetaryValue.h"
 #import "LUOrder.h"
 #import "LUOrderItemJSONFactory.h"
 #import "LUOrderJSONFactory.h"
@@ -25,14 +24,14 @@
 #pragma mark - Public Methods
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  LUMonetaryValue *balance = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"balance_amount"]];
+  LUMonetaryValue *balance = [attributes lu_monetaryValueForKey:@"balance_amount"];
   NSDate *bundleClosedDate = [attributes lu_dateForKey:@"bundle_closed_at"];
   NSString *bundleDescriptor = [attributes lu_stringForKey:@"bundle_descriptor"];
-  LUMonetaryValue *contribution = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"contribution_amount"]];
+  LUMonetaryValue *contribution = [attributes lu_monetaryValueForKey:@"contribution_amount"];
   NSString *contributionTargetName = [attributes lu_stringForKey:@"contribution_target_name"];
   NSDate *createdDate = [attributes lu_dateForKey:@"created_at"];
-  LUMonetaryValue *credit = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"credit_applied_amount"]];
-  LUMonetaryValue *earn = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"credit_earned_amount"]];
+  LUMonetaryValue *credit = [attributes lu_monetaryValueForKey:@"credit_applied_amount"];
+  LUMonetaryValue *earn = [attributes lu_monetaryValueForKey:@"credit_earned_amount"];
   NSString *identifierFromMerchant = [attributes lu_stringForKey:@"identifier_from_merchant"];
 
   NSArray *items;
@@ -51,9 +50,9 @@
   NSNumber *merchantID = [attributes lu_numberForKey:@"merchant_id"];
   NSString *merchantName = [attributes lu_stringForKey:@"merchant_name"];
   NSDate *refundedDate = [attributes lu_dateForKey:@"refunded_at"];
-  LUMonetaryValue *spend = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"spend_amount"]];
-  LUMonetaryValue *tip = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"tip_amount"]];
-  LUMonetaryValue *total = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"total_amount"]];
+  LUMonetaryValue *spend = [attributes lu_monetaryValueForKey:@"spend_amount"];
+  LUMonetaryValue *tip = [attributes lu_monetaryValueForKey:@"tip_amount"];
+  LUMonetaryValue *total = [attributes lu_monetaryValueForKey:@"total_amount"];
   NSDate *transactedDate = [attributes lu_dateForKey:@"transacted_at"];
   NSString *UUID = [attributes lu_stringForKey:@"uuid"];
 

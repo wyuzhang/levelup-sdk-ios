@@ -162,6 +162,32 @@ describe(@"NSDictionary", ^{
     });
   });
 
+  describe(@"lu_monetaryValueForKey:", ^{
+    context(@"when the value is a number", ^{
+      NSDictionary *dictionary = @{@"monetary_value" : @1};
+
+      it(@"returns a LUMonetaryValue with the number as US cents", ^{
+        [[[dictionary lu_monetaryValueForKey:@"monetary_value"] should] equal:[LUMonetaryValue monetaryValueWithUSCents:@1]];
+      });
+    });
+
+    context(@"when the value is a number as a string", ^{
+      NSDictionary *dictionary = @{@"monetary_value" : @"1"};
+
+      it(@"returns a LUMonetaryValue with the string as a number as US cents", ^{
+        [[[dictionary lu_monetaryValueForKey:@"monetary_value"] should] equal:[LUMonetaryValue monetaryValueWithUSCents:@1]];
+      });
+    });
+
+    context(@"when the value is a non-number string", ^{
+      NSDictionary *dictionary = @{@"not number" : @"string"};
+
+      it(@"returns nil", ^{
+        [[dictionary lu_monetaryValueForKey:@"not number"] shouldBeNil];
+      });
+    });
+  });
+
   describe(@"lu_stringForKey:", ^{
     context(@"when the value is a string", ^{
       NSDictionary *dictionary = @{@"a string" : @"string"};

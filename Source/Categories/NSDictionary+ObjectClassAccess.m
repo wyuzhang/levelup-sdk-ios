@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#import "LUMonetaryValueJSONFactory.h"
+#import "LUMonetaryValue.h"
 #import "NSDictionary+ObjectClassAccess.h"
 #import "NSDate+StringFormats.h"
 
@@ -49,6 +49,13 @@
   if (!numberValue) return 0.0f;
 
   return [numberValue floatValue];
+}
+
+- (LUMonetaryValue *)lu_monetaryValueForKey:(id)aKey {
+  NSNumber *number = [self lu_numberForKey:aKey];
+  if (!number) return nil;
+
+  return [LUMonetaryValue monetaryValueWithUSCents:number];
 }
 
 - (NSNumber *)lu_numberForKey:(id)aKey {

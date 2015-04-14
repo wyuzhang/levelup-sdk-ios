@@ -47,6 +47,8 @@
 #import "LUCampaign.h"
 #import "LUCampaignMetadata.h"
 #import "LUCampaignRepresentationBasicV1.h"
+#import "LUCampaignRepresentationSpendBasedLoyaltyV1.h"
+#import "LUCampaignRepresentationVisitBasedLoyaltyV1.h"
 #import "LUCarrierAccount.h"
 #import "LUCarrierAccountPaymentMethod.h"
 #import "LUCategory.h"

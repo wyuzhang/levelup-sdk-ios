@@ -15,13 +15,12 @@
  */
 
 #import "LULocationCreditJSONFactory.h"
-#import "LUMonetaryValue.h"
 #import "NSDictionary+ObjectClassAccess.h"
 
 @implementation LULocationCreditJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  return [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"total_amount"]];
+  return [attributes lu_monetaryValueForKey:@"total_amount"];
 }
 
 - (NSString *)rootKey {

@@ -11,8 +11,18 @@
     "campaign" : {
       "id" : 2,
       "representation_types" : [
-        "basic_v1"
+        "basic_v1",
+        "spend_based_loyalty_v1"
       ]
     }
   },
+  {
+    "campaign" : {
+      "id" : 3,
+      "representation_types" : [
+        "basic_v1",
+        "visit_based_loyalty_v1"
+      ]
+    }
+  }
 ]

@@ -14,12 +14,8 @@
  * limitations under the License.
  */
 
-#import "LUCampaignMetadata.h"
+#import "LUBaseCampaignRepresentationJSONFactory.h"
 
-@interface LUCampaignMetadata (Fixtures)
-
-+ (LUCampaignMetadata *)fixtureWithBasicRepresentation;
-+ (LUCampaignMetadata *)fixtureWithSpendBasedLoyaltyRepresentation;
-+ (LUCampaignMetadata *)fixtureWithVisitBasedLoyaltyRepresentation;
+@interface LUCampaignRepresentationSpendBasedLoyaltyV1JSONFactory : LUBaseCampaignRepresentationJSONFactory
 
 @end

@@ -19,7 +19,13 @@
 /** Campaign representation types. */
 typedef NS_ENUM(NSInteger, LUCampaignRepresentationType) {
   /** A basic representation containing a title, description and icon. */
-  LUCampaignRepresentationTypeBasicV1
+  LUCampaignRepresentationTypeBasicV1,
+
+  /** A representation in which loyalty credit is earned after spending a static amount. */
+  LUCampaignRepresentationTypeSpendBasedLoyaltyV1,
+
+  /** A representation in which loyalty credit is earned after a particular number of visits. */
+  LUCampaignRepresentationTypeVisitBasedLoyaltyV1
 };
 
 /**

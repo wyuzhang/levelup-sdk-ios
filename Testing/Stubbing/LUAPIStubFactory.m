@@ -271,6 +271,22 @@
                          responseData:[self responseDataFromFile:@"campaign_representation_basic_v1"]];
 }
 
++ (LUAPIStub *)stubToGetCampaignRepresentationSpendBasedLoyaltyV1WithID:(NSNumber *)campaignID {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:[NSString stringWithFormat:@"campaigns/%@/spend_based_loyalty_v1", [campaignID stringValue]]
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"campaign_representation_spend_based_loyalty_v1"]];
+}
+
++ (LUAPIStub *)stubToGetCampaignRepresentationVisitBasedLoyaltyV1WithID:(NSNumber *)campaignID {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:[NSString stringWithFormat:@"campaigns/%@/visit_based_loyalty_v1", [campaignID stringValue]]
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"campaign_representation_visit_based_loyalty_v1"]];
+}
+
 + (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:[NSString stringWithFormat:@"codes/%@/campaign", code]

@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-#import "LUCampaignMetadata.h"
+#import "LUCampaignRepresentationVisitBasedLoyaltyV1.h"
 
-@interface LUCampaignMetadata (Fixtures)
+SPEC_BEGIN(LUCampaignRepresentationVisitBasedLoyaltyV1Spec)
 
-+ (LUCampaignMetadata *)fixtureWithBasicRepresentation;
-+ (LUCampaignMetadata *)fixtureWithSpendBasedLoyaltyRepresentation;
-+ (LUCampaignMetadata *)fixtureWithVisitBasedLoyaltyRepresentation;
+describe(@"LUCampaignRepresentationVisitBasedLoyaltyV1", ^{
+  it(@"is an LUAPIModel", ^{
+    [[[LUCampaignRepresentationVisitBasedLoyaltyV1 class] should] beSubclassOfClass:[LUAPIModel class]];
+  });
+});
 
-@end
+SPEC_END

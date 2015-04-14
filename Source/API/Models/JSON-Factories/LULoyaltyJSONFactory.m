@@ -16,22 +16,22 @@
 
 #import "LULoyalty.h"
 #import "LULoyaltyJSONFactory.h"
-#import "LUMonetaryValue.h"
 #import "NSDictionary+ObjectClassAccess.h"
 
 @implementation LULoyaltyJSONFactory
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  LUMonetaryValue *willEarn = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"merchant_earn_amount"]];
+  LUMonetaryValue *willEarn = [attributes lu_monetaryValueForKey:@"merchant_earn_amount"];
   NSNumber *merchantID = [attributes lu_numberForKey:@"merchant_id"];
   BOOL merchantLoyaltyEnabled = [attributes lu_boolForKey:@"merchant_loyalty_enabled"];
-  LUMonetaryValue *shouldSpend = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"merchant_spend_amount"]];
+  LUMonetaryValue *shouldSpend = [attributes lu_monetaryValueForKey:@"merchant_spend_amount"];
   NSNumber *ordersCount = [attributes lu_numberForKey:@"orders_count"];
-  LUMonetaryValue *potentialCredit = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"potential_credit_amount"]];
+  LUMonetaryValue *potentialCredit = [attributes lu_monetaryValueForKey:@"potential_credit_amount"];
   float progressPercent = [[attributes lu_numberForKey:@"progress_percentage"] floatValue] / 100.0f;
-  LUMonetaryValue *savings = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"savings_amount"]];
-  LUMonetaryValue *spendRemaining = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"spend_remaining_amount"]];
-  LUMonetaryValue *totalVolume = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"total_volume_amount"]];
+  LUMonetaryValue *savings = [attributes lu_monetaryValueForKey:@"savings_amount"];
+  LUMonetaryValue *spendRemaining = [attributes lu_monetaryValueForKey:@"spend_remaining_amount"];
+  LUMonetaryValue *totalVolume = [attributes lu_monetaryValueForKey:@"total_volume_amount"];
+
   return [[LULoyalty alloc] initWithMerchantID:merchantID
                         merchantLoyaltyEnabled:merchantLoyaltyEnabled
                                    ordersCount:ordersCount

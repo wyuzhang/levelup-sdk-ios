@@ -1,0 +1,8 @@
+{
+  "campaign" : {
+    "earn_amount" : 1000,
+    "progress_visit_count" : 5,
+    "qualifying_order_spend_amount" : 50,
+    "required_visit_count" : 10
+  }
+}

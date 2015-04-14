@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-#import "LUMonetaryValue.h"
 #import "LUOrderItem.h"
 #import "LUOrderItemJSONFactory.h"
 #import "NSDictionary+ObjectClassAccess.h"
@@ -23,12 +22,12 @@
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
   NSString *category = [attributes lu_stringForKey:@"category"];
-  LUMonetaryValue *chargedPrice = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"charged_price_amount"]];
+  LUMonetaryValue *chargedPrice = [attributes lu_monetaryValueForKey:@"charged_price_amount"];
   NSString *itemDescription = [attributes lu_stringForKey:@"description"];
   NSString *name = [attributes lu_stringForKey:@"name"];
   NSUInteger quantity = [[attributes lu_numberForKey:@"quantity"] unsignedIntegerValue];
   NSString *SKU = [attributes lu_stringForKey:@"sku"];
-  LUMonetaryValue *standardPrice = [LUMonetaryValue monetaryValueWithUSCents:[attributes lu_numberForKey:@"standard_price_amount"]];
+  LUMonetaryValue *standardPrice = [attributes lu_monetaryValueForKey:@"standard_price_amount"];
   NSString *UPC = [attributes lu_stringForKey:@"upc"];
 
   return [[LUOrderItem alloc] initWithCategory:category chargedPrice:chargedPrice

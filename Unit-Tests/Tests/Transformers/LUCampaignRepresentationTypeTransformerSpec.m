@@ -28,16 +28,48 @@ describe(@"LUCampaignRepresentationTypeTransformer", ^{
   });
 
   describe(@"transformValue:", ^{
-    it(@"returns the proper string", ^{
-      NSString *type = [transformer transformedValue:@(LUCampaignRepresentationTypeBasicV1)];
-      [[type should] equal:@"basic_v1"];
+    context(@"when the value is LUCampaignRepresentationTypeBasicV1", ^{
+      it(@"returns 'basic_v1'", ^{
+        NSString *result = [transformer transformedValue:@(LUCampaignRepresentationTypeBasicV1)];
+        [[result should] equal:@"basic_v1"];
+      });
+    });
+
+    context(@"when the value is LUCampaignRepresentationTypeSpendBasedLoyaltyV1", ^{
+      it(@"returns 'spend_based_loyalty_v1'", ^{
+        NSString *result = [transformer transformedValue:@(LUCampaignRepresentationTypeSpendBasedLoyaltyV1)];
+        [[result should] equal:@"spend_based_loyalty_v1"];
+      });
+    });
+
+    context(@"when the value is LUCampaignRepresentationTypeVisitBasedLoyaltyV1", ^{
+      it(@"returns 'visit_based_loyalty_v1'", ^{
+        NSString *result = [transformer transformedValue:@(LUCampaignRepresentationTypeVisitBasedLoyaltyV1)];
+        [[result should] equal:@"visit_based_loyalty_v1"];
+      });
     });
   });
 
   describe(@"reverseTransformedValue:", ^{
-    it(@"returns an NSNumber representation of the proper enumerated value for the type string", ^{
-      NSNumber *type = [transformer reverseTransformedValue:@"basic_v1"];
-      [[type should] equal:@(LUCampaignRepresentationTypeBasicV1)];
+    context(@"when the value is 'basic_v1'", ^{
+      it(@"returns LUCampaignRepresentationTypeBasicV1 as an NSNumber", ^{
+        NSNumber *result = [transformer reverseTransformedValue:@"basic_v1"];
+        [[result should] equal:@(LUCampaignRepresentationTypeBasicV1)];
+      });
+    });
+
+    context(@"when the value is 'spend_based_loyalty_v1'", ^{
+      it(@"returns LUCampaignRepresentationTypeSpendBasedLoyaltyV1 as an NSNumber", ^{
+        NSNumber *result = [transformer reverseTransformedValue:@"spend_based_loyalty_v1"];
+        [[result should] equal:@(LUCampaignRepresentationTypeSpendBasedLoyaltyV1)];
+      });
+    });
+
+    context(@"when the value is 'visit_based_loyalty_v1'", ^{
+      it(@"returns LUCampaignRepresentationTypeVisitBasedLoyaltyV1 as an NSNumber", ^{
+        NSNumber *result = [transformer reverseTransformedValue:@"visit_based_loyalty_v1"];
+        [[result should] equal:@(LUCampaignRepresentationTypeVisitBasedLoyaltyV1)];
+      });
     });
   });
 });

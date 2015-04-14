@@ -18,6 +18,8 @@
 #import "LUCampaignJSONFactory.h"
 #import "LUCampaignMetadataJSONFactory.h"
 #import "LUCampaignRepresentationBasicV1JSONFactory.h"
+#import "LUCampaignRepresentationSpendBasedLoyaltyV1JSONFactory.h"
+#import "LUCampaignRepresentationVisitBasedLoyaltyV1JSONFactory.h"
 #import "LUCampaignRequestFactory.h"
 
 @implementation LUCampaignRequestFactory
@@ -86,6 +88,14 @@
   switch (representationType) {
     case LUCampaignRepresentationTypeBasicV1:
       modelFactory = [LUCampaignRepresentationBasicV1JSONFactory factoryWithCampaignID:campaignMetadata.campaignID];
+      break;
+
+    case LUCampaignRepresentationTypeSpendBasedLoyaltyV1:
+      modelFactory = [LUCampaignRepresentationSpendBasedLoyaltyV1JSONFactory factoryWithCampaignID:campaignMetadata.campaignID];
+      break;
+
+    case LUCampaignRepresentationTypeVisitBasedLoyaltyV1:
+      modelFactory = [LUCampaignRepresentationVisitBasedLoyaltyV1JSONFactory factoryWithCampaignID:campaignMetadata.campaignID];
       break;
   }
 

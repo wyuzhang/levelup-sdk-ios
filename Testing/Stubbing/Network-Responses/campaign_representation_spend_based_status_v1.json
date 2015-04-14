@@ -1,0 +1,7 @@
+{
+  "campaign" : {
+    "earn_amount" : 500,
+    "progress_amount" : 200,
+    "required_spend_amount" : 5000
+  }
+}

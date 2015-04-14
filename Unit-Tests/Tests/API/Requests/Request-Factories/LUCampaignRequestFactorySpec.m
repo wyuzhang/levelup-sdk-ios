@@ -15,6 +15,9 @@
  */
 
 #import "LUAPIRequest.h"
+#import "LUCampaignRepresentationBasicV1JSONFactory.h"
+#import "LUCampaignRepresentationSpendBasedLoyaltyV1JSONFactory.h"
+#import "LUCampaignRepresentationVisitBasedLoyaltyV1JSONFactory.h"
 #import "LUCampaignRequestFactory.h"
 
 SPEC_BEGIN(LUCampaignRequestFactorySpec)
@@ -123,11 +126,10 @@ describe(@"LUCampaignRequestFactory", ^{
 
   describe(@"requestForCampaignWithMetadata:representationType:", ^{
     context(@"when the campaign metadata contains the representation type", ^{
-      LUCampaignMetadata *campaignMetadata = [LUCampaignMetadata fixtureWithBasicRepresentation];
       __block LUAPIRequest *request;
 
       beforeEach(^{
-        request = [LUCampaignRequestFactory requestForCampaignWithMetadata:campaignMetadata
+        request = [LUCampaignRequestFactory requestForCampaignWithMetadata:[LUCampaignMetadata fixtureWithBasicRepresentation]
                                                         representationType:LUCampaignRepresentationTypeBasicV1];
       });
 
@@ -146,15 +148,41 @@ describe(@"LUCampaignRequestFactory", ^{
       it(@"returns a request with no parameters", ^{
         [request.parameters shouldBeNil];
       });
+
+      context(@"when the representation type is LUCampaignRepresentationTypeBasicV1", ^{
+        it(@"returns a request with a LUCampaignRepresentationBasicV1JSONFactory modelFactory", ^{
+          [[request.modelFactory should] beKindOfClass:[LUCampaignRepresentationBasicV1JSONFactory class]];
+        });
+      });
+
+      context(@"when the representation type is LUCampaignRepresentationTypeSpendBasedLoyaltyV1", ^{
+        beforeEach(^{
+          request = [LUCampaignRequestFactory requestForCampaignWithMetadata:[LUCampaignMetadata fixtureWithSpendBasedLoyaltyRepresentation]
+                                                          representationType:LUCampaignRepresentationTypeSpendBasedLoyaltyV1];
+        });
+
+        it(@"returns a request with a LUCampaignRepresentationSpendBasedLoyaltyV1JSONFactory modelFactory", ^{
+          [[request.modelFactory should] beKindOfClass:[LUCampaignRepresentationSpendBasedLoyaltyV1JSONFactory class]];
+        });
+      });
+
+      context(@"when the representation type is LUCampaignRepresentationTypeVisitBasedLoyaltyV1", ^{
+        beforeEach(^{
+          request = [LUCampaignRequestFactory requestForCampaignWithMetadata:[LUCampaignMetadata fixtureWithVisitBasedLoyaltyRepresentation]
+                                                          representationType:LUCampaignRepresentationTypeVisitBasedLoyaltyV1];
+        });
+
+        it(@"returns a request with a LUCampaignRepresentationVisitBasedLoyaltyV1JSONFactory modelFactory", ^{
+          [[request.modelFactory should] beKindOfClass:[LUCampaignRepresentationVisitBasedLoyaltyV1JSONFactory class]];
+        });
+      });
     });
 
     context(@"when the campaign metadata does not contain the representation type", ^{
-      LUCampaignMetadata *campaignMetadata = [[LUCampaignMetadata alloc] initWithCampaignID:@1 representationTypes:nil];
-
       it(@"raises an exception", ^{
         [[theBlock(^{
-          [LUCampaignRequestFactory requestForCampaignWithMetadata:campaignMetadata
-                                                representationType:LUCampaignRepresentationTypeBasicV1];
+          [LUCampaignRequestFactory requestForCampaignWithMetadata:[LUCampaignMetadata fixtureWithBasicRepresentation]
+                                                representationType:LUCampaignRepresentationTypeSpendBasedLoyaltyV1];
         }) should] raise];
       });
     });

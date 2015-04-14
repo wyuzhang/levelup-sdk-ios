@@ -35,7 +35,7 @@ describe(@"LUCampaignRepresentationBasicV1JSONFactory", ^{
     it(@"parses a JSON dictionary into an LUCampaignRepresentationBasicV1", ^{
       NSDictionary *JSON = @{
         @"description": @"description",
-        @"title" : @"title"
+        @"title": @"title"
       };
       LUCampaignRepresentationBasicV1 *campaign = [factory createFromAttributes:JSON];
 

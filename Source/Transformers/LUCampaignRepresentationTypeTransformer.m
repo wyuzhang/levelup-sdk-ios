@@ -25,7 +25,9 @@ NSString * const LUCampaignRepresentationTypeTransformerName = @"LUCampaignRepre
 
 - (id)init {
   return [super initWithMapping:@{
-    @(LUCampaignRepresentationTypeBasicV1): @"basic_v1"
+    @(LUCampaignRepresentationTypeBasicV1): @"basic_v1",
+    @(LUCampaignRepresentationTypeSpendBasedLoyaltyV1): @"spend_based_loyalty_v1",
+    @(LUCampaignRepresentationTypeVisitBasedLoyaltyV1): @"visit_based_loyalty_v1"
   }];
 }
 

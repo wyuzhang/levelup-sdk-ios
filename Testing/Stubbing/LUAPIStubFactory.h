@@ -51,6 +51,8 @@
 + (LUAPIStub *)stubToGetCampaignMetadataForLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToGetCampaignMetadataForMerchantWithID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetCampaignRepresentationBasicV1WithID:(NSNumber *)campaignID;
++ (LUAPIStub *)stubToGetCampaignRepresentationSpendBasedLoyaltyV1WithID:(NSNumber *)campaignID;
++ (LUAPIStub *)stubToGetCampaignRepresentationVisitBasedLoyaltyV1WithID:(NSNumber *)campaignID;
 + (LUAPIStub *)stubToGetCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignWithID:(NSNumber *)campaignID;
 + (LUAPIStub *)stubToGetCarrierAccountEVURL;

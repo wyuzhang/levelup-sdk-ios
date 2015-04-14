@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-#import "LUCampaignMetadata.h"
+#import "LUCampaignRepresentationVisitBasedLoyaltyV1.h"
 
-@interface LUCampaignMetadata (Fixtures)
+@interface LUCampaignRepresentationVisitBasedLoyaltyV1 (Fixtures)
 
-+ (LUCampaignMetadata *)fixtureWithBasicRepresentation;
-+ (LUCampaignMetadata *)fixtureWithSpendBasedLoyaltyRepresentation;
-+ (LUCampaignMetadata *)fixtureWithVisitBasedLoyaltyRepresentation;
++ (LUCampaignRepresentationVisitBasedLoyaltyV1 *)fixture;
 
 @end

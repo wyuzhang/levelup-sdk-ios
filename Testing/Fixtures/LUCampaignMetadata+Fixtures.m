@@ -23,4 +23,16 @@
                                     representationTypes:@[@(LUCampaignRepresentationTypeBasicV1)]];
 }
 
++ (LUCampaignMetadata *)fixtureWithSpendBasedLoyaltyRepresentation {
+  return [[LUCampaignMetadata alloc] initWithCampaignID:@1
+                                    representationTypes:@[@(LUCampaignRepresentationTypeBasicV1),
+                                                          @(LUCampaignRepresentationTypeSpendBasedLoyaltyV1)]];
+}
+
++ (LUCampaignMetadata *)fixtureWithVisitBasedLoyaltyRepresentation {
+  return [[LUCampaignMetadata alloc] initWithCampaignID:@1
+                                    representationTypes:@[@(LUCampaignRepresentationTypeBasicV1),
+                                                          @(LUCampaignRepresentationTypeVisitBasedLoyaltyV1)]];
+}
+
 @end
