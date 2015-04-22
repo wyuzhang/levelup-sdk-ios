@@ -1,0 +1,12 @@
+{
+  "payment_options_summary" : {
+    "max_credit_limit_amount" : 15000,
+    "monthly_billing_day" : 1,
+    "options" : [
+      "preload",
+      "monthly_billing"
+    ],
+    "preload_reload_threshold_amount" : 1500,
+    "preload_value_amount" : 2500
+  }
+}

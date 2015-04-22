@@ -33,6 +33,7 @@
 #import "LUOneTimePad+Fixtures.h"
 #import "LUOrder+Fixtures.h"
 #import "LUOrderItem+Fixtures.h"
+#import "LUPaymentOptionsSummary+Fixtures.h"
 #import "LUPaymentToken+Fixtures.h"
 #import "LURegistration+Fixtures.h"
 #import "LUUser+Fixtures.h"

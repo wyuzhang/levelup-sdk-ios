@@ -16,6 +16,7 @@
 
 @class LUAPIStub;
 @class LUGiftCardOrder;
+@class LUPaymentPreference;
 @class LUUser;
 
 @interface LUAPIStubFactory : NSObject
@@ -94,6 +95,7 @@
 + (LUAPIStub *)stubToGetOrdersLastPage;
 + (LUAPIStub *)stubToGetOrdersSecondPage;
 + (LUAPIStub *)stubToGetPassWithMerchantID:(NSNumber *)merchantID;
++ (LUAPIStub *)stubToGetPaymentOptionsSummary;
 + (LUAPIStub *)stubToGetPaymentToken;
 + (LUAPIStub *)stubToGetPaymentTokenWithActionAndMessage;
 + (LUAPIStub *)stubToGetPaymentTokenWithMessage;
@@ -107,6 +109,7 @@
 + (LUAPIStub *)stubToLogInWithEmail:(NSString *)email password:(NSString *)password;
 + (LUAPIStub *)stubToPromoteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToResetPasswordRequest;
++ (LUAPIStub *)stubToSetPaymentPreference;
 + (LUAPIStub *)stubToSubmitFeedbackForOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToUpdateCarrierAccountWithID:(NSNumber *)carrierAccountID
                              mobileDeviceNumber:(NSString *)mobileDeviceNumber

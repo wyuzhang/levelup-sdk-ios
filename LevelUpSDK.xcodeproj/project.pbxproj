@@ -196,6 +196,20 @@
 		02BDB2AC1AB8A658005830A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB2A81AB8A658005830A7 /* AppDelegate.m */; };
 		02BDB2AD1AB8A658005830A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02BDB2A91AB8A658005830A7 /* Images.xcassets */; };
 		02BDB2AF1AB8A658005830A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB2AB1AB8A658005830A7 /* main.m */; };
+		02C1A7411AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C1A73F1AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.h */; };
+		02C1A7421AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A7401AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.m */; };
+		02C1A7451AE833A500550FE3 /* LUPaymentOptionsSummary.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C1A7431AE833A500550FE3 /* LUPaymentOptionsSummary.h */; };
+		02C1A7461AE833A500550FE3 /* LUPaymentOptionsSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A7441AE833A500550FE3 /* LUPaymentOptionsSummary.m */; };
+		02C1A7491AE8358000550FE3 /* LUPaymentOptionsSummaryJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C1A7471AE8358000550FE3 /* LUPaymentOptionsSummaryJSONFactory.h */; };
+		02C1A74A1AE8358000550FE3 /* LUPaymentOptionsSummaryJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A7481AE8358000550FE3 /* LUPaymentOptionsSummaryJSONFactory.m */; };
+		02C1A74D1AE8381200550FE3 /* LUPaymentPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C1A74B1AE8381200550FE3 /* LUPaymentPreference.h */; };
+		02C1A74E1AE8381200550FE3 /* LUPaymentPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A74C1AE8381200550FE3 /* LUPaymentPreference.m */; };
+		02C1A7701AE968DA00550FE3 /* LUPaymentOptionsSummary+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A76D1AE9687D00550FE3 /* LUPaymentOptionsSummary+Fixtures.m */; };
+		02C1A7721AE9697F00550FE3 /* payment_options_summary.json in Resources */ = {isa = PBXBuildFile; fileRef = 02C1A7711AE9697F00550FE3 /* payment_options_summary.json */; };
+		02C1A7751AE9741900550FE3 /* LUPaymentOptionsSummaryJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A7731AE9741700550FE3 /* LUPaymentOptionsSummaryJSONFactorySpec.m */; };
+		02C1A7781AE975D600550FE3 /* LUPaymentOptionsSummarySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A7761AE975CE00550FE3 /* LUPaymentOptionsSummarySpec.m */; };
+		02C1A77A1AE9761900550FE3 /* LUPaymentPreferenceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A7791AE9761900550FE3 /* LUPaymentPreferenceSpec.m */; };
+		02C1A77C1AE9767500550FE3 /* LUPaymentPreferenceRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A77B1AE9767500550FE3 /* LUPaymentPreferenceRequestFactorySpec.m */; };
 		02CB685B18A94D5D00FDF630 /* LUPaymentStringGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CB685918A94D5D00FDF630 /* LUPaymentStringGenerator.h */; };
 		02CB685C18A94D5D00FDF630 /* LUPaymentStringGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CB685A18A94D5D00FDF630 /* LUPaymentStringGenerator.m */; };
 		02CB685F18A9519C00FDF630 /* LUPaymentStringGeneratorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CB685D18A9518B00FDF630 /* LUPaymentStringGeneratorSpec.m */; };
@@ -723,6 +737,21 @@
 		02BDB2A91AB8A658005830A7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		02BDB2AA1AB8A658005830A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02BDB2AB1AB8A658005830A7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		02C1A73F1AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUPaymentPreferenceRequestFactory.h; sourceTree = "<group>"; };
+		02C1A7401AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentPreferenceRequestFactory.m; sourceTree = "<group>"; };
+		02C1A7431AE833A500550FE3 /* LUPaymentOptionsSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUPaymentOptionsSummary.h; sourceTree = "<group>"; };
+		02C1A7441AE833A500550FE3 /* LUPaymentOptionsSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentOptionsSummary.m; sourceTree = "<group>"; };
+		02C1A7471AE8358000550FE3 /* LUPaymentOptionsSummaryJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUPaymentOptionsSummaryJSONFactory.h; sourceTree = "<group>"; };
+		02C1A7481AE8358000550FE3 /* LUPaymentOptionsSummaryJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentOptionsSummaryJSONFactory.m; sourceTree = "<group>"; };
+		02C1A74B1AE8381200550FE3 /* LUPaymentPreference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUPaymentPreference.h; sourceTree = "<group>"; };
+		02C1A74C1AE8381200550FE3 /* LUPaymentPreference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentPreference.m; sourceTree = "<group>"; };
+		02C1A76C1AE9687D00550FE3 /* LUPaymentOptionsSummary+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUPaymentOptionsSummary+Fixtures.h"; sourceTree = "<group>"; };
+		02C1A76D1AE9687D00550FE3 /* LUPaymentOptionsSummary+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUPaymentOptionsSummary+Fixtures.m"; sourceTree = "<group>"; };
+		02C1A7711AE9697F00550FE3 /* payment_options_summary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = payment_options_summary.json; sourceTree = "<group>"; };
+		02C1A7731AE9741700550FE3 /* LUPaymentOptionsSummaryJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentOptionsSummaryJSONFactorySpec.m; sourceTree = "<group>"; };
+		02C1A7761AE975CE00550FE3 /* LUPaymentOptionsSummarySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentOptionsSummarySpec.m; sourceTree = "<group>"; };
+		02C1A7791AE9761900550FE3 /* LUPaymentPreferenceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentPreferenceSpec.m; sourceTree = "<group>"; };
+		02C1A77B1AE9767500550FE3 /* LUPaymentPreferenceRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentPreferenceRequestFactorySpec.m; sourceTree = "<group>"; };
 		02CB685918A94D5D00FDF630 /* LUPaymentStringGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUPaymentStringGenerator.h; sourceTree = "<group>"; };
 		02CB685A18A94D5D00FDF630 /* LUPaymentStringGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentStringGenerator.m; sourceTree = "<group>"; };
 		02CB685D18A9518B00FDF630 /* LUPaymentStringGeneratorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentStringGeneratorSpec.m; sourceTree = "<group>"; };
@@ -1150,6 +1179,8 @@
 				022A6DCE187C61D500EE7C4B /* LUOrder+Fixtures.m */,
 				02DB590C19547EAA00955711 /* LUOrderItem+Fixtures.h */,
 				02DB590D19547EAA00955711 /* LUOrderItem+Fixtures.m */,
+				02C1A76C1AE9687D00550FE3 /* LUPaymentOptionsSummary+Fixtures.h */,
+				02C1A76D1AE9687D00550FE3 /* LUPaymentOptionsSummary+Fixtures.m */,
 				022A6DCF187C61D500EE7C4B /* LUPaymentToken+Fixtures.h */,
 				022A6DD0187C61D500EE7C4B /* LUPaymentToken+Fixtures.m */,
 				021B747F193FAC6A00BBC315 /* LURegistration+Fixtures.h */,
@@ -1484,6 +1515,7 @@
 				0261006319F8027E006BF5F7 /* pass.pkpass */,
 				02D53BA1194A4DB600507397 /* payment_ineligible_error_excessive_chargebacks.json */,
 				02D53B9D194A332200507397 /* payment_ineligible_error.json */,
+				02C1A7711AE9697F00550FE3 /* payment_options_summary.json */,
 				02EA61C31A9245250079645F /* payment_token_with_action_and_message.json */,
 				02EA61C41A9245250079645F /* payment_token_with_message.json */,
 				025B6DDD176A70D500713242 /* payment_token.json */,
@@ -1702,6 +1734,8 @@
 				C1CAF0D4173052A7003B3D01 /* LUMonetaryValueSpec.m */,
 				C1CAF0D6173052A7003B3D01 /* LUOrderSpec.m */,
 				02DB59111954816F00955711 /* LUOrderItemSpec.m */,
+				02C1A7761AE975CE00550FE3 /* LUPaymentOptionsSummarySpec.m */,
+				02C1A7791AE9761900550FE3 /* LUPaymentPreferenceSpec.m */,
 				25D43F71176A1DC80051ED2F /* LUPaymentTokenSpec.m */,
 				021B7488193FAD8700BBC315 /* LURegistrationSpec.m */,
 				C1CAF0D9173052A7003B3D01 /* LUUserSpec.m */,
@@ -1734,6 +1768,7 @@
 				C1CAF0C1173052A7003B3D01 /* LUOrderJSONFactorySpec.m */,
 				02DB590F1954807600955711 /* LUOrderItemJSONFactorySpec.m */,
 				027E58E51ABCC1C200C334CA /* LUPaymentMethodJSONFactorySpec.m */,
+				02C1A7731AE9741700550FE3 /* LUPaymentOptionsSummaryJSONFactorySpec.m */,
 				25D43F73176A1DE80051ED2F /* LUPaymentTokenJSONFactorySpec.m */,
 				021B7486193FAD7100BBC315 /* LURegistrationJSONFactorySpec.m */,
 				C1CAF0C4173052A7003B3D01 /* LUUserJSONFactorySpec.m */,
@@ -1773,6 +1808,7 @@
 				C1CAF0EB173052A7003B3D01 /* LUOrderRequestFactorySpec.m */,
 				0261005B19F7F6AB006BF5F7 /* LUPassRequestFactorySpec.m */,
 				027E58F01ABCC51000C334CA /* LUPaymentMethodRequestFactorySpec.m */,
+				02C1A77B1AE9767500550FE3 /* LUPaymentPreferenceRequestFactorySpec.m */,
 				25D43F78176A1FD40051ED2F /* LUPaymentTokenRequestFactorySpec.m */,
 				021B748A193FAD9E00BBC315 /* LURegistrationRequestFactorySpec.m */,
 				C1CAF0EC173052A7003B3D01 /* LUTicketRequestFactorySpec.m */,
@@ -1899,6 +1935,10 @@
 				C1CAF1AA17315414003B3D01 /* LUOrder.m */,
 				02DB59041954782E00955711 /* LUOrderItem.h */,
 				02DB59051954782E00955711 /* LUOrderItem.m */,
+				02C1A7431AE833A500550FE3 /* LUPaymentOptionsSummary.h */,
+				02C1A7441AE833A500550FE3 /* LUPaymentOptionsSummary.m */,
+				02C1A74B1AE8381200550FE3 /* LUPaymentPreference.h */,
+				02C1A74C1AE8381200550FE3 /* LUPaymentPreference.m */,
 				25CA82DC176A173C0073383C /* LUPaymentToken.h */,
 				25CA82DD176A173C0073383C /* LUPaymentToken.m */,
 				021B7473193FAB8900BBC315 /* LURegistration.h */,
@@ -1955,6 +1995,8 @@
 				02DB590919547B3600955711 /* LUOrderItemJSONFactory.m */,
 				027E58A71ABCB93200C334CA /* LUPaymentMethodJSONFactory.h */,
 				027E58A81ABCB93200C334CA /* LUPaymentMethodJSONFactory.m */,
+				02C1A7471AE8358000550FE3 /* LUPaymentOptionsSummaryJSONFactory.h */,
+				02C1A7481AE8358000550FE3 /* LUPaymentOptionsSummaryJSONFactory.m */,
 				25CA82E0176A188A0073383C /* LUPaymentTokenJSONFactory.h */,
 				25CA82E1176A188A0073383C /* LUPaymentTokenJSONFactory.m */,
 				021B7477193FABB700BBC315 /* LURegistrationJSONFactory.h */,
@@ -2016,6 +2058,8 @@
 				027C5C4119D33BB3006C8E23 /* LUPassRequestFactory.m */,
 				027E58AB1ABCBB2F00C334CA /* LUPaymentMethodRequestFactory.h */,
 				027E58AC1ABCBB2F00C334CA /* LUPaymentMethodRequestFactory.m */,
+				02C1A73F1AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.h */,
+				02C1A7401AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.m */,
 				25CA82E4176A18EE0073383C /* LUPaymentTokenRequestFactory.h */,
 				25CA82E5176A18EE0073383C /* LUPaymentTokenRequestFactory.m */,
 				021B747B193FABF700BBC315 /* LURegistrationRequestFactory.h */,
@@ -2181,6 +2225,7 @@
 				024AF4A71A9F703D007131DD /* BTEncryption.h in Headers */,
 				6AC1EC9B1A5194A6006756C5 /* LUCarrierAccount.h in Headers */,
 				027E58A51ABCB77E00C334CA /* LUCreditCardPaymentMethod.h in Headers */,
+				02C1A7411AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.h in Headers */,
 				C1CAF21E17315415003B3D01 /* LUUserJSONFactory.h in Headers */,
 				027E58A11ABCB6F800C334CA /* LUCarrierAccountPaymentMethod.h in Headers */,
 				C1CAF22017315415003B3D01 /* LUAPIModel.h in Headers */,
@@ -2236,6 +2281,7 @@
 				0264391B185BB6F000175425 /* LULocationCreditRequestFactory.h in Headers */,
 				C1CAF27E17315415003B3D01 /* LUQRCodeDecoder.h in Headers */,
 				02BDB21D1AB77052005830A7 /* LUAbstactEnumToStringTransformer.h in Headers */,
+				02C1A74D1AE8381200550FE3 /* LUPaymentPreference.h in Headers */,
 				C1CAF28017315415003B3D01 /* LUPaymentQRCodeGenerator.h in Headers */,
 				C1CAF28217315415003B3D01 /* LUQRCodeScannerView.h in Headers */,
 				C1CAF28417315415003B3D01 /* LUQROverlayView.h in Headers */,
@@ -2256,6 +2302,7 @@
 				F87364A6173AE3E10024A3F5 /* LULoyaltyJSONFactory.h in Headers */,
 				0251CC1B1A3B44860056D82C /* LUGiftCardOrder.h in Headers */,
 				02BA982A174BE19500C9D647 /* LUCoreDataStore.h in Headers */,
+				02C1A7451AE833A500550FE3 /* LUPaymentOptionsSummary.h in Headers */,
 				F8D4DB9D17569CA90000DB66 /* NSDictionary+SafetyAdditions.h in Headers */,
 				020231711779E0B100B057D1 /* LUAPIConnection.h in Headers */,
 				02BC594D1AB9F3850053D6A7 /* LUIBeaconListener.h in Headers */,
@@ -2286,6 +2333,7 @@
 				6A2D6AFB1A4877BB00BE1D09 /* LUCarrierNetworkDetector.h in Headers */,
 				02CD576117D906B7006205C6 /* LUInterstitialRequestFactory.h in Headers */,
 				02CD576517D906C9006205C6 /* NSURL+LUAdditions.h in Headers */,
+				02C1A7491AE8358000550FE3 /* LUPaymentOptionsSummaryJSONFactory.h in Headers */,
 				02DB59061954782E00955711 /* LUOrderItem.h in Headers */,
 				C1CAF24217315415003B3D01 /* LUOrder.h in Headers */,
 			);
@@ -2423,6 +2471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2536CDC8190B283600426651 /* LUAPIObjectModel.xcdatamodeld in Resources */,
+				02C1A7721AE9697F00550FE3 /* payment_options_summary.json in Resources */,
 				2536CDC9190B283600426651 /* LUPersistedObjectsInitial.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2659,10 +2708,13 @@
 				25FF1CD418FAE48D007EDCEA /* LUOneTimePad.m in Sources */,
 				C1CAF25717315415003B3D01 /* LUCampaignRequestFactory.m in Sources */,
 				027E589E1ABCB68A00C334CA /* LUApplePayCardPaymentMethod.m in Sources */,
+				02C1A74A1AE8358000550FE3 /* LUPaymentOptionsSummaryJSONFactory.m in Sources */,
 				C1CAF25917315415003B3D01 /* LUCategoryRequestFactory.m in Sources */,
 				024AF4AE1A9F703D007131DD /* BTRSA.m in Sources */,
 				C1CAF25D17315415003B3D01 /* LUClaimRequestFactory.m in Sources */,
+				02C1A7461AE833A500550FE3 /* LUPaymentOptionsSummary.m in Sources */,
 				021B747A193FABB700BBC315 /* LURegistrationJSONFactory.m in Sources */,
+				02C1A74E1AE8381200550FE3 /* LUPaymentPreference.m in Sources */,
 				C1CAF26117315415003B3D01 /* LUCreditCardRequestFactory.m in Sources */,
 				C1CAF26517315415003B3D01 /* LUAuthenticationRequestFactory.m in Sources */,
 				C1CAF26717315415003B3D01 /* LUOrderRequestFactory.m in Sources */,
@@ -2715,6 +2767,7 @@
 				026FB5241AB2323E00163671 /* LUOAuth2ViewController.m in Sources */,
 				027E589A1ABCB51A00C334CA /* LUAbstractPaymentMethod.m in Sources */,
 				027C5C4319D33BB3006C8E23 /* LUPassRequestFactory.m in Sources */,
+				02C1A7421AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.m in Sources */,
 				021B7476193FAB8900BBC315 /* LURegistration.m in Sources */,
 				02F08DB71ADDB197001B5C1F /* LUCampaignRepresentationSpendBasedLoyaltyV1JSONFactory.m in Sources */,
 				02BA982B174BE19500C9D647 /* LUCoreDataStore.m in Sources */,
@@ -2770,7 +2823,9 @@
 				C1CAF11D173052A7003B3D01 /* LUAccessTokenJSONFactorySpec.m in Sources */,
 				02BDB2351AB770DE005830A7 /* LUBaseCampaignRepresentationJSONFactorySpec.m in Sources */,
 				02BDB23F1AB86D0F005830A7 /* LUOAuth2ViewControllerSpec.m in Sources */,
+				02C1A7751AE9741900550FE3 /* LUPaymentOptionsSummaryJSONFactorySpec.m in Sources */,
 				02CB685F18A9519C00FDF630 /* LUPaymentStringGeneratorSpec.m in Sources */,
+				02C1A7701AE968DA00550FE3 /* LUPaymentOptionsSummary+Fixtures.m in Sources */,
 				0205E1E219520193001904D9 /* LUUserWithAccessTokenSpec.m in Sources */,
 				C1CAF11E173052A7003B3D01 /* LUOrderJSONFactorySpec.m in Sources */,
 				0251CC241A3B45040056D82C /* LUGiftCardOrderRequestFactorySpec.m in Sources */,
@@ -2848,6 +2903,7 @@
 				C1CAF14B173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m in Sources */,
 				C1CAF14C173052A7003B3D01 /* NSNumberBase36Spec.m in Sources */,
 				C1CAF14D173052A7003B3D01 /* NSStringHTMLStrippingSpec.m in Sources */,
+				02C1A77C1AE9767500550FE3 /* LUPaymentPreferenceRequestFactorySpec.m in Sources */,
 				C1CAF14E173052A7003B3D01 /* LUPaymentQRCodeGeneratorSpec.m in Sources */,
 				25FF1CDB18FAE54D007EDCEA /* LUDeepLinkAuthResponseSpec.m in Sources */,
 				2523E33917374DA200FBDFEB /* LUAPIObjectModel.xcdatamodeld in Sources */,
@@ -2862,6 +2918,7 @@
 				027E58EF1ABCC4E200C334CA /* LUCreditCardPaymentMethodSpec.m in Sources */,
 				F8BC840A173997D2007F7142 /* LUWebLocationsSpec.m in Sources */,
 				F873649B173AA1980024A3F5 /* LULoyaltyRequestFactorySpec.m in Sources */,
+				02C1A77A1AE9761900550FE3 /* LUPaymentPreferenceSpec.m in Sources */,
 				F87364A9173AE5250024A3F5 /* LULoyaltyJSONFactorySpec.m in Sources */,
 				02BA9827174AD23100C9D647 /* LULocationSummaryJSONFactorySpec.m in Sources */,
 				021B7487193FAD7100BBC315 /* LURegistrationJSONFactorySpec.m in Sources */,
@@ -2880,6 +2937,7 @@
 				25D43F74176A1DE80051ED2F /* LUPaymentTokenJSONFactorySpec.m in Sources */,
 				02D4922B194F545800C9C385 /* LUWebLinkJSONFactorySpec.m in Sources */,
 				6A2169191A6C8801002FF477 /* LUCarrierAccount+Fixtures.m in Sources */,
+				02C1A7781AE975D600550FE3 /* LUPaymentOptionsSummarySpec.m in Sources */,
 				0228EA711A97905F00FEEF90 /* LUCarrierAccountRetrieverSpec.m in Sources */,
 				027E58E61ABCC1C200C334CA /* LUPaymentMethodJSONFactorySpec.m in Sources */,
 				022A6DD5187C61D500EE7C4B /* LUAccessToken+Fixtures.m in Sources */,

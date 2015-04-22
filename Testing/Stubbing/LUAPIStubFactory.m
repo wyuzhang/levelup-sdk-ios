@@ -641,6 +641,14 @@
                          responseData:[self responseDataFromFile:@"pass"]];
 }
 
++ (LUAPIStub *)stubToGetPaymentOptionsSummary {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"payment_options_summary"
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"payment_options_summary"]];
+}
+
 + (LUAPIStub *)stubToGetPaymentToken {
   return [LUAPIStub apiStubForVersion:LUAPIVersion15
                                  path:@"payment_token"
@@ -741,6 +749,14 @@
                                  path:@"passwords"
                            HTTPMethod:@"POST"
                         authenticated:NO
+                         responseData:nil];
+}
+
++ (LUAPIStub *)stubToSetPaymentPreference {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"apps/payment_preference"
+                           HTTPMethod:@"PUT"
+                        authenticated:YES
                          responseData:nil];
 }
 
