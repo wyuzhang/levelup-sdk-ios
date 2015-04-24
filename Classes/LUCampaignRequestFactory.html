@@ -41,9 +41,15 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
+	<option value="//api/name/requestForCampaignMetadataForLocationWithID:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForCampaignMetadataForLocationWithID:</option>
+	
+	<option value="//api/name/requestForCampaignMetadataForMerchantWithID:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForCampaignMetadataForMerchantWithID:</option>
+	
 	<option value="//api/name/requestForCampaignWithCode:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForCampaignWithCode:</option>
 	
 	<option value="//api/name/requestForCampaignWithID:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForCampaignWithID:</option>
+	
+	<option value="//api/name/requestForCampaignWithMetadata:representationType:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForCampaignWithMetadata:representationType:</option>
 	
 	<option value="//api/name/requestForMerchantsForCampaignWithID:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForMerchantsForCampaignWithID:</option>
 	
@@ -75,9 +81,15 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForCampaignMetadataForLocationWithID:">requestForCampaignMetadataForLocationWithID:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForCampaignMetadataForMerchantWithID:">requestForCampaignMetadataForMerchantWithID:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForCampaignWithCode:">requestForCampaignWithCode:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForCampaignWithID:">requestForCampaignWithID:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForCampaignWithMetadata:representationType:">requestForCampaignWithMetadata:representationType:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForMerchantsForCampaignWithID:">requestForMerchantsForCampaignWithID:</a></span></li>
 	
@@ -138,7 +150,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestForMerchantsForCampaignWithID:">+&nbsp;requestForMerchantsForCampaignWithID:</a></code>
+		<code><a href="#//api/name/requestForCampaignMetadataForLocationWithID:">+&nbsp;requestForCampaignMetadataForLocationWithID:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestForCampaignMetadataForMerchantWithID:">+&nbsp;requestForCampaignMetadataForMerchantWithID:</a></code>
 	</span>
 	
 	
@@ -151,6 +169,18 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/requestForCampaignWithID:">+&nbsp;requestForCampaignWithID:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestForCampaignWithMetadata:representationType:">+&nbsp;requestForCampaignWithMetadata:representationType:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestForMerchantsForCampaignWithID:">+&nbsp;requestForMerchantsForCampaignWithID:</a></code>
 	</span>
 	
 	
@@ -168,6 +198,118 @@
 					<div class="section section-methods">
 						<a title="Class Methods" name="class_methods"></a>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/requestForCampaignMetadataForLocationWithID:" title="requestForCampaignMetadataForLocationWithID:"></a>
+	<h3 class="subsubtitle method-title">requestForCampaignMetadataForLocationWithID:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Builds a request to return metadata on campaigns for locations with the given <code>locationID</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForCampaignMetadataForLocationWithID:(NSNumber *)<em>locationID</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationID</em></dt>
+			<dd><p>The ID of the location whose campaigns will be retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Builds a request to return metadata on campaigns for locations with the given <code>locationID</code>.</p>
+
+<p>On success, this request will return an <code>NSArray</code> of <a href="../Classes/LUCampaignMetadata.html"><code>LUCampaignMetadata</code></a> instances. Each
+<a href="../Classes/LUCampaignMetadata.html"><code>LUCampaignMetadata</code></a> contains a <code>campaignID</code> and an <code>NSArray</code> of available representations.
+Retrieve the campaign with that representation using
+<a href="#//api/name/requestForCampaignWithMetadata:representationType:"><code>requestForCampaignWithMetadata:representationType:</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaignRequestFactory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestForCampaignMetadataForMerchantWithID:" title="requestForCampaignMetadataForMerchantWithID:"></a>
+	<h3 class="subsubtitle method-title">requestForCampaignMetadataForMerchantWithID:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Builds a request to return metadata on campaigns for locations with the given <code>merchantID</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForCampaignMetadataForMerchantWithID:(NSNumber *)<em>merchantID</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>merchantID</em></dt>
+			<dd><p>The ID of the merchant whose campaigns will be retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Builds a request to return metadata on campaigns for locations with the given <code>merchantID</code>.</p>
+
+<p>On success, this request will return an <code>NSArray</code> of <a href="../Classes/LUCampaignMetadata.html"><code>LUCampaignMetadata</code></a> instances. Each
+<a href="../Classes/LUCampaignMetadata.html"><code>LUCampaignMetadata</code></a> contains a <code>campaignID</code> and an <code>NSArray</code> of available representations.
+Retrieve the campaign with that representation using
+<a href="#//api/name/requestForCampaignWithMetadata:representationType:"><code>requestForCampaignWithMetadata:representationType:</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaignRequestFactory.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/requestForCampaignWithCode:" title="requestForCampaignWithCode:"></a>
@@ -280,6 +422,53 @@ request to retrieve the associated campaign.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/requestForCampaignWithMetadata:representationType:" title="requestForCampaignWithMetadata:representationType:"></a>
+	<h3 class="subsubtitle method-title">requestForCampaignWithMetadata:representationType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Builds a request to retrieve a representation of the campaign with the given metadata. The campaign
+metadata must include the given <code>representationType</code> as one of its own <code>representationTypes</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForCampaignWithMetadata:(LUCampaignMetadata *)<em>campaignMetadata</em> representationType:(LUCampaignRepresentationType)<em>representationType</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Builds a request to retrieve a representation of the campaign with the given metadata. The campaign
+metadata must include the given <code>representationType</code> as one of its own <code>representationTypes</code>.</p>
+
+<p>On success, this request will return an instance of the campaign representation. For example,
+if the representation type is <code>LUCampaignRepresentationTypeBasicV1</code>, the request will return an
+instance of <a href="../Classes/LUCampaignRepresentationBasicV1.html"><code>LUCampaignRepresentationBasicV1</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaignRequestFactory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/requestForMerchantsForCampaignWithID:" title="requestForMerchantsForCampaignWithID:"></a>
 	<h3 class="subsubtitle method-title">requestForMerchantsForCampaignWithID:</h3>
 	
@@ -351,7 +540,7 @@ returned; they are represented as an <code>NSArray</code> of <code>NSNumber</cod
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 LevelUp. All rights reserved. (Last updated: 2015-02-25)</span><br />
+						<p><span class="copyright">&copy; 2015 LevelUp. All rights reserved. (Last updated: 2015-04-24)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

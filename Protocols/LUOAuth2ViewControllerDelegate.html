@@ -1,0 +1,590 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>LUOAuth2ViewControllerDelegate Protocol Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">LevelUpSDK </a></h1>
+				<a id="developerHome" href="../index.html">LevelUp</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">LUOAuth2ViewControllerDelegate Protocol Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/OAuth2ViewController:didFailWithErrorCode:errorDescription:">&nbsp;&nbsp;&nbsp;&nbsp;- OAuth2ViewController:didFailWithErrorCode:errorDescription:</option>
+	
+	<option value="//api/name/OAuth2ViewController:didSucceedWithAccessToken:">&nbsp;&nbsp;&nbsp;&nbsp;- OAuth2ViewController:didSucceedWithAccessToken:</option>
+	
+	<option value="//api/name/OAuth2ViewControllerDidFinishLoad:">&nbsp;&nbsp;&nbsp;&nbsp;- OAuth2ViewControllerDidFinishLoad:</option>
+	
+	<option value="//api/name/OAuth2ViewControllerDidStartLoad:">&nbsp;&nbsp;&nbsp;&nbsp;- OAuth2ViewControllerDidStartLoad:</option>
+	
+	<option value="//api/name/OAuth2ViewControllerWasCancelled:">&nbsp;&nbsp;&nbsp;&nbsp;- OAuth2ViewControllerWasCancelled:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/OAuth2ViewController:didFailWithErrorCode:errorDescription:">OAuth2ViewController:didFailWithErrorCode:errorDescription:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/OAuth2ViewController:didSucceedWithAccessToken:">OAuth2ViewController:didSucceedWithAccessToken:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/OAuth2ViewControllerDidFinishLoad:">OAuth2ViewControllerDidFinishLoad:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/OAuth2ViewControllerDidStartLoad:">OAuth2ViewControllerDidStartLoad:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/OAuth2ViewControllerWasCancelled:">OAuth2ViewControllerWasCancelled:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="LUOAuth2ViewControllerDelegate Protocol Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">LUOAuth2ViewControllerDelegate Protocol Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">LUOAuth2ViewController.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>LUOAuth2ViewControllerDelegate</code> is used with <a href="../Classes/LUOAuth2ViewController.html"><code>LUOAuth2ViewController</code></a> to notify you when an
+action occurs.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/OAuth2ViewController:didFailWithErrorCode:errorDescription:">&ndash;&nbsp;OAuth2ViewController:didFailWithErrorCode:errorDescription:</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/OAuth2ViewController:didSucceedWithAccessToken:">&ndash;&nbsp;OAuth2ViewController:didSucceedWithAccessToken:</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/OAuth2ViewControllerDidFinishLoad:">&ndash;&nbsp;OAuth2ViewControllerDidFinishLoad:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/OAuth2ViewControllerDidStartLoad:">&ndash;&nbsp;OAuth2ViewControllerDidStartLoad:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/OAuth2ViewControllerWasCancelled:">&ndash;&nbsp;OAuth2ViewControllerWasCancelled:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/OAuth2ViewController:didFailWithErrorCode:errorDescription:" title="OAuth2ViewController:didFailWithErrorCode:errorDescription:"></a>
+	<h3 class="subsubtitle method-title">OAuth2ViewController:didFailWithErrorCode:errorDescription:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called if the server returned an error.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)OAuth2ViewController:(LUOAuth2ViewController *)<em>OAuth2ViewController</em> didFailWithErrorCode:(NSString *)<em>errorCode</em> errorDescription:(NSString *)<em>errorDescription</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>OAuth2ViewController</em></dt>
+			<dd><p>The OAuth2 controller that received the error.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorCode</em></dt>
+			<dd><p>An error code of the form &ldquo;invalid_scope&rdquo;.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorDescription</em></dt>
+			<dd><p>A human-reable error message.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Called if the server returned an error.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUOAuth2ViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/OAuth2ViewController:didSucceedWithAccessToken:" title="OAuth2ViewController:didSucceedWithAccessToken:"></a>
+	<h3 class="subsubtitle method-title">OAuth2ViewController:didSucceedWithAccessToken:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called when authorization is successful.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)OAuth2ViewController:(LUOAuth2ViewController *)<em>OAuth2ViewController</em> didSucceedWithAccessToken:(NSString *)<em>accessToken</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>OAuth2ViewController</em></dt>
+			<dd><p>The OAuth2 controller that was authorizing the user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>accessToken</em></dt>
+			<dd><p>An access token for the authorizing user. Setting <code>accessToken</code> on
+<a href="../Classes/LUAPIClient.html#//api/name/sharedClient"><code>[LUAPIClient sharedClient]</code></a> to this token will allow the access token to be used on subsequent
+LevelUp API calls.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Called when authorization is successful.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUOAuth2ViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/OAuth2ViewControllerDidFinishLoad:" title="OAuth2ViewControllerDidFinishLoad:"></a>
+	<h3 class="subsubtitle method-title">OAuth2ViewControllerDidFinishLoad:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An optional method which is called when the web view finishing loading a page. This could be used
+to hide a loading indicator, for example.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)OAuth2ViewControllerDidFinishLoad:(LUOAuth2ViewController *)<em>OAuth2ViewController</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>OAuth2ViewController</em></dt>
+			<dd><p>The OAuth2 controller that is authorizing the user.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>An optional method which is called when the web view finishing loading a page. This could be used
+to hide a loading indicator, for example.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUOAuth2ViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/OAuth2ViewControllerDidStartLoad:" title="OAuth2ViewControllerDidStartLoad:"></a>
+	<h3 class="subsubtitle method-title">OAuth2ViewControllerDidStartLoad:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An optional method which is called when the web view starts loading a page. This could be used
+to show a loading indicator, for example.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)OAuth2ViewControllerDidStartLoad:(LUOAuth2ViewController *)<em>OAuth2ViewController</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>OAuth2ViewController</em></dt>
+			<dd><p>The OAuth2 controller that is authorizing the user.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>An optional method which is called when the web view starts loading a page. This could be used
+to show a loading indicator, for example.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUOAuth2ViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/OAuth2ViewControllerWasCancelled:" title="OAuth2ViewControllerWasCancelled:"></a>
+	<h3 class="subsubtitle method-title">OAuth2ViewControllerWasCancelled:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An optional method which is called when the user cancels the dialog, if it was displayed inside
+a navigation controller, such as the one returned by <code>navigationDialog</code>. Typically this would be
+the time when the controller should be dismissed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)OAuth2ViewControllerWasCancelled:(LUOAuth2ViewController *)<em>OAuth2ViewController</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>OAuth2ViewController</em></dt>
+			<dd><p>The OAuth2 controller that is authorizing the user.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>An optional method which is called when the user cancels the dialog, if it was displayed inside
+a navigation controller, such as the one returned by <code>navigationDialog</code>. Typically this would be
+the time when the controller should be dismissed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUOAuth2ViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 LevelUp. All rights reserved. (Last updated: 2015-04-24)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

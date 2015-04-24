@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUTicketRequestFactory Class Reference</title>
+		<title>LUAbstractPaymentMethod Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUTicketRequestFactory Class Reference</h1>
+				<h1 class="hideInXcode">LUAbstractPaymentMethod Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -37,11 +37,15 @@
 	
 	
 	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/monthlyBillingDay">&nbsp;&nbsp;&nbsp;&nbsp;monthlyBillingDay</option>
+	
+	<option value="//api/name/monthlyTransactionLimit">&nbsp;&nbsp;&nbsp;&nbsp;monthlyTransactionLimit</option>
+	
+	<option value="//api/name/paymentMethodDescription">&nbsp;&nbsp;&nbsp;&nbsp;paymentMethodDescription</option>
 	
 	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/requestToCreateTicketWithBody:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToCreateTicketWithBody:</option>
 	
 	
 	
@@ -67,13 +71,17 @@
 
 
 
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToCreateTicketWithBody:">requestToCreateTicketWithBody:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/monthlyBillingDay">monthlyBillingDay</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/monthlyTransactionLimit">monthlyTransactionLimit</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/paymentMethodDescription">paymentMethodDescription</a></span></li>
 	
 </ul></li>
+
+
 
 
 
@@ -82,7 +90,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUTicketRequestFactory Class Reference" name="top"></a>
+				<a title="LUAbstractPaymentMethod Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -91,7 +99,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUTicketRequestFactory Class Reference</h1>
+						<h1 class="title title-header">LUAbstractPaymentMethod Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -99,10 +107,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
+	<td class="specification-value">LUAPIModel : NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUTicketRequestFactory.h<br />LUTicketRequestFactory.m</td>
+	<td class="specification-value">LUAbstractPaymentMethod.h<br />LUAbstractPaymentMethod.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -112,7 +120,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUTicketRequestFactory</code> is used to build requests related to customer support tickets.</p>
+						<p>An abstract class representing a payment method. All payment methods inherit from this class.</p>
 					</div>
 					
 					
@@ -130,9 +138,21 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestToCreateTicketWithBody:">+&nbsp;requestToCreateTicketWithBody:</a></code>
+		<code><a href="#//api/name/monthlyBillingDay">&nbsp;&nbsp;monthlyBillingDay</a></code>
 	</span>
+	<span class="task-item-suffix">property</span>
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/monthlyTransactionLimit">&nbsp;&nbsp;monthlyTransactionLimit</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/paymentMethodDescription">&nbsp;&nbsp;paymentMethodDescription</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -143,37 +163,25 @@
 					
 					
 					
-					
-					
 					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestToCreateTicketWithBody:" title="requestToCreateTicketWithBody:"></a>
-	<h3 class="subsubtitle method-title">requestToCreateTicketWithBody:</h3>
+	<a name="//api/name/monthlyBillingDay" title="monthlyBillingDay"></a>
+	<h3 class="subsubtitle method-title">monthlyBillingDay</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to create a support ticket.</p>
+		<p>The day of the month in which the user will be billed using this payment method.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToCreateTicketWithBody:(NSString *)<em>body</em></code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *monthlyBillingDay</code></div>
 
     
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>body</em></dt>
-			<dd><p>The body of the ticket.</p></dd>
-		</dl>
-		
-	</div>
 	
 	
 	
@@ -183,7 +191,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to create a support ticket.</p><div class="warning"><p><strong>Warning:</strong> Use of this request requires an Enterprise SDK license.</p></div>
+		<p>The day of the month in which the user will be billed using this payment method.</p>
+
+<p>Can be <code>nil</code> if the user is not billed monthly.</p>
 	</div>
 	
 	
@@ -194,13 +204,104 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUTicketRequestFactory.h</code><br />
+		<code class="declared-in-ref">LUAbstractPaymentMethod.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/monthlyTransactionLimit" title="monthlyTransactionLimit"></a>
+	<h3 class="subsubtitle method-title">monthlyTransactionLimit</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The user&rsquo;s transaction limit. If their pending charges reach this limit before the monthly
+billing day, the user will be charged immediately.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *monthlyTransactionLimit</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The user&rsquo;s transaction limit. If their pending charges reach this limit before the monthly
+billing day, the user will be charged immediately.</p>
+
+<p>Can be <code>nil</code> if the user is not billed monthly.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUAbstractPaymentMethod.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/paymentMethodDescription" title="paymentMethodDescription"></a>
+	<h3 class="subsubtitle method-title">paymentMethodDescription</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A human-readable <a href="#//api/name/description">description</a> of this payment method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *paymentMethodDescription</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A human-readable <a href="#//api/name/description">description</a> of this payment method.</p>
+
+<p>For example, for a credit card, this may be &ldquo;Visa *1234&rdquo;, where &ldquo;1234&rdquo; are the last 4 digits of the
+card number.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUAbstractPaymentMethod.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 					</div>
+					
+					
 					
 					
 					

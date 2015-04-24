@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUOrderItem Class Reference</title>
+		<title>LUCreditCardPaymentMethod Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUOrderItem Class Reference</h1>
+				<h1 class="hideInXcode">LUCreditCardPaymentMethod Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,21 +39,15 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/SKU">&nbsp;&nbsp;&nbsp;&nbsp;SKU</option>
+	<option value="//api/name/debit">&nbsp;&nbsp;&nbsp;&nbsp;debit</option>
 	
-	<option value="//api/name/UPC">&nbsp;&nbsp;&nbsp;&nbsp;UPC</option>
+	<option value="//api/name/expirationMonth">&nbsp;&nbsp;&nbsp;&nbsp;expirationMonth</option>
 	
-	<option value="//api/name/category">&nbsp;&nbsp;&nbsp;&nbsp;category</option>
+	<option value="//api/name/expirationYear">&nbsp;&nbsp;&nbsp;&nbsp;expirationYear</option>
 	
-	<option value="//api/name/chargedPrice">&nbsp;&nbsp;&nbsp;&nbsp;chargedPrice</option>
+	<option value="//api/name/issuer">&nbsp;&nbsp;&nbsp;&nbsp;issuer</option>
 	
-	<option value="//api/name/itemDescription">&nbsp;&nbsp;&nbsp;&nbsp;itemDescription</option>
-	
-	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
-	
-	<option value="//api/name/quantity">&nbsp;&nbsp;&nbsp;&nbsp;quantity</option>
-	
-	<option value="//api/name/standardPrice">&nbsp;&nbsp;&nbsp;&nbsp;standardPrice</option>
+	<option value="//api/name/last4Digits">&nbsp;&nbsp;&nbsp;&nbsp;last4Digits</option>
 	
 	
 	
@@ -83,21 +77,15 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/SKU">SKU</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/debit">debit</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/UPC">UPC</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expirationMonth">expirationMonth</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/category">category</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expirationYear">expirationYear</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/chargedPrice">chargedPrice</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/issuer">issuer</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itemDescription">itemDescription</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/quantity">quantity</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/standardPrice">standardPrice</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/last4Digits">last4Digits</a></span></li>
 	
 </ul></li>
 
@@ -110,7 +98,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUOrderItem Class Reference" name="top"></a>
+				<a title="LUCreditCardPaymentMethod Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -119,7 +107,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUOrderItem Class Reference</h1>
+						<h1 class="title title-header">LUCreditCardPaymentMethod Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -127,10 +115,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">LUAPIModel : NSObject</td>
+	<td class="specification-value"><a href="../Classes/LUAbstractPaymentMethod.html">LUAbstractPaymentMethod</a> : LUAPIModel : NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUOrderItem.h<br />LUOrderItem.m</td>
+	<td class="specification-value">LUCreditCardPaymentMethod.h<br />LUCreditCardPaymentMethod.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -140,7 +128,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>An <code>LUOrderItem</code> represents a single item that was part of an order.</p>
+						<p>Represents a credit or <a href="#//api/name/debit">debit</a> card.</p>
 					</div>
 					
 					
@@ -158,49 +146,31 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/category">&nbsp;&nbsp;category</a></code>
+		<code><a href="#//api/name/debit">&nbsp;&nbsp;debit</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/chargedPrice">&nbsp;&nbsp;chargedPrice</a></code>
+		<code><a href="#//api/name/expirationMonth">&nbsp;&nbsp;expirationMonth</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/itemDescription">&nbsp;&nbsp;itemDescription</a></code>
+		<code><a href="#//api/name/expirationYear">&nbsp;&nbsp;expirationYear</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+		<code><a href="#//api/name/issuer">&nbsp;&nbsp;issuer</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/quantity">&nbsp;&nbsp;quantity</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/SKU">&nbsp;&nbsp;SKU</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/standardPrice">&nbsp;&nbsp;standardPrice</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/UPC">&nbsp;&nbsp;UPC</a></code>
+		<code><a href="#//api/name/last4Digits">&nbsp;&nbsp;last4Digits</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -218,18 +188,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/SKU" title="SKU"></a>
-	<h3 class="subsubtitle method-title">SKU</h3>
+	<a name="//api/name/debit" title="debit"></a>
+	<h3 class="subsubtitle method-title">debit</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An optional SKU (Stock Keeping Unit) code for this item.</p>
+		<p><code>YES</code> if this is a debit card, else <code>NO</code>.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *SKU</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) BOOL debit</code></div>
 
     
 	
@@ -241,7 +211,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>An optional SKU (Stock Keeping Unit) code for this item.</p>
+		<p><code>YES</code> if this is a debit card, else <code>NO</code>.</p>
 	</div>
 	
 	
@@ -252,25 +222,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
+		<code class="declared-in-ref">LUCreditCardPaymentMethod.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/UPC" title="UPC"></a>
-	<h3 class="subsubtitle method-title">UPC</h3>
+	<a name="//api/name/expirationMonth" title="expirationMonth"></a>
+	<h3 class="subsubtitle method-title">expirationMonth</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An optional UPC (Universal Product Code) for this item.</p>
+		<p>The card&rsquo;s expiration month, as a number from 1 to 12.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *UPC</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSNumber *expirationMonth</code></div>
 
     
 	
@@ -282,7 +252,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>An optional UPC (Universal Product Code) for this item.</p>
+		<p>The card&rsquo;s expiration month, as a number from 1 to 12.</p>
 	</div>
 	
 	
@@ -293,25 +263,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
+		<code class="declared-in-ref">LUCreditCardPaymentMethod.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/category" title="category"></a>
-	<h3 class="subsubtitle method-title">category</h3>
+	<a name="//api/name/expirationYear" title="expirationYear"></a>
+	<h3 class="subsubtitle method-title">expirationYear</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An optional category for this item.</p>
+		<p>The card&rsquo;s expiration year as a four digit number (e.g. 2020).</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *category</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSNumber *expirationYear</code></div>
 
     
 	
@@ -323,7 +293,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>An optional category for this item.</p>
+		<p>The card&rsquo;s expiration year as a four digit number (e.g. 2020).</p>
 	</div>
 	
 	
@@ -334,25 +304,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
+		<code class="declared-in-ref">LUCreditCardPaymentMethod.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/chargedPrice" title="chargedPrice"></a>
-	<h3 class="subsubtitle method-title">chargedPrice</h3>
+	<a name="//api/name/issuer" title="issuer"></a>
+	<h3 class="subsubtitle method-title">issuer</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The price for this item that was charged to the customer.</p>
+		<p>The card&rsquo;s issuer, such as &ldquo;MasterCard&rdquo; or &ldquo;Visa&rdquo;.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *chargedPrice</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *issuer</code></div>
 
     
 	
@@ -364,7 +334,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The price for this item that was charged to the customer.</p>
+		<p>The card&rsquo;s issuer, such as &ldquo;MasterCard&rdquo; or &ldquo;Visa&rdquo;.</p>
 	</div>
 	
 	
@@ -375,25 +345,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
+		<code class="declared-in-ref">LUCreditCardPaymentMethod.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/itemDescription" title="itemDescription"></a>
-	<h3 class="subsubtitle method-title">itemDescription</h3>
+	<a name="//api/name/last4Digits" title="last4Digits"></a>
+	<h3 class="subsubtitle method-title">last4Digits</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An optional <a href="#//api/name/description">description</a> of the item.</p>
+		<p>The last 4 digits of the card&rsquo;s number.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *itemDescription</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *last4Digits</code></div>
 
     
 	
@@ -405,7 +375,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>An optional <a href="#//api/name/description">description</a> of the item.</p>
+		<p>The last 4 digits of the card&rsquo;s number.</p>
 	</div>
 	
 	
@@ -416,130 +386,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/name" title="name"></a>
-	<h3 class="subsubtitle method-title">name</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The name of the item.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *name</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The name of the item.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/quantity" title="quantity"></a>
-	<h3 class="subsubtitle method-title">quantity</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The quantity of the item that was purchased.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) NSUInteger quantity</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The quantity of the item that was purchased.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/standardPrice" title="standardPrice"></a>
-	<h3 class="subsubtitle method-title">standardPrice</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>An optional standard price for the item.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *standardPrice</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>An optional standard price for the item.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
+		<code class="declared-in-ref">LUCreditCardPaymentMethod.h</code><br />
 	</div>				
 	
 	

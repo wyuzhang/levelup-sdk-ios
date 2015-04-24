@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUTicketRequestFactory Class Reference</title>
+		<title>LUPaymentPreferenceRequestFactory Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUTicketRequestFactory Class Reference</h1>
+				<h1 class="hideInXcode">LUPaymentPreferenceRequestFactory Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -41,7 +41,9 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/requestToCreateTicketWithBody:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToCreateTicketWithBody:</option>
+	<option value="//api/name/requestForPaymentOptionsSummary">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForPaymentOptionsSummary</option>
+	
+	<option value="//api/name/requestToSetPaymentPreference:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToSetPaymentPreference:</option>
 	
 	
 	
@@ -71,7 +73,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToCreateTicketWithBody:">requestToCreateTicketWithBody:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForPaymentOptionsSummary">requestForPaymentOptionsSummary</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToSetPaymentPreference:">requestToSetPaymentPreference:</a></span></li>
 	
 </ul></li>
 
@@ -82,7 +86,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUTicketRequestFactory Class Reference" name="top"></a>
+				<a title="LUPaymentPreferenceRequestFactory Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -91,7 +95,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUTicketRequestFactory Class Reference</h1>
+						<h1 class="title title-header">LUPaymentPreferenceRequestFactory Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -102,7 +106,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUTicketRequestFactory.h<br />LUTicketRequestFactory.m</td>
+	<td class="specification-value">LUPaymentPreferenceRequestFactory.h<br />LUPaymentPreferenceRequestFactory.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -112,7 +116,17 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUTicketRequestFactory</code> is used to build requests related to customer support tickets.</p>
+						<p>For some LevelUp-powered apps, users can choose how they wish to be billed: either to preload money
+into their account (and to automatically load more money when their balance is low), or to be
+billed monthly (or in certain cases, immediately after an order is made).</p>
+
+<p><code>LUPaymentPreferenceRequestFactory</code> provides two requests. The first,
+<a href="#//api/name/requestForPaymentOptionsSummary"><code>requestForPaymentOptionsSummary</code></a>, shows the options available to a user along with relevant data
+such as the day of the month they will be billed. See <a href="../Classes/LUPaymentOptionsSummary.html"><code>LUPaymentOptionsSummary</code></a> for more
+information.</p>
+
+<p>The <a href="#//api/name/requestToSetPaymentPreference:"><code>requestToSetPaymentPreference:</code></a> request allows a user to choose whether or not they wish to
+preload, and the amount of money that should be loaded.</p>
 					</div>
 					
 					
@@ -130,7 +144,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestToCreateTicketWithBody:">+&nbsp;requestToCreateTicketWithBody:</a></code>
+		<code><a href="#//api/name/requestForPaymentOptionsSummary">+&nbsp;requestForPaymentOptionsSummary</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestToSetPaymentPreference:">+&nbsp;requestToSetPaymentPreference:</a></code>
 	</span>
 	
 	
@@ -150,18 +170,67 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestToCreateTicketWithBody:" title="requestToCreateTicketWithBody:"></a>
-	<h3 class="subsubtitle method-title">requestToCreateTicketWithBody:</h3>
+	<a name="//api/name/requestForPaymentOptionsSummary" title="requestForPaymentOptionsSummary"></a>
+	<h3 class="subsubtitle method-title">requestForPaymentOptionsSummary</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to create a support ticket.</p>
+		<p>Builds a request to retrieve a summary of payment options available to the user. If there is
+not an authenticated user, then the result will contain the options available to a newly
+registered user.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToCreateTicketWithBody:(NSString *)<em>body</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForPaymentOptionsSummary</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Builds a request to retrieve a summary of payment options available to the user. If there is
+not an authenticated user, then the result will contain the options available to a newly
+registered user.</p>
+
+<p>On success, this request will return an <a href="../Classes/LUPaymentOptionsSummary.html"><code>LUPaymentOptionsSummary</code></a> containing possible payment
+options.</p><div class="warning"><p><strong>Warning:</strong> If an access token is present, it must have the <code>LUPermissionManageUserPaymentMethods</code>
+permission.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUPaymentPreferenceRequestFactory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestToSetPaymentPreference:" title="requestToSetPaymentPreference:"></a>
+	<h3 class="subsubtitle method-title">requestToSetPaymentPreference:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Builds a request to set a user&rsquo;s payment preference for app to which they are authenticated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToSetPaymentPreference:(LUPaymentPreference *)<em>paymentPreference</em></code></div>
 
     
 	
@@ -169,8 +238,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>body</em></dt>
-			<dd><p>The body of the ticket.</p></dd>
+			<dt><em>paymentPreference</em></dt>
+			<dd><p>The user&rsquo;s chosen payment preference.</p></dd>
 		</dl>
 		
 	</div>
@@ -183,7 +252,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to create a support ticket.</p><div class="warning"><p><strong>Warning:</strong> Use of this request requires an Enterprise SDK license.</p></div>
+		<p>Builds a request to set a user&rsquo;s payment preference for app to which they are authenticated.</p><div class="warning"><p><strong>Warning:</strong> This request requires an access token with the <code>LUPermissionCreateOrders</code> permission.</p></div>
 	</div>
 	
 	
@@ -194,7 +263,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUTicketRequestFactory.h</code><br />
+		<code class="declared-in-ref">LUPaymentPreferenceRequestFactory.h</code><br />
 	</div>				
 	
 	

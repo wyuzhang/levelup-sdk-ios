@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUOrderItem Class Reference</title>
+		<title>LUPaymentOptionsSummary Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUOrderItem Class Reference</h1>
+				<h1 class="hideInXcode">LUPaymentOptionsSummary Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,21 +39,15 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/SKU">&nbsp;&nbsp;&nbsp;&nbsp;SKU</option>
+	<option value="//api/name/maxCreditLimit">&nbsp;&nbsp;&nbsp;&nbsp;maxCreditLimit</option>
 	
-	<option value="//api/name/UPC">&nbsp;&nbsp;&nbsp;&nbsp;UPC</option>
+	<option value="//api/name/monthlyBillingDay">&nbsp;&nbsp;&nbsp;&nbsp;monthlyBillingDay</option>
 	
-	<option value="//api/name/category">&nbsp;&nbsp;&nbsp;&nbsp;category</option>
+	<option value="//api/name/options">&nbsp;&nbsp;&nbsp;&nbsp;options</option>
 	
-	<option value="//api/name/chargedPrice">&nbsp;&nbsp;&nbsp;&nbsp;chargedPrice</option>
+	<option value="//api/name/preloadReloadThreshold">&nbsp;&nbsp;&nbsp;&nbsp;preloadReloadThreshold</option>
 	
-	<option value="//api/name/itemDescription">&nbsp;&nbsp;&nbsp;&nbsp;itemDescription</option>
-	
-	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
-	
-	<option value="//api/name/quantity">&nbsp;&nbsp;&nbsp;&nbsp;quantity</option>
-	
-	<option value="//api/name/standardPrice">&nbsp;&nbsp;&nbsp;&nbsp;standardPrice</option>
+	<option value="//api/name/preloadValue">&nbsp;&nbsp;&nbsp;&nbsp;preloadValue</option>
 	
 	
 	
@@ -83,21 +77,15 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/SKU">SKU</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/maxCreditLimit">maxCreditLimit</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/UPC">UPC</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/monthlyBillingDay">monthlyBillingDay</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/category">category</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/options">options</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/chargedPrice">chargedPrice</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/preloadReloadThreshold">preloadReloadThreshold</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itemDescription">itemDescription</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/quantity">quantity</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/standardPrice">standardPrice</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/preloadValue">preloadValue</a></span></li>
 	
 </ul></li>
 
@@ -110,7 +98,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUOrderItem Class Reference" name="top"></a>
+				<a title="LUPaymentOptionsSummary Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -119,7 +107,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUOrderItem Class Reference</h1>
+						<h1 class="title title-header">LUPaymentOptionsSummary Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -130,7 +118,7 @@
 	<td class="specification-value">LUAPIModel : NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUOrderItem.h<br />LUOrderItem.m</td>
+	<td class="specification-value">LUPaymentOptionsSummary.h<br />LUPaymentOptionsSummary.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -140,7 +128,21 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>An <code>LUOrderItem</code> represents a single item that was part of an order.</p>
+						<p>For some LevelUp-powered apps, users can choose how they wish to be billed: either to preload money
+into their account (and to automatically load more money when their balance is low), or to be
+billed monthly (or in certain cases, immediately after an order is made).</p>
+
+<p><code>LUPaymentOptionsSummary</code> provides a summary of a user&rsquo;s possible payment <a href="#//api/name/options">options</a> (two of
+<code>LUPaymentOptionInstantBilling</code>, <code>LUPaymentOptionMonthlyBilling</code> or <code>LUPaymentOptionPreload</code>),
+along with relevant information for a user to make their choice.</p>
+
+<p>For the monthly billing option, this model includes the maximum credit limit and monthly
+billing day that would be set if they choose that option. For the preloading, this model includes
+the amount that will be loaded into their account, and the balance threshold for reloading more
+money. Instant billing has no additional information.</p>
+
+<p>See <a href="../Classes/LUPaymentPreferenceRequestFactory.html"><code>LUPaymentPreferenceRequestFactory</code></a> to request the payment <a href="#//api/name/options">options</a> summary and to set a user&rsquo;s
+payment preference.</p>
 					</div>
 					
 					
@@ -158,49 +160,31 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/category">&nbsp;&nbsp;category</a></code>
+		<code><a href="#//api/name/maxCreditLimit">&nbsp;&nbsp;maxCreditLimit</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/chargedPrice">&nbsp;&nbsp;chargedPrice</a></code>
+		<code><a href="#//api/name/monthlyBillingDay">&nbsp;&nbsp;monthlyBillingDay</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/itemDescription">&nbsp;&nbsp;itemDescription</a></code>
+		<code><a href="#//api/name/options">&nbsp;&nbsp;options</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+		<code><a href="#//api/name/preloadReloadThreshold">&nbsp;&nbsp;preloadReloadThreshold</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/quantity">&nbsp;&nbsp;quantity</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/SKU">&nbsp;&nbsp;SKU</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/standardPrice">&nbsp;&nbsp;standardPrice</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/UPC">&nbsp;&nbsp;UPC</a></code>
+		<code><a href="#//api/name/preloadValue">&nbsp;&nbsp;preloadValue</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -218,18 +202,19 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/SKU" title="SKU"></a>
-	<h3 class="subsubtitle method-title">SKU</h3>
+	<a name="//api/name/maxCreditLimit" title="maxCreditLimit"></a>
+	<h3 class="subsubtitle method-title">maxCreditLimit</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An optional SKU (Stock Keeping Unit) code for this item.</p>
+		<p>The maximum amount of pending charges a user can have before getting charged. Applies to the
+<code>LUPaymentOptionMonthlyBilling</code> option.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *SKU</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *maxCreditLimit</code></div>
 
     
 	
@@ -241,7 +226,8 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>An optional SKU (Stock Keeping Unit) code for this item.</p>
+		<p>The maximum amount of pending charges a user can have before getting charged. Applies to the
+<code>LUPaymentOptionMonthlyBilling</code> option.</p>
 	</div>
 	
 	
@@ -252,25 +238,26 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
+		<code class="declared-in-ref">LUPaymentOptionsSummary.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/UPC" title="UPC"></a>
-	<h3 class="subsubtitle method-title">UPC</h3>
+	<a name="//api/name/monthlyBillingDay" title="monthlyBillingDay"></a>
+	<h3 class="subsubtitle method-title">monthlyBillingDay</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An optional UPC (Universal Product Code) for this item.</p>
+		<p>The day of the month on which the user will be charged. Applies to the
+<code>LUPaymentOptionMonthlyBilling</code> option.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *UPC</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *monthlyBillingDay</code></div>
 
     
 	
@@ -282,7 +269,8 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>An optional UPC (Universal Product Code) for this item.</p>
+		<p>The day of the month on which the user will be charged. Applies to the
+<code>LUPaymentOptionMonthlyBilling</code> option.</p>
 	</div>
 	
 	
@@ -293,25 +281,26 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
+		<code class="declared-in-ref">LUPaymentOptionsSummary.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/category" title="category"></a>
-	<h3 class="subsubtitle method-title">category</h3>
+	<a name="//api/name/options" title="options"></a>
+	<h3 class="subsubtitle method-title">options</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An optional category for this item.</p>
+		<p>An array of 2 possible payment options, each one of LUPaymentOptionInstantBilling<code>,
+</code>LUPaymentOptionMonthlyBilling<code>or</code>LUPaymentOptionPreload`.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *category</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSArray *options</code></div>
 
     
 	
@@ -323,7 +312,8 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>An optional category for this item.</p>
+		<p>An array of 2 possible payment options, each one of LUPaymentOptionInstantBilling<code>,
+</code>LUPaymentOptionMonthlyBilling<code>or</code>LUPaymentOptionPreload`.</p>
 	</div>
 	
 	
@@ -334,25 +324,26 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
+		<code class="declared-in-ref">LUPaymentOptionsSummary.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/chargedPrice" title="chargedPrice"></a>
-	<h3 class="subsubtitle method-title">chargedPrice</h3>
+	<a name="//api/name/preloadReloadThreshold" title="preloadReloadThreshold"></a>
+	<h3 class="subsubtitle method-title">preloadReloadThreshold</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The price for this item that was charged to the customer.</p>
+		<p>Once the user&rsquo;s balance falls below this threshold, more money will be loaded into their account.
+Applies to the <code>LUPaymentOptionPreload</code> option.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *chargedPrice</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *preloadReloadThreshold</code></div>
 
     
 	
@@ -364,7 +355,8 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The price for this item that was charged to the customer.</p>
+		<p>Once the user&rsquo;s balance falls below this threshold, more money will be loaded into their account.
+Applies to the <code>LUPaymentOptionPreload</code> option.</p>
 	</div>
 	
 	
@@ -375,25 +367,26 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
+		<code class="declared-in-ref">LUPaymentOptionsSummary.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/itemDescription" title="itemDescription"></a>
-	<h3 class="subsubtitle method-title">itemDescription</h3>
+	<a name="//api/name/preloadValue" title="preloadValue"></a>
+	<h3 class="subsubtitle method-title">preloadValue</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An optional <a href="#//api/name/description">description</a> of the item.</p>
+		<p>The amount of money loaded into a user&rsquo;s account when first registering or when their balance
+falls below the reload threshold.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *itemDescription</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *preloadValue</code></div>
 
     
 	
@@ -405,7 +398,8 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>An optional <a href="#//api/name/description">description</a> of the item.</p>
+		<p>The amount of money loaded into a user&rsquo;s account when first registering or when their balance
+falls below the reload threshold.</p>
 	</div>
 	
 	
@@ -416,130 +410,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/name" title="name"></a>
-	<h3 class="subsubtitle method-title">name</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The name of the item.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *name</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The name of the item.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/quantity" title="quantity"></a>
-	<h3 class="subsubtitle method-title">quantity</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The quantity of the item that was purchased.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) NSUInteger quantity</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The quantity of the item that was purchased.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/standardPrice" title="standardPrice"></a>
-	<h3 class="subsubtitle method-title">standardPrice</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>An optional standard price for the item.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *standardPrice</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>An optional standard price for the item.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOrderItem.h</code><br />
+		<code class="declared-in-ref">LUPaymentOptionsSummary.h</code><br />
 	</div>				
 	
 	

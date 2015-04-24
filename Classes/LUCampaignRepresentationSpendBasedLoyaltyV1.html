@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUTicketRequestFactory Class Reference</title>
+		<title>LUCampaignRepresentationSpendBasedLoyaltyV1 Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUTicketRequestFactory Class Reference</h1>
+				<h1 class="hideInXcode">LUCampaignRepresentationSpendBasedLoyaltyV1 Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -37,11 +37,17 @@
 	
 	
 	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/campaignID">&nbsp;&nbsp;&nbsp;&nbsp;campaignID</option>
+	
+	<option value="//api/name/earn">&nbsp;&nbsp;&nbsp;&nbsp;earn</option>
+	
+	<option value="//api/name/progress">&nbsp;&nbsp;&nbsp;&nbsp;progress</option>
+	
+	<option value="//api/name/requiredSpend">&nbsp;&nbsp;&nbsp;&nbsp;requiredSpend</option>
 	
 	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/requestToCreateTicketWithBody:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToCreateTicketWithBody:</option>
 	
 	
 	
@@ -67,13 +73,19 @@
 
 
 
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToCreateTicketWithBody:">requestToCreateTicketWithBody:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/campaignID">campaignID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/earn">earn</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/progress">progress</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requiredSpend">requiredSpend</a></span></li>
 	
 </ul></li>
+
+
 
 
 
@@ -82,7 +94,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUTicketRequestFactory Class Reference" name="top"></a>
+				<a title="LUCampaignRepresentationSpendBasedLoyaltyV1 Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -91,7 +103,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUTicketRequestFactory Class Reference</h1>
+						<h1 class="title title-header">LUCampaignRepresentationSpendBasedLoyaltyV1 Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -99,10 +111,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
+	<td class="specification-value">LUAPIModel : NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUTicketRequestFactory.h<br />LUTicketRequestFactory.m</td>
+	<td class="specification-value">LUCampaignRepresentationSpendBasedLoyaltyV1.h<br />LUCampaignRepresentationSpendBasedLoyaltyV1.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -112,7 +124,8 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUTicketRequestFactory</code> is used to build requests related to customer support tickets.</p>
+						<p>A representation of a spend based loyalty campaign, which means that credit is earned each time a
+specific amount of money is spent at the merchant.</p>
 					</div>
 					
 					
@@ -130,9 +143,27 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestToCreateTicketWithBody:">+&nbsp;requestToCreateTicketWithBody:</a></code>
+		<code><a href="#//api/name/campaignID">&nbsp;&nbsp;campaignID</a></code>
 	</span>
+	<span class="task-item-suffix">property</span>
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/earn">&nbsp;&nbsp;earn</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/progress">&nbsp;&nbsp;progress</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requiredSpend">&nbsp;&nbsp;requiredSpend</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -143,37 +174,25 @@
 					
 					
 					
-					
-					
 					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/requestToCreateTicketWithBody:" title="requestToCreateTicketWithBody:"></a>
-	<h3 class="subsubtitle method-title">requestToCreateTicketWithBody:</h3>
+	<a name="//api/name/campaignID" title="campaignID"></a>
+	<h3 class="subsubtitle method-title">campaignID</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Builds a request to create a support ticket.</p>
+		<p>The campaign&rsquo;s ID.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToCreateTicketWithBody:(NSString *)<em>body</em></code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSNumber *campaignID</code></div>
 
     
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>body</em></dt>
-			<dd><p>The body of the ticket.</p></dd>
-		</dl>
-		
-	</div>
 	
 	
 	
@@ -183,7 +202,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Builds a request to create a support ticket.</p><div class="warning"><p><strong>Warning:</strong> Use of this request requires an Enterprise SDK license.</p></div>
+		<p>The campaign&rsquo;s ID.</p>
 	</div>
 	
 	
@@ -194,13 +213,146 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUTicketRequestFactory.h</code><br />
+		<code class="declared-in-ref">LUCampaignRepresentationSpendBasedLoyaltyV1.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/earn" title="earn"></a>
+	<h3 class="subsubtitle method-title">earn</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The amount of money earned each time <a href="#//api/name/requiredSpend"><code>requiredSpend</code></a> is spent.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *earn</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The amount of money earned each time <a href="#//api/name/requiredSpend"><code>requiredSpend</code></a> is spent.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaignRepresentationSpendBasedLoyaltyV1.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/progress" title="progress"></a>
+	<h3 class="subsubtitle method-title">progress</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The user&rsquo;s progress towards unlocking credit.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *progress</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The user&rsquo;s progress towards unlocking credit.</p>
+
+<p>After unlocking credit, this amount will cycle back to zero. For example, say <a href="#//api/name/requiredSpend"><code>requiredSpend</code></a> is
+$50. As the user spends money, <code>progress</code> moves towards $50. Once they have spent over $50,
+they unlock credit, and then <code>progress</code> cycles back to $0 and then continues to move back towards
+$50 as more money is spent.</p>
+
+<p>If this campaign representation is requested without an authenticated user, <code>progress</code> will always
+be $0.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaignRepresentationSpendBasedLoyaltyV1.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requiredSpend" title="requiredSpend"></a>
+	<h3 class="subsubtitle method-title">requiredSpend</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The amount of money that must be spent in order to unlock credit.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *requiredSpend</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The amount of money that must be spent in order to unlock credit.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUCampaignRepresentationSpendBasedLoyaltyV1.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 					</div>
+					
+					
 					
 					
 					
