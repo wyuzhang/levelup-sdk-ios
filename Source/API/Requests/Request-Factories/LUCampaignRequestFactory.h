@@ -24,7 +24,7 @@
 @interface LUCampaignRequestFactory : NSObject
 
 /**
- Builds a request to return metadata on campaigns for locations with the given `locationID`.
+ Builds a request to return metadata on campaigns for the location with the given `locationID`.
 
  On success, this request will return an `NSArray` of `LUCampaignMetadata` instances. Each
  `LUCampaignMetadata` contains a `campaignID` and an `NSArray` of available representations.
@@ -36,7 +36,7 @@
 + (LUAPIRequest *)requestForCampaignMetadataForLocationWithID:(NSNumber *)locationID;
 
 /**
- Builds a request to return metadata on campaigns for locations with the given `merchantID`.
+ Builds a request to return metadata on campaigns for the merchant with the given `merchantID`.
 
  On success, this request will return an `NSArray` of `LUCampaignMetadata` instances. Each
  `LUCampaignMetadata` contains a `campaignID` and an `NSArray` of available representations.

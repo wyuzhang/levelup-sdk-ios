@@ -40,6 +40,7 @@
 #import "LUPaymentPreferenceRequestFactory.h"
 #import "LUPaymentTokenRequestFactory.h"
 #import "LURegistrationRequestFactory.h"
+#import "LURewardRequestFactory.h"
 #import "LUTicketRequestFactory.h"
 #import "LUUserRequestFactory.h"
 
@@ -72,6 +73,8 @@
 #import "LUPaymentPreference.h"
 #import "LUPaymentToken.h"
 #import "LURegistration.h"
+#import "LUReward.h"
+#import "LURewardSummary.h"
 #import "LUUser.h"
 #import "LUUserWithAccessToken.h"
 #import "LUWebLink.h"

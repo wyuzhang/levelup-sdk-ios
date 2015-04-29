@@ -680,6 +680,26 @@
   return [self stubToGetUpdatedCarrierAccountWithID:carrierAccountID withStatus:202];
 }
 
++ (LUAPIStub *)stubToGetRewardSummaryAtLocationWithID:(NSNumber *)locationID {
+  NSString *path = [NSString stringWithFormat:@"locations/%@/reward_summary", [locationID stringValue]];
+
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:path
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"reward_summary"]];
+}
+
++ (LUAPIStub *)stubToGetRewardsAtLocationWithID:(NSNumber *)locationID {
+  NSString *path = [NSString stringWithFormat:@"locations/%@/rewards", [locationID stringValue]];
+
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:path
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"rewards"]];
+}
+
 + (LUAPIStub *)stubToGetUpdatedCarrierAccountWithID:(NSNumber *)carrierAccountID withStatus:(NSInteger)status {
   LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
                                             path:[NSString stringWithFormat:@"carrier_accounts/%@", [carrierAccountID stringValue]]

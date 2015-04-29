@@ -36,6 +36,8 @@
 #import "LUPaymentOptionsSummary+Fixtures.h"
 #import "LUPaymentToken+Fixtures.h"
 #import "LURegistration+Fixtures.h"
+#import "LUReward+Fixtures.h"
+#import "LURewardSummary+Fixtures.h"
 #import "LUUser+Fixtures.h"
 #import "LUWebLink+Fixtures.h"
 #import "LUWebLocations+Fixtures.h"

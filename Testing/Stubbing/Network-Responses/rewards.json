@@ -1,0 +1,16 @@
+[
+  {
+    "reward" : {
+      "created_at": "2012-10-16T09:11:12-04:00",
+      "description": "$2 Onboarding credit",
+      "expires_at": null,
+      "id": "campaign-1",
+      "source_campaign_id": 1,
+      "title": "Onboarding",
+      "usable": true,
+      "usable_as_credit": true,
+      "usable_now": true,
+      "value_remaining_amount": 200
+    }
+  }
+]

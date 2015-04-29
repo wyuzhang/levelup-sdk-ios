@@ -101,6 +101,8 @@
 + (LUAPIStub *)stubToGetPaymentTokenWithMessage;
 + (LUAPIStub *)stubToGetPendingPassWithMerchantID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetPendingUpdatedCarrierAccountWithID:(NSNumber *)carrierAccountID;
++ (LUAPIStub *)stubToGetRewardSummaryAtLocationWithID:(NSNumber *)locationID;
++ (LUAPIStub *)stubToGetRewardsAtLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToGetUpdatedCarrierAccountWithID:(NSNumber *)carrierAccountID;
 + (LUAPIStub *)stubToGetURL:(NSString *)url withBody:(NSString *)body;
 + (LUAPIStub *)stubToGetWebLinksAtLocationWithID:(NSNumber *)locationID;
