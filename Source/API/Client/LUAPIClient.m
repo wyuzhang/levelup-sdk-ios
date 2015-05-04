@@ -160,7 +160,9 @@ __strong static LUAPIClient *_sharedClient = nil;
 
 - (NSString *)accessToken {
   if (!_accessToken) {
-    _accessToken = [[LUKeychainAccess standardKeychainAccess] stringForKey:LUAccessTokenKey];
+    LUKeychainAccess *keychainAccess = [LUKeychainAccess standardKeychainAccess];
+    keychainAccess.accessibilityState = LUKeychainAccessAttrAccessibleAfterFirstUnlock;
+    _accessToken = [keychainAccess stringForKey:LUAccessTokenKey];
   }
 
   return _accessToken;
@@ -176,7 +178,10 @@ __strong static LUAPIClient *_sharedClient = nil;
 
 - (void)setAccessToken:(NSString *)accessToken {
   _accessToken = accessToken;
-  [[LUKeychainAccess standardKeychainAccess] setString:accessToken forKey:LUAccessTokenKey];
+
+  LUKeychainAccess *keychainAccess = [LUKeychainAccess standardKeychainAccess];
+  keychainAccess.accessibilityState = LUKeychainAccessAttrAccessibleAfterFirstUnlock;
+  [keychainAccess setString:accessToken forKey:LUAccessTokenKey];
 }
 
 - (void)setBaseURL:(NSURL *)baseURL {
