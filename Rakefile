@@ -16,7 +16,7 @@ namespace :db do
 
     while true
       puts "Fetching from: api.thelevelup.com#{endpoint}"
-      data = Net::HTTP.start('api.thelevelup.com', :use_ssl => true).get(endpoint)
+      data = Net::HTTP.start('api.thelevelup.com', :use_ssl => true, :verify_mode => OpenSSL::SSL::VERIFY_NONE).get(endpoint)
 
       if data.code == '204'
         break
