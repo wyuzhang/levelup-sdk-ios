@@ -120,16 +120,35 @@ describe(@"LUIBeaconListener", ^{
         region = [CLBeaconRegion mock];
       });
 
-      it(@"starts ranging in that region", ^{
-        [[iBeaconListener.locationManager should] receive:@selector(startRangingBeaconsInRegion:)];
+      context(@"and the region's identifier matches LUIBeaconIdentifer", ^{
+        beforeEach(^{
+          [region stub:@selector(identifier) andReturn:@"71E77F"];
+        });
 
-        [iBeaconListener locationManager:nil didEnterRegion:region];
+        it(@"starts ranging in that region", ^{
+          [[iBeaconListener.locationManager should] receive:@selector(startRangingBeaconsInRegion:)];
+
+          [iBeaconListener locationManager:nil didEnterRegion:region];
+        });
+      });
+
+      context(@"and the region's identifier does not match LUIBeaconIdentifier", ^{
+        beforeEach(^{
+          [region stub:@selector(identifier) andReturn:@"1"];
+        });
+
+        it(@"does not start ranging in that region", ^{
+          [[iBeaconListener.locationManager shouldNot] receive:@selector(startRangingBeaconsInRegion:)];
+
+          [iBeaconListener locationManager:nil didEnterRegion:region];
+        });
       });
     });
 
     context(@"and the region is not a CLBeaconRegion", ^{
       beforeEach(^{
         region = [CLRegion mock];
+        [region stub:@selector(identifier) andReturn:@"71E77F"];
       });
 
       it(@"does not start ranging in that region", ^{
@@ -148,16 +167,35 @@ describe(@"LUIBeaconListener", ^{
         region = [CLBeaconRegion mock];
       });
 
-      it(@"stops ranging in that region", ^{
-        [[iBeaconListener.locationManager should] receive:@selector(stopRangingBeaconsInRegion:)];
+      context(@"and the region's identifier matches LUIBeaconIdentifier", ^{
+        beforeEach(^{
+          [region stub:@selector(identifier) andReturn:@"71E77F"];
+        });
 
-        [iBeaconListener locationManager:nil didExitRegion:region];
+        it(@"stops ranging in that region", ^{
+          [[iBeaconListener.locationManager should] receive:@selector(stopRangingBeaconsInRegion:)];
+
+          [iBeaconListener locationManager:nil didExitRegion:region];
+        });
+      });
+
+      context(@"and the region's identifier does not match LUIBeaconIdentifier", ^{
+        beforeEach(^{
+          [region stub:@selector(identifier) andReturn:@"1"];
+        });
+
+        it(@"does not stop ranging in that region", ^{
+          [[iBeaconListener.locationManager shouldNot] receive:@selector(stopRangingBeaconsInRegion:)];
+
+          [iBeaconListener locationManager:nil didExitRegion:region];
+        });
       });
     });
 
     context(@"and the region is not a CLBeaconRegion", ^{
       beforeEach(^{
         region = [CLRegion mock];
+        [region stub:@selector(identifier) andReturn:@"71E77F"];
       });
 
       it(@"does not stop ranging in that region", ^{
@@ -179,43 +217,110 @@ describe(@"LUIBeaconListener", ^{
       [iBeacon setValue:[NSNumber numberWithInt:1] forKey:@"major"];
     });
 
-    context(@"when the last notification shown was > 1 minute ago", ^{
+    context(@"when the region's identifier matches LUIBeaconIdentifier and the iBeacon's proximityUUID matches LUIBeaconUUID", ^{
       beforeEach(^{
+        [region stub:@selector(identifier) andReturn:@"71E77F"];
+        [iBeacon setValue:[[NSUUID alloc] initWithUUIDString:@"56DB0365-A001-4062-9E4D-499D3B8ECCF3"] forKey:@"proximityUUID"];
+      });
+
+      context(@"when the last notification shown was > 1 minute ago", ^{
+        beforeEach(^{
+          NSDate *now = [NSDate date];
+          NSDate *past = [NSDate dateWithTimeInterval:-75 sinceDate:now];
+          [NSDate stub:@selector(date) andReturn:now];
+          [iBeaconListener stub:@selector(lastNotificationShownTime) andReturn:past];
+
+          [LUIBeaconCheckInRequestFactory stub:@selector(requestToCheckInIBeaconWithMajor:minor:)
+                                     andReturn:[LUAPIRequest mock]];
+          [[LUAPIClient sharedClient] stub:@selector(performRequest:success:failure:)];
+        });
+
+        it(@"creates an iBeacon checkin request for the discovered iBeacon", ^{
+          [[LUIBeaconCheckInRequestFactory should] receive:@selector(requestToCheckInIBeaconWithMajor:minor:)];
+
+          [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+        });
+
+        it(@"makes a network call for the discovered iBeacon", ^{
+          [[[LUAPIClient sharedClient] should] receive:@selector(performRequest:success:failure:)];
+
+          [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+        });
+
+        it(@"updates lastNotificationShownTime", ^{
+          [[iBeaconListener should] receive:@selector(setLastNotificationShownTime:)];
+
+          [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+        });
+      });
+
+      context(@"when the last notification was shown < 1 minute ago", ^{
+        beforeEach(^{
+          NSDate *now = [NSDate date];
+          NSDate *recentPast = [NSDate dateWithTimeInterval:-45 sinceDate:now];
+          [NSDate stub:@selector(date) andReturn:now];
+          [iBeaconListener stub:@selector(lastNotificationShownTime) andReturn:recentPast];
+        });
+
+        it(@"does not create a iBeacon checkin request for the discovered iBeacon", ^{
+          [[LUIBeaconCheckInRequestFactory shouldNot] receive:@selector(requestToCheckInIBeaconWithMajor:minor:)];
+
+          [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+        });
+
+        it(@"does not make a network call for the discovered iBeacon", ^{
+          [[[LUAPIClient sharedClient] shouldNot] receive:@selector(performRequest:success:failure:)];
+
+          [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+        });
+
+        it(@"does not  update lastNotificationShownTime", ^{
+          [[iBeaconListener shouldNot] receive:@selector(setLastNotificationShownTime:)];
+
+          [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+        });
+      });
+    });
+
+    context(@"when the region's identifier does not match LUIBeaconIdentifier", ^{
+      beforeEach(^{
+        [region stub:@selector(identifier) andReturn:@"1"];
+
+        [iBeacon setValue:[[NSUUID alloc] initWithUUIDString:@"56DB0365-A001-4062-9E4D-499D3B8ECCF3"] forKey:@"proximityUUID"];
         NSDate *now = [NSDate date];
         NSDate *past = [NSDate dateWithTimeInterval:-75 sinceDate:now];
         [NSDate stub:@selector(date) andReturn:now];
         [iBeaconListener stub:@selector(lastNotificationShownTime) andReturn:past];
-
-        [LUIBeaconCheckInRequestFactory stub:@selector(requestToCheckInIBeaconWithMajor:minor:)
-                                   andReturn:[LUAPIRequest mock]];
-        [[LUAPIClient sharedClient] stub:@selector(performRequest:success:failure:)];
       });
 
-      it(@"creates an iBeacon checkin request for the discovered iBeacon", ^{
-        [[LUIBeaconCheckInRequestFactory should] receive:@selector(requestToCheckInIBeaconWithMajor:minor:)];
+      it(@"does not create a iBeacon checkin request for the discovered iBeacon", ^{
+        [[LUIBeaconCheckInRequestFactory shouldNot] receive:@selector(requestToCheckInIBeaconWithMajor:minor:)];
 
         [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
       });
 
-      it(@"makes a network call for the discovered iBeacon", ^{
-        [[[LUAPIClient sharedClient] should] receive:@selector(performRequest:success:failure:)];
+      it(@"does not make a network call for the discovered iBeacon", ^{
+        [[[LUAPIClient sharedClient] shouldNot] receive:@selector(performRequest:success:failure:)];
 
         [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
       });
 
-      it(@"updates lastNotificationShownTime", ^{
-        [[iBeaconListener should] receive:@selector(setLastNotificationShownTime:)];
+      it(@"does not  update lastNotificationShownTime", ^{
+        [[iBeaconListener shouldNot] receive:@selector(setLastNotificationShownTime:)];
 
         [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
       });
     });
 
-    context(@"when the last notification was shown < 1 minute ago", ^{
+    context(@"when the ranged beacon's proximityUUID does not match LUIBeaconUUID", ^{
       beforeEach(^{
+        [iBeacon stub:@selector(proximityUUID) andReturn:[[NSUUID alloc] initWithUUIDString:@"1"]];
+
+        [region stub:@selector(identifier) andReturn:@"71E77F"];
         NSDate *now = [NSDate date];
-        NSDate *recentPast = [NSDate dateWithTimeInterval:-45 sinceDate:now];
+        NSDate *past = [NSDate dateWithTimeInterval:-75 sinceDate:now];
         [NSDate stub:@selector(date) andReturn:now];
-        [iBeaconListener stub:@selector(lastNotificationShownTime) andReturn:recentPast];
+        [iBeaconListener stub:@selector(lastNotificationShownTime) andReturn:past];
       });
 
       it(@"does not create a iBeacon checkin request for the discovered iBeacon", ^{
@@ -241,20 +346,65 @@ describe(@"LUIBeaconListener", ^{
   describe(@"locationManager:didStartMonitoringForRegion:", ^{
     __block CLRegion *region;
 
-    beforeEach(^{
-      region = [CLBeaconRegion mock];
+    context(@"and the region is a CLBeaconRegion", ^{
+      beforeEach(^{
+        region = [CLBeaconRegion mock];
+      });
+
+      context(@"and the region's identifier matches LUIBeaconIdentifier", ^{
+        beforeEach(^{
+          [region stub:@selector(identifier) andReturn:@"71E77F"];
+        });
+
+        it(@"sets isMonitoringForBeacons to YES", ^{
+          [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
+
+          [[theValue(iBeaconListener.isMonitoringForBeacons) should] beYes];
+        });
+
+        it(@"starts ranging", ^{
+          [[iBeaconListener.locationManager should] receive:@selector(startRangingBeaconsInRegion:)];
+
+          [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
+        });
+      });
+
+      context(@"and the region's identifier doesn't match LUIBeaconIdentifier", ^{
+        beforeEach(^{
+          [region stub:@selector(identifier) andReturn:@"1"];
+        });
+
+        it(@"does not set isMonitoringForBeacons to YES", ^{
+          [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
+
+          [[theValue(iBeaconListener.isMonitoringForBeacons) should] beNo];
+        });
+
+        it(@"does not start ranging", ^{
+          [[iBeaconListener.locationManager shouldNot] receive:@selector(startRangingBeaconsInRegion:)];
+
+          [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
+        });
+      });
     });
 
-    it(@"sets isMonitoringForBeacons to YES", ^{
-      [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
+    context(@"and the region is not a CLBeaconRegion", ^{
+      beforeEach(^{
+        region = [CLRegion mock];
+        [region stub:@selector(identifier) andReturn:@"71E77F"];
+      });
 
-      [[theValue(iBeaconListener.isMonitoringForBeacons) should] beYes];
-    });
+      it(@"does not set isMonitoringForBeacons to YES", ^{
+        [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
 
-    it(@"starts ranging", ^{
-      [[iBeaconListener.locationManager should] receive:@selector(startRangingBeaconsInRegion:)];
+        [[theValue(iBeaconListener.isMonitoringForBeacons) should] beNo];
+      });
 
-      [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
+      it(@"does not start ranging", ^{
+        [[iBeaconListener.locationManager shouldNot] receive:@selector(startRangingBeaconsInRegion:)];
+
+        [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
+      });
     });
   });
 });

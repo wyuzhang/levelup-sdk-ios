@@ -85,34 +85,38 @@ NSString * const LUIBeaconUUID = @"56DB0365-A001-4062-9E4D-499D3B8ECCF3";
 #pragma mark - CLLocationManagerDelegate Methods
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
-  if ([region isKindOfClass:[CLBeaconRegion class]]) {
+  if ([self shouldRespondToCLRegion:region]) {
     CLBeaconRegion *iBeaconRegion = (CLBeaconRegion *)region;
     [self.locationManager startRangingBeaconsInRegion:iBeaconRegion];
   }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
-  if ([region isKindOfClass:[CLBeaconRegion class]]) {
+  if ([self shouldRespondToCLRegion:region]) {
     CLBeaconRegion *iBeaconRegion = (CLBeaconRegion *)region;
     [self.locationManager stopRangingBeaconsInRegion:iBeaconRegion];
   }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
-  for (CLBeacon *iBeacon in beacons) {
-    [self didFindIBeacon:iBeacon];
+  if ([self shouldRespondToCLRegion:region]) {
+    for (CLBeacon *iBeacon in beacons) {
+      [self didFindIBeacon:iBeacon];
+    }
   }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
-  self.isMonitoringForBeacons = YES;
-  [self.locationManager startRangingBeaconsInRegion:[self iBeaconRegion]];
+  if ([self shouldRespondToCLRegion:region]) {
+    self.isMonitoringForBeacons = YES;
+    [self.locationManager startRangingBeaconsInRegion:[self iBeaconRegion]];
+  }
 }
 
 #pragma mark - Private Methods
 
 - (void)didFindIBeacon:(CLBeacon *)iBeacon {
-  if (![self shouldRespondToRangedIBeacon]) return;
+  if (![self shouldRespondToRangedIBeacon:iBeacon]) return;
 
   self.lastNotificationShownTime = [NSDate date];
 
@@ -128,8 +132,13 @@ NSString * const LUIBeaconUUID = @"56DB0365-A001-4062-9E4D-499D3B8ECCF3";
   return [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:LUIBeaconIdentifier];
 }
 
-- (BOOL)shouldRespondToRangedIBeacon {
-  return [[NSDate date] timeIntervalSinceDate:self.lastNotificationShownTime] > LUIBeaconNotificationMinimumInterval;
+- (BOOL)shouldRespondToCLRegion:(CLRegion *)region {
+  return [region isKindOfClass:[CLBeaconRegion class]] && [region.identifier isEqualToString:LUIBeaconIdentifier];
+}
+
+- (BOOL)shouldRespondToRangedIBeacon:(CLBeacon *)iBeacon {
+  return [[iBeacon.proximityUUID UUIDString] isEqualToString:LUIBeaconUUID] &&
+         [[NSDate date] timeIntervalSinceDate:self.lastNotificationShownTime] > LUIBeaconNotificationMinimumInterval;
 }
 
 @end
