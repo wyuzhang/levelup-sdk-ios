@@ -59,10 +59,10 @@ describe(@"LUCarrierNetworkDetector", ^{
   });
 
   describe(@"deviceIsOnCarrierNetwork", ^{
-    context(@"when the country code is 311 and the network code is 490", ^{
+    context(@"when the country code is 310 and the network code is 020", ^{
       beforeEach(^{
-        [subscriberCellularProvider stub:@selector(mobileCountryCode) andReturn:@"311"];
-        [subscriberCellularProvider stub:@selector(mobileNetworkCode) andReturn:@"490"];
+        [subscriberCellularProvider stub:@selector(mobileCountryCode) andReturn:@"310"];
+        [subscriberCellularProvider stub:@selector(mobileNetworkCode) andReturn:@"020"];
       });
 
       it(@"returns YES", ^{
@@ -81,10 +81,43 @@ describe(@"LUCarrierNetworkDetector", ^{
       });
     });
 
+    context(@"when the country code is 311 and the network code is 490", ^{
+      beforeEach(^{
+        [subscriberCellularProvider stub:@selector(mobileCountryCode) andReturn:@"311"];
+        [subscriberCellularProvider stub:@selector(mobileNetworkCode) andReturn:@"490"];
+      });
+
+      it(@"returns YES", ^{
+        [[theValue([LUCarrierNetworkDetector deviceIsOnCarrierNetwork]) should] beYes];
+      });
+    });
+
+    context(@"when the country code is 312 and the network code is 530", ^{
+      beforeEach(^{
+        [subscriberCellularProvider stub:@selector(mobileCountryCode) andReturn:@"312"];
+        [subscriberCellularProvider stub:@selector(mobileNetworkCode) andReturn:@"530"];
+      });
+
+      it(@"returns YES", ^{
+        [[theValue([LUCarrierNetworkDetector deviceIsOnCarrierNetwork]) should] beYes];
+      });
+    });
+
+    context(@"when the country code is 316 and the network code is 010", ^{
+      beforeEach(^{
+        [subscriberCellularProvider stub:@selector(mobileCountryCode) andReturn:@"316"];
+        [subscriberCellularProvider stub:@selector(mobileNetworkCode) andReturn:@"010"];
+      });
+
+      it(@"returns NO", ^{
+        [[theValue([LUCarrierNetworkDetector deviceIsOnCarrierNetwork]) should] beYes];
+      });
+    });
+
     context(@"otherwise for any other combination", ^{
       beforeEach(^{
-        [subscriberCellularProvider stub:@selector(mobileCountryCode) andReturn:@"310"];
-        [subscriberCellularProvider stub:@selector(mobileNetworkCode) andReturn:@"121"];
+        [subscriberCellularProvider stub:@selector(mobileCountryCode) andReturn:@"316"];
+        [subscriberCellularProvider stub:@selector(mobileNetworkCode) andReturn:@"011"];
       });
 
       it(@"returns NO", ^{

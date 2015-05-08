@@ -18,11 +18,7 @@
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import "LUAPIClient.h"
 #import "LUCarrierNetworkDetector.h"
-
-NSString *const LUSprintNextelCountryCode = @"311";
-NSString *const LUSprintNextelNetworkCode = @"490";
-NSString *const LUSprintSpectrumCountryCode = @"310";
-NSString *const LUSprintSpectrumNetworkCode = @"120";
+#import "NSDictionary+SafetyAdditions.h"
 
 @implementation LUCarrierNetworkDetector
 
@@ -36,12 +32,35 @@ NSString *const LUSprintSpectrumNetworkCode = @"120";
   NSString *countryCode = [carrier mobileCountryCode];
   NSString *networkCode = [carrier mobileNetworkCode];
 
-  BOOL deviceIsOnSprintNextelNetwork =
-    [countryCode isEqualToString:LUSprintSpectrumCountryCode] && [networkCode isEqualToString:LUSprintSpectrumNetworkCode];
-  BOOL deviceIsOnSprintSpectrumNetwork =
-    [countryCode isEqualToString:LUSprintNextelCountryCode] && [networkCode isEqualToString:LUSprintNextelNetworkCode];
+  return [self networkCodePairsIncludeCountryCode:countryCode withNetworkCode:networkCode];
+}
 
-  return deviceIsOnSprintNextelNetwork || deviceIsOnSprintSpectrumNetwork;
+#pragma mark - Private Methods
+
++ (NSDictionary *)networkCodePairs {
+  static NSDictionary* networkCodePairs = nil;
+  static dispatch_once_t onceToken;
+
+  dispatch_once(&onceToken, ^{
+    networkCodePairs = @{@"310" : @[@"020", @"120"],
+                         @"311" : @[@"490"],
+                         @"312" : @[@"530"],
+                         @"316" : @[@"010"]};
+  });
+
+  return networkCodePairs;
+}
+
++ (BOOL)networkCodePairsIncludeCountryCode:(NSString *)countryCode withNetworkCode:(NSString *)networkCode {
+  NSArray *expectedNetworkCodes = [[self networkCodePairs] lu_safeValueForKey:countryCode];
+
+  for (NSString *expectedNetworkCode in expectedNetworkCodes) {
+    if ([expectedNetworkCode isEqualToString:networkCode]) {
+      return YES;
+    }
+  }
+
+  return NO;
 }
 
 @end
