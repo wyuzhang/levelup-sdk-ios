@@ -1,23 +1,23 @@
 PODS:
-  - AFNetworking (2.5.2):
-    - AFNetworking/NSURLConnection (= 2.5.2)
-    - AFNetworking/NSURLSession (= 2.5.2)
-    - AFNetworking/Reachability (= 2.5.2)
-    - AFNetworking/Security (= 2.5.2)
-    - AFNetworking/Serialization (= 2.5.2)
-    - AFNetworking/UIKit (= 2.5.2)
-  - AFNetworking/NSURLConnection (2.5.2):
+  - AFNetworking (2.5.3):
+    - AFNetworking/NSURLConnection (= 2.5.3)
+    - AFNetworking/NSURLSession (= 2.5.3)
+    - AFNetworking/Reachability (= 2.5.3)
+    - AFNetworking/Security (= 2.5.3)
+    - AFNetworking/Serialization (= 2.5.3)
+    - AFNetworking/UIKit (= 2.5.3)
+  - AFNetworking/NSURLConnection (2.5.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.2):
+  - AFNetworking/NSURLSession (2.5.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.2)
-  - AFNetworking/Security (2.5.2)
-  - AFNetworking/Serialization (2.5.2)
-  - AFNetworking/UIKit (2.5.2):
+  - AFNetworking/Reachability (2.5.3)
+  - AFNetworking/Security (2.5.3)
+  - AFNetworking/Serialization (2.5.3)
+  - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - AutoCoding (2.0.3)
@@ -29,7 +29,7 @@ PODS:
     - ZXingObjC/Core
 
 DEPENDENCIES:
-  - AFNetworking (= 2.5.2)
+  - AFNetworking (= 2.5.3)
   - AutoCoding (= 2.0.3)
   - Kiwi (= 2.3.1)
   - LUKeychainAccess (= 1.2.3)
@@ -37,7 +37,7 @@ DEPENDENCIES:
   - ZXingObjC/QRCode (= 3.0.3)
 
 SPEC CHECKSUMS:
-  AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
+  AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
   AutoCoding: 242c6c654466c10e2bde059c6b41db1eac19268d
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
   LUKeychainAccess: 8f4ad156ca3251a8c0f946d8258b6d0d1d6234b5
