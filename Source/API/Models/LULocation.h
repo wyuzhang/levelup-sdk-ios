@@ -32,9 +32,14 @@
 @interface LULocation : LUAPIModel <MKAnnotation>
 
 /**
- An array of category IDs to which this location belongs.
+ An array of category IDs (as `NSNumber`s) to which this location belongs.
  */
 @property (nonatomic, copy, readonly) NSArray *categoryIDs;
+
+/**
+ An array of category names (as `NSString`s) to which this location belongs.
+ */
+@property (nonatomic, copy, readonly) NSArray *categoryNames;
 
 /**
  An HTML string describing the location
@@ -158,16 +163,19 @@
  */
 - (NSString *)singleLineAddress;
 
-- (id)initWithCategoryIDs:(NSArray *)categoryIDs descriptionHTML:(NSString *)descriptionHTML
-          extendedAddress:(NSString *)extendedAddress hours:(NSString *)hours latitude:(NSNumber *)latitude
-                 locality:(NSString *)locality locationID:(NSNumber *)locationID longitude:(NSNumber *)longitude
-               merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName name:(NSString *)name
-                    phone:(NSString *)phone postalCode:(NSString *)postalCode region:(NSString *)region
-                    shown:(BOOL)shown streetAddress:(NSString *)streetAddress updatedAtDate:(NSDate *)updatedAtDate
+- (id)initWithCategoryIDs:(NSArray *)categoryIDs categoryNames:(NSArray *)categoryNames
+          descriptionHTML:(NSString *)descriptionHTML extendedAddress:(NSString *)extendedAddress
+                    hours:(NSString *)hours latitude:(NSNumber *)latitude
+                 locality:(NSString *)locality locationID:(NSNumber *)locationID
+                longitude:(NSNumber *)longitude merchantID:(NSNumber *)merchantID
+             merchantName:(NSString *)merchantName name:(NSString *)name phone:(NSString *)phone
+               postalCode:(NSString *)postalCode region:(NSString *)region shown:(BOOL)shown
+            streetAddress:(NSString *)streetAddress updatedAtDate:(NSDate *)updatedAtDate
              webLocations:(LUWebLocations *)webLocations;
 
-- (id)initWithCategoryIDs:(NSArray *)categoryIDs latitude:(NSNumber *)latitude locationID:(NSNumber *)locationID
-                longitude:(NSNumber *)longitude merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName
+- (id)initWithCategoryIDs:(NSArray *)categoryIDs latitude:(NSNumber *)latitude
+               locationID:(NSNumber *)locationID longitude:(NSNumber *)longitude
+               merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName
                      name:(NSString *)name shown:(BOOL)shown updatedAtDate:(NSDate *)updatedAtDate;
 
 @end

@@ -23,6 +23,7 @@
 
 + (LULocation *)fixture {
   return [[LULocation alloc] initWithCategoryIDs:@[@1, @2]
+                                   categoryNames:@[@"American", @"Pizza"]
                                  descriptionHTML:@"pizza, pizza, pizza!"
                                  extendedAddress:@"Apt E"
                                            hours:@"Mon-Fri 9am-5pm"

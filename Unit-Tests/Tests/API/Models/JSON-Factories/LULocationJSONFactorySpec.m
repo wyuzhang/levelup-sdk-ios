@@ -30,6 +30,7 @@ describe(@"LULocationJSONFactory", ^{
     it(@"parses a JSON dictionary into an LULocation", ^{
       NSDictionary *JSON = @{
         @"categories" : @[@1, @2, @3],
+        @"category_names" : @[@"American", @"Breakfast", @"Cafe"],
         @"description_html" : @"pizza, pizza, pizza!",
         @"extended_address" : @"Apt E",
         @"facebook_url" : @"http://facebook.com/pizza",
@@ -57,6 +58,7 @@ describe(@"LULocationJSONFactory", ^{
       LULocation *location = [factory createFromAttributes:JSON];
 
       [[location.categoryIDs should] equal:@[@1, @2, @3]];
+      [[location.categoryNames should] equal:@[@"American", @"Breakfast", @"Cafe"]];
       [[location.descriptionHTML should] equal:@"pizza, pizza, pizza!"];
       [[location.extendedAddress should] equal:@"Apt E"];
       [[location.hours should] equal:@"M-F 9am-5pm"];
