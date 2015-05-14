@@ -306,8 +306,8 @@
 		02F08DC91ADEAFEB001B5C1F /* LUCampaignRepresentationVisitBasedLoyaltyV1JSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F08DC81ADEAFEB001B5C1F /* LUCampaignRepresentationVisitBasedLoyaltyV1JSONFactorySpec.m */; };
 		02F08DCC1ADEB617001B5C1F /* LUCampaignRepresentationSpendBasedLoyaltyV1+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F08DCB1ADEB617001B5C1F /* LUCampaignRepresentationSpendBasedLoyaltyV1+Fixtures.m */; };
 		02F08DCF1ADEB68E001B5C1F /* LUCampaignRepresentationVisitBasedLoyaltyV1+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F08DCE1ADEB68E001B5C1F /* LUCampaignRepresentationVisitBasedLoyaltyV1+Fixtures.m */; };
-		02F08DD21ADEB781001B5C1F /* campaign_representation_spend_based_status_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = 02F08DD01ADEB781001B5C1F /* campaign_representation_spend_based_status_v1.json */; };
-		02F08DD31ADEB781001B5C1F /* campaign_representation_visit_based_status_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = 02F08DD11ADEB781001B5C1F /* campaign_representation_visit_based_status_v1.json */; };
+		02F08DD21ADEB781001B5C1F /* campaign_representation_spend_based_loyalty_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = 02F08DD01ADEB781001B5C1F /* campaign_representation_spend_based_loyalty_v1.json */; };
+		02F08DD31ADEB781001B5C1F /* campaign_representation_visit_based_loyalty_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = 02F08DD11ADEB781001B5C1F /* campaign_representation_visit_based_loyalty_v1.json */; };
 		2504194E174AEAE300254161 /* LUPersistedObjectsInitial.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 2523E33717374D9C00FBDFEB /* LUPersistedObjectsInitial.sqlite */; };
 		2523E31717374B2900FBDFEB /* LULocationSummaryJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 2523E31517374B2900FBDFEB /* LULocationSummaryJSONFactory.h */; };
 		2523E31817374B2900FBDFEB /* LULocationSummaryJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523E31617374B2900FBDFEB /* LULocationSummaryJSONFactory.m */; };
@@ -877,8 +877,8 @@
 		02F08DCB1ADEB617001B5C1F /* LUCampaignRepresentationSpendBasedLoyaltyV1+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUCampaignRepresentationSpendBasedLoyaltyV1+Fixtures.m"; sourceTree = "<group>"; };
 		02F08DCD1ADEB68E001B5C1F /* LUCampaignRepresentationVisitBasedLoyaltyV1+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUCampaignRepresentationVisitBasedLoyaltyV1+Fixtures.h"; sourceTree = "<group>"; };
 		02F08DCE1ADEB68E001B5C1F /* LUCampaignRepresentationVisitBasedLoyaltyV1+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUCampaignRepresentationVisitBasedLoyaltyV1+Fixtures.m"; sourceTree = "<group>"; };
-		02F08DD01ADEB781001B5C1F /* campaign_representation_spend_based_status_v1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = campaign_representation_spend_based_status_v1.json; sourceTree = "<group>"; };
-		02F08DD11ADEB781001B5C1F /* campaign_representation_visit_based_status_v1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = campaign_representation_visit_based_status_v1.json; sourceTree = "<group>"; };
+		02F08DD01ADEB781001B5C1F /* campaign_representation_spend_based_loyalty_v1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = campaign_representation_spend_based_loyalty_v1.json; sourceTree = "<group>"; };
+		02F08DD11ADEB781001B5C1F /* campaign_representation_visit_based_loyalty_v1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = campaign_representation_visit_based_loyalty_v1.json; sourceTree = "<group>"; };
 		06A40E6C26ED2F5CE405C989 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		0D9D1A2D4983C77483DD88A5 /* Pods.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.distribution.xcconfig; path = "Pods/Target Support Files/Pods/Pods.distribution.xcconfig"; sourceTree = "<group>"; };
 		19230B96D1B70CC1BAA59413 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
@@ -1513,8 +1513,8 @@
 				02E29146175FCAB8002036B4 /* campaign.json */,
 				404504D717EB9648000A7211 /* campaign_nonglobal.json */,
 				02BDB2291AB77091005830A7 /* campaign_representation_basic_v1.json */,
-				02F08DD01ADEB781001B5C1F /* campaign_representation_spend_based_status_v1.json */,
-				02F08DD11ADEB781001B5C1F /* campaign_representation_visit_based_status_v1.json */,
+				02F08DD01ADEB781001B5C1F /* campaign_representation_spend_based_loyalty_v1.json */,
+				02F08DD11ADEB781001B5C1F /* campaign_representation_visit_based_loyalty_v1.json */,
 				6A37A3001A5EF56D00EF7EC1 /* carrier_account_active.json */,
 				6A7344531A5AEF2F0077DEF7 /* carrier_account_evurl_response.txt */,
 				027E58C11ABCBF2400C334CA /* carrier_account_payment_method.json */,
@@ -2586,7 +2586,7 @@
 				02E2916C175FCAB8002036B4 /* orders_page-2.json in Resources */,
 				0205E1E419520265001904D9 /* user_with_access_token.json in Resources */,
 				40140B54181EAD52005A66BF /* current_user_minimal.json in Resources */,
-				02F08DD21ADEB781001B5C1F /* campaign_representation_spend_based_status_v1.json in Resources */,
+				02F08DD21ADEB781001B5C1F /* campaign_representation_spend_based_loyalty_v1.json in Resources */,
 				02E2916D175FCAB8002036B4 /* ticket.json in Resources */,
 				027E58DF1ABCBF3A00C334CA /* downgraded_token.json in Resources */,
 				40742A2518D0BD4200939A36 /* current_user_debit_only.json in Resources */,
@@ -2596,7 +2596,7 @@
 				02293815176265DE0057C381 /* categories.json in Resources */,
 				0229381717626B500057C381 /* location_summaries.json in Resources */,
 				02D53B9E194A332200507397 /* payment_ineligible_error.json in Resources */,
-				02F08DD31ADEB781001B5C1F /* campaign_representation_visit_based_status_v1.json in Resources */,
+				02F08DD31ADEB781001B5C1F /* campaign_representation_visit_based_loyalty_v1.json in Resources */,
 				02C1A7D41AF121AB00550FE3 /* rewards.json in Resources */,
 				40A1451418D0F24B00BC2E87 /* failed_credit_card_create.json in Resources */,
 				025B6DDE176A713C00713242 /* payment_token.json in Resources */,
