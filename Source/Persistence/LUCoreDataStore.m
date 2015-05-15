@@ -28,6 +28,8 @@ NSString * const LUPersistedObjectsStoreDatabaseFileName = @"LUPersistedObjects"
     [self replaceStoreDatabaseWithInitial];
   }
 
+  [self makeSureStoreDatabaseIsWritable];
+
   return [self storeDatabaseURL];
 }
 
@@ -42,6 +44,19 @@ NSString * const LUPersistedObjectsStoreDatabaseFileName = @"LUPersistedObjects"
 
   NSString *storeFileName = [LUPersistedObjectsStoreDatabaseFileName stringByAppendingPathExtension:@"sqlite"];
   return [applicationDocumentsDirectory URLByAppendingPathComponent:storeFileName];
+}
+
+#pragma mark - Private Methods (Store Database Mutability)
+
++ (void)makeSureStoreDatabaseIsWritable {
+  NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[[self storeDatabaseURL] path]
+                                                                              error:nil];
+  short permissions = [attributes[NSFilePosixPermissions] shortValue];
+  if ((permissions & 0200) == 0) {
+    [[NSFileManager defaultManager] setAttributes:@{NSFilePosixPermissions: @(permissions | 0200)}
+                                     ofItemAtPath:[[self storeDatabaseURL] path]
+                                            error:nil];
+  }
 }
 
 #pragma mark - Private Methods (Store File Access)

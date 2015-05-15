@@ -26,6 +26,10 @@
 SPEC_BEGIN(LUCoreDataStoreSpec)
 
 describe(@"LUCoreDataStore", ^{
+  beforeEach(^{
+    [[NSFileManager defaultManager] stub:@selector(copyItemAtURL:toURL:error:)];
+  });
+
   describe(@"storeURL", ^{
     context(@"when the store database exists and is newer than the initial database", ^{
       beforeEach(^{
@@ -34,11 +38,11 @@ describe(@"LUCoreDataStore", ^{
                                withArguments:[[LUCoreDataStore storeDatabaseURL] path], nil];
 
         [[NSFileManager defaultManager] stub:@selector(attributesOfItemAtPath:error:)
-                                   andReturn:@{NSFileCreationDate : [NSDate distantPast]}
+                                   andReturn:@{NSFileCreationDate: [NSDate distantPast]}
                                withArguments:[[LUCoreDataStore storeDatabaseURL] path], nil, nil];
 
         [[NSFileManager defaultManager] stub:@selector(attributesOfItemAtPath:error:)
-                                   andReturn:@{NSFileCreationDate : [NSDate date]}
+                                   andReturn:@{NSFileCreationDate: [NSDate date]}
                                withArguments:[[LUCoreDataStore initialDatabaseURL] path], nil, nil];
       });
 
@@ -58,11 +62,11 @@ describe(@"LUCoreDataStore", ^{
 
         NSDate *date = [NSDate date];
         [[NSFileManager defaultManager] stub:@selector(attributesOfItemAtPath:error:)
-                                   andReturn:@{NSFileCreationDate : date}
+                                   andReturn:@{NSFileCreationDate: date}
                                withArguments:[[LUCoreDataStore storeDatabaseURL] path], nil, nil];
 
         [[NSFileManager defaultManager] stub:@selector(attributesOfItemAtPath:error:)
-                                   andReturn:@{NSFileCreationDate : date}
+                                   andReturn:@{NSFileCreationDate: date}
                                withArguments:[[LUCoreDataStore initialDatabaseURL] path], nil, nil];
       });
 
@@ -98,11 +102,11 @@ describe(@"LUCoreDataStore", ^{
 
         NSDate *date = [NSDate date];
         [[NSFileManager defaultManager] stub:@selector(attributesOfItemAtPath:error:)
-                                   andReturn:@{NSFileCreationDate : date}
+                                   andReturn:@{NSFileCreationDate: date}
                                withArguments:[[LUCoreDataStore storeDatabaseURL] path], nil, nil];
 
         [[NSFileManager defaultManager] stub:@selector(attributesOfItemAtPath:error:)
-                                   andReturn:@{NSFileCreationDate : [NSDate distantPast]}
+                                   andReturn:@{NSFileCreationDate: [NSDate distantPast]}
                                withArguments:[[LUCoreDataStore initialDatabaseURL] path], nil, nil];
       });
 
@@ -115,6 +119,38 @@ describe(@"LUCoreDataStore", ^{
                                                                    error:nil];
 
         [[[LUCoreDataStore storeURL] should] equal:[LUCoreDataStore storeDatabaseURL]];
+      });
+    });
+
+    context(@"writability", ^{
+      context(@"when the store database is already writable", ^{
+        beforeEach(^{
+          [[NSFileManager defaultManager] stub:@selector(attributesOfItemAtPath:error:)
+                                     andReturn:@{NSFilePosixPermissions: @(0644)}
+                                 withArguments:[[LUCoreDataStore storeDatabaseURL] path], nil, nil];
+        });
+
+        it(@"doesn't change the store database permissions", ^{
+          [[[NSFileManager defaultManager] shouldNot] receive:@selector(setAttributes:ofItemAtPath:error:)];
+
+          [LUCoreDataStore storeURL];
+        });
+      });
+
+      context(@"when the store database is not writable", ^{
+        beforeEach(^{
+          [[NSFileManager defaultManager] stub:@selector(attributesOfItemAtPath:error:)
+                                     andReturn:@{NSFilePosixPermissions: @(0444)}
+                                 withArguments:[[LUCoreDataStore storeDatabaseURL] path], nil, nil];
+        });
+
+        it(@"makes the store database writable", ^{
+          [[[[NSFileManager defaultManager] should] receive] setAttributes:@{NSFilePosixPermissions: @(0644)}
+                                                              ofItemAtPath:[[LUCoreDataStore storeDatabaseURL] path]
+                                                                     error:nil];
+
+          [LUCoreDataStore storeURL];
+        });
       });
     });
   });
