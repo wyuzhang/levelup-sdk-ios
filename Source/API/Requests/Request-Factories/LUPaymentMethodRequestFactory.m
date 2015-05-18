@@ -28,4 +28,12 @@
                                modelFactory:[LUPaymentMethodJSONFactory factory]];
 }
 
++ (LUAPIRequest *)requestToDeactivatePaymentMethod {
+  return [LUAPIRequest apiRequestWithMethod:@"DELETE"
+                                       path:@"payment_method"
+                                 apiVersion:LUAPIVersion15
+                                 parameters:nil
+                               modelFactory:nil];
+}
+
 @end

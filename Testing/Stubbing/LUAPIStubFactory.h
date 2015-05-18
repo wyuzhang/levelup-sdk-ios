@@ -39,6 +39,7 @@
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user;
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user withPermissions:(NSArray *)permissions;
 + (LUAPIStub *)stubToCreateUserDebitOnly:(LUUser *)user;
++ (LUAPIStub *)stubToDeactivatePaymentMethod;
 + (LUAPIStub *)stubToDeleteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToDownloadPass;
 + (LUAPIStub *)stubToFailToClaimCampaignWithCode:(NSString *)code;

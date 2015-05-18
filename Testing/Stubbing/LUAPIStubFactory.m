@@ -161,6 +161,14 @@
   return stub;
 }
 
++ (LUAPIStub *)stubToDeactivatePaymentMethod {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"payment_method"
+                           HTTPMethod:@"DELETE"
+                        authenticated:YES
+                         responseData:nil];
+}
+
 + (LUAPIStub *)stubToDeleteCreditCardWithID:(NSNumber *)creditCardID {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:[@"credit_cards/" stringByAppendingString:[creditCardID stringValue]]

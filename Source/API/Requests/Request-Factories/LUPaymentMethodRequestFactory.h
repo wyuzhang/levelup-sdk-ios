@@ -34,4 +34,15 @@
  */
 + (LUAPIRequest *)requestForPaymentMethod;
 
+/**
+ Builds a request to deactivate the current user's payment method.
+
+ If the user has not added any payment methods, or if they don't have an active payment method, this
+ request will fail with the error code `LUAPIErrorNotFound`.
+
+ @warning This request requires an access token with the `LUPermissionManageUserPaymentMethods`
+ permission.
+ */
++ (LUAPIRequest *)requestToDeactivatePaymentMethod;
+
 @end

@@ -45,6 +45,28 @@ describe(@"LUPaymentMethodRequestFactory", ^{
       [request.parameters shouldBeNil];
     });
   });
+
+  describe(@"requestToDeactivatePaymentMethod", ^{
+    beforeEach(^{
+      request = [LUPaymentMethodRequestFactory requestToDeactivatePaymentMethod];
+    });
+
+    it(@"returns a DELETE request", ^{
+      [[request.method should] equal:@"DELETE"];
+    });
+
+    it(@"returns a request to the path 'payment_method'", ^{
+      [[request.path should] equal:@"payment_method"];
+    });
+
+    it(@"returns a request to version 15 of the API", ^{
+      [[request.apiVersion should] equal:LUAPIVersion15];
+    });
+
+    it(@"returns a request with no parameters", ^{
+      [request.parameters shouldBeNil];
+    });
+  });
 });
 
 SPEC_END
