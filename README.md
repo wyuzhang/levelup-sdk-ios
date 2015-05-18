@@ -22,7 +22,7 @@ Before issuing any requests, you must register an App ID and API key. This is do
 [LUAPIClient setupWithAppID:APP_ID APIKey:API_KEY];
 ```
 
-An API request is an instance of [LUAPIRequest](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUAPIRequest.html). The SDK includes a set of request factories in order to create these requests (see "Request Factories" below).
+An API request is an instance of [LUAPIRequest](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUAPIRequest.html). The SDK includes a set of request factories in order to create these requests.
 
 Requests are performed by calling `performRequest:success:failure:`:
 
@@ -45,45 +45,6 @@ If the API request fails, an `NSError` instance will be passed to the `failure` 
 - `LUAPIFailingURLResponseErrorKey`: An `NSURLResponse` containing the response.
 - `LUAPIFailingErrorMessageErrorKey`: An optional error message from the server.
 - `LUAPIFailingJSONResponseErrorKey`: An optional JSON response from the server.
-
-## Models
-
-The SDK includes model classes for LevelUp domain objects, such as a user or a merchant. Instances of these objects may be returned from API calls, or may be referenced from other model objects.
-
-* **[LUAccessToken](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUAccessToken.html)**: An access token is created when a user successfully logs in, and is used to maintain an authentication session.
-* **[LUCampaign](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUCampaign.html)**: Campaigns are promotions which can be claimed by users.
-* **[LUCategory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUCategory.html)**: A merchant category, such as "Italian" or "Bar".
-* **[LUClaim](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUClaim.html)**: Represents a user's claim on a campaign.
-* **[LUCohort](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUCohort.html)**: When a user claims a campaign, they do so through a cohort. This could be through a social network or a particular advertisement.
-* **[LUCreditCard](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUCreditCard.html)**: Users have one or more credit cards to use as payment methods.
-* **[LUInterstitial](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUInterstitial.html)**: Interstitial actions may be shown on some merchant or receipt screens to promote a campaign.
-* **[LULocation](http://thelevelup.github.io/levelup-sdk-ios/Classes/LULocation.html)**: A merchant has one or more locations, which are physical places users can pay.
-* **[LULoyalty](http://thelevelup.github.io/levelup-sdk-ios/Classes/LULoyalty.html)**: Contains information about a user's loyalty progress at a specific merchant.
-* **[LUMonetaryValue](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUMonetaryValue.html)**: Represents an amount of money of a specific currency.
-* **[LUOrder](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUOrder.html)**: An order that has been placed using LevelUp.
-* **[LUPaymentToken](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUPaymentToken.html)**: The user's payment token.
-* **[LUUser](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUUser.html)**: Represents a user of LevelUp.
-
-## Request Factories
-
-The SDK includes a set of request factories, which generate a particular `LUAPIRequest`. Some may require additional input, such as a merchant ID, which must be provided in order to retrieve a given merchant.
-
-Below is the full list of request factories:
-
-* [LUAPNDeviceRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUAPNDeviceRequestFactory.html)
-* [LUAuthenticationRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUAuthenticationRequestFactory.html)
-* [LUCampaignRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUCampaignRequestFactory.html)
-* [LUCategoryRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUCategoryRequestFactory.html)
-* [LUClaimRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUClaimRequestFactory.html)
-* [LUCohortRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUCohortRequestFactory.html)
-* [LUCreditCardRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUCreditCardRequestFactory.html)
-* [LUInterstitialRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUInterstitialRequestFactory.html)
-* [LULocationRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LULocationRequestFactory.html)
-* [LULoyaltyRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LULoyaltyRequestFactory.html)
-* [LUOrderRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUOrderRequestFactory.html)
-* [LUPaymentTokenRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUPaymentTokenRequestFactory.html)
-* [LUTicketRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUTicketRequestFactory.html)
-* [LUUserRequestFactory](http://thelevelup.github.io/levelup-sdk-ios/Classes/LUUserRequestFactory.html)
 
 # Generating and Scanning Codes
 
@@ -148,7 +109,7 @@ LevelUp takes the security of its users and the safety of their information very
 
 # License
 
-Copyright (C) 2014 SCVNGR, Inc. d/b/a LevelUp
+Copyright (C) 2015 SCVNGR, Inc. d/b/a LevelUp
 
 Except as otherwise noted, the LevelUp SDK for iOS is licensed under the Apache License, Version
 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html).
