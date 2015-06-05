@@ -247,6 +247,10 @@
   return [self stubToGetPaymentMethodWithResponseDataFromFile:@"apple_pay_card_payment_method"];
 }
 
++ (LUAPIStub *)stubToGetApplePayCardPreloadingPaymentMethod {
+  return [self stubToGetPaymentMethodWithResponseDataFromFile:@"apple_pay_card_preloading_payment_method"];
+}
+
 + (LUAPIStub *)stubToGetCampaignForMerchantWithCode:(NSString *)code {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
                                  path:[NSString stringWithFormat:@"codes/%@/campaign", code]
@@ -346,6 +350,10 @@
 
 + (LUAPIStub *)stubToGetCreditCardPaymentMethod {
   return [self stubToGetPaymentMethodWithResponseDataFromFile:@"credit_card_payment_method"];
+}
+
++ (LUAPIStub *)stubToGetCreditCardPreloadingPaymentMethod {
+  return [self stubToGetPaymentMethodWithResponseDataFromFile:@"credit_card_preloading_payment_method"];
 }
 
 + (LUAPIStub *)stubToGetCreditCardsOneResult {
@@ -584,6 +592,13 @@
                            HTTPMethod:@"GET"
                         authenticated:YES
                          responseData:[self responseDataFromFile:@"new_user"]];
+}
+
++ (LUAPIStub *)stubToGetNonePaymentMethod {
+  LUAPIStub *stub = [self stubToGetPaymentMethodWithResponseDataFromFile:nil];
+  stub.responseCode = 404;
+
+  return stub;
 }
 
 + (LUAPIStub *)stubToGetOrderWithUUID:(NSString *)UUID {

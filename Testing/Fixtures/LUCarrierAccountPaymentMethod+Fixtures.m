@@ -22,9 +22,12 @@
 + (LUCarrierAccountPaymentMethod *)fixture {
   return [[LUCarrierAccountPaymentMethod alloc] initWithCarrier:@"Sprint"
                                                     last4Digits:@"1234"
-                                              monthlyBillingDay:@15
-                                        monthlyTransactionLimit:[LUMonetaryValue monetaryValueWithUSD:@150]
-                                       paymentMethodDescription:@"Sprint *1234"];
+                                              monthlyBillingDay:nil
+                                        monthlyTransactionLimit:nil
+                                       paymentMethodDescription:@"Sprint *1234"
+                                          paymentPreferenceType:LUPaymentPreferenceTypeInstantBilling
+                                         preloadReloadThreshold:nil
+                                                   preloadValue:nil];
 }
 
 @end

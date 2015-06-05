@@ -358,10 +358,14 @@
 		40140B54181EAD52005A66BF /* current_user_minimal.json in Resources */ = {isa = PBXBuildFile; fileRef = 40140B53181EAD4B005A66BF /* current_user_minimal.json */; };
 		40210177188EF16E0002E82F /* credit_and_debit.json in Resources */ = {isa = PBXBuildFile; fileRef = 40210176188EF16E0002E82F /* credit_and_debit.json */; };
 		40210179188EF48C0002E82F /* credit_cards-3.json in Resources */ = {isa = PBXBuildFile; fileRef = 40210178188EF48C0002E82F /* credit_cards-3.json */; };
+		404201971B50124000E8DA59 /* LUPaymentPreferenceTypeTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 404201951B50124000E8DA59 /* LUPaymentPreferenceTypeTransformer.h */; };
+		404201981B50124000E8DA59 /* LUPaymentPreferenceTypeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 404201961B50124000E8DA59 /* LUPaymentPreferenceTypeTransformer.m */; };
 		404504D817EB9648000A7211 /* campaign_nonglobal.json in Resources */ = {isa = PBXBuildFile; fileRef = 404504D717EB9648000A7211 /* campaign_nonglobal.json */; };
 		40742A2518D0BD4200939A36 /* current_user_debit_only.json in Resources */ = {isa = PBXBuildFile; fileRef = 40742A2418D0BD4200939A36 /* current_user_debit_only.json */; };
 		40742A2718D0BD8100939A36 /* current_user_minimal_debit_only.json in Resources */ = {isa = PBXBuildFile; fileRef = 40742A2618D0BD8100939A36 /* current_user_minimal_debit_only.json */; };
 		40A1451418D0F24B00BC2E87 /* failed_credit_card_create.json in Resources */ = {isa = PBXBuildFile; fileRef = 40A1451318D0F24B00BC2E87 /* failed_credit_card_create.json */; };
+		40BAF7071B42F1F800D9A739 /* credit_card_preloading_payment_method.json in Resources */ = {isa = PBXBuildFile; fileRef = 40BAF7061B42F1F800D9A739 /* credit_card_preloading_payment_method.json */; };
+		40BAF7091B42F24800D9A739 /* apple_pay_card_preloading_payment_method.json in Resources */ = {isa = PBXBuildFile; fileRef = 40BAF7081B42F24800D9A739 /* apple_pay_card_preloading_payment_method.json */; };
 		40EC258918A582B3000D5390 /* LUInterstitialFeedbackAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 40EC258718A582B3000D5390 /* LUInterstitialFeedbackAction.h */; };
 		40EC258A18A582B3000D5390 /* LUInterstitialFeedbackAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EC258818A582B3000D5390 /* LUInterstitialFeedbackAction.m */; };
 		45C90162129F4441AD00C796 /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35969BE4155A4B838F746A8C /* libPods-test.a */; };
@@ -933,10 +937,14 @@
 		40140B53181EAD4B005A66BF /* current_user_minimal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = current_user_minimal.json; sourceTree = "<group>"; };
 		40210176188EF16E0002E82F /* credit_and_debit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credit_and_debit.json; sourceTree = "<group>"; };
 		40210178188EF48C0002E82F /* credit_cards-3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "credit_cards-3.json"; sourceTree = "<group>"; };
+		404201951B50124000E8DA59 /* LUPaymentPreferenceTypeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUPaymentPreferenceTypeTransformer.h; sourceTree = "<group>"; };
+		404201961B50124000E8DA59 /* LUPaymentPreferenceTypeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentPreferenceTypeTransformer.m; sourceTree = "<group>"; };
 		404504D717EB9648000A7211 /* campaign_nonglobal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = campaign_nonglobal.json; sourceTree = "<group>"; };
 		40742A2418D0BD4200939A36 /* current_user_debit_only.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = current_user_debit_only.json; sourceTree = "<group>"; };
 		40742A2618D0BD8100939A36 /* current_user_minimal_debit_only.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = current_user_minimal_debit_only.json; sourceTree = "<group>"; };
 		40A1451318D0F24B00BC2E87 /* failed_credit_card_create.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failed_credit_card_create.json; sourceTree = "<group>"; };
+		40BAF7061B42F1F800D9A739 /* credit_card_preloading_payment_method.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credit_card_preloading_payment_method.json; sourceTree = "<group>"; };
+		40BAF7081B42F24800D9A739 /* apple_pay_card_preloading_payment_method.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apple_pay_card_preloading_payment_method.json; sourceTree = "<group>"; };
 		40BE9659188DCFF600F318D6 /* debit_card.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = debit_card.json; sourceTree = "<group>"; };
 		40EC258718A582B3000D5390 /* LUInterstitialFeedbackAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialFeedbackAction.h; sourceTree = "<group>"; };
 		40EC258818A582B3000D5390 /* LUInterstitialFeedbackAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialFeedbackAction.m; sourceTree = "<group>"; };
@@ -1510,6 +1518,7 @@
 			children = (
 				029053C117BD4ACA00527576 /* app_locations.json */,
 				027E58C01ABCBE2800C334CA /* apple_pay_card_payment_method.json */,
+				40BAF7081B42F24800D9A739 /* apple_pay_card_preloading_payment_method.json */,
 				02E29146175FCAB8002036B4 /* campaign.json */,
 				404504D717EB9648000A7211 /* campaign_nonglobal.json */,
 				02BDB2291AB77091005830A7 /* campaign_representation_basic_v1.json */,
@@ -1524,6 +1533,7 @@
 				40210176188EF16E0002E82F /* credit_and_debit.json */,
 				02E2914A175FCAB8002036B4 /* credit_card.json */,
 				027E58E11ABCBFB200C334CA /* credit_card_payment_method.json */,
+				40BAF7061B42F1F800D9A739 /* credit_card_preloading_payment_method.json */,
 				02E2914C175FCAB8002036B4 /* credit_cards-1.json */,
 				02E2914B175FCAB8002036B4 /* credit_cards-2.json */,
 				40210178188EF48C0002E82F /* credit_cards-3.json */,
@@ -2239,6 +2249,8 @@
 				02BDB21C1AB77052005830A7 /* LUCampaignRepresentationTypeTransformer.m */,
 				6AC1EC9D1A5197FD006756C5 /* LUCarrierAccountStateTransformer.h */,
 				6AC1EC9E1A5197FD006756C5 /* LUCarrierAccountStateTransformer.m */,
+				404201951B50124000E8DA59 /* LUPaymentPreferenceTypeTransformer.h */,
+				404201961B50124000E8DA59 /* LUPaymentPreferenceTypeTransformer.m */,
 				F88A3DAD17E8E576008D5254 /* LUUserGenderTransformer.h */,
 				F88A3DAE17E8E576008D5254 /* LUUserGenderTransformer.m */,
 			);
@@ -2288,6 +2300,7 @@
 				027E58A51ABCB77E00C334CA /* LUCreditCardPaymentMethod.h in Headers */,
 				02C1A7411AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.h in Headers */,
 				C1CAF21E17315415003B3D01 /* LUUserJSONFactory.h in Headers */,
+				404201971B50124000E8DA59 /* LUPaymentPreferenceTypeTransformer.h in Headers */,
 				027E58A11ABCB6F800C334CA /* LUCarrierAccountPaymentMethod.h in Headers */,
 				C1CAF22017315415003B3D01 /* LUAPIModel.h in Headers */,
 				024AF4AF1A9F703D007131DD /* BTSecKeyWrapper.h in Headers */,
@@ -2564,6 +2577,8 @@
 				02E29161175FCAB8002036B4 /* credit_cards-1.json in Resources */,
 				02E29162175FCAB8002036B4 /* current_user.json in Resources */,
 				40210179188EF48C0002E82F /* credit_cards-3.json in Resources */,
+				40BAF7071B42F1F800D9A739 /* credit_card_preloading_payment_method.json in Resources */,
+				40BAF7091B42F24800D9A739 /* apple_pay_card_preloading_payment_method.json in Resources */,
 				027E58DE1ABCBF3A00C334CA /* debit_card.json in Resources */,
 				02E29164175FCAB8002036B4 /* legacy_loyalty_claim.json in Resources */,
 				02E29165175FCAB8002036B4 /* loyalty_no_credit.json in Resources */,
@@ -2842,6 +2857,7 @@
 				02C1A7421AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.m in Sources */,
 				021B7476193FAB8900BBC315 /* LURegistration.m in Sources */,
 				02F08DB71ADDB197001B5C1F /* LUCampaignRepresentationSpendBasedLoyaltyV1JSONFactory.m in Sources */,
+				404201981B50124000E8DA59 /* LUPaymentPreferenceTypeTransformer.m in Sources */,
 				02BA982B174BE19500C9D647 /* LUCoreDataStore.m in Sources */,
 				F88A3DB017E8E57C008D5254 /* LUUserGenderTransformer.m in Sources */,
 				02BDB2101AB7700E005830A7 /* LUCampaignRepresentationBasicV1JSONFactory.m in Sources */,

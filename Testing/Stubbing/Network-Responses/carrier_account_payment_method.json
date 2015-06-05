@@ -5,8 +5,11 @@
       "carrier": "Sprint",
       "last_4": "1234"
     },
-    "monthly_billing_day": 15,
-    "monthly_transaction_limit_amount": 15000,
+    "monthly_billing_day": null,
+    "monthly_transaction_limit_amount": null,
+    "payment_preference_type": "instant_billing",
+    "preload_reload_threshold_amount": null,
+    "preload_value_amount": null,
     "type": "carrier"
   }
 }

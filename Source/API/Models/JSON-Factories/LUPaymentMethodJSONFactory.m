@@ -27,6 +27,10 @@
   LUMonetaryValue *monthlyTransactionLimit = [attributes lu_monetaryValueForKey:@"monthly_transaction_limit_amount"];
   NSString *paymentMethodDescription = [attributes lu_stringForKey:@"description"];
   NSDictionary *metadata = [attributes lu_dictionaryForKey:@"metadata"];
+  LUPaymentPreferenceType paymentPreferenceType =
+    [LUAbstractPaymentMethod paymentPreferenceTypeForString:[attributes lu_stringForKey:@"payment_preference_type"]];
+  LUMonetaryValue *preloadReloadThreshold = [attributes lu_monetaryValueForKey:@"preload_reload_threshold_amount"];
+  LUMonetaryValue *preloadValue = [attributes lu_monetaryValueForKey:@"preload_value_amount"];
   NSString *type = [attributes lu_stringForKey:@"type"];
 
   if ([type isEqualToString:@"apple_pay_card"]) {
@@ -35,7 +39,10 @@
     return [[LUApplePayCardPaymentMethod alloc] initWithIssuer:issuer
                                              monthlyBillingDay:monthlyBillingDay
                                        monthlyTransactionLimit:monthlyTransactionLimit
-                                      paymentMethodDescription:paymentMethodDescription];
+                                      paymentMethodDescription:paymentMethodDescription
+                                         paymentPreferenceType:paymentPreferenceType
+                                        preloadReloadThreshold:preloadReloadThreshold
+                                                  preloadValue:preloadValue];
   } else if ([type isEqualToString:@"carrier"]) {
     NSString *carrier = [metadata lu_stringForKey:@"carrier"];
     NSString *last4Digits = [metadata lu_stringForKey:@"last_4"];
@@ -43,7 +50,10 @@
     return [[LUCarrierAccountPaymentMethod alloc] initWithCarrier:carrier last4Digits:last4Digits
                                                 monthlyBillingDay:monthlyBillingDay
                                           monthlyTransactionLimit:monthlyTransactionLimit
-                                         paymentMethodDescription:paymentMethodDescription];
+                                         paymentMethodDescription:paymentMethodDescription
+                                            paymentPreferenceType:paymentPreferenceType
+                                           preloadReloadThreshold:preloadReloadThreshold
+                                                     preloadValue:preloadValue];
   } else if ([type isEqualToString:@"credit_card"] || [type isEqualToString:@"debit_card"]) {
     BOOL debit = [type isEqualToString:@"debit_card"];
     NSNumber *expirationMonth = [metadata lu_numberForKey:@"expiration_month"];
@@ -56,7 +66,10 @@
                                                 last4Digits:last4Digits
                                           monthlyBillingDay:monthlyBillingDay
                                     monthlyTransactionLimit:monthlyTransactionLimit
-                                   paymentMethodDescription:paymentMethodDescription];
+                                   paymentMethodDescription:paymentMethodDescription
+                                      paymentPreferenceType:paymentPreferenceType
+                                     preloadReloadThreshold:preloadReloadThreshold
+                                               preloadValue:preloadValue];
   }
 
   return nil;

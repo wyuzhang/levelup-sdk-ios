@@ -27,7 +27,10 @@
                                            expirationYear:expirationYear issuer:@"Visa"
                                               last4Digits:@"1234" monthlyBillingDay:@15
                                   monthlyTransactionLimit:[LUMonetaryValue monetaryValueWithUSD:@150]
-                                 paymentMethodDescription:@"Visa *1234"];
+                                 paymentMethodDescription:@"Visa *1234"
+                                    paymentPreferenceType:LUPaymentPreferenceTypeMonthlyBilling
+                                   preloadReloadThreshold:nil
+                                             preloadValue:nil];
 }
 
 + (LUCreditCardPaymentMethod *)fixtureForDebitCard {

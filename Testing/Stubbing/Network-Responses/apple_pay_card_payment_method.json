@@ -6,6 +6,9 @@
     },
     "monthly_billing_day": 15,
     "monthly_transaction_limit_amount": 15000,
+    "payment_preference_type": "monthly_billing",
+    "preload_reload_threshold_amount": null,
+    "preload_value_amount": null,
     "type": "apple_pay_card"
   }
 }

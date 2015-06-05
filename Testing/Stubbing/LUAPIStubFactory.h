@@ -49,6 +49,7 @@
 + (LUAPIStub *)stubToFailToGetPassWithMerchantID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToFindRegistrationForEmail:(NSString *)email;
 + (LUAPIStub *)stubToGetApplePayCardPaymentMethod;
++ (LUAPIStub *)stubToGetApplePayCardPreloadingPaymentMethod;
 + (LUAPIStub *)stubToGetCampaignForMerchantWithCode:(NSString *)code;
 + (LUAPIStub *)stubToGetCampaignMetadataForLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToGetCampaignMetadataForMerchantWithID:(NSNumber *)merchantID;
@@ -63,6 +64,7 @@
 + (LUAPIStub *)stubToGetCreditAtLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToGetCreditAndDebitCards;
 + (LUAPIStub *)stubToGetCreditCardPaymentMethod;
++ (LUAPIStub *)stubToGetCreditCardPreloadingPaymentMethod;
 + (LUAPIStub *)stubToGetCreditCardsOneResult;
 + (LUAPIStub *)stubToGetCreditCardsTwoResults;
 + (LUAPIStub *)stubToGetCreditCardsThreeResults;
@@ -90,6 +92,7 @@
 + (LUAPIStub *)stubToGetLoyaltyNoCreditForMerchantWithID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetMerchantIDs:(NSArray *)merchantIDs forCampaignWithID:(NSNumber *)campaignID;
 + (LUAPIStub *)stubToGetNewUser;
++ (LUAPIStub *)stubToGetNonePaymentMethod;
 + (LUAPIStub *)stubToGetOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToGetOrdersEmpty;
 + (LUAPIStub *)stubToGetOrdersFirstPage;

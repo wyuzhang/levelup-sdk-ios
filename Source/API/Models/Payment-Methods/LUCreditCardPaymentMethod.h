@@ -53,4 +53,14 @@
 monthlyTransactionLimit:(LUMonetaryValue *)monthlyTransactionLimit
 paymentMethodDescription:(NSString *)paymentMethodDescription;
 
+- (id)initWithDebit:(BOOL)debit expirationMonth:(NSNumber *)expirationMonth
+     expirationYear:(NSNumber *)expirationYear
+             issuer:(NSString *)issuer last4Digits:(NSString *)last4Digits
+  monthlyBillingDay:(NSNumber *)monthlyBillingDay
+monthlyTransactionLimit:(LUMonetaryValue *)monthlyTransactionLimit
+paymentMethodDescription:(NSString *)paymentMethodDescription
+paymentPreferenceType:(LUPaymentPreferenceType)paymentPreferenceType
+preloadReloadThreshold:(LUMonetaryValue *)preloadReloadThreshold
+       preloadValue:(LUMonetaryValue *)preloadValue;
+
 @end

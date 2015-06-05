@@ -1,0 +1,14 @@
+{
+  "payment_method": {
+    "description": "Apple Pay",
+    "metadata": {
+      "issuer": "Visa"
+    },
+    "monthly_billing_day": null,
+    "monthly_transaction_limit_amount": null,
+    "payment_preference_type": "preload",
+    "preload_reload_threshold_amount": 1000,
+    "preload_value_amount": 2500,
+    "type": "apple_pay_card"
+  }
+}

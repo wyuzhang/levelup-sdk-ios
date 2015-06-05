@@ -40,6 +40,32 @@ paymentMethodDescription:(NSString *)paymentMethodDescription {
   return self;
 }
 
+- (id)initWithDebit:(BOOL)debit expirationMonth:(NSNumber *)expirationMonth
+     expirationYear:(NSNumber *)expirationYear
+             issuer:(NSString *)issuer last4Digits:(NSString *)last4Digits
+  monthlyBillingDay:(NSNumber *)monthlyBillingDay
+monthlyTransactionLimit:(LUMonetaryValue *)monthlyTransactionLimit
+paymentMethodDescription:(NSString *)paymentMethodDescription
+paymentPreferenceType:(LUPaymentPreferenceType)paymentPreferenceType
+preloadReloadThreshold:(LUMonetaryValue *)preloadReloadThreshold
+       preloadValue:(LUMonetaryValue *)preloadValue {
+  self = [super initWithMonthlyBillingDay:monthlyBillingDay
+                  monthlyTransactionLimit:monthlyTransactionLimit
+                 paymentMethodDescription:paymentMethodDescription
+                    paymentPreferenceType:paymentPreferenceType
+                   preloadReloadThreshold:preloadReloadThreshold
+                             preloadValue:preloadValue];
+  if (!self) return nil;
+
+  _debit = debit;
+  _expirationMonth = expirationMonth;
+  _expirationYear = expirationYear;
+  _issuer = issuer;
+  _last4Digits = last4Digits;
+
+  return self;
+}
+
 #pragma mark - NSObject Methods
 
 - (NSString *)description {

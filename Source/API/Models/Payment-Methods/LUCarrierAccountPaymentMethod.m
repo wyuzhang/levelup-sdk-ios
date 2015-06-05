@@ -35,6 +35,27 @@ paymentMethodDescription:(NSString *)paymentMethodDescription {
   return self;
 }
 
+- (id)initWithCarrier:(NSString *)carrier last4Digits:(NSString *)last4Digits
+    monthlyBillingDay:(NSNumber *)monthlyBillingDay
+monthlyTransactionLimit:(LUMonetaryValue *)monthlyTransactionLimit
+paymentMethodDescription:(NSString *)paymentMethodDescription
+paymentPreferenceType:(LUPaymentPreferenceType)paymentPreferenceType
+preloadReloadThreshold:(LUMonetaryValue *)preloadReloadThreshold
+         preloadValue:(LUMonetaryValue *)preloadValue {
+  self = [super initWithMonthlyBillingDay:monthlyBillingDay
+                  monthlyTransactionLimit:monthlyTransactionLimit
+                 paymentMethodDescription:paymentMethodDescription
+                    paymentPreferenceType:paymentPreferenceType
+                   preloadReloadThreshold:preloadReloadThreshold
+                             preloadValue:preloadValue];
+  if (!self) return nil;
+
+  _carrier = carrier;
+  _last4Digits = last4Digits;
+
+  return self;
+}
+
 #pragma mark - NSObject Methods
 
 - (NSString *)description {

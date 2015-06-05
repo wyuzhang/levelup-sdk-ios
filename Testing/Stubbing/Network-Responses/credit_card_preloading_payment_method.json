@@ -7,11 +7,11 @@
       "issuer": "Visa",
       "last_4": "1234"
     },
-    "monthly_billing_day": 15,
-    "monthly_transaction_limit_amount": 15000,
-    "payment_preference_type": "monthly_billing",
-    "preload_reload_threshold_amount": null,
-    "preload_value_amount": null,
+    "monthly_billing_day": null,
+    "monthly_transaction_limit_amount": null,
+    "payment_preference_type": "preload",
+    "preload_reload_threshold_amount": 1000,
+    "preload_value_amount": 2500,
     "type": "credit_card"
   }
 }

@@ -1,14 +1,17 @@
 {
   "payment_method": {
-    "description": "Visa *1234",
+    "description": "MasterCard *1234",
     "metadata": {
       "expiration_month": "11",
       "expiration_year": "2020",
-      "issuer": "Visa",
+      "issuer": "MasterCard",
       "last_4": "1234"
     },
     "monthly_billing_day": 15,
     "monthly_transaction_limit_amount": 15000,
+    "payment_preference_type": "monthly_billing",
+    "preload_reload_threshold_amount": null,
+    "preload_value_amount": null,
     "type": "debit_card"
   }
 }

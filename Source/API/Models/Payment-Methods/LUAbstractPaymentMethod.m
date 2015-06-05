@@ -15,8 +15,23 @@
  */
 
 #import "LUAbstractPaymentMethod.h"
+#import "LUPaymentPreferenceTypeTransformer.h"
 
 @implementation LUAbstractPaymentMethod
+
++ (void)load {
+  [NSValueTransformer setValueTransformer:[[LUPaymentPreferenceTypeTransformer alloc] init] forName:LUPaymentPreferenceTypeTransformerName];
+}
+
++ (LUPaymentPreferenceType)paymentPreferenceTypeForString:(NSString *)string {
+  NSValueTransformer *transformer = [NSValueTransformer valueTransformerForName:LUPaymentPreferenceTypeTransformerName];
+  return [[transformer reverseTransformedValue:string] integerValue];
+}
+
++ (NSString *)stringForPaymentPreferenceType:(LUPaymentPreferenceType)paymentPreferenceType {
+  NSValueTransformer *transformer = [NSValueTransformer valueTransformerForName:LUPaymentPreferenceTypeTransformerName];
+  return [transformer transformedValue:@(paymentPreferenceType)];
+}
 
 #pragma mark - Creation
 
@@ -33,11 +48,30 @@
   return self;
 }
 
+- (id)initWithMonthlyBillingDay:(NSNumber *)monthlyBillingDay
+        monthlyTransactionLimit:(LUMonetaryValue *)monthlyTransactionLimit
+       paymentMethodDescription:(NSString *)paymentMethodDescription
+          paymentPreferenceType:(LUPaymentPreferenceType)paymentPreferenceType
+         preloadReloadThreshold:(LUMonetaryValue *)preloadReloadThreshold
+                   preloadValue:(LUMonetaryValue *)preloadValue {
+  self = [self initWithMonthlyBillingDay:monthlyBillingDay
+                 monthlyTransactionLimit:monthlyTransactionLimit
+                paymentMethodDescription:paymentMethodDescription];
+  if (!self) return nil;
+
+  _paymentPreferenceType = paymentPreferenceType;
+  _preloadReloadThreshold = preloadReloadThreshold;
+  _preloadValue = preloadValue;
+
+  return self;
+}
+
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"monthlyBillingDay=%@, monthlyTransactionLimit=%@, paymentMethodDescription=%@]",
-          self.monthlyBillingDay, self.monthlyTransactionLimit, self.paymentMethodDescription];
+  return [NSString stringWithFormat:@"monthlyBillingDay=%@, monthlyTransactionLimit=%@, paymentMethodDescription=%@, paymentPreferenceType=%@, preloadReloadThreshold=%@, preloadValue=%@]",
+          self.monthlyBillingDay, self.monthlyTransactionLimit, self.paymentMethodDescription, [LUAbstractPaymentMethod stringForPaymentPreferenceType:self.paymentPreferenceType],
+          self.preloadReloadThreshold, self.preloadValue];
 }
 
 @end

@@ -30,4 +30,11 @@
 monthlyTransactionLimit:(LUMonetaryValue *)monthlyTransactionLimit
 paymentMethodDescription:(NSString *)paymentMethodDescription;
 
+- (id)initWithIssuer:(NSString *)issuer monthlyBillingDay:(NSNumber *)monthlyBillingDay
+monthlyTransactionLimit:(LUMonetaryValue *)monthlyTransactionLimit
+paymentMethodDescription:(NSString *)paymentMethodDescription
+paymentPreferenceType:(LUPaymentPreferenceType)paymentPreferenceType
+preloadReloadThreshold:(LUMonetaryValue *)preloadReloadThreshold
+        preloadValue:(LUMonetaryValue *)preloadValue;
+
 @end

@@ -23,7 +23,10 @@
   return [[LUApplePayCardPaymentMethod alloc] initWithIssuer:@"Visa"
                                            monthlyBillingDay:@15
                                      monthlyTransactionLimit:[LUMonetaryValue monetaryValueWithUSD:@150]
-                                    paymentMethodDescription:@"Apple Pay"];
+                                    paymentMethodDescription:@"Apple Pay"
+                                       paymentPreferenceType:LUPaymentPreferenceTypeMonthlyBilling
+                                      preloadReloadThreshold:nil
+                                                preloadValue:nil];
 }
 
 @end

@@ -16,6 +16,12 @@
 
 #import "LUAPIModel.h"
 
+typedef NS_ENUM(NSInteger, LUPaymentPreferenceType) {
+  LUPaymentPreferenceTypeInstantBilling,
+  LUPaymentPreferenceTypeMonthlyBilling,
+  LUPaymentPreferenceTypePreload
+};
+
 @class LUMonetaryValue;
 
 /**
@@ -46,8 +52,39 @@
  */
 @property (nonatomic, copy, readonly) NSString *paymentMethodDescription;
 
+/**
+ The user's payment preference. It will be one of `LUPaymentPreferenceTypeInstantBilling`,
+ `LUPaymentPreferenceTypeMonthlyBilling`, or `LUPaymentPreferenceTypePreload`.
+ */
+@property (nonatomic, assign, readonly) LUPaymentPreferenceType paymentPreferenceType;
+
+/**
+ The monetary threshold at which the user's preload will automatically be reloaded once
+ their balance dips below this point.
+
+ Can be `nil` if the user's payment method is not preloading.
+ */
+@property (nonatomic, strong, readonly) LUMonetaryValue *preloadReloadThreshold;
+
+/**
+ The amount of preloaded value the user has on their account.
+
+ Can be `nil` if the user's payment method is not preloading.
+ */
+@property (nonatomic, strong, readonly) LUMonetaryValue *preloadValue;
+
++ (LUPaymentPreferenceType)paymentPreferenceTypeForString:(NSString *)string;
++ (NSString *)stringForPaymentPreferenceType:(LUPaymentPreferenceType)paymentPreferenceType;
+
 - (id)initWithMonthlyBillingDay:(NSNumber *)monthlyBillingDay
         monthlyTransactionLimit:(LUMonetaryValue *)monthlyTransactionLimit
        paymentMethodDescription:(NSString *)paymentMethodDescription;
+
+- (id)initWithMonthlyBillingDay:(NSNumber *)monthlyBillingDay
+        monthlyTransactionLimit:(LUMonetaryValue *)monthlyTransactionLimit
+       paymentMethodDescription:(NSString *)paymentMethodDescription
+          paymentPreferenceType:(LUPaymentPreferenceType)paymentPreferenceType
+         preloadReloadThreshold:(LUMonetaryValue *)preloadReloadThreshold
+                   preloadValue:(LUMonetaryValue *)preloadValue;
 
 @end
