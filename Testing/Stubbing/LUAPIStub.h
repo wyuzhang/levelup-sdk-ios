@@ -16,7 +16,7 @@
 
 #import <OHHTTPStubs/OHHTTPStubs.h>
 
-@interface LUAPIStub : NSObject
+@interface LUAPIStub : NSObject <NSCopying>
 
 @property (nonatomic, assign) BOOL authenticated;
 @property (nonatomic, copy) NSString *HTTPMethod;

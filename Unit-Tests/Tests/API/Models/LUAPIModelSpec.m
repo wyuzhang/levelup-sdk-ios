@@ -133,6 +133,29 @@ describe(@"LUAPIModel", ^{
       });
     });
   });
+
+  describe(@"secure coding", ^{
+    it(@"conforms to NSSecureCoding", ^{
+      [[[LUAPIModel class] should] conformToProtocol:@protocol(NSSecureCoding)];
+    });
+
+    it(@"supports secure coding", ^{
+      [[theValue([LUAPIModel supportsSecureCoding]) should] beYes];
+    });
+
+    describe(@"encodes and decodes", ^{
+      LUAPIModelSubclass2 *model = [[LUAPIModelSubclass2 alloc] init];
+      model.dictionary = @{@"a": @1};
+      model.modelID = @1;
+      model.name = @"model";
+
+      NSData *data = [NSKeyedArchiver archivedDataWithRootObject:model];
+      [[data shouldNot] beNil];
+
+      id decoded = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+      [[decoded should] equal:model];
+    });
+  });
 });
 
 SPEC_END

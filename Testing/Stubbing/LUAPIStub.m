@@ -63,6 +63,22 @@
   return stub;
 }
 
+#pragma mark - NSCopying Methods
+
+- (id)copyWithZone:(NSZone *)zone {
+  LUAPIStub *stub = [[LUAPIStub allocWithZone:zone] init];
+  stub.authenticated = self.authenticated;
+  stub.HTTPMethod = self.HTTPMethod;
+  stub.requestBodyJSON = self.requestBodyJSON;
+  stub.responseCode = self.responseCode;
+  stub.responseData = self.responseData;
+  stub.responseHeaders = self.responseHeaders;
+  stub.responseType = self.responseType;
+  stub.URL = self.URL;
+
+  return stub;
+}
+
 #pragma mark - Public Methods
 
 - (BOOL)matchesRequest:(NSURLRequest *)request {

@@ -17,7 +17,15 @@
 #import "LUAPIModel.h"
 #import <objc/runtime.h>
 
-@implementation LUAPIModel
+@interface LUAPIModel ()
+
+@property (nonatomic, copy, readonly) NSDictionary *codableProperties;
+
+@end
+
+@implementation LUAPIModel {
+  NSDictionary *_codableProperties;
+}
 
 #pragma mark - NSObject Methods
 
@@ -61,7 +69,118 @@
   return YES;
 }
 
+#pragma mark - NSSecureCoding Methods
+
++ (BOOL)supportsSecureCoding {
+  return YES;
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+  self = [super init];
+  if (!self) return nil;
+
+  for (NSString *key in self.codableProperties) {
+    Class propertyClass = self.codableProperties[key];
+
+    id object = [decoder decodeObjectOfClass:propertyClass forKey:key];
+    if (object) {
+      [self setValue:object forKey:key];
+    }
+  }
+
+  return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+  for (NSString *key in self.codableProperties) {
+    id object = [self valueForKey:key];
+    if (object) {
+      [coder encodeObject:object forKey:key];
+    }
+  }
+}
+
 #pragma mark - Private
+
++ (NSDictionary *)codableProperties {
+  NSMutableDictionary *codableProperties = [NSMutableDictionary dictionary];
+
+  unsigned int outCount, i;
+  objc_property_t *properties = class_copyPropertyList(self, &outCount);
+  for (i = 0; i < outCount; i++) {
+    objc_property_t property = properties[i];
+    const char *propName = property_getName(property);
+
+    NSString *attribute = [NSString stringWithCString:propName encoding:NSUTF8StringEncoding];
+
+    if ([@[@"class", @"codableProperties", @"hash", @"description", @"debugDescription"] containsObject:attribute]) {
+      continue;
+    }
+
+    Class propertyClass = nil;
+    char *typeEncoding = property_copyAttributeValue(property, "T");
+    switch (typeEncoding[0]) {
+      case '@': {
+        if (strlen(typeEncoding) >= 3) {
+          char *className = strndup(typeEncoding + 2, strlen(typeEncoding) - 3);
+          NSString *name = [NSString stringWithCString:className encoding:NSUTF8StringEncoding];
+          NSRange range = [name rangeOfString:@"<"];
+          if (range.location != NSNotFound) {
+            name = [name substringToIndex:range.location];
+          }
+          propertyClass = NSClassFromString(name) ?: [NSObject class];
+          free(className);
+        }
+        break;
+      }
+      case 'c':
+      case 'i':
+      case 's':
+      case 'l':
+      case 'q':
+      case 'C':
+      case 'I':
+      case 'S':
+      case 'L':
+      case 'Q':
+      case 'f':
+      case 'd':
+      case 'B': {
+        propertyClass = [NSNumber class];
+        break;
+      }
+      case '{': {
+        propertyClass = [NSValue class];
+        break;
+      }
+    }
+    free(typeEncoding);
+
+    if (propertyClass) {
+      codableProperties[attribute] = propertyClass;
+    }
+  }
+  free(properties);
+
+  return codableProperties;
+}
+
+- (NSDictionary *)codableProperties {
+  if (!_codableProperties) {
+    NSMutableDictionary *codableProperties = [NSMutableDictionary dictionary];
+
+    Class cls = [self class];
+    while (cls && (cls != [LUAPIModel superclass])) {
+      [codableProperties addEntriesFromDictionary:[cls codableProperties]];
+
+      cls = [cls superclass];
+    }
+
+    _codableProperties = [NSDictionary dictionaryWithDictionary:codableProperties];
+  }
+
+  return _codableProperties;
+}
 
 - (BOOL)isPrime:(int)possiblePrime {
   for (int i = 2; i < possiblePrime; i++) {

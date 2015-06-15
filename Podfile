@@ -3,7 +3,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '7.0'
 
 pod 'AFNetworking', '2.5.3'
-pod 'AutoCoding', '2.0.3'
 pod 'LUKeychainAccess', '1.2.3'
 pod 'ZXingObjC/QRCode', '3.0.3'
 

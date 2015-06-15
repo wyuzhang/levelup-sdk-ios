@@ -20,7 +20,6 @@ PODS:
   - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - AutoCoding (2.0.3)
   - Kiwi (2.3.1)
   - LUKeychainAccess (1.2.3)
   - OHHTTPStubs (1.1.2)
@@ -30,7 +29,6 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 2.5.3)
-  - AutoCoding (= 2.0.3)
   - Kiwi (= 2.3.1)
   - LUKeychainAccess (= 1.2.3)
   - OHHTTPStubs (= 1.1.2)
@@ -38,7 +36,6 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
-  AutoCoding: 242c6c654466c10e2bde059c6b41db1eac19268d
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
   LUKeychainAccess: 8f4ad156ca3251a8c0f946d8258b6d0d1d6234b5
   OHHTTPStubs: a51f9f39122399cdd1aab24cedb301199caf84df

@@ -14,6 +14,6 @@
  * limitations under the License.
  */
 
-@interface LUAPIModel : NSObject
+@interface LUAPIModel : NSObject <NSSecureCoding>
 
 @end
