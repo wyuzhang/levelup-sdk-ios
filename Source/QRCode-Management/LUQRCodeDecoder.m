@@ -48,7 +48,7 @@ static NSInteger const kMaxConcurrentCaptureOperations = 2;
 
 - (void)decodeQRCodeFromSampleBuffer:(CMSampleBufferRef)sampleBuffer withCompletionHandler:(LUQRCodeDecoderCompletionHandler)completionHandler {
   if (self.decodeQueue.operationCount < self.decodeQueue.maxConcurrentOperationCount) {
-    CGImageRef sourceImage = [self imageFromSampleBuffer:sampleBuffer];
+    CGImageRef sourceImage = [self newImageFromSampleBuffer:sampleBuffer];
     ZXCGImageLuminanceSource *source = [[ZXCGImageLuminanceSource alloc] initWithCGImage:sourceImage];
     CGImageRelease(sourceImage);
 
@@ -65,7 +65,7 @@ static NSInteger const kMaxConcurrentCaptureOperations = 2;
 
 #pragma mark - Private Methods
 
-- (CGImageRef)imageFromSampleBuffer:(CMSampleBufferRef)sampleBuffer {
+- (CGImageRef)newImageFromSampleBuffer:(CMSampleBufferRef)sampleBuffer {
   // Code taken and modified from Apple QA1702.
   // Available at http://developer.apple.com/library/ios/#qa/qa1702/_index.html
 

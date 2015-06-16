@@ -4,7 +4,7 @@ platform :ios, '7.0'
 
 pod 'AFNetworking', '2.5.3'
 pod 'LUKeychainAccess', '1.2.3'
-pod 'ZXingObjC/QRCode', '3.0.3'
+pod 'ZXingObjC/QRCode', '3.0.4'
 
 target :test, :exclusive => true do
   link_with 'Tests'

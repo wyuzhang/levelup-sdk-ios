@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.subspec 'Core' do |core|
     core.dependency 'AFNetworking', '2.5.3'
     core.dependency 'LUKeychainAccess', '1.2.3'
-    core.dependency 'ZXingObjC/QRCode', '3.0.3'
+    core.dependency 'ZXingObjC/QRCode', '3.0.4'
 
     core.source_files = 'Source/*.{h,m}', 'Source/**/*.{h,m}'
     core.resources = 'Source/Resources/*'

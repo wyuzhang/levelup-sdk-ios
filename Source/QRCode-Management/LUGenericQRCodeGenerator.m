@@ -57,7 +57,7 @@ const int8_t LUWhiteComponents[4] = {255, 255, 255, 255};
 
 #pragma mark - Private Methods
 
-- (CGImageRef)colorizedQRCodeForResult:(ZXBitMatrix *)result {
+- (CGImageRef)newColorizedQRCodeForResult:(ZXBitMatrix *)result {
   ZXIntArray *topLeft = [result topLeftOnBit];
 
   int x = topLeft.array[0], y = topLeft.array[1];
@@ -108,9 +108,9 @@ const int8_t LUWhiteComponents[4] = {255, 255, 255, 255};
   return cgimage;
 }
 
-- (CGImageRef)imageForResult:(ZXBitMatrix *)result {
+- (CGImageRef)newImageForResult:(ZXBitMatrix *)result {
   if (self.colorizeCodes) {
-    return [self colorizedQRCodeForResult:result];
+    return [self newColorizedQRCodeForResult:result];
   } else {
     ZXImage *image = [ZXImage imageWithMatrix:result];
     return CGImageRetain([image cgimage]);
@@ -125,7 +125,7 @@ const int8_t LUWhiteComponents[4] = {255, 255, 255, 255};
                                 height:self.outputHeight
                                  error:nil];
 
-  CGImageRef cgimage = [self imageForResult:result];
+  CGImageRef cgimage = [self newImageForResult:result];
   UIImage *image = [[UIImage alloc] initWithCGImage:cgimage scale:1.0f orientation:UIImageOrientationDown];
   CGImageRelease(cgimage);
   return image;
