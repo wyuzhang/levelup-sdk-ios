@@ -361,12 +361,6 @@ describe(@"LUIBeaconListener", ^{
 
           [[theValue(iBeaconListener.isMonitoringForBeacons) should] beYes];
         });
-
-        it(@"starts ranging", ^{
-          [[iBeaconListener.locationManager should] receive:@selector(startRangingBeaconsInRegion:)];
-
-          [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
-        });
       });
 
       context(@"and the region's identifier doesn't match LUIBeaconIdentifier", ^{
@@ -378,12 +372,6 @@ describe(@"LUIBeaconListener", ^{
           [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
 
           [[theValue(iBeaconListener.isMonitoringForBeacons) should] beNo];
-        });
-
-        it(@"does not start ranging", ^{
-          [[iBeaconListener.locationManager shouldNot] receive:@selector(startRangingBeaconsInRegion:)];
-
-          [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
         });
       });
     });

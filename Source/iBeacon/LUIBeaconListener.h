@@ -35,6 +35,11 @@
 @property (nonatomic, assign, readonly) BOOL isMonitoringForBeacons;
 
 /**
+ The `CLLocationManager` used by this `LUIBeaconListener`.
+ */
+@property (nonatomic, strong) CLLocationManager *locationManager;
+
+/**
  Start monitoring for beacons.
  */
 - (void)startMonitoring;

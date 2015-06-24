@@ -26,7 +26,6 @@ NSString * const LUIBeaconUUID = @"56DB0365-A001-4062-9E4D-499D3B8ECCF3";
 
 @property (nonatomic, strong) CBCentralManager *bluetoothManager;
 @property (nonatomic, assign) BOOL isMonitoringForBeacons;
-@property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) NSDate *lastNotificationShownTime;
 
 @end
@@ -109,7 +108,6 @@ NSString * const LUIBeaconUUID = @"56DB0365-A001-4062-9E4D-499D3B8ECCF3";
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
   if ([self shouldRespondToCLRegion:region]) {
     self.isMonitoringForBeacons = YES;
-    [self.locationManager startRangingBeaconsInRegion:[self iBeaconRegion]];
   }
 }
 
