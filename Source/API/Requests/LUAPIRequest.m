@@ -27,6 +27,13 @@ NSString * const LUAPIVersion15 = @"v15";
 #pragma mark - Object Lifecycle Methods
 
 + (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
+                                   URL:(NSURL *)URL
+                            parameters:(NSDictionary *)parameters
+                          modelFactory:(LUAbstractJSONModelFactory *)modelFactory {
+  return [[self alloc] initWithMethod:method URL:URL parameters:parameters modelFactory:modelFactory];
+}
+
++ (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
                                   path:(NSString *)path
                             apiVersion:(NSString *)apiVersion
                             parameters:(NSDictionary *)parameters
@@ -45,6 +52,21 @@ NSString * const LUAPIVersion15 = @"v15";
   return [[self alloc] initWithMethod:method path:path apiVersion:apiVersion parameters:parameters
                          modelFactory:modelFactory retryResponseCodes:retryResponseCodes
                     retryTimeInterval:retryTimeInterval];
+}
+
+- (id)initWithMethod:(NSString *)method
+                 URL:(NSURL *)URL
+          parameters:(NSDictionary *)parameters
+        modelFactory:(LUAbstractJSONModelFactory *)modelFactory {
+  self = [super init];
+  if (self) {
+    _method = method;
+    _URL = URL;
+    _parameters = parameters;
+    _modelFactory = modelFactory;
+  }
+
+  return self;
 }
 
 - (id)initWithMethod:(NSString *)method
@@ -84,10 +106,18 @@ NSString * const LUAPIVersion15 = @"v15";
 }
 
 - (NSMutableURLRequest *)URLRequest {
-  NSString *pathWithVersion = [NSString stringWithFormat:@"%@/%@", self.apiVersion, self.path];
-  NSMutableURLRequest *URLRequest = [[LUAPIClient sharedClient] requestWithMethod:self.method
-                                                                             path:pathWithVersion
-                                                                       parameters:self.parameters];
+  NSMutableURLRequest *URLRequest;
+
+  if (_URL) {
+    URLRequest = [[LUAPIClient sharedClient] requestWithMethod:self.method
+                                                           URL:_URL
+                                                    parameters:self.parameters];
+  } else {
+    NSString *pathWithVersion = [NSString stringWithFormat:@"%@/%@", self.apiVersion, self.path];
+    URLRequest = [[LUAPIClient sharedClient] requestWithMethod:self.method
+                                                          path:pathWithVersion
+                                                    parameters:self.parameters];
+  }
 
   if ([LUAPIClient sharedClient].accessToken) {
     NSString *authorization = [NSString stringWithFormat:@"token %@", [LUAPIClient sharedClient].accessToken];

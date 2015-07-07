@@ -258,8 +258,28 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
                             success:(LUAPISuccessBlock)success
                             failure:(LUAPIFailureBlock)failure;
 
+/**
+ Returns an `NSMutableURLRequest` with the given parameters
+ 
+ @param method An HTTP method: "GET", "POST", "PUT", or "DELETE".
+ @param path The path of the API request, e.g. "/users".
+ @param parameters A dictionary of parameters to include with this request, or nil if the request
+ has no parameters.
+ */
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method
                                       path:(NSString *)path
+                                parameters:(NSDictionary *)parameters;
+
+/**
+ Returns an `NSMutableURLRequest` with the given parameters
+
+ @param method An HTTP method: "GET", "POST", "PUT", or "DELETE".
+ @param URL The full URL of the API request, e.g. "https://api.thelevelup.com/users/1".
+ @param parameters A dictionary of parameters to include with this request, or nil if the request
+ has no parameters.
+ */
+- (NSMutableURLRequest *)requestWithMethod:(NSString *)method
+                                       URL:(NSURL *)URL
                                 parameters:(NSDictionary *)parameters;
 
 @end

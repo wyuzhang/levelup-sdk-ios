@@ -28,6 +28,7 @@ describe(@"LUAPIRequest", ^{
   LUAbstractJSONModelFactory *modelFactory = [LUAbstractJSONModelFactory mock];
   NSArray *retryResponseCodes = @[@202];
   NSTimeInterval retryTimeInterval = 0.5;
+  NSURL *URL = [NSURL URLWithString:@"https://api.thelevelup.com/v14/example"];
 
   __block LUAPIRequest *apiRequest;
 
@@ -38,6 +39,21 @@ describe(@"LUAPIRequest", ^{
   });
 
   // Object Lifecycle Methods
+
+  describe(@"apiRequestWithMethod:URL:parameters:modelFactory:", ^{
+    it(@"returns a new LUAPIRequest with the given arguments", ^{
+      LUAPIRequest *result = [LUAPIRequest apiRequestWithMethod:method
+                                                            URL:URL
+                                                     parameters:parameters
+                                                   modelFactory:modelFactory];
+
+      [[result should] beKindOfClass:[LUAPIRequest class]];
+      [[result.method should] equal:method];
+      [[result.URL.absoluteString should] equal:@"https://api.thelevelup.com/v14/example?test=1"];
+      [[result.parameters should] equal:parameters];
+      [[result.modelFactory should] equal:modelFactory];
+    });
+  });
 
   describe(@"apiRequestWithMethod:path:apiVersion:parameters:modelFactory:", ^{
     it(@"returns a new LUAPIRequest with the given arguments", ^{

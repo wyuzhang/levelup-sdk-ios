@@ -152,6 +152,15 @@ __strong static LUAPIClient *_sharedClient = nil;
   return [self.httpOperationManager.requestSerializer requestWithMethod:method URLString:URLString parameters:parameters error:nil];
 }
 
+- (NSMutableURLRequest *)requestWithMethod:(NSString *)method
+                                       URL:(NSURL *)url
+                                parameters:(NSDictionary *)parameters {
+  return [self.httpOperationManager.requestSerializer requestWithMethod:method
+                                                              URLString:url.absoluteString
+                                                             parameters:parameters
+                                                                  error:nil];
+}
+
 - (NSString *)userAgent {
   return self.httpOperationManager.requestSerializer.HTTPRequestHeaders[@"User-Agent"];
 }
