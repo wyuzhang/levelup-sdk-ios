@@ -32,6 +32,10 @@
                       HTTPMethod:(NSString *)HTTPMethod
                    authenticated:(BOOL)authenticated
                     responseData:(NSData *)responseData;
++ (LUAPIStub *)stubForURL:(NSURL *)URL
+               HTTPMethod:(NSString *)HTTPMethod
+            authenticated:(BOOL)authenticated
+             responseData:(NSData *)responseData;
 + (LUAPIStub *)stubForWebURL:(NSURL *)URL withBody:(NSString *)body;
 + (LUAPIStub *)stubForWebURL:(NSURL *)URL withPlainTextResponseString:(NSString *)responseString;
 - (BOOL)matchesRequest:(NSURLRequest *)request;

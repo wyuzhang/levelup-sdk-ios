@@ -45,6 +45,20 @@
   return stub;
 }
 
++ (LUAPIStub *)stubForURL:(NSURL *)URL
+               HTTPMethod:(NSString *)HTTPMethod
+            authenticated:(BOOL)authenticated
+             responseData:(NSData *)responseData {
+  LUAPIStub *stub = [[LUAPIStub alloc] init];
+  stub.authenticated = authenticated;
+  stub.HTTPMethod = HTTPMethod;
+  stub.URL = URL;
+  stub.responseData = responseData;
+  stub.responseType = @"application/json";
+
+  return stub;
+}
+
 + (LUAPIStub *)stubForWebURL:(NSURL *)URL withBody:(NSString *)body {
   LUAPIStub *stub = [[LUAPIStub alloc] init];
   stub.URL = URL;
