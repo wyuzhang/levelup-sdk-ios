@@ -42,6 +42,7 @@
 #import "LURegistrationRequestFactory.h"
 #import "LURewardRequestFactory.h"
 #import "LUTicketRequestFactory.h"
+#import "LUUserAddressRequestFactory.h"
 #import "LUUserRequestFactory.h"
 
 #import "LUAccessToken.h"
@@ -76,6 +77,7 @@
 #import "LUReward.h"
 #import "LURewardSummary.h"
 #import "LUUser.h"
+#import "LUUserAddress.h"
 #import "LUUserWithAccessToken.h"
 #import "LUWebLink.h"
 #import "LUWebLocations.h"

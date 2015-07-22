@@ -1,0 +1,11 @@
+{
+  "user_address": {
+    "address_type" : "home",
+    "extended_address" : "Apt 1",
+    "id" : 1,
+    "locality" : "Boston",
+    "postal_code" : "02114",
+    "region" : "MA",
+    "street_address" : "123 Main St"
+  }
+}

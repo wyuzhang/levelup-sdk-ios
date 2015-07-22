@@ -24,6 +24,7 @@
 #import "LULocationCacheUpdater.h"
 #import "LUMonetaryValue.h"
 #import "LUUser.h"
+#import "LUUserAddress.h"
 #import "LUUserParameterBuilder.h"
 #import "NSDate+StringFormats.h"
 
@@ -120,10 +121,10 @@
 
 + (LUAPIStub *)stubToCreateUser {
   return [LUAPIStub apiStubForVersion:LUAPIVersion14
-                                              path:@"users"
-                                        HTTPMethod:@"POST"
-                                    authenticated:NO
-                                      responseData:[self responseDataFromFile:@"current_user"]];
+                                 path:@"users"
+                           HTTPMethod:@"POST"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"current_user"]];
 }
 
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user {
@@ -145,6 +146,31 @@
   NSMutableDictionary *requestBodyJSON = [[self requestBodyJSONForUser:user] mutableCopy];
   requestBodyJSON[@"permission_keynames"] = permissions;
   stub.requestBodyJSON = requestBodyJSON;
+
+  return stub;
+}
+
++ (LUAPIStub *)stubToCreateUserAddress {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"user_addresses"
+                           HTTPMethod:@"POST"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"user_address"]];
+}
+
++ (LUAPIStub *)stubToCreateUserAddress:(LUUserAddress *)userAddresss {
+  LUAPIStub *stub = [self stubToCreateUserAddress];
+
+  stub.requestBodyJSON = @{
+    @"user_address" : @{
+      @"address_type" : userAddresss.addressType,
+      @"extended_address" : userAddresss.extendedAddress,
+      @"locality" : userAddresss.locality,
+      @"postal_code" : userAddresss.postalCode,
+      @"region" : userAddresss.region,
+      @"street_address" : userAddresss.streetAddress
+    }
+  };
 
   return stub;
 }
@@ -721,6 +747,14 @@
                            HTTPMethod:@"GET"
                         authenticated:NO
                          responseData:[self responseDataFromFile:@"rewards"]];
+}
+
++ (LUAPIStub *)stubToGetUserAddresses {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"user_addresses"
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:[self responseDataFromFile:@"user_addresses"]];
 }
 
 + (LUAPIStub *)stubToGetUpdatedCarrierAccountWithID:(NSNumber *)carrierAccountID withStatus:(NSInteger)status {

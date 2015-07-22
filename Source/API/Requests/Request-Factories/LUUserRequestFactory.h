@@ -18,7 +18,7 @@
 @class LUUser;
 
 /**
- `LUTicketRequestFactory` is used to build requests related to users.
+ `LUUserRequestFactory` is used to build requests related to users.
  */
 @interface LUUserRequestFactory : NSObject
 

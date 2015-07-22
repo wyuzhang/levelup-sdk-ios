@@ -18,6 +18,7 @@
 @class LUGiftCardOrder;
 @class LUPaymentPreference;
 @class LUUser;
+@class LUUserAddress;
 
 @interface LUAPIStubFactory : NSObject
 
@@ -38,6 +39,8 @@
 + (LUAPIStub *)stubToCreateUser;
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user;
 + (LUAPIStub *)stubToCreateUser:(LUUser *)user withPermissions:(NSArray *)permissions;
++ (LUAPIStub *)stubToCreateUserAddress;
++ (LUAPIStub *)stubToCreateUserAddress:(LUUserAddress *)userAddresss;
 + (LUAPIStub *)stubToCreateUserDebitOnly:(LUUser *)user;
 + (LUAPIStub *)stubToDeactivatePaymentMethod;
 + (LUAPIStub *)stubToDeleteCreditCardWithID:(NSNumber *)creditCardID;
@@ -108,6 +111,7 @@
 + (LUAPIStub *)stubToGetRewardSummaryAtLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToGetRewardsAtLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToGetUpdatedCarrierAccountWithID:(NSNumber *)carrierAccountID;
++ (LUAPIStub *)stubToGetUserAddresses;
 + (LUAPIStub *)stubToGetURL:(NSString *)url withBody:(NSString *)body;
 + (LUAPIStub *)stubToGetWebLinksAtLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToIdentifyCarrierAccount;
