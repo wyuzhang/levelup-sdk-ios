@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
 
     core.source_files = 'Source/*.{h,m}', 'Source/**/*.{h,m}'
     core.resources = 'Source/Resources/*'
+    core.resource_bundles = { 'LevelUpSDK' => 'Source/Resources/*' }
   end
 
   s.subspec 'Testing' do |testing|

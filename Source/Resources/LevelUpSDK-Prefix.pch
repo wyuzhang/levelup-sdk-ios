@@ -26,9 +26,4 @@
   #import <MobileCoreServices/MobileCoreServices.h>
   #import <SystemConfiguration/SystemConfiguration.h>
   #import <UIKit/UIKit.h>
-
-#ifdef LU_NAMESPACED_DEPENDENCIES
-  #import "NamespacedDependencies.h"
-#endif
-
 #endif

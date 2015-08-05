@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		0294D06D190AAFF400BBACCB /* Framework */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 0294D071190AAFF400BBACCB /* Build configuration list for PBXAggregateTarget "Framework" */;
-			buildPhases = (
-				0294D072190AAFFB00BBACCB /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = Framework;
-			productName = Framework;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		020231711779E0B100B057D1 /* LUAPIConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0202316F1779E0B100B057D1 /* LUAPIConnection.h */; };
 		020231721779E0B100B057D1 /* LUAPIConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 020231701779E0B100B057D1 /* LUAPIConnection.m */; };
@@ -205,7 +191,6 @@
 		02C1A74D1AE8381200550FE3 /* LUPaymentPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C1A74B1AE8381200550FE3 /* LUPaymentPreference.h */; };
 		02C1A74E1AE8381200550FE3 /* LUPaymentPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A74C1AE8381200550FE3 /* LUPaymentPreference.m */; };
 		02C1A7701AE968DA00550FE3 /* LUPaymentOptionsSummary+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A76D1AE9687D00550FE3 /* LUPaymentOptionsSummary+Fixtures.m */; };
-		02C1A7721AE9697F00550FE3 /* payment_options_summary.json in Resources */ = {isa = PBXBuildFile; fileRef = 02C1A7711AE9697F00550FE3 /* payment_options_summary.json */; };
 		02C1A7751AE9741900550FE3 /* LUPaymentOptionsSummaryJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A7731AE9741700550FE3 /* LUPaymentOptionsSummaryJSONFactorySpec.m */; };
 		02C1A7781AE975D600550FE3 /* LUPaymentOptionsSummarySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A7761AE975CE00550FE3 /* LUPaymentOptionsSummarySpec.m */; };
 		02C1A77A1AE9761900550FE3 /* LUPaymentPreferenceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A7791AE9761900550FE3 /* LUPaymentPreferenceSpec.m */; };
@@ -252,6 +237,8 @@
 		02CD576D17D90717006205C6 /* loyalty_disabled.json in Resources */ = {isa = PBXBuildFile; fileRef = 02CD576C17D90717006205C6 /* loyalty_disabled.json */; };
 		02CD577217D9079C006205C6 /* LUInterstitialJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD577117D9079C006205C6 /* LUInterstitialJSONFactorySpec.m */; };
 		02CD577417D907B6006205C6 /* NSURLLUAdditionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD577317D907B6006205C6 /* NSURLLUAdditionsSpec.m */; };
+		02D3D3621B72ABE200D84C39 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D3D3611B72ABE200D84C39 /* libPods.a */; };
+		02D3D3661B72ABED00D84C39 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D3D3651B72ABED00D84C39 /* libPods-Tests.a */; };
 		02D47C7118F47433007CF0BC /* LUOneTimePad+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D47C7018F47433007CF0BC /* LUOneTimePad+Fixtures.m */; };
 		02D49221194F3C6C00C9C385 /* LUWebLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 02D4921F194F3C6C00C9C385 /* LUWebLink.h */; };
 		02D49222194F3C6C00C9C385 /* LUWebLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D49220194F3C6C00C9C385 /* LUWebLink.m */; };
@@ -328,8 +315,6 @@
 		2523E34617374DFE00FBDFEB /* LULocationCacheUpdaterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523E33D17374DCC00FBDFEB /* LULocationCacheUpdaterSpec.m */; };
 		2536CDC8190B283600426651 /* LUAPIObjectModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 2523E33517374D9C00FBDFEB /* LUAPIObjectModel.xcdatamodeld */; };
 		2536CDC9190B283600426651 /* LUPersistedObjectsInitial.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 2523E33717374D9C00FBDFEB /* LUPersistedObjectsInitial.sqlite */; };
-		2536CDE0190B2C8F00426651 /* LUAPIObjectModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 2523E33517374D9C00FBDFEB /* LUAPIObjectModel.xcdatamodeld */; };
-		2536CDE1190B2C8F00426651 /* LUPersistedObjectsInitial.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 2523E33717374D9C00FBDFEB /* LUPersistedObjectsInitial.sqlite */; };
 		2576B257174AE6FD00689973 /* LUCoreDataStackSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2576B255174AE6F200689973 /* LUCoreDataStackSpec.m */; };
 		25CA82DE176A173C0073383C /* LUPaymentToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 25CA82DC176A173C0073383C /* LUPaymentToken.h */; };
 		25CA82DF176A173C0073383C /* LUPaymentToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CA82DD176A173C0073383C /* LUPaymentToken.m */; };
@@ -380,7 +365,6 @@
 		40BAF7091B42F24800D9A739 /* apple_pay_card_preloading_payment_method.json in Resources */ = {isa = PBXBuildFile; fileRef = 40BAF7081B42F24800D9A739 /* apple_pay_card_preloading_payment_method.json */; };
 		40EC258918A582B3000D5390 /* LUInterstitialFeedbackAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 40EC258718A582B3000D5390 /* LUInterstitialFeedbackAction.h */; };
 		40EC258A18A582B3000D5390 /* LUInterstitialFeedbackAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EC258818A582B3000D5390 /* LUInterstitialFeedbackAction.m */; };
-		45C90162129F4441AD00C796 /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35969BE4155A4B838F746A8C /* libPods-test.a */; };
 		6A165D1018F4768200DF535F /* interstitial_feedback.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A165D0F18F4767200DF535F /* interstitial_feedback.json */; };
 		6A1A79051A6CB8C90043A5F9 /* LUCarrierAccountStateTransformerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A79041A6CB8C90043A5F9 /* LUCarrierAccountStateTransformerSpec.m */; };
 		6A2169191A6C8801002FF477 /* LUCarrierAccount+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2169161A6C87F4002FF477 /* LUCarrierAccount+Fixtures.m */; };
@@ -405,7 +389,6 @@
 		6AD8C61C1A4934FE000F6F27 /* LUCarrierAccountRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD8C61A1A4934FE000F6F27 /* LUCarrierAccountRequestFactory.m */; };
 		6AE052631AB75C4E00A18ABF /* LUAPIStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE052611AB75C4E00A18ABF /* LUAPIStubbingSpec.m */; };
 		6AE052641AB75C4E00A18ABF /* LUAPIStubSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE052621AB75C4E00A18ABF /* LUAPIStubSpec.m */; };
-		6F444D2F83D549768CF26F9C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A39890392E641DAA8438DC9 /* libPods.a */; };
 		C17DB74F1A40D1C6004AA124 /* merchant_locations.json in Resources */ = {isa = PBXBuildFile; fileRef = C17DB74D1A40D1BB004AA124 /* merchant_locations.json */; };
 		C1CAF10C173052A7003B3D01 /* LUAPIClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0AD173052A7003B3D01 /* LUAPIClientSpec.m */; };
 		C1CAF10D173052A7003B3D01 /* LUAPIErrorBuilderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CAF0AE173052A7003B3D01 /* LUAPIErrorBuilderSpec.m */; };
@@ -726,8 +709,6 @@
 		029131DA1760DC8600F74663 /* LUAPIStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAPIStub.m; sourceTree = "<group>"; };
 		0291C30E1A30E15A003A1D87 /* LUInterstitialNavigationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUInterstitialNavigationAction.h; sourceTree = "<group>"; };
 		0291C30F1A30E15A003A1D87 /* LUInterstitialNavigationAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialNavigationAction.m; sourceTree = "<group>"; };
-		0294D075190AB02200BBACCB /* build_framework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_framework.sh; sourceTree = "<group>"; };
-		0294D07B190AB67B00BBACCB /* NamespacedDependencies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NamespacedDependencies.h; path = "Pods/Target Support Files/Pods/NamespacedDependencies.h"; sourceTree = "<group>"; };
 		02AA944C18352C4400218730 /* LUGenericQRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUGenericQRCodeGenerator.h; sourceTree = "<group>"; };
 		02AA944D18352C4400218730 /* LUGenericQRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUGenericQRCodeGenerator.m; sourceTree = "<group>"; };
 		02AA94501835301400218730 /* LUGenericQRCodeGeneratorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUGenericQRCodeGeneratorSpec.m; sourceTree = "<group>"; };
@@ -831,6 +812,12 @@
 		02CD576C17D90717006205C6 /* loyalty_disabled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loyalty_disabled.json; sourceTree = "<group>"; };
 		02CD577117D9079C006205C6 /* LUInterstitialJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUInterstitialJSONFactorySpec.m; sourceTree = "<group>"; };
 		02CD577317D907B6006205C6 /* NSURLLUAdditionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLLUAdditionsSpec.m; sourceTree = "<group>"; };
+		02D3D3541B71258000D84C39 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		02D3D3551B71258000D84C39 /* Pods-Tests.distribution.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Pods-Tests.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.distribution.xcconfig"; sourceTree = "<group>"; };
+		02D3D3561B71258000D84C39 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		02D3D3611B72ABE200D84C39 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		02D3D3631B72ABEA00D84C39 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		02D3D3651B72ABED00D84C39 /* libPods-Tests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Tests.a"; path = "Pods/../build/Debug-iphoneos/libPods-Tests.a"; sourceTree = "<group>"; };
 		02D47C6F18F47433007CF0BC /* LUOneTimePad+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUOneTimePad+Fixtures.h"; sourceTree = "<group>"; };
 		02D47C7018F47433007CF0BC /* LUOneTimePad+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUOneTimePad+Fixtures.m"; sourceTree = "<group>"; };
 		02D4921F194F3C6C00C9C385 /* LUWebLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUWebLink.h; sourceTree = "<group>"; };
@@ -897,9 +884,6 @@
 		02F08DD11ADEB781001B5C1F /* campaign_representation_visit_based_loyalty_v1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = campaign_representation_visit_based_loyalty_v1.json; sourceTree = "<group>"; };
 		06A40E6C26ED2F5CE405C989 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		0D9D1A2D4983C77483DD88A5 /* Pods.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.distribution.xcconfig; path = "Pods/Target Support Files/Pods/Pods.distribution.xcconfig"; sourceTree = "<group>"; };
-		19230B96D1B70CC1BAA59413 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
-		1A39890392E641DAA8438DC9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B23BC3F1BEA083A96C531E6 /* Pods-test.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.distribution.xcconfig"; sourceTree = "<group>"; };
 		25128E4C18732E9100FA2B62 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
 		2523E31517374B2900FBDFEB /* LULocationSummaryJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationSummaryJSONFactory.h; sourceTree = "<group>"; };
 		2523E31617374B2900FBDFEB /* LULocationSummaryJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationSummaryJSONFactory.m; sourceTree = "<group>"; };
@@ -918,7 +902,6 @@
 		2523E33B17374DCC00FBDFEB /* LUCachedLocationSearchSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCachedLocationSearchSpec.m; sourceTree = "<group>"; };
 		2523E33C17374DCC00FBDFEB /* LUCachedLocationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCachedLocationSpec.m; sourceTree = "<group>"; };
 		2523E33D17374DCC00FBDFEB /* LULocationCacheUpdaterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationCacheUpdaterSpec.m; sourceTree = "<group>"; };
-		2536CDCE190B2C7300426651 /* LevelUpSDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LevelUpSDK.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		2576B255174AE6F200689973 /* LUCoreDataStackSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCoreDataStackSpec.m; sourceTree = "<group>"; };
 		25CA82DC176A173C0073383C /* LUPaymentToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUPaymentToken.h; sourceTree = "<group>"; };
 		25CA82DD176A173C0073383C /* LUPaymentToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUPaymentToken.m; sourceTree = "<group>"; };
@@ -945,7 +928,6 @@
 		25FF1CD918FAE54D007EDCEA /* LUOneTimePadSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOneTimePadSpec.m; sourceTree = "<group>"; };
 		25FF1CDF18FAE5CF007EDCEA /* LUDeepLinkAuthRequestIntegrationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDeepLinkAuthRequestIntegrationSpec.m; sourceTree = "<group>"; };
 		25FF1CE018FAE5CF007EDCEA /* LUDeepLinkAuthResponseIntegrationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUDeepLinkAuthResponseIntegrationSpec.m; sourceTree = "<group>"; };
-		35969BE4155A4B838F746A8C /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40140B53181EAD4B005A66BF /* current_user_minimal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = current_user_minimal.json; sourceTree = "<group>"; };
 		40210176188EF16E0002E82F /* credit_and_debit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credit_and_debit.json; sourceTree = "<group>"; };
 		40210178188EF48C0002E82F /* credit_cards-3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "credit_cards-3.json"; sourceTree = "<group>"; };
@@ -1148,7 +1130,6 @@
 		F8BC8400173981BE007F7142 /* LUWebLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUWebLocations.h; sourceTree = "<group>"; };
 		F8BC8401173981BE007F7142 /* LUWebLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUWebLocations.m; sourceTree = "<group>"; };
 		F8BC84081739974B007F7142 /* LUWebLocationsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUWebLocationsSpec.m; sourceTree = "<group>"; };
-		F8D49D635ABDFB43CCEB5B0D /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
 		F8D4DB9B17569CA90000DB66 /* NSDictionary+SafetyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafetyAdditions.h"; sourceTree = "<group>"; };
 		F8D4DB9C17569CA90000DB66 /* NSDictionary+SafetyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafetyAdditions.m"; sourceTree = "<group>"; };
 		F8EAF0E617BA817800197388 /* LUCacheManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUCacheManagerSpec.m; sourceTree = "<group>"; };
@@ -1164,18 +1145,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2536CDCB190B2C7300426651 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		25F643A1166832D600A05C0E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F444D2F83D549768CF26F9C /* libPods.a in Frameworks */,
+				02D3D3621B72ABE200D84C39 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1183,8 +1157,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02D3D3661B72ABED00D84C39 /* libPods-Tests.a in Frameworks */,
 				25F643BD166832D600A05C0E /* libLevelUpSDK.a in Frameworks */,
-				45C90162129F4441AD00C796 /* libPods-test.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1377,23 +1351,15 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
-		0294D073190AB02200BBACCB /* Scripts */ = {
-			isa = PBXGroup;
-			children = (
-				0294D075190AB02200BBACCB /* build_framework.sh */,
-			);
-			path = Scripts;
-			sourceTree = "<group>";
-		};
 		02A7E2669A4B38563167EC46 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				4984E89BA908B73B0354F494 /* Pods.debug.xcconfig */,
 				06A40E6C26ED2F5CE405C989 /* Pods.release.xcconfig */,
 				0D9D1A2D4983C77483DD88A5 /* Pods.distribution.xcconfig */,
-				F8D49D635ABDFB43CCEB5B0D /* Pods-test.debug.xcconfig */,
-				19230B96D1B70CC1BAA59413 /* Pods-test.release.xcconfig */,
-				1B23BC3F1BEA083A96C531E6 /* Pods-test.distribution.xcconfig */,
+				02D3D3541B71258000D84C39 /* Pods-Tests.debug.xcconfig */,
+				02D3D3551B71258000D84C39 /* Pods-Tests.distribution.xcconfig */,
+				02D3D3561B71258000D84C39 /* Pods-Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1652,7 +1618,6 @@
 				020CF263172F020700D20672 /* Testing */,
 				C1CAF07C173052A6003B3D01 /* Unit Tests */,
 				02D47C7218F4929C007CF0BC /* Integration Tests */,
-				0294D073190AB02200BBACCB /* Scripts */,
 				25F643A6166832D600A05C0E /* Frameworks */,
 				25F643A5166832D600A05C0E /* Products */,
 				02A7E2669A4B38563167EC46 /* Pods */,
@@ -1667,7 +1632,6 @@
 			children = (
 				25F643A4166832D600A05C0E /* libLevelUpSDK.a */,
 				25F643B5166832D600A05C0E /* Tests.xctest */,
-				2536CDCE190B2C7300426651 /* LevelUpSDK.bundle */,
 				02BDB27E1AB8A645005830A7 /* Testing App.app */,
 			);
 			name = Products;
@@ -1676,9 +1640,9 @@
 		25F643A6166832D600A05C0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0294D07B190AB67B00BBACCB /* NamespacedDependencies.h */,
-				1A39890392E641DAA8438DC9 /* libPods.a */,
-				35969BE4155A4B838F746A8C /* libPods-test.a */,
+				02D3D3631B72ABEA00D84C39 /* libPods.a */,
+				02D3D3611B72ABE200D84C39 /* libPods.a */,
+				02D3D3651B72ABED00D84C39 /* libPods-Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2479,23 +2443,6 @@
 			productReference = 02BDB27E1AB8A645005830A7 /* Testing App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2536CDCD190B2C7300426651 /* LevelUpSDKBundle */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2536CDDC190B2C7300426651 /* Build configuration list for PBXNativeTarget "LevelUpSDKBundle" */;
-			buildPhases = (
-				2536CDCA190B2C7300426651 /* Sources */,
-				2536CDCB190B2C7300426651 /* Frameworks */,
-				2536CDCC190B2C7300426651 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LevelUpSDKBundle;
-			productName = LevelUpSDKBundle;
-			productReference = 2536CDCE190B2C7300426651 /* LevelUpSDK.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
 		25F643A3166832D600A05C0E /* LevelUpSDK */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 25F643C9166832D600A05C0E /* Build configuration list for PBXNativeTarget "LevelUpSDK" */;
@@ -2521,6 +2468,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 25F643CC166832D600A05C0E /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
+				B61909E5EA5D887BC5DF09FA /* Check Pods Manifest.lock */,
 				25F643B0166832D600A05C0E /* Sources */,
 				25F643B1166832D600A05C0E /* Frameworks */,
 				25F643B2166832D600A05C0E /* Resources */,
@@ -2570,8 +2518,6 @@
 			targets = (
 				25F643A3166832D600A05C0E /* LevelUpSDK */,
 				25F643B4166832D600A05C0E /* Tests */,
-				2536CDCD190B2C7300426651 /* LevelUpSDKBundle */,
-				0294D06D190AAFF400BBACCB /* Framework */,
 				02BDB27D1AB8A645005830A7 /* Testing App */,
 			);
 		};
@@ -2591,17 +2537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2536CDC8190B283600426651 /* LUAPIObjectModel.xcdatamodeld in Resources */,
-				02C1A7721AE9697F00550FE3 /* payment_options_summary.json in Resources */,
 				2536CDC9190B283600426651 /* LUPersistedObjectsInitial.sqlite in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2536CDCC190B2C7300426651 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2536CDE0190B2C8F00426651 /* LUAPIObjectModel.xcdatamodeld in Resources */,
-				2536CDE1190B2C8F00426651 /* LUPersistedObjectsInitial.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2680,19 +2616,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0294D072190AAFFB00BBACCB /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/Scripts/build_framework.sh\n";
-		};
 		0370D3ED1B994A5CA2E4E509 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2745,7 +2668,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-test/Pods-test-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-resources.sh\"\n";
+		};
+		B61909E5EA5D887BC5DF09FA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 		DEFD3328554B4894B5C435BC /* Warn for TODO and FIXME comments */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2770,13 +2708,6 @@
 			files = (
 				02BDB2AF1AB8A658005830A7 /* main.m in Sources */,
 				02BDB2AC1AB8A658005830A7 /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2536CDCA190B2C7300426651 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3122,27 +3053,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0294D06E190AAFF400BBACCB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		0294D06F190AAFF400BBACCB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		0294D070190AAFF400BBACCB /* Distribution */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Distribution;
-		};
 		02AF33F316725146003B9255 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3200,7 +3110,7 @@
 		};
 		02AF33F516725146003B9255 /* Distribution */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B23BC3F1BEA083A96C531E6 /* Pods-test.distribution.xcconfig */;
+			baseConfigurationReference = 02D3D3551B71258000D84C39 /* Pods-Tests.distribution.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Unit-Tests/Resources/Unit-Tests-Prefix.pch";
@@ -3291,83 +3201,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Distribution;
-		};
-		2536CDDD190B2C7300426651 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = LevelUpSDK;
-				SDKROOT = iphoneos;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		2536CDDE190B2C7300426651 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = LevelUpSDK;
-				SDKROOT = iphoneos;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		2536CDDF190B2C7300426651 /* Distribution */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = LevelUpSDK;
-				SDKROOT = iphoneos;
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Distribution;
 		};
@@ -3486,7 +3319,7 @@
 		};
 		25F643CD166832D600A05C0E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8D49D635ABDFB43CCEB5B0D /* Pods-test.debug.xcconfig */;
+			baseConfigurationReference = 02D3D3541B71258000D84C39 /* Pods-Tests.debug.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Unit-Tests/Resources/Unit-Tests-Prefix.pch";
@@ -3502,7 +3335,7 @@
 		};
 		25F643CE166832D600A05C0E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19230B96D1B70CC1BAA59413 /* Pods-test.release.xcconfig */;
+			baseConfigurationReference = 02D3D3561B71258000D84C39 /* Pods-Tests.release.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Unit-Tests/Resources/Unit-Tests-Prefix.pch";
@@ -3519,32 +3352,12 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0294D071190AAFF400BBACCB /* Build configuration list for PBXAggregateTarget "Framework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0294D06E190AAFF400BBACCB /* Debug */,
-				0294D06F190AAFF400BBACCB /* Release */,
-				0294D070190AAFF400BBACCB /* Distribution */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		02BDB2A41AB8A645005830A7 /* Build configuration list for PBXNativeTarget "Testing App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02BDB29E1AB8A645005830A7 /* Debug */,
 				02BDB29F1AB8A645005830A7 /* Release */,
 				02BDB2A01AB8A645005830A7 /* Distribution */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2536CDDC190B2C7300426651 /* Build configuration list for PBXNativeTarget "LevelUpSDKBundle" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2536CDDD190B2C7300426651 /* Debug */,
-				2536CDDE190B2C7300426651 /* Release */,
-				2536CDDF190B2C7300426651 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
