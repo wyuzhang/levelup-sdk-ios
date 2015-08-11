@@ -67,7 +67,7 @@ describe(@"LUUserAddressRequestFactory", ^{
     it(@"returns a request with parameters for the user address", ^{
       NSDictionary *expectedParams = @{
         @"user_address" : @{
-          @"address_type" : userAddress.addressType,
+          @"address_type" : [LUUserAddress addressTypeStringForAddressType:userAddress.addressType],
           @"extended_address" : userAddress.extendedAddress,
           @"locality" : userAddress.locality,
           @"postal_code" : userAddress.postalCode,

@@ -4,7 +4,9 @@
       "address_type" : "home",
       "extended_address" : "Apt 1",
       "id" : 1,
+      "latitude" : 38.897096,
       "locality" : "Boston",
+      "longitude" : -77.036545,
       "postal_code" : "02114",
       "region" : "MA",
       "street_address" : "123 Main St"
@@ -15,10 +17,38 @@
       "address_type" : "work",
       "extended_address" : "Suite 404",
       "id" : 2,
+      "latitude" : 40.897096,
       "locality" : "Boston",
+      "longitude" : -75.036545,
       "postal_code" : "02112",
       "region" : "MA",
       "street_address" : "101 Main St"
+    }
+  },
+  {
+    "user_address": {
+      "address_type" : "delivery",
+      "extended_address" : "Apt 123",
+      "id" : 3,
+      "latitude" : 36.897096,
+      "locality" : "Boston",
+      "longitude" : -79.036545,
+      "postal_code" : "02114",
+      "region" : "MA",
+      "street_address" : "321 Main St"
+    }
+  },
+  {
+    "user_address": {
+      "address_type" : "delivery",
+      "extended_address" : "Suite 4040",
+      "id" : 4,
+      "latitude" : 42.897096,
+      "locality" : "Boston",
+      "longitude" : -73.036545,
+      "postal_code" : "02112",
+      "region" : "MA",
+      "street_address" : "404 Main St"
     }
   }
 ]

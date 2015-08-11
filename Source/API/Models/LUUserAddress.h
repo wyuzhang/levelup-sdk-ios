@@ -14,51 +14,50 @@
  * limitations under the License.
  */
 
-#import "LUAPIModel.h"
+#import "LUBaseLocation.h"
+
+/** A user address's type. */
+typedef NS_ENUM(NSInteger, LUUserAddressType) {
+  LUUserAddressTypeBilling,
+  LUUserAddressTypeDelivery,
+  LUUserAddressTypeHome,
+  LUUserAddressTypeOther,
+  LUUserAddressTypePayment,
+  LUUserAddressTypeShipping,
+  LUUserAddressTypeWork
+};
 
 /**
  `LUUserAddress` is a representation of a user's address in the LevelUp system.
  */
-@interface LUUserAddress : LUAPIModel
+@interface LUUserAddress : LUBaseLocation
 
 /**
- The unique identifier for this address.
+ The unique identifier for the address.
  */
 @property (nonatomic, copy, readonly) NSNumber *addressID;
 
 /**
  The address's type. Valid values are `billing`, `delivery`, `home`, `other`, `payment`, `shipping`, and `work`.
  */
-@property (nonatomic, copy) NSString *addressType;
+@property (nonatomic, assign) LUUserAddressType addressType;
 
 /**
- An optional "extended" address. An example would be an apartment number.
+ Returns an enumerated value representing a user address's type.
+ @param addressTypeString The string representation of the type. This string is case insensitive.
  */
-@property (nonatomic, copy) NSString *extendedAddress;
++ (LUUserAddressType)addressTypeForString:(NSString *)addressTypeString;
 
 /**
- The address's town or city.
+ Returns a string representation of the user address's type for display.
+ The returned string will be downcased.
+ @param addressType The enumerated value for the address's type.
  */
-@property (nonatomic, copy) NSString *locality;
++ (NSString *)addressTypeStringForAddressType:(LUUserAddressType)addressType;
 
-/**
- The address's postal code.
- */
-@property (nonatomic, copy) NSString *postalCode;
-
-/**
- The address's region, such as a state or province.
- */
-@property (nonatomic, copy) NSString *region;
-
-/**
- The street address. If the address has a second line (such as an apartment number),
- this will be stored separately in the `extendedAddress` field.
- */
-@property (nonatomic, copy) NSString *streetAddress;
-
-- (id)initWithAddressID:(NSNumber *)addressID addressType:(NSString *)addressType
-        extendedAddress:(NSString *)extendedAddress locality:(NSString *)locality
+- (id)initWithAddressID:(NSNumber *)addressID addressType:(LUUserAddressType)addressType
+        extendedAddress:(NSString *)extendedAddress latitude:(NSNumber *)latitude
+               locality:(NSString *)locality longitude:(NSNumber *)longitude
              postalCode:(NSString *)postalCode region:(NSString *)region
           streetAddress:(NSString *)streetAddress;
 

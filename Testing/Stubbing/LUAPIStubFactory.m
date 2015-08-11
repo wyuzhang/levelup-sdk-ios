@@ -158,17 +158,17 @@
                          responseData:[self responseDataFromFile:@"user_address"]];
 }
 
-+ (LUAPIStub *)stubToCreateUserAddress:(LUUserAddress *)userAddresss {
++ (LUAPIStub *)stubToCreateUserAddress:(LUUserAddress *)userAddress {
   LUAPIStub *stub = [self stubToCreateUserAddress];
 
   stub.requestBodyJSON = @{
     @"user_address" : @{
-      @"address_type" : userAddresss.addressType,
-      @"extended_address" : userAddresss.extendedAddress,
-      @"locality" : userAddresss.locality,
-      @"postal_code" : userAddresss.postalCode,
-      @"region" : userAddresss.region,
-      @"street_address" : userAddresss.streetAddress
+      @"address_type" : [LUUserAddress addressTypeStringForAddressType:userAddress.addressType],
+      @"extended_address" : userAddress.extendedAddress,
+      @"locality" : userAddress.locality,
+      @"postal_code" : userAddress.postalCode,
+      @"region" : userAddress.region,
+      @"street_address" : userAddress.streetAddress
     }
   };
 

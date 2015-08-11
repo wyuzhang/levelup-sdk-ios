@@ -31,7 +31,9 @@ describe(@"LUUserAddressJSONFactory", ^{
         @"address_type" : @"home",
         @"extended_address" : @"Apt 1",
         @"id" : @1,
+        @"latitude" : @70,
         @"locality" : @"Boston",
+        @"longitude" : @-45,
         @"postal_code" : @"02114",
         @"region" : @"MA",
         @"street_address" : @"123 Main St"
@@ -39,9 +41,11 @@ describe(@"LUUserAddressJSONFactory", ^{
       LUUserAddress *userAddress = [factory createFromAttributes:JSON];
 
       [[userAddress.addressID should] equal:@1];
-      [[userAddress.addressType should] equal:@"home"];
+      [[theValue(userAddress.addressType) should] equal:theValue(LUUserAddressTypeHome)];
       [[userAddress.extendedAddress should] equal:@"Apt 1"];
+      [[userAddress.latitude should] equal:@70];
       [[userAddress.locality should] equal:@"Boston"];
+      [[userAddress.longitude should] equal:@-45];
       [[userAddress.postalCode should] equal:@"02114"];
       [[userAddress.region should] equal:@"MA"];
       [[userAddress.streetAddress should] equal:@"123 Main St"];

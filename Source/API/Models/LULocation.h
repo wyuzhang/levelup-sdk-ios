@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#import "LUAPIModel.h"
 #import <MapKit/MapKit.h>
+#import "LUBaseLocation.h"
 
 @class LUWebLocations;
 
@@ -29,7 +29,7 @@
  `LULocation` implements the `MKAnnotation` protocol. This provides annotation-related information
  to a map view. The title of the annotation is the result of `fullStreetAddress`.
  */
-@interface LULocation : LUAPIModel <MKAnnotation>
+@interface LULocation : LUBaseLocation <MKAnnotation>
 
 /**
  An array of category IDs (as `NSNumber`s) to which this location belongs.
@@ -47,35 +47,15 @@
 @property (nonatomic, copy, readonly) NSString *descriptionHTML;
 
 /**
- An optional "extended" address for the location. An example would be an apartment number.
- */
-@property (nonatomic, copy, readonly) NSString *extendedAddress;
-
-/**
  An optional string representing the hours during which this location is open. The format of this
  string is determined by the location.
  */
 @property (nonatomic, copy, readonly) NSString *hours;
 
 /**
- The latitude of the location.
- */
-@property (nonatomic, copy, readonly) NSNumber *latitude;
-
-/**
- The location's town or city.
- */
-@property (nonatomic, copy, readonly) NSString *locality;
-
-/**
- The unique identifier for this location.
+ The unique identifier for the location.
  */
 @property (nonatomic, copy, readonly) NSNumber *locationID;
-
-/**
- The longitude of the location.
- */
-@property (nonatomic, copy, readonly) NSNumber *longitude;
 
 /**
  The ID of this location's merchant.
@@ -98,16 +78,6 @@
 @property (nonatomic, copy, readonly) NSString *phone;
 
 /**
- The location's postal code.
- */
-@property (nonatomic, copy, readonly) NSString *postalCode;
-
-/**
- The location's region, such as a state or province.
- */
-@property (nonatomic, copy, readonly) NSString *region;
-
-/**
  If `shown` is set to NO, then this location should not be displayed in-app.
  */
 @property (nonatomic, assign) BOOL shown;
@@ -118,12 +88,6 @@
  will be set.
  */
 @property (nonatomic, assign) BOOL summary;
-
-/**
- The location's address. If the location's address has a second line (such as an apartment number),
- this will be stored separately in the `extendedAddress` field.
- */
-@property (nonatomic, copy, readonly) NSString *streetAddress;
 
 /**
  The time that this location was last changed on the server.
@@ -150,11 +114,6 @@
  based on the screen scale of the device. The resolution is 320x212.
  */
 - (NSURL *)imageURL;
-
-/**
- A `CLLocation` instance associated with this location.
- */
-- (CLLocation *)location;
 
 /**
  A helper method which returns all the address fields in one line. The format is

@@ -22,17 +22,18 @@
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
   NSNumber *addressID = [attributes lu_numberForKey:@"id"];
-  NSString *addressType = [attributes lu_stringForKey:@"address_type"];
+  LUUserAddressType addressType = [LUUserAddress addressTypeForString:[attributes lu_stringForKey:@"address_type"]];
   NSString *extendedAddress = [attributes lu_stringForKey:@"extended_address"];
+  NSNumber *latitude = [attributes lu_numberForKey:@"latitude"];
   NSString *locality = [attributes lu_stringForKey:@"locality"];
+  NSNumber *longitude = [attributes lu_numberForKey:@"longitude"];
   NSString *postalCode = [attributes lu_stringForKey:@"postal_code"];
   NSString *region = [attributes lu_stringForKey:@"region"];
   NSString *streetAddress = [attributes lu_stringForKey:@"street_address"];
 
-  return [[LUUserAddress alloc] initWithAddressID:addressID addressType:addressType
-                                  extendedAddress:extendedAddress locality:locality
-                                       postalCode:postalCode region:region
-                                    streetAddress:streetAddress];
+  return [[LUUserAddress alloc] initWithAddressID:addressID addressType:addressType extendedAddress:extendedAddress
+                                         latitude:latitude locality:locality longitude:longitude
+                                       postalCode:postalCode region:region streetAddress:streetAddress];
 }
 
 - (NSString *)rootKey {

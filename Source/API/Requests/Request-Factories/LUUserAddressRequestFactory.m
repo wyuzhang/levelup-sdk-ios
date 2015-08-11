@@ -31,7 +31,7 @@
 
 + (LUAPIRequest *)requestToCreateUserAddress:(LUUserAddress *)userAddress {
   NSDictionary *parameters = @{
-    @"address_type" : userAddress.addressType,
+    @"address_type" : [LUUserAddress addressTypeStringForAddressType:userAddress.addressType],
     @"extended_address" : userAddress.extendedAddress,
     @"locality" : userAddress.locality,
     @"postal_code" : userAddress.postalCode,

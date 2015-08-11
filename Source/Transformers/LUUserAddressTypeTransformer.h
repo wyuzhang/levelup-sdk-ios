@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-#import "LUUserAddress.h"
+#import "LUAbstactEnumToStringTransformer.h"
 
-@interface LUUserAddress (Fixtures)
+extern NSString * const LUUserAddressTypeTransformerName;
 
-+ (LUUserAddress *)fixture;
-+ (LUUserAddress *)fixtureWithLatitude:(NSNumber *)latitude longitude:(NSNumber *)longitude;
+@interface LUUserAddressTypeTransformer : LUAbstactEnumToStringTransformer
 
 @end

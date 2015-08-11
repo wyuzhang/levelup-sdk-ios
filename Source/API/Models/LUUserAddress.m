@@ -15,35 +15,53 @@
  */
 
 #import "LUUserAddress.h"
+#import "LUUserAddressTypeTransformer.h"
 
 @implementation LUUserAddress
 
-- (id)initWithAddressID:(NSNumber *)addressID addressType:(NSString *)addressType
-        extendedAddress:(NSString *)extendedAddress locality:(NSString *)locality
++ (void)load {
+  [NSValueTransformer setValueTransformer:[[LUUserAddressTypeTransformer alloc] init] forName:LUUserAddressTypeTransformerName];
+}
+
+#pragma mark - Creation
+
+- (id)initWithAddressID:(NSNumber *)addressID addressType:(LUUserAddressType)addressType
+        extendedAddress:(NSString *)extendedAddress latitude:(NSNumber *)latitude
+               locality:(NSString *)locality longitude:(NSNumber *)longitude
              postalCode:(NSString *)postalCode region:(NSString *)region
           streetAddress:(NSString *)streetAddress {
-  self = [super init];
+  self = [super initWithExtendedAddress:extendedAddress latitude:latitude locality:locality longitude:longitude
+                             postalCode:postalCode region:region streetAddress:streetAddress];
   if (!self) return nil;
 
   _addressID = addressID;
   _addressType = addressType;
-  _extendedAddress = extendedAddress;
-  _locality = locality;
-  _postalCode = postalCode;
-  _region = region;
-  _streetAddress = streetAddress;
 
   return self;
 }
 
+#pragma mark - NSObject Methods
+
 - (NSString *)debugDescription {
-  return [NSString stringWithFormat:@"LUUserAddress [address=%p, addressID=%@, addressType=%@, extendedAddress=%@, locality=%@, postalCode=%@, region=%@, streetAddress=%@]",
-          self, self.addressID, self.addressType, self.extendedAddress, self.locality, self.postalCode, self.region, self.streetAddress];
+  return [NSString stringWithFormat:@"LUUserAddress [address=%p, addressID=%@, addressType=%@, %@]",
+          self, self.addressID, [[self class] addressTypeStringForAddressType:self.addressType], [super debugDescription]];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUUserAddress [address=%p, streetAddress=%@, extendedAddress=%@, locality=%@, region=%@]",
-          self, self.streetAddress, self.extendedAddress, self.locality, self.region];
+  return [NSString stringWithFormat:@"LUUserAddress [address=%p, addressID=%@, %@]",
+          self, self.addressID, [super debugDescription]];
+}
+
+#pragma mark - Address Type transformations
+
++ (LUUserAddressType)addressTypeForString:(NSString *)addressTypeString {
+  NSValueTransformer *transformer = [NSValueTransformer valueTransformerForName:LUUserAddressTypeTransformerName];
+  return [[transformer reverseTransformedValue:addressTypeString] integerValue];
+}
+
++ (NSString *)addressTypeStringForAddressType:(LUUserAddressType)addressType {
+  NSValueTransformer *transformer = [NSValueTransformer valueTransformerForName:LUUserAddressTypeTransformerName];
+  return [transformer transformedValue:@(addressType)];
 }
 
 @end

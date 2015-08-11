@@ -19,10 +19,18 @@
 @implementation LUUserAddress (Fixtures)
 
 + (LUUserAddress *)fixture {
-  return [[LUUserAddress alloc] initWithAddressID:@1 addressType:@"home"
-                                  extendedAddress:@"Apt 1" locality:@"Boston"
+  return [[LUUserAddress alloc] initWithAddressID:@1 addressType:LUUserAddressTypeHome
+                                  extendedAddress:@"Apt 1" latitude:@70
+                                         locality:@"Boston" longitude:@-45
                                        postalCode:@"02114" region:@"MA"
                                     streetAddress:@"123 Main St"];
+}
+
++ (LUUserAddress *)fixtureWithLatitude:(NSNumber *)latitude longitude:(NSNumber *)longitude {
+  LUUserAddress *userAddress = [self fixture];
+  [userAddress setValue:latitude forKey:@"latitude"];
+  [userAddress setValue:longitude forKey:@"longitude"];
+  return userAddress;
 }
 
 @end
