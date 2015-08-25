@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'LevelUpSDK'
-  s.version      = '1.8.14'
+  s.version      = '1.8.15'
   s.summary      = 'An SDK for the LevelUp payment platform.'
   s.homepage     = 'http://developer.thelevelup.com'
   s.license      = 'Apache License, Version 2.0'
@@ -21,7 +21,6 @@ Pod::Spec.new do |s|
 
     core.source_files = 'Source/*.{h,m}', 'Source/**/*.{h,m}'
     core.resources = 'Source/Resources/*'
-    core.resource_bundles = { 'LevelUpSDK' => 'Source/Resources/*' }
   end
 
   s.subspec 'Testing' do |testing|
