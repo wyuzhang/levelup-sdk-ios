@@ -32,10 +32,12 @@ describe(@"LULocation", ^{
 
   describe(@"full initializer", ^{
     it(@"sets summary to NO", ^{
-      LULocation *location = [[LULocation alloc] initWithCategoryIDs:nil categoryNames:nil descriptionHTML:nil extendedAddress:nil hours:nil latitude:nil
+      LULocation *location = [[LULocation alloc] initWithCategoryIDs:nil categoryNames:nil deliveryMenuURL:nil
+                                                     descriptionHTML:nil extendedAddress:nil hours:nil latitude:nil
                                                             locality:nil locationID:nil longitude:nil merchantID:nil
-                                                        merchantName:nil name:nil phone:nil postalCode:nil
-                                                              region:nil shown:YES streetAddress:nil updatedAtDate:nil webLocations:nil];
+                                                        merchantName:nil name:nil phone:nil pickupMenuURL:nil
+                                                          postalCode:nil region:nil shown:YES streetAddress:nil
+                                                       updatedAtDate:nil webLocations:nil];
 
       [[theValue(location.summary) should] beNo];
     });

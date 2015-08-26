@@ -24,12 +24,14 @@
 #pragma mark - Creation
 
 - (id)initWithCategoryIDs:(NSArray *)categoryIDs categoryNames:(NSArray *)categoryNames
-          descriptionHTML:(NSString *)descriptionHTML extendedAddress:(NSString *)extendedAddress
-                    hours:(NSString *)hours latitude:(NSNumber *)latitude
-                 locality:(NSString *)locality locationID:(NSNumber *)locationID
-                longitude:(NSNumber *)longitude merchantID:(NSNumber *)merchantID
-             merchantName:(NSString *)merchantName name:(NSString *)name phone:(NSString *)phone
-               postalCode:(NSString *)postalCode region:(NSString *)region shown:(BOOL)shown
+          deliveryMenuURL:(NSURL *)deliveryMenuURL descriptionHTML:(NSString *)descriptionHTML
+          extendedAddress:(NSString *)extendedAddress hours:(NSString *)hours
+                 latitude:(NSNumber *)latitude locality:(NSString *)locality
+               locationID:(NSNumber *)locationID longitude:(NSNumber *)longitude
+               merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName
+                     name:(NSString *)name phone:(NSString *)phone
+            pickupMenuURL:(NSURL *)pickupMenuURL postalCode:(NSString *)postalCode
+                   region:(NSString *)region shown:(BOOL)shown
             streetAddress:(NSString *)streetAddress updatedAtDate:(NSDate *)updatedAtDate
              webLocations:(LUWebLocations *)webLocations {
   self = [super initWithExtendedAddress:extendedAddress latitude:latitude locality:locality longitude:longitude
@@ -38,6 +40,7 @@
 
   _categoryIDs = categoryIDs;
   _categoryNames = categoryNames;
+  _deliveryMenuURL = deliveryMenuURL;
   _descriptionHTML = descriptionHTML;
   _hours = hours;
   _locationID = locationID;
@@ -45,6 +48,7 @@
   _merchantName = merchantName;
   _name = name;
   _phone = phone;
+  _pickupMenuURL = pickupMenuURL;
   _shown = shown;
   _summary = NO;
   _updatedAtDate = updatedAtDate;
@@ -104,10 +108,10 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)debugDescription {
-  return [NSString stringWithFormat:@"LULocation [address=%p, categoryIDs=%@, categoryNames=%@, descriptionHTML=%@, hours=%@, locationID=%@, merchantID=%@, merchantName=%@, name=%@, phone=%@, shown=%@, summary=%@, updatedAtDate=%@, %@]",
-          self, self.categoryIDs, self.categoryNames, self.descriptionHTML, self.hours, self.locationID,
-          self.merchantID, self.merchantName, self.name, self.phone, @(self.shown), @(self.summary),
-          self.updatedAtDate, [super debugDescription]];
+  return [NSString stringWithFormat:@"LULocation [address=%p, categoryIDs=%@, categoryNames=%@, deliveryMenuURL=%@, descriptionHTML=%@, hours=%@, locationID=%@, merchantID=%@, merchantName=%@, name=%@, phone=%@, pickupMenuURL=%@, shown=%@, summary=%@, updatedAtDate=%@, %@]",
+          self, self.categoryIDs, self.categoryNames, self.deliveryMenuURL, self.descriptionHTML, self.hours,
+          self.locationID, self.merchantID, self.merchantName, self.name, self.phone, self.pickupMenuURL, @(self.shown),
+          @(self.summary), self.updatedAtDate, [super debugDescription]];
 }
 
 - (NSString *)description {

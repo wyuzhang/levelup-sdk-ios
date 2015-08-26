@@ -31,6 +31,7 @@ describe(@"LULocationJSONFactory", ^{
       NSDictionary *JSON = @{
         @"categories" : @[@1, @2, @3],
         @"category_names" : @[@"American", @"Breakfast", @"Cafe"],
+        @"delivery_menu_url" : @"http://pizza.com/delivery",
         @"description_html" : @"pizza, pizza, pizza!",
         @"extended_address" : @"Apt E",
         @"facebook_url" : @"http://facebook.com/pizza",
@@ -47,6 +48,7 @@ describe(@"LULocationJSONFactory", ^{
         @"newsletter_url" : @"http://pizza.com/newsletter",
         @"opentable_url" : @"http://opentable.com/pizza",
         @"phone" : @"617-123-1234",
+        @"pickup_menu_url" : @"http://pizza.com/pickup",
         @"postal_code" : @"01234",
         @"region" : @"MA",
         @"shown" : @1,
@@ -59,6 +61,7 @@ describe(@"LULocationJSONFactory", ^{
 
       [[location.categoryIDs should] equal:@[@1, @2, @3]];
       [[location.categoryNames should] equal:@[@"American", @"Breakfast", @"Cafe"]];
+      [[location.deliveryMenuURL should] equal:[NSURL URLWithString:@"http://pizza.com/delivery"]];
       [[location.descriptionHTML should] equal:@"pizza, pizza, pizza!"];
       [[location.extendedAddress should] equal:@"Apt E"];
       [[location.hours should] equal:@"M-F 9am-5pm"];
@@ -70,6 +73,7 @@ describe(@"LULocationJSONFactory", ^{
       [[location.merchantName should] equal:@"Dewey, Cheatem and Howe"];
       [[location.name should] equal:@"Test Location"];
       [[location.phone should] equal:@"617-123-1234"];
+      [[location.pickupMenuURL should] equal:[NSURL URLWithString:@"http://pizza.com/pickup"]];
       [[location.postalCode should] equal:@"01234"];
       [[location.region should] equal:@"MA"];
       [[theValue(location.shown) should] beYes];

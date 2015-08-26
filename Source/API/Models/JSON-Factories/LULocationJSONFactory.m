@@ -24,6 +24,7 @@
 - (id)createFromAttributes:(NSDictionary *)attributes {
   NSArray *categoryIDs = [attributes lu_arrayForKey:@"categories"];
   NSArray *categoryNames = [attributes lu_arrayForKey:@"category_names"];
+  NSURL *deliveryMenuURL = [attributes lu_URLForKey:@"delivery_menu_url"];
   NSString *descriptionHTML = [attributes lu_stringForKey:@"description_html"];
   NSString *extendedAddress = [attributes lu_stringForKey:@"extended_address"];
   NSString *hours = [attributes lu_stringForKey:@"hours"];
@@ -35,6 +36,7 @@
   NSString *merchantName = [attributes lu_stringForKey:@"merchant_name"];
   NSString *name = [attributes lu_stringForKey:@"name"];
   NSString *phone = [attributes lu_stringForKey:@"phone"];
+  NSURL *pickupMenuURL = [attributes lu_URLForKey:@"pickup_menu_url"];
   NSString *postalCode = [attributes lu_stringForKey:@"postal_code"];
   NSString *region = [attributes lu_stringForKey:@"region"];
   BOOL shown = [attributes lu_boolForKey:@"shown"];
@@ -49,11 +51,11 @@
   NSDate *updatedAtDate = [attributes lu_dateForKey:@"updated_at"];
 
   return [[LULocation alloc] initWithCategoryIDs:categoryIDs categoryNames:categoryNames
-                                 descriptionHTML:descriptionHTML extendedAddress:extendedAddress
-                                           hours:hours latitude:latitude locality:locality
-                                      locationID:locationID longitude:longitude
-                                      merchantID:merchantID merchantName:merchantName name:name
-                                           phone:phone postalCode:postalCode region:region
+                                 deliveryMenuURL:deliveryMenuURL descriptionHTML:descriptionHTML
+                                 extendedAddress:extendedAddress hours:hours latitude:latitude
+                                        locality:locality locationID:locationID longitude:longitude
+                                      merchantID:merchantID merchantName:merchantName name:name phone:phone
+                                   pickupMenuURL:pickupMenuURL postalCode:postalCode region:region
                                            shown:shown streetAddress:streetAddress
                                    updatedAtDate:updatedAtDate webLocations:webLocations];
 }

@@ -24,6 +24,7 @@
 + (LULocation *)fixture {
   return [[LULocation alloc] initWithCategoryIDs:@[@1, @2]
                                    categoryNames:@[@"American", @"Pizza"]
+                                 deliveryMenuURL:[NSURL URLWithString:@"http://pizza.com/delivery"]
                                  descriptionHTML:@"pizza, pizza, pizza!"
                                  extendedAddress:@"Apt E"
                                            hours:@"Mon-Fri 9am-5pm"
@@ -35,6 +36,7 @@
                                     merchantName:@"Test Merchant"
                                             name:@"Test Location"
                                            phone:@"(123) 123-1234"
+                                   pickupMenuURL:[NSURL URLWithString:@"http://pizza.com/pickup"]
                                       postalCode:@"01234"
                                           region:@"MA"
                                            shown:YES

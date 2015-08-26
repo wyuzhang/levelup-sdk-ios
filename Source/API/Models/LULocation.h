@@ -42,6 +42,11 @@
 @property (nonatomic, copy, readonly) NSArray *categoryNames;
 
 /**
+ The URL for this location's delivery menu.
+*/
+@property (nonatomic, copy, readonly) NSURL *deliveryMenuURL;
+
+/**
  An HTML string describing the location
  */
 @property (nonatomic, copy, readonly) NSString *descriptionHTML;
@@ -76,6 +81,11 @@
  An optional phone number for the location.
  */
 @property (nonatomic, copy, readonly) NSString *phone;
+
+/**
+ The URL for this location's pickup menu.
+ */
+@property (nonatomic, copy, readonly) NSURL *pickupMenuURL;
 
 /**
  If `shown` is set to NO, then this location should not be displayed in-app.
@@ -123,12 +133,14 @@
 - (NSString *)singleLineAddress;
 
 - (id)initWithCategoryIDs:(NSArray *)categoryIDs categoryNames:(NSArray *)categoryNames
-          descriptionHTML:(NSString *)descriptionHTML extendedAddress:(NSString *)extendedAddress
-                    hours:(NSString *)hours latitude:(NSNumber *)latitude
-                 locality:(NSString *)locality locationID:(NSNumber *)locationID
-                longitude:(NSNumber *)longitude merchantID:(NSNumber *)merchantID
-             merchantName:(NSString *)merchantName name:(NSString *)name phone:(NSString *)phone
-               postalCode:(NSString *)postalCode region:(NSString *)region shown:(BOOL)shown
+          deliveryMenuURL:(NSURL *)deliveryMenuURL descriptionHTML:(NSString *)descriptionHTML
+          extendedAddress:(NSString *)extendedAddress hours:(NSString *)hours
+                 latitude:(NSNumber *)latitude locality:(NSString *)locality
+               locationID:(NSNumber *)locationID longitude:(NSNumber *)longitude
+               merchantID:(NSNumber *)merchantID merchantName:(NSString *)merchantName
+                     name:(NSString *)name phone:(NSString *)phone
+            pickupMenuURL:(NSURL *)pickupMenuURL postalCode:(NSString *)postalCode
+                   region:(NSString *)region shown:(BOOL)shown
             streetAddress:(NSString *)streetAddress updatedAtDate:(NSDate *)updatedAtDate
              webLocations:(LUWebLocations *)webLocations;
 

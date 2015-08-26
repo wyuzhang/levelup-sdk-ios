@@ -16,7 +16,9 @@
       "street_address" : "1600 Pennsylvania Ave",
       "locality" : "Washington",
       "name" : "White House",
-      "merchant_name" : "United States of America"
+      "merchant_name" : "United States of America",
+      "delivery_menu_url" : null,
+      "pickup_menu_url" : null
     }
   },
   {
@@ -36,7 +38,9 @@
       "street_address" : "2 Lincoln Memorial Circle NW",
       "locality" : "Washington",
       "name" : "Lincoln Memorial",
-      "merchant_name" : "United States of America"
+      "merchant_name" : "United States of America",
+      "delivery_menu_url" : null,
+      "pickup_menu_url" : null
     }
   },
   {
@@ -56,7 +60,9 @@
       "street_address" : "15th Street Northwest",
       "locality" : "Washington",
       "name" : null,
-      "merchant_name" : "United States of America"
+      "merchant_name" : "United States of America",
+      "delivery_menu_url" : null,
+      "pickup_menu_url" : null
     }
   },
   {
@@ -76,7 +82,9 @@
       "street_address" : "15th Street Northwest",
       "locality" : "Washington",
       "name" : null,
-      "merchant_name" : "United States of America"
+      "merchant_name" : "United States of America",
+      "delivery_menu_url" : null,
+      "pickup_menu_url" : null
     }
   }
 ]

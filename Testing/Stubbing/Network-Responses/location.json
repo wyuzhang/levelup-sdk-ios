@@ -25,6 +25,8 @@
     "categories" : [
       1
     ],
+    "delivery_menu_url" : "http://example.com/delivery",
+    "pickup_menu_url" : "http://example.com/pickup",
     "newsletter_url" : "http://example.com/newsletter",
     "foodler_url" : "http://example.com/foodler"
   }
