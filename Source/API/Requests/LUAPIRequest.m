@@ -27,13 +27,6 @@ NSString * const LUAPIVersion15 = @"v15";
 #pragma mark - Object Lifecycle Methods
 
 + (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
-                                   URL:(NSURL *)URL
-                            parameters:(NSDictionary *)parameters
-                          modelFactory:(LUAbstractJSONModelFactory *)modelFactory {
-  return [[self alloc] initWithMethod:method URL:URL parameters:parameters modelFactory:modelFactory];
-}
-
-+ (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
                                   path:(NSString *)path
                             apiVersion:(NSString *)apiVersion
                             parameters:(NSDictionary *)parameters
@@ -54,19 +47,39 @@ NSString * const LUAPIVersion15 = @"v15";
                     retryTimeInterval:retryTimeInterval];
 }
 
++ (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
+                                   URL:(NSURL *)URL
+                            parameters:(NSDictionary *)parameters
+                          modelFactory:(LUAbstractJSONModelFactory *)modelFactory {
+  return [[self alloc] initWithMethod:method URL:URL parameters:parameters modelFactory:modelFactory];
+}
+
++ (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
+                                   URL:(NSURL *)URL
+                            parameters:(NSDictionary *)parameters
+                          modelFactory:(LUAbstractJSONModelFactory *)modelFactory
+                    retryResponseCodes:(NSArray *)retryResponseCodes
+                     retryTimeInterval:(NSTimeInterval)retryTimeInterval {
+  return [[self alloc] initWithMethod:method URL:URL parameters:parameters modelFactory:modelFactory
+                   retryResponseCodes:retryResponseCodes retryTimeInterval:retryTimeInterval];
+}
+
 - (id)initWithMethod:(NSString *)method
                  URL:(NSURL *)URL
           parameters:(NSDictionary *)parameters
         modelFactory:(LUAbstractJSONModelFactory *)modelFactory {
-  self = [super init];
-  if (self) {
-    _method = method;
-    _URL = URL;
-    _parameters = parameters;
-    _modelFactory = modelFactory;
-  }
+  return [self initWithMethod:method URL:URL parameters:parameters modelFactory:modelFactory retryResponseCodes:nil
+            retryTimeInterval:0];
+}
 
-  return self;
+- (id)initWithMethod:(NSString *)method
+                 URL:(NSURL *)URL
+          parameters:(NSDictionary *)parameters
+        modelFactory:(LUAbstractJSONModelFactory *)modelFactory
+  retryResponseCodes:(NSArray *)retryResponseCodes
+   retryTimeInterval:(NSTimeInterval)retryTimeInterval {
+  return [self initWithMethod:method path:nil apiVersion:nil URL:URL parameters:parameters
+                 modelFactory:modelFactory retryResponseCodes:retryResponseCodes retryTimeInterval:retryTimeInterval];
 }
 
 - (id)initWithMethod:(NSString *)method
@@ -85,13 +98,26 @@ NSString * const LUAPIVersion15 = @"v15";
         modelFactory:(LUAbstractJSONModelFactory *)modelFactory
   retryResponseCodes:(NSArray *)retryResponseCodes
    retryTimeInterval:(NSTimeInterval)retryTimeInterval {
+  return [self initWithMethod:method path:path apiVersion:apiVersion URL:nil parameters:parameters
+                 modelFactory:modelFactory retryResponseCodes:retryResponseCodes retryTimeInterval:retryTimeInterval];
+}
+
+- (id)initWithMethod:(NSString *)method
+                path:(NSString *)path
+          apiVersion:(NSString *)apiVersion
+                 URL:(NSURL *)URL
+          parameters:(NSDictionary *)parameters
+        modelFactory:(LUAbstractJSONModelFactory *)modelFactory
+  retryResponseCodes:(NSArray *)retryResponseCodes
+   retryTimeInterval:(NSTimeInterval)retryTimeInterval {
   self = [super init];
   if (self) {
-    _apiVersion = apiVersion;
-    _modelFactory = modelFactory;
     _method = method;
     _path = path;
+    _apiVersion = apiVersion;
+    _URL = URL;
     _parameters = parameters;
+    _modelFactory = modelFactory;
     _retryResponseCodes = retryResponseCodes;
     _retryTimeInterval = retryTimeInterval;
   }
@@ -165,8 +191,8 @@ NSString * const LUAPIVersion15 = @"v15";
                        [otherApiRequest.path isEqualToString:self.path]));
 
     BOOL parametersEqual = ((!otherApiRequest.parameters && !self.parameters) ||
-                             (otherApiRequest.parameters && self.parameters &&
-                              [otherApiRequest.parameters isEqualToDictionary:self.parameters]));
+                            (otherApiRequest.parameters && self.parameters &&
+                             [otherApiRequest.parameters isEqualToDictionary:self.parameters]));
 
     return methodEqual && apiVersionEqual && pathEqual && parametersEqual;
   }

@@ -70,22 +70,6 @@ extern NSString * const LUAPIVersion15;
 @property (nonatomic, strong) NSURL *URL;
 
 /**
- Returns an `LUAPIRequest` with the specified method, URL and response model factory. An authentication token
- will automatically be included in the request if one is set on the `LUAPIClient`.
-
- @param method An HTTP method: "GET", "POST", "PUT", or "DELETE".
- @param URL The URL of the API including the base URL, e.g. an NSURL with absoluteString
- "https://api.thelevelup.com/v15/users/1".
- @param parameters A dictionary of parameters to include with this request, or nil if the request
- has no parameters.
- @param modelFactory An instance of `LUAbstractJSONModelFactory` which will parse the response.
- */
-+ (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
-                                   URL:(NSURL *)URL
-                            parameters:(NSDictionary *)parameters
-                          modelFactory:(LUAbstractJSONModelFactory *)modelFactory;
-
-/**
  Returns an `LUAPIRequest` with the specified method, path and parameters. An authentication token
  will automatically be included in the request if one is set on the `LUAPIClient`.
 
@@ -125,6 +109,43 @@ extern NSString * const LUAPIVersion15;
                      retryTimeInterval:(NSTimeInterval)retryTimeInterval;
 
 /**
+ Returns an `LUAPIRequest` with the specified method, URL and response model factory. An authentication token
+ will automatically be included in the request if one is set on the `LUAPIClient`.
+
+ @param method An HTTP method: "GET", "POST", "PUT", or "DELETE".
+ @param URL The URL of the API including the base URL, e.g. an NSURL with absoluteString
+ "https://api.thelevelup.com/v15/users/1".
+ @param parameters A dictionary of parameters to include with this request, or nil if the request
+ has no parameters.
+ @param modelFactory An instance of `LUAbstractJSONModelFactory` which will parse the response.
+ */
++ (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
+                                   URL:(NSURL *)URL
+                            parameters:(NSDictionary *)parameters
+                          modelFactory:(LUAbstractJSONModelFactory *)modelFactory;
+
+/**
+ Returns an `LUAPIRequest` with the specified method, URL and response model factory. An authentication token
+ will automatically be included in the request if one is set on the `LUAPIClient`.
+
+ @param method An HTTP method: "GET", "POST", "PUT", or "DELETE".
+ @param URL The URL of the API including the base URL, e.g. an NSURL with absoluteString
+ "https://api.thelevelup.com/v15/users/1".
+ @param parameters A dictionary of parameters to include with this request, or nil if the request
+ has no parameters.
+ @param modelFactory An instance of `LUAbstractJSONModelFactory` which will parse the response.
+ @param retryResponseCodes An `NSArray` of response codes which, if received, will cause the request
+ to be repeated by the `LUAPIClient` every retryTimeInterval, until a successful response is received.
+ @param retryTimeInterval Duration in seconds until a request is repeated.
+ */
++ (LUAPIRequest *)apiRequestWithMethod:(NSString *)method
+                                   URL:(NSURL *)URL
+                            parameters:(NSDictionary *)parameters
+                          modelFactory:(LUAbstractJSONModelFactory *)modelFactory
+                    retryResponseCodes:(NSArray *)retryResponseCodes
+                     retryTimeInterval:(NSTimeInterval)retryTimeInterval;
+
+/**
  Returns an `NSMutableURLRequest` instance for this API request.
  */
 - (NSMutableURLRequest *)URLRequest;
@@ -138,6 +159,18 @@ extern NSString * const LUAPIVersion15;
 - (id)initWithMethod:(NSString *)method
                 path:(NSString *)path
           apiVersion:(NSString *)apiVersion
+          parameters:(NSDictionary *)parameters
+        modelFactory:(LUAbstractJSONModelFactory *)modelFactory
+  retryResponseCodes:(NSArray *)retryResponseCodes
+   retryTimeInterval:(NSTimeInterval)retryTimeInterval;
+
+- (id)initWithMethod:(NSString *)method
+                 URL:(NSURL *)URL
+          parameters:(NSDictionary *)parameters
+        modelFactory:(LUAbstractJSONModelFactory *)modelFactory;
+
+- (id)initWithMethod:(NSString *)method
+                 URL:(NSURL *)URL
           parameters:(NSDictionary *)parameters
         modelFactory:(LUAbstractJSONModelFactory *)modelFactory
   retryResponseCodes:(NSArray *)retryResponseCodes
