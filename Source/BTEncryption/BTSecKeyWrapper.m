@@ -1,7 +1,10 @@
 #import "BTSecKeyWrapper.h"
+#import <CommonCrypto/CommonCryptor.h>
 #import <Security/Security.h>
 
-@implementation BTSecKeyWrapper
+@implementation BTSecKeyWrapper {
+  CCOptions typeOfSymmetricOpts;
+}
 
 #if DEBUG
 	#define LOGGING_FACILITY(X, Y)	\
