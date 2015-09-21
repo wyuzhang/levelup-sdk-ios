@@ -53,6 +53,16 @@ describe(@"LULocationRequestFactory", ^{
 
       [[request.parameters should] equal:expectedParams];
     });
+
+    context(@"when a location is not provided", ^{
+      beforeEach(^{
+        request = [LULocationRequestFactory requestForAppLocationsNearLocation:nil];
+      });
+
+      it(@"returns a request without any parameters", ^{
+        [[request.parameters should] beEmpty];
+      });
+    });
   });
 
   describe(@"requestForAppLocationsOnPage:", ^{
@@ -175,6 +185,16 @@ describe(@"LULocationRequestFactory", ^{
       NSDictionary *expectedParams = @{@"lat" : @(location.coordinate.latitude), @"lng" : @(location.coordinate.longitude)};
 
       [[request.parameters should] equal:expectedParams];
+    });
+
+    context(@"when a location is not provided", ^{
+      beforeEach(^{
+        request = [LULocationRequestFactory requestForMerchantLocationsNearLocation:nil forMerchantID:@1];
+      });
+
+      it(@"returns a request without any parameters", ^{
+        [[request.parameters should] beEmpty];
+      });
     });
   });
 

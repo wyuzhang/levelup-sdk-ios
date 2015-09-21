@@ -20,13 +20,19 @@
 #import "LULocationSummaryJSONFactory.h"
 #import "LULocationJSONFactory.h"
 #import "LUWebLinkJSONFactory.h"
+#import "NSDictionary+SafetyAdditions.h"
 #import "NSURL+LUAdditions.h"
 
 @implementation LULocationRequestFactory
 
 + (LUAPIRequest *)requestForAppLocationsNearLocation:(CLLocation *)location {
   NSString *requestPath = [NSString stringWithFormat:@"apps/%@/locations", [LUAPIClient sharedClient].appID];
-  NSDictionary *params = @{@"lat" : @(location.coordinate.latitude), @"lng" : @(location.coordinate.longitude)};
+
+  NSMutableDictionary *params = [NSMutableDictionary dictionary];
+  if (location) {
+    [params lu_setSafeValue:@(location.coordinate.latitude) forKey:@"lat"];
+    [params lu_setSafeValue:@(location.coordinate.longitude) forKey:@"lng"];
+  }
 
   return [LUAPIRequest apiRequestWithMethod:@"GET"
                                        path:requestPath
@@ -74,7 +80,12 @@
 
 + (LUAPIRequest *)requestForMerchantLocationsNearLocation:(CLLocation *)location forMerchantID:(NSNumber *)merchantID {
   NSString *requestPath = [NSString stringWithFormat:@"merchants/%@/locations", merchantID];
-  NSDictionary *params = @{@"lat" : @(location.coordinate.latitude), @"lng" : @(location.coordinate.longitude)};
+
+  NSMutableDictionary *params = [NSMutableDictionary dictionary];
+  if (location) {
+    [params lu_setSafeValue:@(location.coordinate.latitude) forKey:@"lat"];
+    [params lu_setSafeValue:@(location.coordinate.longitude) forKey:@"lng"];
+  }
 
   return [LUAPIRequest apiRequestWithMethod:@"GET"
                                        path:requestPath
