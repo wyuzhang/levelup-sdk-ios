@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
 def run_tests(destination)
-  system_raise_failure "xctool -workspace LevelUpSDK.xcworkspace -scheme 'LevelUpSDK' -configuration Debug -sdk iphonesimulator -destination '#{destination}' build-tests > /dev/null"
-  system_raise_failure "xctool -workspace LevelUpSDK.xcworkspace -scheme 'LevelUpSDK' -configuration Debug -sdk iphonesimulator -destination '#{destination}' run-tests"
+  system_raise_failure "xcodebuild -workspace LevelUpSDK.xcworkspace -scheme 'LevelUpSDK' -configuration Debug -sdk iphonesimulator -destination '#{destination}' test | xcpretty -ct"
+  puts
 end
 
 def system_raise_failure(command)
@@ -13,5 +13,5 @@ def system_raise_failure(command)
   end
 end
 
-run_tests 'platform=iOS Simulator,OS=8.1,name=iPhone 6'
-run_tests 'platform=iOS Simulator,OS=7.1,name=iPhone 5'
+run_tests 'platform=iOS Simulator,OS=8.4,name=iPhone 5'
+run_tests 'platform=iOS Simulator,OS=9.0,name=iPhone 5'

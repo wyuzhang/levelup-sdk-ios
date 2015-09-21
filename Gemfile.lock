@@ -2,9 +2,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     CFPropertyList (2.1.2)
-    rake (10.0.4)
+    rake (10.4.2)
     sqlite3 (1.3.10)
-    xcpretty (0.1.6)
+    xcpretty (0.1.12)
 
 PLATFORMS
   ruby

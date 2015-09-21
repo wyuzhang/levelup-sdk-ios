@@ -128,7 +128,7 @@ describe(@"LUIBeaconListener", ^{
         it(@"starts ranging in that region", ^{
           [[iBeaconListener.locationManager should] receive:@selector(startRangingBeaconsInRegion:)];
 
-          [iBeaconListener locationManager:nil didEnterRegion:region];
+          [iBeaconListener locationManager:locationManager didEnterRegion:region];
         });
       });
 
@@ -140,7 +140,7 @@ describe(@"LUIBeaconListener", ^{
         it(@"does not start ranging in that region", ^{
           [[iBeaconListener.locationManager shouldNot] receive:@selector(startRangingBeaconsInRegion:)];
 
-          [iBeaconListener locationManager:nil didEnterRegion:region];
+          [iBeaconListener locationManager:locationManager didEnterRegion:region];
         });
       });
     });
@@ -154,7 +154,7 @@ describe(@"LUIBeaconListener", ^{
       it(@"does not start ranging in that region", ^{
         [[iBeaconListener.locationManager shouldNot] receive:@selector(startRangingBeaconsInRegion:)];
 
-        [iBeaconListener locationManager:nil didEnterRegion:region];
+        [iBeaconListener locationManager:locationManager didEnterRegion:region];
       });
     });
   });
@@ -175,7 +175,7 @@ describe(@"LUIBeaconListener", ^{
         it(@"stops ranging in that region", ^{
           [[iBeaconListener.locationManager should] receive:@selector(stopRangingBeaconsInRegion:)];
 
-          [iBeaconListener locationManager:nil didExitRegion:region];
+          [iBeaconListener locationManager:locationManager didExitRegion:region];
         });
       });
 
@@ -187,7 +187,7 @@ describe(@"LUIBeaconListener", ^{
         it(@"does not stop ranging in that region", ^{
           [[iBeaconListener.locationManager shouldNot] receive:@selector(stopRangingBeaconsInRegion:)];
 
-          [iBeaconListener locationManager:nil didExitRegion:region];
+          [iBeaconListener locationManager:locationManager didExitRegion:region];
         });
       });
     });
@@ -201,7 +201,7 @@ describe(@"LUIBeaconListener", ^{
       it(@"does not stop ranging in that region", ^{
         [[iBeaconListener.locationManager shouldNot] receive:@selector(stopRangingBeaconsInRegion:)];
 
-        [iBeaconListener locationManager:nil didExitRegion:region];
+        [iBeaconListener locationManager:locationManager didExitRegion:region];
       });
     });
   });
@@ -238,19 +238,19 @@ describe(@"LUIBeaconListener", ^{
         it(@"creates an iBeacon checkin request for the discovered iBeacon", ^{
           [[LUIBeaconCheckInRequestFactory should] receive:@selector(requestToCheckInIBeaconWithMajor:minor:)];
 
-          [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+          [iBeaconListener locationManager:locationManager didRangeBeacons:@[iBeacon] inRegion:region];
         });
 
         it(@"makes a network call for the discovered iBeacon", ^{
           [[[LUAPIClient sharedClient] should] receive:@selector(performRequest:success:failure:)];
 
-          [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+          [iBeaconListener locationManager:locationManager didRangeBeacons:@[iBeacon] inRegion:region];
         });
 
         it(@"updates lastNotificationShownTime", ^{
           [[iBeaconListener should] receive:@selector(setLastNotificationShownTime:)];
 
-          [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+          [iBeaconListener locationManager:locationManager didRangeBeacons:@[iBeacon] inRegion:region];
         });
       });
 
@@ -265,19 +265,19 @@ describe(@"LUIBeaconListener", ^{
         it(@"does not create a iBeacon checkin request for the discovered iBeacon", ^{
           [[LUIBeaconCheckInRequestFactory shouldNot] receive:@selector(requestToCheckInIBeaconWithMajor:minor:)];
 
-          [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+          [iBeaconListener locationManager:locationManager didRangeBeacons:@[iBeacon] inRegion:region];
         });
 
         it(@"does not make a network call for the discovered iBeacon", ^{
           [[[LUAPIClient sharedClient] shouldNot] receive:@selector(performRequest:success:failure:)];
 
-          [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+          [iBeaconListener locationManager:locationManager didRangeBeacons:@[iBeacon] inRegion:region];
         });
 
         it(@"does not  update lastNotificationShownTime", ^{
           [[iBeaconListener shouldNot] receive:@selector(setLastNotificationShownTime:)];
 
-          [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+          [iBeaconListener locationManager:locationManager didRangeBeacons:@[iBeacon] inRegion:region];
         });
       });
     });
@@ -296,19 +296,19 @@ describe(@"LUIBeaconListener", ^{
       it(@"does not create a iBeacon checkin request for the discovered iBeacon", ^{
         [[LUIBeaconCheckInRequestFactory shouldNot] receive:@selector(requestToCheckInIBeaconWithMajor:minor:)];
 
-        [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+        [iBeaconListener locationManager:locationManager didRangeBeacons:@[iBeacon] inRegion:region];
       });
 
       it(@"does not make a network call for the discovered iBeacon", ^{
         [[[LUAPIClient sharedClient] shouldNot] receive:@selector(performRequest:success:failure:)];
 
-        [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+        [iBeaconListener locationManager:locationManager didRangeBeacons:@[iBeacon] inRegion:region];
       });
 
       it(@"does not  update lastNotificationShownTime", ^{
         [[iBeaconListener shouldNot] receive:@selector(setLastNotificationShownTime:)];
 
-        [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+        [iBeaconListener locationManager:locationManager didRangeBeacons:@[iBeacon] inRegion:region];
       });
     });
 
@@ -326,19 +326,19 @@ describe(@"LUIBeaconListener", ^{
       it(@"does not create a iBeacon checkin request for the discovered iBeacon", ^{
         [[LUIBeaconCheckInRequestFactory shouldNot] receive:@selector(requestToCheckInIBeaconWithMajor:minor:)];
 
-        [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+        [iBeaconListener locationManager:locationManager didRangeBeacons:@[iBeacon] inRegion:region];
       });
 
       it(@"does not make a network call for the discovered iBeacon", ^{
         [[[LUAPIClient sharedClient] shouldNot] receive:@selector(performRequest:success:failure:)];
 
-        [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+        [iBeaconListener locationManager:locationManager didRangeBeacons:@[iBeacon] inRegion:region];
       });
 
       it(@"does not  update lastNotificationShownTime", ^{
         [[iBeaconListener shouldNot] receive:@selector(setLastNotificationShownTime:)];
 
-        [iBeaconListener locationManager:nil didRangeBeacons:@[iBeacon] inRegion:region];
+        [iBeaconListener locationManager:locationManager didRangeBeacons:@[iBeacon] inRegion:region];
       });
     });
   });
@@ -357,7 +357,7 @@ describe(@"LUIBeaconListener", ^{
         });
 
         it(@"sets isMonitoringForBeacons to YES", ^{
-          [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
+          [iBeaconListener locationManager:locationManager didStartMonitoringForRegion:region];
 
           [[theValue(iBeaconListener.isMonitoringForBeacons) should] beYes];
         });
@@ -369,7 +369,7 @@ describe(@"LUIBeaconListener", ^{
         });
 
         it(@"does not set isMonitoringForBeacons to YES", ^{
-          [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
+          [iBeaconListener locationManager:locationManager didStartMonitoringForRegion:region];
 
           [[theValue(iBeaconListener.isMonitoringForBeacons) should] beNo];
         });
@@ -383,7 +383,7 @@ describe(@"LUIBeaconListener", ^{
       });
 
       it(@"does not set isMonitoringForBeacons to YES", ^{
-        [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
+        [iBeaconListener locationManager:locationManager didStartMonitoringForRegion:region];
 
         [[theValue(iBeaconListener.isMonitoringForBeacons) should] beNo];
       });
@@ -391,7 +391,7 @@ describe(@"LUIBeaconListener", ^{
       it(@"does not start ranging", ^{
         [[iBeaconListener.locationManager shouldNot] receive:@selector(startRangingBeaconsInRegion:)];
 
-        [iBeaconListener locationManager:nil didStartMonitoringForRegion:region];
+        [iBeaconListener locationManager:locationManager didStartMonitoringForRegion:region];
       });
     });
   });

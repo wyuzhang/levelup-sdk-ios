@@ -20,7 +20,8 @@
 SPEC_BEGIN(LUAPIConnectionSpec)
 
 describe(@"LUAPIConnection", ^{
-  AFHTTPRequestOperation *httpRequestOperation = [[AFHTTPRequestOperation alloc] init];
+  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://example.com"]];
+  AFHTTPRequestOperation *httpRequestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
   LUAPIConnection *apiConnection = [[LUAPIConnection alloc] initWithAFHTTPRequestOperation:httpRequestOperation];
 
   describe(@"operation", ^{

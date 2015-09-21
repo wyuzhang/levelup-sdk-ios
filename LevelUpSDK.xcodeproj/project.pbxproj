@@ -180,7 +180,6 @@
 		02BDB23C1AB7710F005830A7 /* LUCampaignRepresentationTypeTransformerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB23B1AB7710F005830A7 /* LUCampaignRepresentationTypeTransformerSpec.m */; };
 		02BDB23F1AB86D0F005830A7 /* LUOAuth2ViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB23E1AB86D0F005830A7 /* LUOAuth2ViewControllerSpec.m */; };
 		02BDB2AC1AB8A658005830A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB2A81AB8A658005830A7 /* AppDelegate.m */; };
-		02BDB2AD1AB8A658005830A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02BDB2A91AB8A658005830A7 /* Images.xcassets */; };
 		02BDB2AF1AB8A658005830A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB2AB1AB8A658005830A7 /* main.m */; };
 		02C1A7411AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C1A73F1AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.h */; };
 		02C1A7421AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1A7401AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.m */; };
@@ -756,7 +755,6 @@
 		02BDB27E1AB8A645005830A7 /* Testing App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Testing App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02BDB2A71AB8A658005830A7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		02BDB2A81AB8A658005830A7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		02BDB2A91AB8A658005830A7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		02BDB2AA1AB8A658005830A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02BDB2AB1AB8A658005830A7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		02C1A73F1AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUPaymentPreferenceRequestFactory.h; sourceTree = "<group>"; };
@@ -1459,7 +1457,6 @@
 			children = (
 				02BDB2A71AB8A658005830A7 /* AppDelegate.h */,
 				02BDB2A81AB8A658005830A7 /* AppDelegate.m */,
-				02BDB2A91AB8A658005830A7 /* Images.xcassets */,
 				02BDB2AA1AB8A658005830A7 /* Info.plist */,
 				02BDB2AB1AB8A658005830A7 /* main.m */,
 			);
@@ -2493,7 +2490,6 @@
 				25F643B1166832D600A05C0E /* Frameworks */,
 				25F643B2166832D600A05C0E /* Resources */,
 				55A9394A540648818E3AE22B /* Copy Pods Resources */,
-				25F643B3166832D600A05C0E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2512,7 +2508,7 @@
 		25F6439B166832D600A05C0E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = SCVNGR;
 				TargetAttributes = {
 					02BDB27D1AB8A645005830A7 = {
@@ -2548,7 +2544,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02BDB2AD1AB8A658005830A7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2662,19 +2657,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "mkdir -p \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}\"\nfor header in $(find \"${SRCROOT}/Source\" -name \"*.h\"); do cp $header \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\"; done\n";
-		};
-		25F643B3166832D600A05C0E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
 		55A9394A540648818E3AE22B /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3142,6 +3124,7 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				INFOPLIST_FILE = "Unit-Tests/Resources/Unit-Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scvngr.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Testing App.app/Testing App";
@@ -3173,6 +3156,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scvngr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -3199,6 +3183,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scvngr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -3225,6 +3210,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scvngr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Distribution;
@@ -3241,6 +3227,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_VERSION = 1.8.15;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -3353,6 +3340,7 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				INFOPLIST_FILE = "Unit-Tests/Resources/Unit-Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scvngr.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Testing App.app/Testing App";
@@ -3369,6 +3357,7 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				INFOPLIST_FILE = "Unit-Tests/Resources/Unit-Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scvngr.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Testing App.app/Testing App";
