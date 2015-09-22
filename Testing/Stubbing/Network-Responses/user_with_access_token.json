@@ -15,6 +15,7 @@
     "last_name": "Doe",
     "merchants_visited_count": 0,
     "orders_count": 0,
+    "phone": "(123) 123-1234",
     "global_credit_amount": 1000,
     "terms_accepted_at": "2013-01-01T00:00:00-05:00",
     "total_savings_amount": 5000

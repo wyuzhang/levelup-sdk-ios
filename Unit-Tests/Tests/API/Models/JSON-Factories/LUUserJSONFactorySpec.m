@@ -42,6 +42,7 @@ describe(@"LUUserJSONFactory", ^{
         @"last_name" : @"User",
         @"merchants_visited_count" : @5,
         @"orders_count" : @10,
+        @"phone" : @"(617) 123-1234",
         @"terms_accepted_at" : @"2012-12-04T18:10:45-05:00",
         @"total_savings_amount" : @200
       };
@@ -59,6 +60,7 @@ describe(@"LUUserJSONFactory", ^{
       [[user.lastName should] equal:@"User"];
       [[user.merchantsVisitedCount should] equal:@5];
       [[user.ordersCount should] equal:@10];
+      [[user.phone should] equal:@"(617) 123-1234"];
       [[theValue(user.termsAccepted) should] beYes];
       [[user.totalSavings should] equal:[LUMonetaryValue monetaryValueWithUSCents:@200]];
       [[user.userID should] equal:@1];

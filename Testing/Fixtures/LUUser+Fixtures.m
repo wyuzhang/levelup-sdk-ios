@@ -32,6 +32,7 @@
                                   lastName:@"Test"
                      merchantsVisitedCount:@5
                                ordersCount:@10
+                                     phone:@"(123) 456-7890"
                              termsAccepted:YES
                               totalSavings:[LUMonetaryValue monetaryValueWithUSD:@1]
                                     userID:@1];
@@ -50,6 +51,7 @@
                                   lastName:@"Test"
                      merchantsVisitedCount:@5
                                ordersCount:@10
+                                     phone:@"(123) 456-7890"
                              termsAccepted:YES
                               totalSavings:[LUMonetaryValue monetaryValueWithUSD:@1]
                                     userID:@1];

@@ -37,6 +37,19 @@
                lastName:(NSString *)lastName merchantsVisitedCount:(NSNumber *)merchantsVisitedCount
             ordersCount:(NSNumber *)ordersCount termsAccepted:(BOOL)termsAccepted
            totalSavings:(LUMonetaryValue *)totalSavings userID:(NSNumber *)userID {
+  return [self initWithBirthdate:birthdate causeID:causeID connectedToFacebook:connectedToFacebook
+                customAttributes:customAttributes debitCardOnly:debitCardOnly email:email firstName:firstName
+                          gender:gender globalCredit:globalCredit lastName:lastName
+           merchantsVisitedCount:merchantsVisitedCount ordersCount:ordersCount phone:nil termsAccepted:termsAccepted
+                    totalSavings:totalSavings userID:userID];
+}
+
+- (id)initWithBirthdate:(NSDate *)birthdate causeID:(NSNumber *)causeID connectedToFacebook:(BOOL)connectedToFacebook
+       customAttributes:(NSDictionary *)customAttributes debitCardOnly:(BOOL)debitCardOnly email:(NSString *)email
+              firstName:(NSString *)firstName gender:(LUGender)gender globalCredit:(LUMonetaryValue *)globalCredit
+               lastName:(NSString *)lastName merchantsVisitedCount:(NSNumber *)merchantsVisitedCount
+            ordersCount:(NSNumber *)ordersCount phone:(NSString *)phone termsAccepted:(BOOL)termsAccepted
+           totalSavings:(LUMonetaryValue *)totalSavings userID:(NSNumber *)userID {
   self = [super init];
   if (!self) return nil;
 
@@ -52,6 +65,7 @@
   _lastName = lastName;
   _merchantsVisitedCount = merchantsVisitedCount;
   _ordersCount = ordersCount;
+  _phone = phone;
   _termsAccepted = termsAccepted;
   _totalSavings = totalSavings;
   _userID = userID;
@@ -71,10 +85,10 @@
 
 - (NSString *)debugDescription {
   return [NSString stringWithFormat:
-          @"LUUser [address=%p, birthdate=%@, causeID=%@, customAttributes=%@, debitCardOnly=%@, email=%@, firstName=%@, gender=%@, globalCredit=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, termsAccepted=%@, totalSavings=%@]",
+          @"LUUser [address=%p, birthdate=%@, causeID=%@, customAttributes=%@, debitCardOnly=%@, email=%@, firstName=%@, gender=%@, globalCredit=%@, ID=%@, lastName=%@, merchantsVisitedCount=%@, ordersCount=%@, phone=%@, termsAccepted=%@, totalSavings=%@]",
           self, self.birthdate, self.causeID, self.customAttributes, @(self.debitCardOnly), self.email, self.firstName,
           [[self class] genderStringForGender:self.gender], self.globalCredit, self.userID, self.lastName,
-          self.merchantsVisitedCount, self.ordersCount, @(self.termsAccepted), self.totalSavings];
+          self.merchantsVisitedCount, self.ordersCount, self.phone, @(self.termsAccepted), self.totalSavings];
 }
 
 - (NSString *)description {

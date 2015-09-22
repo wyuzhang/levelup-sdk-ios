@@ -12,6 +12,7 @@
     "last_name": "User",
     "merchants_visited_count": 0,
     "orders_count": 0,
+    "phone": null,
     "global_credit_amount": 0,
     "terms_accepted_at": "2013-01-01T00:00:00-05:00",
     "total_savings_amount": 0

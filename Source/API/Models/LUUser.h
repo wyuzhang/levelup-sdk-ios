@@ -98,6 +98,11 @@ typedef NS_ENUM(NSInteger, LUGender) {
 @property (nonatomic, copy) NSString *password;
 
 /**
+ The user's phone number.
+ */
+@property (nonatomic, copy) NSString *phone;
+
+/**
  Specifies if the user has accepted the LevelUp Terms & Conditions.
  */
 @property (nonatomic, assign) BOOL termsAccepted;
@@ -130,6 +135,13 @@ typedef NS_ENUM(NSInteger, LUGender) {
               firstName:(NSString *)firstName gender:(LUGender)gender globalCredit:(LUMonetaryValue *)globalCredit
                lastName:(NSString *)lastName merchantsVisitedCount:(NSNumber *)merchantsVisitedCount
             ordersCount:(NSNumber *)ordersCount termsAccepted:(BOOL)termsAccepted
+           totalSavings:(LUMonetaryValue *)totalSavings userID:(NSNumber *)userID;
+
+- (id)initWithBirthdate:(NSDate *)birthdate causeID:(NSNumber *)causeID connectedToFacebook:(BOOL)connectedToFacebook
+       customAttributes:(NSDictionary *)customAttributes debitCardOnly:(BOOL)debitCardOnly email:(NSString *)email
+              firstName:(NSString *)firstName gender:(LUGender)gender globalCredit:(LUMonetaryValue *)globalCredit
+               lastName:(NSString *)lastName merchantsVisitedCount:(NSNumber *)merchantsVisitedCount
+            ordersCount:(NSNumber *)ordersCount phone:(NSString *)phone termsAccepted:(BOOL)termsAccepted
            totalSavings:(LUMonetaryValue *)totalSavings userID:(NSNumber *)userID;
 
 @end
