@@ -260,7 +260,7 @@ typedef void (^LUAPIFailureBlock)(NSError *error);
 
 /**
  Returns an `NSMutableURLRequest` with the given parameters
- 
+
  @param method An HTTP method: "GET", "POST", "PUT", or "DELETE".
  @param path The path of the API request, e.g. "/users".
  @param parameters A dictionary of parameters to include with this request, or nil if the request
