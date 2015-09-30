@@ -517,8 +517,8 @@
 }
 
 + (LUAPIStub *)stubToGetLocationsForAppFirstPageNearLocation:(CLLocation *)location {
-  NSString *path = [NSString stringWithFormat:@"apps/%@/locations?lat=%@&lng=%@", [LUAPIClient sharedClient].appID,
-                    @(location.coordinate.latitude), @(location.coordinate.longitude)];
+  NSString *path = [NSString stringWithFormat:@"apps/%@/locations?%@",
+                     [LUAPIClient sharedClient].appID, [self coordinatePathForLocation:location]];
 
   LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion14
                                             path:path
@@ -544,8 +544,7 @@
 }
 
 + (LUAPIStub *)stubToGetLocationsForMerchantFirstPageNearLocation:(CLLocation *)location forMerchantID:(NSNumber *)merchantID {
-  NSString *path = [NSString stringWithFormat:@"merchants/%@/locations?lat=%@&lng=%@", merchantID,
-                    @(location.coordinate.latitude), @(location.coordinate.longitude)];
+  NSString *path = [NSString stringWithFormat:@"merchants/%@/locations?%@", merchantID, [self coordinatePathForLocation:location]];
 
   LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
                                             path:path
@@ -959,6 +958,14 @@
   [NSJSONSerialization JSONObjectWithData:[self responseDataFromFile:@"carrier_account_with_evurl"]
                                   options:0 error:nil];
    return [NSURL URLWithString:[carrierAccountJSON[@"carrier_account"] objectForKey:@"ev_url"]];
+}
+
++ (NSString *)coordinatePathForLocation:(CLLocation *)location {
+  if (location) {
+    return [NSString stringWithFormat:@"lat=%@&lng=%@",
+      @(location.coordinate.latitude), @(location.coordinate.longitude)];
+  }
+  return @"";
 }
 
 @end
