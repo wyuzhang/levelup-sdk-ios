@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 def run_tests(destination)
-  system_raise_failure "xcodebuild -workspace LevelUpSDK.xcworkspace -scheme 'LevelUpSDK' -configuration Debug -sdk iphonesimulator -destination '#{destination}' test | xcpretty -ct"
+  system_raise_failure "xcodebuild -workspace LevelUpSDK.xcworkspace -scheme 'LevelUpSDK' -configuration Debug -sdk iphonesimulator -destination '#{destination}' test | xcpretty -ct && exit ${PIPESTATUS[0]}"
   puts
 end
 
