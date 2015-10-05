@@ -155,6 +155,16 @@ describe(@"LUAPIModel", ^{
       id decoded = [NSKeyedUnarchiver unarchiveObjectWithData:data];
       [[decoded should] equal:model];
     });
+
+    describe(@"encodes and decodes LUAPIModels which have uncodable accessors", ^{
+      LULocation *location = [LULocation fixture];
+
+      NSData *data = [NSKeyedArchiver archivedDataWithRootObject:location];
+      [[data shouldNot] beNil];
+
+      id decoded = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+      [[decoded should] equal:location];
+    });
   });
 });
 

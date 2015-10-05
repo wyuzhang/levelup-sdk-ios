@@ -113,7 +113,11 @@
 
     NSString *attribute = [NSString stringWithCString:propName encoding:NSUTF8StringEncoding];
 
-    if ([@[@"class", @"codableProperties", @"hash", @"description", @"debugDescription"] containsObject:attribute]) {
+    char *propertyIVar = property_copyAttributeValue(property, "V");
+    BOOL iVarPresent = propertyIVar != NULL;
+    free(propertyIVar);
+
+    if (!iVarPresent || [@"codableProperties" isEqual:attribute]) {
       continue;
     }
 
