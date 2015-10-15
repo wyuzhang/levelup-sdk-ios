@@ -10,6 +10,6 @@ notifications:
   email:
     - travis%0045ci%0045mobile%0045ios+b4e6d7755fa5e685126a5015e80e37f3@streams.zulip.com
 before_install:
-  - sudo gem install cocoapods -v 0.38.2 --no-ri --no-rdoc
+  - sudo gem install cocoapods -v 0.39.0 --no-ri --no-rdoc
   - pod --version
 script: bundle exec ruby travis.rb
