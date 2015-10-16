@@ -578,7 +578,7 @@
 }
 
 + (LUAPIStub *)stubToGetLoyaltyDisabledForMerchantWithID:(NSNumber *)merchantID {
-  return [LUAPIStub apiStubForVersion:LUAPIVersion14
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
                                  path:[NSString stringWithFormat:@"merchants/%@/loyalty", [merchantID stringValue]]
                            HTTPMethod:@"GET"
                         authenticated:YES
