@@ -21,11 +21,11 @@
 #import "LevelUpSDK-Prefix.pch"
 
 #ifdef __OBJC__
+  #import <AFNetworking/AFHTTPRequestOperationManager.h>
   #import "Kiwi.h"
+  #import <LUKeychainAccess/LUKeychainAccess.h>
   #import <ZXingObjC/ZXingObjCQRCode.h>
 
   #import "LevelUpSDK.h"
   #import "LevelUpSDKTesting.h"
-  #import "AFNetworking.h"
-  #import "LUKeychainAccess.h"
 #endif

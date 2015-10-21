@@ -2,7 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '7.0'
 
-pod 'AFNetworking', '2.6.0'
+pod 'AFNetworking/NSURLConnection', '2.6.1'
 pod 'LUKeychainAccess', '1.2.3'
 pod 'ZXingObjC/QRCode', '3.0.4'
 

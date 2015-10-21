@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#import "AFNetworking.h"
+#import <AFNetworking/AFURLRequestSerialization.h>
+#import <UIKit/UIKit.h>
 #import "LUAPIClient.h"
 #import "LUAPIRequest.h"
 #import "NSRegularExpression+LUAdditions.h"
 #import "NSURL+LUAdditions.h"
-#import <UIKit/UIKit.h>
 
 @implementation NSURL (LUAdditions)
 

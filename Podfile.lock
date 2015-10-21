@@ -1,25 +1,11 @@
 PODS:
-  - AFNetworking (2.6.0):
-    - AFNetworking/NSURLConnection (= 2.6.0)
-    - AFNetworking/NSURLSession (= 2.6.0)
-    - AFNetworking/Reachability (= 2.6.0)
-    - AFNetworking/Security (= 2.6.0)
-    - AFNetworking/Serialization (= 2.6.0)
-    - AFNetworking/UIKit (= 2.6.0)
-  - AFNetworking/NSURLConnection (2.6.0):
+  - AFNetworking/NSURLConnection (2.6.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.0)
-  - AFNetworking/Security (2.6.0)
-  - AFNetworking/Serialization (2.6.0)
-  - AFNetworking/UIKit (2.6.0):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
+  - AFNetworking/Reachability (2.6.1)
+  - AFNetworking/Security (2.6.1)
+  - AFNetworking/Serialization (2.6.1)
   - Kiwi (2.4.0)
   - LUKeychainAccess (1.2.3)
   - OHHTTPStubs (1.1.2)
@@ -28,14 +14,14 @@ PODS:
     - ZXingObjC/Core
 
 DEPENDENCIES:
-  - AFNetworking (= 2.6.0)
+  - AFNetworking/NSURLConnection (= 2.6.1)
   - Kiwi (= 2.4.0)
   - LUKeychainAccess (= 1.2.3)
   - OHHTTPStubs (= 1.1.2)
   - ZXingObjC/QRCode (= 3.0.4)
 
 SPEC CHECKSUMS:
-  AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
   LUKeychainAccess: 8f4ad156ca3251a8c0f946d8258b6d0d1d6234b5
   OHHTTPStubs: a51f9f39122399cdd1aab24cedb301199caf84df

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFURLRequestSerialization.h>
 #import "LUAPIClient.h"
 #import "LUConstants.h"
 #import "LUOAuth2ViewController.h"

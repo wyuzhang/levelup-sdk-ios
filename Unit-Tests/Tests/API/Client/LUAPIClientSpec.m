@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-#import "AFNetworkActivityIndicatorManager.h"
 #import "LUAbstractJSONModelFactory.h"
 #import "LUAPIClient.h"
 #import "LUAPIConnection.h"
@@ -127,10 +126,6 @@ describe(@"LUAPIClient", ^{
     context(@"with an app ID and API key", ^{
       beforeEach(^{
         [LUAPIClient setupWithAppID:appID APIKey:APIKey];
-      });
-
-      it(@"enables the network activity manager", ^{
-        [[theValue([AFNetworkActivityIndicatorManager sharedManager].enabled) should] beYes];
       });
 
       it(@"registers for JSON requests", ^{

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#import "AFNetworking.h"
+#import <AFNetworking/AFHTTPRequestOperation.h>
 #import "LUAPIConnection.h"
 
 @interface LUAPIConnection ()

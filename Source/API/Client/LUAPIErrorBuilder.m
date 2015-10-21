@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#import "AFNetworking.h"
+#import <AFNetworking/AFURLResponseSerialization.h>
 #import "LUAPIClient.h"
 #import "LUAPIError.h"
 #import "LUAPIErrorBuilder.h"

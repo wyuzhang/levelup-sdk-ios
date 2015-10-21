@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#import "AFNetworkActivityIndicatorManager.h"
-#import "AFNetworking.h"
+#import <AFNetworking/AFHTTPRequestOperationManager.h>
+#import <AFNetworking/AFURLRequestSerialization.h>
 #import "LUAbstractJSONModelFactory.h"
 #import "LUAPIClient.h"
 #import "LUAPIConnection.h"
@@ -68,8 +68,6 @@ __strong static LUAPIClient *_sharedClient = nil;
   _deepLinkAuthShowInstallAlert = YES;
   _deepLinkAuthURLScheme = @"thelevelup";
   _developmentMode = NO;
-
-  [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 
   AFJSONRequestSerializer *requestSerializer = [AFJSONRequestSerializer serializer];
   [requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
