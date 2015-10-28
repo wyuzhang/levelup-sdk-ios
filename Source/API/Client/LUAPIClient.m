@@ -15,7 +15,6 @@
  */
 
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
-#import <AFNetworking/AFURLRequestSerialization.h>
 #import "LUAbstractJSONModelFactory.h"
 #import "LUAPIClient.h"
 #import "LUAPIConnection.h"
@@ -60,8 +59,10 @@ __strong static LUAPIClient *_sharedClient = nil;
   _appID = appID;
   _clientsideEncryptionKey = BraintreePublicKeyProduction;
   _deepLinkAuthBundleID = @"com.scvngr.LevelUp";
-  _deepLinkAuthInstallAppStoreURL = [NSURL URLWithString:@"https://itunes.apple.com/us/app/levelup-.-pay-with-your-phone/id424121785"];
-  _deepLinkAuthInstallMessage = @"It looks like you don’t have the LevelUp app installed, but that’s an easy fix! It’s easy to set up and free.";
+  _deepLinkAuthInstallAppStoreURL =
+    [NSURL URLWithString:@"https://itunes.apple.com/us/app/levelup-.-pay-with-your-phone/id424121785"];
+  _deepLinkAuthInstallMessage =
+    @"It looks like you don’t have the LevelUp app installed, but that’s an easy fix! It’s easy to set up and free.";
   _deepLinkAuthInstallNegativeButtonTitle = @"No Thanks";
   _deepLinkAuthInstallPositiveButtonTitle = @"Get LevelUp";
   _deepLinkAuthInstallTitle = @"Get LevelUp";
@@ -76,7 +77,8 @@ __strong static LUAPIClient *_sharedClient = nil;
            forHTTPHeaderField:@"User-Agent"];
   [requestSerializer setValue:apiKey forHTTPHeaderField:@"X-LevelUp-API-Key"];
 
-  _httpOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:LevelUpAPIBaseURLProduction]];
+  _httpOperationManager =
+    [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:LevelUpAPIBaseURLProduction]];
   _httpOperationManager.requestSerializer = requestSerializer;
   _httpOperationManager.responseSerializer = [AFJSONResponseSerializer serializer];
 
@@ -97,47 +99,57 @@ __strong static LUAPIClient *_sharedClient = nil;
 }
 
 - (BOOL)isNetworkReachableOnCellularData {
-  return self.httpOperationManager.reachabilityManager.networkReachabilityStatus == AFNetworkReachabilityStatusReachableViaWWAN;
+  return self.httpOperationManager.reachabilityManager.networkReachabilityStatus ==
+         AFNetworkReachabilityStatusReachableViaWWAN;
 }
 
 - (BOOL)isNetworkReachableOnWifi {
-  return self.httpOperationManager.reachabilityManager.networkReachabilityStatus == AFNetworkReachabilityStatusReachableViaWiFi;
+  return self.httpOperationManager.reachabilityManager.networkReachabilityStatus ==
+         AFNetworkReachabilityStatusReachableViaWiFi;
 }
 
 - (BOOL)isNetworkUnreachable {
-  return self.httpOperationManager.reachabilityManager.networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable;
+  return self.httpOperationManager.reachabilityManager.networkReachabilityStatus ==
+         AFNetworkReachabilityStatusNotReachable;
 }
 
 - (LUAPIConnection *)performRequest:(LUAPIRequest *)apiRequest
                             success:(LUAPISuccessBlock)success
                             failure:(LUAPIFailureBlock)failure {
   AFHTTPRequestOperation *requestOperation =
-    [self.httpOperationManager HTTPRequestOperationWithRequest:apiRequest.URLRequest
-                                                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                         if (success) {
-                                                           LUAPIResponse *apiResponse = [[LUAPIResponse alloc] initWithHTTPURLResponse:operation.response];
+    [self.httpOperationManager
+      HTTPRequestOperationWithRequest:apiRequest.URLRequest
+                              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                if (success) {
+                                  LUAPIResponse *apiResponse =
+                                    [[LUAPIResponse alloc] initWithHTTPURLResponse:operation.response];
+                                  NSNumber *responseCode = @(apiResponse.HTTPURLResponse.statusCode);
 
-                                                           NSNumber *responseCode = @(apiResponse.HTTPURLResponse.statusCode);
+                                  if (apiRequest.retryResponseCodes != nil &&
+                                      [apiRequest.retryResponseCodes containsObject:responseCode]) {
+                                    int64_t delta = (int64_t)(NSEC_PER_SEC * apiRequest.retryTimeInterval);
+                                    dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, delta);
 
-                                                           if (apiRequest.retryResponseCodes != nil &&
-                                                               [apiRequest.retryResponseCodes containsObject:responseCode]) {
-                                                             dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * (int64_t)apiRequest.retryTimeInterval);
-                                                             dispatch_after(delay, dispatch_get_main_queue(), ^{
-                                                               [self performRequest:apiRequest success:success failure:failure];
-                                                             });
-                                                           } else {
-                                                             if (apiRequest.modelFactory) {
-                                                               success([apiRequest.modelFactory fromJSONObject:responseObject], apiResponse);
-                                                             } else {
-                                                               success(responseObject, apiResponse);
-                                                             }
-                                                           }
-                                                         }
-                                                       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                         if (failure) {
-                                                           failure([LUAPIErrorBuilder error:error withMessagesFromJSON:operation.responseObject]);
-                                                         }
-                                                       }];
+                                    dispatch_after(delay, dispatch_get_main_queue(), ^{
+                                      [self performRequest:apiRequest success:success failure:failure];
+                                    });
+                                  } else {
+                                    if (apiRequest.modelFactory) {
+                                      success([apiRequest.modelFactory fromJSONObject:responseObject], apiResponse);
+                                    } else {
+                                      success(responseObject, apiResponse);
+                                    }
+                                  }
+                                }
+                              }
+                              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                if (failure) {
+                                  failure([LUAPIErrorBuilder error:error
+                                              withMessagesFromJSON:operation.responseObject]);
+                                }
+                              }
+    ];
+
   [self.httpOperationManager.operationQueue addOperation:requestOperation];
 
   return [[LUAPIConnection alloc] initWithAFHTTPRequestOperation:requestOperation];
@@ -147,7 +159,10 @@ __strong static LUAPIClient *_sharedClient = nil;
                                       path:(NSString *)path
                                 parameters:(NSDictionary *)parameters {
   NSString *URLString = [[NSURL URLWithString:path relativeToURL:self.httpOperationManager.baseURL] absoluteString];
-  return [self.httpOperationManager.requestSerializer requestWithMethod:method URLString:URLString parameters:parameters error:nil];
+  return [self.httpOperationManager.requestSerializer requestWithMethod:method
+                                                              URLString:URLString
+                                                             parameters:parameters
+                                                                  error:nil];
 }
 
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method
