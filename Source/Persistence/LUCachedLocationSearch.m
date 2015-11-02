@@ -66,11 +66,11 @@ const CLLocationDistance LULengthOfDegreeOfLatitude = 11132.954;
 
 - (NSArray *)locationsWithinRadius:(CLLocationDistance)radius error:(NSError **)error {
   NSFetchRequest *fetchRequest = [self fetchRequestForLocationsWithinRadius:radius];
-  NSMutableArray *locations = [[self.managedObjectContext executeFetchRequest:fetchRequest error:error] mutableCopy];
+  NSArray *locations = [self.managedObjectContext executeFetchRequest:fetchRequest error:error];
 
-  return [locations filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(LUCachedLocation *location, NSDictionary *bindings) {
+  return [locations lu_filteredArrayWithBlock:^BOOL(LUCachedLocation *location) {
     return [[location toCLLocation] distanceFromLocation:self.center] <= radius;
-  }]];
+  }];
 }
 
 - (NSArray *)nearbyLocations:(NSError **)error {

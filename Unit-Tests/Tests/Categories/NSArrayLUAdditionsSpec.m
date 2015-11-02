@@ -17,31 +17,37 @@
 #import "NSArray+LUAdditions.h"
 
 SPEC_BEGIN(NSArrayLUAdditionsSpec)
+NSArray *testArray = @[@1, @2, @3];
 
 describe(@"NSArray", ^{
   describe(@"lu_firstObject", ^{
     context(@"when the array is empty", ^{
-      NSArray *array = [NSArray array];
-
       it(@"is nil", ^{
-        [[array lu_firstObject] shouldBeNil];
+        [[@[] lu_firstObject] shouldBeNil];
       });
     });
 
     context(@"when is array is not empty", ^{
-      NSArray *array = @[@1, @2, @3];
-
       it(@"is the first object", ^{
-        [[[array lu_firstObject] should] equal:@1];
+        [[[testArray lu_firstObject] should] equal:@1];
       });
     });
   });
 
-  describe(@"mappedArrayWithBlock:", ^{
-    it(@"runs the block for each element in the array, returning a new array with the results", ^{
-      NSArray *numbers = @[@1, @2, @3];
+  describe(@"lu_filteredArrayWithBlock:", ^{
+    it(@"runs filteredArrayWithPredicate: with the given block on the array, returning the resulting array", ^{
+      NSArray *numbersGreaterThanTwo =
+        [testArray lu_filteredArrayWithBlock:^BOOL(NSNumber *number) {
+          return [number integerValue] > 2;
+        }];
 
-      NSArray *numbersToStrings = [numbers lu_mappedArrayWithBlock:^(id obj) {
+      [[numbersGreaterThanTwo should] equal:@[@3]];
+    });
+  });
+
+  describe(@"lu_mappedArrayWithBlock:", ^{
+    it(@"runs the block for each element in the array, returning a new array with the results", ^{
+      NSArray *numbersToStrings = [testArray lu_mappedArrayWithBlock:^(id obj) {
         return [obj stringValue];
       }];
 

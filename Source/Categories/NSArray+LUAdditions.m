@@ -23,7 +23,14 @@
     return nil;
   }
 
-  return [self objectAtIndex:0];
+  return [self firstObject];
+}
+
+- (NSArray *)lu_filteredArrayWithBlock:(BOOL (^)(id obj))block {
+  return [self filteredArrayUsingPredicate:
+           [NSPredicate predicateWithBlock:^BOOL(id  _Nonnull obj, NSDictionary<NSString *, id> * _Nullable bindings) {
+              return block(obj);
+           }]];
 }
 
 - (NSArray *)lu_mappedArrayWithBlock:(id (^)(id obj))block {
