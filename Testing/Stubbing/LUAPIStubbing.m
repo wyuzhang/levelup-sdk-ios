@@ -51,25 +51,31 @@
 }
 
 - (void)clearStubs {
-  [self.mutableStubs removeAllObjects];
+  @synchronized(self.mutableStubs) {
+    [self.mutableStubs removeAllObjects];
+  }
 
   [OHHTTPStubs removeAllRequestHandlers];
   [OHHTTPStubs setEnabled:NO];
 }
 
 - (void)addStub:(LUAPIStub *)stub {
-  [self addOrReplaceStub:stub];
+  @synchronized(self.mutableStubs) {
+    [self addOrReplaceStub:stub];
+  }
 
   [OHHTTPStubs setEnabled:YES];
   [OHHTTPStubs removeAllRequestHandlers];
 
   [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-    for (LUAPIStub *stub in [self.mutableStubs reverseObjectEnumerator]) {
-      if ([stub matchesRequest:request]) {
-        if (onlyCheck) {
-          return OHHTTPStubsResponseUseStub;
-        } else {
-          return [stub response];
+    @synchronized(self.mutableStubs) {
+      for (LUAPIStub *stub in [self.mutableStubs reverseObjectEnumerator]) {
+        if ([stub matchesRequest:request]) {
+          if (onlyCheck) {
+            return OHHTTPStubsResponseUseStub;
+          } else {
+            return [stub response];
+          }
         }
       }
     }
