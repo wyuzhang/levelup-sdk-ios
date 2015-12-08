@@ -39,6 +39,8 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/URL">&nbsp;&nbsp;&nbsp;&nbsp;URL</option>
+	
 	<option value="//api/name/apiVersion">&nbsp;&nbsp;&nbsp;&nbsp;apiVersion</option>
 	
 	<option value="//api/name/method">&nbsp;&nbsp;&nbsp;&nbsp;method</option>
@@ -58,6 +60,10 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
+	<option value="//api/name/apiRequestWithMethod:URL:parameters:modelFactory:">&nbsp;&nbsp;&nbsp;&nbsp;+ apiRequestWithMethod:URL:parameters:modelFactory:</option>
+	
+	<option value="//api/name/apiRequestWithMethod:URL:parameters:modelFactory:retryResponseCodes:retryTimeInterval:">&nbsp;&nbsp;&nbsp;&nbsp;+ apiRequestWithMethod:URL:parameters:modelFactory:retryResponseCodes:retryTimeInterval:</option>
+	
 	<option value="//api/name/apiRequestWithMethod:path:apiVersion:parameters:modelFactory:">&nbsp;&nbsp;&nbsp;&nbsp;+ apiRequestWithMethod:path:apiVersion:parameters:modelFactory:</option>
 	
 	<option value="//api/name/apiRequestWithMethod:path:apiVersion:parameters:modelFactory:retryResponseCodes:retryTimeInterval:">&nbsp;&nbsp;&nbsp;&nbsp;+ apiRequestWithMethod:path:apiVersion:parameters:modelFactory:retryResponseCodes:retryTimeInterval:</option>
@@ -66,8 +72,6 @@
 	
 	
 	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/URL">&nbsp;&nbsp;&nbsp;&nbsp;- URL</option>
 	
 	<option value="//api/name/URLRequest">&nbsp;&nbsp;&nbsp;&nbsp;- URLRequest</option>
 	
@@ -95,6 +99,8 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/URL">URL</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/apiVersion">apiVersion</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/method">method</a></span></li>
@@ -115,6 +121,10 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/apiRequestWithMethod:URL:parameters:modelFactory:">apiRequestWithMethod:URL:parameters:modelFactory:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/apiRequestWithMethod:URL:parameters:modelFactory:retryResponseCodes:retryTimeInterval:">apiRequestWithMethod:URL:parameters:modelFactory:retryResponseCodes:retryTimeInterval:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/apiRequestWithMethod:path:apiVersion:parameters:modelFactory:">apiRequestWithMethod:path:apiVersion:parameters:modelFactory:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/apiRequestWithMethod:path:apiVersion:parameters:modelFactory:retryResponseCodes:retryTimeInterval:">apiRequestWithMethod:path:apiVersion:parameters:modelFactory:retryResponseCodes:retryTimeInterval:</a></span></li>
@@ -124,8 +134,6 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/URL">URL</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/URLRequest">URLRequest</a></span></li>
 	
@@ -228,6 +236,12 @@ instances should usually be created by request builders.</p>
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/URL">&nbsp;&nbsp;URL</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/apiRequestWithMethod:path:apiVersion:parameters:modelFactory:">+&nbsp;apiRequestWithMethod:path:apiVersion:parameters:modelFactory:</a></code>
 	</span>
 	
@@ -240,7 +254,13 @@ instances should usually be created by request builders.</p>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/URL">&ndash;&nbsp;URL</a></code>
+		<code><a href="#//api/name/apiRequestWithMethod:URL:parameters:modelFactory:">+&nbsp;apiRequestWithMethod:URL:parameters:modelFactory:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/apiRequestWithMethod:URL:parameters:modelFactory:retryResponseCodes:retryTimeInterval:">+&nbsp;apiRequestWithMethod:URL:parameters:modelFactory:retryResponseCodes:retryTimeInterval:</a></code>
 	</span>
 	
 	
@@ -262,6 +282,47 @@ instances should usually be created by request builders.</p>
 					<div class="section section-methods">
 						<a title="Properties" name="properties"></a>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/URL" title="URL"></a>
+	<h3 class="subsubtitle method-title">URL</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An <code>NSURL</code> instance for this API request.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSURL *URL</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>An <code>NSURL</code> instance for this API request.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUAPIRequest.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/apiVersion" title="apiVersion"></a>
@@ -352,7 +413,7 @@ instances should usually be created by request builders.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An <code>LUAbstractJSONModelFactory</code> to parse the JSON response.</p>
+		<p>An <a href="../Classes/LUAbstractJSONModelFactory.html"><code>LUAbstractJSONModelFactory</code></a> to parse the JSON response.</p>
 	</div>		
 	
     
@@ -369,7 +430,7 @@ instances should usually be created by request builders.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>An <code>LUAbstractJSONModelFactory</code> to parse the JSON response.</p>
+		<p>An <a href="../Classes/LUAbstractJSONModelFactory.html"><code>LUAbstractJSONModelFactory</code></a> to parse the JSON response.</p>
 	</div>
 	
 	
@@ -563,6 +624,157 @@ The response codes must be defined as acceptable by <a href="http://www.w3.org/P
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/apiRequestWithMethod:URL:parameters:modelFactory:" title="apiRequestWithMethod:URL:parameters:modelFactory:"></a>
+	<h3 class="subsubtitle method-title">apiRequestWithMethod:URL:parameters:modelFactory:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an <code>LUAPIRequest</code> with the specified <a href="#//api/name/method">method</a>, <a href="#//api/name/URL">URL</a> and response model factory. An authentication token
+will automatically be included in the request if one is set on the <a href="../Classes/LUAPIClient.html"><code>LUAPIClient</code></a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)apiRequestWithMethod:(NSString *)<em>method</em> URL:(NSURL *)<em>URL</em> parameters:(NSDictionary *)<em>parameters</em> modelFactory:(LUAbstractJSONModelFactory *)<em>modelFactory</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p>An HTTP method: &ldquo;GET&rdquo;, &ldquo;POST&rdquo;, &ldquo;PUT&rdquo;, or &ldquo;DELETE&rdquo;.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>URL</em></dt>
+			<dd><p>The URL of the API including the base URL, e.g. an NSURL with absoluteString
+&ldquo;<a href="https://api.thelevelup.com/v15/users/1">https://api.thelevelup.com/v15/users/1</a>&rdquo;.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p>A dictionary of <a href="#//api/name/parameters">parameters</a> to include with this request, or nil if the request
+has no <a href="#//api/name/parameters">parameters</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>modelFactory</em></dt>
+			<dd><p>An instance of <a href="../Classes/LUAbstractJSONModelFactory.html"><code>LUAbstractJSONModelFactory</code></a> which will parse the response.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an <code>LUAPIRequest</code> with the specified <a href="#//api/name/method">method</a>, <a href="#//api/name/URL">URL</a> and response model factory. An authentication token
+will automatically be included in the request if one is set on the <a href="../Classes/LUAPIClient.html"><code>LUAPIClient</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUAPIRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/apiRequestWithMethod:URL:parameters:modelFactory:retryResponseCodes:retryTimeInterval:" title="apiRequestWithMethod:URL:parameters:modelFactory:retryResponseCodes:retryTimeInterval:"></a>
+	<h3 class="subsubtitle method-title">apiRequestWithMethod:URL:parameters:modelFactory:retryResponseCodes:retryTimeInterval:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an <code>LUAPIRequest</code> with the specified <a href="#//api/name/method">method</a>, <a href="#//api/name/URL">URL</a> and response model factory. An authentication token
+will automatically be included in the request if one is set on the <a href="../Classes/LUAPIClient.html"><code>LUAPIClient</code></a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)apiRequestWithMethod:(NSString *)<em>method</em> URL:(NSURL *)<em>URL</em> parameters:(NSDictionary *)<em>parameters</em> modelFactory:(LUAbstractJSONModelFactory *)<em>modelFactory</em> retryResponseCodes:(NSArray *)<em>retryResponseCodes</em> retryTimeInterval:(NSTimeInterval)<em>retryTimeInterval</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p>An HTTP method: &ldquo;GET&rdquo;, &ldquo;POST&rdquo;, &ldquo;PUT&rdquo;, or &ldquo;DELETE&rdquo;.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>URL</em></dt>
+			<dd><p>The URL of the API including the base URL, e.g. an NSURL with absoluteString
+&ldquo;<a href="https://api.thelevelup.com/v15/users/1">https://api.thelevelup.com/v15/users/1</a>&rdquo;.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p>A dictionary of <a href="#//api/name/parameters">parameters</a> to include with this request, or nil if the request
+has no <a href="#//api/name/parameters">parameters</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>modelFactory</em></dt>
+			<dd><p>An instance of <a href="../Classes/LUAbstractJSONModelFactory.html"><code>LUAbstractJSONModelFactory</code></a> which will parse the response.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>retryResponseCodes</em></dt>
+			<dd><p>An <code>NSArray</code> of response codes which, if received, will cause the request
+to be repeated by the <a href="../Classes/LUAPIClient.html"><code>LUAPIClient</code></a> every <a href="#//api/name/retryTimeInterval">retryTimeInterval</a>, until a successful response is received.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>retryTimeInterval</em></dt>
+			<dd><p>Duration in seconds until a request is repeated.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an <code>LUAPIRequest</code> with the specified <a href="#//api/name/method">method</a>, <a href="#//api/name/URL">URL</a> and response model factory. An authentication token
+will automatically be included in the request if one is set on the <a href="../Classes/LUAPIClient.html"><code>LUAPIClient</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUAPIRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/apiRequestWithMethod:path:apiVersion:parameters:modelFactory:" title="apiRequestWithMethod:path:apiVersion:parameters:modelFactory:"></a>
 	<h3 class="subsubtitle method-title">apiRequestWithMethod:path:apiVersion:parameters:modelFactory:</h3>
 	
@@ -605,7 +817,7 @@ has no <a href="#//api/name/parameters">parameters</a>.</p></dd>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>modelFactory</em></dt>
-			<dd><p>An instance of <code>LUAbstractJSONModelFactory</code> which will parse the response.</p></dd>
+			<dd><p>An instance of <a href="../Classes/LUAbstractJSONModelFactory.html"><code>LUAbstractJSONModelFactory</code></a> which will parse the response.</p></dd>
 		</dl>
 		
 	</div>
@@ -679,7 +891,7 @@ has no <a href="#//api/name/parameters">parameters</a>.</p></dd>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>modelFactory</em></dt>
-			<dd><p>An instance of <code>LUAbstractJSONModelFactory</code> which will parse the response.</p></dd>
+			<dd><p>An instance of <a href="../Classes/LUAbstractJSONModelFactory.html"><code>LUAbstractJSONModelFactory</code></a> which will parse the response.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -728,47 +940,6 @@ will automatically be included in the request if one is set on the <a href="../C
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/URL" title="URL"></a>
-	<h3 class="subsubtitle method-title">URL</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns an <code>NSURL</code> instance for this API request.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSURL *)URL</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns an <code>NSURL</code> instance for this API request.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUAPIRequest.h</code><br />
-	</div>				
-	
-	
-</div>
 						
 						<div class="section-method">
 	<a name="//api/name/URLRequest" title="URLRequest"></a>
@@ -826,7 +997,7 @@ will automatically be included in the request if one is set on the <a href="../C
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 LevelUp. All rights reserved. (Last updated: 2015-04-24)</span><br />
+						<p><span class="copyright">&copy; 2015 LevelUp. All rights reserved. (Last updated: 2015-12-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

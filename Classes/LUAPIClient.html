@@ -85,6 +85,10 @@
 	
 	<option value="//api/name/performRequest:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- performRequest:success:failure:</option>
 	
+	<option value="//api/name/requestWithMethod:URL:parameters:">&nbsp;&nbsp;&nbsp;&nbsp;- requestWithMethod:URL:parameters:</option>
+	
+	<option value="//api/name/requestWithMethod:path:parameters:">&nbsp;&nbsp;&nbsp;&nbsp;- requestWithMethod:path:parameters:</option>
+	
 	<option value="//api/name/userAgent">&nbsp;&nbsp;&nbsp;&nbsp;- userAgent</option>
 	
 	
@@ -166,6 +170,10 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isNetworkUnreachable">isNetworkUnreachable</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performRequest:success:failure:">performRequest:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestWithMethod:URL:parameters:">requestWithMethod:URL:parameters:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestWithMethod:path:parameters:">requestWithMethod:path:parameters:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userAgent">userAgent</a></span></li>
 	
@@ -426,6 +434,18 @@ under this key.</li>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/performRequest:success:failure:">&ndash;&nbsp;performRequest:success:failure:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestWithMethod:path:parameters:">&ndash;&nbsp;requestWithMethod:path:parameters:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestWithMethod:URL:parameters:">&ndash;&nbsp;requestWithMethod:URL:parameters:</a></code>
 	</span>
 	
 	
@@ -1310,6 +1330,130 @@ which is an <code>NSError</code> containing additional information about the err
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/requestWithMethod:URL:parameters:" title="requestWithMethod:URL:parameters:"></a>
+	<h3 class="subsubtitle method-title">requestWithMethod:URL:parameters:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an <code>NSMutableURLRequest</code> with the given parameters</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSMutableURLRequest *)requestWithMethod:(NSString *)<em>method</em> URL:(NSURL *)<em>URL</em> parameters:(NSDictionary *)<em>parameters</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p>An HTTP method: &ldquo;GET&rdquo;, &ldquo;POST&rdquo;, &ldquo;PUT&rdquo;, or &ldquo;DELETE&rdquo;.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>URL</em></dt>
+			<dd><p>The full URL of the API request, e.g. &ldquo;<a href="https://api.thelevelup.com/users/1">https://api.thelevelup.com/users/1</a>&rdquo;.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p>A dictionary of parameters to include with this request, or nil if the request
+has no parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an <code>NSMutableURLRequest</code> with the given parameters</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUAPIClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestWithMethod:path:parameters:" title="requestWithMethod:path:parameters:"></a>
+	<h3 class="subsubtitle method-title">requestWithMethod:path:parameters:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an <code>NSMutableURLRequest</code> with the given parameters</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSMutableURLRequest *)requestWithMethod:(NSString *)<em>method</em> path:(NSString *)<em>path</em> parameters:(NSDictionary *)<em>parameters</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p>An HTTP method: &ldquo;GET&rdquo;, &ldquo;POST&rdquo;, &ldquo;PUT&rdquo;, or &ldquo;DELETE&rdquo;.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>The path of the API request, e.g. &ldquo;/users&rdquo;.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p>A dictionary of parameters to include with this request, or nil if the request
+has no parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an <code>NSMutableURLRequest</code> with the given parameters</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUAPIClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/userAgent" title="userAgent"></a>
 	<h3 class="subsubtitle method-title">userAgent</h3>
 	
@@ -1372,7 +1516,7 @@ LevelUpSDK version.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 LevelUp. All rights reserved. (Last updated: 2015-04-24)</span><br />
+						<p><span class="copyright">&copy; 2015 LevelUp. All rights reserved. (Last updated: 2015-12-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

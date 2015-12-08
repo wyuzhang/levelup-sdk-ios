@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LULoyalty Class Reference</title>
+		<title>LUBaseLocation Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LULoyalty Class Reference</h1>
+				<h1 class="hideInXcode">LUBaseLocation Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,29 +39,35 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/merchantID">&nbsp;&nbsp;&nbsp;&nbsp;merchantID</option>
+	<option value="//api/name/extendedAddress">&nbsp;&nbsp;&nbsp;&nbsp;extendedAddress</option>
 	
-	<option value="//api/name/merchantLoyaltyEnabled">&nbsp;&nbsp;&nbsp;&nbsp;merchantLoyaltyEnabled</option>
+	<option value="//api/name/latitude">&nbsp;&nbsp;&nbsp;&nbsp;latitude</option>
 	
-	<option value="//api/name/ordersCount">&nbsp;&nbsp;&nbsp;&nbsp;ordersCount</option>
+	<option value="//api/name/locality">&nbsp;&nbsp;&nbsp;&nbsp;locality</option>
 	
-	<option value="//api/name/potentialCredit">&nbsp;&nbsp;&nbsp;&nbsp;potentialCredit</option>
+	<option value="//api/name/longitude">&nbsp;&nbsp;&nbsp;&nbsp;longitude</option>
 	
-	<option value="//api/name/progressPercent">&nbsp;&nbsp;&nbsp;&nbsp;progressPercent</option>
+	<option value="//api/name/postalCode">&nbsp;&nbsp;&nbsp;&nbsp;postalCode</option>
 	
-	<option value="//api/name/savings">&nbsp;&nbsp;&nbsp;&nbsp;savings</option>
+	<option value="//api/name/region">&nbsp;&nbsp;&nbsp;&nbsp;region</option>
 	
-	<option value="//api/name/shouldSpend">&nbsp;&nbsp;&nbsp;&nbsp;shouldSpend</option>
-	
-	<option value="//api/name/spendRemaining">&nbsp;&nbsp;&nbsp;&nbsp;spendRemaining</option>
-	
-	<option value="//api/name/totalVolume">&nbsp;&nbsp;&nbsp;&nbsp;totalVolume</option>
-	
-	<option value="//api/name/willEarn">&nbsp;&nbsp;&nbsp;&nbsp;willEarn</option>
+	<option value="//api/name/streetAddress">&nbsp;&nbsp;&nbsp;&nbsp;streetAddress</option>
 	
 	
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/baseLocations:sortedByDistanceFromLocation:">&nbsp;&nbsp;&nbsp;&nbsp;+ baseLocations:sortedByDistanceFromLocation:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/coordinate">&nbsp;&nbsp;&nbsp;&nbsp;- coordinate</option>
+	
+	<option value="//api/name/location">&nbsp;&nbsp;&nbsp;&nbsp;- location</option>
 	
 	
 	
@@ -87,38 +93,46 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/merchantID">merchantID</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/extendedAddress">extendedAddress</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/merchantLoyaltyEnabled">merchantLoyaltyEnabled</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/latitude">latitude</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ordersCount">ordersCount</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locality">locality</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/potentialCredit">potentialCredit</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/longitude">longitude</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/progressPercent">progressPercent</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/postalCode">postalCode</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/savings">savings</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/region">region</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldSpend">shouldSpend</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/spendRemaining">spendRemaining</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/totalVolume">totalVolume</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/willEarn">willEarn</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/streetAddress">streetAddress</a></span></li>
 	
 </ul></li>
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/baseLocations:sortedByDistanceFromLocation:">baseLocations:sortedByDistanceFromLocation:</a></span></li>
+	
+</ul></li>
 
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/coordinate">coordinate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/location">location</a></span></li>
+	
+</ul></li>
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LULoyalty Class Reference" name="top"></a>
+				<a title="LUBaseLocation Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -127,7 +141,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LULoyalty Class Reference</h1>
+						<h1 class="title title-header">LUBaseLocation Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -138,7 +152,7 @@
 	<td class="specification-value">LUAPIModel : NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LULoyalty.h<br />LULoyalty.m</td>
+	<td class="specification-value">LUBaseLocation.h<br />LUBaseLocation.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -148,15 +162,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LULoyalty</code> represents a user&rsquo;s loyalty information at a specific merchant. At most merchants,
-users will build loyalty as they make purchases at that merchant. Periodically, they will be
-rewarded with credit after spending a merchant-defined amount of money. For example, a merchant may
-choose to provide the user with $10 in credit for every $100 they spend. This is ongoing, so after
-spending $100 and receiving $10 in credit, the user must spend another $100 before they receive
-another $10 in credit.</p>
-
-<p>In addition, users may receive credit at a merchant through other means, such as campaigns or
-global credit. <code>LULoyalty</code> includes this information as well.</p>
+						<p><code>LUBaseLocation</code> is a representation of an address in the LevelUp system.</p>
 					</div>
 					
 					
@@ -174,63 +180,63 @@ global credit. <code>LULoyalty</code> includes this information as well.</p>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/merchantID">&nbsp;&nbsp;merchantID</a></code>
+		<code><a href="#//api/name/extendedAddress">&nbsp;&nbsp;extendedAddress</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/merchantLoyaltyEnabled">&nbsp;&nbsp;merchantLoyaltyEnabled</a></code>
+		<code><a href="#//api/name/latitude">&nbsp;&nbsp;latitude</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/ordersCount">&nbsp;&nbsp;ordersCount</a></code>
+		<code><a href="#//api/name/locality">&nbsp;&nbsp;locality</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/potentialCredit">&nbsp;&nbsp;potentialCredit</a></code>
+		<code><a href="#//api/name/longitude">&nbsp;&nbsp;longitude</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/progressPercent">&nbsp;&nbsp;progressPercent</a></code>
+		<code><a href="#//api/name/postalCode">&nbsp;&nbsp;postalCode</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/savings">&nbsp;&nbsp;savings</a></code>
+		<code><a href="#//api/name/region">&nbsp;&nbsp;region</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/shouldSpend">&nbsp;&nbsp;shouldSpend</a></code>
+		<code><a href="#//api/name/streetAddress">&nbsp;&nbsp;streetAddress</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/spendRemaining">&nbsp;&nbsp;spendRemaining</a></code>
+		<code><a href="#//api/name/baseLocations:sortedByDistanceFromLocation:">+&nbsp;baseLocations:sortedByDistanceFromLocation:</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/totalVolume">&nbsp;&nbsp;totalVolume</a></code>
+		<code><a href="#//api/name/coordinate">&ndash;&nbsp;coordinate</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/willEarn">&nbsp;&nbsp;willEarn</a></code>
+		<code><a href="#//api/name/location">&ndash;&nbsp;location</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	
 </li>
 						</ul>
@@ -246,18 +252,18 @@ global credit. <code>LULoyalty</code> includes this information as well.</p>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/merchantID" title="merchantID"></a>
-	<h3 class="subsubtitle method-title">merchantID</h3>
+	<a name="//api/name/extendedAddress" title="extendedAddress"></a>
+	<h3 class="subsubtitle method-title">extendedAddress</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The ID of the merchant this <code>LULoyalty</code> is for.</p>
+		<p>An optional &ldquo;extended&rdquo; address for the <a href="#//api/name/location">location</a>. An example would be an apartment number.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *merchantID</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *extendedAddress</code></div>
 
     
 	
@@ -269,7 +275,7 @@ global credit. <code>LULoyalty</code> includes this information as well.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The ID of the merchant this <code>LULoyalty</code> is for.</p>
+		<p>An optional &ldquo;extended&rdquo; address for the <a href="#//api/name/location">location</a>. An example would be an apartment number.</p>
 	</div>
 	
 	
@@ -280,26 +286,25 @@ global credit. <code>LULoyalty</code> includes this information as well.</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LULoyalty.h</code><br />
+		<code class="declared-in-ref">LUBaseLocation.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/merchantLoyaltyEnabled" title="merchantLoyaltyEnabled"></a>
-	<h3 class="subsubtitle method-title">merchantLoyaltyEnabled</h3>
+	<a name="//api/name/latitude" title="latitude"></a>
+	<h3 class="subsubtitle method-title">latitude</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A small percent of LevelUp merchants do not provide loyalty rewards. This property specifies if the
-merchant has loyalty enabled.</p>
+		<p>The latitude of the <a href="#//api/name/location">location</a>.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) BOOL merchantLoyaltyEnabled</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *latitude</code></div>
 
     
 	
@@ -311,8 +316,7 @@ merchant has loyalty enabled.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>A small percent of LevelUp merchants do not provide loyalty rewards. This property specifies if the
-merchant has loyalty enabled.</p>
+		<p>The latitude of the <a href="#//api/name/location">location</a>.</p>
 	</div>
 	
 	
@@ -323,25 +327,25 @@ merchant has loyalty enabled.</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LULoyalty.h</code><br />
+		<code class="declared-in-ref">LUBaseLocation.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/ordersCount" title="ordersCount"></a>
-	<h3 class="subsubtitle method-title">ordersCount</h3>
+	<a name="//api/name/locality" title="locality"></a>
+	<h3 class="subsubtitle method-title">locality</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The number of orders the user has made at this merchant.</p>
+		<p>The location&rsquo;s town or city.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *ordersCount</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *locality</code></div>
 
     
 	
@@ -353,7 +357,7 @@ merchant has loyalty enabled.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The number of orders the user has made at this merchant.</p>
+		<p>The location&rsquo;s town or city.</p>
 	</div>
 	
 	
@@ -364,26 +368,25 @@ merchant has loyalty enabled.</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LULoyalty.h</code><br />
+		<code class="declared-in-ref">LUBaseLocation.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/potentialCredit" title="potentialCredit"></a>
-	<h3 class="subsubtitle method-title">potentialCredit</h3>
+	<a name="//api/name/longitude" title="longitude"></a>
+	<h3 class="subsubtitle method-title">longitude</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The total amount of credit available to the user at this merchant. This includes merchant-specific
-credit, global credit and campaign credit.</p>
+		<p>The longitude of the <a href="#//api/name/location">location</a>.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *potentialCredit</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *longitude</code></div>
 
     
 	
@@ -395,8 +398,7 @@ credit, global credit and campaign credit.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The total amount of credit available to the user at this merchant. This includes merchant-specific
-credit, global credit and campaign credit.</p>
+		<p>The longitude of the <a href="#//api/name/location">location</a>.</p>
 	</div>
 	
 	
@@ -407,27 +409,25 @@ credit, global credit and campaign credit.</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LULoyalty.h</code><br />
+		<code class="declared-in-ref">LUBaseLocation.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/progressPercent" title="progressPercent"></a>
-	<h3 class="subsubtitle method-title">progressPercent</h3>
+	<a name="//api/name/postalCode" title="postalCode"></a>
+	<h3 class="subsubtitle method-title">postalCode</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The user&rsquo;s progress towards receiving more loyalty credit, as a number between 0.0 and 1.0. For
-example, if a merchant provides credit for every $50 spent, and the user has spent $10, this number
-would be 0.2.</p>
+		<p>The location&rsquo;s postal code.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) float progressPercent</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *postalCode</code></div>
 
     
 	
@@ -439,9 +439,7 @@ would be 0.2.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The user&rsquo;s progress towards receiving more loyalty credit, as a number between 0.0 and 1.0. For
-example, if a merchant provides credit for every $50 spent, and the user has spent $10, this number
-would be 0.2.</p>
+		<p>The location&rsquo;s postal code.</p>
 	</div>
 	
 	
@@ -452,26 +450,25 @@ would be 0.2.</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LULoyalty.h</code><br />
+		<code class="declared-in-ref">LUBaseLocation.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/savings" title="savings"></a>
-	<h3 class="subsubtitle method-title">savings</h3>
+	<a name="//api/name/region" title="region"></a>
+	<h3 class="subsubtitle method-title">region</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The total amount of money that this user has saved at this merchant; that is, the total amount of
-credit that has been applied to orders at this merchant over all time.</p>
+		<p>The location&rsquo;s region, such as a state or province.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *savings</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *region</code></div>
 
     
 	
@@ -483,8 +480,7 @@ credit that has been applied to orders at this merchant over all time.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The total amount of money that this user has saved at this merchant; that is, the total amount of
-credit that has been applied to orders at this merchant over all time.</p>
+		<p>The location&rsquo;s region, such as a state or province.</p>
 	</div>
 	
 	
@@ -495,26 +491,26 @@ credit that has been applied to orders at this merchant over all time.</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LULoyalty.h</code><br />
+		<code class="declared-in-ref">LUBaseLocation.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/shouldSpend" title="shouldSpend"></a>
-	<h3 class="subsubtitle method-title">shouldSpend</h3>
+	<a name="//api/name/streetAddress" title="streetAddress"></a>
+	<h3 class="subsubtitle method-title">streetAddress</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The amount of money a user spends at this merchant before receiving loyalty credit. For example if
-a merchant provides $10 of credit for every $100 spent, this will return $100.</p>
+		<p>The location&rsquo;s street address. If the address has a second line (such as an apartment number),
+this will be stored separately in the <a href="#//api/name/extendedAddress"><code>extendedAddress</code></a> field.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *shouldSpend</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *streetAddress</code></div>
 
     
 	
@@ -526,8 +522,8 @@ a merchant provides $10 of credit for every $100 spent, this will return $100.</
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The amount of money a user spends at this merchant before receiving loyalty credit. For example if
-a merchant provides $10 of credit for every $100 spent, this will return $100.</p>
+		<p>The location&rsquo;s street address. If the address has a second line (such as an apartment number),
+this will be stored separately in the <a href="#//api/name/extendedAddress"><code>extendedAddress</code></a> field.</p>
 	</div>
 	
 	
@@ -538,136 +534,7 @@ a merchant provides $10 of credit for every $100 spent, this will return $100.</
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LULoyalty.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/spendRemaining" title="spendRemaining"></a>
-	<h3 class="subsubtitle method-title">spendRemaining</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The amount of money remaining for the user before they will receive loyalty credit. For example if
-a merchant provides $10 of credit for every $100 spent, and the user has spent $25 since the last
-time they received loyalty, this would return $75.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *spendRemaining</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The amount of money remaining for the user before they will receive loyalty credit. For example if
-a merchant provides $10 of credit for every $100 spent, and the user has spent $25 since the last
-time they received loyalty, this would return $75.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LULoyalty.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/totalVolume" title="totalVolume"></a>
-	<h3 class="subsubtitle method-title">totalVolume</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The total amount money the user has spent at this merchant over all time.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *totalVolume</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The total amount money the user has spent at this merchant over all time.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LULoyalty.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/willEarn" title="willEarn"></a>
-	<h3 class="subsubtitle method-title">willEarn</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The amount of loyalty credit a user receives at this merchant. For example if a merchant provides
-$10 of credit for every $100 spent, this will return $10.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *willEarn</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The amount of loyalty credit a user receives at this merchant. For example if a merchant provides
-$10 of credit for every $100 spent, this will return $10.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LULoyalty.h</code><br />
+		<code class="declared-in-ref">LUBaseLocation.h</code><br />
 	</div>				
 	
 	
@@ -677,7 +544,164 @@ $10 of credit for every $100 spent, this will return $10.</p>
 					
 					
 					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/baseLocations:sortedByDistanceFromLocation:" title="baseLocations:sortedByDistanceFromLocation:"></a>
+	<h3 class="subsubtitle method-title">baseLocations:sortedByDistanceFromLocation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sorts an <code>NSArray</code> of <code>LUBaseLocation</code>s in ascending order of distance from a given <code>CLLocation</code>.
+If no input <code>CLLocation</code> is given, this will sort the <code>LUBaseLocation</code>s alphabetically based on their street addresses.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)baseLocations:(NSArray *)<em>baseLocations</em> sortedByDistanceFromLocation:(CLLocation *)<em>startLocation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>baseLocations</em></dt>
+			<dd><p>The <code>NSArray</code> of <code>LUBaseLocation</code>s to be sorted.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>startLocation</em></dt>
+			<dd><p>The <code>CLLocation</code> for which distance from will be measured.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The sorted <code>NSArray</code> of <code>LUBaseLocation</code>s.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sorts an <code>NSArray</code> of <code>LUBaseLocation</code>s in ascending order of distance from a given <code>CLLocation</code>.
+If no input <code>CLLocation</code> is given, this will sort the <code>LUBaseLocation</code>s alphabetically based on their street addresses.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUBaseLocation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/coordinate" title="coordinate"></a>
+	<h3 class="subsubtitle method-title">coordinate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A <code>CLLocationCoordinate2D</code> instance generated from this location&rsquo;s <a href="#//api/name/latitude">latitude</a> and <a href="#//api/name/longitude">longitude</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (CLLocationCoordinate2D)coordinate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A <code>CLLocationCoordinate2D</code> instance generated from this location&rsquo;s <a href="#//api/name/latitude">latitude</a> and <a href="#//api/name/longitude">longitude</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUBaseLocation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/location" title="location"></a>
+	<h3 class="subsubtitle method-title">location</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A <code>CLLocation</code> instance generated from this location&rsquo;s <a href="#//api/name/latitude">latitude</a> and <a href="#//api/name/longitude">longitude</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (CLLocation *)location</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A <code>CLLocation</code> instance generated from this location&rsquo;s <a href="#//api/name/latitude">latitude</a> and <a href="#//api/name/longitude">longitude</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUBaseLocation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
                     

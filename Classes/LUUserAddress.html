@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUCampaignRepresentationVisitBasedLoyaltyV1 Class Reference</title>
+		<title>LUUserAddress Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUCampaignRepresentationVisitBasedLoyaltyV1 Class Reference</h1>
+				<h1 class="hideInXcode">LUUserAddress Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,17 +39,18 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/campaignID">&nbsp;&nbsp;&nbsp;&nbsp;campaignID</option>
+	<option value="//api/name/addressID">&nbsp;&nbsp;&nbsp;&nbsp;addressID</option>
 	
-	<option value="//api/name/earn">&nbsp;&nbsp;&nbsp;&nbsp;earn</option>
-	
-	<option value="//api/name/progressVisitCount">&nbsp;&nbsp;&nbsp;&nbsp;progressVisitCount</option>
-	
-	<option value="//api/name/qualifyingOrderSpend">&nbsp;&nbsp;&nbsp;&nbsp;qualifyingOrderSpend</option>
-	
-	<option value="//api/name/requiredVisitCount">&nbsp;&nbsp;&nbsp;&nbsp;requiredVisitCount</option>
+	<option value="//api/name/addressType">&nbsp;&nbsp;&nbsp;&nbsp;addressType</option>
 	
 	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/addressTypeForString:">&nbsp;&nbsp;&nbsp;&nbsp;+ addressTypeForString:</option>
+	
+	<option value="//api/name/addressTypeStringForAddressType:">&nbsp;&nbsp;&nbsp;&nbsp;+ addressTypeStringForAddressType:</option>
 	
 	
 	
@@ -77,19 +78,21 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/campaignID">campaignID</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addressID">addressID</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/earn">earn</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/progressVisitCount">progressVisitCount</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/qualifyingOrderSpend">qualifyingOrderSpend</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requiredVisitCount">requiredVisitCount</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addressType">addressType</a></span></li>
 	
 </ul></li>
 
 
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addressTypeForString:">addressTypeForString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addressTypeStringForAddressType:">addressTypeStringForAddressType:</a></span></li>
+	
+</ul></li>
 
 
 
@@ -98,7 +101,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUCampaignRepresentationVisitBasedLoyaltyV1 Class Reference" name="top"></a>
+				<a title="LUUserAddress Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -107,7 +110,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUCampaignRepresentationVisitBasedLoyaltyV1 Class Reference</h1>
+						<h1 class="title title-header">LUUserAddress Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -115,10 +118,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">LUAPIModel : NSObject</td>
+	<td class="specification-value"><a href="../Classes/LUBaseLocation.html">LUBaseLocation</a> : LUAPIModel : NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUCampaignRepresentationVisitBasedLoyaltyV1.h<br />LUCampaignRepresentationVisitBasedLoyaltyV1.m</td>
+	<td class="specification-value">LUUserAddress.h<br />LUUserAddress.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -128,9 +131,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A representation of a visit based loyalty campaign, which means that credit is unlocked every time
-the user visits the merchant a certain number of times. &ldquo;Visiting&rdquo; means placing an order greater
-than or equal to the qualifying spend amount at the merchant.</p>
+						<p><code>LUUserAddress</code> is a representation of a user&rsquo;s address in the LevelUp system.</p>
 					</div>
 					
 					
@@ -148,33 +149,27 @@ than or equal to the qualifying spend amount at the merchant.</p>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/campaignID">&nbsp;&nbsp;campaignID</a></code>
+		<code><a href="#//api/name/addressID">&nbsp;&nbsp;addressID</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/earn">&nbsp;&nbsp;earn</a></code>
+		<code><a href="#//api/name/addressType">&nbsp;&nbsp;addressType</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/progressVisitCount">&nbsp;&nbsp;progressVisitCount</a></code>
+		<code><a href="#//api/name/addressTypeForString:">+&nbsp;addressTypeForString:</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/qualifyingOrderSpend">&nbsp;&nbsp;qualifyingOrderSpend</a></code>
+		<code><a href="#//api/name/addressTypeStringForAddressType:">+&nbsp;addressTypeStringForAddressType:</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
 	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requiredVisitCount">&nbsp;&nbsp;requiredVisitCount</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -190,18 +185,18 @@ than or equal to the qualifying spend amount at the merchant.</p>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/campaignID" title="campaignID"></a>
-	<h3 class="subsubtitle method-title">campaignID</h3>
+	<a name="//api/name/addressID" title="addressID"></a>
+	<h3 class="subsubtitle method-title">addressID</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The campaign&rsquo;s ID.</p>
+		<p>The unique identifier for the address.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSNumber *campaignID</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *addressID</code></div>
 
     
 	
@@ -213,7 +208,7 @@ than or equal to the qualifying spend amount at the merchant.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The campaign&rsquo;s ID.</p>
+		<p>The unique identifier for the address.</p>
 	</div>
 	
 	
@@ -224,25 +219,25 @@ than or equal to the qualifying spend amount at the merchant.</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCampaignRepresentationVisitBasedLoyaltyV1.h</code><br />
+		<code class="declared-in-ref">LUUserAddress.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/earn" title="earn"></a>
-	<h3 class="subsubtitle method-title">earn</h3>
+	<a name="//api/name/addressType" title="addressType"></a>
+	<h3 class="subsubtitle method-title">addressType</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The amount of money earned after visiting enough times to unlock credit.</p>
+		<p>The address&rsquo;s type. Valid values are <code>billing</code>, <code>delivery</code>, <code>home</code>, <code>other</code>, <code>payment</code>, <code>shipping</code>, and <code>work</code>.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *earn</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) LUUserAddressType addressType</code></div>
 
     
 	
@@ -254,7 +249,7 @@ than or equal to the qualifying spend amount at the merchant.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The amount of money earned after visiting enough times to unlock credit.</p>
+		<p>The address&rsquo;s type. Valid values are <code>billing</code>, <code>delivery</code>, <code>home</code>, <code>other</code>, <code>payment</code>, <code>shipping</code>, and <code>work</code>.</p>
 	</div>
 	
 	
@@ -265,140 +260,7 @@ than or equal to the qualifying spend amount at the merchant.</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCampaignRepresentationVisitBasedLoyaltyV1.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/progressVisitCount" title="progressVisitCount"></a>
-	<h3 class="subsubtitle method-title">progressVisitCount</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The user&rsquo;s progress towards unlocking credit.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) NSUInteger progressVisitCount</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The user&rsquo;s progress towards unlocking credit.</p>
-
-<p>After unlocking credit, this number will cycle back to zero. For example, say <a href="#//api/name/requiredVisitCount"><code>requiredVisitCount</code></a>
-is 10. As the user visits the merchant, <code>progressVisitCount</code> moves 10. Once they have visited 10
-times, they unlock credit, and then <code>progressVisitCount</code> cycles back to 0 and continues to move
-towards 10 as more visits occur.</p>
-
-<p>If this campaign representation is requested without an authenticated user, <code>progressVisitCount</code>
-will always be 0.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCampaignRepresentationVisitBasedLoyaltyV1.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/qualifyingOrderSpend" title="qualifyingOrderSpend"></a>
-	<h3 class="subsubtitle method-title">qualifyingOrderSpend</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The minimum amount of money that must be spent for an order to qualify as a &ldquo;visit&rdquo;.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) LUMonetaryValue *qualifyingOrderSpend</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The minimum amount of money that must be spent for an order to qualify as a &ldquo;visit&rdquo;.</p>
-
-<p>If there is no minimum amount, this will be $0.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCampaignRepresentationVisitBasedLoyaltyV1.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/requiredVisitCount" title="requiredVisitCount"></a>
-	<h3 class="subsubtitle method-title">requiredVisitCount</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The number of visits a user must make at the merchant in order to unlock credit.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) NSUInteger requiredVisitCount</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The number of visits a user must make at the merchant in order to unlock credit.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUCampaignRepresentationVisitBasedLoyaltyV1.h</code><br />
+		<code class="declared-in-ref">LUUserAddress.h</code><br />
 	</div>				
 	
 	
@@ -407,6 +269,116 @@ will always be 0.</p>
 					</div>
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addressTypeForString:" title="addressTypeForString:"></a>
+	<h3 class="subsubtitle method-title">addressTypeForString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an enumerated value representing a user address&rsquo;s type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUUserAddressType)addressTypeForString:(NSString *)<em>addressTypeString</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>addressTypeString</em></dt>
+			<dd><p>The string representation of the type. This string is case insensitive.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an enumerated value representing a user address&rsquo;s type.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUUserAddress.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addressTypeStringForAddressType:" title="addressTypeStringForAddressType:"></a>
+	<h3 class="subsubtitle method-title">addressTypeStringForAddressType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string representation of the user address&rsquo;s type for display.
+The returned string will be downcased.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)addressTypeStringForAddressType:(LUUserAddressType)<em>addressType</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>addressType</em></dt>
+			<dd><p>The enumerated value for the address&rsquo;s type.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a string representation of the user address&rsquo;s type for display.
+The returned string will be downcased.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUUserAddress.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 					

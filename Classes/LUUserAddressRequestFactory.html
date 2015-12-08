@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>LUOAuth2ViewController Class Reference</title>
+		<title>LUUserAddressRequestFactory Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">LUOAuth2ViewController Class Reference</h1>
+				<h1 class="hideInXcode">LUUserAddressRequestFactory Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,13 +39,13 @@
 	
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/requestForUserAddresses">&nbsp;&nbsp;&nbsp;&nbsp;+ requestForUserAddresses</option>
+	
+	<option value="//api/name/requestToCreateUserAddress:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestToCreateUserAddress:</option>
 	
 	
-	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/initWithDelegate:email:permissions:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithDelegate:email:permissions:</option>
-	
-	<option value="//api/name/navigationDialog">&nbsp;&nbsp;&nbsp;&nbsp;- navigationDialog</option>
 	
 	
 	
@@ -71,22 +71,22 @@
 
 
 
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithDelegate:email:permissions:">initWithDelegate:email:permissions:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestForUserAddresses">requestForUserAddresses</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/navigationDialog">navigationDialog</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestToCreateUserAddress:">requestToCreateUserAddress:</a></span></li>
 	
 </ul></li>
+
+
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="LUOAuth2ViewController Class Reference" name="top"></a>
+				<a title="LUUserAddressRequestFactory Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -95,7 +95,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">LUOAuth2ViewController Class Reference</h1>
+						<h1 class="title title-header">LUUserAddressRequestFactory Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -103,13 +103,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">UIViewController</td>
-</tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">UIWebViewDelegate</td>
+	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">LUOAuth2ViewController.h<br />LUOAuth2ViewController.m</td>
+	<td class="specification-value">LUUserAddressRequestFactory.h<br />LUUserAddressRequestFactory.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -119,10 +116,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>LUOAuth2ViewController</code> allows you to request authorization from LevelUp users using the <a href="http://developer.thelevelup.com/resources-and-guides/mobile-authorization-flow/">OAuth2 protocol</a>.</p>
-
-<p><code>LUOAuth2ViewController</code> just contains a <code>UIWebView</code>. If you would like to display the view inside
-a dialog with a navigation bar and Cancel button, use <a href="#//api/name/navigationDialog"><code>navigationDialog</code></a>.</p>
+						<p><code>LUUserAddressRequestFactory</code> is used to build requests related to users' addresses.</p>
 					</div>
 					
 					
@@ -140,13 +134,13 @@ a dialog with a navigation bar and Cancel button, use <a href="#//api/name/navig
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithDelegate:email:permissions:">&ndash;&nbsp;initWithDelegate:email:permissions:</a></code>
+		<code><a href="#//api/name/requestForUserAddresses">+&nbsp;requestForUserAddresses</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/navigationDialog">&ndash;&nbsp;navigationDialog</a></code>
+		<code><a href="#//api/name/requestToCreateUserAddress:">+&nbsp;requestToCreateUserAddress:</a></code>
 	</span>
 	
 	
@@ -161,25 +155,67 @@ a dialog with a navigation bar and Cancel button, use <a href="#//api/name/navig
 					
 					
 					
-					
-					
 					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithDelegate:email:permissions:" title="initWithDelegate:email:permissions:"></a>
-	<h3 class="subsubtitle method-title">initWithDelegate:email:permissions:</h3>
+	<a name="//api/name/requestForUserAddresses" title="requestForUserAddresses"></a>
+	<h3 class="subsubtitle method-title">requestForUserAddresses</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Initializes a <code>LUOAuth2ViewController</code>.</p>
+		<p>Builds a request to return all user addresses added by the current user.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (instancetype)initWithDelegate:(id&lt;LUOAuth2ViewControllerDelegate&gt;)<em>delegate</em> email:(NSString *)<em>email</em> permissions:(NSArray *)<em>permissions</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestForUserAddresses</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Builds a request to return all user addresses added by the current user.</p>
+
+<p>On success, this request will return an array of <a href="../Classes/LUUserAddress.html"><code>LUUserAddress</code></a> instances.</p><div class="warning"><p><strong>Warning:</strong> This request requires an access token with the <code>LUPermissionManageUserAddresses</code>
+permission.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">LUUserAddressRequestFactory.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestToCreateUserAddress:" title="requestToCreateUserAddress:"></a>
+	<h3 class="subsubtitle method-title">requestToCreateUserAddress:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Builds a request to create a user address.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (LUAPIRequest *)requestToCreateUserAddress:(LUUserAddress *)<em>userAddress</em></code></div>
 
     
 	
@@ -187,19 +223,8 @@ a dialog with a navigation bar and Cancel button, use <a href="#//api/name/navig
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>delegate</em></dt>
-			<dd><p>A <a href="../Protocols/LUOAuth2ViewControllerDelegate.html"><code>LUOAuth2ViewControllerDelegate</code></a> which will be notified of changes of state.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>email</em></dt>
-			<dd><p>The email address of the authorizing user (required).</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>permission</em></dt>
-			<dd><p>An array of permissions to authorize. See LUConstants.h for a list of possible
-permissions (required).</p></dd>
+			<dt><em>userAddress</em></dt>
+			<dd><p>The <a href="../Classes/LUUserAddress.html"><code>LUUserAddress</code></a> to create.</p></dd>
 		</dl>
 		
 	</div>
@@ -212,7 +237,10 @@ permissions (required).</p></dd>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Initializes a <code>LUOAuth2ViewController</code>.</p>
+		<p>Builds a request to create a user address.</p>
+
+<p>On success, this request will return the newly created <a href="../Classes/LUUserAddress.html"><code>LUUserAddress</code></a>.</p><div class="warning"><p><strong>Warning:</strong> This request requires an access token with the <code>LUPermissionManageUserAddresses</code>
+permission.</p></div>
 	</div>
 	
 	
@@ -223,59 +251,15 @@ permissions (required).</p></dd>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOAuth2ViewController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/navigationDialog" title="navigationDialog"></a>
-	<h3 class="subsubtitle method-title">navigationDialog</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns a UINavigationController containing this view controller. The navigation controller has
-a title and a Cancel button.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (UINavigationController *)navigationDialog</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns a UINavigationController containing this view controller. The navigation controller has
-a title and a Cancel button.</p>
-
-<p>When the Cancel button is selected, the delegate&rsquo;s <code>OAuth2ViewControllerWasCancelled:</code> method will
-be called (if defined).</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">LUOAuth2ViewController.h</code><br />
+		<code class="declared-in-ref">LUUserAddressRequestFactory.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 					</div>
+					
+					
 					
 					
                     
