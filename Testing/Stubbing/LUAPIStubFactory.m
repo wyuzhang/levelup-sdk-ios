@@ -626,6 +626,14 @@
   return stub;
 }
 
++ (LUAPIStub *)stubToGetNoUserAddresses {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:@"user_addresses"
+                           HTTPMethod:@"GET"
+                        authenticated:YES
+                         responseData:nil];
+}
+
 + (LUAPIStub *)stubToGetOrderWithUUID:(NSString *)UUID {
   return [LUAPIStub apiStubForVersion:LUAPIVersion15
                                  path:[@"orders/" stringByAppendingString:UUID]

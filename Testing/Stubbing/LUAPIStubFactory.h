@@ -96,6 +96,7 @@
 + (LUAPIStub *)stubToGetMerchantIDs:(NSArray *)merchantIDs forCampaignWithID:(NSNumber *)campaignID;
 + (LUAPIStub *)stubToGetNewUser;
 + (LUAPIStub *)stubToGetNonePaymentMethod;
++ (LUAPIStub *)stubToGetNoUserAddresses;
 + (LUAPIStub *)stubToGetOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToGetOrdersEmpty;
 + (LUAPIStub *)stubToGetOrdersFirstPage;
