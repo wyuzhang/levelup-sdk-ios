@@ -53,7 +53,7 @@
 - (NSArray *)apiErrors {
   id errors = [[LUAPIErrorJSONFactory factory] fromJSONObject:self.JSON];
 
-  if (![errors isKindOfClass:[NSArray class]]) return nil;
+  if (![errors isKindOfClass:[NSArray class]] || [errors count] == 0) return nil;
 
   return errors;
 }
@@ -101,7 +101,7 @@
 
 - (NSString *)errorMessage {
   if ([self apiErrors]) {
-    return [[self apiErrors][0] message];
+    return [[self apiErrors].firstObject message];
   }
 
   if (!self.JSON || ![self.JSON isKindOfClass:[NSDictionary class]]) return nil;

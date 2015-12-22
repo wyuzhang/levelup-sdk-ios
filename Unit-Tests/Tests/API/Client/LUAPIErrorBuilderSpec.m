@@ -205,6 +205,16 @@ describe(@"LUAPIErrorBuilder", ^{
         });
       });
 
+      context(@"when the JSON is an empty array", ^{
+        NSError *error = errorWithHTTPStatusCode(500, YES);
+
+        it(@"doesn't add any API errors", ^{
+          NSError *result = [LUAPIErrorBuilder error:error withMessagesFromJSON:@[]];
+
+          [[result.userInfo[LUAPIErrorKeyAPIErrors] should] beNil];
+        });
+      });
+
       context(@"when the JSON contains an array of v14 errors", ^{
         NSError *error = errorWithHTTPStatusCode(500, YES);
 
