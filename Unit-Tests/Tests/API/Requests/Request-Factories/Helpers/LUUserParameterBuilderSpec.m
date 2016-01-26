@@ -35,6 +35,7 @@ describe(@"LUUserParameterBuilder", ^{
       user.gender = LUGenderMale;
       user.lastName = @"Smith";
       user.password = @"test123";
+      user.phone = @"1234567890";
       user.termsAccepted = YES;
     });
 
@@ -50,6 +51,7 @@ describe(@"LUUserParameterBuilder", ^{
         @"gender" : @"male",
         @"last_name" : user.lastName,
         @"password" : user.password,
+        @"phone" : user.phone,
         @"terms_accepted" : @YES
       };
 

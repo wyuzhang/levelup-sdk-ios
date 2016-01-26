@@ -46,6 +46,7 @@
   } else {
     [self addKey:@"password" toDictionary:params ifValuePresent:user.password];
   }
+  [self addKey:@"phone" toDictionary:params ifValuePresent:user.phone];
 
   params[@"terms_accepted"] = @(user.termsAccepted);
 
