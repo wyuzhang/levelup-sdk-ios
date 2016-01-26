@@ -55,26 +55,6 @@ describe(@"LULocation", ^{
 
   // Public Methods
 
-  describe(@"fullStreetAddress", ^{
-    context(@"when the location has a streetAddress and an extendedAddress", ^{
-      LULocation *location = [LULocation fixture];
-
-      it(@"is the street address combined with the extended address", ^{
-        NSString *expected = [NSString stringWithFormat:@"%@, %@", location.streetAddress,
-                              location.extendedAddress];
-        [[[location fullStreetAddress] should] equal:expected];
-      });
-    });
-
-    context(@"when the location only has a streetAddress", ^{
-      LULocation *location = [LULocation fixtureWithNoExtendedAddress];
-
-      it(@"is the street address", ^{
-        [[[location fullStreetAddress] should] equal:location.streetAddress];
-      });
-    });
-  });
-
   describe(@"imageURL", ^{
     LULocation *location = [LULocation fixtureWithLocationID:@1];
     NSURL *URL = [NSURL URLWithString:@"http://example.com/path/to/image"];
@@ -85,18 +65,6 @@ describe(@"LULocation", ^{
 
     it(@"returns the URL of the location image request", ^{
       [[[location imageURL] should] equal:URL];
-    });
-  });
-
-  describe(@"singleLineAddress", ^{
-    LULocation *location = [LULocation fixture];
-
-    it(@"is combination of all the address elements", ^{
-      NSString *expected = [NSString stringWithFormat:@"%@, %@, %@, %@ %@",
-                            location.streetAddress, location.extendedAddress, location.locality,
-                            location.region, location.postalCode];
-
-      [[[location singleLineAddress] should] equal:expected];
     });
   });
 

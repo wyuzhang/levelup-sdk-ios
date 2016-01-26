@@ -113,24 +113,10 @@
 @property (nonatomic, copy, readonly) LUWebLocations *webLocations DEPRECATED_ATTRIBUTE;
 
 /**
- If the location has both a `streetAddress` and an `extendedAddress`, this will return both values
- joined by a comma. For example, "123 Main Street, Apt 2A". When an `extendedAddress` is not present,
- only the `streetAddress` will be returned.
- */
-- (NSString *)fullStreetAddress;
-
-/**
  An associated image for the location. Will automatically return a retina or non-retina scaled image
  based on the screen scale of the device. The resolution is 320x212.
  */
 - (NSURL *)imageURL;
-
-/**
- A helper method which returns all the address fields in one line. The format is
- "<full street address>, <locality>, <region> <postal code>". For example: "123 Main Street, Apt 2A,
- Boston, MA 01234".
- */
-- (NSString *)singleLineAddress;
 
 - (id)initWithCategoryIDs:(NSArray *)categoryIDs categoryNames:(NSArray *)categoryNames
           deliveryMenuURL:(NSURL *)deliveryMenuURL descriptionHTML:(NSString *)descriptionHTML

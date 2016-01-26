@@ -75,9 +75,23 @@
 - (CLLocationCoordinate2D)coordinate;
 
 /**
+ If the location has both a `streetAddress` and an `extendedAddress`, this will return both values
+ joined by a comma. For example, "123 Main Street, Apt 2A". When an `extendedAddress` is not present,
+ only the `streetAddress` will be returned.
+ */
+- (NSString *)fullStreetAddress;
+
+/**
  A `CLLocation` instance generated from this location's latitude and longitude.
  */
 - (CLLocation *)location;
+
+/**
+ A helper method which returns all the address fields in one line. The format is
+ "<full street address>, <locality>, <region> <postal code>". For example: "123 Main Street, Apt 2A,
+ Boston, MA 01234".
+ */
+- (NSString *)singleLineAddress;
 
 - (id)initWithExtendedAddress:(NSString *)extendedAddress latitude:(NSNumber *)latitude
                      locality:(NSString *)locality longitude:(NSNumber *)longitude

@@ -70,6 +70,30 @@ describe(@"LUBaseLocation", ^{
 
   // Public Methods
 
+  describe(@"fullStreetAddress", ^{
+    context(@"when the location has a streetAddress and an extendedAddress", ^{
+      LUBaseLocation *location = [[LUBaseLocation alloc] initWithExtendedAddress:@"Apt 01" latitude:@50 locality:nil
+                                                                       longitude:@50 postalCode:nil
+                                                                          region:nil streetAddress:@"Alpha st."];
+
+      it(@"is the street address combined with the extended address", ^{
+        NSString *expected = [NSString stringWithFormat:@"%@, %@", location.streetAddress,
+                              location.extendedAddress];
+        [[[location fullStreetAddress] should] equal:expected];
+      });
+    });
+
+    context(@"when the location only has a streetAddress", ^{
+      LUBaseLocation *location = [[LUBaseLocation alloc] initWithExtendedAddress:nil latitude:@50 locality:nil
+                                                                       longitude:@50 postalCode:nil
+                                                                          region:nil streetAddress:@"Alpha st."];
+
+      it(@"is the street address", ^{
+        [[[location fullStreetAddress] should] equal:location.streetAddress];
+      });
+    });
+  });
+
   describe(@"location", ^{
     context(@"when the location has a latitude and a longitude", ^{
       LUBaseLocation *baseLocation = baseLocationWithLatitudeLongitude(@-70, @45);
@@ -94,6 +118,20 @@ describe(@"LUBaseLocation", ^{
 
         [[baseLocation location] shouldBeNil];
       });
+    });
+  });
+
+  describe(@"singleLineAddress", ^{
+    LUBaseLocation *location = [[LUBaseLocation alloc] initWithExtendedAddress:@"Apt 01" latitude:@50 locality:@"Boston"
+                                                                     longitude:@50 postalCode:@"01234"
+                                                                        region:@"MA" streetAddress:@"Alpha st."];
+
+    it(@"is combination of all the address elements", ^{
+      NSString *expected = [NSString stringWithFormat:@"%@, %@, %@, %@ %@",
+                            location.streetAddress, location.extendedAddress, location.locality,
+                            location.region, location.postalCode];
+
+      [[[location singleLineAddress] should] equal:expected];
     });
   });
 
