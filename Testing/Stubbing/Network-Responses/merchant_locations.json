@@ -36,7 +36,7 @@
       "name" : "Lincoln Memorial",
       "merchant_name" : "United States of America",
       "delivery_menu_url" : null,
-      "pickup_menu_url" : "http://example.com/pickup"
+      "pickup_menu_url" : "http://example.com/pickup2"
     }
   },
   {
@@ -56,7 +56,7 @@
       "name" : "National Museum of History",
       "merchant_name" : "United States of America",
       "delivery_menu_url" : "http://example.com/delivery",
-      "pickup_menu_url" : "http://example.com/pickup"
+      "pickup_menu_url" : "http://example.com/pickup3"
     }
   }
 ]
