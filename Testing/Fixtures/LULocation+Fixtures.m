@@ -64,4 +64,10 @@
   return location;
 }
 
++ (LULocation *)fixtureWithPickupMenuURL:(NSString *)pickupMenuURL {
+  LULocation *location = [self fixture];
+  [location setValue:[NSURL URLWithString:pickupMenuURL] forKey:@"pickupMenuURL"];
+  return location;
+}
+
 @end

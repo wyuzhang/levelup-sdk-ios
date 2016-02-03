@@ -22,5 +22,6 @@
 + (LULocation *)fixtureWithLatitude:(NSNumber *)latitude longitude:(NSNumber *)longitude;
 + (LULocation *)fixtureWithLocationID:(NSNumber *)locationID;
 + (LULocation *)fixtureWithNoExtendedAddress;
++ (LULocation *)fixtureWithPickupMenuURL:(NSString *)pickupMenuURL;
 
 @end
