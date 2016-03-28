@@ -15,6 +15,7 @@
  */
 
 #import "LUMonetaryValue.h"
+#import "NSNumber+LUAdditions.h"
 
 @implementation LUMonetaryValue
 
@@ -34,6 +35,10 @@
 }
 
 #pragma mark - Public Methods
+
++ (LUMonetaryValue *)monetaryValueByAddingValues:(NSArray *)values {
+  return [[LUMonetaryValue monetaryValueWithUSCents:@0] valueByAddingValues:values];
+}
 
 + (LUMonetaryValue *)monetaryValueWithUSCents:(NSNumber *)amount {
   return [[LUMonetaryValue alloc] initWithAmount:amount
@@ -58,6 +63,47 @@
   } else {
     return formattedAmountWithSymbol;
   }
+}
+
+- (LUMonetaryValue *)valueByAddingValue:(LUMonetaryValue *)monetaryValue {
+  NSDecimalNumber *amount = [self.amount lu_decimalNumber];
+  NSDecimalNumber *addedAmount = [monetaryValue.amount lu_decimalNumber];
+
+  NSDecimalNumber *sum = [amount lu_decimalNumber];
+  sum = [sum decimalNumberByAdding:[addedAmount lu_decimalNumber]];
+
+  return [LUMonetaryValue monetaryValueWithUSCents:sum];
+}
+
+- (LUMonetaryValue *)valueByAddingValues:(NSArray *)values {
+  LUMonetaryValue *sum = self;
+  for (LUMonetaryValue *value in values) {
+    sum = [sum valueByAddingValue:value];
+  }
+
+  return sum;
+}
+
+- (LUMonetaryValue *)valueByDividingBy:(NSNumber *)divisor {
+  return [LUMonetaryValue monetaryValueWithUSCents:
+          [[self.amount lu_decimalNumber] decimalNumberByDividingBy:[divisor lu_decimalNumber]]];
+}
+
+- (LUMonetaryValue *)valueByMultiplyingBy:(NSNumber *)multiplier {
+  return [LUMonetaryValue monetaryValueWithUSCents:
+          [[self.amount lu_decimalNumber] decimalNumberByMultiplyingBy:[multiplier lu_decimalNumber]]];
+}
+
+- (LUMonetaryValue *)valueByRoundingToNearestCent {
+  NSDecimalNumberHandler *roundingBehavior =
+    [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundPlain
+                                                           scale:0
+                                                raiseOnExactness:NO
+                                                 raiseOnOverflow:NO
+                                                raiseOnUnderflow:NO
+                                             raiseOnDivideByZero:NO];
+  return [LUMonetaryValue monetaryValueWithUSCents:
+          [[self.amount lu_decimalNumber] decimalNumberByRoundingAccordingToBehavior:roundingBehavior]];
 }
 
 #pragma mark - NSObject Methods

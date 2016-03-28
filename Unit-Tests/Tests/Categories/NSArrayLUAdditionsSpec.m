@@ -54,6 +54,15 @@ describe(@"NSArray", ^{
       [[numbersToStrings should] equal:@[@"1", @"2", @"3"]];
     });
   });
+
+  describe(@"lu_subarrayWithStartIndex:", ^{
+    it(@"returns a sub array with elements ranging from the start index to the end of this array", ^{
+      [[[@[@1, @2, @3] lu_subarrayWithStartIndex:0] should] equal:@[@1, @2, @3]];
+      [[[@[@1, @2, @3] lu_subarrayWithStartIndex:1] should] equal:@[@2, @3]];
+      [[[@[@1, @2, @3] lu_subarrayWithStartIndex:2] should] equal:@[@3]];
+      [[[@[@1, @2, @3] lu_subarrayWithStartIndex:3] should] equal:@[]];
+    });
+  });
 });
 
 SPEC_END

@@ -1,0 +1,372 @@
+{
+  "menu": {
+    "id": 1,
+    "categories": [
+      {
+        "category": {
+          "id": 1,
+          "name": "Appetizers",
+          "description": "Small dishes to share while you wait for the main course.",
+          "display_order": 1,
+          "items": [
+            {
+              "item": {
+                "id": 1,
+                "name": "Tater Tots",
+                "description": "Try our tots!",
+                "display_order": 1,
+                "price_amount": 299,
+                "image_url": "https://levelup-order-ahead-staging.herokuapp.com/v15/menus/3/items/1/image",
+                "nutrition": {
+                  "calories": "390"
+                },
+                "sku": "5586F636",
+                "upc": null,
+                "option_groups": [
+                  {
+                    "option_group": {
+                      "id": 1,
+                      "name": "Appetizer Size",
+                      "display_order": 1,
+                      "minimum_choices": 1,
+                      "maximum_choices": 1,
+                      "free_choices": 0,
+                      "default_option_ids": [
+                        1
+                      ],
+                      "options": [
+                        {
+                          "option": {
+                            "id": 1,
+                            "name": "Small",
+                            "display_order": 1,
+                            "price_amount": 99
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 2,
+                            "name": "Large",
+                            "display_order": 2,
+                            "price_amount": 199
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "price_with_defaults_amount" : 398
+              }
+            }
+          ]
+        }
+      },
+      {
+        "category": {
+          "id": 2,
+          "name": "Lunch",
+          "description": null,
+          "display_order": 2,
+          "items": [
+            {
+              "item": {
+                "id": 2,
+                "name": "Burrito",
+                "description": "A food torpedo.",
+                "display_order": 1,
+                "price_amount": 699,
+                "image_url": null,
+                "nutrition": {
+                  "calories": "640"
+                },
+                "sku": "2EC6DC79",
+                "upc": null,
+                "option_groups": [
+                  {
+                    "option_group": {
+                      "id": 2,
+                      "name": "Filling",
+                      "display_order": 1,
+                      "minimum_choices": 0,
+                      "maximum_choices": null,
+                      "free_choices": 0,
+                      "default_option_ids": [
+                      ],
+                      "options": [
+                        {
+                          "option": {
+                            "id": 3,
+                            "name": "Carne Asada",
+                            "display_order": 1,
+                            "price_amount": 0
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 4,
+                            "name": "Shredded Pork",
+                            "display_order": 2,
+                            "price_amount": 0
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 5,
+                            "name": "Roasted Butternut Squash",
+                            "display_order": 3,
+                            "price_amount": 0
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 6,
+                            "name": "Barbacoa",
+                            "display_order": 4,
+                            "price_amount": 0
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 7,
+                            "name": "Steak",
+                            "display_order": 5,
+                            "price_amount": 0
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 8,
+                            "name": "Fajita Veggies",
+                            "display_order": 6,
+                            "price_amount": 0
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 9,
+                            "name": "Chicken",
+                            "display_order": 7,
+                            "price_amount": 0
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 10,
+                            "name": "Pinto Beans",
+                            "display_order": 8,
+                            "price_amount": 0
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 11,
+                            "name": "Cilantro-Lime White Rice",
+                            "display_order": 9,
+                            "price_amount": 0
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "option_group": {
+                      "id": 3,
+                      "name": "Toppings",
+                      "display_order": 2,
+                      "minimum_choices": 1,
+                      "maximum_choices": 3,
+                      "free_choices": 2,
+                      "default_option_ids": [
+                        12
+                      ],
+                      "options": [
+                        {
+                          "option": {
+                            "id": 12,
+                            "name": "Cheese",
+                            "display_order": 1,
+                            "price_amount": 199
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 13,
+                            "name": "Guacamole",
+                            "display_order": 2,
+                            "price_amount": 499
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 14,
+                            "name": "Shredded Lettuce",
+                            "display_order": 3,
+                            "price_amount": 399
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 22,
+                            "name": "Crema",
+                            "display_order": 4,
+                            "price_amount": 399
+                            }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "option_group": {
+                      "id": 4,
+                      "name": "Tortilla",
+                      "display_order": 3,
+                      "minimum_choices": 0,
+                      "maximum_choices": 1,
+                      "free_choices": 0,
+                      "default_option_ids": [
+                        15
+                      ],
+                      "options": [
+                        {
+                          "option": {
+                            "id": 15,
+                            "name": "Caseras",
+                            "display_order": 1,
+                            "price_amount": 0
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 16,
+                            "name": "Restaurant Style",
+                            "display_order": 2,
+                            "price_amount": 0
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "option_group": {
+                      "id": 5,
+                      "name": "Salsa",
+                      "display_order": 4,
+                      "minimum_choices": 2,
+                      "maximum_choices": 2,
+                      "free_choices": 0,
+                      "default_option_ids": [
+                        17, 18
+                      ],
+                      "options": [
+                        {
+                          "option": {
+                            "id": 17,
+                            "name": "Salsa Verde",
+                            "display_order": 1,
+                            "price_amount": 0
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 18,
+                            "name": "Salsa Rojo",
+                            "display_order": 2,
+                            "price_amount": 0
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 19,
+                            "name": "Salsa Amarillo",
+                            "display_order": 3,
+                            "price_amount": 0
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "option_group": {
+                      "id": 6,
+                      "name": "Nacho Combo",
+                      "display_order": 5,
+                      "minimum_choices": 1,
+                      "maximum_choices": null,
+                      "free_choices": 0,
+                      "default_option_ids": [
+                        20
+                      ],
+                      "options": [
+                        {
+                          "option": {
+                            "id": 20,
+                            "name": "Side of Nachos",
+                            "display_order": 1,
+                            "price_amount": 0
+                          }
+                        },
+                        {
+                          "option": {
+                            "id": 21,
+                            "name": "Nacho Cheese",
+                            "display_order": 2,
+                            "price_amount": 0
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "price_with_defaults_amount" : 699
+              }
+            }
+          ]
+        }
+      },
+      {
+        "category": {
+          "id": 3,
+          "name": "Drinks",
+          "description": null,
+          "display_order": 3,
+          "items": [
+            {
+              "item": {
+                "id": 3,
+                "name": "Water",
+                "description": "Not available in California.",
+                "display_order": 1,
+                "price_amount": 349,
+                "image_url": null,
+                "nutrition": {
+                  "calories": "0"
+                },
+                "sku": "EE703FCC",
+                "upc": null,
+                "option_groups": [],
+                "price_with_defaults_amount" : 349
+              }
+            },
+            {
+              "item": {
+                "id": 4,
+                "name": "Beer",
+                "description": "Widely available in California!",
+                "display_order": 2,
+                "price_amount": 615,
+                "image_url": "https://levelup-order-ahead-staging.herokuapp.com/v15/menus/3/items/4/image",
+                "nutrition": {
+                  "calories": "140"
+                },
+                "sku": "3AC7098F",
+                "upc": null,
+                "option_groups":[],
+                "price_with_defaults_amount" : 615
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

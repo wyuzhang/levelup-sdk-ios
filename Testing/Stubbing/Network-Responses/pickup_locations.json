@@ -1,0 +1,62 @@
+[
+  {
+    "location" : {
+      "id" : 1,
+      "merchant_id" : 1,
+      "phone" : "(123) 123-1234",
+      "hours" : "Mon - Fri 9am - 5pm\nSat - Sun 9am - 1pm",
+      "extended_address" : "",
+      "latitude" : "38.8912662",
+      "visible" : true,
+      "region" : "DC",
+      "postal_code" : "20560",
+      "longitude" : "-77.0260654",
+      "street_address" : "10th St. & Constitution Ave. NW",
+      "locality" : "Washington",
+      "name" : "National Museum of History",
+      "merchant_name" : "United States of America",
+      "delivery_menu_url" : "http://example.com/delivery",
+      "pickup_menu_url" : "http://example.com/pickup",
+    }
+  },
+  {
+    "location" : {
+      "id" : 2,
+      "merchant_id" : 1,
+      "phone" : "(123) 123-1234",
+      "hours" : "Mon - Fri 9am - 5pm\nSat - Sun 9am - 1pm",
+      "extended_address" : "",
+      "latitude" : "38.891233",
+      "visible" : true,
+      "region" : "DC",
+      "postal_code" : "20037",
+      "longitude" : "-77.049793",
+      "street_address" : "2 Lincoln Memorial Circle NW",
+      "locality" : "Washington",
+      "name" : "Lincoln Memorial",
+      "merchant_name" : "United States of America",
+      "delivery_menu_url" : null,
+      "pickup_menu_url" : "http://example.com/pickup2",
+    }
+  },
+  {
+    "location" : {
+      "id" : 3,
+      "merchant_id" : 1,
+      "phone" : "(123) 123-1234",
+      "hours" : "Mon - Sun 9am - 9pm",
+      "extended_address" : "1st Floor",
+      "latitude" : "38.897096",
+      "visible" : true,
+      "region" : "DC",
+      "postal_code" : "20500",
+      "longitude" : "-77.036545",
+      "street_address" : "1600 Pennsylvania Ave",
+      "locality" : "Washington",
+      "name" : "White House",
+      "merchant_name" : "United States of America",
+      "delivery_menu_url" : "http://example.com/delivery",
+      "pickup_menu_url" : "http://example.com/pickup3"
+    }
+  }
+]

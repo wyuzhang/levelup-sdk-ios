@@ -1,0 +1,15 @@
+{
+  "order" : {
+    "conveyance": {
+      "delivery_address_id": 1,
+      "desired_ready_time": "2015-09-17T15:00:00Z",
+      "fulfillment_type": "delivery"
+    },
+    "discount_amount" : 100,
+    "instructions" : "Your order is on the way!",
+    "order_number" : "1000432",
+    "ready_at" : "2015-09-17T15:08:00Z",
+    "total_amount" : 945,
+    "location_id" : 1234
+  }
+}

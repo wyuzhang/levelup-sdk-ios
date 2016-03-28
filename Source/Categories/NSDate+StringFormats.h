@@ -17,6 +17,7 @@
 @interface NSDate (StringFormats)
 
 + (NSDate *)lu_dateFromIso8601DateTimeString:(NSString *)dateString;
+- (NSDate *)lu_dateAfterConvertingToTimeZone:(NSTimeZone *)timeZone;
 - (NSString *)lu_iso8601DateTimeString;
 
 @end

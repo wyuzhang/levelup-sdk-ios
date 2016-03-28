@@ -1,0 +1,14 @@
+{
+  "order": {
+    "discount_amount" : 100,
+    "order_completion_url" : "https://api.staging-levelup.com/v15/order_ahead/orders/1a2b3c4d5e6f7g8h9i/complete",
+    "service_fee_amount" : 150,
+    "soonest_available_at" : "2015-09-17T15:00:00Z",
+    "spend_amount" : 1398,
+    "state": "valid",
+    "tax_amount" : 45,
+    "tip_amount" : 0,
+    "total_amount" : 1543,
+    "uuid" : "1a2b3c4d5e6f7g8h9i"
+  }
+}

@@ -22,11 +22,10 @@
 SPEC_BEGIN(LULocationRequestFactorySpec)
 
 describe(@"LULocationRequestFactory", ^{
+  CLLocation *location = [[CLLocation alloc] initWithLatitude:41.0 longitude:-71.0];
   __block LUAPIRequest *request;
 
   describe(@"requestForAppLocationsNearLocation:", ^{
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:41.0 longitude:-71.0];
-
     beforeEach(^{
       [LUAPIClient setupWithAppID:@"1" APIKey:@"test"];
       request = [LULocationRequestFactory requestForAppLocationsNearLocation:location];
@@ -86,6 +85,22 @@ describe(@"LULocationRequestFactory", ^{
 
     it(@"returns a request set up to pass the response to an instance of LULocationJSONFactory", ^{
       [[request.modelFactory should] beKindOfClass:[LULocationJSONFactory class]];
+    });
+  });
+
+  describe(@"requestForAppPickupLocationsNear:", ^{
+    beforeEach(^{
+      request = [LULocationRequestFactory requestForAppPickupLocationsNear:location];
+    });
+
+    it(@"returns a request for pickup app locations near the given location", ^{
+      LUAPIRequest *appLocationsRequest = [LULocationRequestFactory requestForAppPickupLocationsNear:location];
+
+      [[request.path should] equal:appLocationsRequest.path];
+    });
+
+    it(@"requests locations with fulfillment type 'pickup'", ^{
+      [[request.parameters[@"fulfillment_types"] should] equal:@"pickup"];
     });
   });
 
@@ -219,6 +234,25 @@ describe(@"LULocationRequestFactory", ^{
 
     it(@"returns a request set up to pass the response to an instance of LULocationJSONFactory", ^{
       [[request.modelFactory should] beKindOfClass:[LULocationJSONFactory class]];
+    });
+  });
+
+  describe(@"requestForPickupLocationsNear:forMerchantID:", ^{
+    NSNumber *merchantID = @1;
+
+    beforeEach(^{
+      request = [LULocationRequestFactory requestForPickupLocationsNear:location forMerchantID:merchantID];
+    });
+
+    it(@"returns a request for pickup merchant locations near the given location", ^{
+      LUAPIRequest *merchantLocationsRequest =
+        [LULocationRequestFactory requestForMerchantLocationsNearLocation:location forMerchantID:merchantID];
+
+      [[request.path should] equal:merchantLocationsRequest.path];
+    });
+
+    it(@"requests locations with fulfillment type 'pickup'", ^{
+      [[request.parameters[@"fulfillment_types"] should] equal:@"pickup"];
     });
   });
 });

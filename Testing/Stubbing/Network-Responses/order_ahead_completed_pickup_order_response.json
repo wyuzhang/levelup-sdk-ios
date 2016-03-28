@@ -1,0 +1,15 @@
+{
+  "order" : {
+    "conveyance": {
+      "delivery_address_id": null,
+      "desired_ready_time": "2015-09-17T15:00:00Z",
+      "fulfillment_type": "pickup"
+    },
+    "discount_amount" : 100,
+    "instructions" : "Pick up your food on the left side of the counter under the \"pickup\" sign.",
+    "order_number" : "1000432",
+    "ready_at" : "2015-09-17T15:08:00Z",
+    "total_amount" : 945,
+    "location_id" : 1234
+  }
+}

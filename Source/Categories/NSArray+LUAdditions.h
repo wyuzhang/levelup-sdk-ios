@@ -19,5 +19,6 @@
 - (id)lu_firstObject;
 - (NSArray *)lu_filteredArrayWithBlock:(BOOL (^)(id obj))block;
 - (NSArray *)lu_mappedArrayWithBlock:(id (^)(id obj))block;
+- (NSArray *)lu_subarrayWithStartIndex:(NSUInteger)startIndex;
 
 @end

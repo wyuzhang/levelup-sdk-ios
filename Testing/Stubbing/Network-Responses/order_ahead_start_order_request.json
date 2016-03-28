@@ -1,0 +1,22 @@
+{
+  "order": {
+    "conveyance": {
+      "fulfillment_type": "pickup",
+      "desired_ready_time": null,
+      "delivery_address_id": null
+    },
+    "items": [
+      {
+        "item": {
+          "id": 1,
+          "quantity": 1,
+          "special_instructions": null,
+          "option_ids": [1]
+        }
+      }
+    ],
+    "location_id": 1,
+    "special_instructions": null,
+    "tip_amount": null
+  }
+}

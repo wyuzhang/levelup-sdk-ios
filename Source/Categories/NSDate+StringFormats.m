@@ -34,6 +34,14 @@
   return [[NSDate lu_iso8601DateTimeFormatter] dateFromString:finalDateString];
 }
 
+- (NSDate *)lu_dateAfterConvertingToTimeZone:(NSTimeZone *)timeZone {
+  NSInteger dateGMTOffset = [[NSTimeZone localTimeZone] secondsFromGMTForDate:self];
+  NSInteger convertedGMTOffset = [timeZone secondsFromGMTForDate:self];
+  NSTimeInterval interval = convertedGMTOffset - dateGMTOffset;
+
+  return [[NSDate alloc] initWithTimeInterval:interval sinceDate:self];
+}
+
 - (NSString *)lu_iso8601DateTimeString {
   return [[NSDate lu_iso8601DateTimeFormatter] stringFromDate:self];
 }

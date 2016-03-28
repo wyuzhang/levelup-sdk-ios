@@ -25,6 +25,16 @@ describe(@"LUMonetaryValue", ^{
 
   // Public Methods
 
+  describe(@"monetaryValueByAddingValues:", ^{
+    it(@"returns the sum of the LUMonetaryValues provided", ^{
+      LUMonetaryValue *firstValue = [LUMonetaryValue monetaryValueWithUSCents:@1];
+      LUMonetaryValue *secondValue = [LUMonetaryValue monetaryValueWithUSCents:@1];
+
+      [[[LUMonetaryValue monetaryValueByAddingValues:
+         @[firstValue, secondValue]] should] equal:[LUMonetaryValue monetaryValueWithUSCents:@2]];
+    });
+  });
+
   describe(@"monetaryValueWithUSCents:", ^{
     it(@"returns a LUMonetaryValue configured for the given amount in US Cents", ^{
       LUMonetaryValue *value = [LUMonetaryValue monetaryValueWithUSCents:@123];
@@ -70,6 +80,43 @@ describe(@"LUMonetaryValue", ^{
       it(@"returns the formatted amount without cents", ^{
         [[[monetaryValue shortFormatWithSymbol] should] equal:@"$3"];
       });
+    });
+  });
+
+  describe(@"valueByAddingValue:", ^{
+    it(@"returns the sum of this LUMonetaryValue and the one provided", ^{
+      LUMonetaryValue *firstValue = [LUMonetaryValue monetaryValueWithUSCents:@1];
+      LUMonetaryValue *secondValue = [LUMonetaryValue monetaryValueWithUSCents:@1];
+
+      [[[firstValue valueByAddingValue:secondValue] should] equal:[LUMonetaryValue monetaryValueWithUSCents:@2]];
+    });
+  });
+
+  describe(@"valueByAddingValues:", ^{
+    it(@"returns the sum of this LUMonetaryValue and the ones provided", ^{
+      LUMonetaryValue *firstValue = [LUMonetaryValue monetaryValueWithUSCents:@1];
+      LUMonetaryValue *secondValue = [LUMonetaryValue monetaryValueWithUSCents:@1];
+      LUMonetaryValue *thirdValue = [LUMonetaryValue monetaryValueWithUSCents:@1];
+
+      [[[firstValue valueByAddingValues:
+         @[secondValue, thirdValue]] should] equal:[LUMonetaryValue monetaryValueWithUSCents:@3]];
+    });
+  });
+
+  describe(@"valueByDividingBy:", ^{
+    it(@"returns the result of dividing this LUMonetaryValue by the number provided", ^{
+      LUMonetaryValue *divident = [LUMonetaryValue monetaryValueWithUSCents:@10000];
+      NSNumber *divisor = @4;
+      [[[divident valueByDividingBy:divisor] should] equal:[LUMonetaryValue monetaryValueWithUSCents:@2500]];
+    });
+  });
+
+  describe(@"valueByMultiplyingBy:", ^{
+    it(@"returns the product of this LUMonetaryValue when it is multiplied by the given number", ^{
+      LUMonetaryValue *firstValue = [LUMonetaryValue monetaryValueWithUSCents:@5];
+      NSNumber *multiplier = @5;
+
+      [[[firstValue valueByMultiplyingBy:multiplier] should] equal:[LUMonetaryValue monetaryValueWithUSCents:@25]];
     });
   });
 });

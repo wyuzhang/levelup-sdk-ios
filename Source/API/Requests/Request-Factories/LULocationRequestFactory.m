@@ -41,6 +41,10 @@
                                modelFactory:[LULocationJSONFactory factory]];
 }
 
++ (LUAPIRequest *)requestForAppPickupLocationsNear:(CLLocation *)location {
+  return [self apiRequestWithPickupFulfillmentTypeAdded:[self requestForAppLocationsNearLocation:location]];
+}
+
 + (LUAPIRequest *)requestForAppLocationsOnPage:(NSURL *)pageURL {
   if (!pageURL) return [self requestForLocationSummaries];
 
@@ -104,6 +108,12 @@
                                modelFactory:[LULocationJSONFactory factory]];
 }
 
+
++ (LUAPIRequest *)requestForPickupLocationsNear:(CLLocation *)location forMerchantID:(NSNumber *)merchantID {
+  return [self apiRequestWithPickupFulfillmentTypeAdded:[self requestForMerchantLocationsNearLocation:location
+                                                                                        forMerchantID:merchantID]];
+}
+
 + (LUAPIRequest *)requestForWebLinksAtLocationWithID:(NSNumber *)locationID {
   NSString *requestPath = [NSString stringWithFormat:@"locations/%@/web_links", [locationID stringValue]];
   return [LUAPIRequest apiRequestWithMethod:@"GET"
@@ -111,6 +121,16 @@
                                  apiVersion:LUAPIVersion15
                                  parameters:nil
                                modelFactory:[LUWebLinkJSONFactory factory]];
+}
+
+#pragma mark - Private Methods
+
++ (LUAPIRequest *)apiRequestWithPickupFulfillmentTypeAdded:(LUAPIRequest *)request {
+  NSMutableDictionary *params = [request.parameters mutableCopy];
+  params[@"fulfillment_types"] = @"pickup";
+  request.parameters = [NSDictionary dictionaryWithDictionary:params];
+
+  return request;
 }
 
 @end

@@ -16,14 +16,20 @@
 
 @class LUAPIStub;
 @class LUGiftCardOrder;
+@class LUOrderAheadOrder;
 @class LUPaymentPreference;
 @class LUUser;
 @class LUUserAddress;
 
 @interface LUAPIStubFactory : NSObject
 
++ (LUAPIStub *)stubForImageAtURL:(NSURL *)URL responseResource:(NSString *)resource;
++ (LUAPIStub *)stubForImageAtURL:(NSURL *)URL responseResource:(NSString *)resource imageType:(NSString *)type;
++ (LUAPIStub *)stubForOrderAheadMenuItemMediumImageAtURLPath:(NSString *)path;
++ (LUAPIStub *)stubForOrderAheadMenuItemSmallImageAtURLPath:(NSString *)path;
 + (LUAPIStub *)stubToClaimCampaignWithCode:(NSString *)code;
 + (LUAPIStub *)stubToClaimLegacyLoyaltyWithID:(NSString *)loyaltyID campaignID:(NSNumber *)campaignID;
++ (LUAPIStub *)stubToCompleteOrderAheadOrderWithURL:(NSURL *)URL;
 + (LUAPIStub *)stubToCreateCreditCardWithNumber:(NSString *)number
                                             cvv:(NSString *)cvv
                                 expirationMonth:(NSNumber *)expirationMonth
@@ -50,6 +56,8 @@
 + (LUAPIStub *)stubToFailToFindRegistrationForEmail:(NSString *)email;
 + (LUAPIStub *)stubToFailToGetCarrierAccountEVURL;
 + (LUAPIStub *)stubToFailToGetPassWithMerchantID:(NSNumber *)merchantID;
++ (LUAPIStub *)stubToFailToStartUpdateOfOrderAheadOrder:(LUOrderAheadOrder *)order;
++ (LUAPIStub *)stubToFailToStartUpdateOfOrderAheadOrderWithInvalidCart:(LUOrderAheadOrder *)order;
 + (LUAPIStub *)stubToFindRegistrationForEmail:(NSString *)email;
 + (LUAPIStub *)stubToGetApplePayCardPaymentMethod;
 + (LUAPIStub *)stubToGetApplePayCardPreloadingPaymentMethod;
@@ -97,6 +105,13 @@
 + (LUAPIStub *)stubToGetNewUser;
 + (LUAPIStub *)stubToGetNonePaymentMethod;
 + (LUAPIStub *)stubToGetNoUserAddresses;
++ (LUAPIStub *)stubToGetOrderAheadCompletedDeliveryOrderWithURL:(NSURL *)URL;
++ (LUAPIStub *)stubToGetOrderAheadCompletedOrderWithURL:(NSURL *)URL;
++ (LUAPIStub *)stubToGetOrderAheadCompletedPickupOrderWithURL:(NSURL *)URL;
++ (LUAPIStub *)stubToGetOrderAheadDeliveryLocationWithAddressID:(NSNumber *)addressID;
++ (LUAPIStub *)stubToGetOrderAheadMenuWithURL:(NSURL *)URL;
++ (LUAPIStub *)stubToGetOrderAheadPendingViewableOrderWithURL:(NSURL *)URL;
++ (LUAPIStub *)stubToGetOrderAheadViewableOrderWithURL:(NSURL *)URL;
 + (LUAPIStub *)stubToGetOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToGetOrdersEmpty;
 + (LUAPIStub *)stubToGetOrdersFirstPage;
@@ -109,8 +124,11 @@
 + (LUAPIStub *)stubToGetPaymentTokenWithMessage;
 + (LUAPIStub *)stubToGetPendingPassWithMerchantID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetPendingUpdatedCarrierAccountWithID:(NSNumber *)carrierAccountID;
++ (LUAPIStub *)stubToGetPickupLocationsNearLocation:(CLLocation *)location forMerchantID:(NSNumber *)merchantID;
 + (LUAPIStub *)stubToGetRewardSummaryAtLocationWithID:(NSNumber *)locationID;
 + (LUAPIStub *)stubToGetRewardsAtLocationWithID:(NSNumber *)locationID;
++ (LUAPIStub *)stubToGetSuggestedOrders;
++ (LUAPIStub *)stubToGetSuggestedOrdersForLocationWithID:(NSNumber *)locationID types:(NSArray *)types;
 + (LUAPIStub *)stubToGetUpdatedCarrierAccountWithID:(NSNumber *)carrierAccountID;
 + (LUAPIStub *)stubToGetUserAddresses;
 + (LUAPIStub *)stubToGetURL:(NSString *)url withBody:(NSString *)body;
@@ -121,6 +139,7 @@
 + (LUAPIStub *)stubToPromoteCreditCardWithID:(NSNumber *)creditCardID;
 + (LUAPIStub *)stubToResetPasswordRequest;
 + (LUAPIStub *)stubToSetPaymentPreference;
++ (LUAPIStub *)stubToStartUpdateOfOrderAheadOrder:(LUOrderAheadOrder *)order;
 + (LUAPIStub *)stubToSubmitFeedbackForOrderWithUUID:(NSString *)UUID;
 + (LUAPIStub *)stubToUpdateCarrierAccountWithID:(NSNumber *)carrierAccountID
                              mobileDeviceNumber:(NSString *)mobileDeviceNumber

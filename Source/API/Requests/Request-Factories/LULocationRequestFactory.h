@@ -35,6 +35,8 @@
  */
 + (LUAPIRequest *)requestForAppLocationsNearLocation:(CLLocation *)location;
 
++ (LUAPIRequest *)requestForAppPickupLocationsNear:(CLLocation *)location;
+
 /**
  Builds a request to return the given page of locations for merchants associated with the app.
 
@@ -105,6 +107,8 @@
  @param pageURL The next page of locations to request.
  */
 + (LUAPIRequest *)requestForMerchantLocationsOnPage:(NSURL *)pageURL;
+
++ (LUAPIRequest *)requestForPickupLocationsNear:(CLLocation *)location forMerchantID:(NSNumber *)merchantID;
 
 /**
  Builds a request to return the web links associated with a specific location.

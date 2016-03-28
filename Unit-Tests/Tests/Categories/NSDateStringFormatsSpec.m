@@ -24,7 +24,7 @@ describe(@"NSDate", ^{
   NSString *dateString = @"2013-02-10T01:06:19+0000";
   NSTimeInterval secondsSince1970 = 1360458379;
 
-  describe(@"dateFromIso8601DateTimeString:", ^{
+  describe(@"lu_dateFromIso8601DateTimeString:", ^{
     it(@"returns an NSDate given an ISO 8601 string", ^{
 
       NSDate *date = [NSDate lu_dateFromIso8601DateTimeString:dateString];
@@ -32,7 +32,20 @@ describe(@"NSDate", ^{
     });
   });
 
-  describe(@"iso8601DateTimeString", ^{
+  describe(@"luui_dateAfterConvertingToTimeZone:", ^{
+    NSDate *localDate = [NSDate dateWithTimeIntervalSince1970:1369926952];
+    NSDate *ESTDate = [localDate lu_dateAfterConvertingToTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+
+    it(@"correctly converts date representation between time zones", ^{
+      NSInteger ESTDateHours = [[[NSCalendar currentCalendar] components:NSCalendarUnitHour fromDate:ESTDate] hour];
+      NSDate *PSTDate = [localDate lu_dateAfterConvertingToTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PST"]];
+      NSInteger PSTDateHours = [[[NSCalendar currentCalendar] components:NSCalendarUnitHour fromDate:PSTDate] hour];
+
+      [[theValue(ESTDateHours) should] equal:theValue((PSTDateHours + 3) % 24)];
+    });
+  });
+
+  describe(@"lu_iso8601DateTimeString", ^{
     it(@"returns the date as an ISO 8601 string", ^{
       NSDate *date = [NSDate dateWithTimeIntervalSince1970:secondsSince1970];
 

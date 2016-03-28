@@ -46,4 +46,16 @@
   return new;
 }
 
+- (NSArray *)lu_subarrayWithStartIndex:(NSUInteger)startIndex {
+  if (startIndex >= self.count) {
+    return @[];
+  }
+
+  if (startIndex <= 0) {
+    return self;
+  }
+
+  return [self subarrayWithRange:NSMakeRange(startIndex, self.count - startIndex)];
+}
+
 @end

@@ -295,6 +295,85 @@
 		02F08DD21ADEB781001B5C1F /* campaign_representation_spend_based_loyalty_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = 02F08DD01ADEB781001B5C1F /* campaign_representation_spend_based_loyalty_v1.json */; };
 		02F08DD31ADEB781001B5C1F /* campaign_representation_visit_based_loyalty_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = 02F08DD11ADEB781001B5C1F /* campaign_representation_visit_based_loyalty_v1.json */; };
 		2504194E174AEAE300254161 /* LUPersistedObjectsInitial.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 2523E33717374D9C00FBDFEB /* LUPersistedObjectsInitial.sqlite */; };
+		251E2CF41CA9B7F600919C5F /* LUOrderAheadCompletedOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2CDA1CA9B7F600919C5F /* LUOrderAheadCompletedOrder.h */; };
+		251E2CF51CA9B7F600919C5F /* LUOrderAheadCompletedOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CDB1CA9B7F600919C5F /* LUOrderAheadCompletedOrder.m */; };
+		251E2CF61CA9B7F600919C5F /* LUOrderAheadMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2CDC1CA9B7F600919C5F /* LUOrderAheadMenu.h */; };
+		251E2CF71CA9B7F600919C5F /* LUOrderAheadMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CDD1CA9B7F600919C5F /* LUOrderAheadMenu.m */; };
+		251E2CF81CA9B7F600919C5F /* LUOrderAheadMenuCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2CDE1CA9B7F600919C5F /* LUOrderAheadMenuCategory.h */; };
+		251E2CF91CA9B7F600919C5F /* LUOrderAheadMenuCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CDF1CA9B7F600919C5F /* LUOrderAheadMenuCategory.m */; };
+		251E2CFA1CA9B7F600919C5F /* LUOrderAheadMenuItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2CE01CA9B7F600919C5F /* LUOrderAheadMenuItem.h */; };
+		251E2CFB1CA9B7F600919C5F /* LUOrderAheadMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CE11CA9B7F600919C5F /* LUOrderAheadMenuItem.m */; };
+		251E2CFC1CA9B7F600919C5F /* LUOrderAheadMenuItemOption.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2CE21CA9B7F600919C5F /* LUOrderAheadMenuItemOption.h */; };
+		251E2CFD1CA9B7F600919C5F /* LUOrderAheadMenuItemOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CE31CA9B7F600919C5F /* LUOrderAheadMenuItemOption.m */; };
+		251E2CFE1CA9B7F600919C5F /* LUOrderAheadMenuItemOptionGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2CE41CA9B7F600919C5F /* LUOrderAheadMenuItemOptionGroup.h */; };
+		251E2CFF1CA9B7F600919C5F /* LUOrderAheadMenuItemOptionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CE51CA9B7F600919C5F /* LUOrderAheadMenuItemOptionGroup.m */; };
+		251E2D001CA9B7F600919C5F /* LUOrderAheadOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2CE61CA9B7F600919C5F /* LUOrderAheadOrder.h */; };
+		251E2D011CA9B7F600919C5F /* LUOrderAheadOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CE71CA9B7F600919C5F /* LUOrderAheadOrder.m */; };
+		251E2D021CA9B7F600919C5F /* LUOrderAheadOrderConveyance.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2CE81CA9B7F600919C5F /* LUOrderAheadOrderConveyance.h */; };
+		251E2D031CA9B7F600919C5F /* LUOrderAheadOrderConveyance.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CE91CA9B7F600919C5F /* LUOrderAheadOrderConveyance.m */; };
+		251E2D041CA9B7F600919C5F /* LUOrderAheadOrderItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2CEA1CA9B7F600919C5F /* LUOrderAheadOrderItem.h */; };
+		251E2D051CA9B7F600919C5F /* LUOrderAheadOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CEB1CA9B7F600919C5F /* LUOrderAheadOrderItem.m */; };
+		251E2D061CA9B7F600919C5F /* LUOrderAheadOrderStateParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2CEC1CA9B7F600919C5F /* LUOrderAheadOrderStateParser.h */; };
+		251E2D071CA9B7F600919C5F /* LUOrderAheadOrderStateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CED1CA9B7F600919C5F /* LUOrderAheadOrderStateParser.m */; };
+		251E2D081CA9B7F600919C5F /* LUOrderAheadOrderStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2CEE1CA9B7F600919C5F /* LUOrderAheadOrderStatus.h */; };
+		251E2D091CA9B7F600919C5F /* LUOrderAheadOrderStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CEF1CA9B7F600919C5F /* LUOrderAheadOrderStatus.m */; };
+		251E2D0A1CA9B7F600919C5F /* LUOrderAheadSuggestedOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2CF01CA9B7F600919C5F /* LUOrderAheadSuggestedOrder.h */; };
+		251E2D0B1CA9B7F600919C5F /* LUOrderAheadSuggestedOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CF11CA9B7F600919C5F /* LUOrderAheadSuggestedOrder.m */; };
+		251E2D0C1CA9B7F600919C5F /* LUOrderAheadViewableOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2CF21CA9B7F600919C5F /* LUOrderAheadViewableOrder.h */; };
+		251E2D0D1CA9B7F600919C5F /* LUOrderAheadViewableOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CF31CA9B7F600919C5F /* LUOrderAheadViewableOrder.m */; };
+		251E2D101CA9BB1F00919C5F /* NSNumber+LUAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2D0E1CA9BB1F00919C5F /* NSNumber+LUAdditions.h */; };
+		251E2D111CA9BB1F00919C5F /* NSNumber+LUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D0F1CA9BB1F00919C5F /* NSNumber+LUAdditions.m */; };
+		251E2D1D1CA9BDF600919C5F /* LUOrderAheadCompletedOrderJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2D131CA9BDF600919C5F /* LUOrderAheadCompletedOrderJSONFactory.h */; };
+		251E2D1E1CA9BDF600919C5F /* LUOrderAheadCompletedOrderJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D141CA9BDF600919C5F /* LUOrderAheadCompletedOrderJSONFactory.m */; };
+		251E2D1F1CA9BDF600919C5F /* LUOrderAheadMenuJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2D151CA9BDF600919C5F /* LUOrderAheadMenuJSONFactory.h */; };
+		251E2D201CA9BDF600919C5F /* LUOrderAheadMenuJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D161CA9BDF600919C5F /* LUOrderAheadMenuJSONFactory.m */; };
+		251E2D211CA9BDF600919C5F /* LUOrderAheadOrderStatusJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2D171CA9BDF600919C5F /* LUOrderAheadOrderStatusJSONFactory.h */; };
+		251E2D221CA9BDF600919C5F /* LUOrderAheadOrderStatusJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D181CA9BDF600919C5F /* LUOrderAheadOrderStatusJSONFactory.m */; };
+		251E2D231CA9BDF600919C5F /* LUOrderAheadSuggestedOrderJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2D191CA9BDF600919C5F /* LUOrderAheadSuggestedOrderJSONFactory.h */; };
+		251E2D241CA9BDF600919C5F /* LUOrderAheadSuggestedOrderJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D1A1CA9BDF600919C5F /* LUOrderAheadSuggestedOrderJSONFactory.m */; };
+		251E2D251CA9BDF600919C5F /* LUOrderAheadViewableOrderJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2D1B1CA9BDF600919C5F /* LUOrderAheadViewableOrderJSONFactory.h */; };
+		251E2D261CA9BDF600919C5F /* LUOrderAheadViewableOrderJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D1C1CA9BDF600919C5F /* LUOrderAheadViewableOrderJSONFactory.m */; };
+		251E2D291CA9BEA800919C5F /* LUOrderAheadRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 251E2D271CA9BEA800919C5F /* LUOrderAheadRequestFactory.h */; };
+		251E2D2A1CA9BEA800919C5F /* LUOrderAheadRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D281CA9BEA800919C5F /* LUOrderAheadRequestFactory.m */; };
+		251E2D421CA9BFD000919C5F /* LUOrderAheadCompletedOrder+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D2D1CA9BFD000919C5F /* LUOrderAheadCompletedOrder+Fixtures.m */; };
+		251E2D431CA9BFD000919C5F /* LUOrderAheadMenu+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D2F1CA9BFD000919C5F /* LUOrderAheadMenu+Fixtures.m */; };
+		251E2D441CA9BFD000919C5F /* LUOrderAheadMenuItem+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D311CA9BFD000919C5F /* LUOrderAheadMenuItem+Fixtures.m */; };
+		251E2D451CA9BFD000919C5F /* LUOrderAheadMenuItemOption+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D331CA9BFD000919C5F /* LUOrderAheadMenuItemOption+Fixtures.m */; };
+		251E2D461CA9BFD000919C5F /* LUOrderAheadMenuItemOptionGroup+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D351CA9BFD000919C5F /* LUOrderAheadMenuItemOptionGroup+Fixtures.m */; };
+		251E2D471CA9BFD000919C5F /* LUOrderAheadOrder+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D371CA9BFD000919C5F /* LUOrderAheadOrder+Fixtures.m */; };
+		251E2D481CA9BFD000919C5F /* LUOrderAheadOrderConveyance+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D391CA9BFD000919C5F /* LUOrderAheadOrderConveyance+Fixtures.m */; };
+		251E2D491CA9BFD000919C5F /* LUOrderAheadOrderItem+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D3B1CA9BFD000919C5F /* LUOrderAheadOrderItem+Fixtures.m */; };
+		251E2D4A1CA9BFD000919C5F /* LUOrderAheadOrderStatus+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D3D1CA9BFD000919C5F /* LUOrderAheadOrderStatus+Fixtures.m */; };
+		251E2D4B1CA9BFD000919C5F /* LUOrderAheadSuggestedOrder+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D3F1CA9BFD000919C5F /* LUOrderAheadSuggestedOrder+Fixtures.m */; };
+		251E2D4C1CA9BFD000919C5F /* LUOrderAheadViewableOrder+Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D411CA9BFD000919C5F /* LUOrderAheadViewableOrder+Fixtures.m */; };
+		251E2D571CA9C45800919C5F /* order_ahead_complete_order_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 251E2D4D1CA9C45800919C5F /* order_ahead_complete_order_response.json */; };
+		251E2D581CA9C45800919C5F /* order_ahead_completed_delivery_order_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 251E2D4E1CA9C45800919C5F /* order_ahead_completed_delivery_order_response.json */; };
+		251E2D591CA9C45800919C5F /* order_ahead_completed_pickup_order_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 251E2D4F1CA9C45800919C5F /* order_ahead_completed_pickup_order_response.json */; };
+		251E2D5A1CA9C45800919C5F /* order_ahead_delivery_location.json in Resources */ = {isa = PBXBuildFile; fileRef = 251E2D501CA9C45800919C5F /* order_ahead_delivery_location.json */; };
+		251E2D5B1CA9C45800919C5F /* order_ahead_invalid_cart_error.json in Resources */ = {isa = PBXBuildFile; fileRef = 251E2D511CA9C45800919C5F /* order_ahead_invalid_cart_error.json */; };
+		251E2D5C1CA9C45800919C5F /* order_ahead_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 251E2D521CA9C45800919C5F /* order_ahead_menu.json */; };
+		251E2D5D1CA9C45800919C5F /* order_ahead_start_order_request.json in Resources */ = {isa = PBXBuildFile; fileRef = 251E2D531CA9C45800919C5F /* order_ahead_start_order_request.json */; };
+		251E2D5E1CA9C45800919C5F /* order_ahead_start_order_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 251E2D541CA9C45800919C5F /* order_ahead_start_order_response.json */; };
+		251E2D5F1CA9C45800919C5F /* order_ahead_suggested_orders.json in Resources */ = {isa = PBXBuildFile; fileRef = 251E2D551CA9C45800919C5F /* order_ahead_suggested_orders.json */; };
+		251E2D601CA9C45800919C5F /* order_ahead_viewable_order.json in Resources */ = {isa = PBXBuildFile; fileRef = 251E2D561CA9C45800919C5F /* order_ahead_viewable_order.json */; };
+		251E2D621CA9C46B00919C5F /* pickup_locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 251E2D611CA9C46B00919C5F /* pickup_locations.json */; };
+		251E2D6E1CA9C4C400919C5F /* LUOrderAheadMenuCategorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D641CA9C4C400919C5F /* LUOrderAheadMenuCategorySpec.m */; };
+		251E2D6F1CA9C4C400919C5F /* LUOrderAheadMenuItemOptionGroupSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D651CA9C4C400919C5F /* LUOrderAheadMenuItemOptionGroupSpec.m */; };
+		251E2D701CA9C4C400919C5F /* LUOrderAheadMenuItemOptionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D661CA9C4C400919C5F /* LUOrderAheadMenuItemOptionSpec.m */; };
+		251E2D711CA9C4C400919C5F /* LUOrderAheadMenuItemSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D671CA9C4C400919C5F /* LUOrderAheadMenuItemSpec.m */; };
+		251E2D721CA9C4C400919C5F /* LUOrderAheadMenuSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D681CA9C4C400919C5F /* LUOrderAheadMenuSpec.m */; };
+		251E2D731CA9C4C400919C5F /* LUOrderAheadOrderConveyanceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D691CA9C4C400919C5F /* LUOrderAheadOrderConveyanceSpec.m */; };
+		251E2D741CA9C4C400919C5F /* LUOrderAheadOrderItemSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D6A1CA9C4C400919C5F /* LUOrderAheadOrderItemSpec.m */; };
+		251E2D751CA9C4C400919C5F /* LUOrderAheadOrderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D6B1CA9C4C400919C5F /* LUOrderAheadOrderSpec.m */; };
+		251E2D761CA9C4C400919C5F /* LUOrderAheadOrderStatusSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D6C1CA9C4C400919C5F /* LUOrderAheadOrderStatusSpec.m */; };
+		251E2D771CA9C4C400919C5F /* LUOrderAheadViewableOrderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D6D1CA9C4C400919C5F /* LUOrderAheadViewableOrderSpec.m */; };
+		251E2D7E1CA9C54100919C5F /* LUOrderAheadCompletedOrderJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D791CA9C54100919C5F /* LUOrderAheadCompletedOrderJSONFactorySpec.m */; };
+		251E2D7F1CA9C54100919C5F /* LUOrderAheadMenuJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D7A1CA9C54100919C5F /* LUOrderAheadMenuJSONFactorySpec.m */; };
+		251E2D801CA9C54100919C5F /* LUOrderAheadOrderStatusJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D7B1CA9C54100919C5F /* LUOrderAheadOrderStatusJSONFactorySpec.m */; };
+		251E2D811CA9C54100919C5F /* LUOrderAheadSuggestedOrderJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D7C1CA9C54100919C5F /* LUOrderAheadSuggestedOrderJSONFactorySpec.m */; };
+		251E2D821CA9C54100919C5F /* LUOrderAheadViewableOrderJSONFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D7D1CA9C54100919C5F /* LUOrderAheadViewableOrderJSONFactorySpec.m */; };
+		251E2D841CA9C66C00919C5F /* LUOrderAheadRequestFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D831CA9C66C00919C5F /* LUOrderAheadRequestFactorySpec.m */; };
+		251E2D861CA9C79900919C5F /* NSNumberLUAdditionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D851CA9C79900919C5F /* NSNumberLUAdditionsSpec.m */; };
 		2523E31717374B2900FBDFEB /* LULocationSummaryJSONFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 2523E31517374B2900FBDFEB /* LULocationSummaryJSONFactory.h */; };
 		2523E31817374B2900FBDFEB /* LULocationSummaryJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523E31617374B2900FBDFEB /* LULocationSummaryJSONFactory.m */; };
 		2523E31B17374B3F00FBDFEB /* LULocationRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 2523E31917374B3F00FBDFEB /* LULocationRequestFactory.h */; };
@@ -889,6 +968,96 @@
 		06A40E6C26ED2F5CE405C989 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		0D9D1A2D4983C77483DD88A5 /* Pods.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.distribution.xcconfig; path = "Pods/Target Support Files/Pods/Pods.distribution.xcconfig"; sourceTree = "<group>"; };
 		25128E4C18732E9100FA2B62 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
+		251E2CDA1CA9B7F600919C5F /* LUOrderAheadCompletedOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadCompletedOrder.h; sourceTree = "<group>"; };
+		251E2CDB1CA9B7F600919C5F /* LUOrderAheadCompletedOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadCompletedOrder.m; sourceTree = "<group>"; };
+		251E2CDC1CA9B7F600919C5F /* LUOrderAheadMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadMenu.h; sourceTree = "<group>"; };
+		251E2CDD1CA9B7F600919C5F /* LUOrderAheadMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadMenu.m; sourceTree = "<group>"; };
+		251E2CDE1CA9B7F600919C5F /* LUOrderAheadMenuCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadMenuCategory.h; sourceTree = "<group>"; };
+		251E2CDF1CA9B7F600919C5F /* LUOrderAheadMenuCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadMenuCategory.m; sourceTree = "<group>"; };
+		251E2CE01CA9B7F600919C5F /* LUOrderAheadMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadMenuItem.h; sourceTree = "<group>"; };
+		251E2CE11CA9B7F600919C5F /* LUOrderAheadMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadMenuItem.m; sourceTree = "<group>"; };
+		251E2CE21CA9B7F600919C5F /* LUOrderAheadMenuItemOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadMenuItemOption.h; sourceTree = "<group>"; };
+		251E2CE31CA9B7F600919C5F /* LUOrderAheadMenuItemOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadMenuItemOption.m; sourceTree = "<group>"; };
+		251E2CE41CA9B7F600919C5F /* LUOrderAheadMenuItemOptionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadMenuItemOptionGroup.h; sourceTree = "<group>"; };
+		251E2CE51CA9B7F600919C5F /* LUOrderAheadMenuItemOptionGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadMenuItemOptionGroup.m; sourceTree = "<group>"; };
+		251E2CE61CA9B7F600919C5F /* LUOrderAheadOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadOrder.h; sourceTree = "<group>"; };
+		251E2CE71CA9B7F600919C5F /* LUOrderAheadOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadOrder.m; sourceTree = "<group>"; };
+		251E2CE81CA9B7F600919C5F /* LUOrderAheadOrderConveyance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadOrderConveyance.h; sourceTree = "<group>"; };
+		251E2CE91CA9B7F600919C5F /* LUOrderAheadOrderConveyance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadOrderConveyance.m; sourceTree = "<group>"; };
+		251E2CEA1CA9B7F600919C5F /* LUOrderAheadOrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadOrderItem.h; sourceTree = "<group>"; };
+		251E2CEB1CA9B7F600919C5F /* LUOrderAheadOrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadOrderItem.m; sourceTree = "<group>"; };
+		251E2CEC1CA9B7F600919C5F /* LUOrderAheadOrderStateParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadOrderStateParser.h; sourceTree = "<group>"; };
+		251E2CED1CA9B7F600919C5F /* LUOrderAheadOrderStateParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadOrderStateParser.m; sourceTree = "<group>"; };
+		251E2CEE1CA9B7F600919C5F /* LUOrderAheadOrderStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadOrderStatus.h; sourceTree = "<group>"; };
+		251E2CEF1CA9B7F600919C5F /* LUOrderAheadOrderStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadOrderStatus.m; sourceTree = "<group>"; };
+		251E2CF01CA9B7F600919C5F /* LUOrderAheadSuggestedOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadSuggestedOrder.h; sourceTree = "<group>"; };
+		251E2CF11CA9B7F600919C5F /* LUOrderAheadSuggestedOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadSuggestedOrder.m; sourceTree = "<group>"; };
+		251E2CF21CA9B7F600919C5F /* LUOrderAheadViewableOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadViewableOrder.h; sourceTree = "<group>"; };
+		251E2CF31CA9B7F600919C5F /* LUOrderAheadViewableOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadViewableOrder.m; sourceTree = "<group>"; };
+		251E2D0E1CA9BB1F00919C5F /* NSNumber+LUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+LUAdditions.h"; sourceTree = "<group>"; };
+		251E2D0F1CA9BB1F00919C5F /* NSNumber+LUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+LUAdditions.m"; sourceTree = "<group>"; };
+		251E2D131CA9BDF600919C5F /* LUOrderAheadCompletedOrderJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadCompletedOrderJSONFactory.h; sourceTree = "<group>"; };
+		251E2D141CA9BDF600919C5F /* LUOrderAheadCompletedOrderJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadCompletedOrderJSONFactory.m; sourceTree = "<group>"; };
+		251E2D151CA9BDF600919C5F /* LUOrderAheadMenuJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadMenuJSONFactory.h; sourceTree = "<group>"; };
+		251E2D161CA9BDF600919C5F /* LUOrderAheadMenuJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadMenuJSONFactory.m; sourceTree = "<group>"; };
+		251E2D171CA9BDF600919C5F /* LUOrderAheadOrderStatusJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadOrderStatusJSONFactory.h; sourceTree = "<group>"; };
+		251E2D181CA9BDF600919C5F /* LUOrderAheadOrderStatusJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadOrderStatusJSONFactory.m; sourceTree = "<group>"; };
+		251E2D191CA9BDF600919C5F /* LUOrderAheadSuggestedOrderJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadSuggestedOrderJSONFactory.h; sourceTree = "<group>"; };
+		251E2D1A1CA9BDF600919C5F /* LUOrderAheadSuggestedOrderJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadSuggestedOrderJSONFactory.m; sourceTree = "<group>"; };
+		251E2D1B1CA9BDF600919C5F /* LUOrderAheadViewableOrderJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadViewableOrderJSONFactory.h; sourceTree = "<group>"; };
+		251E2D1C1CA9BDF600919C5F /* LUOrderAheadViewableOrderJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadViewableOrderJSONFactory.m; sourceTree = "<group>"; };
+		251E2D271CA9BEA800919C5F /* LUOrderAheadRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUOrderAheadRequestFactory.h; sourceTree = "<group>"; };
+		251E2D281CA9BEA800919C5F /* LUOrderAheadRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadRequestFactory.m; sourceTree = "<group>"; };
+		251E2D2C1CA9BFD000919C5F /* LUOrderAheadCompletedOrder+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUOrderAheadCompletedOrder+Fixtures.h"; sourceTree = "<group>"; };
+		251E2D2D1CA9BFD000919C5F /* LUOrderAheadCompletedOrder+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUOrderAheadCompletedOrder+Fixtures.m"; sourceTree = "<group>"; };
+		251E2D2E1CA9BFD000919C5F /* LUOrderAheadMenu+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUOrderAheadMenu+Fixtures.h"; sourceTree = "<group>"; };
+		251E2D2F1CA9BFD000919C5F /* LUOrderAheadMenu+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUOrderAheadMenu+Fixtures.m"; sourceTree = "<group>"; };
+		251E2D301CA9BFD000919C5F /* LUOrderAheadMenuItem+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUOrderAheadMenuItem+Fixtures.h"; sourceTree = "<group>"; };
+		251E2D311CA9BFD000919C5F /* LUOrderAheadMenuItem+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUOrderAheadMenuItem+Fixtures.m"; sourceTree = "<group>"; };
+		251E2D321CA9BFD000919C5F /* LUOrderAheadMenuItemOption+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUOrderAheadMenuItemOption+Fixtures.h"; sourceTree = "<group>"; };
+		251E2D331CA9BFD000919C5F /* LUOrderAheadMenuItemOption+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUOrderAheadMenuItemOption+Fixtures.m"; sourceTree = "<group>"; };
+		251E2D341CA9BFD000919C5F /* LUOrderAheadMenuItemOptionGroup+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUOrderAheadMenuItemOptionGroup+Fixtures.h"; sourceTree = "<group>"; };
+		251E2D351CA9BFD000919C5F /* LUOrderAheadMenuItemOptionGroup+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUOrderAheadMenuItemOptionGroup+Fixtures.m"; sourceTree = "<group>"; };
+		251E2D361CA9BFD000919C5F /* LUOrderAheadOrder+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUOrderAheadOrder+Fixtures.h"; sourceTree = "<group>"; };
+		251E2D371CA9BFD000919C5F /* LUOrderAheadOrder+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUOrderAheadOrder+Fixtures.m"; sourceTree = "<group>"; };
+		251E2D381CA9BFD000919C5F /* LUOrderAheadOrderConveyance+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUOrderAheadOrderConveyance+Fixtures.h"; sourceTree = "<group>"; };
+		251E2D391CA9BFD000919C5F /* LUOrderAheadOrderConveyance+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUOrderAheadOrderConveyance+Fixtures.m"; sourceTree = "<group>"; };
+		251E2D3A1CA9BFD000919C5F /* LUOrderAheadOrderItem+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUOrderAheadOrderItem+Fixtures.h"; sourceTree = "<group>"; };
+		251E2D3B1CA9BFD000919C5F /* LUOrderAheadOrderItem+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUOrderAheadOrderItem+Fixtures.m"; sourceTree = "<group>"; };
+		251E2D3C1CA9BFD000919C5F /* LUOrderAheadOrderStatus+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUOrderAheadOrderStatus+Fixtures.h"; sourceTree = "<group>"; };
+		251E2D3D1CA9BFD000919C5F /* LUOrderAheadOrderStatus+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUOrderAheadOrderStatus+Fixtures.m"; sourceTree = "<group>"; };
+		251E2D3E1CA9BFD000919C5F /* LUOrderAheadSuggestedOrder+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUOrderAheadSuggestedOrder+Fixtures.h"; sourceTree = "<group>"; };
+		251E2D3F1CA9BFD000919C5F /* LUOrderAheadSuggestedOrder+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUOrderAheadSuggestedOrder+Fixtures.m"; sourceTree = "<group>"; };
+		251E2D401CA9BFD000919C5F /* LUOrderAheadViewableOrder+Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUOrderAheadViewableOrder+Fixtures.h"; sourceTree = "<group>"; };
+		251E2D411CA9BFD000919C5F /* LUOrderAheadViewableOrder+Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LUOrderAheadViewableOrder+Fixtures.m"; sourceTree = "<group>"; };
+		251E2D4D1CA9C45800919C5F /* order_ahead_complete_order_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order_ahead_complete_order_response.json; sourceTree = "<group>"; };
+		251E2D4E1CA9C45800919C5F /* order_ahead_completed_delivery_order_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order_ahead_completed_delivery_order_response.json; sourceTree = "<group>"; };
+		251E2D4F1CA9C45800919C5F /* order_ahead_completed_pickup_order_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order_ahead_completed_pickup_order_response.json; sourceTree = "<group>"; };
+		251E2D501CA9C45800919C5F /* order_ahead_delivery_location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order_ahead_delivery_location.json; sourceTree = "<group>"; };
+		251E2D511CA9C45800919C5F /* order_ahead_invalid_cart_error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order_ahead_invalid_cart_error.json; sourceTree = "<group>"; };
+		251E2D521CA9C45800919C5F /* order_ahead_menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order_ahead_menu.json; sourceTree = "<group>"; };
+		251E2D531CA9C45800919C5F /* order_ahead_start_order_request.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order_ahead_start_order_request.json; sourceTree = "<group>"; };
+		251E2D541CA9C45800919C5F /* order_ahead_start_order_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order_ahead_start_order_response.json; sourceTree = "<group>"; };
+		251E2D551CA9C45800919C5F /* order_ahead_suggested_orders.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order_ahead_suggested_orders.json; sourceTree = "<group>"; };
+		251E2D561CA9C45800919C5F /* order_ahead_viewable_order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order_ahead_viewable_order.json; sourceTree = "<group>"; };
+		251E2D611CA9C46B00919C5F /* pickup_locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pickup_locations.json; sourceTree = "<group>"; };
+		251E2D641CA9C4C400919C5F /* LUOrderAheadMenuCategorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadMenuCategorySpec.m; sourceTree = "<group>"; };
+		251E2D651CA9C4C400919C5F /* LUOrderAheadMenuItemOptionGroupSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadMenuItemOptionGroupSpec.m; sourceTree = "<group>"; };
+		251E2D661CA9C4C400919C5F /* LUOrderAheadMenuItemOptionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadMenuItemOptionSpec.m; sourceTree = "<group>"; };
+		251E2D671CA9C4C400919C5F /* LUOrderAheadMenuItemSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadMenuItemSpec.m; sourceTree = "<group>"; };
+		251E2D681CA9C4C400919C5F /* LUOrderAheadMenuSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadMenuSpec.m; sourceTree = "<group>"; };
+		251E2D691CA9C4C400919C5F /* LUOrderAheadOrderConveyanceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadOrderConveyanceSpec.m; sourceTree = "<group>"; };
+		251E2D6A1CA9C4C400919C5F /* LUOrderAheadOrderItemSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadOrderItemSpec.m; sourceTree = "<group>"; };
+		251E2D6B1CA9C4C400919C5F /* LUOrderAheadOrderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadOrderSpec.m; sourceTree = "<group>"; };
+		251E2D6C1CA9C4C400919C5F /* LUOrderAheadOrderStatusSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadOrderStatusSpec.m; sourceTree = "<group>"; };
+		251E2D6D1CA9C4C400919C5F /* LUOrderAheadViewableOrderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadViewableOrderSpec.m; sourceTree = "<group>"; };
+		251E2D791CA9C54100919C5F /* LUOrderAheadCompletedOrderJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadCompletedOrderJSONFactorySpec.m; sourceTree = "<group>"; };
+		251E2D7A1CA9C54100919C5F /* LUOrderAheadMenuJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadMenuJSONFactorySpec.m; sourceTree = "<group>"; };
+		251E2D7B1CA9C54100919C5F /* LUOrderAheadOrderStatusJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadOrderStatusJSONFactorySpec.m; sourceTree = "<group>"; };
+		251E2D7C1CA9C54100919C5F /* LUOrderAheadSuggestedOrderJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadSuggestedOrderJSONFactorySpec.m; sourceTree = "<group>"; };
+		251E2D7D1CA9C54100919C5F /* LUOrderAheadViewableOrderJSONFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadViewableOrderJSONFactorySpec.m; sourceTree = "<group>"; };
+		251E2D831CA9C66C00919C5F /* LUOrderAheadRequestFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUOrderAheadRequestFactorySpec.m; sourceTree = "<group>"; };
+		251E2D851CA9C79900919C5F /* NSNumberLUAdditionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNumberLUAdditionsSpec.m; sourceTree = "<group>"; };
 		2523E31517374B2900FBDFEB /* LULocationSummaryJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationSummaryJSONFactory.h; sourceTree = "<group>"; };
 		2523E31617374B2900FBDFEB /* LULocationSummaryJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LULocationSummaryJSONFactory.m; sourceTree = "<group>"; };
 		2523E31917374B3F00FBDFEB /* LULocationRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LULocationRequestFactory.h; sourceTree = "<group>"; };
@@ -1198,6 +1367,7 @@
 		022A6DBE187C61D500EE7C4B /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				251E2D2B1CA9BFD000919C5F /* Order Ahead */,
 				022A6DBF187C61D500EE7C4B /* LUAccessToken+Fixtures.h */,
 				022A6DC0187C61D500EE7C4B /* LUAccessToken+Fixtures.m */,
 				027E58AF1ABCBC5000C334CA /* LUApplePayCardPaymentMethod+Fixtures.h */,
@@ -1564,6 +1734,16 @@
 				C17DB74D1A40D1BB004AA124 /* merchant_locations.json */,
 				02E29153175FCAB8002036B4 /* new_user.json */,
 				02E29154175FCAB8002036B4 /* oauth_access_token.json */,
+				251E2D4D1CA9C45800919C5F /* order_ahead_complete_order_response.json */,
+				251E2D4E1CA9C45800919C5F /* order_ahead_completed_delivery_order_response.json */,
+				251E2D4F1CA9C45800919C5F /* order_ahead_completed_pickup_order_response.json */,
+				251E2D501CA9C45800919C5F /* order_ahead_delivery_location.json */,
+				251E2D511CA9C45800919C5F /* order_ahead_invalid_cart_error.json */,
+				251E2D521CA9C45800919C5F /* order_ahead_menu.json */,
+				251E2D531CA9C45800919C5F /* order_ahead_start_order_request.json */,
+				251E2D541CA9C45800919C5F /* order_ahead_start_order_response.json */,
+				251E2D551CA9C45800919C5F /* order_ahead_suggested_orders.json */,
+				251E2D561CA9C45800919C5F /* order_ahead_viewable_order.json */,
 				02E29155175FCAB8002036B4 /* order.json */,
 				02E29156175FCAB8002036B4 /* orders_page-1.json */,
 				02E29157175FCAB8002036B4 /* orders_page-2.json */,
@@ -1575,6 +1755,7 @@
 				02EA61C31A9245250079645F /* payment_token_with_action_and_message.json */,
 				02EA61C41A9245250079645F /* payment_token_with_message.json */,
 				025B6DDD176A70D500713242 /* payment_token.json */,
+				251E2D611CA9C46B00919C5F /* pickup_locations.json */,
 				021B7484193FAD0800BBC315 /* registration.json */,
 				02C1A7D11AF1217D00550FE3 /* reward_summary.json */,
 				02C1A7D31AF121AB00550FE3 /* rewards.json */,
@@ -1586,6 +1767,119 @@
 			);
 			name = "Network Responses";
 			path = "Network-Responses";
+			sourceTree = "<group>";
+		};
+		251E2CD91CA9B7F600919C5F /* Order Ahead */ = {
+			isa = PBXGroup;
+			children = (
+				251E2CDA1CA9B7F600919C5F /* LUOrderAheadCompletedOrder.h */,
+				251E2CDB1CA9B7F600919C5F /* LUOrderAheadCompletedOrder.m */,
+				251E2CDC1CA9B7F600919C5F /* LUOrderAheadMenu.h */,
+				251E2CDD1CA9B7F600919C5F /* LUOrderAheadMenu.m */,
+				251E2CDE1CA9B7F600919C5F /* LUOrderAheadMenuCategory.h */,
+				251E2CDF1CA9B7F600919C5F /* LUOrderAheadMenuCategory.m */,
+				251E2CE01CA9B7F600919C5F /* LUOrderAheadMenuItem.h */,
+				251E2CE11CA9B7F600919C5F /* LUOrderAheadMenuItem.m */,
+				251E2CE21CA9B7F600919C5F /* LUOrderAheadMenuItemOption.h */,
+				251E2CE31CA9B7F600919C5F /* LUOrderAheadMenuItemOption.m */,
+				251E2CE41CA9B7F600919C5F /* LUOrderAheadMenuItemOptionGroup.h */,
+				251E2CE51CA9B7F600919C5F /* LUOrderAheadMenuItemOptionGroup.m */,
+				251E2CE61CA9B7F600919C5F /* LUOrderAheadOrder.h */,
+				251E2CE71CA9B7F600919C5F /* LUOrderAheadOrder.m */,
+				251E2CE81CA9B7F600919C5F /* LUOrderAheadOrderConveyance.h */,
+				251E2CE91CA9B7F600919C5F /* LUOrderAheadOrderConveyance.m */,
+				251E2CEA1CA9B7F600919C5F /* LUOrderAheadOrderItem.h */,
+				251E2CEB1CA9B7F600919C5F /* LUOrderAheadOrderItem.m */,
+				251E2CEC1CA9B7F600919C5F /* LUOrderAheadOrderStateParser.h */,
+				251E2CED1CA9B7F600919C5F /* LUOrderAheadOrderStateParser.m */,
+				251E2CEE1CA9B7F600919C5F /* LUOrderAheadOrderStatus.h */,
+				251E2CEF1CA9B7F600919C5F /* LUOrderAheadOrderStatus.m */,
+				251E2CF01CA9B7F600919C5F /* LUOrderAheadSuggestedOrder.h */,
+				251E2CF11CA9B7F600919C5F /* LUOrderAheadSuggestedOrder.m */,
+				251E2CF21CA9B7F600919C5F /* LUOrderAheadViewableOrder.h */,
+				251E2CF31CA9B7F600919C5F /* LUOrderAheadViewableOrder.m */,
+			);
+			name = "Order Ahead";
+			path = "Order-Ahead";
+			sourceTree = "<group>";
+		};
+		251E2D121CA9BDF600919C5F /* Order Ahead */ = {
+			isa = PBXGroup;
+			children = (
+				251E2D131CA9BDF600919C5F /* LUOrderAheadCompletedOrderJSONFactory.h */,
+				251E2D141CA9BDF600919C5F /* LUOrderAheadCompletedOrderJSONFactory.m */,
+				251E2D151CA9BDF600919C5F /* LUOrderAheadMenuJSONFactory.h */,
+				251E2D161CA9BDF600919C5F /* LUOrderAheadMenuJSONFactory.m */,
+				251E2D171CA9BDF600919C5F /* LUOrderAheadOrderStatusJSONFactory.h */,
+				251E2D181CA9BDF600919C5F /* LUOrderAheadOrderStatusJSONFactory.m */,
+				251E2D191CA9BDF600919C5F /* LUOrderAheadSuggestedOrderJSONFactory.h */,
+				251E2D1A1CA9BDF600919C5F /* LUOrderAheadSuggestedOrderJSONFactory.m */,
+				251E2D1B1CA9BDF600919C5F /* LUOrderAheadViewableOrderJSONFactory.h */,
+				251E2D1C1CA9BDF600919C5F /* LUOrderAheadViewableOrderJSONFactory.m */,
+			);
+			name = "Order Ahead";
+			path = "Order-Ahead";
+			sourceTree = "<group>";
+		};
+		251E2D2B1CA9BFD000919C5F /* Order Ahead */ = {
+			isa = PBXGroup;
+			children = (
+				251E2D2C1CA9BFD000919C5F /* LUOrderAheadCompletedOrder+Fixtures.h */,
+				251E2D2D1CA9BFD000919C5F /* LUOrderAheadCompletedOrder+Fixtures.m */,
+				251E2D2E1CA9BFD000919C5F /* LUOrderAheadMenu+Fixtures.h */,
+				251E2D2F1CA9BFD000919C5F /* LUOrderAheadMenu+Fixtures.m */,
+				251E2D301CA9BFD000919C5F /* LUOrderAheadMenuItem+Fixtures.h */,
+				251E2D311CA9BFD000919C5F /* LUOrderAheadMenuItem+Fixtures.m */,
+				251E2D321CA9BFD000919C5F /* LUOrderAheadMenuItemOption+Fixtures.h */,
+				251E2D331CA9BFD000919C5F /* LUOrderAheadMenuItemOption+Fixtures.m */,
+				251E2D341CA9BFD000919C5F /* LUOrderAheadMenuItemOptionGroup+Fixtures.h */,
+				251E2D351CA9BFD000919C5F /* LUOrderAheadMenuItemOptionGroup+Fixtures.m */,
+				251E2D361CA9BFD000919C5F /* LUOrderAheadOrder+Fixtures.h */,
+				251E2D371CA9BFD000919C5F /* LUOrderAheadOrder+Fixtures.m */,
+				251E2D381CA9BFD000919C5F /* LUOrderAheadOrderConveyance+Fixtures.h */,
+				251E2D391CA9BFD000919C5F /* LUOrderAheadOrderConveyance+Fixtures.m */,
+				251E2D3A1CA9BFD000919C5F /* LUOrderAheadOrderItem+Fixtures.h */,
+				251E2D3B1CA9BFD000919C5F /* LUOrderAheadOrderItem+Fixtures.m */,
+				251E2D3C1CA9BFD000919C5F /* LUOrderAheadOrderStatus+Fixtures.h */,
+				251E2D3D1CA9BFD000919C5F /* LUOrderAheadOrderStatus+Fixtures.m */,
+				251E2D3E1CA9BFD000919C5F /* LUOrderAheadSuggestedOrder+Fixtures.h */,
+				251E2D3F1CA9BFD000919C5F /* LUOrderAheadSuggestedOrder+Fixtures.m */,
+				251E2D401CA9BFD000919C5F /* LUOrderAheadViewableOrder+Fixtures.h */,
+				251E2D411CA9BFD000919C5F /* LUOrderAheadViewableOrder+Fixtures.m */,
+			);
+			name = "Order Ahead";
+			path = "Order-Ahead";
+			sourceTree = "<group>";
+		};
+		251E2D631CA9C4C400919C5F /* Order Ahead */ = {
+			isa = PBXGroup;
+			children = (
+				251E2D641CA9C4C400919C5F /* LUOrderAheadMenuCategorySpec.m */,
+				251E2D651CA9C4C400919C5F /* LUOrderAheadMenuItemOptionGroupSpec.m */,
+				251E2D661CA9C4C400919C5F /* LUOrderAheadMenuItemOptionSpec.m */,
+				251E2D671CA9C4C400919C5F /* LUOrderAheadMenuItemSpec.m */,
+				251E2D681CA9C4C400919C5F /* LUOrderAheadMenuSpec.m */,
+				251E2D691CA9C4C400919C5F /* LUOrderAheadOrderConveyanceSpec.m */,
+				251E2D6A1CA9C4C400919C5F /* LUOrderAheadOrderItemSpec.m */,
+				251E2D6B1CA9C4C400919C5F /* LUOrderAheadOrderSpec.m */,
+				251E2D6C1CA9C4C400919C5F /* LUOrderAheadOrderStatusSpec.m */,
+				251E2D6D1CA9C4C400919C5F /* LUOrderAheadViewableOrderSpec.m */,
+			);
+			name = "Order Ahead";
+			path = "Order-Ahead";
+			sourceTree = "<group>";
+		};
+		251E2D781CA9C54100919C5F /* Order Ahead */ = {
+			isa = PBXGroup;
+			children = (
+				251E2D791CA9C54100919C5F /* LUOrderAheadCompletedOrderJSONFactorySpec.m */,
+				251E2D7A1CA9C54100919C5F /* LUOrderAheadMenuJSONFactorySpec.m */,
+				251E2D7B1CA9C54100919C5F /* LUOrderAheadOrderStatusJSONFactorySpec.m */,
+				251E2D7C1CA9C54100919C5F /* LUOrderAheadSuggestedOrderJSONFactorySpec.m */,
+				251E2D7D1CA9C54100919C5F /* LUOrderAheadViewableOrderJSONFactorySpec.m */,
+			);
+			name = "Order Ahead";
+			path = "Order-Ahead";
 			sourceTree = "<group>";
 		};
 		2523E32417374D8B00FBDFEB /* Persistence */ = {
@@ -1775,6 +2069,7 @@
 			children = (
 				02BDB22F1AB770D4005830A7 /* Campaign Representations */,
 				C1CAF0B0173052A7003B3D01 /* JSON Factories */,
+				251E2D631CA9C4C400919C5F /* Order Ahead */,
 				027E58E71ABCC42300C334CA /* Payment Methods */,
 				C1CAF0D5173052A7003B3D01 /* LUAccessTokenTokenSpec.m */,
 				C1CAF0C5173052A7003B3D01 /* LUAPIModelSpec.m */,
@@ -1812,6 +2107,7 @@
 			isa = PBXGroup;
 			children = (
 				02BDB2321AB770DE005830A7 /* Campaign Representations */,
+				251E2D781CA9C54100919C5F /* Order Ahead */,
 				C1CAF0B1173052A7003B3D01 /* LUAbstractJSONModelFactorySpec.m */,
 				C1CAF0C0173052A7003B3D01 /* LUAccessTokenJSONFactorySpec.m */,
 				0274B8421773A1F700FD5B43 /* LUAPIErrorJSONFactorySpec.m */,
@@ -1870,6 +2166,7 @@
 				02643921185BB76200175425 /* LULocationCreditRequestFactorySpec.m */,
 				02D68DD91738497A005E1BA8 /* LULocationRequestFactorySpec.m */,
 				F8736499173AA1900024A3F5 /* LULoyaltyRequestFactorySpec.m */,
+				251E2D831CA9C66C00919C5F /* LUOrderAheadRequestFactorySpec.m */,
 				C1CAF0EB173052A7003B3D01 /* LUOrderRequestFactorySpec.m */,
 				0261005B19F7F6AB006BF5F7 /* LUPassRequestFactorySpec.m */,
 				027E58F01ABCC51000C334CA /* LUPaymentMethodRequestFactorySpec.m */,
@@ -1903,6 +2200,7 @@
 				C1CAF0F2173052A7003B3D01 /* NSDictionaryObjectClassAccessSpec.m */,
 				F8401CF317578F82001CB772 /* NSDictionarySafetyAdditionsSpec.m */,
 				C1CAF0F3173052A7003B3D01 /* NSNumberBase36Spec.m */,
+				251E2D851CA9C79900919C5F /* NSNumberLUAdditionsSpec.m */,
 				C1CAF0F4173052A7003B3D01 /* NSStringHTMLStrippingSpec.m */,
 				02CD577317D907B6006205C6 /* NSURLLUAdditionsSpec.m */,
 			);
@@ -1971,6 +2269,7 @@
 				02BDB2031AB76FFB005830A7 /* Campaign Representations */,
 				02CD574A17D90673006205C6 /* Interstitials */,
 				C1CAF15E17315414003B3D01 /* JSON Factories */,
+				251E2CD91CA9B7F600919C5F /* Order Ahead */,
 				027E58961ABCB50400C334CA /* Payment Methods */,
 				C1CAF1A717315414003B3D01 /* LUAccessToken.h */,
 				C1CAF1A817315414003B3D01 /* LUAccessToken.m */,
@@ -2034,6 +2333,7 @@
 			isa = PBXGroup;
 			children = (
 				02BDB2081AB7700E005830A7 /* Campaign Representations */,
+				251E2D121CA9BDF600919C5F /* Order Ahead */,
 				C1CAF15F17315414003B3D01 /* LUAbstractJSONModelFactory.h */,
 				C1CAF16017315414003B3D01 /* LUAbstractJSONModelFactory.m */,
 				C1CAF17D17315414003B3D01 /* LUAccessTokenJSONFactory.h */,
@@ -2133,6 +2433,8 @@
 				2523E31A17374B3F00FBDFEB /* LULocationRequestFactory.m */,
 				F87364A0173AA4AF0024A3F5 /* LULoyaltyRequestFactory.h */,
 				F87364A1173AA4AF0024A3F5 /* LULoyaltyRequestFactory.m */,
+				251E2D271CA9BEA800919C5F /* LUOrderAheadRequestFactory.h */,
+				251E2D281CA9BEA800919C5F /* LUOrderAheadRequestFactory.m */,
 				C1CAF1D017315415003B3D01 /* LUOrderRequestFactory.h */,
 				C1CAF1D117315415003B3D01 /* LUOrderRequestFactory.m */,
 				027C5C4019D33BB3006C8E23 /* LUPassRequestFactory.h */,
@@ -2186,6 +2488,8 @@
 				02CC555718F2F88D00BF6776 /* NSError+LUAdditions.m */,
 				C1CAF1DF17315415003B3D01 /* NSNumber+Base36.h */,
 				C1CAF1E017315415003B3D01 /* NSNumber+Base36.m */,
+				251E2D0E1CA9BB1F00919C5F /* NSNumber+LUAdditions.h */,
+				251E2D0F1CA9BB1F00919C5F /* NSNumber+LUAdditions.m */,
 				02D68DCE1738370F005E1BA8 /* NSRegularExpression+LUAdditions.h */,
 				02D68DCF1738370F005E1BA8 /* NSRegularExpression+LUAdditions.m */,
 				C1CAF1E117315415003B3D01 /* NSString+HTMLStripping.h */,
@@ -2292,6 +2596,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				024AF4B11A9F703D007131DD /* NSData+Base64.h in Headers */,
+				251E2D101CA9BB1F00919C5F /* NSNumber+LUAdditions.h in Headers */,
 				6AC1EC9F1A5197FD006756C5 /* LUCarrierAccountStateTransformer.h in Headers */,
 				027E589D1ABCB68A00C334CA /* LUApplePayCardPaymentMethod.h in Headers */,
 				02F08DBE1ADDB533001B5C1F /* LUCampaignRepresentationVisitBasedLoyaltyV1JSONFactory.h in Headers */,
@@ -2318,13 +2623,17 @@
 				027E58A51ABCB77E00C334CA /* LUCreditCardPaymentMethod.h in Headers */,
 				02C1A7411AE8335800550FE3 /* LUPaymentPreferenceRequestFactory.h in Headers */,
 				C1CAF21E17315415003B3D01 /* LUUserJSONFactory.h in Headers */,
+				251E2CFC1CA9B7F600919C5F /* LUOrderAheadMenuItemOption.h in Headers */,
+				251E2CF41CA9B7F600919C5F /* LUOrderAheadCompletedOrder.h in Headers */,
 				404201971B50124000E8DA59 /* LUPaymentPreferenceTypeTransformer.h in Headers */,
+				251E2CF61CA9B7F600919C5F /* LUOrderAheadMenu.h in Headers */,
 				027E58A11ABCB6F800C334CA /* LUCarrierAccountPaymentMethod.h in Headers */,
 				C1CAF22017315415003B3D01 /* LUAPIModel.h in Headers */,
 				024AF4AF1A9F703D007131DD /* BTSecKeyWrapper.h in Headers */,
 				02C1A7AF1AF02DB800550FE3 /* LURewardRequestFactory.h in Headers */,
 				C1CAF22617315415003B3D01 /* LUCampaign.h in Headers */,
 				C1CAF22817315415003B3D01 /* LUCategory.h in Headers */,
+				251E2D1D1CA9BDF600919C5F /* LUOrderAheadCompletedOrderJSONFactory.h in Headers */,
 				C1CAF22E17315415003B3D01 /* LUClaim.h in Headers */,
 				02130DA818E9DA4400A419EB /* NSData+LUAdditions.h in Headers */,
 				C1CAF23217315415003B3D01 /* LUCreditCard.h in Headers */,
@@ -2334,6 +2643,9 @@
 				C1CAF23E17315415003B3D01 /* LUMonetaryValue.h in Headers */,
 				027E58A91ABCB93200C334CA /* LUPaymentMethodJSONFactory.h in Headers */,
 				021B7479193FABB700BBC315 /* LURegistrationJSONFactory.h in Headers */,
+				251E2D081CA9B7F600919C5F /* LUOrderAheadOrderStatus.h in Headers */,
+				251E2CF81CA9B7F600919C5F /* LUOrderAheadMenuCategory.h in Headers */,
+				251E2CFA1CA9B7F600919C5F /* LUOrderAheadMenuItem.h in Headers */,
 				02F08DAA1ADC3D9F001B5C1F /* LUCampaignRepresentationSpendBasedLoyaltyV1.h in Headers */,
 				C1CAF24017315415003B3D01 /* LUAccessToken.h in Headers */,
 				C1CAF24617315415003B3D01 /* LUUser.h in Headers */,
@@ -2343,6 +2655,7 @@
 				024AF4AB1A9F703D007131DD /* BTRandom.h in Headers */,
 				C1CAF24E17315415003B3D01 /* LUDeviceIdentifier.h in Headers */,
 				6A8B54821A51D7110037E81D /* LUCarrierAccountRetriever.h in Headers */,
+				251E2D1F1CA9BDF600919C5F /* LUOrderAheadMenuJSONFactory.h in Headers */,
 				C1CAF25017315415003B3D01 /* LUUserParameterBuilder.h in Headers */,
 				C1CAF25217315415003B3D01 /* LUAPNDeviceRequestFactory.h in Headers */,
 				C1CAF25617315415003B3D01 /* LUCampaignRequestFactory.h in Headers */,
@@ -2350,6 +2663,7 @@
 				C1CAF25C17315415003B3D01 /* LUClaimRequestFactory.h in Headers */,
 				6AD8C61B1A4934FE000F6F27 /* LUCarrierAccountRequestFactory.h in Headers */,
 				C1CAF26017315415003B3D01 /* LUCreditCardRequestFactory.h in Headers */,
+				251E2D251CA9BDF600919C5F /* LUOrderAheadViewableOrderJSONFactory.h in Headers */,
 				02CC555818F2F88D00BF6776 /* NSError+LUAdditions.h in Headers */,
 				C1CAF26417315415003B3D01 /* LUAuthenticationRequestFactory.h in Headers */,
 				C1CAF26617315415003B3D01 /* LUOrderRequestFactory.h in Headers */,
@@ -2369,6 +2683,7 @@
 				027E58991ABCB51A00C334CA /* LUAbstractPaymentMethod.h in Headers */,
 				C1CAF27017315415003B3D01 /* NSDate+StringFormats.h in Headers */,
 				C1CAF27217315415003B3D01 /* NSDictionary+ObjectClassAccess.h in Headers */,
+				251E2CFE1CA9B7F600919C5F /* LUOrderAheadMenuItemOptionGroup.h in Headers */,
 				C1CAF27417315415003B3D01 /* NSNumber+Base36.h in Headers */,
 				C1CAF27617315415003B3D01 /* NSString+HTMLStripping.h in Headers */,
 				0205E1DD1951FED1001904D9 /* LUUserWithAccessToken.h in Headers */,
@@ -2383,6 +2698,7 @@
 				C1CAF28217315415003B3D01 /* LUQRCodeScannerView.h in Headers */,
 				C1CAF28417315415003B3D01 /* LUQROverlayView.h in Headers */,
 				2523E31717374B2900FBDFEB /* LULocationSummaryJSONFactory.h in Headers */,
+				251E2D231CA9BDF600919C5F /* LUOrderAheadSuggestedOrderJSONFactory.h in Headers */,
 				404496A81B5ECACB00A67FE2 /* LUUserAddress.h in Headers */,
 				2523E31B17374B3F00FBDFEB /* LULocationRequestFactory.h in Headers */,
 				2523E32D17374D8B00FBDFEB /* LUCachedLocation.h in Headers */,
@@ -2391,6 +2707,7 @@
 				02CB685B18A94D5D00FDF630 /* LUPaymentStringGenerator.h in Headers */,
 				2523E33117374D8B00FBDFEB /* LUCoreDataStack.h in Headers */,
 				02BDB21F1AB77052005830A7 /* LUCampaignRepresentationTypeTransformer.h in Headers */,
+				251E2D0A1CA9B7F600919C5F /* LUOrderAheadSuggestedOrder.h in Headers */,
 				2523E33317374D8B00FBDFEB /* LULocationCacheUpdater.h in Headers */,
 				25FF1CCF18FAE48D007EDCEA /* LUDeepLinkAuthRequest.h in Headers */,
 				02BDB2171AB7703A005830A7 /* LUCampaignMetadata.h in Headers */,
@@ -2415,20 +2732,26 @@
 				024AF4A91A9F703D007131DD /* BTHmac.h in Headers */,
 				024AF4AD1A9F703D007131DD /* BTRSA.h in Headers */,
 				027E58AD1ABCBB2F00C334CA /* LUPaymentMethodRequestFactory.h in Headers */,
+				251E2D041CA9B7F600919C5F /* LUOrderAheadOrderItem.h in Headers */,
 				0274B83C17739B7800FD5B43 /* LUAPIError.h in Headers */,
 				0274B84017739BAA00FD5B43 /* LUAPIErrorJSONFactory.h in Headers */,
 				021B7475193FAB8900BBC315 /* LURegistration.h in Headers */,
 				F8EAF0EF17BA865900197388 /* LUCacheManager.h in Headers */,
 				029053BD17BD4AAB00527576 /* LUAPIResponse.h in Headers */,
 				029053BF17BD4AAB00527576 /* LUWebLinkParser.h in Headers */,
+				251E2D211CA9BDF600919C5F /* LUOrderAheadOrderStatusJSONFactory.h in Headers */,
+				251E2D291CA9BEA800919C5F /* LUOrderAheadRequestFactory.h in Headers */,
 				02CD575317D90673006205C6 /* LUInterstitial.h in Headers */,
 				02C1A7BB1AF115A900550FE3 /* LURewardSummaryJSONFactory.h in Headers */,
+				251E2D021CA9B7F600919C5F /* LUOrderAheadOrderConveyance.h in Headers */,
 				02CD575517D90673006205C6 /* LUInterstitialClaimAction.h in Headers */,
 				02643917185BB6D300175425 /* LULocationCreditJSONFactory.h in Headers */,
 				02CD575717D90673006205C6 /* LUInterstitialShareAction.h in Headers */,
 				40EC258918A582B3000D5390 /* LUInterstitialFeedbackAction.h in Headers */,
 				02BDB20D1AB7700E005830A7 /* LUBaseCampaignRepresentationJSONFactory.h in Headers */,
 				02CD575917D90673006205C6 /* LUInterstitialURLAction.h in Headers */,
+				251E2D0C1CA9B7F600919C5F /* LUOrderAheadViewableOrder.h in Headers */,
+				251E2D061CA9B7F600919C5F /* LUOrderAheadOrderStateParser.h in Headers */,
 				02CD575D17D9068C006205C6 /* LUInterstitialJSONFactory.h in Headers */,
 				02BDB20F1AB7700E005830A7 /* LUCampaignRepresentationBasicV1JSONFactory.h in Headers */,
 				6A2D6AFB1A4877BB00BE1D09 /* LUCarrierNetworkDetector.h in Headers */,
@@ -2437,6 +2760,7 @@
 				02C1A7491AE8358000550FE3 /* LUPaymentOptionsSummaryJSONFactory.h in Headers */,
 				02DB59061954782E00955711 /* LUOrderItem.h in Headers */,
 				C1CAF24217315415003B3D01 /* LUOrder.h in Headers */,
+				251E2D001CA9B7F600919C5F /* LUOrderAheadOrder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2563,6 +2887,7 @@
 			files = (
 				02EA61C51A92452D0079645F /* payment_token_with_action_and_message.json in Resources */,
 				2504194E174AEAE300254161 /* LUPersistedObjectsInitial.sqlite in Resources */,
+				251E2D5C1CA9C45800919C5F /* order_ahead_menu.json in Resources */,
 				02E2915B175FCAB8002036B4 /* campaign.json in Resources */,
 				02E2915F175FCAB8002036B4 /* credit_card.json in Resources */,
 				027E58C51ABCBF3200C334CA /* carrier_account_payment_method.json in Resources */,
@@ -2584,28 +2909,35 @@
 				0264391E185BB71600175425 /* credit.json in Resources */,
 				02BDB22A1AB77091005830A7 /* campaign_representation_basic_v1.json in Resources */,
 				021B7485193FAD0800BBC315 /* registration.json in Resources */,
+				251E2D5B1CA9C45800919C5F /* order_ahead_invalid_cart_error.json in Resources */,
 				02E29169175FCAB8002036B4 /* oauth_access_token.json in Resources */,
 				02D53BA2194A4DB600507397 /* payment_ineligible_error_excessive_chargebacks.json in Resources */,
 				027E58E01ABCBF4500C334CA /* location.json in Resources */,
 				02E2916A175FCAB8002036B4 /* order.json in Resources */,
 				02C1A7D21AF1217D00550FE3 /* reward_summary.json in Resources */,
+				251E2D5A1CA9C45800919C5F /* order_ahead_delivery_location.json in Resources */,
 				6AB687581A6A3D7000B21F12 /* carrier_accounts_identify.json in Resources */,
+				251E2D621CA9C46B00919C5F /* pickup_locations.json in Resources */,
 				02E2916B175FCAB8002036B4 /* orders_page-1.json in Resources */,
 				02E2916C175FCAB8002036B4 /* orders_page-2.json in Resources */,
 				0205E1E419520265001904D9 /* user_with_access_token.json in Resources */,
 				40140B54181EAD52005A66BF /* current_user_minimal.json in Resources */,
+				251E2D571CA9C45800919C5F /* order_ahead_complete_order_response.json in Resources */,
 				02F08DD21ADEB781001B5C1F /* campaign_representation_spend_based_loyalty_v1.json in Resources */,
 				02E2916D175FCAB8002036B4 /* ticket.json in Resources */,
 				027E58DF1ABCBF3A00C334CA /* downgraded_token.json in Resources */,
 				40742A2518D0BD4200939A36 /* current_user_debit_only.json in Resources */,
 				40742A2718D0BD8100939A36 /* current_user_minimal_debit_only.json in Resources */,
+				251E2D5D1CA9C45800919C5F /* order_ahead_start_order_request.json in Resources */,
 				02EA61C61A92452D0079645F /* payment_token_with_message.json in Resources */,
 				027E58C41ABCBF2D00C334CA /* carrier_account_evurl_response.txt in Resources */,
 				02293815176265DE0057C381 /* categories.json in Resources */,
 				0229381717626B500057C381 /* location_summaries.json in Resources */,
 				02D53B9E194A332200507397 /* payment_ineligible_error.json in Resources */,
 				02F08DD31ADEB781001B5C1F /* campaign_representation_visit_based_loyalty_v1.json in Resources */,
+				251E2D5E1CA9C45800919C5F /* order_ahead_start_order_response.json in Resources */,
 				02C1A7D41AF121AB00550FE3 /* rewards.json in Resources */,
+				251E2D5F1CA9C45800919C5F /* order_ahead_suggested_orders.json in Resources */,
 				40A1451418D0F24B00BC2E87 /* failed_credit_card_create.json in Resources */,
 				025B6DDE176A713C00713242 /* payment_token.json in Resources */,
 				404496C01B61411200A67FE2 /* user_addresses.json in Resources */,
@@ -2618,10 +2950,13 @@
 				0261006219F7FD2F006BF5F7 /* pass.json in Resources */,
 				027E58E21ABCBFB200C334CA /* credit_card_payment_method.json in Resources */,
 				021B7483193FACA700BBC315 /* failed_registration.json in Resources */,
+				251E2D591CA9C45800919C5F /* order_ahead_completed_pickup_order_response.json in Resources */,
+				251E2D581CA9C45800919C5F /* order_ahead_completed_delivery_order_response.json in Resources */,
 				029053C217BD4ACF00527576 /* app_locations.json in Resources */,
 				027E58E41ABCBFF900C334CA /* debit_card_payment_method.json in Resources */,
 				02CD576B17D9070C006205C6 /* interstitial.json in Resources */,
 				02CD576D17D90717006205C6 /* loyalty_disabled.json in Resources */,
+				251E2D601CA9C45800919C5F /* order_ahead_viewable_order.json in Resources */,
 				0261006419F8027E006BF5F7 /* pass.pkpass in Resources */,
 				404496BE1B61405F00A67FE2 /* user_address.json in Resources */,
 				021EA6E717D92A11004F4DAF /* failed_claim.json in Resources */,
@@ -2739,6 +3074,7 @@
 				02D49226194F3FEB00C9C385 /* LUWebLinkJSONFactory.m in Sources */,
 				6AD8C61C1A4934FE000F6F27 /* LUCarrierAccountRequestFactory.m in Sources */,
 				C1CAF1FD17315415003B3D01 /* LUCampaignJSONFactory.m in Sources */,
+				251E2D261CA9BDF600919C5F /* LUOrderAheadViewableOrderJSONFactory.m in Sources */,
 				02C1A7C01AF1164800550FE3 /* LURewardJSONFactory.m in Sources */,
 				C1CAF1FF17315415003B3D01 /* LUCategoryJSONFactory.m in Sources */,
 				0251CC2B1A3B4CEF0056D82C /* LUIBeaconCheckInRequestFactory.m in Sources */,
@@ -2753,6 +3089,7 @@
 				C1CAF21717315415003B3D01 /* LUAccessTokenJSONFactory.m in Sources */,
 				0205E1DA1951FDD2001904D9 /* LUUserWithAccessTokenJSONFactory.m in Sources */,
 				404496AD1B5ED3F600A67FE2 /* LUUserAddressRequestFactory.m in Sources */,
+				251E2CF71CA9B7F600919C5F /* LUOrderAheadMenu.m in Sources */,
 				C1CAF21917315415003B3D01 /* LUOrderJSONFactory.m in Sources */,
 				02F08DBF1ADDB533001B5C1F /* LUCampaignRepresentationVisitBasedLoyaltyV1JSONFactory.m in Sources */,
 				02D49222194F3C6C00C9C385 /* LUWebLink.m in Sources */,
@@ -2772,6 +3109,7 @@
 				C1CAF23F17315415003B3D01 /* LUMonetaryValue.m in Sources */,
 				C1CAF24117315415003B3D01 /* LUAccessToken.m in Sources */,
 				C1CAF24317315415003B3D01 /* LUOrder.m in Sources */,
+				251E2CFD1CA9B7F600919C5F /* LUOrderAheadMenuItemOption.m in Sources */,
 				C1CAF24717315415003B3D01 /* LUUser.m in Sources */,
 				020BAB6F191BDBDC00198CDF /* LUDeepLinkAuthInstallAlert.m in Sources */,
 				02BDB21E1AB77052005830A7 /* LUAbstactEnumToStringTransformer.m in Sources */,
@@ -2779,9 +3117,12 @@
 				C1CAF24B17315415003B3D01 /* LUAPIRequest.m in Sources */,
 				C1CAF24F17315415003B3D01 /* LUDeviceIdentifier.m in Sources */,
 				6AC1ECA01A5197FD006756C5 /* LUCarrierAccountStateTransformer.m in Sources */,
+				251E2D0B1CA9B7F600919C5F /* LUOrderAheadSuggestedOrder.m in Sources */,
 				02F08DB31ADDAA06001B5C1F /* LUCampaignRepresentationVisitBasedLoyaltyV1.m in Sources */,
 				02C1A7B81AF110EB00550FE3 /* LUReward.m in Sources */,
 				C1CAF25117315415003B3D01 /* LUUserParameterBuilder.m in Sources */,
+				251E2D051CA9B7F600919C5F /* LUOrderAheadOrderItem.m in Sources */,
+				251E2D241CA9BDF600919C5F /* LUOrderAheadSuggestedOrderJSONFactory.m in Sources */,
 				02CB685C18A94D5D00FDF630 /* LUPaymentStringGenerator.m in Sources */,
 				02C1A7BC1AF115A900550FE3 /* LURewardSummaryJSONFactory.m in Sources */,
 				C1CAF25317315415003B3D01 /* LUAPNDeviceRequestFactory.m in Sources */,
@@ -2789,6 +3130,8 @@
 				02C1A7B41AF02EAE00550FE3 /* LURewardSummary.m in Sources */,
 				C1CAF25717315415003B3D01 /* LUCampaignRequestFactory.m in Sources */,
 				027E589E1ABCB68A00C334CA /* LUApplePayCardPaymentMethod.m in Sources */,
+				251E2D111CA9BB1F00919C5F /* NSNumber+LUAdditions.m in Sources */,
+				251E2D221CA9BDF600919C5F /* LUOrderAheadOrderStatusJSONFactory.m in Sources */,
 				02C1A74A1AE8358000550FE3 /* LUPaymentOptionsSummaryJSONFactory.m in Sources */,
 				C1CAF25917315415003B3D01 /* LUCategoryRequestFactory.m in Sources */,
 				024AF4AE1A9F703D007131DD /* BTRSA.m in Sources */,
@@ -2804,9 +3147,11 @@
 				C1CAF26B17315415003B3D01 /* LUUserRequestFactory.m in Sources */,
 				C1CAF26D17315415003B3D01 /* NSArray+LUAdditions.m in Sources */,
 				0205E1DE1951FED1001904D9 /* LUUserWithAccessToken.m in Sources */,
+				251E2CF91CA9B7F600919C5F /* LUOrderAheadMenuCategory.m in Sources */,
 				02BDB20E1AB7700E005830A7 /* LUBaseCampaignRepresentationJSONFactory.m in Sources */,
 				02BDB2181AB7703A005830A7 /* LUCampaignMetadata.m in Sources */,
 				40EC258A18A582B3000D5390 /* LUInterstitialFeedbackAction.m in Sources */,
+				251E2D031CA9B7F600919C5F /* LUOrderAheadOrderConveyance.m in Sources */,
 				C1CAF27117315415003B3D01 /* NSDate+StringFormats.m in Sources */,
 				0251CC1C1A3B44860056D82C /* LUGiftCardOrder.m in Sources */,
 				027E58AA1ABCB93200C334CA /* LUPaymentMethodJSONFactory.m in Sources */,
@@ -2814,10 +3159,12 @@
 				02643918185BB6D300175425 /* LULocationCreditJSONFactory.m in Sources */,
 				C1CAF27317315415003B3D01 /* NSDictionary+ObjectClassAccess.m in Sources */,
 				024AF4AC1A9F703D007131DD /* BTRandom.m in Sources */,
+				251E2CFF1CA9B7F600919C5F /* LUOrderAheadMenuItemOptionGroup.m in Sources */,
 				024AF4A81A9F703D007131DD /* BTEncryption.m in Sources */,
 				C1CAF27517315415003B3D01 /* NSNumber+Base36.m in Sources */,
 				C1CAF27717315415003B3D01 /* NSString+HTMLStripping.m in Sources */,
 				024AF4AA1A9F703D007131DD /* BTHmac.m in Sources */,
+				251E2D1E1CA9BDF600919C5F /* LUOrderAheadCompletedOrderJSONFactory.m in Sources */,
 				C1CAF27B17315415003B3D01 /* LUConstants.m in Sources */,
 				C1CAF27F17315415003B3D01 /* LUQRCodeDecoder.m in Sources */,
 				C1CAF28117315415003B3D01 /* LUPaymentQRCodeGenerator.m in Sources */,
@@ -2832,8 +3179,10 @@
 				2523E31C17374B3F00FBDFEB /* LULocationRequestFactory.m in Sources */,
 				2523E32E17374D8B00FBDFEB /* LUCachedLocation.m in Sources */,
 				027E58AE1ABCBB2F00C334CA /* LUPaymentMethodRequestFactory.m in Sources */,
+				251E2D071CA9B7F600919C5F /* LUOrderAheadOrderStateParser.m in Sources */,
 				2523E33017374D8B00FBDFEB /* LUCachedLocationSearch.m in Sources */,
 				2523E33217374D8B00FBDFEB /* LUCoreDataStack.m in Sources */,
+				251E2D201CA9BDF600919C5F /* LUOrderAheadMenuJSONFactory.m in Sources */,
 				404496A91B5ECACB00A67FE2 /* LUUserAddress.m in Sources */,
 				2523E33417374D8B00FBDFEB /* LULocationCacheUpdater.m in Sources */,
 				2523E33817374D9C00FBDFEB /* LUAPIObjectModel.xcdatamodeld in Sources */,
@@ -2858,13 +3207,17 @@
 				02BA982B174BE19500C9D647 /* LUCoreDataStore.m in Sources */,
 				F88A3DB017E8E57C008D5254 /* LUUserGenderTransformer.m in Sources */,
 				02BDB2101AB7700E005830A7 /* LUCampaignRepresentationBasicV1JSONFactory.m in Sources */,
+				251E2D0D1CA9B7F600919C5F /* LUOrderAheadViewableOrder.m in Sources */,
+				251E2D091CA9B7F600919C5F /* LUOrderAheadOrderStatus.m in Sources */,
 				F8D4DB9E17569CA90000DB66 /* NSDictionary+SafetyAdditions.m in Sources */,
 				020231721779E0B100B057D1 /* LUAPIConnection.m in Sources */,
 				25CA82DF176A173C0073383C /* LUPaymentToken.m in Sources */,
 				25CA82E3176A188A0073383C /* LUPaymentTokenJSONFactory.m in Sources */,
 				25CA82E7176A18EE0073383C /* LUPaymentTokenRequestFactory.m in Sources */,
+				251E2D011CA9B7F600919C5F /* LUOrderAheadOrder.m in Sources */,
 				02C1A7B01AF02DB800550FE3 /* LURewardRequestFactory.m in Sources */,
 				02F08DAB1ADC3D9F001B5C1F /* LUCampaignRepresentationSpendBasedLoyaltyV1.m in Sources */,
+				251E2CFB1CA9B7F600919C5F /* LUOrderAheadMenuItem.m in Sources */,
 				0274B83D17739B7800FD5B43 /* LUAPIError.m in Sources */,
 				0274B84117739BAA00FD5B43 /* LUAPIErrorJSONFactory.m in Sources */,
 				02CC555918F2F88D00BF6776 /* NSError+LUAdditions.m in Sources */,
@@ -2872,6 +3225,7 @@
 				02BC594E1AB9F3850053D6A7 /* LUIBeaconListener.m in Sources */,
 				029053BE17BD4AAB00527576 /* LUAPIResponse.m in Sources */,
 				029053C017BD4AAB00527576 /* LUWebLinkParser.m in Sources */,
+				251E2D2A1CA9BEA800919C5F /* LUOrderAheadRequestFactory.m in Sources */,
 				02CD575417D90673006205C6 /* LUInterstitial.m in Sources */,
 				02DB59071954782E00955711 /* LUOrderItem.m in Sources */,
 				02CD575617D90673006205C6 /* LUInterstitialClaimAction.m in Sources */,
@@ -2881,6 +3235,7 @@
 				02CD576217D906B7006205C6 /* LUInterstitialRequestFactory.m in Sources */,
 				02CD576617D906C9006205C6 /* NSURL+LUAdditions.m in Sources */,
 				02DE417617DA712900DB4093 /* LULocationJSONFactory.m in Sources */,
+				251E2CF51CA9B7F600919C5F /* LUOrderAheadCompletedOrder.m in Sources */,
 				02BDB2071AB76FFB005830A7 /* LUCampaignRepresentationBasicV1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2892,10 +3247,14 @@
 				F88A3DB317E8E590008D5254 /* LUUserGenderTransformerSpec.m in Sources */,
 				027E58E91ABCC43900C334CA /* LUAbstractPaymentMethodSpec.m in Sources */,
 				022A6DD9187C61D500EE7C4B /* LUInterstitial+Fixtures.m in Sources */,
+				251E2D4C1CA9BFD000919C5F /* LUOrderAheadViewableOrder+Fixtures.m in Sources */,
 				027E58EB1ABCC47400C334CA /* LUApplePayCardPaymentMethodSpec.m in Sources */,
 				25FF1CDC18FAE54D007EDCEA /* LUDeepLinkAuthSpec.m in Sources */,
+				251E2D441CA9BFD000919C5F /* LUOrderAheadMenuItem+Fixtures.m in Sources */,
 				022A6DDF187C61D500EE7C4B /* LUWebLocations+Fixtures.m in Sources */,
+				251E2D471CA9BFD000919C5F /* LUOrderAheadOrder+Fixtures.m in Sources */,
 				C1CAF10C173052A7003B3D01 /* LUAPIClientSpec.m in Sources */,
+				251E2D731CA9C4C400919C5F /* LUOrderAheadOrderConveyanceSpec.m in Sources */,
 				C1CAF10D173052A7003B3D01 /* LUAPIErrorBuilderSpec.m in Sources */,
 				02D4922D194F551B00C9C385 /* LUWebLinkSpec.m in Sources */,
 				02C1A7CD1AF120A300550FE3 /* LURewardRequestFactorySpec.m in Sources */,
@@ -2919,14 +3278,18 @@
 				C1CAF11E173052A7003B3D01 /* LUOrderJSONFactorySpec.m in Sources */,
 				0251CC241A3B45040056D82C /* LUGiftCardOrderRequestFactorySpec.m in Sources */,
 				C1CAF121173052A7003B3D01 /* LUUserJSONFactorySpec.m in Sources */,
+				251E2D421CA9BFD000919C5F /* LUOrderAheadCompletedOrder+Fixtures.m in Sources */,
 				02C1A7C91AF11F0F00550FE3 /* LUReward+Fixtures.m in Sources */,
 				C1CAF122173052A7003B3D01 /* LUAPIModelSpec.m in Sources */,
 				C1CAF125173052A7003B3D01 /* LUCampaignSpec.m in Sources */,
 				02D49229194F421F00C9C385 /* LUWebLink+Fixtures.m in Sources */,
 				022A6DD8187C61D500EE7C4B /* LUCreditCard+Fixtures.m in Sources */,
+				251E2D821CA9C54100919C5F /* LUOrderAheadViewableOrderJSONFactorySpec.m in Sources */,
 				022A6DDB187C61D500EE7C4B /* LULoyalty+Fixtures.m in Sources */,
+				251E2D7E1CA9C54100919C5F /* LUOrderAheadCompletedOrderJSONFactorySpec.m in Sources */,
 				C1CAF126173052A7003B3D01 /* LUCategorySpec.m in Sources */,
 				02BDB23C1AB7710F005830A7 /* LUCampaignRepresentationTypeTransformerSpec.m in Sources */,
+				251E2D451CA9BFD000919C5F /* LUOrderAheadMenuItemOption+Fixtures.m in Sources */,
 				C1CAF129173052A7003B3D01 /* LUClaimSpec.m in Sources */,
 				027E58BD1ABCBDEC00C334CA /* LUCampaignRepresentationBasicV1+Fixtures.m in Sources */,
 				02BDB23A1AB770FD005830A7 /* LUCampaignMetadataSpec.m in Sources */,
@@ -2940,8 +3303,10 @@
 				022A6DD7187C61D500EE7C4B /* LUClaim+Fixtures.m in Sources */,
 				6A54B4E51A6857CD0094F745 /* LUCarrierAccountJSONFactorySpec.m in Sources */,
 				021B7481193FAC6A00BBC315 /* LURegistration+Fixtures.m in Sources */,
+				251E2D811CA9C54100919C5F /* LUOrderAheadSuggestedOrderJSONFactorySpec.m in Sources */,
 				0230512118F714A4008AE1A6 /* LUInterstitialRequestFactorySpec.m in Sources */,
 				C1CAF12D173052A7003B3D01 /* LUInterstitialActionSpec.m in Sources */,
+				251E2D7F1CA9C54100919C5F /* LUOrderAheadMenuJSONFactorySpec.m in Sources */,
 				027E58BE1ABCBDF400C334CA /* LUCarrierAccountPaymentMethod+Fixtures.m in Sources */,
 				C1CAF12E173052A7003B3D01 /* LULocationSpec.m in Sources */,
 				022A6DDA187C61D500EE7C4B /* LULocation+Fixtures.m in Sources */,
@@ -2950,23 +3315,30 @@
 				404496B61B60292E00A67FE2 /* LUUserAddressJSONFactorySpec.m in Sources */,
 				C1CAF131173052A7003B3D01 /* LUMonetaryValueSpec.m in Sources */,
 				02AA94521835306F00218730 /* LUGenericQRCodeGeneratorSpec.m in Sources */,
+				251E2D491CA9BFD000919C5F /* LUOrderAheadOrderItem+Fixtures.m in Sources */,
 				022A6DDE187C61D500EE7C4B /* LUUser+Fixtures.m in Sources */,
 				C1CAF132173052A7003B3D01 /* LUAccessTokenTokenSpec.m in Sources */,
 				02BDB2381AB770E9005830A7 /* LUCampaignMetadataJSONFactorySpec.m in Sources */,
+				251E2D741CA9C4C400919C5F /* LUOrderAheadOrderItemSpec.m in Sources */,
 				02D47C7118F47433007CF0BC /* LUOneTimePad+Fixtures.m in Sources */,
 				C1CAF133173052A7003B3D01 /* LUOrderSpec.m in Sources */,
 				C1CAF136173052A7003B3D01 /* LUUserSpec.m in Sources */,
 				6AE052631AB75C4E00A18ABF /* LUAPIStubbingSpec.m in Sources */,
+				251E2D861CA9C79900919C5F /* NSNumberLUAdditionsSpec.m in Sources */,
 				02F08DC31ADEA98C001B5C1F /* LUCampaignRepresentationSpendBasedLoyaltyV1Spec.m in Sources */,
+				251E2D4A1CA9BFD000919C5F /* LUOrderAheadOrderStatus+Fixtures.m in Sources */,
 				C1CAF137173052A7003B3D01 /* LUAPIRequestSpec.m in Sources */,
 				027E58BF1ABCBDFB00C334CA /* LUCreditCardPaymentMethod+Fixtures.m in Sources */,
 				027E58BC1ABCBDE300C334CA /* LUCampaignMetadata+Fixtures.m in Sources */,
 				C1CAF139173052A7003B3D01 /* LUDeviceIdentifierSpec.m in Sources */,
 				C1CAF13A173052A7003B3D01 /* LUUserParameterBuilderSpec.m in Sources */,
+				251E2D431CA9BFD000919C5F /* LUOrderAheadMenu+Fixtures.m in Sources */,
 				027E58BB1ABCBDD200C334CA /* LUApplePayCardPaymentMethod+Fixtures.m in Sources */,
 				25FF1CDD18FAE54D007EDCEA /* LUOneTimePadSpec.m in Sources */,
 				C1CAF13B173052A7003B3D01 /* LUAPNDeviceRequestFactorySpec.m in Sources */,
 				6A1A79051A6CB8C90043A5F9 /* LUCarrierAccountStateTransformerSpec.m in Sources */,
+				251E2D801CA9C54100919C5F /* LUOrderAheadOrderStatusJSONFactorySpec.m in Sources */,
+				251E2D721CA9C4C400919C5F /* LUOrderAheadMenuSpec.m in Sources */,
 				02BDB2311AB770D4005830A7 /* LUCampaignRepresentationBasicV1Spec.m in Sources */,
 				02DB59121954816F00955711 /* LUOrderItemSpec.m in Sources */,
 				C1CAF13D173052A7003B3D01 /* LUCampaignRequestFactorySpec.m in Sources */,
@@ -2977,12 +3349,16 @@
 				C1CAF140173052A7003B3D01 /* LUClaimRequestFactorySpec.m in Sources */,
 				C1CAF142173052A7003B3D01 /* LUCreditCardRequestFactorySpec.m in Sources */,
 				C1CAF144173052A7003B3D01 /* LUAuthenticationRequestFactorySpec.m in Sources */,
+				251E2D481CA9BFD000919C5F /* LUOrderAheadOrderConveyance+Fixtures.m in Sources */,
 				C1CAF145173052A7003B3D01 /* LUOrderRequestFactorySpec.m in Sources */,
+				251E2D751CA9C4C400919C5F /* LUOrderAheadOrderSpec.m in Sources */,
 				404496B91B602D0A00A67FE2 /* LUUserAddressSpec.m in Sources */,
 				C1CAF146173052A7003B3D01 /* LUTicketRequestFactorySpec.m in Sources */,
 				C1CAF147173052A7003B3D01 /* LUUserRequestFactorySpec.m in Sources */,
 				022A6DD6187C61D500EE7C4B /* LUCampaign+Fixtures.m in Sources */,
+				251E2D4B1CA9BFD000919C5F /* LUOrderAheadSuggestedOrder+Fixtures.m in Sources */,
 				02643920185BB73900175425 /* LULocationCreditJSONFactorySpec.m in Sources */,
+				251E2D711CA9C4C400919C5F /* LUOrderAheadMenuItemSpec.m in Sources */,
 				021B748B193FAD9E00BBC315 /* LURegistrationRequestFactorySpec.m in Sources */,
 				25FF1CE218FAE5CF007EDCEA /* LUDeepLinkAuthResponseIntegrationSpec.m in Sources */,
 				02BDB2361AB770DE005830A7 /* LUCampaignRepresentationBasicV1JSONFactorySpec.m in Sources */,
@@ -2992,6 +3368,7 @@
 				C1CAF14A173052A7003B3D01 /* NSDateStringFormatsSpec.m in Sources */,
 				6A54B4E71A685F2B0094F745 /* LUCarrierAccountSpec.m in Sources */,
 				6AE052641AB75C4E00A18ABF /* LUAPIStubSpec.m in Sources */,
+				251E2D6F1CA9C4C400919C5F /* LUOrderAheadMenuItemOptionGroupSpec.m in Sources */,
 				02C1A7D01AF1212600550FE3 /* LURewardSummary+Fixtures.m in Sources */,
 				02643922185BB76200175425 /* LULocationCreditRequestFactorySpec.m in Sources */,
 				02F08DCF1ADEB68E001B5C1F /* LUCampaignRepresentationVisitBasedLoyaltyV1+Fixtures.m in Sources */,
@@ -3001,6 +3378,7 @@
 				404496C51B61437F00A67FE2 /* LUUserAddress+Fixtures.m in Sources */,
 				02C1A77C1AE9767500550FE3 /* LUPaymentPreferenceRequestFactorySpec.m in Sources */,
 				C1CAF14E173052A7003B3D01 /* LUPaymentQRCodeGeneratorSpec.m in Sources */,
+				251E2D6E1CA9C4C400919C5F /* LUOrderAheadMenuCategorySpec.m in Sources */,
 				25FF1CDB18FAE54D007EDCEA /* LUDeepLinkAuthResponseSpec.m in Sources */,
 				2523E33917374DA200FBDFEB /* LUAPIObjectModel.xcdatamodeld in Sources */,
 				2523E34417374DF500FBDFEB /* LUCachedLocationSearchSpec.m in Sources */,
@@ -3009,6 +3387,7 @@
 				2523E34517374DFA00FBDFEB /* LUCachedLocationSpec.m in Sources */,
 				2523E34617374DFE00FBDFEB /* LULocationCacheUpdaterSpec.m in Sources */,
 				02DB59101954807600955711 /* LUOrderItemJSONFactorySpec.m in Sources */,
+				251E2D461CA9BFD000919C5F /* LUOrderAheadMenuItemOptionGroup+Fixtures.m in Sources */,
 				02D68DDA1738497A005E1BA8 /* LULocationRequestFactorySpec.m in Sources */,
 				02C1A7C21AF11C6100550FE3 /* LURewardJSONFactorySpec.m in Sources */,
 				0251CC271A3B45670056D82C /* LUGiftCardOrder+Fixtures.m in Sources */,
@@ -3016,6 +3395,7 @@
 				F8BC840A173997D2007F7142 /* LUWebLocationsSpec.m in Sources */,
 				F873649B173AA1980024A3F5 /* LULoyaltyRequestFactorySpec.m in Sources */,
 				02C1A7C41AF11E2A00550FE3 /* LURewardSummaryJSONFactorySpec.m in Sources */,
+				251E2D841CA9C66C00919C5F /* LUOrderAheadRequestFactorySpec.m in Sources */,
 				02C1A77A1AE9761900550FE3 /* LUPaymentPreferenceSpec.m in Sources */,
 				F87364A9173AE5250024A3F5 /* LULoyaltyJSONFactorySpec.m in Sources */,
 				02BA9827174AD23100C9D647 /* LULocationSummaryJSONFactorySpec.m in Sources */,
@@ -3042,9 +3422,11 @@
 				022A6DD5187C61D500EE7C4B /* LUAccessToken+Fixtures.m in Sources */,
 				021B7489193FAD8700BBC315 /* LURegistrationSpec.m in Sources */,
 				026064ED19192B1E00F93FDF /* LUAPIIntegrationSpec.m in Sources */,
+				251E2D701CA9C4C400919C5F /* LUOrderAheadMenuItemOptionSpec.m in Sources */,
 				25D43F79176A1FD40051ED2F /* LUPaymentTokenRequestFactorySpec.m in Sources */,
 				0205E1E019520023001904D9 /* LUUserWithAccessTokenJSONFactorySpec.m in Sources */,
 				6A54B4E91A6860080094F745 /* LUCarrierAccountRequestFactorySpec.m in Sources */,
+				251E2D761CA9C4C400919C5F /* LUOrderAheadOrderStatusSpec.m in Sources */,
 				027E58F11ABCC51000C334CA /* LUPaymentMethodRequestFactorySpec.m in Sources */,
 				0274B8441773A21600FD5B43 /* LUAPIErrorJSONFactorySpec.m in Sources */,
 				0274B84D1773A4D200FD5B43 /* LUAPIErrorSpec.m in Sources */,
@@ -3053,6 +3435,7 @@
 				029053C617BD4AFF00527576 /* LUAPIResponseSpec.m in Sources */,
 				029053C717BD4AFF00527576 /* LUWebLinkParserSpec.m in Sources */,
 				02CD577217D9079C006205C6 /* LUInterstitialJSONFactorySpec.m in Sources */,
+				251E2D771CA9C4C400919C5F /* LUOrderAheadViewableOrderSpec.m in Sources */,
 				02130DAB18E9DA5000A419EB /* NSDataLUAdditionsSpec.m in Sources */,
 				02CD577417D907B6006205C6 /* NSURLLUAdditionsSpec.m in Sources */,
 				02F08DC91ADEAFEB001B5C1F /* LUCampaignRepresentationVisitBasedLoyaltyV1JSONFactorySpec.m in Sources */,

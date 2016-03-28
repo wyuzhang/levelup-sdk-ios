@@ -46,6 +46,8 @@
 - (id)initWithAmount:(NSNumber *)amount currencyCode:(NSString *)currencyCode
       currencySymbol:(NSString *)currencySymbol formattedAmount:(NSString *)formattedAmount;
 
++ (LUMonetaryValue *)monetaryValueByAddingValues:(NSArray *)values;
+
 /**
  Returns an `LUMonetaryValue` instance for the given amount, in cents.
 
@@ -70,5 +72,11 @@
  cents, the cents are dropped. For example, "$1" or "$1.23".
  */
 - (NSString *)shortFormatWithSymbol;
+
+- (LUMonetaryValue *)valueByAddingValue:(LUMonetaryValue *)monetaryValue;
+- (LUMonetaryValue *)valueByAddingValues:(NSArray *)values;
+- (LUMonetaryValue *)valueByDividingBy:(NSNumber *)divisor;
+- (LUMonetaryValue *)valueByMultiplyingBy:(NSNumber *)multiplier;
+- (LUMonetaryValue *)valueByRoundingToNearestCent;
 
 @end

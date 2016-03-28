@@ -32,6 +32,34 @@
 
 #pragma mark - Public Methods
 
++ (LUAPIStub *)stubForImageAtURL:(NSURL *)URL responseResource:(NSString *)resource {
+  return [self stubForImageAtURL:URL responseResource:resource imageType:@"jpg"];
+}
+
++ (LUAPIStub *)stubForImageAtURL:(NSURL *)URL responseResource:(NSString *)resource imageType:(NSString *)type {
+  LUAPIStub *stub = [[LUAPIStub alloc] init];
+  stub.HTTPMethod = @"GET";
+  stub.URL = URL;
+  stub.responseData =
+    [NSData dataWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:resource ofType:type]];
+  stub.responseType = [NSString stringWithFormat:@"image/%@", type];
+  return stub;
+}
+
++ (LUAPIStub *)stubForOrderAheadMenuItemMediumImageAtURLPath:(NSString *)path {
+  return [self stubForImageAtURLPath:path
+                          withParams:@"?density=%.f&height=180&width=320"
+                    responseResource:@"order_ahead_item_image_medium"
+                           imageType:@"jpg"];
+}
+
++ (LUAPIStub *)stubForOrderAheadMenuItemSmallImageAtURLPath:(NSString *)path {
+  return [self stubForImageAtURLPath:path
+                          withParams:@"?density=%.f&height=92&width=133"
+                    responseResource:@"order_ahead_item_image_small"
+                           imageType:@"jpg"];
+}
+
 + (LUAPIStub *)stubToClaimCampaignWithCode:(NSString *)code {
   NSDictionary *responseJSON = @{
     @"claim" : @{
@@ -56,6 +84,13 @@
                            HTTPMethod:@"POST"
                         authenticated:NO
                          responseData:[self responseDataFromFile:@"legacy_loyalty_claim"]];
+}
+
++ (LUAPIStub *)stubToCompleteOrderAheadOrderWithURL:(NSURL *)URL {
+  return [LUAPIStub stubForURL:URL
+                    HTTPMethod:@"POST"
+                 authenticated:NO
+                  responseData:[self responseDataFromFile:@"order_ahead_complete_order_response"]];
 }
 
 + (LUAPIStub *)stubToCreateCreditCardWithNumber:(NSString *)number
@@ -254,6 +289,22 @@
   LUAPIStub *stub = [self stubToGetPassWithMerchantID:merchantID];
   stub.responseCode = 404;
   stub.responseData = nil;
+  return stub;
+}
+
++ (LUAPIStub *)stubToFailToStartUpdateOfOrderAheadOrder:(LUOrderAheadOrder *)order {
+  LUAPIStub *stub = [self stubToStartUpdateOfOrderAheadOrder:order];
+  stub.responseCode = 422;
+  stub.responseData = [self responseDataFromFile:@"payment_ineligible_error"];
+
+  return stub;
+}
+
++ (LUAPIStub *)stubToFailToStartUpdateOfOrderAheadOrderWithInvalidCart:(LUOrderAheadOrder *)order {
+  LUAPIStub *stub = [self stubToStartUpdateOfOrderAheadOrder:order];
+  stub.responseCode = 422;
+  stub.responseData = [self responseDataFromFile:@"order_ahead_invalid_cart_error"];
+
   return stub;
 }
 
@@ -634,6 +685,53 @@
                          responseData:nil];
 }
 
++ (LUAPIStub *)stubToGetOrderAheadCompletedDeliveryOrderWithURL:(NSURL *)URL {
+  return [LUAPIStub stubForURL:URL
+                    HTTPMethod:@"GET"
+                 authenticated:NO
+                  responseData:[self responseDataFromFile:@"order_ahead_completed_delivery_order_response"]];
+}
+
++ (LUAPIStub *)stubToGetOrderAheadCompletedOrderWithURL:(NSURL *)URL {
+  return [self stubToGetOrderAheadCompletedPickupOrderWithURL:URL];
+}
+
++ (LUAPIStub *)stubToGetOrderAheadCompletedPickupOrderWithURL:(NSURL *)URL {
+  return [LUAPIStub stubForURL:URL
+                    HTTPMethod:@"GET"
+                 authenticated:NO
+                  responseData:[self responseDataFromFile:@"order_ahead_completed_pickup_order_response"]];
+}
+
++ (LUAPIStub *)stubToGetOrderAheadDeliveryLocationWithAddressID:(NSNumber *)addressID {
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:[NSString stringWithFormat:@"user_addresses/%@/delivery_location", addressID]
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"order_ahead_delivery_location"]];
+}
+
++ (LUAPIStub *)stubToGetOrderAheadMenuWithURL:(NSURL *)URL {
+  return [LUAPIStub stubForURL:URL
+                    HTTPMethod:@"GET"
+                 authenticated:NO
+                  responseData:[self responseDataFromFile:@"order_ahead_menu"]];
+}
+
++ (LUAPIStub *)stubToGetOrderAheadPendingViewableOrderWithURL:(NSURL *)URL {
+  LUAPIStub *stub = [self stubToGetOrderAheadViewableOrderWithURL:URL];
+  stub.responseCode = 202;
+  stub.responseData = nil;
+  return stub;
+}
+
++ (LUAPIStub *)stubToGetOrderAheadViewableOrderWithURL:(NSURL *)URL {
+  return [LUAPIStub stubForURL:URL
+                    HTTPMethod:@"GET"
+                 authenticated:NO
+                  responseData:[self responseDataFromFile:@"order_ahead_viewable_order"]];
+}
+
 + (LUAPIStub *)stubToGetOrderWithUUID:(NSString *)UUID {
   return [LUAPIStub apiStubForVersion:LUAPIVersion15
                                  path:[@"orders/" stringByAppendingString:UUID]
@@ -736,6 +834,17 @@
   return [self stubToGetUpdatedCarrierAccountWithID:carrierAccountID withStatus:202];
 }
 
++ (LUAPIStub *)stubToGetPickupLocationsNearLocation:(CLLocation *)location forMerchantID:(NSNumber *)merchantID {
+  NSString *path = [NSString stringWithFormat:@"merchants/%@/locations?fulfillment_types=pickup&lat=%f&lng=%f",
+                    merchantID, location.coordinate.latitude, location.coordinate.longitude];
+
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:path
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"pickup_locations"]];
+}
+
 + (LUAPIStub *)stubToGetRewardSummaryAtLocationWithID:(NSNumber *)locationID {
   NSString *path = [NSString stringWithFormat:@"locations/%@/reward_summary", [locationID stringValue]];
 
@@ -754,6 +863,32 @@
                            HTTPMethod:@"GET"
                         authenticated:NO
                          responseData:[self responseDataFromFile:@"rewards"]];
+}
+
++ (LUAPIStub *)stubToGetSuggestedOrders {
+  return [self stubToGetSuggestedOrdersForLocationWithID:nil types:nil];
+}
+
++ (LUAPIStub *)stubToGetSuggestedOrdersForLocationWithID:(NSNumber *)locationID types:(NSArray *)types {
+  NSString *path = @"order_ahead/orders/suggested";
+  NSMutableArray *pathComponents = [NSMutableArray array];
+  if (locationID) {
+    [pathComponents addObject:[NSString stringWithFormat:@"location_id=%@", [locationID stringValue]]];
+  }
+
+  if (types) {
+    [pathComponents addObject:[NSString stringWithFormat:@"types=%@", [types componentsJoinedByString:@","]]];
+  }
+
+  if (pathComponents.count > 0) {
+    path = [path stringByAppendingFormat:@"?%@", [pathComponents componentsJoinedByString:@"&"]];
+  }
+
+  return [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                 path:path
+                           HTTPMethod:@"GET"
+                        authenticated:NO
+                         responseData:[self responseDataFromFile:@"order_ahead_suggested_orders"]];
 }
 
 + (LUAPIStub *)stubToGetUserAddresses {
@@ -842,6 +977,17 @@
                            HTTPMethod:@"PUT"
                         authenticated:YES
                          responseData:nil];
+}
+
++ (LUAPIStub *)stubToStartUpdateOfOrderAheadOrder:(LUOrderAheadOrder *)order {
+  LUAPIStub *stub = [LUAPIStub apiStubForVersion:LUAPIVersion15
+                                            path:@"order_ahead/orders"
+                                      HTTPMethod:@"POST"
+                                   authenticated:NO
+                                    responseData:[self responseDataFromFile:@"order_ahead_start_order_response"]];
+  stub.responseCode = 202;
+
+  return stub;
 }
 
 + (LUAPIStub *)stubToSubmitFeedbackForOrderWithUUID:(NSString *)UUID {
@@ -974,6 +1120,16 @@
       @(location.coordinate.latitude), @(location.coordinate.longitude)];
   }
   return @"";
+}
+
++ (LUAPIStub *)stubForImageAtURLPath:(NSString *)path
+                          withParams:(NSString *)params
+                    responseResource:(NSString *)responseResource
+                           imageType:(NSString *)type {
+  NSString *imageParamsWithDensity = [NSString stringWithFormat:params, [UIScreen mainScreen].scale];
+  NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", path, imageParamsWithDensity]];
+
+  return [self stubForImageAtURL:imageURL responseResource:responseResource imageType:type];
 }
 
 @end
