@@ -21,10 +21,15 @@
 #pragma mark - Initialization Methods
 
 - (instancetype)initWithBanner:(LUOrderAheadSuggestedOrderType)banner
-                    conveyance:(LUOrderConveyanceFulfillmentType)conveyance createdAtDate:(NSDate *)createdAtDate
-                         items:(NSArray *)items locationID:(NSNumber *)locationID menuURL:(NSURL *)menuURL
-                  merchantName:(NSString *)merchantName orderDescription:(NSString *)orderDescription
-           specialInstructions:(NSString *)specialInstructions totalAmount:(LUMonetaryValue *)totalAmount
+                    conveyance:(LUOrderAheadOrderConveyance *)conveyance
+                 createdAtDate:(NSDate *)createdAtDate
+                         items:(NSArray *)items
+                    locationID:(NSNumber *)locationID
+                       menuURL:(NSURL *)menuURL
+                  merchantName:(NSString *)merchantName
+              orderDescription:(NSString *)orderDescription
+           specialInstructions:(NSString *)specialInstructions
+                   totalAmount:(LUMonetaryValue *)totalAmount
                           UUID:(NSString *)UUID {
   self = [super init];
   if (!self) return nil;
@@ -49,9 +54,8 @@
 - (NSString *)description {
   return [NSString stringWithFormat:@"LUOrderAheadSuggestedOrder [address=%p, banner=%@, conveyance=%@, "
           "createdAtDate=%@, items=%@, locationID=%@, menuURL=%@, merchantName=%@," "orderDescription=%@, "
-          "specialInstructions=%@, totalAmount=%@, UUID=%@", self,
-          [LUOrderAheadSuggestedOrder stringForOrderType:self.banner],
-          [LUOrderAheadOrderConveyance stringForFulfillmentType:self.conveyance], self.createdAtDate, self.items,
+          "specialInstructions=%@, totalAmount=%@, UUID=%@]", self,
+          [LUOrderAheadSuggestedOrder stringForOrderType:self.banner], self.conveyance, self.createdAtDate, self.items,
           self.locationID, self.menuURL, self.merchantName, self.orderDescription, self.specialInstructions,
           self.totalAmount, self.UUID];
 }

@@ -18,6 +18,7 @@
 #import "LUOrderAheadOrderItem.h"
 #import "LUOrderAheadSuggestedOrder.h"
 #import "LUOrderAheadSuggestedOrderJSONFactory.h"
+#import "NSArray+LUAdditions.h"
 #import "NSDictionary+ObjectClassAccess.h"
 
 @implementation LUOrderAheadSuggestedOrderJSONFactory
@@ -25,13 +26,12 @@
 #pragma mark - LUAbstractJSONModelFactory Methods
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
-  LUOrderAheadSuggestedOrderType banner = [LUOrderAheadSuggestedOrder orderTypeForString:
-    [attributes lu_stringForKey:@"banner"]];
-  NSDictionary *conveyanceDictionary = [attributes lu_dictionaryForKey:@"conveyance"];
-  LUOrderConveyanceFulfillmentType conveyance = [LUOrderAheadOrderConveyance fulfillmentTypeFromString:
-    [conveyanceDictionary objectForKey:@"fulfillment_type"]];
+  LUOrderAheadSuggestedOrderType banner =
+    [LUOrderAheadSuggestedOrder orderTypeForString:[attributes lu_stringForKey:@"banner"]];
+  LUOrderAheadOrderConveyance *conveyance =
+    [self conveyanceFromConveyanceJSON:[attributes lu_dictionaryForKey:@"conveyance"]];
   NSDate *createdAtDate = [attributes lu_dateForKey:@"created_at"];
-  NSArray *items = [self orderItemsFromItemsJSON:[attributes lu_arrayForKey:@"items"]];
+  NSArray *items = [self itemsFromItemsJSON:[attributes lu_arrayForKey:@"items"]];
   NSNumber *locationID = [attributes lu_numberForKey:@"location_id"];
   NSURL *menuURL = [attributes lu_URLForKey:@"menu_url"];
   NSString *merchantName = [attributes lu_stringForKey:@"merchant_name"];
@@ -40,10 +40,17 @@
   LUMonetaryValue *totalAmount = [attributes lu_monetaryValueForKey:@"total_amount"];
   NSString *UUID = [attributes lu_stringForKey:@"uuid"];
 
-  return [[LUOrderAheadSuggestedOrder alloc] initWithBanner:banner conveyance:conveyance createdAtDate:createdAtDate
-                                                      items:items locationID:locationID menuURL:menuURL
-                                               merchantName:merchantName orderDescription:orderDescription
-                                        specialInstructions:specialInstructions totalAmount:totalAmount UUID:UUID];
+  return [[LUOrderAheadSuggestedOrder alloc] initWithBanner:banner
+                                                 conveyance:conveyance
+                                              createdAtDate:createdAtDate
+                                                      items:items
+                                                 locationID:locationID
+                                                    menuURL:menuURL
+                                               merchantName:merchantName
+                                           orderDescription:orderDescription
+                                        specialInstructions:specialInstructions
+                                                totalAmount:totalAmount
+                                                       UUID:UUID];
 }
 
 - (NSString *)rootKey {
@@ -52,24 +59,33 @@
 
 #pragma mark - Private Methods
 
+- (LUOrderAheadOrderConveyance *)conveyanceFromConveyanceJSON:(NSDictionary *)conveyanceJSON {
+  NSNumber *deliveryAddressID = [conveyanceJSON lu_numberForKey:@"delivery_address_id"];
+  NSDate *desiredReadyTime = [conveyanceJSON lu_dateForKey:@"desired_ready_time"];
+  LUOrderConveyanceFulfillmentType fulfillmentType =
+    [LUOrderAheadOrderConveyance fulfillmentTypeFromString:[conveyanceJSON lu_stringForKey:@"fulfillment_type"]];
+
+  return [[LUOrderAheadOrderConveyance alloc] initWithDeliveryAddressID:deliveryAddressID
+                                                       desiredReadyTime:desiredReadyTime
+                                                        fulfillmentType:fulfillmentType];
+}
+
 - (LUOrderAheadOrderItem *)itemFromItemJSON:(id)itemJSON {
   NSNumber *itemID = [itemJSON lu_numberForKey:@"id"];
   NSNumber *quantity = [itemJSON lu_numberForKey:@"quantity"];
   NSArray *optionIDs = [itemJSON lu_arrayForKey:@"option_ids"];
   NSString *specialInstructions = [itemJSON lu_stringForKey:@"special_instructions"];
 
-  return [[LUOrderAheadOrderItem alloc] initWithItemID:itemID optionIDs:optionIDs quantity:quantity
+  return [[LUOrderAheadOrderItem alloc] initWithItemID:itemID
+                                             optionIDs:optionIDs
+                                              quantity:quantity
                                    specialInstructions:specialInstructions];
 }
 
-- (NSArray *)orderItemsFromItemsJSON:(NSArray *)itemsJSON {
-  NSMutableArray *items = [NSMutableArray array];
-
-  for (id itemJSON in itemsJSON) {
-    [items addObject:[self itemFromItemJSON:[itemJSON lu_dictionaryForKey:@"item"]]];
-  }
-
-  return items;
+- (NSArray *)itemsFromItemsJSON:(NSArray *)itemsJSON {
+  return [itemsJSON lu_mappedArrayWithBlock:^LUOrderAheadOrderItem *(NSDictionary *itemJSON) {
+    return [self itemFromItemJSON:[itemJSON lu_dictionaryForKey:@"item"]];
+  }];
 }
 
 @end

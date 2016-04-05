@@ -38,6 +38,8 @@
   return [[LUOrderAheadViewableOrder alloc]
           initWithCompletionURL:completionURL
           discount:[LUMonetaryValue monetaryValueWithUSCents:@100]
+          locationSubtitle:@"Boston, MA 02114"
+          locationTitle:@"123 Main St."
           serviceFee:[LUMonetaryValue monetaryValueWithUSCents:@150]
           soonestAvailableAt:soonestAvailableAt
           spend:[LUMonetaryValue monetaryValueWithUSCents:@498]

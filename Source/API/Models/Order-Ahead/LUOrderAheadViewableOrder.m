@@ -22,6 +22,8 @@
 
 - (instancetype)initWithCompletionURL:(NSURL *)completionURL
                              discount:(LUMonetaryValue *)discount
+                     locationSubtitle:(NSString *)locationSubtitle
+                        locationTitle:(NSString *)locationTitle
                            serviceFee:(LUMonetaryValue *)serviceFee
                    soonestAvailableAt:(NSDate *)soonestAvailableAt
                                 spend:(LUMonetaryValue *)spend
@@ -35,6 +37,8 @@
 
   _completionURL = completionURL;
   _discount = discount;
+  _locationSubtitle = locationSubtitle;
+  _locationTitle = locationTitle;
   _serviceFee = serviceFee;
   _soonestAvailableAt = soonestAvailableAt;
   _spend = spend;
@@ -51,10 +55,10 @@
 
 - (NSString *)description {
   return [NSString stringWithFormat:@"LUOrderAheadViewableOrder [address=%p, completionURL=%@, discount=%@, "
-          "serviceFee=%@, soonestAvailableAt=%@, spend=%@, state=%@, tax=%@, tip=%@, "
-          "total=%@, UUID=%@]", self, self.completionURL, self.discount, self.serviceFee, self.soonestAvailableAt,
-          self.spend, [LUOrderAheadOrderStateParser stringForState:self.state], self.tax, self.tip, self.total,
-          self.UUID];
+          "locationSubtitle=%@, locationTitle=%@, serviceFee=%@, soonestAvailableAt=%@, spend=%@, state=%@, tax=%@, "
+          "tip=%@, total=%@, UUID=%@]", self, self.completionURL, self.discount, self.locationSubtitle,
+          self.locationTitle, self.serviceFee, self.soonestAvailableAt, self.spend,
+          [LUOrderAheadOrderStateParser stringForState:self.state], self.tax, self.tip, self.total, self.UUID];
 }
 
 @end

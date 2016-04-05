@@ -95,7 +95,7 @@
 + (LUAPIRequest *)requestToCompleteOrderWithURL:(NSURL *)URL {
   return [LUAPIRequest apiRequestWithMethod:@"POST"
                                         URL:URL
-                                 parameters:@{@"order": [NSNull null]} // @todo: Remove params once LU-10492 is deployed
+                                 parameters:nil
                                modelFactory:[LUOrderAheadOrderStatusJSONFactory factory]];
 }
 

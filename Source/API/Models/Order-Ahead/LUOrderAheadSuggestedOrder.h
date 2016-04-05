@@ -15,9 +15,9 @@
  */
 
 #import "LUAPIModel.h"
-#import "LUOrderAheadOrderConveyance.h"
 
 @class LUMonetaryValue;
+@class LUOrderAheadOrderConveyance;
 
 @interface LUOrderAheadSuggestedOrder : LUAPIModel
 
@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger, LUOrderAheadSuggestedOrderType) {
 };
 
 @property (nonatomic, assign, readonly) LUOrderAheadSuggestedOrderType banner;
-@property (nonatomic, assign, readonly) LUOrderConveyanceFulfillmentType conveyance;
+@property (nonatomic, strong, readonly) LUOrderAheadOrderConveyance *conveyance;
 @property (nonatomic, copy, readonly) NSDate *createdAtDate;
 @property (nonatomic, strong, readonly) NSArray *items;
 @property (nonatomic, assign, readonly) NSNumber *locationID;
@@ -38,14 +38,19 @@ typedef NS_ENUM(NSInteger, LUOrderAheadSuggestedOrderType) {
 @property (nonatomic, strong, readonly) LUMonetaryValue *totalAmount;
 @property (nonatomic, copy, readonly) NSString *UUID;
 
-- (instancetype)initWithBanner:(LUOrderAheadSuggestedOrderType)banner
-                    conveyance:(LUOrderConveyanceFulfillmentType)conveyance createdAtDate:(NSDate *)createdAtDate
-                         items:(NSArray *)items locationID:(NSNumber *)locationID menuURL:(NSURL *)menuURL
-                  merchantName:(NSString *)merchantName orderDescription:(NSString *)orderDescription
-           specialInstructions:(NSString *)specialInstructions totalAmount:(LUMonetaryValue *)totalAmount
-                          UUID:(NSString *)UUID;
-
 + (LUOrderAheadSuggestedOrderType)orderTypeForString:(NSString *)string;
 + (NSString *)stringForOrderType:(LUOrderAheadSuggestedOrderType)orderType;
+
+- (instancetype)initWithBanner:(LUOrderAheadSuggestedOrderType)banner
+                    conveyance:(LUOrderAheadOrderConveyance *)conveyance
+                 createdAtDate:(NSDate *)createdAtDate
+                         items:(NSArray *)items
+                    locationID:(NSNumber *)locationID
+                       menuURL:(NSURL *)menuURL
+                  merchantName:(NSString *)merchantName
+              orderDescription:(NSString *)orderDescription
+           specialInstructions:(NSString *)specialInstructions
+                   totalAmount:(LUMonetaryValue *)totalAmount
+                          UUID:(NSString *)UUID;
 
 @end

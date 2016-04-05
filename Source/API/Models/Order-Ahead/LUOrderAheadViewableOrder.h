@@ -23,6 +23,8 @@
 
 @property (nonatomic, copy, readonly) NSURL *completionURL;
 @property (nonatomic, strong, readonly) LUMonetaryValue *discount;
+@property (nonatomic, copy, readonly) NSString *locationSubtitle;
+@property (nonatomic, copy, readonly) NSString *locationTitle;
 @property (nonatomic, strong, readonly) LUMonetaryValue *serviceFee;
 @property (nonatomic, strong, readonly) NSDate *soonestAvailableAt;
 @property (nonatomic, strong, readonly) LUMonetaryValue *spend;
@@ -34,6 +36,8 @@
 
 - (instancetype)initWithCompletionURL:(NSURL *)completionURL
                              discount:(LUMonetaryValue *)discount
+                     locationSubtitle:(NSString *)locationSubtitle
+                        locationTitle:(NSString *)locationTitle
                            serviceFee:(LUMonetaryValue *)serviceFee
                    soonestAvailableAt:(NSDate *)soonestAvailableDate
                                 spend:(LUMonetaryValue *)spend

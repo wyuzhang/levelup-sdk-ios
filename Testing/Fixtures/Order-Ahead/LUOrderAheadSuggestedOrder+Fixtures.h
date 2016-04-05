@@ -19,5 +19,6 @@
 @interface LUOrderAheadSuggestedOrder (Fixtures)
 
 + (instancetype)fixture;
++ (instancetype)fixtureForDeliveryOrder;
 
 @end

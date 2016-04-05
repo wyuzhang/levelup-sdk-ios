@@ -144,36 +144,14 @@ describe(@"LUBaseLocation", ^{
         [[@(result.latitude) should] equal:baseLocation.latitude];
         [[@(result.longitude) should] equal:baseLocation.longitude];
       });
-
-      it(@"bounds the latitude to [-90, 90]", ^{
-        LUBaseLocation *baseLocation = baseLocationWithLatitudeLongitude(@-100, @45);
-
-        [[theValue([baseLocation coordinate].latitude) should] equal:theValue(-90)];
-
-        baseLocation = baseLocationWithLatitudeLongitude(@100, @45);
-
-        [[theValue([baseLocation coordinate].latitude) should] equal:theValue(90)];
-      });
-
-      it(@"bounds the longitude to [-180, 180]", ^{
-        LUBaseLocation *baseLocation = baseLocationWithLatitudeLongitude(@-70, @-200);
-
-        [[theValue([baseLocation coordinate].longitude) should] equal:theValue(-180)];
-
-        baseLocation = baseLocationWithLatitudeLongitude(@-70, @200);
-
-        [[theValue([baseLocation coordinate].longitude) should] equal:theValue(180)];
-      });
     });
 
     context(@"when the location doesn't have both a latitude and a longitude", ^{
       it(@"is kCLLocationCoordinate2DInvalid", ^{
         LUBaseLocation *baseLocation = baseLocationWithLatitudeLongitude(@-70, nil);
-
         [[theValue([baseLocation coordinate]) should] equal:theValue(kCLLocationCoordinate2DInvalid)];
 
         baseLocation = baseLocationWithLatitudeLongitude(nil, @45);
-
         [[theValue([baseLocation coordinate]) should] equal:theValue(kCLLocationCoordinate2DInvalid)];
       });
     });

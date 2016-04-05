@@ -7,7 +7,21 @@
     },
     "discount_amount" : 100,
     "instructions" : "Pick up your food on the left side of the counter under the \"pickup\" sign.",
-    "order_number" : "1000432",
+    "items" : [
+      {
+        "item" : {
+          "name" : "Tater Tots",
+          "quantity" : 1,
+          "selected_options_description" : "Small"
+        }
+      }
+    ],
+    "latitude" : 70,
+    "location_subtitle": "Boston, MA 02114",
+    "location_title": "123 Main St.",
+    "longitude": -45,
+    "order_number": "1000432",
+    "phone": "6175551234",
     "ready_at" : "2015-09-17T15:08:00Z",
     "total_amount" : 945,
     "location_id" : 1234

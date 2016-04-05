@@ -71,6 +71,7 @@
 #import "LUMonetaryValue.h"
 #import "LUOrder.h"
 #import "LUOrderAheadCompletedOrder.h"
+#import "LUOrderAheadCompletedOrderItem.h"
 #import "LUOrderAheadMenu.h"
 #import "LUOrderAheadMenuCategory.h"
 #import "LUOrderAheadMenuItem.h"

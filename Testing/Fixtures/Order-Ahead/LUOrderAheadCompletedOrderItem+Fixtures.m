@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-#import "LUOrderAheadOrder.h"
-#import "LUOrderAheadOrderConveyance.h"
+#import "LUOrderAheadCompletedOrderItem+Fixtures.h"
 
-@interface LUOrderAheadOrder (Fixtures)
+@implementation LUOrderAheadCompletedOrderItem (Fixtures)
 
-+ (LUOrderAheadOrder *)fixture;
-+ (LUOrderAheadOrder *)fixtureForDefaultOrder;
-+ (LUOrderAheadOrder *)fixtureForDefaultOrderWithLocationID:(NSNumber *)locationID;
-+ (LUOrderAheadOrder *)fixtureForOrderWithConveyanceFulfillmentType:(LUOrderConveyanceFulfillmentType)type;
-+ (LUOrderAheadOrder *)fixtureWithCartItems:(NSArray *)cartItems locationID:(NSNumber *)locationID;
++ (instancetype)fixture {
+  return [[LUOrderAheadCompletedOrderItem alloc] initWithName:@"Tater Tots"
+                                                     quantity:@1
+                                   selectedOptionsDescription:@"Small"];
+}
 
 @end

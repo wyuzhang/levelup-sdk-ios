@@ -20,6 +20,7 @@
 #import "LUOrderAheadMenuItemOption.h"
 #import "LUOrderAheadMenuItemOptionGroup.h"
 #import "LUOrderAheadMenuJSONFactory.h"
+#import "NSArray+LUAdditions.h"
 #import "NSDictionary+ObjectClassAccess.h"
 
 @implementation LUOrderAheadMenuJSONFactory
@@ -40,16 +41,12 @@
 #pragma mark - Private Methods
 
 - (NSArray *)categoriesFromCategoriesJSON:(NSArray *)categoriesJSON {
-  NSMutableArray *categories = [NSMutableArray array];
-
-  for (id categoryJSON in categoriesJSON) {
-    [categories addObject:[self categoryFromCategoryJSON:[categoryJSON lu_dictionaryForKey:@"category"]]];
-  }
-
-  return categories;
+  return [categoriesJSON lu_mappedArrayWithBlock:^LUOrderAheadMenuCategory *(NSDictionary *categoryJSON) {
+    return [self categoryFromCategoryJSON:[categoryJSON lu_dictionaryForKey:@"category"]];
+  }];
 }
 
-- (LUOrderAheadMenuCategory *)categoryFromCategoryJSON:(id)categoryJSON {
+- (LUOrderAheadMenuCategory *)categoryFromCategoryJSON:(NSDictionary *)categoryJSON {
   NSNumber *categoryID = [categoryJSON lu_numberForKey:@"id"];
   NSString *name = [categoryJSON lu_stringForKey:@"name"];
   NSString *categoryDescription = [categoryJSON lu_stringForKey:@"description"];
@@ -63,7 +60,7 @@
                                                                   name:name];
 }
 
-- (LUOrderAheadMenuItem *)itemFromItemJSON:(id)itemJSON {
+- (LUOrderAheadMenuItem *)itemFromItemJSON:(NSDictionary *)itemJSON {
   NSNumber *itemID = [itemJSON lu_numberForKey:@"id"];
   NSString *name = [itemJSON lu_stringForKey:@"name"];
   NSString *itemDescription = [itemJSON lu_stringForKey:@"description"];
@@ -90,16 +87,12 @@
 }
 
 - (NSArray *)itemsFromItemsJSON:(NSArray *)itemsJSON {
-  NSMutableArray *items = [NSMutableArray array];
-
-  for (id itemJSON in itemsJSON) {
-    [items addObject:[self itemFromItemJSON:[itemJSON lu_dictionaryForKey:@"item"]]];
-  }
-
-  return items;
+  return [itemsJSON lu_mappedArrayWithBlock:^LUOrderAheadMenuItem *(NSDictionary *itemJSON) {
+    return [self itemFromItemJSON:[itemJSON lu_dictionaryForKey:@"item"]];
+  }];
 }
 
-- (LUOrderAheadMenuItemOption *)optionFromOptionJSON:(id)optionJSON {
+- (LUOrderAheadMenuItemOption *)optionFromOptionJSON:(NSDictionary *)optionJSON {
   NSNumber *optionID = [optionJSON lu_numberForKey:@"id"];
   NSString *name = [optionJSON lu_stringForKey:@"name"];
   NSUInteger displayOrder = [[optionJSON lu_numberForKey:@"display_order"] unsignedIntegerValue];
@@ -111,7 +104,7 @@
                                                             price:price];
 }
 
-- (LUOrderAheadMenuItemOptionGroup *)optionGroupFromOptionGroupJSON:(id)optionGroupJSON {
+- (LUOrderAheadMenuItemOptionGroup *)optionGroupFromOptionGroupJSON:(NSDictionary *)optionGroupJSON {
   NSNumber *optionGroupID = [optionGroupJSON lu_numberForKey:@"id"];
   NSString *name = [optionGroupJSON lu_stringForKey:@"name"];
   NSUInteger displayOrder = [[optionGroupJSON lu_numberForKey:@"display_order"] unsignedIntegerValue];
@@ -131,25 +124,16 @@
                                                                    options:options];
 }
 
-- (NSArray *)optionGroupsFromOptionGroupsJSON:(id)optionGroupsJSON {
-  NSMutableArray *optionGroups = [NSMutableArray array];
-
-  for (id optionGroupJSON in optionGroupsJSON) {
-    [optionGroups addObject:
-      [self optionGroupFromOptionGroupJSON:[optionGroupJSON lu_dictionaryForKey:@"option_group"]]];
-  }
-
-  return optionGroups;
+- (NSArray *)optionGroupsFromOptionGroupsJSON:(NSArray *)optionGroupsJSON {
+  return [optionGroupsJSON lu_mappedArrayWithBlock:^LUOrderAheadMenuItemOptionGroup *(NSDictionary *optionGroupJSON) {
+    return [self optionGroupFromOptionGroupJSON:[optionGroupJSON lu_dictionaryForKey:@"option_group"]];
+  }];
 }
 
 - (NSArray *)optionsFromOptionsJSON:(NSArray *)optionsJSON {
-  NSMutableArray *options = [NSMutableArray array];
-
-  for (id optionJSON in optionsJSON) {
-    [options addObject:[self optionFromOptionJSON:[optionJSON lu_dictionaryForKey:@"option"]]];
-  }
-
-  return options;
+  return [optionsJSON lu_mappedArrayWithBlock:^LUOrderAheadMenuItemOption *(NSDictionary *optionJSON) {
+    return [self optionFromOptionJSON:[optionJSON lu_dictionaryForKey:@"option"]];
+  }];
 }
 
 @end

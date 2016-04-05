@@ -14,15 +14,10 @@
  * limitations under the License.
  */
 
-#import "LUOrderAheadOrder.h"
-#import "LUOrderAheadOrderConveyance.h"
+#import "LUOrderAheadCompletedOrderItem.h"
 
-@interface LUOrderAheadOrder (Fixtures)
+@interface LUOrderAheadCompletedOrderItem (Fixtures)
 
-+ (LUOrderAheadOrder *)fixture;
-+ (LUOrderAheadOrder *)fixtureForDefaultOrder;
-+ (LUOrderAheadOrder *)fixtureForDefaultOrderWithLocationID:(NSNumber *)locationID;
-+ (LUOrderAheadOrder *)fixtureForOrderWithConveyanceFulfillmentType:(LUOrderConveyanceFulfillmentType)type;
-+ (LUOrderAheadOrder *)fixtureWithCartItems:(NSArray *)cartItems locationID:(NSNumber *)locationID;
++ (instancetype)fixture;
 
 @end

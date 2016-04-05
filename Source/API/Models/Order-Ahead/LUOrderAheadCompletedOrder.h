@@ -24,16 +24,28 @@
 @property (nonatomic, strong, readonly) LUOrderAheadOrderConveyance *conveyance;
 @property (nonatomic, strong, readonly) LUMonetaryValue *discount;
 @property (nonatomic, copy, readonly) NSString *instructions;
-@property (nonatomic, copy, readonly) NSNumber *orderLocationID;
+@property (nonatomic, strong, readonly) NSArray *items;
+@property (nonatomic, copy, readonly) NSNumber *latitude;
+@property (nonatomic, copy, readonly) NSString *locationSubtitle;
+@property (nonatomic, copy, readonly) NSString *locationTitle;
+@property (nonatomic, copy, readonly) NSNumber *longitude;
 @property (nonatomic, copy, readonly) NSString *orderNumber;
+@property (nonatomic, copy, readonly) NSString *phone;
 @property (nonatomic, strong, readonly) NSDate *readyAt;
 @property (nonatomic, strong, readonly) LUMonetaryValue *total;
+
+- (CLLocationCoordinate2D)coordinate;
 
 - (instancetype)initWithConveyance:(LUOrderAheadOrderConveyance *)conveyance
                           discount:(LUMonetaryValue *)discount
                       instructions:(NSString *)instructions
-                   orderLocationID:(NSNumber *)orderLocationID
+                             items:(NSArray *)items
+                          latitude:(NSNumber *)latitude
+                  locationSubtitle:(NSString *)locationSubtitle
+                     locationTitle:(NSString *)locationTitle
+                         longitude:(NSNumber *)longitude
                        orderNumber:(NSString *)orderNumber
+                             phone:(NSString *)phone
                            readyAt:(NSDate *)readyAt
                              total:(LUMonetaryValue *)total;
 

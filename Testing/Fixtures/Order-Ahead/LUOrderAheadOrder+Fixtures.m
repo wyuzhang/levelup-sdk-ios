@@ -18,6 +18,7 @@
 #import "LUOrderAheadMenuItem.h"
 #import "LUOrderAheadMenuItemOption.h"
 #import "LUOrderAheadOrder+Fixtures.h"
+#import "LUOrderAheadOrderConveyance+Fixtures.h"
 #import "LUOrderAheadOrderItem+Fixtures.h"
 #import "NSArray+LUAdditions.h"
 

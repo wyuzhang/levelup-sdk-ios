@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-#import "LUOrderAheadOrderConveyance.h"
-#import "LUOrderAheadOrderStatus.h"
+#import "LUOrderAheadCompletedOrderItem.h"
 
-@implementation LUOrderAheadOrderStatus
+@implementation LUOrderAheadCompletedOrderItem
 
 #pragma mark - Object Lifecycle Methods
 
-- (instancetype)initWithOrderURL:(NSURL *)orderURL state:(LUOrderAheadOrderState)state UUID:(NSString *)UUID {
+- (instancetype)initWithName:(NSString *)name
+                    quantity:(NSNumber *)quantity
+  selectedOptionsDescription:(NSString *)selectedOptionsDescription {
   self = [super init];
   if (!self) return nil;
 
-  _orderURL = orderURL;
-  _state = state;
-  _UUID = UUID;
+  _name = name;
+  _quantity = quantity;
+  _selectedOptionsDescription = selectedOptionsDescription;
 
   return self;
 }
@@ -35,8 +36,8 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"LUOrderAheadOrderStatus [address=%p, orderURL=%@, state=%@, UUID=%@]", self,
-          self.orderURL, [LUOrderAheadOrderStateParser stringForState:self.state], self.UUID];
+  return [NSString stringWithFormat:@"LUOrderAheadCompletedOrderItem [address=%p, name=%@, quantity=%@, "
+          "selectedOptionsDescription=%@]", self, self.name, self.quantity, self.selectedOptionsDescription];
 }
 
 @end

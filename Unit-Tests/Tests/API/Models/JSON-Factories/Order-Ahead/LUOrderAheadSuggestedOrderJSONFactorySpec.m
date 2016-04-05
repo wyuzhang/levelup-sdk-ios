@@ -26,7 +26,7 @@ describe(@"LUOrderAheadSuggestedOrderJSONFactory", ^{
 
   beforeEach(^{
     factory = [LUOrderAheadSuggestedOrderJSONFactory factory];
-    suggestedOrderFixture = [LUOrderAheadSuggestedOrder fixture];
+    suggestedOrderFixture = [LUOrderAheadSuggestedOrder fixtureForDeliveryOrder];
   });
 
   describe(@"createFromAttributes:", ^{
@@ -35,9 +35,9 @@ describe(@"LUOrderAheadSuggestedOrderJSONFactory", ^{
         @{@"banner" : @"past",
           @"created_at": @"2015-09-17T15:00:00Z",
           @"conveyance" : @{
-            @"delivery_address_id" : [NSNull null],
-            @"desired_ready_time" : @"2015-09-17T15:30:00Z",
-            @"fulfillment_type" : @"pickup"
+            @"delivery_address_id" : @1,
+            @"desired_ready_time" : @"2015-09-17T15:00:00Z",
+            @"fulfillment_type" : @"delivery"
             },
           @"description": @"Description",
           @"location_id": @1,
@@ -62,7 +62,9 @@ describe(@"LUOrderAheadSuggestedOrderJSONFactory", ^{
 
       LUOrderAheadSuggestedOrder *suggestedOrder = [factory createFromAttributes:JSON];
       [[theValue(suggestedOrder.banner) should] equal:theValue(suggestedOrderFixture.banner)];
-      [[theValue(suggestedOrder.conveyance) should] equal:theValue(suggestedOrderFixture.conveyance)];
+      [[suggestedOrder.conveyance.deliveryAddressID should] equal:suggestedOrderFixture.conveyance.deliveryAddressID];
+      [[suggestedOrder.conveyance.desiredReadyTime should] equal:suggestedOrderFixture.conveyance.desiredReadyTime];
+      [[theValue(suggestedOrder.conveyance.fulfillmentType) should] equal:theValue(suggestedOrderFixture.conveyance.fulfillmentType)];
       [[suggestedOrder.createdAtDate should] equal:[NSDate lu_dateFromIso8601DateTimeString:@"2015-09-17T15:00:00Z"]];
       [[[suggestedOrder.items[0] valueForKey:@"itemID"] should] equal:[suggestedOrderFixture.items[0] valueForKey:@"itemID"]];
       [[[suggestedOrder.items[0] valueForKey:@"optionIDs"] should] equal:[suggestedOrderFixture.items[0] valueForKey:@"optionIDs"]];

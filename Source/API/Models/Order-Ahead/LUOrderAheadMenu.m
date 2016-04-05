@@ -43,7 +43,7 @@
 
 - (NSString *)description {
   return [NSString stringWithFormat:@"LUOrderMenu [address=%p, categories=%@, menuID=%@]", self, self.categories,
-                                    self.menuID];
+          self.menuID];
 }
 
 #pragma mark - Public Methods

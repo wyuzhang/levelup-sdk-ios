@@ -23,8 +23,13 @@
 - (instancetype)initWithConveyance:(LUOrderAheadOrderConveyance *)conveyance
                           discount:(LUMonetaryValue *)discount
                       instructions:(NSString *)instructions
-                   orderLocationID:(NSNumber *)orderLocationID
+                             items:(NSArray *)items
+                          latitude:(NSNumber *)latitude
+                  locationSubtitle:(NSString *)locationSubtitle
+                     locationTitle:(NSString *)locationTitle
+                         longitude:(NSNumber *)longitude
                        orderNumber:(NSString *)orderNumber
+                             phone:(NSString *)phone
                            readyAt:(NSDate *)readyAt
                              total:(LUMonetaryValue *)total {
   self = [super init];
@@ -33,21 +38,37 @@
   _conveyance = conveyance;
   _discount = discount;
   _instructions = instructions;
-  _orderLocationID = orderLocationID;
+  _items = items;
+  _latitude = latitude;
+  _locationSubtitle = locationSubtitle;
+  _locationTitle = locationTitle;
+  _longitude = longitude;
   _orderNumber = orderNumber;
+  _phone = phone;
   _readyAt = readyAt;
   _total = total;
 
   return self;
 }
 
+#pragma mark - Public Methods
+
+- (CLLocationCoordinate2D)coordinate {
+  if (self.latitude && self.longitude) {
+    return CLLocationCoordinate2DMake(self.latitude.doubleValue, self.longitude.doubleValue);
+  } else {
+    return kCLLocationCoordinate2DInvalid;
+  }
+}
+
 #pragma mark - NSObject Methods
 
 - (NSString *)description {
   return [NSString stringWithFormat:@"LUOrderAheadCompletedOrder [address=%p, conveyance=%@, discount=%@, "
-                                    "instructions=%@, orderLocationID=%@, orderNumber=%@, readyAt=%@, total=%@",
-                                    self, self.conveyance, self.discount, self.instructions, self.orderLocationID,
-                                    self.orderNumber, self.readyAt, self.total];
+          "instructions=%@, items=%@, latitude=%@, locationSubtitle=%@, locationTitle=%@, longitude=%@, "
+          "orderNumber=%@, phone=%@, readyAt=%@, total=%@]", self, self.conveyance, self.discount, self.instructions,
+          self.items, self.latitude, self.locationSubtitle, self.locationTitle, self.longitude, self.orderNumber,
+          self.phone, self.readyAt, self.total];
 }
 
 @end

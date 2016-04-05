@@ -16,6 +16,7 @@
 
 #import "LUMonetaryValue.h"
 #import "LUOrderAheadCompletedOrder+Fixtures.h"
+#import "LUOrderAheadCompletedOrderItem+Fixtures.h"
 #import "LUOrderAheadOrderConveyance.h"
 #import "NSDate+StringFormats.h"
 
@@ -32,19 +33,23 @@
 
 + (instancetype)fixtureWithOrderInstructions:(NSString *)orderInstructions readyAt:(NSDate *)readyAt {
   LUOrderAheadOrderConveyance *conveyance =
-  [[LUOrderAheadOrderConveyance alloc] initWithDeliveryAddressID:nil
-                                                desiredReadyTime:[NSDate lu_dateFromIso8601DateTimeString:
-                                                                  @"2015-09-17T15:00:00Z"]
-                                                 fulfillmentType:LUOrderConveyanceFulfillmentTypePickup];
+    [[LUOrderAheadOrderConveyance alloc] initWithDeliveryAddressID:nil
+                                                  desiredReadyTime:[NSDate lu_dateFromIso8601DateTimeString:
+                                                                    @"2015-09-17T15:00:00Z"]
+                                                   fulfillmentType:LUOrderConveyanceFulfillmentTypePickup];
 
-  return [[LUOrderAheadCompletedOrder alloc]
-          initWithConveyance:conveyance
-          discount:[LUMonetaryValue monetaryValueWithUSCents:@100]
-          instructions:orderInstructions
-          orderLocationID:@1234
-          orderNumber:@"1000432"
-          readyAt:readyAt
-          total:[LUMonetaryValue monetaryValueWithUSCents:@945]];
+  return [[LUOrderAheadCompletedOrder alloc] initWithConveyance:conveyance
+                                                       discount:[LUMonetaryValue monetaryValueWithUSCents:@100]
+                                                   instructions:orderInstructions
+                                                          items:@[[LUOrderAheadCompletedOrderItem fixture]]
+                                                       latitude:@70
+                                               locationSubtitle:@"Boston, MA 02114"
+                                                  locationTitle:@"123 Main St."
+                                                      longitude:@-45
+                                                    orderNumber:@"1000432"
+                                                          phone:@"6175551234"
+                                                        readyAt:readyAt
+                                                          total:[LUMonetaryValue monetaryValueWithUSCents:@945]];
 }
 
 + (instancetype)fixtureWithReadyAt:(NSDate *)readyAt {

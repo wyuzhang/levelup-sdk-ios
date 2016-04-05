@@ -81,14 +81,9 @@
           self.region, self.postalCode];
 }
 
-#if !defined(BOUNDED)
-#define BOUNDED(A,B,C)  (MAX((B), MIN((C), A)))
-#endif
-
 - (CLLocationCoordinate2D)coordinate {
   if (self.latitude && self.longitude) {
-    return CLLocationCoordinate2DMake(BOUNDED(self.latitude.doubleValue, -90, 90),
-                                      BOUNDED(self.longitude.doubleValue, -180, 180));
+    return CLLocationCoordinate2DMake(self.latitude.doubleValue, self.longitude.doubleValue);
   } else {
     return kCLLocationCoordinate2DInvalid;
   }

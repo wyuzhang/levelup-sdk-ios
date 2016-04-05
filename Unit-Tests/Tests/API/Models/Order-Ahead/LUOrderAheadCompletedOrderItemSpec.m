@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-#import "LUOrderAheadOrder.h"
-#import "LUOrderAheadOrderConveyance.h"
+#import "LUOrderAheadCompletedOrderItem.h"
 
-@interface LUOrderAheadOrder (Fixtures)
+SPEC_BEGIN(LUOrderAheadCompletedOrderItemSpec)
 
-+ (LUOrderAheadOrder *)fixture;
-+ (LUOrderAheadOrder *)fixtureForDefaultOrder;
-+ (LUOrderAheadOrder *)fixtureForDefaultOrderWithLocationID:(NSNumber *)locationID;
-+ (LUOrderAheadOrder *)fixtureForOrderWithConveyanceFulfillmentType:(LUOrderConveyanceFulfillmentType)type;
-+ (LUOrderAheadOrder *)fixtureWithCartItems:(NSArray *)cartItems locationID:(NSNumber *)locationID;
+describe(@"LUOrderAheadCompletedOrderItem", ^{
+  it(@"is an LUAPIModel", ^{
+    [[[LUOrderAheadCompletedOrderItem class] should] beSubclassOfClass:[LUAPIModel class]];
+  });
+});
 
-@end
+SPEC_END

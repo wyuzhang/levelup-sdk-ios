@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
-#import "LUOrderAheadOrder.h"
-#import "LUOrderAheadOrderConveyance.h"
+#import "LUAPIModel.h"
 
-@interface LUOrderAheadOrder (Fixtures)
+@interface LUOrderAheadCompletedOrderItem : LUAPIModel
 
-+ (LUOrderAheadOrder *)fixture;
-+ (LUOrderAheadOrder *)fixtureForDefaultOrder;
-+ (LUOrderAheadOrder *)fixtureForDefaultOrderWithLocationID:(NSNumber *)locationID;
-+ (LUOrderAheadOrder *)fixtureForOrderWithConveyanceFulfillmentType:(LUOrderConveyanceFulfillmentType)type;
-+ (LUOrderAheadOrder *)fixtureWithCartItems:(NSArray *)cartItems locationID:(NSNumber *)locationID;
+@property (nonatomic, copy, readonly) NSString *name;
+@property (nonatomic, copy, readonly) NSNumber *quantity;
+@property (nonatomic, copy, readonly) NSString *selectedOptionsDescription;
+
+- (instancetype)initWithName:(NSString *)name
+                    quantity:(NSNumber *)quantity
+  selectedOptionsDescription:(NSString *)selectedOptionsDescription;
 
 @end

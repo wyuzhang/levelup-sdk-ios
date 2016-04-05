@@ -33,6 +33,8 @@ describe(@"LUOrderAheadViewableOrderJSONFactory", ^{
     it(@"parses a JSON dictionary into an LUOrderAheadOrderStatus", ^{
       NSDictionary *JSON =
         @{@"discount_amount" : @100,
+          @"location_subtitle" : @"Boston, MA 02114",
+          @"location_title" : @"123 Main St.",
           @"order_completion_url" :
             @"https://api.staging-levelup.com/v15/order_ahead/orders/1a2b3c4d5e6f7g8h9i/complete",
           @"service_fee_amount" : @150,
@@ -48,6 +50,8 @@ describe(@"LUOrderAheadViewableOrderJSONFactory", ^{
       LUOrderAheadViewableOrder *viewableOrder = [factory createFromAttributes:JSON];
       [[viewableOrder.discount should] equal:viewableOrderFixture.discount];
       [[viewableOrder.completionURL should] equal:viewableOrderFixture.completionURL];
+      [[viewableOrder.locationSubtitle should] equal:viewableOrderFixture.locationSubtitle];
+      [[viewableOrder.locationTitle should] equal:viewableOrderFixture.locationTitle];
       [[viewableOrder.serviceFee should] equal:viewableOrderFixture.serviceFee];
       [[viewableOrder.soonestAvailableAt should] equal:viewableOrderFixture.soonestAvailableAt];
       [[viewableOrder.spend should] equal:viewableOrderFixture.spend];

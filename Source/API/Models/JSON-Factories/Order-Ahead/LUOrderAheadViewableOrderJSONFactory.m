@@ -25,6 +25,8 @@
 - (id)createFromAttributes:(NSDictionary *)attributes {
   NSURL *completionURL = [attributes lu_URLForKey:@"order_completion_url"];
   LUMonetaryValue *discount = [attributes lu_monetaryValueForKey:@"discount_amount"];
+  NSString *locationSubtitle = [attributes lu_stringForKey:@"location_subtitle"];
+  NSString *locationTitle = [attributes lu_stringForKey:@"location_title"];
   LUMonetaryValue *serviceFee = [attributes lu_monetaryValueForKey:@"service_fee_amount"];
   NSDate *soonestAvailableAt = [attributes lu_dateForKey:@"soonest_available_at"];
   LUMonetaryValue *spend = [attributes lu_monetaryValueForKey:@"spend_amount"];
@@ -36,6 +38,8 @@
 
   return [[LUOrderAheadViewableOrder alloc] initWithCompletionURL:completionURL
                                                          discount:discount
+                                                 locationSubtitle:locationSubtitle
+                                                    locationTitle:locationTitle
                                                        serviceFee:serviceFee
                                                soonestAvailableAt:soonestAvailableAt
                                                             spend:spend

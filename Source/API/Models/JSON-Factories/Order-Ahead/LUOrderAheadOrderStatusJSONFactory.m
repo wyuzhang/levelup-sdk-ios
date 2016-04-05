@@ -24,8 +24,7 @@
 
 - (id)createFromAttributes:(NSDictionary *)attributes {
   NSURL *URL = [attributes lu_URLForKey:@"order_url"];
-  NSString *stateString = [attributes lu_stringForKey:@"state"];
-  LUOrderAheadOrderState state = [LUOrderAheadOrderStateParser stateForString:stateString];
+  LUOrderAheadOrderState state = [LUOrderAheadOrderStateParser stateForString:[attributes lu_stringForKey:@"state"]];
   NSString *UUID = [attributes lu_stringForKey:@"uuid"];
 
   return [[LUOrderAheadOrderStatus alloc] initWithOrderURL:URL state:state UUID:UUID];
