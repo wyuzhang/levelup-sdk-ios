@@ -119,6 +119,26 @@ describe(@"LUMonetaryValue", ^{
       [[[firstValue valueByMultiplyingBy:multiplier] should] equal:[LUMonetaryValue monetaryValueWithUSCents:@25]];
     });
   });
+
+  describe(@"valueBySubtractingValue:", ^{
+    it(@"returns the result of subtracting this LUMonetaryValue by the number provided", ^{
+      LUMonetaryValue *firstValue = [LUMonetaryValue monetaryValueWithUSCents:@100];
+      LUMonetaryValue *secondValue = [LUMonetaryValue monetaryValueWithUSCents:@20];
+
+      [[[firstValue valueBySubtractingValue:secondValue] should] equal:[LUMonetaryValue monetaryValueWithUSCents:@80]];
+    });
+
+    context(@"when the subtractor is larger than this LUMonetaryValue", ^{
+      it(@"raises an assertion failure", ^{
+        LUMonetaryValue *firstValue = [LUMonetaryValue monetaryValueWithUSCents:@20];
+        LUMonetaryValue *secondValue = [LUMonetaryValue monetaryValueWithUSCents:@100];
+
+        [[theBlock(^{
+          [firstValue valueBySubtractingValue:secondValue];
+        }) should] raise];
+      });
+    });
+  });
 });
 
 SPEC_END

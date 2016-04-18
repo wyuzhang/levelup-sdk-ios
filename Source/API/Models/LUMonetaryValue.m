@@ -106,6 +106,16 @@
           [[self.amount lu_decimalNumber] decimalNumberByRoundingAccordingToBehavior:roundingBehavior]];
 }
 
+- (LUMonetaryValue *)valueBySubtractingValue:(LUMonetaryValue *)monetaryValue {
+  NSAssert(self.amount >= monetaryValue.amount, @"LUMonetaryValue can't represent negative money values, so this "
+           "method should never be called in a case where monetaryValue can possibly exceed self.amount");
+
+  NSDecimalNumber *amount = [self.amount lu_decimalNumber];
+  NSDecimalNumber *subtractedAmount = [monetaryValue.amount lu_decimalNumber];
+
+  return [LUMonetaryValue monetaryValueWithUSCents:[amount decimalNumberBySubtracting:subtractedAmount]];
+}
+
 #pragma mark - NSObject Methods
 
 - (NSString *)debugDescription {

@@ -78,5 +78,6 @@
 - (LUMonetaryValue *)valueByDividingBy:(NSNumber *)divisor;
 - (LUMonetaryValue *)valueByMultiplyingBy:(NSNumber *)multiplier;
 - (LUMonetaryValue *)valueByRoundingToNearestCent;
+- (LUMonetaryValue *)valueBySubtractingValue:(LUMonetaryValue *)monetaryValue;
 
 @end
