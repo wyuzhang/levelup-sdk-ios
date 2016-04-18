@@ -50,6 +50,11 @@
 @property (nonatomic, copy, readonly) NSNumber *sourceCampaignID;
 
 /**
+ An array of tag names (as `NSString`s).
+ */
+@property (nonatomic, copy, readonly) NSArray *tags;
+
+/**
  A human-readable title for this reward.
  */
 @property (nonatomic, copy, readonly) NSString *title;
@@ -95,8 +100,8 @@
 
 - (id)initWithCreatedAtDate:(NSDate *)createdAtDate expiresAtDate:(NSDate *)expiresAtDate
           rewardDescription:(NSString *)rewardDescription rewardID:(NSString *)rewardID
-           sourceCampaignID:(NSNumber *)sourceCampaignID title:(NSString *)title usable:(BOOL)usable
-             usableAsCredit:(BOOL)usableAsCredit usableNow:(BOOL)usableNow
-             valueRemaining:(LUMonetaryValue *)valueRemaining;
+           sourceCampaignID:(NSNumber *)sourceCampaignID tags:(NSArray *)tags
+                      title:(NSString *)title usable:(BOOL)usable usableAsCredit:(BOOL)usableAsCredit
+                  usableNow:(BOOL)usableNow valueRemaining:(LUMonetaryValue *)valueRemaining;
 
 @end

@@ -34,6 +34,7 @@ describe(@"LURewardJSONFactory", ^{
         @"expires_at": @"2012-12-04T18:10:45-05:00",
         @"id": @"campaign-1",
         @"source_campaign_id": @1,
+        @"tags": @[@"custom", @"merchant_funded"],
         @"title": @"Onboarding",
         @"usable": @YES,
         @"usable_as_credit": @YES,
@@ -47,6 +48,7 @@ describe(@"LURewardJSONFactory", ^{
       [[reward.rewardDescription should] equal:@"$2 Onboarding credit"];
       [[reward.rewardID should] equal:@"campaign-1"];
       [[reward.sourceCampaignID should] equal:@1];
+      [[reward.tags should] equal:@[@"custom", @"merchant_funded"]];
       [[reward.title should] equal:@"Onboarding"];
       [[theValue(reward.usable) should] beYes];
       [[theValue(reward.usableAsCredit) should] beYes];

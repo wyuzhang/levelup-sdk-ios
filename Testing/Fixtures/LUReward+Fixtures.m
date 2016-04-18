@@ -26,6 +26,7 @@
                                rewardDescription:@"$2 Onboarding credit"
                                         rewardID:@"campaign-1"
                                 sourceCampaignID:@1
+                                            tags:@[@"custom", @"merchant_funded"]
                                            title:@"Onboarding"
                                           usable:YES
                                   usableAsCredit:YES

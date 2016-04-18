@@ -26,6 +26,7 @@
   NSString *rewardDescription = [attributes lu_stringForKey:@"description"];
   NSString *rewardID = [attributes lu_stringForKey:@"id"];
   NSNumber *sourceCampaignID = [attributes lu_numberForKey:@"source_campaign_id"];
+  NSArray *tags = [attributes lu_arrayForKey:@"tags"];
   NSString *title = [attributes lu_stringForKey:@"title"];
   BOOL usable = [attributes lu_boolForKey:@"usable"];
   BOOL usableAsCredit = [attributes lu_boolForKey:@"usable_as_credit"];
@@ -34,9 +35,9 @@
 
   return [[LUReward alloc] initWithCreatedAtDate:createdAtDate expiresAtDate:expiresAtDate
                                rewardDescription:rewardDescription rewardID:rewardID
-                                sourceCampaignID:sourceCampaignID title:title usable:usable
-                                  usableAsCredit:usableAsCredit usableNow:usableNow
-                                  valueRemaining:valueRemaining];
+                                sourceCampaignID:sourceCampaignID tags:tags title:title
+                                          usable:usable usableAsCredit:usableAsCredit
+                                       usableNow:usableNow valueRemaining:valueRemaining];
 }
 
 - (NSString *)rootKey {

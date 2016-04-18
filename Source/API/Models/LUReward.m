@@ -25,9 +25,9 @@
 
 - (id)initWithCreatedAtDate:(NSDate *)createdAtDate expiresAtDate:(NSDate *)expiresAtDate
           rewardDescription:(NSString *)rewardDescription rewardID:(NSString *)rewardID
-           sourceCampaignID:(NSNumber *)sourceCampaignID title:(NSString *)title usable:(BOOL)usable
-             usableAsCredit:(BOOL)usableAsCredit usableNow:(BOOL)usableNow
-             valueRemaining:(LUMonetaryValue *)valueRemaining {
+           sourceCampaignID:(NSNumber *)sourceCampaignID tags:(NSArray *)tags
+                      title:(NSString *)title usable:(BOOL)usable usableAsCredit:(BOOL)usableAsCredit
+                  usableNow:(BOOL)usableNow valueRemaining:(LUMonetaryValue *)valueRemaining {
   self = [super init];
   if (!self) return nil;
 
@@ -36,6 +36,7 @@
   _rewardDescription = rewardDescription;
   _rewardID = rewardID;
   _sourceCampaignID = sourceCampaignID;
+  _tags = tags;
   _title = title;
   _usable = usable;
   _usableAsCredit = usableAsCredit;
@@ -62,9 +63,9 @@
 #pragma mark - NSObject Methods
 
 - (NSString *)debugDescription {
-  return [NSString stringWithFormat:@"LUReward [address=%p, createdAtDate=%@, expiresAtDate=%@, rewardDescription=%@, rewardID=%@, sourceCampaignID=%@, title=%@, usable=%@, usableAsCredit=%@, usableNow=%@, valueRemaining=%@]",
+  return [NSString stringWithFormat:@"LUReward [address=%p, createdAtDate=%@, expiresAtDate=%@, rewardDescription=%@, rewardID=%@, sourceCampaignID=%@, tags=%@, title=%@, usable=%@, usableAsCredit=%@, usableNow=%@, valueRemaining=%@]",
           self, self.createdAtDate, self.expiresAtDate, self.rewardDescription, self.rewardID,
-          self.sourceCampaignID, self.title, @(self.usable), @(self.usableAsCredit),
+          self.sourceCampaignID, self.tags, self.title, @(self.usable), @(self.usableAsCredit),
           @(self.usableNow), self.valueRemaining];
 }
 

@@ -6,6 +6,7 @@
       "expires_at": null,
       "id": "campaign-1",
       "source_campaign_id": 1,
+      "tags": ["custom", "merchant_funded"],
       "title": "Onboarding",
       "usable": true,
       "usable_as_credit": true,
